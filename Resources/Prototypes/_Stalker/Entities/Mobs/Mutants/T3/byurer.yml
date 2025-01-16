@@ -1,9 +1,9 @@
 - type: entity
   id: STMutantByurer
   parent: BaseMobMutant
-  name: бюрер
+  name: Burer
   suffix: ST, T3
-  description: с какой-то стороны удачный эксперимент учёных по добавлению пси способностей монстрам
+  description: In some ways, a successful experiment by scientists to add psionic abilities to monsters.
   components:
   - type: Sprite
     sprite: _Stalker/Mobs/Mutants/byurer.rsi

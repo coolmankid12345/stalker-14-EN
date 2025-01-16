@@ -2,7 +2,7 @@
   parent: BaseMobMutant
   id: MobMutantSpiderLapach
   suffix: ST, T1
-  name: Паук Лапач
+  name: Spider
   components:
     - type: NoSlip
     - type: Spider

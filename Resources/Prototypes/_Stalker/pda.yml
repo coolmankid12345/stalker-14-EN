@@ -96,8 +96,8 @@
 - type: entity
   parent: BaseStalkerPDA
   id: StalkerPDA
-  name: КПК Сталкера
-  description: Объединены общей сетью и позволяют обмениваться информацией.
+  name: Stalker's PDA
+  description: Connected by a common network and allow information sharing.
   components:
   - type: Pda
     state: stalker_on
@@ -169,9 +169,9 @@
 - type: entity
   parent: [ BaseStalkerPDA, GeigerCounter ]
   id: STSeraphimPDA
-  name: КПК Серафима
+  name: Seraphim PDA
   suffix: ST, Serafim
-  description: Объединены общей сетью и позволяют обмениваться информацией.
+  description: Connected by a common network and allowing the exchange of information.
   components:
   - type: Unremoveable
   - type: Icon

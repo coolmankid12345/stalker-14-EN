@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantBlindDog
-  name: слепой пёс
+  name: Blind Dog
   suffix: ST, T1
   description: The most common mutant in the zone. They are not as dangerous alone as in a dense flock.
   components:

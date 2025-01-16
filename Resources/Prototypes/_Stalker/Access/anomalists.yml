@@ -1,46 +1,46 @@
 - type: accessLevel
   id: Anomalist
-  name: аномалист
+  name: Anomalist
 
 - type: accessLevel
   id: AnomalistHunter
-  name: аномалист "Охотник"
+  name: Anomalist Hunter
 
 - type: accessLevel
   id: AnomalistHuntsman
-  name: аномалист "Егерь"
+  name: Anomalist Huntsman
 
 - type: accessLevel
   id: AnomalistWanderer
-  name: аномалист "Скиталец"
+  name: Anomalist Wanderer
 
 - type: accessLevel
   id: AnomalistDedicated
-  name: аномалист "Посвященный"
+  name: Anomalist Dedicated
 
 - type: accessLevel
   id: AnomalistPathfinder
-  name: аномалист "Следопыт"
+  name: Anomalist Pathfinder
 
 - type: accessLevel
   id: AnomalistElder
-  name: аномалист "Старейшина"
+  name: Anomalist Elder
 
 - type: accessLevel
   id: AnomalistMaster
-  name: аномалист "Мастер"
+  name: Anomalist Master
 
 - type: accessLevel
   id: AnomalistMagus
-  name: аномалист "Волхв"
+  name: Anomalist Magus
 
 - type: accessLevel
   id: AnomalistMagister
-  name: аномалист "Магистр"
+  name: Anomalist Magister
 
 - type: accessLevel
   id: AnomalistGuardian
-  name: аномалист "Хранитель"
+  name: Anomalist Guardian
 
 - type: accessGroup
   id: Anomalist

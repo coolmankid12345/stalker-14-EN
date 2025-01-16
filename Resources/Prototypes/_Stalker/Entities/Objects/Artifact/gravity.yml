@@ -1,6 +1,7 @@
 # Пораждаемая Трамплином, Воронкой, Лифтом
 - type: entity
   parent: BaseArtifact
+  name: Jellyfish
   id: ArtMedusa
 # а куда ты делась в мастере? Нипон
   suffix: Stalker, Медуза
@@ -41,6 +42,7 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Stone Flower
   id: ZoneArtifactFlower
   suffix: Stalker, Каменный цветок
   components:
@@ -78,7 +80,7 @@
         Compression: 1.2
 
 - type: entity
-  name: Ночная звезда
+  name: Nightstar
   parent: BaseArtifact
   id: ZoneArtifactNightStar
   suffix: Stalker, Ночная звезда
@@ -120,7 +122,7 @@
 # Пораждаемая эпицентром, каруселью
 - type: entity
   parent: BaseArtifact
-  name: Выверт
+  name: Wrenched
   id: ZoneArtifactVyvert
   suffix: Stalker, Выверт
   components:
@@ -151,6 +153,7 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Amoeba
   id: ZoneArtifactAmoeba
   suffix: Stalker, Амеба
   components:
@@ -181,6 +184,7 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Gravi
   id: ZoneArtifactGravi
   suffix: Stalker, Грави
   components:
@@ -214,6 +218,7 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Goldfish
   id: ZoneArtifactGoldfish
   suffix: Stalker, Золотая рыбка
   components:

@@ -79,10 +79,10 @@
     - Meat
 
 - type: entity
-  name: буханка хлеба
+  name: Loaf of Bread
   parent: STFoodBreadBase
   id: STFoodBreadPlain
-  description: Неизвестно, кто умудряется печь батоны на территории Зоны, или каким образом их протаскивают через периметр. Однако этот хлеб не заражён, не радиоактивен, достаточно свеж и вполне съедобен. Во всяком случае, никто из сталкеров пока не жаловался.
+  description: It is unknown who manages to bake loaves of bread on the territory of the Zone, or how they are smuggled through the perimeter. However, this bread is not contaminated, not radioactive, quite fresh and quite edible. In any case, none of the stalkers have complained yet.
   suffix: Stalker, еда
   components:
   - type: Food
@@ -96,11 +96,11 @@
     - Cooked
 
 - type: entity
-  name: кусок хлеба
+  name: Slice of Bread
   suffix: Stalker, еда
   parent: STFoodBreadBase
   id: STFoodBreadPlainSlice
-  description: Кусок хлеба. На первый взгляд достаточно свеж и вполне съедобен.
+  description: A piece of bread. At first glance, it is quite fresh and quite edible.
   components:
   - type: Food
   - type: Sprite
@@ -120,10 +120,10 @@
 #############  Cалями
 
 - type: entity
-  name: кусок колбасы
+  name: Piece of Sausage
   parent: FoodMeatBase
   id: STFoodMeatSalamiSlice
-  description:  Если присмотреться достаточно внимательно, можно заметить, что кусок колбасы состоит из мяса не самого высокого качества.
+  description:  If you look closely enough, you will notice that the piece of sausage consists of meat that is not of the highest quality.
   suffix: Stalker, еда
   components:
   - type: STWeight

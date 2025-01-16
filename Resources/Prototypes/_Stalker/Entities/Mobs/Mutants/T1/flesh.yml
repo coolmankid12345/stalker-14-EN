@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantFleshNeutral
-  name: плоть
+  name: Flesh
   suffix: ST, T1
   description: Flesh - pigs mutated beyond recognition, one of the most harmless mutants in the Zone.
   components:

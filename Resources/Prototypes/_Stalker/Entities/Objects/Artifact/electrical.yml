@@ -1,6 +1,7 @@
 # Пораждаемая Электрой, Герляндой
 - type: entity
   parent: BaseArtifact
+  name: Sparkler
   id: ZoneArtifactSparkler
   suffix: Stalker, Бенгальский огонь
   components:
@@ -30,6 +31,7 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Battery
   id: ZoneArtifactBattery
   suffix: Stalker, Батарейка
   components:
@@ -59,6 +61,7 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Flash
   id: ZoneArtifactFlash
   suffix: Stalker, Вспышка
   components:
@@ -90,6 +93,7 @@
 # Пораждаемая Источником
 - type: entity
   parent: BaseArtifact
+  name: Moonlight
   id: ArtMoon
   suffix: Stalker, Лунный свет
   components:
@@ -123,6 +127,7 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Tesla
   id: ZoneArtifactTesla
   suffix: Stalker, Тесла
   components:
@@ -156,6 +161,7 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Snowflake
   id: ZoneArtifactIce
   suffix: Stalker, Снежинка
   components:

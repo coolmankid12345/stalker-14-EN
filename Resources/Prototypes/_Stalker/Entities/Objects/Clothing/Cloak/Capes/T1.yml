@@ -3,7 +3,7 @@
   abstract: true
   parent: STClothingCapeBase
   id: STClothingCapeT1Base
-  name: база плаща T1
+  name: T1 cloak base
   suffix: ST, T1
   components:
   - type: STWeight
@@ -22,9 +22,9 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatDoshdevik
-  name: дождевик
+  name: Raincoat
   suffix: ST, T1
-  description: плотный плащ с защищающий вас от дождя и некоторых химикатов.
+  description: A thick raincoat that protects you from rain and some chemicals.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
@@ -43,8 +43,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetDoshdevikCoat
-  name: капюшон дождевика
-  description: Покрывает вашу голову
+  name: Raincoat Hood
+  description: Covers your head
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
@@ -57,7 +57,7 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatKKK
-  name: куклус плащ
+  name: KKK Coat
   suffix: ST, T1
   description: ккк.
   components:
@@ -78,9 +78,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetKKKCoat
-  name: капюшон куклус плаща
+  name: KKK Hood
   categories: [ HideSpawnMenu ]
-  description: Покрывает вашу голову ККК.
+  description: Covers your head with the KKK.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/kkk_hood.rsi

@@ -1,38 +1,38 @@
 - type: accessLevel
   id: UN
-  name: Миротворцы
+  name: Peacekeepers
 
 - type: accessLevel
   id: Military
-  name: База военных
+  name: Military
 
 - type: accessLevel
   id: MilitaryBarraks
-  name: Казармы
+  name: Military Barracks
 
 - type: accessLevel
   id: MilitaryOfficer
-  name: Офицер
+  name: Military Officer
 
 - type: accessLevel
   id: MilitaryStalker
-  name: Военстал
+  name: Military Stalker
 
 - type: accessLevel
   id: PoliceOfficer
-  name: Полицейский
+  name: Police Officer
 
 - type: accessLevel
   id: MilitaryHead
-  name: Штаб
+  name: Military Head
 
 - type: accessLevel
   id: SciBase
-  name: Учёные
+  name: Scientists
 
 - type: accessLevel
   id: SciHead
-  name: Глава учёных
+  name: Scientist Head
 
 - type: accessGroup
   id: Military

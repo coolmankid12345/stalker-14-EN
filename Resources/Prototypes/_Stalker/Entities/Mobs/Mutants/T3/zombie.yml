@@ -1,5 +1,5 @@
 - type: entity
-  name: зомбированный
+  name: Zombie
   suffix: Stalker, Т3
   parent: BaseMobMutant
   id: MobStalkerZombieBase

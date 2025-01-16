@@ -1,7 +1,7 @@
 - type: entity
   id: STMutantGoliath
   parent: BaseMobMutant
-  name: голиаф
+  name: Goliath
   suffix: ST, T4
   description: Незаконорожденный ребёнок Ньярлатотепа
   components:

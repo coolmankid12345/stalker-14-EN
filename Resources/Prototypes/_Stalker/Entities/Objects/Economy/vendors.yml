@@ -3,8 +3,8 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineMilitary
-  name: раздатчик военных
-  description: Заменил коптёра в современности.
+  name: Military Vending Machine
+  description: Replacement for humans in modern times.
   suffix: Stalker
   components:
     - type: VendingMachine

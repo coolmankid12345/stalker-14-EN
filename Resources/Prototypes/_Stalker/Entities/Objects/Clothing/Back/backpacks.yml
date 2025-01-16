@@ -1,8 +1,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelGreenStalker
-  name: зелёный вещмешок
-  description: Крайне неудобный и невместительный вещмешок за копейки.
+  name: Green Duffle Bag
+  description: An extremely inconvenient and small duffel bag for pennies.
   components:
     - type: STWeight
       self: 1.7
@@ -185,7 +185,7 @@
   - type: Storage
     grid:
     - 0,0,6,5
-    
+
 - type: entity
   parent: ClothingBackpackTacticBase
   id: ClothingBackpackTacticBeigeStalker

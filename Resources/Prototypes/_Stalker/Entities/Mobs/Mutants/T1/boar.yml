@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantBoar
-  name: кабан
+  name: Boar
   suffix: ST, T1
   description: A large and aggressive mutant beast, mutated from a wild boar. A beast weighing three hundred kilos is not your toy!
   components:
