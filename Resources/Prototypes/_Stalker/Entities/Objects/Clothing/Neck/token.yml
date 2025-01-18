@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingStalkerNeckToken
-  name: воинский жетон
-  description: воинский жетон, с именем и фамилией носящего.
+  name: military badge
+  description: military badge, with the first and last name of the wearer.
   suffix: Stalker, Повязка
   components:
   - type: Sprite
@@ -13,8 +13,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingStalkerNeckTokenSeraphim
-  name: жетон Серафима
-  description: Это уникальный воинский знак, связанный с религиозной группировкой Серафимы. Его дизайн отражает символику группы - он выполнен из прочного металла. На лицевой стороне жетона выгравирован основной символ веры Серафимов, возможно, включающий элементы древних языков или сакральных знаков. Обратная сторона предназначена для личной информации владельца - имени, идентификационного номера и, возможно, ранга в группировке.
+  name: Seraphim token
+  description: This is a unique military badge associated with the religious group Seraphim. Its design reflects the symbolism of the group - it is made of durable metal. The front of the token is engraved with the main symbol of the Seraphim's faith, possibly incorporating elements of ancient languages or sacred signs. The reverse side is intended for the owner's personal information - name, identification number and, possibly, rank in the group.
   suffix: Stalker, Повязка
   components:
   - type: Sprite

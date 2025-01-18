@@ -1,7 +1,7 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorIOTVBase
-  name: бронежилет IOTV #base
+  name: IOTV body armor #base
   suffix: ST, T4, PvE
   abstract: true
   components:
@@ -41,8 +41,8 @@
 - type: entity
   parent: STClothingOuterArmorIOTVBase
   id: STClothingOuterArmorIOTVBlack
-  name: бронежилет IOTV чёрный
-  description: стандартный бронежилет США 4 уровня, обеспечивающий достойную защиту от большинства видов повреждений
+  name: body armor IOTV black
+  description: standard US level 4 body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/OuterClothing/IOTV/Black.rsi
@@ -52,8 +52,8 @@
 - type: entity
   parent: STClothingOuterArmorIOTVBase
   id: STClothingOuterArmorIOTVGreen
-  name: бронежилет IOTV зелёный
-  description: Стандартный бронежилет США 4 типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: IOTV body armor green
+  description: Standard US type 4 body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/OuterClothing/IOTV/Green.rsi
@@ -63,8 +63,8 @@
 - type: entity
   parent: STClothingOuterArmorIOTVBase
   id: STClothingOuterArmorIOTVFreedom
-  name: бронежилет IOTV группировки «Воля»
-  description: Модифицированный бронежилет IV типа, адаптированный умельцами из группировки «Воля» в кустарных условиях. Является модификацией IOTV.
+  name: IOTV body armor of the Freedom group
+  description: Modified type IV body armor, adapted by craftsmen from the Freedom group in makeshift conditions. It is a modification of IOTV.
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/OuterClothing/IOTV/Svoboda.rsi
@@ -74,8 +74,8 @@
 - type: entity
   parent: STClothingOuterArmorIOTVBase
   id: STClothingOuterArmorIOTVMerc
-  name: бронежилет IOTV наёмников
-  description: Стандартный бронежилет США IV типа, адаптированный наёмниками
+  name: body armor IOTV mercenaries
+  description: Standard US type IV body armor, adapted by mercenaries
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/OuterClothing/IOTV/Merc.rsi

@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponSubMachineGun
   id: STWeaponSMGBizon
-  description: Довольно свежий ПП российского производства под 9х18 с шнековым огромным магазином.
+  description: Quite a fresh Russian-made PP 9x18 with a huge auger magazine.
   components:
     - type: STWeight
       self: 3

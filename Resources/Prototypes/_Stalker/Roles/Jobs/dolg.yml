@@ -1,8 +1,8 @@
 - type: job
   id: StalkerDolg
-  name: Боец Авангарда
+  name: Duty Fighter
   icon: Dolg
-  description: Защитник человечества.
+  description: Defender of humanity.
   playTimeTracker: JobDolg
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: DolgGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: You report to your superiors.
   special:
     - !type:AddComponentSpecial
       components:
@@ -34,9 +34,9 @@
 
 - type: job
   id: StalkerHeadDolg
-  name: Лидер Авангарда
+  name: Duty Leader
   icon: Dolg
-  description: Защитник человечества.
+  description: Defender of humanity.
   playTimeTracker: JobHeadDolg
   whitelisted: true
   requirements:
@@ -48,7 +48,7 @@
       - Human
       - Dwarf
   startingGear: DolgGear
-  supervisors: Вы командуете другими бойцами Авангарда.
+  supervisors: You command other Duty fighters.
   special:
     - !type:AddComponentSpecial
       components:

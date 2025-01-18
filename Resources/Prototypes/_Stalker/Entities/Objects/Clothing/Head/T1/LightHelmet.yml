@@ -2,7 +2,7 @@
   abstract: true
   parent: STClothingHeadBase
   id: STClothingHeadHelmetTacticalT1Base
-  name: база тактического шлема T1
+  name: T1 tactical helmet base
   suffix: ST, T1, Tactical
   components:
   - type: STWeight
@@ -16,7 +16,7 @@
     damageCoefficient: 0.95
   - type: Craftable
   - type: Reflect
-    reflectProb: 0.03 
+    reflectProb: 0.03
     spread: 360
     reflects:
       - NonEnergy
@@ -26,8 +26,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
   id: ClothingHeadHelmetLight
-  name: легкий шлем
-  description: обычный лёгкий шлем
+  name: light helmet
+  description: regular light helmet
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_light.rsi
@@ -37,8 +37,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
   id: ClothingHeadHelmetDolg
-  name: легкий шлем авангарда
-  description: обычный пехотный шлем перекрашенный в цвета авангарда.
+  name: light duty helmet
+  description: ordinary infantry helmet repainted in the colors of the Duty.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_dolg.rsi
@@ -48,8 +48,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
   id: ClothingHeadMercLight
-  name: легкий шлем наёмника
-  description: Это легкий шлем, разработанный для защиты от колющих атак.
+  name: light mercenary helmet
+  description: This is a light helmet designed to protect against piercing attacks.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/merc_head_light.rsi
@@ -59,8 +59,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
   id: ClothingHeadHelmetLightDeserters
-  name: легкий шлем отступников
-  description: обычный лёгкий шлем отступников
+  name: light renegade helmet
+  description: regular light renegade helmet
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_light_deserter.rsi

@@ -1,0 +1,12 @@
+ent-ZoneAnomalyDetectorAD1 = Anomalies detector of the 1st model (DA-1)
+    .desc = The destiny of beginners, as well as the very first prototype, in all inferior in the 2nd model, determines only very strong abnormal fields, with a positive reaction, emits rare clicks.
+    .suffix = Stalker, detector
+ent-ZoneAnomalyDetectorAD2 = ONOMALION Detector of the 2nd Model (DA-2)
+    .desc = The most classic choice of ordinary Stalker, which determines only strong abnormal fields, with a positive reaction makes clicks.
+    .suffix = Stalker, detector
+ent-ZoneAnomalyDetectorUAD14A = Universal Anomalies Detector (UDI-14A)
+    .desc = A universal detector, which has the ability to accurately discover anomalies.Despite its smaller sizes and larger functionality, it surpasses Da-2 in some parameters, although they are completely different models.
+    .suffix = Stalker, detector
+ent-ZoneAnomalyDetectorUAAL7B = Universal locator of abnormal activity (UL-7B)
+    .desc = The modified version of the UDI-14A, capable of not only detect and graphically display anomalies, but also emit electrical impulses like an anomalies of Girlyand.In the central part of the device there is an artifact of the flash.
+    .suffix = Stalker, detector

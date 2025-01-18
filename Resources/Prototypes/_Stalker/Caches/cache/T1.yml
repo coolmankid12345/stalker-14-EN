@@ -3,8 +3,8 @@
   id: STCacheStorageFillT1
   abstract: true
   suffix: ST, Cache, T1
-  name: ящик
-  description: Довольно таки старый ящик. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  name: Box
+  description: Quite an old box. It might be worth searching him. Maybe you can find something useful in it.
   components:
     - type: StorageFill
       contents:

@@ -1,8 +1,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftBasicPCBT1
-  name: простейшая печатная плата T1
-  desciption: односторонняя плата с минимальным количеством компонентов, используется для простых электрических схем. T1
+  name: T1 simple PCB
+  desciption: single-sided board with a minimum number of components, used for simple electrical circuits. T1
   suffix: Stalker, крафт, T1
   components:
     - type: PhysicalComposition
@@ -23,8 +23,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftStandardPCBT2
-  name: стандартная печатная плата T2
-  desciption: двухсторонняя плата с базовым набором компонентов, используется в бытовой электронике. T2
+  name: T2 standard PCB
+  desciption: double-sided board with a basic set of components, used in consumer electronics. T2
   suffix: Stalker, крафт, T2
   components:
     - type: PhysicalComposition
@@ -45,8 +45,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftMultilayerPCBT3
-  name: многоуровневая печатная плата T3
-  desciption: плата с несколькими слоями, обеспечивает большую сложность схем и плотность компонентов, используется в компьютерах. T3
+  name: T3 multi-level PCB
+  description: board with multiple layers, provides greater circuit complexity and component density, used in computers. T3
   suffix: Stalker, крафт, T3
   components:
     - type: PhysicalComposition
@@ -67,8 +67,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftHighPerformanceChipT4
-  name: высокопроизводительный микропроцессор T4
-  desciption: сложный чип с множеством транзисторов, обеспечивает высокую производительность, используется в мощных компьютерах. T4
+  name: high-performance T4 microprocessor
+  desciption: complex chip with many transistors, provides high performance, used in powerful computers. T4
   suffix: Stalker, крафт, T4
   components:
     - type: PhysicalComposition
@@ -90,8 +90,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftNanoChipT5
-  name: наноэлектронный чип T5
-  desciption: самый современный чип, использует нанотехнологии для максимальной плотности и производительности, применяется в новейших технологиях. T5
+  name: T5 nanoelectronic chip
+  desciption: The most advanced chip, uses nanotechnology for maximum density and performance, applied in the latest technologies. T5
   suffix: Stalker, крафт, T5
   components:
     - type: PhysicalComposition

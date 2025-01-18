@@ -2,9 +2,9 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorHazmatRf
-  name: Бронированный ХАЗМАТ
+  name: Armored HAZMAT
   suffix: ST, T5, Env
-  description: Кустарно улучшенный ХАЗМАТ с применением аномальных материалов, обеспечивающий хорошую защиту по всем фронтам. Следует использовать с встроенным шлемом.
+  description: An artisanally improved HAZMAT using anomalous materials, providing good protection on all fronts. Should be used with a built-in helmet.
   components:
     - type: STWeight
       self: 12
@@ -37,9 +37,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHazmat
-  name: шлем ХАЗМАТа
-  description: Встроенный шлем ХАЗМАТа с усиленной зашитой.
-  categories: [ HideSpawnMenu ] 
+  name: HAZMAT helmet
+  description: Built-in HAZMAT helmet with reinforced protection.
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/hazmat_helm.rsi

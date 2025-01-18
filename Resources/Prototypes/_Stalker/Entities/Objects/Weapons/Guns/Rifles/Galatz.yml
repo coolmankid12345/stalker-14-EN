@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerGalatz
-  description: Galatz - израильская мощная "марксменка" под 7,62. Она же - лицензионный Форт-301.
+  description: Galatz is an Israeli powerful "Marksman" at 7.62. She is also a licensed Fort-301.
   components:
   - type: STWeight
     self: 3.5

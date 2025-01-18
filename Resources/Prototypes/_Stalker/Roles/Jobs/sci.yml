@@ -1,8 +1,8 @@
 - type: job
   id: StalkerScientist
-  name: Учёный
+  name: Scientist
   icon: sci
-  description: Основная цель - изучение всех аспектов Зоны, использование научных методов для дальнейшего объяснения того, что это за Зона и её предназначения.
+  description: The main goal is to study all aspects of the Zone, using scientific methods to further explain what the Zone is and its purpose.
   playTimeTracker: JobStalkerSci
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: SciGear
-  supervisors: Вы подчиняетесь старшему сотруднику и Институту.
+  supervisors: You report to a senior employee and the Institute.
   special:
     - !type:AddComponentSpecial
       components:
@@ -33,9 +33,9 @@
 
 - type: job
   id: StalkerISSG
-  name: Оперативник SSGI
+  name: SSGI operative
   icon: ecologists
-  description: Выполнения приказов института - ваше всё.
+  description: Fulfilling the orders of the institute is your everything.
   playTimeTracker: JobStalkerISSG
   whitelisted: true
   requirements:
@@ -47,7 +47,7 @@
       - Human
       - Dwarf
   startingGear: SciGear
-  supervisors: Вы подчиняетесь старшему сотруднику и Институту.
+  supervisors: You report to a senior employee and the Institute.
   special:
     - !type:AddComponentSpecial
       components:
@@ -66,9 +66,9 @@
 
 - type: job
   id: StalkerHeadScientist
-  name: Ведущий Учёный
+  name: Lead Scientist
   icon: sci
-  description: Основная цель - изучение всех аспектов Зоны, использование научных методов для дальнейшего объяснения того, что это за Зона и её предназначения.
+  description: The main goal is to study all aspects of the Zone, using scientific methods to further explain what the Zone is and its purpose.
   playTimeTracker: JobHeadStalkerSci
   whitelisted: true
   requirements:
@@ -80,7 +80,7 @@
       - Human
       - Dwarf
   startingGear: SciGear
-  supervisors: Вы подчиняетесь старшему сотруднику и Институту.
+  supervisors: You report to a senior employee and the Institute.
   special:
     - !type:AddComponentSpecial
       components:

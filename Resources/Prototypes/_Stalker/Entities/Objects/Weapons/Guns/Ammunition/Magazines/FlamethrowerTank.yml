@@ -1,6 +1,6 @@
 - type: entity
-  name: Балон для огнемёта
-  description: Небольшой балон с топливом для огнемёта
+  name: Flamethrower cylinder
+  description: A small container of fuel for a flamethrower
   id: STFlamethrowerTank
   suffix: ST, Full
   parent: BaseItem

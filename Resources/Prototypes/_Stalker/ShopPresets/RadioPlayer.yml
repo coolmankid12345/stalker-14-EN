@@ -96,11 +96,11 @@
     CassetePremiumTwentyOneRadio: 300
     CassetePremiumTwentyTwoRadio: 300
   categories:
-    - name: Электроника
+    - name: Electronics
       priority: 1
       items:
         RadioStalkerPlayer: 2500
-    - name: Кассеты
+    - name: Cassettes
       priority: 2
       items:
         CasseteOneRadio: 500
@@ -118,7 +118,7 @@
         CasseteThirteeneRadio: 500
         CasseteFourteenRadio: 500
         CasseteFifteenRadio: 500
-    - name: Донатные кассеты
+    - name: Donation cassettes
       priority: 3
       items:
          CasseteTwoDonateRadio: 500
@@ -203,7 +203,7 @@
          CassetePremiumTwentyFourRadio: 600
          CassetePremiumTwentyFiveRadio: 600
   contributorCategories:
-      - name: Кассеты
+      - name: Cassettes
         items:
           CasseteArstotzkaOneContributorRadio: 500
           CasseteArstotzkaTwoContributorRadio: 500

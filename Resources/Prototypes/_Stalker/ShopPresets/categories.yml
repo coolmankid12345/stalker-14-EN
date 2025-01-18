@@ -5,7 +5,7 @@
     FoodTinPeachesTrash: 5
     FoodTinBeansTrash: 5
   categories:
-    - name: Рюкзаки
+    - name: Backpacks
       priority: 1
       items:
         ClothingBackpackDuffelGreenStalker: 30 # 4,4
@@ -31,7 +31,7 @@
     FoodTinPeachesTrash: 5
     FoodTinBeansTrash: 5
   categories:
-    - name: Оружие
+    - name: Weapon
       priority: 1
       items:
         WeaponPistolStalkerAPS: 250
@@ -67,7 +67,7 @@
     FoodTinPeachesTrash: 5
     FoodTinBeansTrash: 5
   categories:
-    - name: Броня
+    - name: Armor
       priority: 1
       items:
         STClothingOuterArmorLightPlateVestBaseZavet: 250
@@ -119,7 +119,7 @@
     FoodTinPeachesTrash: 5
     FoodTinBeansTrash: 5
   categories:
-    - name: Магазины
+    - name: Magazines
       priority: 1
       items:
         TTMag: 5
@@ -154,7 +154,7 @@
     FoodTinPeachesTrash: 5
     FoodTinBeansTrash: 5
   categories:
-    - name: Утилиты
+    - name: Utilities
       priority: 1
       items:
         BoxZiptie: 50
@@ -179,7 +179,7 @@
     FoodTinPeachesTrash: 5
     FoodTinBeansTrash: 5
   categories:
-    - name: Медицина
+    - name: Medicine
       priority: 1
       items:
         PillDexalin: 10

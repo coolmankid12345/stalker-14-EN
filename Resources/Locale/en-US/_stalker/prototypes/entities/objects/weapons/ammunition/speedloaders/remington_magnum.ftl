@@ -1,0 +1,12 @@
+ent-BaseSpeedLoaderRemingtonMagnum = speedloader (.44 Remington Magnum)
+    .desc = { ent-BaseItem.desc }
+    .suffix = Stalker
+ent-SpeedLoaderRemingtonMagnum = { ent-BaseSpeedLoaderRemingtonMagnum }
+    .desc = { ent-BaseSpeedLoaderRemingtonMagnum.desc }
+    .desc = { ent-BaseSpeedLoaderRemingtonMagnum.suffix }
+ent-SpeedLoaderRemingtonMagnumAP = { ent-BaseSpeedLoaderRemingtonMagnum }
+    .desc = { ent-BaseSpeedLoaderRemingtonMagnum.desc }
+    .desc = Stalker, Бронебойный
+ent-SpeedLoaderRemingtonMagnumEmpty = { ent-BaseSpeedLoaderRemingtonMagnum }
+    .desc = { ent-BaseSpeedLoaderRemingtonMagnum.desc }
+    .desc = Stalker, Пустой

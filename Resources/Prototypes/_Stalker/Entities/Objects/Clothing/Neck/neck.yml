@@ -2,8 +2,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingBandageStalkerBlue
-  name: синяя повязка
-  description: Синяя повязка на плечо.
+  name: blue armband
+  description: Blue armband.
   suffix: Stalker, Повязка
   components:
   - type: Sprite
@@ -14,8 +14,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingBandageStalkerGreen
-  name: зелёная повязка
-  description: Зелёная поязка на плечо.
+  name: green armband
+  description: Green armband.
   suffix: Stalker, Повязка
   components:
   - type: Sprite
@@ -26,8 +26,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingBandageStalkerYellow
-  name: жёлтая повязка
-  description: Жёлтая поязка на плечо.
+  name: yellow armband
+  description: Yellow armband.
   suffix: Stalker, Повязка
   components:
   - type: Sprite
@@ -38,8 +38,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingBandageStalkerPurple
-  name: фиолетовая повязка
-  description: Фиолетовая поязка на плечо.
+  name: purple armband
+  description: Purple armband.
   suffix: Stalker, Повязка
   components:
   - type: Sprite

@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseClothingTorso
   id: STClothingTorsoSerafimFullReady
-  name: Форма Последователя Сына Звезды
-  description: Материал неизвестен. Размер неизвестен. Метод пошива неизвестен. Это что-то очень необычное...
+  name: Son of the Star Follower Form
+  description: Material unknown. Size unknown. The sewing method is unknown. This is something very unusual...
   suffix: Stalker, Torso, Serafim
   components:
     - type: Sprite

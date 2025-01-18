@@ -4,7 +4,7 @@
   suffix: ST
   parent: STBaseWeaponShotgun
   id: STWeaponShotgunMP153
-  description: Это гладкоствольное ружье с полуавтоматическим режимом, широко используемое охотниками, спортсменами и охранниками. Оно вмещает до 5 патронов и пользуется популярностью среди сталкеров как доступная альтернатива SPAS-12. Все это делает его привлекательным выбором для тех, кто ценит надежность, эффективность.
+  description: This is a smoothbore shotgun with a semi-automatic mode, widely used by hunters, athletes and security guards. It holds up to 5 rounds and is popular among stalkers as an affordable alternative to the SPAS-12. All this makes it an attractive choice for those who value reliability and efficiency.
   components:
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153.rsi
@@ -32,11 +32,11 @@
 
 # скинчики
 - type: entity
-  name: MP-153 "Селебра"
+  name: MP-153 "Celebra"
   parent: STWeaponShotgunMP153
   id: STWeaponShotgunMP153PoiskSelebra
   suffix: ST, Поиск, Скин
-  description: Это гладкоствольное ружье с полуавтоматическим режимом, широко используемое охотниками, спортсменами и охранниками. Оно вмещает до 5 патронов и пользуется популярностью среди сталкеров как доступная альтернатива SPAS-12. Все это делает его привлекательным выбором для тех, кто ценит надежность, эффективность.
+  description: This is a smoothbore shotgun with a semi-automatic mode, widely used by hunters, athletes and security guards. It holds up to 5 rounds and is popular among stalkers as an affordable alternative to the SPAS-12. All this makes it an attractive choice for those who value reliability and efficiency.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153Selebra.rsi
@@ -50,7 +50,7 @@
   parent: STWeaponShotgunMP153
   id: STWeaponShotgunMP153Voron
   suffix: ST, Контрибутер, Скин
-  description: Это гладкоствольное ружье с полуавтоматическим режимом, широко используемое охотниками, спортсменами и охранниками. Оно вмещает до 5 патронов и пользуется популярностью среди сталкеров как доступная альтернатива SPAS-12. Все это делает его привлекательным выбором для тех, кто ценит надежность, эффективность.
+  description: This is a smoothbore shotgun with a semi-automatic mode, widely used by hunters, athletes and security guards. It holds up to 5 rounds and is popular among stalkers as an affordable alternative to the SPAS-12. All this makes it an attractive choice for those who value reliability and efficiency.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153-black.rsi
@@ -64,7 +64,7 @@
   suffix: ST, Скин
   parent: STWeaponShotgunMP153
   id: STWeaponShotgunStalkerBenelli
-  description: Гладскоствольное полуавтоматическое ружье, разработанное в Италии фирмой 'Benelli Armi S.p.A.' Излюбленное оружие Охотников зоны, но не такое распостраненное как его конкуренты. Высокая скорострельность и удобство использования делает его одним из лучших дробовиков в своём сегменте цен.
+  description: Smoothbore semi-automatic shotgun, developed in Italy by 'Benelli Armi S.p.A.' The favorite weapon of the Hunters of the zone, but not as widespread as its competitors. Its high rate of fire and ease of use make it one of the best shotguns in its price segment.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
@@ -80,7 +80,7 @@
   name: Benelli M4 Super 90 серафимов
   suffix: ST, Скин
   parent: STWeaponShotgunStalkerBenelli
-  description: Benelli M4s90 — это не просто оружие, это надежный друг охотника Серафимов, который сопровождает его в самые ответственные моменты. Он также покрыт особой раскраской Серафимов и имеет ритуальные знаки и различные обереги, некоторые из них обозначают кто стал первой жертвой этого оружия
+  description: Benelli M4s90 is not just a weapon, it is a reliable friend of the Seraphim hunter, who accompanies him at the most crucial moments. It is also covered with a special coloring of the Seraphim and has ritual signs and various amulets, some of which indicate who became the first victim of this weapon
   id: STWeaponShotgunStalkerBenelliSera
   components:
   - type: Sprite

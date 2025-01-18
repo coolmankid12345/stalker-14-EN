@@ -94,8 +94,8 @@
 - type: entity
   parent: StalkerBallBat
   id: STBatMolitoslov
-  name: сидур серафимов
-  description: Cборник молитв или молитвенных песнопений, текстов, с помощью которых люди обращаются к Богу.
+  name: siddur seraphim
+  description: A collection of prayers or prayer chants, texts with the help of which people turn to God.
   suffix: ST
   components:
     - type: Sprite

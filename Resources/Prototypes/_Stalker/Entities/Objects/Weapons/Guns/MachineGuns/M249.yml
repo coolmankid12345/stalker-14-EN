@@ -2,7 +2,7 @@
   name: M249
   id: WeaponLMGM249
   parent: STBaseWeaponMachineGun
-  description: Классика американской армии, 249й по 5,56, питается коробами или магазинами системы STANAG.
+  description: A classic of the American army, 249 at 5.56, fed by boxes or magazines of the STANAG system.
   suffix: ST
   components:
     - type: STWeight

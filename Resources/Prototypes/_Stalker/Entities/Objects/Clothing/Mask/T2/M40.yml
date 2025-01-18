@@ -2,8 +2,8 @@
   parent: STClothingMaskGas
   id: ClothingMaskGasM40
   suffix: ST, T2, Rad
-  name: противогаз M40
-  description: Скрывает тайны человека. Американский противогаз, защищает от радиации и немного от токсинов. Данный противогаз не был выпущен масштабно.
+  name: gas mask M40
+  description: Hides human secrets. American gas mask, protects against radiation and some toxins. This gas mask was not produced on a large scale.
   components:
   - type: Tag
     tags:
@@ -24,8 +24,8 @@
 - type: entity
   parent: ClothingMaskGasM40
   id: ClothingMaskGasM40Military
-  name: противогаз М40 в раскраске военных
-  description: Чувствуется запах дешёвой краски.
+  name: M40 gas mask in military paint
+  description: You can smell cheap paint.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/m40military.rsi

@@ -1,8 +1,8 @@
 - type: entity
   id: CartridgeRocketRPO
-  name: Выстрел РПО
+  name: RPO shot
   parent: BaseItem
-  description: Военные преступления 
+  description: Военные преступления
   components:
   - type: Item
     size: Small

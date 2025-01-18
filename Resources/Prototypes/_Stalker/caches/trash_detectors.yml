@@ -533,8 +533,8 @@
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier1
-  name: металлоискатель "Простофиля"
-  description: Сделан из говна и палок, но если порыться им в больших кучах мусора, то возможно вы что-то найдете.
+  name: Metal Detector "Simp"
+  description: Made from shit and sticks, but if you dig around in large piles of garbage, you might find something.
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight
@@ -553,8 +553,8 @@
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier2
-  name: металлоискатель "Копатель"
-  description: Хороший металлоискатель, качественно сделанный. Если порыться им в больших кучах мусора, то возможно вы что-то найдете.
+  name: Metal Detector "Digger"
+  description: A good metal detector, well made. If you rummage through large piles of garbage with it, you might find something.
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight
@@ -573,8 +573,8 @@
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier3
-  name: металлоискатель "Шахтёр"
-  description: Дорогой, импортный металлоискатель. Прямо из Германии. Если порыться им в больших кучах мусора, то возможно вы что-то найдете.
+  name: Metal Detector "Miner"
+  description: Expensive, imported metal detector. Straight from Germany. If you rummage through large piles of garbage with it, you might find something.
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight
@@ -593,8 +593,8 @@
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier4
-  name: металлоискатель "Находка"
-  description: Очень Дорогой, металлоискатель модиффицированный с помощью частей гравитационных артефактов. Если порыться им в больших кучах мусора, то с большой вероятностью вы что-то найдете.
+  name: Metal Detector "Nakhodka"
+  description: Very Expensive, metal detector modified using parts of gravitational artifacts. If you rummage through large piles of garbage with it, you will most likely find something.
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight
@@ -613,8 +613,8 @@
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier5
-  name: металлоискатель "Аномалист"
-  description: Крайне Дорогой, металлоискатель, является улучшенной версией металлоискателя "Находка". Обладает исключительными свойствами по поиску сборочных компонентов. Если порыться им в больших кучах мусора, то вы обязательно что-то найдете.
+  name: Metal Detector "Anomalist"
+  description: Extremely Expensive, metal detector, is an improved version of the metal detector "Nakhodka". It has exceptional properties for finding assembly components. If you rummage through large piles of garbage with it, you will definitely find something.
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight

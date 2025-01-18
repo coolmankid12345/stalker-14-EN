@@ -3,7 +3,7 @@
   id: STClothingOuterArmorLightPlateVestBaseANAgreen
   name: ANA Tactical
   suffix: ST, T3, PvP
-  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+  description: Reliable armored loader of class 3 armor, accommodating magazines of any size.
   components:
   - type: Trash
     time: 900
@@ -47,7 +47,7 @@
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAgray
   name: ANA Tactical
-  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+  description: Reliable armored loader of class 3 armor, accommodating magazines of any size.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Gray.rsi
@@ -59,7 +59,7 @@
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAUN
   name: ANA Tactical ООН
-  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+  description: Reliable armored loader of class 3 armor, accommodating magazines of any size.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ANA/UN.rsi
@@ -71,7 +71,7 @@
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAPilgrim
   name: ANA Tactical Паломника
-  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины либо библию и кадило
+  description: Reliable armored armor class 3 armor, accommodating any size magazines or a bible and censer
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Pilgrim.rsi

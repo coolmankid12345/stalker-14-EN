@@ -1,10 +1,10 @@
 - type: entity
   parent: STBaseCache
   id: STCacheStorageFillT2
-  description: Довольно таки старый шкаф. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  description: Quite an old box. It might be worth searching him. Maybe you can find something useful in it.
   abstract: true
   suffix: ST, Cache, T2
-  name: шкаф
+  name: Box
   components:
     - type: StorageFill
       contents:

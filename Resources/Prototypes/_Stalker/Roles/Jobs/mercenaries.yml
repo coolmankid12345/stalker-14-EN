@@ -1,8 +1,8 @@
 - type: job
   id: StalkerMercenary
-  name: Боец ЧВК "Ион"
+  name: Mercenary
   icon: merc
-  description: Искатели приключений и головорезы со всего мира.
+  description: Adventurers and thugs from all over the world.
   playTimeTracker: JobStalkerMercenary
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: StalkerMercenaryGear
-  supervisors: Вы чётко спланированная операция с отличной подготовкой — вот залог вашего успеха.
+  supervisors: A well-planned operation with excellent preparation is the key to your success.
   special:
     - !type:AddComponentSpecial
       components:
@@ -43,9 +43,9 @@
 
 - type: job
   id: StalkerHeadMercenary
-  name: Офицер ЧВК "Ион"
+  name: Head Mercenary
   icon: merc
-  description: Ваша обязанность - поддержка связи с штабом и непосредственное принятие решений по контракту.
+  description: Your responsibility is to maintain communication with headquarters and directly make decisions on the contract.
   playTimeTracker: JobStalkerHeadMercenary
   whitelisted: true
   requirements:
@@ -57,7 +57,7 @@
       - Human
       - Dwarf
   startingGear: StalkerHeadMercenaryGear
-  supervisors: вы координируете тактические операции, обеспечиваете эффективное взаимодействие членов группировки и принимаете оперативные решения на поле боя
+  supervisors: you coordinate tactical operations, ensure effective communication between team members and make operational decisions on the battlefield
   special:
     - !type:AddComponentSpecial
       components:

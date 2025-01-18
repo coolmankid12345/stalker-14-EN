@@ -25,10 +25,10 @@
         Piercing: 0.95
 
 - type: entity
-  name: контейнер для артефактов
+  name: artifact container
   parent: BoxCardboard
   id: BoxArtcont
-  description: Полностью блокирует все свойства артефакта.
+  description: Completely blocks all properties of the artifact.
   suffix: Stalker
   components:
   - type: ExplosionSafe
@@ -49,10 +49,10 @@
     state: old
 
 - type: entity
-  name: продвинутый контейнер для артефактов
+  name: advanced container for artifacts
   parent: BoxArtcont
   id: BoxArtcont1
-  description: Вмещает в себя до 3 штук артефактов и полностью блокирует их свойства. Улучшенная кустарно версия, которую достаточно сложно найти.
+  description: Contains up to 3 artifacts and completely blocks their properties. Improved homemade version, which is quite difficult to find.
   components:
   - type: Storage
     maxItemSize: Normal

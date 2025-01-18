@@ -3,7 +3,7 @@
   parent: STBaseWeaponGameRevolver
   id: STWeaponRevolverRugerRedhawk
   name: Ruger Redhawk .45 ACP
-  description: Шестизарядный надежный револьвер на калибре .45 ACP. Имеет хорошую точность и малую отдачу, является популярным среди различных группировок.
+  description: Six-shot reliable revolver in .45 ACP caliber. It has good accuracy and low recoil, and is popular among various groups.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Revolvers/ruger_redhawk_45acp.rsi

@@ -1,4 +1,4 @@
-radio-menu-title = Radio
+radio-menu-title = Walkie-Talkie
 radio-channel-label = Frequency:
-radio-button-text-mic = Mic.
-radio-button-text-speaker = Speak
+radio-button-text-mic = Mic
+radio-button-text-speaker = Speaker

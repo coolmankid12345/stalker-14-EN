@@ -3,8 +3,8 @@
   parent: BaseStructureStalkerDynamic
   id: CraftBlueprintsSourceT4T5
   suffix: Stalker, ИСТОЧНИК, Т4
-  name: кейс с бумагами
-  description: Возможно тут что-то очень важное
+  name: Case of Papers
+  description: Perhaps there is something very important here.
   components:
     - type: TimedDespawn
       lifetime: 14400

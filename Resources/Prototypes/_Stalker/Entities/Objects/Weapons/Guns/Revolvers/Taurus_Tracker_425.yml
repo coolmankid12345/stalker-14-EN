@@ -3,7 +3,7 @@
   parent: STBaseWeaponGameRevolver
   id: STWeaponRevolverTaurusTracker455
   name: Taurus Tracker 455
-  description: Пятизарядный револьвер, не самый лучший, но более надежный под калибр .45 ACP. Скорострельность немного хуже, но разброс ниже, однако преимущества все равно крайне малы из-за большой отдачи.
+  description: Five-shot revolver, not the best, but more reliable in .45 ACP caliber. The rate of fire is slightly worse, but the spread is lower, but the benefits are still extremely small due to the high recoil.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Revolvers/taurus_tracker_455.rsi

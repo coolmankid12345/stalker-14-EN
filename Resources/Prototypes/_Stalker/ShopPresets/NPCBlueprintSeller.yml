@@ -1,7 +1,7 @@
 - type: shopPreset
   id: NPCBlueprintSeller
   categories:
-    - name: Детекторы аномалий/артефактов
+    - name: Anomaly/artifact detectors
       priority: 1
       items:
         STDetectorAD1Blueprint: 2000
@@ -13,20 +13,20 @@
         STZoneArtifactDetectorBarracudaBlueprint: 10125
         # STZoneArtifactDetectorBearBlueprint: 30000
         # STZoneArtifactDetectorWolfhoundBlueprint: 50000
-    - name: Металлоискатели
+    - name: MetalDetectors
       priority: 2
       items:
         TrashDetectorTier2Blueprint: 4000
         TrashDetectorTier3Blueprint: 6000
         # TrashDetectorTier4Blueprint: 28000
-    - name: Плащи
+    - name: Cloaks
       priority: 3
       items:
         ClothingOuterCoatPahanBlueprint: 2000
         ClothingOuterCoatPoiskBlueprint: 2000
         ClothingOuterCoatBolotniyBlueprint: 3000
         ClothingOuterCoatKolchygaBlueprint: 3000
-    - name: Крафтовые материалы
+    - name: Craft materials
       priority: 4
       items:
         STCraftLinenFabricT1Blueprint: 2000
@@ -36,11 +36,11 @@
     #     STGasMaskM50Blueprint: 16000
     #     STGasMaskM51Blueprint: 28000
     #     STGasMaskGP21lueprint: 28000
-    - name: Шлемы
+    - name: Helmets
       priority: 6
       items:
         STClothingHeadTinfoilBlueprint: 2000
-    - name: Верхняя одежда
+    - name: Outerwear
       priority: 7
       items:
         STClothingOuterJacketStalkerUpgradeBlueprint: 2000
@@ -51,7 +51,7 @@
         STClothingOuterArmor6B2Blueprint: 3000
         ClothingOuterArmorCN1Blueprint: 3000
         ClothingOuterArmorSparkBlueprint: 3000
-    - name: Боеприпасы
+    - name: Ammunition
       priority: 8
       items:
         STShotgunBulletUnlethalBoxCinkBlueprint: 5000

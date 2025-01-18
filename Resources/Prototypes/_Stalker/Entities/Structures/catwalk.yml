@@ -2,7 +2,7 @@
 - type: entity
   id: CatwalkRusty
   suffix: ST, Mapping
-  name: ржавый мостик
+  name: rusty bridge
   placement:
     mode: SnapgridCenter
   components:

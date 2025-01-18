@@ -1,9 +1,9 @@
 
 - type: job
   id: StalkerUN
-  name: Представитель ООН
+  name: UN Representative
   icon: un
-  description: Представитель высот.
+  description: Representative of heights.
   playTimeTracker: JobUN
   whitelisted: true
   requirements:
@@ -15,7 +15,7 @@
       - Human
       - Dwarf
   startingGear: UNGear
-  supervisors: Вы не кому не подчиняетесь...
+  supervisors: You don't answer to anyone...
   special:
     - !type:AddComponentSpecial
       components:

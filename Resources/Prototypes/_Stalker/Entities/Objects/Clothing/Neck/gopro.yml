@@ -30,7 +30,7 @@
   id: ClothingGoPro
   name: GoPro
   suffix: Stalker
-  description: Камера от компании GoPro. Снимает в хорошем качестве видео.
+  description: Camera from GoPro. Shoots video in good quality.
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Neck/Misc/gopro.rsi

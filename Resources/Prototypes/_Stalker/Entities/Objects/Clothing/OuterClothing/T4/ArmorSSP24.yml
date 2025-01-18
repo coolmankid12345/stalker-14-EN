@@ -2,7 +2,7 @@
 - type: entity
   parent: STClothingOuterBaseLarge
   id: STClothingOuterArmorSSP24Base
-  name: ССП-24 # base
+  name: SSP-24 # base
   abstract: true
   suffix: ST, T4, Env
   components:
@@ -47,9 +47,9 @@
 - type: entity
   parent: ClothingHeadHardsuitBase
   id: STClothingHeadHelmetSSP24Base
-  name: шлем зелёного «Эколога»
-  description: Защитит от аномалий и радиации, но точно не от пуль.
-  categories: [ HideSpawnMenu ] 
+  name: helmet of the green “Ecologist”
+  description: Will protect against anomalies and radiation, but definitely not from bullets.
+  categories: [ HideSpawnMenu ]
   abstract: true
   components:
   - type: Armor
@@ -79,8 +79,8 @@
 - type: entity
   parent: STClothingOuterArmorSSP24Base
   id: ClothingOuterArmorSSP24Ruby
-  name: Красный ССП-24 «Рубин»
-  description: Высококачественный модифицированный комбинезон ССП-24 с улучшенной защитой от пуль и осколков, которым снабжаются передовые отряды Экологов, когда возможна вероятность столкновения с мутировавшими животными.
+  name: Red SSP-24 "Rubin"
+  description: High-quality modified SSP-24 overalls with improved protection against bullets and shrapnel, which are supplied to the advanced detachments of Environmentalists when there is a possibility of a collision with mutated animals.
   components:
   - type: Armor
     armorLevels:
@@ -96,9 +96,9 @@
 - type: entity
   parent: STClothingHeadHelmetSSP24Base
   id: ClothingHeadHelmetSSP24Ruby
-  name: шлем красного «Рубина»
-  description: Защитит от аномалий и радиации, но точно не от пуль.
-  categories: [ HideSpawnMenu ] 
+  name: red “Ruby” helmet
+  description: Will protect against anomalies and radiation, but definitely not from bullets.
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/ruby.rsi
@@ -110,8 +110,8 @@
 - type: entity
   parent: STClothingOuterArmorSSP24Base
   id: ClothingOuterArmorSSP24Topaz
-  name: Бледно-зеленый ССП-24 «Топаз»
-  description: Он представляет собой высококачественную модификацию базового костюма эколога SSP-99. Единственное внешнее различие между ними заключается только в цвете — стандартный SSP-99 тёмно-оранжевый, а SSP-99M представлен в светло-зелёном цвете.
+  name: Pale green SSP-24 “Topaz”
+  description: It is a high-quality modification of the basic SSP-99 environmentalist suit. The only external difference between them is color - the standard SSP-99 is dark orange, and the SSP-99M comes in light green.
   components:
   - type: Armor
     armorLevels:
@@ -127,8 +127,8 @@
 - type: entity
   parent: STClothingHeadHelmetSSP24Base
   id: ClothingHeadHelmetSSP24Topaz
-  name: шлем бледно-зелёного «Топаза»
-  description: Защитит от аномалий и радиации, но точно не от пуль.
+  name: pale green “Topaz” helmet
+  description: Will protect against anomalies and radiation, but definitely not from bullets.
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -141,8 +141,8 @@
 - type: entity
   parent: STClothingOuterArmorSSP24Base
   id: ClothingOuterArmorSSP24Sapfire
-  name: Синий ССП-24 «Сапфир»
-  description: Высококачественный модифицированный комбинезон ССП-24М, в котором была улучшена защита от пуль и осколков, предназначенный для экипировки охраны научных экспедиций для работы под напряжением.
+  name: Blue SSP-24 “Sapphire”
+  description: High-quality modified SSP-24M overalls, in which protection against bullets and shrapnel has been improved, designed to equip the guards of scientific expeditions for working under voltage.
   components:
   - type: Armor
     armorLevels:
@@ -159,9 +159,9 @@
 - type: entity
   parent: STClothingHeadHelmetSSP24Base
   id: ClothingHeadHelmetSSP24Sapfire
-  name: шлем синего «Сапфира»
-  description: Защитит от аномалий и радиации, но точно не от пуль.
-  categories: [ HideSpawnMenu ] 
+  name: blue Sapphire helmet
+  description: Will protect against anomalies and radiation, but definitely not from bullets.
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/sapfire.rsi

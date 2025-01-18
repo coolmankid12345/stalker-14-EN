@@ -1,7 +1,7 @@
 - type: shopPreset
   id: NpcFilAmunition
   categories:
-    - name: Модификации
+    - name: Modifications
       priority: 1
       items:
         STModuleScopeRiflesT1Ru: 800

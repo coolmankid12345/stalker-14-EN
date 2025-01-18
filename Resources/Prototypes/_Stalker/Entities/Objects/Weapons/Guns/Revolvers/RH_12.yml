@@ -2,8 +2,8 @@
 - type: entity
   parent: STBaseWeaponGameRevolver
   id: STWeaponRevolverRH12
-  name: Револьвер Штурмовой-12,7x55
-  description: Револьвер тульского КБП. Револьвер стал побочным продуктом программы «Выхлоп», согласно которой был произведен штурмовой автомат АШ-12.
+  name: Sturmovoy revolver-12.7x55
+  description: Tula KBP revolver. The revolver was a by-product of the Exhaust program, which produced the ASh-12 assault rifle.
   components:
     - type: Item
       size: Small

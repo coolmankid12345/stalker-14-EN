@@ -3,8 +3,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: StalkerPivozavr
-  name: Футболка с пивозавром
-  description: Может быть это скоро станет модным.
+  name: T-shirt with a brewer
+  description: Maybe this will become fashionable soon.
   suffix: Stalker
   components:
   - type: Sprite
@@ -17,8 +17,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: StalkerJumpsuitJocker
-  name: костюм джокера
-  description: Нестандартный костюм, некоторые думают что он шуточный. Но как-бы не так...
+  name: joker costume
+  description: Non-standard costume, some people think it’s a joke. But somehow it’s not like that...
   suffix: Stalker
   components:
   - type: Sprite
@@ -31,8 +31,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitBandit
-  name: спортивный костюм
-  description: Изначально предназначался для использования в спорте в основном как одежда поверх основного спортивного костюма для соревнований, но в условиях зоны - неплохой такой удобный костюм.
+  name: tracksuit
+  description: Initially intended for use in sports, mainly as clothing over the main tracksuit for competitions, but in zone conditions it is a good, comfortable suit.
   suffix: Stalker
   components:
   - type: Sprite
@@ -45,8 +45,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitMerc
-  name: костюм наёмника
-  description: Стандартный костюм сервого цвета, применяется группировкой «Наёмники».
+  name: mercenary suit
+  description: Standard gray-colored suit, used by the Mercenaries group.
   suffix: Stalker
   components:
     - type: Sprite
@@ -59,7 +59,7 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitMilitary1
-  name: форма ОКСОП
+  name: фOKSOP uniform
   description: Специальная униформа ОКСОП, которую иногда можно увидеть на вояках.
   suffix: Stalker
   components:
@@ -73,8 +73,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitMilitary2
-  name: матроска военных
-  description: Униформа, которую традиционно носят рядовые моряки военно-морского флота и других государственных морских служб. Непонятно, как она смогла оказаться в ЧЗО.
+  name: military sailor suit
+  description: The uniform traditionally worn by ordinary sailors in the Navy and other government maritime services. It is not clear how she could end up in the ChEZ.
   suffix: Stalker
   components:
     - type: Sprite
@@ -87,8 +87,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitMilitaryRU
-  name: униформа ВС РФ
-  description: Неизменный атрибут кадровых служащих РФ в рядах ОКСОП.
+  name: uniform of the RF Armed Forces
+  description: An invariable attribute of personnel employees of the Russian Federation in the ranks of OKSOP.
   suffix: Stalker
   components:
     - type: Sprite
@@ -101,8 +101,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitMilitaryKZ
-  name: униформа ВС Казахстана
-  description: Неизменный атрибут кадровых служащих Казахстана в рядах ОКСОП.
+  name: uniform of the Armed Forces of Kazakhstan
+  description: An invariable attribute of Kazakhstani personnel employees in the ranks of OKSOP.
   suffix: Stalker
   components:
     - type: Sprite
@@ -115,8 +115,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitMilitaryUA
-  name: униформа ВСУ
-  description: Неизменный атрибут кадровых служащих ВСУ в рядах ОКСОП.
+  name: uniform of the Armed Forces of Ukraine
+  description: An invariable attribute of the personnel employees of the Armed Forces of Ukraine in the ranks of OKSOP.
   suffix: Stalker
   components:
     - type: Sprite
@@ -129,8 +129,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitMilitaryUA2
-  name: униформа ВСУ
-  description: Неизменный атрибут кадровых служащих ВСУ в рядах ОКСОП.
+  name: uniform of the Armed Forces of Ukraine
+  description: An invariable attribute of the personnel employees of the Armed Forces of Ukraine in the ranks of OKSOP.
   suffix: Stalker
   components:
     - type: Sprite
@@ -143,8 +143,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitMilitaryFR
-  name: униформа Франции
-  description: Униформа армии Франции (не путать с Иностранным Легионом).
+  name: French uniform
+  description: Uniform of the French Army (not to be confused with the Foreign Legion).
   suffix: Stalker
   components:
     - type: Sprite

@@ -1,8 +1,8 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorHeavy
-  name: бронированный комбинезон
-  description: Создан на основе обыкновенного комбинезона, бронированный потому что повышена защита броневыми пластинами от большинства физических повреждений. Так-же увеличивает вес, но предоставленая отличная защита от снарядов для таких комбенизонов как этот. Обеспечивает 2 класс защиты.
+  name: armored jumpsuit
+  description: Created on the basis of an ordinary jumpsuit, armored because the armor plates provide increased protection from most physical damage. Also adds weight, but provides excellent projectile protection for suits like this one. Provides class 2 protection.
   suffix: ST, T4, PvE
   components:
   - type: STWeight

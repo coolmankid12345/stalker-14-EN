@@ -4,7 +4,7 @@
   suffix: ST
   id: STWeaponGunAKS74U
   name: AKS-74U
-  description: The AK74 assault rifle was developed in the late 1970s and early 1980s to arm crews of combat vehicles, aircraft, gun crews, and paratroopers. Uses 5,45x39
+  description: The AK74 assault rifle was developed in the late 1970s and early 1980s to arm crews of combat vehicles, aircraft, gun crews, and paratroopers. Uses 5.45x39
   components:
     - type: STWeight
       self: 3.2

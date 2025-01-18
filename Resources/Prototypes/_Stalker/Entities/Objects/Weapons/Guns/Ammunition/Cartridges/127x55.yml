@@ -22,7 +22,7 @@
 
 - type: entity
   id: Cartridge1255TP
-  name: Патрон (12,7x55) ТП
+  name: Cartridge(12,7x55) ТП
   parent: Cartridge1255PS12A
   components:
   - type: CartridgeAmmo
@@ -31,7 +31,7 @@
 
 - type: entity
   id: Cartridge1255BP
-  name: Патрон (12,7x55) БП
+  name: Cartridge (12,7x55) БП
   parent: Cartridge1255PS12A
   components:
   - type: CartridgeAmmo

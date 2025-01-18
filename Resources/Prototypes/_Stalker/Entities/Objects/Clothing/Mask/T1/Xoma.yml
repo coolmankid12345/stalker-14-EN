@@ -4,8 +4,8 @@
   parent: STClothingMaskGas
   id: ClothingMaskXoma
   suffix: ST, T1, Caustic
-  name: противогаз ПБФ ОЗК "Хомяк"
-  description: Противогаз бескоробочный фильтрующий, предназначенный для защиты лица, глаз, дыхательной системы от биологических аэрозолей, боевых отравляющих веществ, ядовитых химикатов и пыли.  Защищает от токсинов.
+  name: gas mask PBF OZK "Khomyak"
+  description: Boxless filter gas mask designed to protect the face, eyes, and respiratory system from biological aerosols, chemical warfare agents, toxic chemicals and dust.  Protects against toxins.
   components:
   - type: Craftable
   - type: Tag
@@ -28,8 +28,8 @@
 - type: entity
   parent: ClothingMaskXoma
   id: ClothingMaskGasDolg2
-  name: стандартный противогаз Авангарда 2
-  description: Вряд ли он уничтожит Зону, но он очень старается  Защищает от радиации.
+  name: standard Duty gas mask 2
+  description: It is unlikely that it will destroy the Zone, but it tries very hard to protect against radiation.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_dolg2.rsi

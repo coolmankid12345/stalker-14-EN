@@ -1,8 +1,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftCottonFabricT1
-  name: хлопковая ткань T1
-  desciption: натуральный материал, изготовленный из волокон льна, используется для легкой одежды и базовой защиты. T1
+  name: cotton fabric T1
+  description: natural material made from flax fibers, used for lightweight clothing and basic protection. T1
   suffix: Stalker, крафт, T1
   components:
     - type: PhysicalComposition
@@ -21,8 +21,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftHideT2
-  name: шкура Т2
-  desciption: натуральная шкура животного, используется для более прочной одежды и легкой брони. T2
+  name: T2 skin
+  desciption: natural animal skin, used for more durable clothing and light armor. T2
   suffix: Stalker, крафт, T2
   components:
     - type: PhysicalComposition
@@ -41,8 +41,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftSturdyHideT3
-  name: крепкая шкура T3
-  desciption: усиленная шкура, обеспечивающая высокую защиту и долговечность, используется для надежной брони и прочной одежды. T3
+  name: Tough Hide T3
+  description: Reinforced hide, providing high protection and durability, used for durable armor and durable clothing. T3
   suffix: Stalker, крафт, T3
   components:
     - type: PhysicalComposition
@@ -61,8 +61,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftPolymerFabricT4
-  name: полимерная ткань T4
-  desciption: высококачественный синтетический материал, обеспечивающий отличную защиту и долговечность, используется для качественной брони и защитной одежды. T4
+  name: T4 resin fabric
+  description: High quality synthetic material providing excellent protection and durability, used for quality armor and protective clothing. T4
   suffix: Stalker, крафт, T4
   components:
     - type: PhysicalComposition
@@ -81,8 +81,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftCompositeMaterialT5
-  name: композитный материал T5
-  desciption: продвинутый многослойный синтетический материал, обеспечивающий максимальную защиту и функциональность, используется для передовой брони и специализированной одежды. T5
+  name: T5 composite material
+  description: An advanced multi-layer synthetic material that provides maximum protection and functionality, used for advanced armor and specialized clothing. T5
   suffix: Stalker, крафт, T5
   components:
     - type: PhysicalComposition

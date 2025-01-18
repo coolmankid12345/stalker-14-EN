@@ -2,7 +2,7 @@
   abstract: true
   parent: STClothingHeadBase
   id: STClothingHeadHelmetEnvironmentT4Base
-  name: база шлема защиты от окружения T4
+  name: T4 environmental protection helmet base
   suffix: ST, T4, Env
   components:
   - type: BreathMask
@@ -36,8 +36,8 @@
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT4Base #Нужны спрайты под шлем с фонариком и без
   id: ClothingHeadHelmetBulatMercenary
-  name: шлем «Сфера-12» наёмников
-  description: Это шлем, специально разработанный для защиты от колющих атак. Есть устойчивость к другим видам повреждений.
+  name: Sphere-12 mercenary helmet
+  description: This is a helmet specially designed to protect against piercing attacks. There is resistance to other types of damage.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/bulat_helm_mercenary.rsi
@@ -47,8 +47,8 @@
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT4Base #Нужны спрайты под шлем с фонариком и без
   id: ClothingHeadHelmetBulatMonolith
-  name: шлем «Сфера-12» монолита
-  description: Является шлемом от Берилла.
+  name: monolith “Sphere-12” helmet
+  description: It is a helmet from Beryl.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/bulat_helm_monolit.rsi
@@ -60,8 +60,8 @@
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT4Base #Нужны спрайты под шлем с фонариком и без
   id: ClothingHeadHelmetBulatMilitary
-  name: шлем «Сфера-12» военных
-  description: Является шлемом от Булата.
+  name: Sphere-12 military helmet
+  description: This is a helmet from Bulat.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/bulat_helm_military.rsi
@@ -73,8 +73,8 @@
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT4Base
   id: ClothingHeadHelmetBulatCovenant
-  name: шлем «Сфера-12» Завета
-  description: Является шлемом от Булата.
+  name: helmet “Sphere-12” of the Covenant
+  description: This is a helmet from Bulat.
   suffix: Stalker, Завет
   components:
     - type: Sprite

@@ -1,9 +1,9 @@
 - type: entity
   id: psyblock
   parent: BaseHealingItem
-  name: пси-блокада
+  name: psy-block
   suffix: Stalker
-  description: Наркотический препарат, блокирующий лавинообразные нервные импульсы. Интересен побочный эффект после приёма препарата наблюдается кратковременное исчезновение каких-либо эмоций.
+  description: A narcotic drug that blocks avalanche-like nerve impulses. An interesting side effect after taking the drug is a short-term disappearance of any emotions.
   components:
   - type: Tag
     tags:
@@ -29,7 +29,7 @@
 
 - type: stack
   id: psyblock
-  name: пси-блокада
+  name: psy-block
   icon: { sprite: "_Stalker/Objects/medicine.rsi", state: medkit-1 }
   spawn: psyblock
   maxCount: 2
@@ -50,9 +50,9 @@
 
 - type: reagent
   id: radioprotect
-  name: радпротектор
+  name: Radioprotectant
   group: Medicine
-  desc: Таблетка содеращая смесь препаратов для защиты организма от радиации.
+  desc: A tablet containing a mixture of drugs to protect the body from radiation.
   physicalDesc: reagent-physical-desc-exhilarating
   flavor: stalkermed
   color: "#AE0101"
@@ -70,10 +70,10 @@
 ####################################
 
 - type: entity
-  name: радиопротектор «Индралин-Б190»
+  name: Radioprotectant "Indralin-B190"
   parent: BaseItem
   id: radioprotectpill
-  description: Появился в Зоне как замена излишне токсичному цистамину гидрохлорида. Уменьшает воздействие гамма-излучения на ткани живого организма. Данный препарат желательно применять превентивно, до облучения, поскольку он не оказывает мгновенного эффекта. Обладает продолжительным действием.
+  description: Appeared in the Zone as a replacement for the excessively toxic cystamine hydrochloride. Reduces the impact of gamma radiation on the tissues of a living organism. It is advisable to use this drug preventively, before irradiation, since it does not have an immediate effect. Has a long lasting effect.
   suffix: Stalker
   components:
   - type: Item
@@ -124,9 +124,9 @@
 
 - type: reagent
   id: antirad
-  name: противорадиационный препарат
+  name: anti-radiation drug
   group: Medicine
-  desc: Таблетка содеращая смесь препаратов для нейтрализации и вывода радионуклидов.
+  desc: A tablet containing a mixture of drugs for neutralizing and removing radionuclides.
   physicalDesc: "как спасение"
   flavor: bottledlightning
   color: "#AE0101"
@@ -145,9 +145,9 @@
 - type: entity
   id: antiradpill
   parent: BaseItem
-  name:  противорадиационные препараты
+  name: anti-radiation drugs
   suffix: Stalker
-  description: Набор таблеток с активными веществами, способствующими выведению радионуклидов из организма. Не способны защитить организм от наведённой радиации, но снижают уже полученную человеком дозу.
+  description: A set of tablets with active substances that help remove radionuclides from the body. They are not able to protect the body from induced radiation, but they reduce the dose already received by a person.
   components:
   - type: Item
     size: Tiny
@@ -195,11 +195,11 @@
 ####################################
 
 - type: entity
-  name: стимулятор монолита
+  name: Stimulants
   parent: Stimpack
   id: BattleMedipenStalker
   suffix: Stalker
-  description: Стимуляторы отличаются от полноценных аптечек быстротой использования, самое то, в ситуациях требующих минимальной затраты времени на лечение.
+  description: Stimulants differ from full-fledged first aid kits in their speed of use, especially in situations that require minimal time spent on treatment.
   components:
   - type: SolutionContainerManager
     solutions:
@@ -217,9 +217,9 @@
 
 - type: reagent
   id: ExperimentalStimulantsStalker
-  name: эксперементальный стимулятор монолита
+  name: experimental stimulants
   group: Narcotics
-  desc: Мощнейший стимулятор, который абсолютно не имеет побочных эффектов.
+  desc: A powerful stimulant that has absolutely no side effects.
   physicalDesc: reagent-physical-desc-exhilarating
   flavor: bottledlightning
   color: "#AE0101"
@@ -295,10 +295,10 @@
 ####################################
 
 - type: entity
-  name: инъекционный антирад
+  name: Anti-Rad medipen
   parent: ChemicalMedipen
   id: AntiRadMedipen
-  description: Инъекция антирада в виде специального шприца с ампулами. Такой вид антирада будет действовать быстрее чем в виде таблеток.
+  description: Antirad injection in the form of a special syringe with ampoules. This type of anti-rad will act faster than in tablet form.
   suffix: Stalker
   components:
   - type: Sprite
@@ -322,9 +322,9 @@
 - type: entity
   id: regenpill
   parent: Pill
-  name:  таблетка ферментизированных желёз
+  name:  fermented gland tablet
   suffix: Stalker
-  description: Ферментизированные железы кабана, эффект неизвестен.
+  description: Fermented boar glands, effect unknown.
   components:
     - type: SolutionContainerManager
       solutions:
@@ -377,7 +377,7 @@
 #######################################
 
 - type: entity
-  name: таблетка дексалина плюс (20ед)
+  name: dexalin plus tablet (20 units)
   description: null
   parent: Pill
   id: PillDexalinPlusStalker
@@ -392,9 +392,9 @@
 
 - type: reagent
   id: StalkerMorphine
-  name: "Морфин"
+  name: "Morphine"
   group: Narcotics
-  desc: "Морфин относиться к группе алкалоидов. Крайне популярен среди сталкеров ведь помогает от тупых ударов, однако передозировка влечёт за собой быструю смерть."
+  desc: "Morphine belongs to the group of alkaloids. It is extremely popular among stalkers because it helps against blunt blows, but an overdose entails quick death."
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#FAFAFA"
@@ -454,9 +454,9 @@
 
 - type: reagent
   id: StalkerAdrenalina
-  name: "Адреналин"
+  name: "Adrenaline"
   group: Narcotics
-  desc: "Это биологически активное вещество, преимущественно гормоном и нейромедиатором, вырабатываемым надпочечниками человека и животных в стрессовых ситуациях или во время физической активности. Химическое название адреналина - эпинефрин."
+  desc: "This is a biologically active substance, primarily a hormone and neurotransmitter, produced by the adrenal glands of humans and animals in stressful situations or during physical activity. The chemical name of adrenaline is epinephrine."
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#FAFAFA"
@@ -528,9 +528,9 @@
 
 - type: reagent
   id: StalkerAquaTabs
-  name: "Активированый уголь"
+  name: "Aqua tabs"
   group: Narcotics
-  desc: "Таблетки, предназначенные для обеззараживания воды от вредных бактерий и вирусов. Приём по 2 таблетки."
+  desc: "Tablets designed to disinfect water from harmful bacteria and viruses. Take 2 tablets."
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#00FFFF"
@@ -556,7 +556,7 @@
 ######################################
 
 - type: entity
-  name: Таблетка (Эфедрин 30u)
+  name: Tablet (Ephedrine 30u)
   parent: Pill
   id: PillEphedrineStalker
   components:
@@ -577,7 +577,7 @@
 #######################################
 
 - type: entity
-  name: Таблетка (Наркотик 30u)
+  name: Tablet (Drug 30u)
   parent: Pill
   id: PillSpaceDrugsStalker
   components:
@@ -598,8 +598,8 @@
 #######################################
 
 - type: entity
-  name: баночка АкваТабс
-  description: "Таблетки, предназначенные для обеззараживания воды от вредных бактерий и вирусов. Приём по 2 таблетки."
+  name: jar of AquaTabs
+  description: "Tablets designed to disinfect water from harmful bacteria and viruses. Take 2 tablets."
   parent: PillCanister
   id: StalkerPillCanisterAquatabs
   suffix: Stalker
@@ -618,8 +618,8 @@
 
 - type: entity
   id: StalkerAdrenalinaChemistryBottle
-  name: "бутылочка адреналина"
-  description: "Это биологически активное вещество, преимущественно гормоном и нейромедиатором, вырабатываемым надпочечниками человека и животных в стрессовых ситуациях или во время физической активности. Химическое название адреналина - эпинефрин."
+  name: "bottle of adrenaline"
+  description: "This is a biologically active substance, primarily a hormone and neurotransmitter, produced by the adrenal glands of humans and animals in stressful situations or during physical activity. The chemical name of adrenaline is epinephrine."
   parent: BaseChemistryBottleFilled
   components:
   - type: SolutionContainerManager
@@ -632,8 +632,8 @@
 
 - type: entity
   id: StalkerMorphineChemistryBottle
-  name: "бутылочка морфина"
-  description: "Морфин относиться к группе алкалоидов. Крайне популярен среди сталкеров ведь помогает от тупых ударов, однако передозировка больше 15 унций влечёт за собой быструю смерть."
+  name: "bottle of morphine"
+  description: "Morphine belongs to the group of alkaloids. It is extremely popular among stalkers because it helps against blunt blows, but an overdose of more than 15 ounces leads to quick death."
   parent: BaseChemistryBottleFilled
   components:
   - type: SolutionContainerManager
@@ -647,7 +647,7 @@
 #######################################
 
 - type: entity
-  name: таблетка АкваТабс
+  name: AquaTabs tablet
   description: null
   parent: Pill
   id: StalkerPillAquaTabs
@@ -667,7 +667,7 @@
           Quantity: 15
 
 - type: entity
-  name: база стимпака
+  name: steampack base
   parent: BaseItem
   description: null
   id: BaseSteampack
@@ -701,7 +701,7 @@
     solution: pen
 
 - type: entity
-  name: самопальный стимулятор
+  name: homemade stimulant
   parent: BaseSteampack
   id: SelfSteampack
   description: null
@@ -729,9 +729,9 @@
 
 - type: reagent
   id: SelfSteampackReagent
-  name: "стимулятор тип I"
+  name: "stimulator type I"
   group: Medicine
-  desc: "стимуляторный стимпак первого поколения"
+  desc: "first generation stimulator stimpack"
   physicalDesc: жидкий
   flavor: medicine
   color: "#76deaf"
@@ -758,7 +758,7 @@
             Asphyxiation: 10.5
 
 - type: entity
-  name: военный стимулятор
+  name: military stimulant
   parent: BaseSteampack
   id: MilitarySteampack
   description: null
@@ -789,9 +789,9 @@
 
 - type: reagent
   id: MilitarySteampackReagent
-  name: "стимулятор тип II"
+  name: "type II stimulant"
   group: Medicine
-  desc: "стимуляторный стимпак второго поколения"
+  desc: "second generation stimpack"
   physicalDesc: жидкий
   flavor: medicine
   color: "#76deaf"
@@ -818,7 +818,7 @@
             Asphyxiation: 10.5
 
 - type: entity
-  name: научный стимулятор
+  name: scientific stimulant
   parent: BaseSteampack
   id: SciSteampack
   description: null
@@ -849,9 +849,9 @@
 
 - type: reagent
   id: SciSteampackReagent
-  name: "стимулятор тип III"
+  name: "type III stimulant"
   group: Medicine
-  desc: "стимуляторный стимпак третьего поколения"
+  desc: "third generation stimpack"
   physicalDesc: жидкий
   flavor: medicine
   color: "#76deaf"
@@ -901,8 +901,8 @@
   id: ThermoOintment
 
 - type: entity
-  name: термогель
-  description: Специализированный медицинский препарат, предназначенный для облегчения симптомов и ускорения процесса заживления кожных повреждений, вызванных термическими ожогами
+  name: thermogel
+  description: A specialized medical product intended to relieve symptoms and accelerate the healing process of skin damage caused by thermal burns
   parent: BaseHealingItemStalker
   id: ThermoOintment
   suffix: Полный
@@ -950,7 +950,7 @@
 
 - type: stack
   id: ThermoOintment
-  name: термогель
+  name: thermogel
   icon: { sprite: "/Textures/_Stalker/Objects/Counsumable/Medicine/newmed.rsi", state: ointment }
   spawn: ThermoOintment
   maxCount: 10
@@ -960,8 +960,8 @@
   id: OintmentDressing
 
 - type: entity
-  name: мазевая повязка
-  description: Специализированное медицинское изделие, представляющее собой бинт или марлевую салфетку, пропитанную лечебной мазью. Этот тип повязки применяется для лечения различных кожных повреждений, таких как раны или термические ожоги.
+  name: ointment bandage
+  description: A specialized medical product, which is a bandage or gauze soaked in medicinal ointment. This type of dressing is used to treat various skin injuries such as wounds or thermal burns.
   parent: BaseHealingItemStalker
   id: OintmentDressing
   suffix: Полный
@@ -997,7 +997,7 @@
 
 - type: stack
   id: OintmentDressing
-  name: мазевая повязка
+  name: ointment bandage
   icon: {sprite: "/Textures/_Stalker/Objects/Counsumable/Medicine/newmed.rsi", state: regenerative-mesh}
   spawn: OintmentDressing
   maxCount: 5
@@ -1007,8 +1007,8 @@
   id: SurgicalThread
 
 - type: entity
-  name: медицинская нить
-  description: Тонкая стренга, обычно изготовленная из материалов, которые безопасны для использования в медицинских процедурах. Она широко применяется в хирургии и медицинской практике для соединения тканей, закрытия ран, внутренних и внешних швов, а также для создания опор и фиксации при различных хирургических вмешательствах.
+  name: medical thread
+  description: A thin strand, usually made from materials that are safe for use in medical procedures. It is widely used in surgery and medical practice for connecting tissues, closing wounds, internal and external sutures, as well as for creating supports and fixation during various surgical interventions.
   parent: BaseHealingItemStalker
   id: SurgicalThread
   suffix: Полный

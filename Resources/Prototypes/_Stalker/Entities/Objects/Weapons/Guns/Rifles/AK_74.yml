@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK74
-  description: АК-74 - бессмертная классика с деревянной фурнитурой.
+  description: AK-74 - an immortal classic with wooden fittings.
   components:
   - type: STWeight
     self: 3.7
@@ -55,7 +55,7 @@
   parent: STWeaponRifleStalkerAK74
   name: АК-74М
   id: STSTWeaponRifleStalkerAK74M
-  description: Оснащен складывающимся влево пластиковым прикладом, фурнитурой из ударостойкой пластмассы и универсальной планкой "Ласточкин хвост" для крепления прицелов, таким образом заменив собой сразу несколько версий автомата. Использует калибр 5,45x39
+  description: Equipped with a plastic butt folding to the left, fittings made of impact-resistant plastic and a universal "Dovetail" strap for attaching sights, thus replacing several versions of the machine gun at once. Uses 5.45x39 caliber
   components:
   - type: Gun
     angleIncrease: 4
@@ -74,7 +74,7 @@
   suffix: ST
   parent: STSTWeaponRifleStalkerAK74M
   id: STWeaponRifleStalkerSaiga545
-  description: АК-74М с фиксированным прикладом и одиночным режимом огня - гражданская версия.
+  description: AK-74M with fixed stock and single fire mode - civilian version.
   components:
     - type: Gun
       fireRate: 3

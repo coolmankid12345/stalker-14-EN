@@ -62,7 +62,7 @@
     # Smuggling
     TradeBox: 1650
   categories:
-    - name: Оружие
+    - name: Weapon
       priority: 1
       items:
         STWeaponShotgunToz34: 350
@@ -82,7 +82,7 @@
         STWeaponRifleStalkerFAL: 4745
         STWeaponSMGMp5: 3185
         STWeaponSniperMosin: 3185
-    - name: Магазины
+    - name: Magazines
       priority: 2
       items:
         BasePMMag: 98
@@ -93,7 +93,7 @@
         751Mag20: 319
         BaseMP5Mag: 163
         BaseGSH-18Mag10: 111
-    - name: Боеприпасы
+    - name: Ammunition
       priority: 3
       items:
         6mmBuckshotBox: 390
@@ -118,7 +118,7 @@
         556FMJBox: 390
         # 7.54
         754FMJBox : 845
-    - name: Броня и снаряжение
+    - name: Armor and equipment
       priority: 4
       items:
         ClothingOuterJacketStalker: 39
@@ -133,7 +133,7 @@
         # шлемы
         ClothingHeadHelmetInfantry: 1752
         ClothingHeadHelmetVityaz1C: 2209
-    - name: Рюкзаки
+    - name: Backpacks
       priority: 5
       items:
         ClothingBackpackDuffelGreenStalker: 65 # 4,4
@@ -141,7 +141,7 @@
         ClothingBackpackTacticBeigeStalker: 350  # 6,5
         ClothingBackpackTacticOliveStalker: 350
         ClothingBackpackTacticBlackStalker: 350
-    - name: Утилиты
+    - name: Utilities
       priority: 6
       items:
         ClothingBeltBandolierStalker: 35
@@ -169,7 +169,7 @@
         Matchbox: 20
         HatchetStalker: 150
         STCraftPlasticFittingT2: 400
-    - name: Аномалии
+    - name: Anomalies
       priority: 7
       items:
         # Bolt bags
@@ -187,7 +187,7 @@
         ZoneArtifactDetectorHunter: 600
         ZoneArtifactDetectorResponse: 1400
 
-    - name: Провизия
+    - name: Provisions
       priority: 8
       items:
         STEnergyDrink: 200
@@ -198,7 +198,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина
+    - name: Medicine
       priority: 9
       items:
         PillDexalin: 15
@@ -215,7 +215,7 @@
         antiradpill: 175
         MedkitCMSStalker: 750
         MedkitGrizzlyStalker: 1050
-    - name: Кастомизация
+    - name: Customization
       priority: 10
       items:
         ClothingBandageStalkerBelarus: 50
@@ -278,7 +278,7 @@
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
-    - name: Развлечения
+    - name: Entertainment
       priority: 11
       items:
         # Dices

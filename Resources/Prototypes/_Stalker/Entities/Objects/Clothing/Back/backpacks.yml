@@ -17,8 +17,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelBlackStalker
-  name: чёрный вещмешок
-  description: Крайне неудобный и невместительный вещмешок за копейки.
+  name: black duffel bag
+  description: An extremely inconvenient and small duffel bag for pennies.
   components:
     - type: STWeight
       self: 1.7
@@ -35,8 +35,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelMilitaryBlue
-  name: Синий армейский рюкзак
-  description: Отличный рюкзак с подсумками для тактических нужд.
+  name: Blue army backpack
+  description: Excellent backpack with pouches for tactical needs.
   suffix: ST
   components:
   - type: Sprite
@@ -54,8 +54,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelMilitaryOlive
-  name: Темно-зеленый армейский рюкзак
-  description: Отличный рюкзак с дополнительными отделениями.
+  name: Dark green army backpack
+  description: Excellent backpack with additional compartments.
   suffix: ST
   components:
   - type: Sprite
@@ -68,8 +68,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelBlackMilitaryTacticStalker
-  name: чёрный армейский рюкзак
-  description: Рассчитаны на использование в полевых условиях, при этом они многофункциональны и подходят для совершенно разных ситуаций.
+  name: black army backpack
+  description: Designed for use in field conditions, they are multifunctional and suitable for completely different situations.
   suffix: ST
   components:
   - type: Sprite
@@ -82,8 +82,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelHikingVSRF
-  name: походный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  name: hiking backpack
+  description: A roomy backpack, usually taken on hikes, but just right in the zone!
   suffix: ST
   components:
   - type: Sprite
@@ -96,8 +96,8 @@
 - type: entity
   parent: ClothingBackpackDuffelHikingVSRF
   id: ClothingBackpackDuffelHikingCommon
-  name: походный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  name: hiking backpack
+  description: A roomy backpack, usually taken on hikes, but just right in the zone!
   suffix: ST
   components:
     - type: Sprite
@@ -106,8 +106,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelBlackTacticStalker
-  name: чёрный армейский тактический рюкзак
-  description: Рассчитан на использование в полевых условиях, при этом он многофункционален и подходит для совершенно разных ситуаций.
+  name: black army tactical backpack
+  description: Designed for use in field conditions, it is multifunctional and suitable for completely different situations.
   suffix: ST
   components:
   - type: Sprite
@@ -119,8 +119,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelOliveTacticStalker
-  name: оливковый армейский тактический рюкзак
-  description: Рассчитаны на использование в полевых условиях, при этом они многофункциональны и подходят для совершенно разных ситуаций.
+  name: olive army tactical backpack
+  description: Designed for use in field conditions, they are multifunctional and suitable for completely different situations.
   suffix: ST
   components:
   - type: Sprite
@@ -133,8 +133,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackMercStalker
-  name: походный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  name: hiking backpack
+  description: A roomy backpack, usually taken on hikes, but just right in the zone!
   suffix: ST
   components:
   - type: Storage
@@ -148,8 +148,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelCommonStalker
-  name: армейский рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  name: army backpack
+  description: A roomy backpack, usually taken on hikes, but just right in the zone!
   suffix: ST
   components:
   - type: Sprite
@@ -161,8 +161,8 @@
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelRareStalker
-  name: вместительный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  name: roomy backpack
+  description: A roomy backpack, usually taken on hikes, but just right in the zone!
   suffix: ST
   components:
   - type: Sprite
@@ -189,8 +189,8 @@
 - type: entity
   parent: ClothingBackpackTacticBase
   id: ClothingBackpackTacticBeigeStalker
-  name: бежевый тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
+  name: beige tactical backpack
+  description: It is never colorful or bright, because one of the tasks of tactical backpacks is to camouflage itself with the environment, be it mountains, forest or desert.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/beige.rsi
@@ -198,8 +198,8 @@
 - type: entity
   parent: STClothingBackTacticBase
   id: ClothingBackpackTacticBlackStalker
-  name: чёрный тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
+  name: black tactical backpack
+  description: It is never multi-colored and bright, because one of the tasks of tactical backpacks is to camouflage itself with the environment, be it mountains, forest or desert.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/black.rsi
@@ -207,8 +207,8 @@
 - type: entity
   parent: STClothingBackTacticBase
   id: ClothingBackpackTacticBlackRadStalker
-  name: чёрно-красный тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
+  name: black and red tactical backpack
+  description: It is never colorful or bright, because one of the tasks of tactical backpacks is to camouflage itself with the environment, be it mountains, forest or desert.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/black-red.rsi
@@ -216,8 +216,8 @@
 - type: entity
   parent: STClothingBackTacticBase
   id: ClothingBackpackTacticGreenStalker
-  name: зелёный тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
+  name: green tactical backpack
+  description: It is never colorful or bright, because one of the tasks of tactical backpacks is to camouflage itself with the environment, be it mountains, forest or desert.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/green.rsi
@@ -225,8 +225,8 @@
 - type: entity
   parent: STClothingBackTacticBase
   id: ClothingBackpackTacticOliveStalker
-  name: оливковый тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
+  name: olive tactical backpack
+  description: It is never multi-colored and bright, because one of the tasks of tactical backpacks is to camouflage itself with the environment, be it mountains, forest or desert.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/olive.rsi
@@ -234,8 +234,8 @@
 - type: entity
   parent: STClothingBackTacticBase
   id: STClothingBackpackDuffelHikingNeutral
-  name: походный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  name: hiking backpack
+  description: A roomy backpack, usually taken on hikes, but just right in the zone!
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Hiking/hiking_neutral.rsi
@@ -246,7 +246,7 @@
 - type: entity
   parent: ClothingBackpackDuffelHikingVSRF
   id: ClothingBackpackDuffelHikingVSRFAnomaly
-  name: аномальный походный рюкзак
+  name: anomalous hiking backpack
   suffix: ST, T5, Lord, ADMIN
   components:
   - type: STWeight
@@ -256,8 +256,8 @@
 - type: entity
   parent: STClothingBackTacticBase
   id: ClothingBackpackTacticSera
-  name: камуфляжный тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду. Такие используются группировкой Серафимы.
+  name: camouflage tactical backpack
+  description: It is never colorful or bright, because one of the tasks of tactical backpacks is to camouflage itself with the environment. These are used by the Seraphim group.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/tacticsera.rsi

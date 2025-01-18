@@ -1,8 +1,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHatBeaniehat
-  name: шапка
-  description: Чёрная шапка. Не даст замёрзнуть голове.
+  name: hat
+  description: Black hat. It won't let your head get cold.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/beaniehat.rsi
@@ -12,8 +12,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHatMilitary
-  name: кепка военных
-  description: Кепка цвета "Хаки", используется военными
+  name: military cap
+  description: Khaki cap, used by the military
   suffix: Stalker
   components:
   - type: Sprite
@@ -24,8 +24,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadBeretUN
-  name: берет ООН
-  description: Берет основного контингента ООН и старшего офицерского состава ОКСОП.
+  name: takes the UN
+  description: takes the main UN contingent and senior officers of the OKSOP.
   suffix: Stalker
   components:
     - type: Sprite
@@ -36,7 +36,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatSovietUshankaStalker
-  name: советская ушанка
+  name: Soviet earflaps
   description: "Welcome to the Moscow, da?"
   suffix: Stalker
   components:
@@ -50,8 +50,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeatBagStalker
-  name: мешок на голову
-  description: Для похищений
+  name: head bag
+  description: For kidnappings
   suffix: Stalker
   components:
   - type: Sprite
@@ -64,8 +64,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHatUN
-  name: кепка ООН
-  description: Кепка голубого цвета с символикой ООН, используется миротворцами.
+  name: UN cap
+  description: Blue cap with UN symbols, used by peacekeepers.
   suffix: Stalker
   components:
   - type: Sprite
@@ -76,8 +76,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHatUNModification
-  name: кепка с гарнитурой ООН
-  description: Кепка голубого цвета с символикой ООН, имеет гарнитуру. Используется миротворцами.
+  name: cap with UN headset
+  description: Blue cap with UN symbols, has a headset. Used by peacekeepers.
   suffix: Stalker
   components:
   - type: Sprite
@@ -88,8 +88,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadBandana1Military
-  name: чёрная головная бандана
-  description: Ткань чёрного цвета, закрывающая голову.
+  name: black head bandana
+  description: Black fabric covering the head.
   suffix: Stalker
   components:
   - type: Sprite
@@ -100,8 +100,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadBandana2Military
-  name: камуфляжная головная бандана
-  description: Ткань зелёного камуфляжа из старого комплекта персональной системы защиты, закрывающая голову.
+  name: camouflage head bandana
+  description: Green camouflage fabric from an old personal protection system kit that covers the head.
   suffix: Stalker
   components:
   - type: Sprite
@@ -112,8 +112,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadBeretMilitary
-  name: берет сил охраны периметра
-  description: Офицерский берет военнослужащих С.О.П. (Сил Охраны Периметра) чёрного цвета.
+  name: beret of the perimeter security forces
+  description: Officer's beret of the S.O.P. military personnel. (Perimeter Security Forces) black.
   suffix: Stalker
   components:
   - type: Sprite
@@ -125,8 +125,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHatBeaniehatMilitary
-  name: шапка
-  description: Чёрная шапка. Не даст замёрзнуть голове.
+  name: hat
+  description: Black hat. It won't let your head get cold.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/beaniehat-military.rsi
@@ -136,8 +136,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHatPoliceHat
-  name: полицейская фуражка
-  description: Для важных шишек.
+  name: police cap
+  description: For big shots.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/police_hat.rsi
@@ -147,8 +147,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatGeneral
-  name: генеральская фуражка
-  description: Где моя ФУРАЖКА?!
+  name: general's cap
+  description: Where is my CAP?!
   suffix: ST
   components:
   - type: Sprite
@@ -159,8 +159,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: STClothingHeadPeakCap
-  name: бескозырка
-  description: Моряцкая бескозырка, странно видеть её в Зоне.
+  name: cap
+  description: Sailor's cap, strange to see it in the Zone.
   suffix: ST, Deliko
   components:
   - type: Sprite

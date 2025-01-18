@@ -1,8 +1,8 @@
 - type: job
   id: StalkerMonolith
-  name: Монолит
+  name: Monolith
   icon: monolith
-  description: Символ тихого, но пугающего присутствия.
+  description: Symbol of a quiet but intimidating presence.
   playTimeTracker: JobMonolith
   whitelisted: true
   requirements:
@@ -19,7 +19,7 @@
     #   time: 1
     #   inverted: true
   startingGear: MonolithGear
-  supervisors: служите Его голосу
+  supervisors: serve His voice
   special:
     - !type:AddComponentSpecial
       components:

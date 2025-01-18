@@ -21,14 +21,14 @@
     FoodTinPeachesMaintTrash: 4
     FoodTinPeachesTrash: 4
   categories:
-    - name: Спиртное
+    - name: Alcohol
       priority: 1
       items:
         DrinkVodkaBottleFull: 45
         DrinkBeerBottleFull: 35
         DrinkBeerCan: 25
         DrinkWineCan: 30
-    - name: Табачное
+    - name: Tobacco
       priority: 2
       items:
         Cigar: 30
@@ -36,7 +36,7 @@
         CigPackMarlboro: 120
         CigPackSuka: 85
         CigPackKosmos: 80
-    - name: Разное
+    - name: Miscellaneous
       priority: 3
       items:
         Matchbox: 15

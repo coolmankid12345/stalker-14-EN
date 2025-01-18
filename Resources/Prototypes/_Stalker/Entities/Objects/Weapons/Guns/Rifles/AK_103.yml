@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK103
-  description: Самый удачный АК современности под 7.62х39. В стрельбах превзошёл и уничтожил АК-12.
+  description: The most successful AK of our time under 7.62x39. Outperformed and destroyed the AK-12 in shooting.
   components:
   - type: STWeight
     self: 3.6
@@ -55,8 +55,8 @@
 - type: entity
   parent: STWeaponRifleStalkerAK103
   id: STWeaponRifleAK103kamo
-  name: АК-103 особый
-  description: Значительно улучшенный АК-103. Чьё-то личное оружие, с которым обращались с заботой.
+  name: AK-103 special
+  description: Significantly improved AK-103. Someone's personal weapon that was handled with care.
   suffix: ST, Скин
   components:
   - type: Clothing

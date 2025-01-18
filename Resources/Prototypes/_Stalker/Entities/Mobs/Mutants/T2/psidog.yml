@@ -3,7 +3,7 @@
   id: MutantPsidog
   name: Psi-Dog
   suffix: ST, T2
-  description: Мутировавший волк, обладающий существенными пси-способностями и способный создавать иллюзии. Редкая и очень опасная тварь.
+  description: A mutated wolf with significant psionic abilities and the ability to create illusions. A rare and very dangerous creature.
   components:
     - type: STWeight
       self: 55

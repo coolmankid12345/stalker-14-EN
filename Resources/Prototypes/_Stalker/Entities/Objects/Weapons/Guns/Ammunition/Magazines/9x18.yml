@@ -1,7 +1,7 @@
 - type: entity
   id: BasePMMag
-  name: магазин ПМм 9x18 (10)
-  description: Магазин 9x18 мм для ПМм. Вместимость пуль 10. Продают пустым.
+  name: Pmm magazine 9x18 (10)
+  description: Magazine 9x18 mm for PMM. Capacity of bullets 10. Sold empty.
   parent: BaseItem
   tag: Stalker
   components:
@@ -43,8 +43,8 @@
 
 - type: entity
   id: BaseAPSMag
-  name: магазин АПС 9x18 (20)
-  description: Магазин 9x18 Для пистолетов АПС. Вместимость пуль 20. Продают пустым.
+  name: APS 9x18 magazine (20)
+  description: 9x18 magazine For APS pistols. Capacity of bullets 20. Sold empty.
   parent: BaseItem
   tag: Stalker
   components:
@@ -84,8 +84,8 @@
 ######################### Скорпион #########################
 - type: entity
   id: Vz61Mag
-  name: магазин vz. 61 "Скорпион" (20)
-  description: Магазин на компактного ПП "Скорпион". Вместимость пуль 20. Продают пустым.
+  name: vz store 61 "Scorpion" (20)
+  description: Magazine for the compact Scorpion PP. Capacity of bullets 20. Sold empty.
   parent: BizonMag
   tag: Stalker
   components:

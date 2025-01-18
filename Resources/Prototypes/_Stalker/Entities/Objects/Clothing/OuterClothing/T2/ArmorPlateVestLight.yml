@@ -1,10 +1,10 @@
 ﻿- type: entity
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorLightPlateVestBase
-  name: базовый легкий бронежилет #base
+  name: basic light body armor #base
   suffix: ST, T2, PvP
   abstract: true
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: STWeight
     self: 5
@@ -47,8 +47,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseFreedom
-  name: легкий бронежилет группировки «Воля»
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений.
+  name: light body armor of the Freedom group
+  description: Standard type II body armor, providing decent protection from most types of damage.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_svoboda.rsi
@@ -75,8 +75,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseStalker
-  name: легкий бронежилет сталкера
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: light stalker vest
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_stalker.rsi
@@ -86,8 +86,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMilitary
-  name: легкий бронежилет военных
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: military light body armor
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_military.rsi
@@ -97,8 +97,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBasePolice
-  name: легкий бронежилет полиции
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: light police vest
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_police.rsi
@@ -108,8 +108,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseZavet
-  name: легкий бронежилет Завета
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: light body armor of the Covenant
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zavet_bronik.rsi
@@ -119,8 +119,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseBand
-  name: легкий бронежилет бандита
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: bandit light body armor
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_band.rsi
@@ -148,8 +148,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMerc
-  name: легкий бронежилет наёмников
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: mercenary light body armor
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_merc.rsi
@@ -172,8 +172,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseUN
-  name: легкий бронежилет ООН
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: UN light body armor
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/un_armor.rsi
@@ -183,8 +183,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseRenegate
-  name: легкий бронежилет ренегата
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: Light Renegade Body Armor
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_rene.rsi
@@ -197,8 +197,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMonolith
-  name: легкий бронежилет монолита
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: monolith light body armor
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_monolit.rsi
@@ -208,8 +208,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBasePilgrim
-  name: легкий бронежилет паломника
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: pilgrim's light body armor
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_pilgrim.rsi
@@ -222,8 +222,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseClearSky
-  name: легкий бронежилет чистого неба
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: clear sky light body armor
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/clear_sky_armor.rsi

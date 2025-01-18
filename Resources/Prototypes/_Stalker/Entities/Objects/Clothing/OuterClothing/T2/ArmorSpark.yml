@@ -2,9 +2,9 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorSpark
-  name: костюм «Искра»
+  name: Suit “Sparka”
   suffix: ST, T2, Env
-  description: Самопальный костюм, производимый умельцами «НИИ» из подручных предметов. Пассивно выводит радиацию по 0.1 в секунду
+  description: A homemade suit produced by the craftsmen of the Research Institute from scrap items. Passively releases radiation at 0.1 per second
   components:
     - type: STWeight
       self: 4.5
@@ -51,8 +51,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetSpark
-  name: капюшон «Искры»
-  description: Плотный кусок резины на вашей голове.
+  name: hood “Spark”
+  description: A thick piece of rubber on your head.
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -70,9 +70,9 @@
 - type: entity
   parent: ClothingOuterArmorSpark
   id: ClothingOuterArmorIssgSpark
-  name: костюм «ITF»
+  name: ISSG suit
   suffix: ST, T2, Env
-  description: Комбинезон ISSG, более неизвестно. Пассивно выводит радиацию по 0.25 в секунду
+  description: ISSG jumpsuit, no longer known. Passively removes radiation at 0.25 per second
   components:
     - type: STWeight
       self: 2.5
@@ -104,8 +104,8 @@
 - type: entity
   parent: ClothingHeadHelmetSpark
   id: ClothingHeadHelmetIssgSpark
-  name: капюшон «ITF»
-  description: Плотный кусок резины на вашей голове.
+  name: ISSG hood
+  description: A thick piece of rubber on your head.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/ISSGspark.rsi

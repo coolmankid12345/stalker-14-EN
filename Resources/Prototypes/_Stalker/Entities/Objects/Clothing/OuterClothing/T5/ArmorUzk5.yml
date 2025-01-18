@@ -2,9 +2,9 @@
 - type: entity
   parent: STClothingOuterBaseLarge
   id: ClothingOuterArmorUzk5
-  name: костюм УЗК-5
+  name: suit UZK-5
   suffix: ST, T5, Env
-  description: Тяжёлый костюм, разработанный специально, для работы наёмных едениц в особо опасных и токсичных условиях Чернобыльской зоны отчуждения. Имеет несколько лёгких броневых пластин и тонкую прорезиненную подложку, что защищает от ожогов и радиации.
+  description: Heavy suit, designed specifically for the work of hired units in the especially dangerous and toxic conditions of the Chernobyl exclusion zone. It has several light armor plates and a thin rubberized backing, which protects against burns and radiation.
   components:
   - type: STWeight
     self: 10
@@ -43,8 +43,8 @@
 - type: entity  # T3
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHardsuitUzk5Helm
-  name: шлем "УЗК-5"
-  description: Встроенный шлем УЗК-5 с фонарём.
+  name: helmet "UZK-5"
+  description: Built-in helmet UZK-5 with a flashlight.
   categories: [ HideSpawnMenu ]
   components:
     - type: PointLight

@@ -3,7 +3,7 @@
 - type: entity
   parent: STBaseBlueprint
   id: STCraftLinenFabricT1Blueprint
-  name: Рецепт Т1 ткани
+  name: T1 fabric recipe
   components:
     - type: STBlueprint
       blueprint: recipeSTCraftLinenFabricT1

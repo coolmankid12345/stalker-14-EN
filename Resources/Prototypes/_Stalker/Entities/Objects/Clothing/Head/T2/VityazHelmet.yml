@@ -2,7 +2,7 @@
   abstract: true
   parent: STClothingHeadBase
   id: STClothingHeadHelmetTacticalT2Base
-  name: база тактического шлема T2
+  name: T2 tactical helmet base
   suffix: ST, T2, Tactical
   components:
   - type: Craftable
@@ -34,8 +34,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT2Base
   id: ClothingHeadHelmetVityaz1C
-  name: шлем "Витязь 1С"
-  description: Противоударный шлем "Витязь-С" изготавливался в НИИ Стали. Разработки над шлемом начались в конце 1980-ых годов. Шлем получил забралу, хоть и получился массивным.
+  name: helmet "Vityaz 1S"
+  description: Shockproof helmet "Vityaz-S" was manufactured at the Steel Research Institute. Development of the helmet began in the late 1980s. The helmet received a visor, although it turned out to be massive.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1C.rsi
@@ -45,8 +45,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT2Base
   id: ClothingHeadHelmetVityaz1T
-  name: шлем "Витязь 1Т"
-  description: Противоударный шлем "Витязь-С", модифицированный отступниками
+  name: helmet "Vityaz 1T"
+  description: Shockproof helmet "Vityaz-S", modified by the renegades
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1T.rsi
@@ -56,8 +56,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT2Base
   id: ClothingHeadHelmetVityaz1L
-  name: шлем "Витязь 1L"
-  description: Противоударный шлем "Витязь-L", модифицированный Ренегатами.
+  name: helmet "Vityaz 1L"
+  description: Shockproof helmet "Vityaz-L", modified by the Renegades.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1L.rsi
@@ -67,8 +67,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT2Base
   id: ClothingHeadHelmetVityaz1B
-  name: шлем "Витязь 1Б"
-  description: Противоударный шлем "Витязь-L" в три полоски
+  name: helmet "Vityaz 1B"
+  description: Shockproof helmet "Vityaz-L" with three stripes
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1B.rsi
@@ -78,8 +78,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT2Base
   id: ClothingHeadHelmetVityaz1P
-  name: шлем "Капелан"
-  description: Противоударный шлем "Витязь-L", модифицированный Паломниками.
+  name: helmet "Chaplain"
+  description: Shockproof helmet "Vityaz-L", modified by the Pilgrims.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/Kapelan.rsi

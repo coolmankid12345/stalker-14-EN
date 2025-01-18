@@ -1,7 +1,7 @@
 - type: entity
   parent: STBaseBlueprint
   id: ST7mmBuckshotBoxCinkBluePrint
-  name: Рецепт ящик картечи 7мм
+  name: Recipe for a box of 7mm buckshot
   components:
     - type: STBlueprint
       blueprint: newrecipe7mmBuckshotBoxCink

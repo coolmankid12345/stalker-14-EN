@@ -1,8 +1,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftGlassT1
-  name: низкокачественное стекло T1
-  desciption: простое стекло низкого качества, используется для временных конструкций и окон в незначительных постройках. T1
+  name: low quality T1 glass
+  description: low quality plain glass, used for temporary structures and windows in minor buildings. T1
   suffix: Stalker, крафт, T1
   components:
     - type: PhysicalComposition
@@ -21,8 +21,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftGlassT2
-  name: стекло Т2
-  desciption: улучшенное стекло среднего качества, используется для стандартных окон и декоративных элементов. T2
+  name: T2 glass
+  description: improved medium quality glass, used for standard windows and decorative elements. T2
   suffix: Stalker, крафт, T2
   components:
     - type: PhysicalComposition
@@ -41,8 +41,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftQuartzCrystalT3
-  name: кварцевый кристалл T3
-  desciption: высококачественный кварцевый кристалл, используется для оптических приборов и высококлассных конструкций. T3
+  name: T3 quartz crystal
+  description: High quality quartz crystal, used for optical instruments and high-end designs. T3
   suffix: Stalker, крафт, T3
   components:
     - type: PhysicalComposition
@@ -61,8 +61,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftSapphireCrystalT4
-  name: сапфировый кристалл T4
-  desciption: сапфировый кристалл премиум-класса с высокой прозрачностью и прочностью, используется в архитектурных и научных проектах. T4
+  name: T4 sapphire crystal
+  description: Premium sapphire crystal with high clarity and durability, used in architectural and scientific projects. T4
   suffix: Stalker, крафт, T4
   components:
     - type: PhysicalComposition
@@ -81,8 +81,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftAluminumOxideT5
-  name: оксид алюминия T5
-  desciption: высокопрочный и устойчивый к повреждениям оксид алюминия, используется в военной технике и передовых технологиях. T5
+  name: aluminum oxide T5
+  description: High strength and damage resistant aluminum oxide, used in military equipment and advanced technologies. T5
   suffix: Stalker, крафт, T5
   components:
     - type: PhysicalComposition

@@ -1,8 +1,8 @@
 - type: entity
   id: STBasaltСube
   suffix: ST, Basalt, Mapping
-  name: Базальтовый куб
-  description:  Загадочный геологический объект с необычной симметрией, состоящий из вулканических образований.
+  name: Basalt cube
+  description: A mysterious geological object with unusual symmetry, consisting of volcanic formations.
   abstract: true
   components:
   - type: Sprite
@@ -42,12 +42,12 @@
   components:
   - type: Sprite
     state: basalt-cube-giant
-    
-    
+
+
 - type: entity
   parent: STBaseItem
-  name: Небольшой базальтовый куб
-  description: Приятный на ощупь небольшой куб из базальта.
+  name: Small basalt cube
+  description: Pleasant to the touch small cube made of basalt.
   id: STBasaltСubeSmall
   components:
   - type: STWeight

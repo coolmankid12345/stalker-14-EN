@@ -1,10 +1,10 @@
 
 
 - type: entity
-  name: Обрез
+  name: Sawed-off Shotgun
   parent: STBaseWeaponShotgun
   id: STWeaponShotgunSawn
-  description: Обрез охотничьего ружья с горизонтальным расположением стволов. Значительно компактней и легче двустволки, но эффективен только в ближнем бою. Один из самых распространённых видов оружия у новичков.
+  description: Sawed-off shotgun with horizontal barrels. Much more compact and lighter than a double-barreled shotgun, but effective only in close combat. One of the most common types of weapons among beginners.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi

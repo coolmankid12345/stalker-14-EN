@@ -1,8 +1,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftPlasticFittingT1
-  name: пластиковая фурнитура T1
-  desciption: Базовая пластиковая фурнитура, изготовленная из дешевого и хрупкого пластика, подходит для временных конструкций и легких задач.
+  name: plastic fittings T1
+  description: Basic plastic fittings made from cheap and brittle plastic, suitable for temporary structures and light duty applications.
   suffix: Stalker, крафт, T1
   components:
     - type: PhysicalComposition
@@ -23,7 +23,7 @@
   parent: STBaseIngridient
   id: STCraftPlasticFittingT2
   name: пластиковая фурнитура T2
-  desciption: Пластиковая фурнитура среднего качества, прочнее и долговечнее, чем T1, подходит для бытовых приборов и мебели.
+  description: Пластиковая фурнитура среднего качества, прочнее и долговечнее, чем T1, подходит для бытовых приборов и мебели.
   suffix: Stalker, крафт, T2
   components:
     - type: PhysicalComposition
@@ -43,8 +43,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftPlasticFittingT3
-  name: пластиковая фурнитура T3
-  desciption: Высококачественная пластиковая фурнитура с хорошей прочностью и долговечностью, используется в бытовой и офисной мебели.
+  name: plastic fittings T3
+  description: High-quality plastic fittings with good strength and durability, used in household and office furniture.
   suffix: Stalker, крафт, T3
   components:
     - type: PhysicalComposition
@@ -64,8 +64,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftPlasticFittingT4
-  name: пластиковая фурнитура T4
-  desciption: Пластиковая фурнитура премиум-класса с высокой прочностью и долговечностью, используется в автомобильных деталях и высококачественной мебели.
+  name: plastic fittings T4
+  description: Premium plastic fittings with high strength and durability, used in automotive parts and high-quality furniture.
   suffix: Stalker, крафт, T4
   components:
     - type: PhysicalComposition
@@ -85,8 +85,8 @@
 - type: entity
   parent: STBaseIngridient
   id: STCraftPlasticFittingT5
-  name: пластиковая фурнитура T5
-  desciption: Самая высокая пластиковая фурнитура, изготовленная из высокопрочного пластика, используется в аэрокосмической и медицинской промышленности.
+  name: plastic fittings T5
+  description: The highest quality plastic fittings made from high strength plastic used in the aerospace and medical industries.
   suffix: Stalker, крафт, T5
   components:
     - type: PhysicalComposition

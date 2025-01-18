@@ -13,9 +13,9 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesJabs
-  name: перчатки жаб
+  name: toad gloves
   suffix: Stalker
-  description: Уникальные боевые перчатки группировки Жабы.
+  description: Unique combat gloves of the Toad group.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/gloves/hands_jaba.rsi
@@ -25,9 +25,9 @@
 - type: entity
   parent: ClothingHandsBase
   id: STClothingHandsGlovesSera
-  name: обмотки серафимов
-  suffix: ST, Скин
-  description: Обмотки из лоскутов ткани, заменяющие серафимам перчатки. Если приглядеться то можно увидеть что на лоскутах аккуратно написаны молитвы серафимов к их Богу.
+  name: seraphim windings
+  suffix: ST, Skin
+  description: Windings made from scraps of fabric that replace gloves for seraphim. If you look closely, you can see that the prayers of the seraphim to their God are neatly written on the flaps.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/gloves/gloves_sera.rsi

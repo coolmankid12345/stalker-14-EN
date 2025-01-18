@@ -36,8 +36,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaStalker
-  name: комбинезон «Заря»
-  description: Производимый «народными умельцами» комбинезон сталкера представляет собой эффективное сочетание лёгкого армейского бронежилета и комбинезона из прорезиненной ткани. Усилен за счёт встроенных кевларовых пластин. Неплохо защищает от слабого стрелкового оружия. В целом крайне недостаточен для глубоких рейдов и серьёзных операций в узлах Зоны.
+  name: jumpsuit "Zarya"
+  description: Produced by traditional craftsmen, the stalker overalls are an effective combination of lightweight army body armor and overalls made of rubberized fabric. Reinforced with built-in Kevlar plates. It protects well from weak small arms. In general, it is extremely insufficient for deep raids and serious operations in the nodes of the Zone.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
@@ -47,9 +47,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetZaryaStalker
-  name: капюшон «Заря»
+  name: Zarya hood
   categories: [ HideSpawnMenu ]
-  description: Вольный как воздух у облаков.
+  description: Free as the air of the clouds.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_stalker.rsi
@@ -59,8 +59,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaTourist
-  name: комбинезон «Турист»
-  description:  Разработанный НИИЧАЗ комбинезон, предназначенный для походов за периметр. В целом крайне недостаточен для глубоких рейдов и серьёзных операций в узлах Зоны, но способен значительно облегчить ношу владельца.
+  name: overalls "Tourist"
+  description: Jumpsuit developed by NIICHAZ, designed for trips outside the perimeter. In general, it is extremely insufficient for deep raids and serious operations in the nodes of the Zone, but it can significantly lighten the owner’s burden.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_tourist.rsi
@@ -72,8 +72,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaJabs
-  name: комбинезон «Заря» Жаб
-  description: «Заря» жаб, с усиленной бронёй и увеличенными защитами вообще от всего - эталон модификации бандитских умельцев.
+  name: overalls “Zarya” of Toads
+  description: “Zarya” of Toads, with reinforced armor and increased protection from everything in general, is the standard of modification for bandit craftsmen.
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/OuterClothing/zarya_jab.rsi
@@ -89,9 +89,9 @@
 - type: entity
   parent: ClothingOuterArmorZaryaHunter
   id: STClothingOuterArmorRassvetSera
-  name: комбинезон «Рассвет» Серафимов
+  name: Dawn jumpsuit of the Seraphim
   suffix: ST, T1, PVE
-  description: комбинезон "Рассвет", используемый группировкой "Серафимы" для выполнения тактических задач с повышенной защитой от агрессивной фауны.
+  description: Dawn jumpsuit used by the Seraphim group to perform tactical tasks with increased protection from aggressive fauna.
   components:
     - type: Sprite
       sprite: _Stalker/Clothing/OuterClothing/_Sera/rassvet.rsi
@@ -113,8 +113,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadCapoSera
-  name: капюшон
-  description: Защиты не обеспечивает.
+  name: hood
+  description: Does not provide protection.
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -125,8 +125,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaNeutral
-  name: комбинезон «Заря» нейтралов
-  description: «Заря» нейтралов, отлично подойдёт для выхода в Зону и битвы с мутантами, но не перестрелки.
+  name: Zarya jumpsuit for neutrals
+  description: Zarya for neutrals, perfect for entering the Zone and fighting mutants, but not for shooting.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_neytralov.rsi
@@ -140,8 +140,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaDolg
-  name: заря авангарда
-  description: Представляет собой сочетание двухслойной прорезиненной ткани с плексигласовой прокладкой и встроенного бронежилета. По сути, тот же самый комбинезон "Заря" только модифицирован умельцами группировки "Авангард" для более безопасных вылазок в условиях Зоны.
+  name: Dawn of the Duty
+  description: It is a combination of two-layer rubberized fabric with plexiglass padding and built-in body armor. In fact, the same Zarya jumpsuit has only been modified by the craftsmen of the "Duty" group for safer forays in the Zone.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_dolg.rsi
@@ -166,7 +166,7 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetZaryaDolg
-  name: капюшон Зари Авангарда
+  name: hood of the Dawn of the Duty
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -177,8 +177,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaPoisk
-  name: комбинезон «Заря» группы поиск
-  description: Легкий и мобильный комбинезон «Заря» группировки "Поиск" представляет собой усовершенствованную версию стандартного костюма.
+  name: Zarya jumpsuit of the Poisk group
+  description: The light and mobile Zarya jumpsuit of the Poisk group is an improved version of the standard suit.
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
@@ -192,8 +192,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaHunter
-  name: комбинезон «Заря Охотник»
-  description: Крайне популярная среди сталкеров кустарная модификация «Зари» Охотник. Обладает повышенной защитой от когтей и клыков мутантов, однако из-за замены основного материала стала более уязвима для различных аномалий Зоны.
+  name: overalls Zarya Hunter
+  description: A handicraft modification of the Zarya Hunter is extremely popular among stalkers. It has increased protection from the claws and fangs of mutants, however, due to the replacement of the main material, it has become more vulnerable to various anomalies of the Zone.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
@@ -207,8 +207,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaStalkerModifedType1
-  name: модифицированный комбинезон «Заря» тип I
-  description: Модифицированный комбинезон «Заря» первого типа, была улучшенна защита от физического урона, но очень сильно пострадала прочность от пулевых ранений.
+  name: modified Zarya type I jumpsuit
+  description: Modified Zarya jumpsuit of the first type, protection from physical damage was improved, but the durability from bullet wounds was greatly affected.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
@@ -222,8 +222,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaStalkerModifedType2
-  name: модифицированный комбинезон «Заря» тип II
-  description: Модифицированный комбинезон «Заря» второго типа, была улучшенна защита от аномалий, стала более теперь мобильной. Но потеряла свой класс защиты, теперь он 1.
+  name: modified Zarya type II jumpsuit
+  description: Modified Zarya type II jumpsuit, protection against anomalies has been improved, and has now become more mobile. But I lost my protection class, now it is 1.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
@@ -237,8 +237,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: STClothingOuterArmorDesertersZarya
-  name: Заря отступников "Триарий" # не переименовывайте
-  description: бронекомбез "Заря" Отступников, практически ничем не отличается от обычной, кроме пары дополнительных бронепластин
+  name: Zarya of the Apostates Triary # do not rename
+  description: armored suit Zarya of the Apostates, practically no different from the usual one, except for a couple of additional armor plates
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_zarya.rsi
@@ -248,8 +248,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: STClothingOuterArmorProjectZarya
-  name: Заря сделанная по непонятному проекту
-  description: Странная заря сделанная непонятно кем и непонятно зачем
+  name: Dawn made according to an incomprehensible project
+  description: Strange dawn made by someone unclear and for unknown reasons
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/project_zarya.rsi
@@ -262,8 +262,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadCapoProject
-  name: капюшон
-  description: Защиты не обеспечивает.
+  name: hood
+  description: Does not provide protection.
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -274,8 +274,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: STClothingOuterArmorBandits
-  name: заря бандитов "Бродяга"
-  description: Совмещённая с плащём "Заря", улучшенная и перекрашенная под бандитские понты. Обеспечивает 2 класс защиты.
+  name: Zarya bandits
+  description: Combined with the "Zarya" cloak, improved and repainted to look like bandit show-offs. Provides class 2 protection.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_zarya.rsi
@@ -296,8 +296,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadWandererCap
-  name: капюшон Бродяги
-  description: Тёмный капюшон от бандитского понтового аналога Зари.
+  name: Hobo hood
+  description: The dark hood is from Zarya's gangster pontoon counterpart.
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -310,8 +310,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaSeraRuined
-  name: комбинезон «Заря»
-  description: Кустарно перекрашенная и убитая в хлам "Заря"
+  name: jumpsuit Zarya
+  description: Homemade repainted and trashed Zarya
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_ruined.rsi

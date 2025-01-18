@@ -1,8 +1,8 @@
 - type: job
   id: StalkerTrader
-  name: торговец
+  name: Trader
   icon: trader
-  description: Группировка торговцев и барыг всея Зоны
+  description: A group of merchants and hucksters from all over the Zone
   playTimeTracker: JobTrader
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: TraderGear
-  supervisors: Вы работаете сами на себя.
+  supervisors: You work for yourself.
   special:
     - !type:AddComponentSpecial
       components:

@@ -1,7 +1,7 @@
 - type: entity
   id: ActionToggleBands
-  name: remove / put on patch
-  description: Toggle's the visibility of your faction patch.
+  name: Remove / Put on Patch
+  description: Toggle's the visibility of your patch.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -12,7 +12,7 @@
 - type: entity
   id: ActionChangeBand
   name: Change Patch
-  description: Toggle's the visibility of your patch.
+  description: Toggle's the visibility of your faction patch.
   categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction

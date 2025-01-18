@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseClothingLegs
   id: STClothingLegsSerafimPants
-  name: штаны последователя сына звезды
-  description: Материал неизвестен. Размер неизвестен. Метод пошива неизвестен. Это что-то очень необычное...
+  name: Star Son Follower Pants
+  description: Material unknown. Size unknown. The sewing method is unknown. This is something very unusual...
   suffix: Stalker, Legs, Cерафимы
   components:
     - type: Unremoveable

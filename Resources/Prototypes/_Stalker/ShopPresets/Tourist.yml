@@ -3,7 +3,7 @@
   #itemsForSale:
   #Nothing
   categories:
-    - name: Рюкзаки
+    - name: Backpacks
       priority: 1
       items:
         ClothingBackpackDuffelGreenStalker: 30 # 4,4
@@ -13,14 +13,14 @@
         ClothingBackpackTacticOliveStalker: 250
         ClothingBackpackMercStalker: 600 # 6,6
 
-    - name: Броня
+    - name: Armor
       priority: 2
       items:
         ClothingOuterJacketStalker: 39
         STFireProtectionSuit: 1250
         ClothingOuterArmorZaryaTourist: 1979
 
-    - name: Шлемы и маски
+    - name: Helmets and masks
       priority: 3
       items:
         ClothingHeadHelmetSH68: 637
@@ -28,12 +28,12 @@
         ClothingMaskGasZarya: 98
         ClothingMaskXoma: 52
 
-    - name: Плащи
+    - name: Cloaks
       priority: 4
       items:
         ClothingOuterCoatDoshdevik: 92
 
-    - name: Пояса
+    - name: Belts
       priority: 5
       items:
         ClothingBeltBandolierStalker: 20
@@ -41,7 +41,7 @@
         ClothingBeltTarzanGreen: 200
         ClothingBeltTarzanOrange: 200
 
-    - name: Утилиты
+    - name: Utilities
       priority: 6
       items:
         STCombatKnife: 15
@@ -59,7 +59,7 @@
         ClothingBackpackDuffelGreenStalkerHydroponic: 400
         Binocularus1: 700
 
-    - name: Оружие
+    - name: Weapons
       priority: 7
       items:
         WeaponPistolStalkerTT: 150
@@ -69,7 +69,7 @@
         WeaponPistolStalkerPM: 100
         STWeaponShotgunMP155T: 50
 
-    - name: Магазины
+    - name: Magazine
       priority: 8
       items:
         TTMag: 20
@@ -79,7 +79,7 @@
         BasePMMag: 10
         SpeedLoaderRemingtonMagnum: 200
 
-    - name: Патроны
+    - name: Ammo
       priority: 9
       items:
         918PGJBox: 100

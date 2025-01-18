@@ -1,5 +1,5 @@
 - type: entity
-  name: Леший
+  name: Leshiy
   parent: BaseMobMutant
   id: MobMutantLeshiy
   suffix: ST, T2

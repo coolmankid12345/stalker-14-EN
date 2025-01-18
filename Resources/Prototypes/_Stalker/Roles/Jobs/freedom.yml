@@ -1,8 +1,8 @@
 - type: job
   id: StalkerFreedom
-  name: Боец «Воля»
+  name: Freedom Fighter
   icon: freedom
-  description: Защитник зоны.
+  description: Zone defender.
   playTimeTracker: JobFreedom
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: FreedomGear
-  supervisors: Кури, защищай Зону и игнорируй авторитеты.
+  supervisors: Smoke, defend the Zone and ignore authorities.
   special:
     - !type:AddComponentSpecial
       components:
@@ -34,9 +34,9 @@
 
 - type: job
   id: StalkerHeadFreedom
-  name: Атаман
+  name: Ataman
   icon: freedom
-  description: Защитник зоны.
+  description: Zone defender.
   playTimeTracker: JobHeadFreedom
   whitelisted: true
   requirements:

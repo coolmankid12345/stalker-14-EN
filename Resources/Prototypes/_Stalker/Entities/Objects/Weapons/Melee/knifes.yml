@@ -49,10 +49,10 @@
         Slash: 22
 
 - type: entity
-  name: нож сектантов
+  name: cultist knife
   parent: STCombatKnife
   id: STSeraKnife
-  description: Пахнет травами и маслами.
+  description: Smells of herbs and oils.
   suffix: ST, Скин
   components:
   - type: Sprite

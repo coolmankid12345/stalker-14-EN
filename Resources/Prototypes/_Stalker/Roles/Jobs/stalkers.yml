@@ -1,8 +1,8 @@
 - type: job
   id: Stalker
-  name: Одиночка
+  name: Loner
   icon: stalker
-  description: Это кочевая полуобъединенная группировка, которая просто живёт за счет Зоны, чтобы заработать немного монет на свою повседневную жизнь.
+  description: This is a nomadic semi-unified group that simply lives off the Zone to earn a few coins for their daily living.
   playTimeTracker: JobStalker
   whitelisted: false
   requirements:
@@ -32,7 +32,7 @@
     #   time: 1
     #   inverted: true
   startingGear: StalkerGear
-  supervisors: Вы работаете сами на себя
+  supervisors: You work for yourself
   special:
     - !type:AddComponentSpecial
       components:

@@ -1,8 +1,8 @@
 - type: entity
   parent: STBaseWeaponSniper
   id: STWeaponRifleSVDS
-  name: СВДС
-  description: Снайперская Винтовка Драгунова Складная, улучшенная версия СВД под тот же 7,62х54 с прицелом средней дальности.
+  name: SVDS
+  description: Dragunov Folding Sniper Rifle, an improved version of the SVD for the same 7.62x54 with a medium-range sight.
   suffix: ST, Sniper
   components:
     - type: STWeight

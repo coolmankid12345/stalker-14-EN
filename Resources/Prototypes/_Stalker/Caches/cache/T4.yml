@@ -3,8 +3,8 @@
   id: STCacheStorageFillT4
   abstract: true
   suffix: ST, Cache, T4
-  name: штык с головой
-  description: Может, можно найти что-то полезное в нём.
+  name: Box
+  description: Maybe you can find something useful in it.
   components:
     - type: StorageFill
       contents:

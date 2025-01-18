@@ -2,9 +2,9 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorReinger
-  name: боевая броня рейнджера
+  name: ranger combat armor
   suffix: ST, T3, Universal
-  description: Надёжная броня III типа, обеспечивающая хорошую защиту практически от всего, в комплект входит шлем рейнджера который также имеет дополнительную защиту.
+  description: Reliable type III armor that provides good protection from almost everything, the kit includes a ranger helmet which also has additional protection.
   components:
   - type: STWeight
     self: -20
@@ -64,7 +64,7 @@
   id: ClothingHeadHelmetReinger
   name: шлем рейнджера
   suffix: ST, T3
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_reinger.rsi

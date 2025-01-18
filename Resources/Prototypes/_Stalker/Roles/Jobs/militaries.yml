@@ -1,8 +1,8 @@
 - type: job
   id: MilitaryStalker
-  name: Военстал
+  name: Voenstal
   icon: voen
-  description: Солдаты, прошедшие после опыта службы в Зоне специальную подготовку, или сталкеры, подписавшие контракт с армией.
+  description: Soldiers who have undergone special training after serving in the Zone, or stalkers who have signed a contract with the army.
   playTimeTracker: JobMilitaryStalker
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: MilitarySpecGear
-  supervisors: Ты будешь терпеть и страдать, Victoria cruenta
+  supervisors: You will endure and suffer, Victoria cruenta
   special:
     - !type:AddComponentSpecial
       components:
@@ -35,9 +35,9 @@
 
 - type: job
   id: Military
-  name: Военный
+  name: Military
   icon: army
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
+  description: Contain the Zone to prevent the looting of hazardous radioactive materials and prevent unauthorized entry by any persons.
   playTimeTracker: JobMilitary
   whitelisted: true
   requirements:
@@ -49,7 +49,7 @@
       - Human
       - Dwarf
   startingGear: MilitaryGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: You report to your superiors.
   special:
     - !type:AddComponentSpecial
       components:
@@ -69,9 +69,9 @@
 
 - type: job
   id: MilitaryHead
-  name: Глава Военных
+  name: Head of the Military
   icon: army
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
+  description: Contain the Zone to prevent the looting of hazardous radioactive materials and prevent unauthorized entry by any persons.
   playTimeTracker: JobHeadMilitary
   whitelisted: true
   requirements:
@@ -102,9 +102,9 @@
 
 - type: job
   id: MilitaryOfficer
-  name: Офицер Военных
+  name: Military Officer
   icon: army
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
+  description: Contain the Zone to prevent the looting of hazardous radioactive materials and prevent unauthorized entry by any persons.
   playTimeTracker: JobOfficerMilitary
   whitelisted: true
   requirements:

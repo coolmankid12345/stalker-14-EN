@@ -14,7 +14,7 @@
 
 - type: entity
   id: ArtilleryLanding
-  name: прилёт взрыва
+  name: arrival of explosion
   #categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
@@ -42,7 +42,7 @@
     canCreateVacuum: false
   - type: DeleteOnTrigger
   - type: ActiveTimerTrigger
-  
+
 - type: entity
   name: взрыв (миномёт)
   id: HowitzerExplosive
@@ -94,7 +94,7 @@
       offset: 13
 
 - type: entity
-  name: вызов интенсивного миномётного обстрела 
+  name: вызов интенсивного миномётного обстрела
   id: HowitzerTimedSpawnerIntensive
   suffix: Минута
   parent: MarkerBase
@@ -114,7 +114,7 @@
     lifetime: 60
 
 - type: entity
-  name: вызов миномётного обстрела 
+  name: вызов миномётного обстрела
   id: HowitzerTimedSpawnerfast
   suffix: Минута
   parent: MarkerBase
@@ -134,7 +134,7 @@
     lifetime: 60
 
 - type: entity
-  name: вызов миномётного обстрела 
+  name: вызов миномётного обстрела
   id: HowitzerTimedSpawnerLong
   suffix: 3 минуты
   parent: MarkerBase
@@ -210,8 +210,8 @@
     minimumEntitiesSpawned: 3
     maximumEntitiesSpawned: 30
   - type: TimedDespawn
-    lifetime: 180 
-  
+    lifetime: 180
+
 - type: entity
   parent: ArtilleryTimedSpawnerLong
   name: вызов обстрела 152мм
@@ -219,7 +219,7 @@
   suffix: Минута
   components:
   - type: TimedDespawn
-    lifetime: 60 
+    lifetime: 60
 
 
 

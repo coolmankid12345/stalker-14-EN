@@ -3,7 +3,7 @@
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorRatnikBase
   abstract: true
-  name: комплект «Ратник» # base
+  name: Warrior kit # base
   suffix: ST, T5, PvP
   components:
   - type: Sprite
@@ -29,8 +29,8 @@
 - type: entity
   parent: STClothingOuterArmorRatnikBase
   id: STClothingOuterArmorRatnik
-  name: комплект «Ратник»
-  description: Комплект многофункциональной одежды, снаряжения и обуви "Ратник-СН" был разработан для потребностей военнослужащих специальных подразделений Вооруженных сил России. При создании этой боевой экипировки в максимальной мере были использованы новейшие инновационные материалы и технологии.
+  name: Ratnik kit
+  description: The Ratnik-SN set of multifunctional clothing, equipment and footwear was developed for the needs of military personnel of special units of the Russian Armed Forces. When creating this combat equipment, the latest innovative materials and technologies were used to the maximum extent.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ratnik_military.rsi
@@ -42,8 +42,8 @@
 - type: entity
   parent: STClothingOuterArmorRatnikBase
   id: STClothingOuterArmorRatnikNeutral
-  name: бронежилет «Ратник» нейтралов
-  description: Модернизированный бронежилет от комплекта "Ратник"
+  name: body armor Warrior neutrals
+  description: Upgraded body armor from the Warrior set
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ratnik_neutral.rsi

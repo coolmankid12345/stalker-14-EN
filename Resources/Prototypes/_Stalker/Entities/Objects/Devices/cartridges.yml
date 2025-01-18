@@ -2,7 +2,7 @@
 - type: entity
   parent: BaseItem
   id: STMessangerCartridge
-  name: Messendger
+  name: Messenger
   description: A program for communication between stalkers
   components:
     - type: Sprite
@@ -11,7 +11,7 @@
     - type: UIFragment
       ui: !type:MessengerUi
     - type: Cartridge
-      programName: Мессенджер
+      programName: Messenger
       icon:
         sprite: Structures/Machines/server.rsi
         state: server

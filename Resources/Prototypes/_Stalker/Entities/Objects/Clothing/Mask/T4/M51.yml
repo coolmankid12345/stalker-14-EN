@@ -3,8 +3,8 @@
   parent: STClothingMaskGas
   id: ClothingMaskM51
   suffix: ST, T4, Rad
-  name: противогаз М-51
-  description: Представляет собой легкую систему защитных масок, состоящую из маски, держателя для маски и дополнительных принадлежностей.  Защищает от токсинов.
+  name: gas mask M-51
+  description: This is a lightweight protective mask system consisting of a mask, a mask holder and additional accessories.  Protects against toxins.
   components:
   - type: Tag
     tags:

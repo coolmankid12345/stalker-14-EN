@@ -34,7 +34,7 @@
     FoodMeatDogCooked: 25
     FoodMeatBoarCooked: 45
   categories:
-    - name: Аптечки
+    - name: FirstAidKits
       priority: 1
       items:
         MedkitAI2: 100
@@ -42,13 +42,13 @@
         MedkitCMSStalker: 600
         MedkitGrizzlyStalker: 900
 
-    - name: Блокаторы
+    - name: Anti-Rad
       priority: 2
       items:
         radioprotectpill: 80
         antiradpill: 100
 
-    - name: Разное
+    - name: Miscellaneous
       priority: 5
       items:
         StalkerPillCanisterAquatabs: 50
@@ -61,7 +61,7 @@
         Tourniquet: 50
         Bloodpack: 100
 
-    - name: Повязки
+    - name: Bandages
       priority: 6
       items:
         ClothingBandageStalkerKrest: 50

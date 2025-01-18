@@ -2,8 +2,8 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorCN1
-  name: бронежилет с комбезинозом «СН-1».
-  description: Данный бронежилет разрабатывался для проведения поисковых операций в областях с низкой аномальной активностью. Использование довольно качественных материалов повысило устойчивость к износу.
+  name: body armor with "CH-1" overalls.
+  description: This body armor was developed for conducting search operations in areas with low anomalous activity. The use of fairly high-quality materials has increased wear resistance.
   suffix: ST, T2, Universal
   components:
   - type: STWeight
@@ -48,8 +48,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetCN1
-  name: капюшон «СН-1»
-  categories: [ HideSpawnMenu ] 
+  name: hood “CH-1”
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/cn1_helm.rsi
@@ -75,9 +75,9 @@
 - type: entity
   parent: ClothingOuterArmorCN1
   id: ClothingOuterArmorCN1Green
-  name: бронежилет с комбезинозом «ЗН-1».
+  name: body armor with overalls "CN-1".
   suffix: ST, T2, Universal
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  description: Standard type II body armor, providing decent protection from most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zn1.rsi
@@ -90,9 +90,9 @@
   parent: ClothingHeadHelmetCN1
   id: ClothingHeadHelmetCN1Green
   suffix: ST, T2, Universal
-  name: капюшон «ЗН-1»
-  categories: [ HideSpawnMenu ] 
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: hood "CN-1"
+  categories: [ HideSpawnMenu ]
+  description: Standard type II body armor, providing decent protection against most types of damage
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/zn1_helm.rsi
