@@ -36,8 +36,9 @@
   equipment:
     id: BandPDA
     belt: ClothingBeltStorageWaistbag
-    torso: ClothingTorsoSweaterStalkerGreen
-    legs: ClothingLegsJeansBlue
+    torso: ClothingTorsoJaba
+    legs: ClothingLegsJeansJaba
     shoes: ClothingShoesBootsFrogLeather
-    outerClothing: ClothingOuterCoatBomber
     gloves: ClothingHandsGlovesJabs
+    mask: ClothingMaskSkull
+    pocket1: GoldDiceBag

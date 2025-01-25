@@ -63,7 +63,7 @@
 
 - type: entity
   name: HK-416
-  suffix: ST
+  suffix: ST, Скин
   parent: STWeaponRifleM4
   id: STWeaponRifleHK416
   description: HK-416 German machine gun, adapted to the American AR-15 modular system, created by Heckler & Koch.

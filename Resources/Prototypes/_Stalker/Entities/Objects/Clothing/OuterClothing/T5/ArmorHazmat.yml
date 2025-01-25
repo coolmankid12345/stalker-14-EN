@@ -63,3 +63,6 @@
           Shock: 0.3
           Radiation: 0.45
           Psy: 0.5
+    - type: HideLayerClothing
+      slots:
+      - Hair

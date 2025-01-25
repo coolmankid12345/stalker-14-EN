@@ -43,6 +43,9 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetZaryaStalker
+    slot: head
 
 - type: entity
   parent: STClothingHeadHatBase

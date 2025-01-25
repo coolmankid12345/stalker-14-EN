@@ -33,6 +33,9 @@
     sprite: _Stalker/Objects/Clothing/hats/helm_light.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/helm_light.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
@@ -44,6 +47,9 @@
     sprite: _Stalker/Objects/Clothing/hats/helm_dolg.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/helm_dolg.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
@@ -55,6 +61,9 @@
     sprite: _Stalker/Objects/Clothing/hats/merc_head_light.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/merc_head_light.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
@@ -66,3 +75,6 @@
     sprite: _Stalker/Objects/Clothing/hats/helm_light_deserter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/helm_light_deserter.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair

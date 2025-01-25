@@ -66,6 +66,9 @@
       coefficients:
         Radiation: 0.9
         Caustic: 0.8
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # Project
 
@@ -94,4 +97,6 @@
     sprite: _Stalker/Groups/Project/rcbz_helm_pj5.rsi
   - type: Clothing
     sprite: _Stalker/Groups/Project/rcbz_helm_pj5.rsi
-
+  - type: HideLayerClothing
+    slots:
+    - Hair

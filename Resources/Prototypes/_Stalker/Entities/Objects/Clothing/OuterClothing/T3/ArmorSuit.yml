@@ -226,3 +226,19 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/inquisitor_armor.rsi
 
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: ClothingOuterArmorKeeper
+  name: бронекомбез "Хранитель"
+  suffix: ST, Скин
+  description: Бронекомбез II типа, обеспечивающий малую защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/keeper.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/keeper.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+  - type: Armor
+    armorClass: 2

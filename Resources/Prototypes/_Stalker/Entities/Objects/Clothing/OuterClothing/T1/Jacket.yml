@@ -54,6 +54,9 @@
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # Bandit
 
@@ -122,8 +125,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketFreedom
-  name: jacket of the “Freedom” group
-  description: Camouflage jacket of the “Freedom” group, used mostly by new members of the group to wear in safe places.
+  name: куртка группировки «Воля»
+  description: Камуфлированная куртка группировки «Воля», используется по большей части новенькими в группировке для ношения в безопасных местах.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_svoboda.rsi
