@@ -16,8 +16,7 @@
     - type: Butcherable
       spawned:
         - id: MutantPartBloodsuckerTentacles
-          maxAmount: 4
-          prob: 0.55
+          maxAmount: 1
         - id: CraftHideBloodSucker
           maxAmount: 1
           prob: 0.30
