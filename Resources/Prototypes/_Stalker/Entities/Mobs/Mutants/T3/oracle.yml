@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantOraclesBrown
-  name: оракл
+  name: oracle
   suffix: ST, T3
-  description: Огромных размеров жаба, в животе которой поместиться не один кабан.
+  description: A huge toad, in whose belly more than one wild boar could fit.
   components:
     - type: Butcherable
       spawned:
@@ -48,7 +48,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        800: Dead
+        600: Dead
     - type: SlowOnDamage
       speedModifierThresholds:
         600: 0.6

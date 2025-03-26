@@ -3,7 +3,7 @@
   id: MobMutantBloodsucker
   name: bloodsucker
   suffix: ST, T3
-  description: A humanoid mutant with abilities beyond the biological capabilities of earthly species.
+  description: A humanoid mutant with a face full of tentacles, capable of hiding itself from the naked eye. It has an appetite for blood.
   components:
     - type: HTN
       rootTask:
@@ -16,8 +16,8 @@
     - type: Butcherable
       spawned:
         - id: MutantPartBloodsuckerTentacles
-          maxAmount: 1
-          prob: 0.9
+          maxAmount: 4
+          prob: 0.55
         - id: CraftHideBloodSucker
           maxAmount: 1
           prob: 0.30
@@ -28,13 +28,15 @@
       stunTime: 2
       damageOnSuck:
         types:
-          Bloodloss: 17
-        ModifyBloodLevel: -30
+          Piercing: 5
+          Bloodloss: 10
+        ModifyBloodLevel: -50
       healOnSuck:
         groups:
-          Brute: -258
-          Burn: -258
-        ModifyBloodLevel: 133
+          Brute: -50
+          Burn: -50
+        ModifyBloodLevel: 100
+        #[EN] -- 1/3rd of special attack bloodloss converted to piercing, blood level effect on victim increased, healing and blood recovery on self reduced.
     - type: DamageStateVisuals
       states:
         Alive:
@@ -105,7 +107,7 @@
         types:
           Blunt: 35
           Slash: 15
-          Bloodloss: 7
+          # [EN] -- Bloodloss removed from base attack
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.3
       baseSprintSpeed: 5.6
@@ -119,7 +121,8 @@
           sprite: /Textures/_Stalker/Mobs/Mutants/bloodsucker.rsi
           scale: 1.15, 1.15
     - type: StaminaDamageOnHit
-      damage: 13
+      damage: 10
+      #[EN] -- Stamina damage reduced slightly
     - type: Stealth
     - type: StealthOnMove
       passiveVisibilityRate: 0.8

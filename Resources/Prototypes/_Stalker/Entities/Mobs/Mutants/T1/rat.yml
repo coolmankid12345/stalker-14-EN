@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantRat
-  name: крыса
+  name: rat
   suffix: ST, T1
-  description: Злая, голодная, большая крыса.
+  description: A large, hungry, ferocious rat.
   components:
   - type: Fixtures
     fixtures:
@@ -36,7 +36,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 25
+        damage: 15
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -45,7 +45,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      25: Dead
+      15: Dead
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
@@ -53,8 +53,8 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Slash: 8
-        Caustic: 2
+        Slash: 10
+      #  Caustic: 2 [EN] -- Rats don't do caustic damage.
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.2
     baseSprintSpeed: 4

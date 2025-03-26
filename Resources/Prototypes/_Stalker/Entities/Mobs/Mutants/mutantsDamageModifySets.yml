@@ -14,6 +14,7 @@
     Compression: 5
     Psy: 0
     Mutant: 1
+    Bloodloss: 0
   flatReductions:
     Blunt: 5
 
@@ -32,12 +33,13 @@
     Mutant: 1
   flatReductions:
     Blunt: 29
-    Slash: 29
+  # [EN]Mutants will no longer receive flat reduction of slashing. Most will actually be weaker to slashing and suffer more from bloodloss as they increase in tier.
 
 - type: damageModifierSet
   id: STMutantBoarDamageModifierSet
   class: 0
   coefficients:
+    Slash: 1.5
     Heat: 0.2
     Cold: 0.2
     Poison: 0
@@ -47,14 +49,16 @@
     Compression: 5
     Psy: 0
     Mutant: 1
+    Bloodloss: 5
+    #[EN] Are you familiar with the phrase, "Bleeding like a stuck pig?"
   flatReductions:
     Blunt: 5
-    Slash: 5
 
 - type: damageModifierSet
   id: STMutantT1DamageModifierSet
   class: 0
   coefficients:
+    Slash: 3
     Heat: 0.2
     Cold: 0.2
     Poison: 0
@@ -66,15 +70,15 @@
     Mutant: 1
   flatReductions:
     Blunt: 5
-    Slash: 5
 
 - type: damageModifierSet
   id: STMutantT2DamageModifierSet
   class: 2
   coefficients:
-    Blunt: 0.5
-    Slash: 0.5
-    Piercing: 0.3
+    Blunt: 0.75
+    Slash: 2.5
+    Piercing: 0.75
+    #[EN] -- T2 mutants should not take 70% less bullet damage. This is super punishing to rookies who may encounter them right out of the Cordon.
     Heat: 0.2
     Cold: 0.2
     Poison: 0
@@ -84,17 +88,17 @@
     Compression: 5
     Psy: 0
     Mutant: 1
+    Bloodloss: 2
   flatReductions:
     Blunt: 5
-    Slash: 5
 
 - type: damageModifierSet
   id: STMutantT3DamageModifierSet
   class: 3
   coefficients:
     Blunt: 0.5
-    Slash: 0.5
-    Piercing: 0.3
+    Slash: 1.5
+    Piercing: 0.5
     Heat: 0.2
     Cold: 0.2
     Poison: 0
@@ -104,16 +108,16 @@
     Compression: 5
     Psy: 0
     Mutant: 1
+    Bloodloss: 3
   flatReductions:
     Blunt: 5
-    Slash: 5
 
 - type: damageModifierSet
   id: STMutantT4DamageModifierSet
   class: 4
   coefficients:
-    Blunt: 0.5
-    Slash: 0.5
+    Blunt: 0.25
+    Slash: 1.25
     Piercing: 0.3
     Heat: 0.2
     Cold: 0.2
@@ -124,6 +128,6 @@
     Compression: 5
     Psy: 0
     Mutant: 1
+    Bloodloss: 4
   flatReductions:
     Blunt: 5
-    Slash: 5

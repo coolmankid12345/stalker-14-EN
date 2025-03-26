@@ -1,9 +1,9 @@
 - type: entity
   id: STMutantGoliath
   parent: BaseMobMutant
-  name: голиаф
+  name: goliath
   suffix: ST, T4
-  description: Незаконорожденный ребёнок Ньярлатотепа
+  description: The illegitimate child of an eldritch monstrosity. The madness of the Zone made flesh.
   components:
   - type: Damageable
     damageModifierSet: STMutantT4DamageModifierSet

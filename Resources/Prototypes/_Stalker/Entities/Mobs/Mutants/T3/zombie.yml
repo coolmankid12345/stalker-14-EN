@@ -1,9 +1,9 @@
 - type: entity
-  name: зомбированный
+  name: zombified stalker
   suffix: Stalker, Т3
   parent: BaseMobMutant
   id: MobStalkerZombieBase
-  description:
+  description: Some poor sod who was caught out in an Emission or got too close to the Brain Scorcher. They are beyond saving, and it is a kindness to kill them.
   components:
     - type: Stamina
       decay: 14

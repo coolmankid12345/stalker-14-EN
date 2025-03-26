@@ -61,7 +61,7 @@
     - type: MeleeWeapon
       attackRate: 1
       angle: 120
-      range: 1.25
+      range: 1.15
       soundHit:
         path: /Audio/_Stalker/Mutated/Gosha/gosha_beat.ogg
         params:

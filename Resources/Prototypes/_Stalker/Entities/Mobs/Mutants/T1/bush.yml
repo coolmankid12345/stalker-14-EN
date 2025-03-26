@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantBush
-  name: куст
+  name: Bush
   suffix: ST, T1
-  description: Wait, is he moving?
+  description: Wait, is it moving?
   components:
     - type: Butcherable
       spawned:

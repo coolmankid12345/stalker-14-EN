@@ -2,7 +2,8 @@
   parent: BaseMobMutant
   id: MobMutantSpiderLapach
   suffix: ST, T1
-  name: Паук Лапач
+  description: A large, hideous spider with acidic blood and strong venom. Careless Stalkers who get stuck in its webs make easy prey.
+  name: glutton
   components:
     - type: Damageable
       damageModifierSet: STMutantT1DamageModifierSet
@@ -49,7 +50,7 @@
           volume: 0
           variation: 0.3
     - type: MeleeWeapon
-      attackRate: 1
+      attackRate: 0.85
       heavyWindupModifier: 1
       heavyDamageModifier: 1.5
       angle: 30
@@ -66,14 +67,14 @@
       wideAnimation: WeaponArcClaw
       damage:
         types:
-          Slash: 15
-          Poison: 2
+          Piercing: 5
+          Poison: 15
     - type: MovementSpeedModifier
       baseWalkSpeed: 3
       baseSprintSpeed: 7
     - type: Sprite
       sprite: /Textures/_Stalker/Mobs/Mutants/spiderlapach.rsi
-      scale: 0.5, 0.5
+      scale: 0.75, 0.75
       drawdepth: SmallMobs
       layers:
         - map: ["enum.DamageStateVisualLayers.Base"]

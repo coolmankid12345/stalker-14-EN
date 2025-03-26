@@ -3,13 +3,14 @@
   id: MobMutantSnork
   name: snork
   suffix: ST, T2
-  description: A mutated or crazy person wearing a gas mask is extremely dangerous.
+  description: A mutated, agile once-human crawling on all fours and displaying a blood-soaked grin across a lipless mouth.
   components:
     - type: Butcherable
       spawned:
         - id: MutantPartSnorkFoot
     - type: Damageable
-      damageModifierSet: STMutantT3DamageModifierSet
+      damageModifierSet: STMutantT2DamageModifierSet
+      #[EN] -- Was set to T3 despite being suffixed as T2. This has been changed.
     - type: DamageStateVisuals
       states:
         Alive:
@@ -22,7 +23,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 250
+            damage: 150
           behaviors:
             - !type:PlaySoundBehavior
               sound:
@@ -41,8 +42,9 @@
     - type: Jumpscare
       chargeDamage:
         types:
-          Blunt: 12
-          Slash: 30
+          Blunt: 30
+          Slash: 15
+          #[EN] A snork's legs are by far its deadliest weapon, and they are typically clad in steel-toed boots. Blunt and slash inverted, slash slightly increased.
       jumpPower: 6
       jumpDistance: 10
       updateCooldown: 0.5
@@ -51,7 +53,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        250: Dead
+        150: Dead
     - type: MeleeWeapon
       attackRate: 0.5
       heavyWindupModifier: 1
@@ -70,7 +72,8 @@
       wideAnimation: WeaponArcClaw
       damage:
         types:
-          Slash: 25
+          Slash: 10
+          #[EN] The snork primarily attacks by leaping in the source material, using its legs to kick victims to the ground before slashing them. Snorks should be at their weakest at point-blank range.
     - type: MovementSpeedModifier
       baseWalkSpeed: 3.8
       baseSprintSpeed: 4.4
@@ -89,7 +92,7 @@
           state: snork
     - type: SlowOnDamage
       speedModifierThresholds:
-        200: 0.7
+        100: 0.7
     - type: StaminaDamageOnHit
       damage: 5
     - type: STWeight

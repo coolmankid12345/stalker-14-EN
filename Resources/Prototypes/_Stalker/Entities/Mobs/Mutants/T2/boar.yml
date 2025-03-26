@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantSeasonedBoar
-  name: матёрый кабан
+  name: Mature Boar
   suffix: ST, T2
-  description: A large and aggressive mutant beast, mutated from a wild boar. A beast weighing three hundred kilos is not your toy!
+  description: A large and aggressive mutant beast, mutated from a wild boar. This one weighs at least 500 kilos. Good eating!
   components:
     - type: Damageable
       damageModifierSet: STMutantBoarDamageModifierSet
@@ -11,6 +11,8 @@
       spawned:
         - id: MutantPartSeasonedBoarHoof
         - id: FoodMeatBoar
+          maxAmount: 5
+          prob: 0.55
         - id: CraftHide
           maxAmount: 1
           prob: 0.25
@@ -57,7 +59,7 @@
       heavyWindupModifier: 1
       heavyDamageModifier: 1.5
       angle: 30
-      range: 1.5
+      range: 1.15
       soundHit:
         path: /Audio/_Stalker/Mutants/boar_attack_1.ogg
         params:

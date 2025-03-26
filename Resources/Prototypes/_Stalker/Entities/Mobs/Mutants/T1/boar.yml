@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantBoar
-  name: кабан
+  name: Boar
   suffix: ST, T1
   description: A large and aggressive mutant beast, mutated from a wild boar. A beast weighing three hundred kilos is not your toy!
   components:
@@ -51,13 +51,13 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        300: Dead
+        200: Dead
     - type: MeleeWeapon
       attackRate: 0.4
       heavyWindupModifier: 1
       heavyDamageModifier: 1.5
       angle: 30
-      range: 1.5
+      range: 1.15
       soundHit:
         path: /Audio/_Stalker/Mutants/boar_attack_1.ogg
         params:
@@ -82,7 +82,7 @@
           scale: 1, 1
     - type: SlowOnDamage
       speedModifierThresholds:
-        300: 0.7
+        200: 0.7
     - type: StaminaDamageOnHit
       damage: 10
     - type: STWeight

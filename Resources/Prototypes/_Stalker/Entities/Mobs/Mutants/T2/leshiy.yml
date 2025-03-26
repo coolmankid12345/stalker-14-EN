@@ -1,8 +1,9 @@
 - type: entity
-  name: Леший
+  name: Hamadryad
   parent: BaseMobMutant
   id: MobMutantLeshiy
   suffix: ST, T2
+  description: An arboreal creature resembling a woman crafted of leaves and bark. It contains a strong acid, and it is fond of spitting this at Stalkers.
   components:
   - type: Damageable
     damageModifierSet: STMutantT2DamageModifierSet
@@ -33,7 +34,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      500: Dead
+      300: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
       250: 0.7

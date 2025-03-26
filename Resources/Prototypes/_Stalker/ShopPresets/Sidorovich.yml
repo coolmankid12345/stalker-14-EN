@@ -65,7 +65,9 @@
       priority: 1
       items:
             # Melee
-        StalkerBallBat: 370
+        STKukriKnife: 125 #T1
+        STHuntingMachete: 625 #T2
+          # [EN] -- Hunting Machete purchasable here for live testing, but should be moved to Duty vendor and made craftable with T2 materials after testing.
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 50 #T1

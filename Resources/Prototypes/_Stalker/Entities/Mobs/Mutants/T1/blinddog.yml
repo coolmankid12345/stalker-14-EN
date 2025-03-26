@@ -1,9 +1,9 @@
 - type: entity
   parent: STBaseMobMutant
   id: MobMutantBlindDog
-  name: слепой пёс
+  name: blind dog
   suffix: ST, T1
-  description: The most common mutant in the zone. They are not as dangerous alone as in a dense flock.
+  description: The most common mutant in the zone. They are not as dangerous alone as in a dense flock, and can be killed handily with a blade if you have the courage.
   components:
     - type: Damageable
       damageModifierSet: STMutantT1DamageModifierSet
@@ -80,17 +80,17 @@
 - type: entity
   parent: MobMutantBlindDog
   id: MobMutantBlindDogPackHead
-  name: глава стаи слепой пёс
+  name: blind dog alpha
   description: the leader of blind dog's pack
   components:
     - type: Butcherable
       spawned:
         - id: MutantPartBlindDogTail
           amount: 2
-          prob: 0.7
+          prob: 1
         - id: FoodMeatDog
           maxAmount: 3
-          prob: 0.7
+          prob: 1
     - type: Sprite
       sprite: /Textures/_Stalker/Mobs/Mutants/blinddog.rsi
       layers:
@@ -101,7 +101,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 200
+            damage: 120
           behaviors:
             - !type:PlaySoundBehavior
               sound:
@@ -109,4 +109,4 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        160: Dead
+        120: Dead

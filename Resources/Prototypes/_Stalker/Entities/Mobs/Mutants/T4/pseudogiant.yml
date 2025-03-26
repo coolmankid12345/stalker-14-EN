@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantPseudogiant
-  name: псевдогигант
+  name: pseudogiant
   suffix: ST, T4
   description: A massive, terrifying mutant that towers over other creatures in the Zone.
   components:

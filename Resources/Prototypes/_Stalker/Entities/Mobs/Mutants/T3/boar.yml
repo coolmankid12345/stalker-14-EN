@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantOldBoar
-  name: старый кабан
+  name: elder boar
   suffix: ST, T3
-  description: A large and aggressive mutant beast, mutated from a wild boar. A beast weighing three hundred kilos is not your toy!
+  description: A large and aggressive mutant beast, mutated from a wild boar. A beast weighing a thousand kilos!
   components:
     - type: Damageable
       damageModifierSet: STMutantBoarDamageModifierSet
@@ -11,6 +11,8 @@
       spawned:
         - id: MutantPartOldBoarHoof
         - id: FoodMeatBoar
+          maxAmount: 10
+          prob: 0.75
         - id: CraftHide
           maxAmount: 1
           prob: 0.25
@@ -26,7 +28,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 450
+            damage: 600
           behaviors:
             - !type:PlaySoundBehavior
               sound:
@@ -51,13 +53,13 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        450: Dead
+        600: Dead
     - type: MeleeWeapon
       attackRate: 0.4
       heavyWindupModifier: 1
       heavyDamageModifier: 1.5
       angle: 30
-      range: 1.5
+      range: 1.15
       soundHit:
         path: /Audio/_Stalker/Mutants/boar_attack_1.ogg
         params:
@@ -92,7 +94,7 @@
         types:
           Blunt: 25
       jumpPower: 2
-      jumpDistance: 4 
+      jumpDistance: 4
       updateCooldown: 0.25
       totalSteps: 6
       stepInterval: 0.001
