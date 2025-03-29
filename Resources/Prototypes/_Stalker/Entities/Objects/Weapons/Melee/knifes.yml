@@ -19,7 +19,7 @@
     damage:
       types:
         Slash: 20
-        Mutant: 20
+        Mutant: 10
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: DamageOtherOnHit
@@ -59,28 +59,25 @@
         Slash: 20
   - type: Tool
     qualities:
-    - Slicing
+      - Slicing
     speedModifier: 1.5
 
 - type: entity
   name: hunter machete
-  parent: [BaseKnife, BaseRestrictedContraband]
+  parent: STCombatKnife
   id: STHunterMachete
+  description: A long, high-quality chopping blade, serrated and deadly. It is purpose made for cutting into mutants and pairs well with a Mossberg, but is no substitute for quality ammo beyond the Cordon.
   suffix: ST, Melee
-  description: A high quality chopping blade akin to a short sword, serrated and deadly. It is designed to rip the flesh of mutants and is a good companion to a Mossberg, but is no substitute for a gun outside of the Cordon.
   components:
-  - type: Tag
-    tags:
-    - STHunterMachete
-    - STCombatKnife
-    - Knife
   - type: Sprite
     sprite: Objects/Weapons/Melee/machete.rsi
     state: icon
+  - type: Item
+    sprite: Objects/Weapons/Melee/machete.rsi
   - type: MeleeWeapon
-    wideAnimationRotation: -135
     range: 1.5
-    attackRate: 1.15
+    wideAnimationRotation: -135
+    attackRate: 1.1
     damage:
       types:
         Slash: 50
@@ -90,11 +87,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 25
-  - type: Item
-    sprite: Objects/Weapons/Melee/machete.rsi
-  - type: DisarmMalus
-    malus: 0.225
+        Slash: 35
   - type: Tool
     qualities:
     - Slicing

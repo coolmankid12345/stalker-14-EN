@@ -65,8 +65,8 @@
       priority: 1
       items:
             # Melee
-        STKukriKnife: 125
-        STHunterMachete: 625 #T2
+        STKukriKnife: 325 #T1
+        STHunterMachete: 1300 #T3
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 50 #T1
