@@ -14,10 +14,12 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.1
+    attackRate: 1.3
+    range: 1.15
     damage:
       types:
         Slash: 20
+        Mutant: 20
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: DamageOtherOnHit
@@ -28,6 +30,78 @@
     sprite: Objects/Weapons/Melee/combat_knife.rsi
   - type: DisarmMalus
     malus: 0.225
+
+- type: entity
+    name: kukri knife
+    parent: STCombatKnife
+    id: STKukriKnife
+    description: A longer knife with an angled edge for better cutting, but not so good for throwing.
+    suffix: ST, Melee
+    components:
+    - type: Sprite
+      sprite: Objects/Weapons/Melee/kukri_knife.rsi
+      state: icon
+    - type: Item
+      sprite: Objects/Weapons/Melee/kukri_knife.rsi
+    - type: MeleeWeapon
+      range: 1.25
+      wideAnimationRotation: -135
+      attackRate: 1.3
+      damage:
+        types:
+          Slash: 35
+          Mutant: 35
+    - type: EmbeddableProjectile
+      sound: /Audio/Weapons/star_hit.ogg
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Slash: 20
+    - type: Tool
+      qualities:
+      - Slicing
+      speedModifier: 1.5
+
+- type: entity
+    name: hunter machete
+    parent: [BaseKnife, BaseRestrictedContraband]
+    id: STHunterMachete
+    suffix: ST, Melee
+    description: A high quality chopping blade akin to a short sword, serrated and deadly. It is designed to rip the flesh of mutants and is a good companion to a Mossberg, but is no substitute for a gun outside of the Cordon.
+    components:
+    - type: Tag
+      tags:
+      - STHunterMachete
+      - STCombatKnife
+      - Knife
+    - type: Sprite
+      sprite: Objects/Weapons/Melee/combat_knife.rsi
+      sprite: Objects/Weapons/Melee/machete.rsi
+      state: icon
+    - type: MeleeWeapon
+      wideAnimationRotation: -135
+      range: 1.5
+      attackRate: 1.15
+      damage:
+        types:
+          Slash: 50
+          Mutant: 50
+          #[EN] -- Mutant damage is a PvE value.
+    - type: EmbeddableProjectile
+      sound: /Audio/Weapons/star_hit.ogg
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Slash: 25
+    - type: Item
+      sprite: Objects/Weapons/Melee/combat_knife.rsi
+      sprite: Objects/Weapons/Melee/machete.rsi
+    - type: DisarmMalus
+      malus: 0.225
+    - type: Tool
+      qualities:
+      - Slicing
+      speedModifier: 2
 
 - type: entity
   name: Финка ЛГБТ

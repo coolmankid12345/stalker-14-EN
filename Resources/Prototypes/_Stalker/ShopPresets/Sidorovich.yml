@@ -65,7 +65,8 @@
       priority: 1
       items:
             # Melee
-        StalkerBallBat: 370
+        STKukriKnife: 125
+        STHunterMachete: 625 #T2
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 50 #T1
