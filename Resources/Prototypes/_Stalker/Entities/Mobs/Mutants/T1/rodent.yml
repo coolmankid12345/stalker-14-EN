@@ -39,7 +39,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      25: Dead
+      35: Dead
   - type: StaminaDamageOnHit
     damage: 5
   - type: Stamina

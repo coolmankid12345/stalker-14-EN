@@ -14,10 +14,12 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.1
+    attackRate: 1.5
+    range: 1.15
     damage:
       types:
         Slash: 20
+        Mutant: 10
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: DamageOtherOnHit
@@ -28,6 +30,68 @@
     sprite: Objects/Weapons/Melee/combat_knife.rsi
   - type: DisarmMalus
     malus: 0.225
+
+- type: entity
+  name: kukri knife
+  parent: STCombatKnife
+  id: STKukriKnife
+  description: A longer knife with an angled edge for better cutting, but not so good for throwing.
+  suffix: ST, Melee
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/kukri_knife.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Weapons/Melee/kukri_knife.rsi
+  - type: MeleeWeapon
+    range: 1.25
+    wideAnimationRotation: -135
+    attackRate: 1.3
+    damage:
+      types:
+        Slash: 30
+        Mutant: 15
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 20
+  - type: Tool
+    qualities:
+      - Slicing
+    speedModifier: 1.5
+
+- type: entity
+  name: hunter machete
+  parent: STCombatKnife
+  id: STHunterMachete
+  description: A long, high-quality chopping blade, serrated and deadly. It is purpose made for cutting into mutants and pairs well with a Mossberg, but is no substitute for quality ammo beyond the Cordon.
+  suffix: ST, Melee
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/machete.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Weapons/Melee/machete.rsi
+  - type: MeleeWeapon
+    range: 1.5
+    wideAnimationRotation: -135
+    attackRate: 1.1
+    damage:
+      types:
+        Slash: 50
+        Mutant: 50
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 35
+  - type: Tool
+    qualities:
+    - Slicing
+    speedModifier: 2
 
 - type: entity
   name: Финка ЛГБТ

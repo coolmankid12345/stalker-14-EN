@@ -11,6 +11,8 @@
       spawned:
         - id: MutantPartBoarHoof
         - id: FoodMeatBoar
+          maxAmount: 3
+          prob: 0.55
         - id: CraftHide
           maxAmount: 1
           prob: 0.25
