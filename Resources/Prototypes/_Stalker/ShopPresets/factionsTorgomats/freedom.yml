@@ -151,7 +151,7 @@
         ZoneArtifactDetectorResponseCvoboda: 100 # T2
         STPsyHelm1: 2500
         ZoneArtifactDetectorResponse: 1000 # T2
-        Blunt: 100
+        Blunt: 120
     - name: shop-category-utilities
       priority: 8
       items:
