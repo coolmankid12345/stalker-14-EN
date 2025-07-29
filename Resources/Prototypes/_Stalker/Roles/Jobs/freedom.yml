@@ -72,7 +72,7 @@
           bandProto: STFreedomBand
           bandRankId: 2
         - type: BlockTackingHolyItems
-         - type: TeethPull
+        - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
           teethCount: 3
