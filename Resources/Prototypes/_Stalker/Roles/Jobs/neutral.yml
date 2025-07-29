@@ -28,7 +28,7 @@
           band: Stalker
           bandIcon: ne
           bandProto: STNeutralBand
-          bandRankId: 2
+          bandRankId: 1
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -50,7 +50,7 @@
   name: Neutral
   factionId: Stalker
   maxMembers: 10
-  managingRankId: 3
+  managingRankId: 1
   hierarchy:
     1: StalkerNeutral
 
