@@ -72,7 +72,12 @@
           bandProto: STFreedomBand
           bandRankId: 2
         - type: BlockTackingHolyItems
-
+         - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
+        
 - type: startingGear
   id: FreedomGear
   equipment:
