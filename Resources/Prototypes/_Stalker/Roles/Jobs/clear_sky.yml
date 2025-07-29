@@ -26,7 +26,7 @@
         band: Stalker
         bandIcon: cn
         bandProto: STClearSkyBand
-        bandRankId: 2
+        bandRankId: 1
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -49,7 +49,7 @@
   name: Clear Sky
   factionId: ClearSky
   maxMembers: 10
-  managingRankId: 2
+  managingRankId: 1
   hierarchy:
     1: StalkerClearSky
 
