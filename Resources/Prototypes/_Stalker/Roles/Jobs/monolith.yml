@@ -25,7 +25,7 @@
         band: Stalker
         bandIcon: monolith
         bandProto: STMonolithBand
-        bandRankId: 2
+        bandRankId: 1
       - type: NpcFactionMember
         factions:
           - Mutated
@@ -57,7 +57,7 @@
   name: Monolith
   factionId: Monolith
   maxMembers: 15
-  managingRankId: 3
+  managingRankId: 1
   hierarchy:
     1: StalkerMonolith
 
