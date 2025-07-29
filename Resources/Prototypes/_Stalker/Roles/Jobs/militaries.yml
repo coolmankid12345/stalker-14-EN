@@ -27,6 +27,8 @@
         canChange: true
         band: Stalker
         bandIcon: voen
+        bandProto: STMilitaryStalkerBand
+        bandRankId: 1
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -205,7 +207,7 @@
   name: Military
   factionId: Military
   maxMembers: 16
-  managingRankId: 3
+  managingRankId: 2
   hierarchy:
     1: Military
     2: MilitaryOfficer
