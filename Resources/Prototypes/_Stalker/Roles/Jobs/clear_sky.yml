@@ -49,7 +49,7 @@
   name: Clear Sky
   factionId: ClearSky
   maxMembers: 10
-  managingRankId: 1
+  managingRankId: 2
   hierarchy:
     1: StalkerClearSky
 
