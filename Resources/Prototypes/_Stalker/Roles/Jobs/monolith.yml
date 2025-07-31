@@ -57,7 +57,7 @@
   name: Monolith
   factionId: Monolith
   maxMembers: 15
-  managingRankId: 1
+  managingRankId: 2
   hierarchy:
     1: StalkerMonolith
 
