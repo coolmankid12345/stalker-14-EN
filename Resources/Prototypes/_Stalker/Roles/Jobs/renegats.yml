@@ -44,7 +44,7 @@
   name: Renegades
   factionId: Renegades
   maxMembers: 12
-  managingRankId: 1
+  managingRankId: 2
   hierarchy:
     1: StalkerRene
 
