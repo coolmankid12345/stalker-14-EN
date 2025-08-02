@@ -1,8 +1,8 @@
 ent-ZoneArtifactSoul = { ent-BaseArtifact }
     .suffix = Stalker, Soul
-ent-ZoneArtifactMagneticFlower = { ent-BaseArtifact }
+ent-ZoneArtifactMagneticFlower = Magnetic Flower
     .suffix = Stalker, Magnetic Flower
 ent-ZoneArtifactAtom = { ent-BaseArtifact }
     .suffix = Stalker, Atom
-ent-ZoneArtifactFloodlight = { ent-BaseArtifact }
+ent-ZoneArtifactFloodlight = Floodlight
     .suffix = Stalker, Floodlight

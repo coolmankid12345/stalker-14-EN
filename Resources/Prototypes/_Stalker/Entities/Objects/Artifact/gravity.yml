@@ -4,6 +4,7 @@
   id: ArtMedusa
 # а куда ты делась в мастере? Нипон
   suffix: Stalker, Медуза
+  description: "A common artifact found in gravitational anomalies. The Jellyfish can attract or repel radioactive particles depending on the surrounding environment."
   components:
   - type: Butcherable
     spawned:
@@ -45,6 +46,7 @@
   id: ZoneArtifactWhirlwind
   name: Whirlwind
   suffix: Stalker, Whirlwind
+  description: "A common artifact found in gravitational anomalies. Combines both gaseous and solid particles in continuous motion." # en
   components:
   - type: Sprite
     state: whirlwind
@@ -77,6 +79,7 @@
   parent: BaseArtifact
   id: ZoneArtifactFlower
   suffix: Stalker, Каменный цветок
+  description: "The bits of metallic compounds create a beautiful light play. It is very calming to study this artifact at night by the fire." # en
   components:
   - type: Sprite
     state: flower
@@ -159,6 +162,7 @@
   name: Выверт
   id: ZoneArtifactVyvert
   suffix: Stalker, Выверт
+  description: "A common artifact found in gravitational anomalies. In extreme cold, the Wrenched is warm to the touch, while in high temperatures, it remains cool."
   components:
   - type: Sprite
     state: vyvert

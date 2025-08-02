@@ -3,6 +3,7 @@
   name: Огненный шар
   id: ZoneArtifactFireball
   suffix: Stalker, Огненный шар
+  description: "A common artifact found in thermal anomalies. Surprisingly cold to the touch, the Fireball exhibits a temperature difference of 500 degrees Celsius between its membrane and core."
   components:
   - type: Sprite
     state: fireball
@@ -36,6 +37,7 @@
   name: Глаз
   id: ZoneArtifactEye
   suffix: Stalker, Глаз
+  description: "A common artifact found in thermal anomalies. Surprisingly cold to the touch, the Fireball exhibits a temperature difference of 500 degrees Celsius between its membrane and core."
   components:
   - type: Sprite
     state: glaz
