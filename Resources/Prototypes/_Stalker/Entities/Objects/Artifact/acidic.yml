@@ -3,6 +3,7 @@
   name: Плёнка
   id: ZoneArtifactPellicle
   suffix: Stalker, Плёнка
+  description: "A rare artifact found in chemical anomalies. Because of its scarcity, it was long regarded as a stalker myth." # en
   components:
   - type: Sprite
     state: pellicle
@@ -38,6 +39,7 @@
   name: Кровь Камня
   id: ZoneArtifactBlood
   suffix: Stalker, Кровь камня
+  description: "A common artifact found in gravitational anomalies. The reddish-brown veins on the Stone Blood's surface are due to the accumulation of iron salts." # en
   components:
   - type: Sprite
     state: blood
@@ -70,6 +72,7 @@
   name: Ломоть мяса
   id: ZoneArtifactMeat
   suffix: Stalker, Ломоть мяса
+  description: "A common artifact found in acid anomalies. The liquid oozing from the Meat Chunk bears a resemblance to animal fat in terms of its chemical composition. Consumption is strongly discouraged." # en
   components:
   - type: Sprite
     state: meat
