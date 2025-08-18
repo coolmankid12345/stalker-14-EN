@@ -56,3 +56,20 @@
         Slash: 51
   - type: Item
     sprite: _Stalker/Objects/Weapons/Melee/throwingknife_yellow.rsi
+
+- type: entity
+  name: Poisoned knife
+  parent: STThrowingKnifeBase
+  suffix: ST, T3
+  id: STThrowingknifeRed
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Melee/throwingknife_red.rsi
+    state: icon
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Mutant: 101
+        Slash: 10
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Melee/throwingknife_red.rsi

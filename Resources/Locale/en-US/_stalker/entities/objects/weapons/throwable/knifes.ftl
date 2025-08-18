@@ -4,3 +4,6 @@ ent-STThrowingknifeBlue = throwing knife
 ent-STThrowingknifeYellow = razor-sharp throwing knife
     .desc = Throwing knife. Weapon of real hunters.
     .suffix = ST, T2
+ent-STThrowingknifeRed = poisoned throwing knife
+    .desc = Throwing knife. Weapon of real hunters.
+    .suffix = ST, T3
