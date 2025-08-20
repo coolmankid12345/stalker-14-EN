@@ -1,0 +1,8 @@
+﻿- type: shopPreset
+  id: BarENUSD
+  categories:
+    - name: shop-category-Speciality
+      priority: 1
+      items:
+        FitnessCenterCard: 500
+        ClothingBeltCrafterStalker: 400
