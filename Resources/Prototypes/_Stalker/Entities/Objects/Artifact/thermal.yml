@@ -37,7 +37,7 @@
   name: Глаз
   id: ZoneArtifactEye
   suffix: Stalker, Глаз
-  description: "A common artifact found in thermal anomalies. Surprisingly cold to the touch, the Fireball exhibits a temperature difference of 500 degrees Celsius between its membrane and core."
+  description: "A common artifact found in thermal anomalies. Some stalkers believe that the artifact's “pupil” reacts to movement, but this claim remains unconfirmed by experiments." # en
   components:
   - type: Sprite
     state: glaz
