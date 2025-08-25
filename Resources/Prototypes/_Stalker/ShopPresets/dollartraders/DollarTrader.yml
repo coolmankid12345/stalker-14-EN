@@ -57,6 +57,7 @@
     items:
       STWeaponShotgunProtecta: 25
       STWeaponSMGThompson: 35
+      STThrowingknifeRed: 50
       STWeaponRifleM14: 125
       STWeaponSniperSVDS: 250
       STWeaponSniperVepr: 150
