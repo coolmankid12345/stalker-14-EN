@@ -176,11 +176,6 @@
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
-        ClothingHeatBagStalker: 100
-
-    - name: shop-category-research-equipment
-      priority: 8
-      items:
         STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
@@ -188,14 +183,20 @@
         Pen: 5
         Binocularus1: 800
         BoxFlare: 60
-        ClothingBackpackDuffelGreenStalkerHydroponic: 500
+        StalkerGrinder: 1000
         Beaker: 40
         Syringe: 20
         ClothingGoPro: 250
-        ExtendedEmergencyOxygenTankFilledStalker: 50
-        TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
+        ClothingHeatBagStalker: 100
+        MercBusinessCard: 500
+
+    - name: shop-category-research-equipment
+      priority: 8
+      items:
+        ExtendedEmergencyOxygenTankFilledStalker: 50
+        TrashDetectorTier1: 200
         STBoltBagFilled: 50
         ZoneAnomalyDetectorAD1: 550
 
@@ -261,7 +262,7 @@
     - name: shop-category-customization
       priority: 13
       items:
-        ClothingBandageStalkerGreen: 5
+        ClothingBandageStalkerMerc: 5
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
