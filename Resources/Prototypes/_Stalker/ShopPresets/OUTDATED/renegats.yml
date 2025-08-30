@@ -75,10 +75,13 @@
         PliersStalker: 300
         SledgehammerRenegats: 500
         StalkerBallBat: 120
+        StalkerAnomalyKnockbackBallBatSUPER: 100
+        ChainsawStalker: 1000
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 45 #T0.5
         STWeaponShotgunTOZ34: 200 # T1
+        STWeaponShotgunCompact: 300
           # 5,45x39
         STWeaponRifleSaiga545: 800
         STWeaponRifleAKS74U: 1490
@@ -88,7 +91,7 @@
         STWeaponRevolverRugerRedhawk: 300
         WeaponStalkerPistolTec9: 250
         STWeaponSniperMosin: 800
-        STWeaponSMGMP40: 300
+        STWeaponSMGMP40ruust: 300
         STWeaponSMGPPSh41: 2500
         STWeaponSMGMP5: 1800
         STWeaponSniperSKS: 1700
@@ -209,9 +212,11 @@
         DynamiteOne: 1000
         DynamiteTwo: 2000
         DynamiteThree: 3000
+        GrenadeDummy: 1000
     - name: shop-category-utilities
       priority: 9
       items:
+        MobCockroach: 10
         STSkinsKitRenegate: 500
         STCombatKnife: 25
         BoxZiptie: 50
@@ -281,7 +286,6 @@
     - name: shop-category-customization
       priority: 13
       items:
-        ClothingCapeRenegat: 125
         ClothingBandageStalkerYellow: 5
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
