@@ -499,6 +499,7 @@
   name: КПК Долга
   description: Объединены общей сетью и позволяют обмениваться информацией.
   components:
+  - type: Unremoveable
   - type: PdaBorderColor
     borderColor: "#7a0200"
   - type: Icon
