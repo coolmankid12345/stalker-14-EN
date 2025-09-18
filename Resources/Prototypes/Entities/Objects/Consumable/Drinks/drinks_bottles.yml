@@ -981,3 +981,21 @@
       drink:
         maxVol: 150
   - type: Drink
+
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: DrinkVodkaBottleFull
+  name: Cossack Vodka
+  description: Cossack vodka, the only best vodka for the hardworking stalker!, May or may not reduce radiation sickness when consumed, still its a great drinks for hangover
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Vodka
+          Quantity: 100
+  - type: Label
+    currentLabel: reagent-name-vodka
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Drinks/cossackvodka.rsi
+  - type: Sealable
