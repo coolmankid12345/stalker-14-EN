@@ -985,14 +985,14 @@
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkCossackVodkaBottleFull
-  name: Cossack Vodka
+  name: Cossack-Vodka
   description: Vodka made by the GSC company. Goes down easily and slightly reduces the effects of radiation, but for obvious reasons should be enjoyed in moderation.
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
         reagents:
-        - ReagentId: Vodka
+        - ReagentId: CossackVodka
           Quantity: 100
   - type: Label
     currentLabel: reagent-name-vodka
