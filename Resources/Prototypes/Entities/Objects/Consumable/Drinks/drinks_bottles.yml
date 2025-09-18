@@ -984,9 +984,9 @@
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
-  id: DrinkVodkaBottleFull
+  id: DrinkCossackVodkaBottleFull
   name: Cossack Vodka
-  description: Cossack vodka, the only best vodka for the hardworking stalker!, May or may not reduce radiation sickness when consumed, still its a great drinks for hangover
+  description: Vodka made by the GSC company. Goes down easily and slightly reduces the effects of radiation, but for obvious reasons should be enjoyed in moderation.
   components:
   - type: SolutionContainerManager
     solutions:
