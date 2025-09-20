@@ -1,0 +1,30 @@
+
+# Base Alcohol
+
+- type: reagent
+  id: CossackVodka
+  name: reagent-name-cossackvodka
+  parent: BaseAlcohol
+  desc: reagent-desc-cossackvodka
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: vodka
+  color: "#d1d1d155"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Stalker_EN/Objects/Consumable/Drinks/cossackvodkabottle.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2
+      - !type:HealthChange
+        damage:
+          groups:
+            Radiation: -0.5
