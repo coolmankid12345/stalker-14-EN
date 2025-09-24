@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingBackpackDuffelBlackStalker
+  id: ClothingBackpackDuffelBlackStalkerJournalist
+  name: black duffel bag
+  description: Extremely uncomfortable and incapacious duffel bag for pennies.
+  components:
+  - type: StorageFill
+    contents:
+    - id: SheetPrinter
+    - id: Pen
+    - id: Binocularus1

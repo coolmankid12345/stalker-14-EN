@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseClothingLegs
+  id: ClothingLegsKahkiPants
+  name: tan kahkis
+  description: A pair of well ironed kahki pants.
+  components:
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Clothing/Legs/Pants/presspants.rsi
+    - type: Clothing
+      sprite: _Stalker_EN/Objects/Clothing/Legs/Pants/presspants.rsi
+    - type: Trash
+      time: 900

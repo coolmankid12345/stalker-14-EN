@@ -1,0 +1,10 @@
+- type: entity
+  parent: STClothingHeadHelmetTacticalT1Base
+  id: ClothingHeadHelmetPressLight
+  name: Press Helmet
+  description: A PASGT ballistic helmet with the words 'press' on it. It dosen't look very sturdy, you're not sure if it'll even stop a bullet...
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/press_helm.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/press_helm.rsi

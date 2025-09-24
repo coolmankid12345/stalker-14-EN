@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseClothingTorso
+  id: ClothingTorsoTShirtColorBlackClean
+  name: clean black t-shirt
+  components:
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Clothing/Torso/TShirts/pressshirt.rsi
+    - type: Clothing
+      sprite: _Stalker_EN/Objects/Clothing/Torso/TShirts/pressshirt.rsi

@@ -1,26 +1,18 @@
 {
-    "version": 1,
-    "size": {
-        "x": 32,
-        "y": 32
+  "version": 1,
+  "license": null,
+  "copyright": "Taken from Civ13 at https://github.com/Civ13/Civ13/blob/d5cca4c4d7a649176c5f0b26d02dfccaaf5649f4/icons/obj/clothing/suits.dmi, https://github.com/Civ13/Civ13/blob/8babab427b85181961f3770f024e348ffc1d3e41/icons/obj/clothing/hats.dmi, https://github.com/Civ13/Civ13/blob/1bf1d0938cd99eeb3ca13762c0d9cbf82c27fc7e/icons/mob/suit.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
     },
-    "license": "CC-BY-SA 3.0",
-    "copyright": "sprites by carousel",
-    "states": [
-        {
-            "name": "equipped-OUTERCLOTHING",
-            "directions": 4
-        },
-        {
-            "name": "inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "icon"
-        }
-    ]
+    {
+      "name": "equipped-OUTERCLOTHING",
+      "directions": 4
+    }
+  ]
 }

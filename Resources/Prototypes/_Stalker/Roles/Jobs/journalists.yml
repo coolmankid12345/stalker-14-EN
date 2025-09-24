@@ -40,10 +40,12 @@
   id: JurGear
   equipment:
     id: StalkerPDA
-    torso: ClothingTorsoSweaterStalkerGreen
-    legs: ClothingLegsJeansBlue
+    torso: ClothingTorsoTShirtColorBlackClean
+    outerClothing: STClothingOuterPressVest
+    legs: ClothingLegsKahkiPants
+    head: ClothingHeadHelmetPressLight
     shoes: STClothingShoesBootsCombatFilled
-    back: ClothingBackpackDuffelGreenStalker
+    back: ClothingBackpackDuffelBlackStalkerJournalist
 - type: stBand
   id: STJournalistsBand
   name: Journalists
