@@ -3,6 +3,7 @@
   parent: BaseArtifact
   id: ZoneArtifactSparkler
   suffix: Stalker, Бенгальский огонь
+  description: "A common artifact found in electro anomalies. Resembling the flawed work of a glassblower, the Sparkler is employed in the production of ultra-high-capacity batteries." # en
   components:
   - type: Sprite
     state: sparkler
@@ -33,6 +34,7 @@
   parent: BaseArtifact
   id: ZoneArtifactBattery
   suffix: Stalker, Батарейка
+  description: "A common artifact found in electro anomalies. The high-frequency alternating current glowing within the Battery does not cause burns upon contact."
   components:
   - type: Sprite
     state: battery
@@ -63,6 +65,7 @@
   parent: BaseArtifact
   id: ZoneArtifactFlash
   suffix: Stalker, Вспышка
+  description: "A common artifact found in electro anomalies. When the Flash is pulverized into powder, each particle continues to generate electrical discharges."
   components:
   - type: Sprite
     state: flash
@@ -95,6 +98,7 @@
   parent: BaseArtifact
   id: ArtMoon
   suffix: Stalker, Лунный свет
+  description: "An uncommon artifact found in electro anomalies. A single contact with this artifact may inspire certain individuals with a manic desire to possess it. As of now, the underlying causes are yet to be determined." # en
   components:
   - type: Sprite
     state: moon
