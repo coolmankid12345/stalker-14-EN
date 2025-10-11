@@ -51,6 +51,12 @@
     - id: ClothingHeadBear
       maxAmount: 1
       prob: 0.05
+    - id: STJunkTag
+      maxAmount: 1
+      prob: 0.05
+    - id: STJunkTagWhite
+      maxAmount: 1
+      prob: 0.02
   - type: MeleeWeapon
     attackRate: 0.8
     heavyWindupModifier: 1

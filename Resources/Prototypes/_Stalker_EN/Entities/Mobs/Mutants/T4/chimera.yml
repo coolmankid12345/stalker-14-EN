@@ -39,6 +39,15 @@
     - id: ClothingMaskChimera
       maxAmount: 1
       prob: 0.3
+    - id: STJunkTag
+      maxAmount: 1
+      prob: 0.1
+    - id: STJunkTagWhite
+      maxAmount: 1
+      prob: 0.1
+    - id: STJunkTracker
+      maxAmount: 1
+      prob: 0.08
   - type: TeethPull
     teethProto: MutantPartChimeraTooth
     pullingItemTag: PliersStalker
