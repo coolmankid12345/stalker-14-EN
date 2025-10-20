@@ -127,7 +127,6 @@
         Compression: 0.8
         Heat: 0.3
         Psy: 0.1
-        
 
 - type: entity
   parent: BaseArtifact
