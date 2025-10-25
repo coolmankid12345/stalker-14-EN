@@ -64,9 +64,9 @@
         STWeaponShotgunSPAS: 2000
         # Nato
         STWeaponRifleL85: 2100
-        STWeaponRifleSCARH: 6000
         STWeaponRifleM16: 4000
-        STWeaponRifleFAL: 4250
+        STWeaponRifleFAL: 1500
+        STWeaponRifleSCARH: 6000
         # 5.45
         STWeaponRifleAKS74U: 1500
         STWeaponRifleAKS74: 1750
@@ -103,9 +103,9 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        6mmBuckshotBox: 115
         7mmBuckshotBox: 45
-        8mmBuckshotBox: 300
+        6mmBuckshotBox: 115
+        8mmBuckshotBox: 200
         # 9.19
         919PSOGJBox: 100 #T1
         919PSTBox: 500 #T2
@@ -122,13 +122,13 @@
         # 5.56
         556FMJBox: 500 #T2
         556WarmagBox: 500 #Mutant
-        556M855Box: 2250 #T3
-        #7.39
+        556M855Box: 2000 #T3
+        # 7.39
         739FMJBox: 2250 #T3
-        739HPBox: 500 # Mutant
+        739HPBox: 500 #Mutant
         # 7.51
-        751M80Box: 2450
-        751UNBox: 500
+        751M80Box: 2000 #T3
+        751UNBox: 500 #Mutant
         # 7.54
         754FMJBox: 2450
         # .45
@@ -234,6 +234,7 @@
       items:
         STSkinsKitFreedom: 500
         STCombatKnife: 25
+        LgbtKnife: 30
         BoxZiptie: 50
         BoxSafebox: 300
         CheapLighter: 5
@@ -253,6 +254,10 @@
         STOxygenTanksFractionalFreedom2: 500
         Matchbox: 10
         HatchetStalker: 150
+        # Instruments
+        AcousticGuitarInstrument: 250
+        AccordionInstrument: 250
+        HarmonicaInstrument: 250
 
     - name: shop-category-modules
       priority: 11
@@ -263,6 +268,7 @@
         STModuleSilencerRiflesT1Nato: 400
         STModuleSMGGripT1: 600
         STModuleSilencerSMGT1: 600
+        STModuleShotgunChokeT1: 200
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
 
