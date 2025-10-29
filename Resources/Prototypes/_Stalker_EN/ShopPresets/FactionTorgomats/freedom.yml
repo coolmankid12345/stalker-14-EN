@@ -54,8 +54,26 @@
     FoodMeatSTEelCooked: 250
 
     # Cooking
-    FoodSTMeatStew: 900
+    FoodSTFreshCheese: 85
+    FoodSTRiceCooked: 310
+    FoodSTPancakes: 250
+    FoodSTOnionRings: 100
+    FoodSTFriedEggs: 250
+    FoodSTBorscht: 650
+    FoodSTCabbageSoup: 600
+    FoodSTMeatStew: 950
+    FoodSTFriedFish: 375
+    FoodSTCakePlain: 450
+    FoodSTHrechanyky: 500
+    FoodSTSyrnyky: 775
+    FoodSTDeruny: 450
     FoodSTKebabMeat: 450
+    FoodSTKebabVeggie: 265
+    FoodSTCakeBerry: 900
+    FoodSTSnorkSoup: 500
+    FoodSTIceCream: 250
+    FoodSTBraid: 500
+    FoodSTAmbrosia: 5500 # worth more than a soul by a little bit
 
   categories:
     - name: shop-category-weapons
@@ -68,16 +86,17 @@
         STWeaponShotgunSPAS: 2000
         # Nato
         STWeaponRifleL85: 2100
-        STWeaponRifleSCARH: 4750
         STWeaponRifleM16: 4000
+        STWeaponRifleSCARH: 4750
         STWeaponRifleFAL: 1750
+        STWeaponRifleFALo: 8000
         # 5.45
         STWeaponRifleAKS74U: 1500
         STWeaponRifleAKS74: 1750
         STWeaponRifleAKS74Green: 2100
         # 7.62
-        STWeaponSniperMosin: 1200
         STWeaponRifleAKM: 5650
+        STWeaponSniperMosin: 1200
         #STWeaponSniperSVDSGrass: 8400 Removed for early wipe
         # Smg
         STWeaponSMGMP5: 1800
@@ -100,6 +119,7 @@
         STSpeedLoader45ACPEmpty: 100
         Base751Mag10: 200
         751Mag20: 400
+        751Mag30: 500
         739Mag30: 500
         545Mag30: 400
         545Mag20: 200
@@ -109,7 +129,7 @@
       items:
         6mmBuckshotBox: 320
         7mmBuckshotBox: 45
-        8mmBuckshotBox: 800
+        8mmBuckshotBox: 700
         # 9.19
         919PSOGJBox: 100 #T1
         919PSTBox: 500 #T2
@@ -129,12 +149,13 @@
         556M855Box: 2250 #T3
         #7.39
         739FMJBox: 2500 #T3
-        739HPBox: 700 # Mutant
+        739HPBox: 700 #Mutant
         # 7.51
-        751M80Box: 2500
-        751UNBox: 700
+        751M80Box: 2500 #T3
+        751UNBox: 600 #Mutant
         # 7.54
-        754FMJBox: 2700
+        754FMJBox: 2700 #T3
+        754HPBox: 700 #Mutant
         # .45
         45ACPLFMJBox: 100
         45ACPMFMJBox: 550
@@ -265,8 +286,8 @@
         STModuleScopeRiflesT1Nato: 600
         STModuleSilencerRiflesT1Ru: 400
         STModuleSilencerRiflesT1Nato: 400
-        STModuleSMGGripT1: 600
         STModuleShotgunChokeT1: 200
+        STModuleSMGGripT1: 600
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
