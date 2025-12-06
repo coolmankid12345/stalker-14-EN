@@ -8,7 +8,7 @@
     STBaseWeaponRifleAKS74U: 40
     FoodMeatDog: 8
     FoodMeatSTRatRaw: 6
-        # normal fish
+    # normal fish
     STFishBitterling: 8
     STFishBleak: 8
     STFishBream: 8
@@ -26,6 +26,7 @@
     STFishSwiftLurker: 8
     STFishDenseTench: 8
     STFishCatfish: 8
+
   categories:
     - name: shop-category-weapons
       priority: 1
