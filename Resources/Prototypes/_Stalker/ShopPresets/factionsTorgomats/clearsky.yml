@@ -2,7 +2,6 @@
   id: CSShopPreset
   itemsForSale:
     # Thermal group - 1
-    # Thermal group - 1
     ZoneArtifactFireball: 540
     ZoneArtifactEye: 810
     ZoneArtifactFlame: 1620
@@ -66,6 +65,7 @@
     MutantPartOraculeEye: 2160
     MutantPartPseudogiantHeart: 5400
     MutantPartZombieHand: 810
+
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -75,15 +75,23 @@
         STWeaponShotgunTOZ34: 225 # T2
         STWeaponShotgunMossbergM88: 500 # T2
           # Nato
-        STWeaponRifleAKS74U: 2000
-        STWeaponSniperSKS: 3000
-        STWeaponRifleL85: 5000
-                  # Smg
+        STWeaponRifleAKS74U: 1200 #CHANGED
+        STWeaponSniperSKS: 1650 #CHANGED
+        STWeaponRifleL85: 2000 #CHANGED
+        STWeaponRifleM16: 2350 #ADDED
+        STWeaponRifleSIG550: 4500 #ADDED
+        STWeaponRifleSIG550Black: 4500 #ADDED
+        STWeaponRifleM14: 3750 #ADDED
+        STWeaponSniperVepr: 6800 #ADDED
+          # Smg
         STWeaponSMGMP5: 1800
+        STWeaponSMGStalkerCP2Veresk921: 4400 #ADDED
           # Other
+        STThrowingknifeYellow: 300 #ADDED
+        DG05SmokeGrenade: 350 #ADDED
         STWeaponRevolverRugerRedhawk: 400
-        STWeaponRevolverSWPC325TR: 850
         WeaponPistolStalkerGlock: 400
+        STWeaponRevolverSWPC325TR: 850
     - name: shop-category-magazines
       priority: 2
       items:
@@ -94,8 +102,10 @@
         Base545Mag10: 80
         545Mag20: 220
         545Mag30: 400
+        751Mag20: 400 #ADDED
           # Smg
         BaseMP5Mag: 260
+        SR2MMag30: 300 #ADDED
           # Other
         BaseGlockMag10: 100
         GlockMag24: 350
@@ -116,16 +126,21 @@
         918PSTBox: 250
         918PBMBox: 500
         918SP7Box: 200
+        # 9.21 #ADDED(ALL 9. 21)
+        921PEGJBox: 250
+        921PGJBox: 350
+        921BTGJBox: 1000
         # 5.56
         556FMJBox: 500
         556WarmagBox: 250
         545FMJBox: 500
-        545HPBox: 100
+        545HPBox: 150
         # 7.51
-        751M80Box: 1500
-        751UNBox: 500
+        751UNBox: 500 #ADDED
+        751M80Box: 1300 #CHANGED
         # 7.54
         754FMJBox: 1200
+
         # .45
         45ACPLFMJBox: 100
         45ACPMFMJBox: 550
@@ -163,6 +178,8 @@
       priority: 6
       items:
         ClothingOuterCoatDoshdevik: 600
+        ClothingOuterCoatLoyalistLight: 1200
+        ClothingOuterCoatLoyalist: 1550
         ClothingMaskGasZaryaMono: 100
         ClothingMaskGasM40: 200 # T2
         ClothingMaskGP21: 1000 # T3
@@ -182,7 +199,6 @@
     - name: shop-category-utilities
       priority: 8
       items:
-        ClothingBandageStalkerBlue: 50
         STCombatKnife: 25
         BoxZiptie: 50
         BoxSafebox: 300
@@ -249,7 +265,9 @@
     - name: shop-category-customization
       priority: 12
       items:
-        ClothingBandageStalkerGreen: 5
+        ClothingTorsoTurtlenecksClearSky: 5 #ADDED
+        ClothingLegsJeansClearSky: 5 #ADDED
+        ClothingBandageStalkerBlue: 25 #CHANGED
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
