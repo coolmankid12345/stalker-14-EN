@@ -45,6 +45,9 @@
       DrinkMugDog: 750
       FoodCakeChristmas: 2500
       CasseteChristmas: 5000
+      # Presents
       STPresentRandom: 7500
-      #STPresentLootbox: 10000
+      #STPresentLootbox: 25000
+      # Limited Item
       WeaponPistolStalkerLP08: 85000
+      LP08Drum: 5000

@@ -8,11 +8,11 @@
     - protoId: ZoneAnomalyJarka
     - protoId: ZoneAnomalyElectra
 
-# Cordon - Stalker EN
+# Cordon - Stalker EN - Orginal 100
 - type: stAnomalyGenerationOptions
   id: STKordonGenerationOptions
   options:
-    totalCount: 100
+    totalCount: 80
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalyElectra

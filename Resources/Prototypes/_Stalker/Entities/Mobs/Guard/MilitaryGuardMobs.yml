@@ -50,6 +50,8 @@
   id: MobStalkerMilitarySniper
   description:
   components:
+  - type: Bands
+    bandIcon: army
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]

@@ -44,9 +44,9 @@
       - Biological
     damage:
       types:
-        Piercing: -7
-        Blunt: -4
-        Slash: -7
+        Piercing: -4
+        Blunt: -6.5
+        Slash: -6.5
     delay: 4
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
