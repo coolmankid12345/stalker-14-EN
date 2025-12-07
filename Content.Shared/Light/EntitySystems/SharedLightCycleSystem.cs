@@ -91,15 +91,14 @@ public abstract class SharedLightCycleSystem : EntitySystem
                 waveLength,
                 MathF.Max(0f, comp.MaxLevel.G),
                 MathF.Max(0f, comp.MinLevel.G),
-                10f));
+                8f)); // Stalker-Changes: Before it was 10f, but was replaced to modify the curve so we can adapt it to the longer days
 
         var blue = MathF.Min(comp.ClipLevel.B,
-            CalculateCurve(time,
-                waveLength / 2f,
+            CalculateBlueWithGapControl(time, // Stalker-Changes: CalculateCurve doesn't fit if we need to make days longer, so as the distance for gaps for this function
+                waveLength,
                 MathF.Max(0f, comp.MaxLevel.B),
                 MathF.Max(0f, comp.MinLevel.B),
-                2,
-                waveLength / 4f));
+                -0.175f)); // Stalker-Changes: deltaMult defines the offset of the curve from the center for the blue level
 
         return new Color(red, green, blue);
     }
@@ -124,6 +123,58 @@ public abstract class SharedLightCycleSystem : EntitySystem
         var sen = MathF.Pow(MathF.Sin((MathF.PI * (phase + x)) / waveLength), exponent);
         return (crest - shift) * sen + shift;
     }
+
+    // Stalker-Changes-Start
+    // This is to modify blue curve (it cannot be properly done by using CalculateCurve method, so we're calculating it in another way)
+
+    // helper: mod that yields [0, period)
+    private static float ModPositive(float x, float period)
+    {
+        var r = x % period;
+        if (r < 0)
+            r += period;
+        return r;
+    }
+
+    // wrap into [-period/2, +period/2)
+    private static float RelInHalfPeriod(float x, float period)
+    {
+        var t = ModPositive(x, period);      // [0, period)
+        return t - period / 2;                // [-period/2, +period/2)
+    }
+
+    private static float SymmetricPhasePeriodic(float x, float lambda, float phi, float s)
+    {
+        // lambda - period to repeat (in this case it's waveLength)
+        // xRel centered in [-λ/2, λ/2)
+        var xRel = RelInHalfPeriod(x, lambda);
+        return (float)(phi * Math.Tanh(xRel / s));
+    }
+
+    public static float CalculateBlueWithGapControl(
+        float x,
+        float waveLength,
+        float maxLevel,
+        float minLevel,
+        float deltaMult, // desired increase of distance between dips
+        float smoothing = 1.0f) // smoothing width
+    {
+        var desiredDelta = waveLength * deltaMult;
+
+        // compute required Phi from desiredDelta: Phi = (π / λ) * Δd
+        var phi = (float)(Math.PI / waveLength * desiredDelta);
+
+        // periodic phase (repeats each waveLength)
+        var phiP = SymmetricPhasePeriodic(x, waveLength, phi, smoothing);
+
+        var k = (float) (2.0 * Math.PI / waveLength);
+
+        var sval = (float) Math.Sin(k * x + Math.PI / 2.0 + phiP); // sine with phase
+        var val = (maxLevel - minLevel) * (sval * sval) + minLevel;
+
+        return val;
+    }
+    // Stalker-Changes-End
 }
 
 /// <summary>

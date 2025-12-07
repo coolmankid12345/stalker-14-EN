@@ -43625,7 +43625,7 @@ entities:
     - type: LightCycle
       duration: 90m
       initialOffset: false
-      offset: 30m
+      offset: 20m
       minLightLevel: 0.35
     - type: SunShadow
     - type: SunShadowCycle
