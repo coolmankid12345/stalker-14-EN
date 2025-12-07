@@ -11,6 +11,17 @@
     restricted:
     - MobStalkerMilitaryVovaVist
 
+- type: entity
+  name: Military Sniper Spawner (1) (100%)
+  id: STGuardMilitarySniper
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobStalkerMilitarySniper
+    restricted:
+    - MobStalkerMilitarySniper
+
 # Ecologist Guard
 
 - type: entity

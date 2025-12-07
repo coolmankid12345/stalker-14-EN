@@ -137,6 +137,31 @@
   - type: AccessReader
     access: [["Bandit"]]
 
+- type: entity
+  id: MilitaryDoorBanditEN
+  name: Military Gate
+  parent: STBaseMaterialDoor
+  description: A passage in a wall or fence that is locked with alignments.
+  suffix: ST, mapping, Bandit
+  components:
+  - type: Occluder
+    boundingBox: "-1.5,-0.5,1.5,0.5"
+  - type: AccessReader
+    access: [["Bandit"]]
+  - type: Sprite
+    sprite: _Stalker/Structures/Doors/Steels/military_door.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.4,-0.5,1.4,0.5"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+
 # Mercenary
 
 - type: entity

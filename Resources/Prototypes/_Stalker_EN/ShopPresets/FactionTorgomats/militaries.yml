@@ -391,13 +391,17 @@
   - name: shop-category-weapons
     priority: 1
     items:
+      #Pistols
+      WeaponPistolStalkerPM: 150
+      WeaponPistolStalkerAPS: 250
+      WeaponPistolGSH18: 300
       # Shotguns
       STWeaponShotgunMP153: 650
       STWeaponShotgunMossbergM88: 500
+      #STWeaponShotgunSaiga12: 6500
       # SMGs
       STWeaponSMGPP19: 1000
       STWeaponSMGPP1901: 1200
-      STWeaponShotgunSaiga12: 2500
       # Rifles
       STWeaponRifleAKS74U: 600
       STWeaponRifleAKS74UBlack: 600
@@ -413,32 +417,45 @@
   - name: shop-category-magazines
     priority: 2
     items:
-      BizonMag: 150
-      545Mag30: 150
-      739Mag30: 150
-      VityazMag: 150
+      # Pistols
+      BasePMMag: 25
+      BaseGSH-18Mag10: 50
+      BaseAPSMag: 75
+      # Shotguns
       Base1270Mag: 50
       Saiga1270Mag10: 150
-      #Saiga1270Drum: 150
-      BaseAPSMag: 75
+      #Saiga1270Drum: 450
+      # SMGs
+      VityazMag: 150
+      BizonMag: 150
+      # Rifles
+      545Mag30: 150
+      739Mag30: 150
 
   - name: shop-category-ammunition
     priority: 3
     items:
-      918PBMBox: 25
-      919PBMBox: 25
-      545FMJBox: 75
-      545HPBox: 50
-      545PCBox: 150
-      725PSTBox: 150
-      725LRNPCBox: 50
-      739FMJBox: 150
-      739HPBox: 50
-      7mmBuckshotBox: 10
-      6mmBuckshotBox: 125
-      8mmBuckshotBox: 350
-      #ShotgunFlechette: 50
-      754FMJBox: 50
+      # 7mm
+      7mmBuckshotBox: 10 # T0
+      6mmBuckshotBox: 125 # T1
+      8mmBuckshotBox: 350 # T2
+      #ShotgunFlechette: 50 # T3
+      # 9x18
+      918PBMBox: 25 # T3
+      # 9x19
+      919PBMBox: 25 # T3
+      # 5.45
+      545HPBox: 50 # Mutant
+      545FMJBox: 75 # T2
+      545PCBox: 150 # T3
+      # 7.25
+      725PSTBox: 150 # T3
+      725LRNPCBox: 50 # Mutant
+      # 7.62
+      739FMJBox: 150 # T3
+      739HPBox: 50 # Mutant
+      # 7.54
+      754FMJBox: 50 # T3
 
   - name: shop-category-medicine
     priority: 4

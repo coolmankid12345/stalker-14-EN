@@ -353,6 +353,7 @@
   - type: IconSmooth
     key: walls
     base: ice
+  - type: Godmode
 
 - type: entity
   parent: BaseWall
@@ -1419,6 +1420,7 @@
   - type: IconSmooth
     key: cobblebricks
     base: cobblebrick
+  - type: Godmode
 
 - type: entity
   parent: WallCobblebrick
