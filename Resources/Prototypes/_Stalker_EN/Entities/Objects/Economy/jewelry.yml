@@ -3,9 +3,9 @@
 - type: entity
   parent: STBaseItem
   id: STJewelrySilver
-  name: jewelry silver
+  name: Jewelry silver
   desciption: Silver jewelry, which you can make not bad money on!
-  suffix: Jewelry
+  suffix: ST
   components:
     - type: Sprite
       state: icon
@@ -17,9 +17,9 @@
 - type: entity
   parent: STBaseItem
   id: STJewelryGold
-  name: jewelry gold
+  name: Jewelry gold
   desciption: Gold jewelry, which you can make good money on!
-  suffix: Jewelry
+  suffix: ST
   components:
     - type: Sprite
       state: icon
@@ -30,8 +30,9 @@
 - type: entity
   id: STWristwatchGold
   parent: [ Wristwatch , STBaseItem ]
-  name: gold watch
+  name: Gold watch
   description: A fancy watch worth more than your kidney.
+  suffix: ST
   components:
   - type: Sprite
     sprite: Objects/Devices/goldwatch.rsi
@@ -49,8 +50,9 @@
 - type: entity
   parent: [ RingBase, STBaseItem ]
   id: STGoldRingBigDiamond
-  name: gold big diamond ring
+  name: Gold big diamond ring
   description: A ring with a SOOOOOOOOO big diamond.
+  suffix: ST
   components:
     - type: Sprite
       state: icon
