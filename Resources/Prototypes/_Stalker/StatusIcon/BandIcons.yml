@@ -469,6 +469,7 @@
 - type: jobIcon
   id: voen1
   locationPreference: Right
+  isShaded: true
   icon:
     sprite: /Textures/_Stalker/Icons/Patches/band.rsi
     hideOnStealth: true
@@ -477,6 +478,7 @@
 - type: jobIcon
   id: voen2
   locationPreference: Right
+  isShaded: true
   icon:
     sprite: /Textures/_Stalker/Icons/Patches/band.rsi
     hideOnStealth: true
@@ -485,6 +487,7 @@
 - type: jobIcon
   id: voen3
   locationPreference: Right
+  isShaded: true
   icon:
     sprite: /Textures/_Stalker/Icons/Patches/band.rsi
     hideOnStealth: true
