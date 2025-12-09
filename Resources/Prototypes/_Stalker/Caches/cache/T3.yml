@@ -97,13 +97,13 @@
           prob: 0.045
         - id: PowerCellHyper
           prob: 0.09
-        - id: IngotGold1
+        - id: STJewelryGold
           prob: 0.06
-        - id: IngotSilver1
+        - id: STJewelrySilver
           prob: 0.06
-        - id: MaterialDiamond1
+        - id: STGoldRingBigDiamond
           prob: 0.06
-        - id: DrinkGoldenCup
+        - id: STWristwatchGold
           prob: 0.06
         - id: CraftMaterialGunpowder
           prob: 0.06

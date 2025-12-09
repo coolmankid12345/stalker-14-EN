@@ -60,13 +60,13 @@
           prob: 0.01
         - id: HandheldGPSBasic
           prob: 0.01
-        - id: IngotGold1
+        - id: STJewelryGold
           prob: 0.01
-        - id: IngotSilver1
+        - id: STJewelrySilver
           prob: 0.01
-        - id: MaterialDiamond1
+        - id: STGoldRingBigDiamond
           prob: 0.01
-        - id: DrinkGoldenCup
+        - id: STWristwatchGold
           prob: 0.01
         - id: CraftMaterialGunpowder
           prob: 0.01

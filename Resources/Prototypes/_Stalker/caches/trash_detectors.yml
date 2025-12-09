@@ -18,9 +18,9 @@
         - STCraftPlasticFittingT2
         - STCraftSheetIronT2
         # values
-        - IngotGold1
-        - IngotSilver1
-        - DrinkGoldenCup
+        - STJewelryGold
+        - STJewelrySilver
+        - STWristwatchGold
 
       rarePrototypes:
         # Tier 3 Crafting Materials (перенесены в редкие)
@@ -46,6 +46,9 @@
         - DoubleEmergencyOxygenTankStalkerFilled
         - ExtendedEmergencyOxygenTankFilledStalker
         - Binocularus1
+
+        #Jewelery
+        - STGoldRingBigDiamond
       rareChance: 0.05   # 5% шанс спавна редкого предмета
       chance: 1
       offset: 0.5
