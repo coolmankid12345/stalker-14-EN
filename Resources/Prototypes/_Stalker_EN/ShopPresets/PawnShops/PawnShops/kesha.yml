@@ -139,27 +139,10 @@
     STWeaponRevolverSWModel625: 725
 
     #values
-    ClothingNeckBronzeheart: 100
-    ClothingNeckCargomedal: 100
-    ClothingNeckEngineermedal: 100
-    Wristwatch: 200
-    SilverRing: 200
-    GoldRing: 300
-    TreasureCoinIron: 100
-    TreasureCoinGold: 100
-    TreasureCoinSilver: 100
-    SilverRingDiamond: 350
-    GoldRingDiamond: 400
-    MaterialDiamond1: 1500
-    DrinkGoldenCup: 500
-    SilverRingGem: 1000
-    GoldRingGem: 1000
-    ClothingNeckGoldmedal: 1000
-    IngotSilver1: 700
-    IngotGold1: 1000
-    WristwatchGold: 1500
-    ClothingNeckBling: 1000
-    TreasureCoinAdamantine: 500
+    STJewelrySilver: 400
+    STJewelryGold: 600
+    STWristwatchGold: 1500
+    STGoldRingBigDiamond: 2000
     TradeBox: 3000
 
   categories:
