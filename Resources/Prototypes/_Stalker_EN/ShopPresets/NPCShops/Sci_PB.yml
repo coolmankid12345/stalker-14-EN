@@ -1,5 +1,5 @@
-- type: shopPreset # Didn't touch as not much to change for STALKER EN
-  id: NpcSciPBEN # 1,5x
+- type: shopPreset
+  id: NpcSciPBEN # 1.25x - Pending Economy Change
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 680
@@ -22,7 +22,7 @@
     ZoneArtifactNightStar: 4080
     ZoneArtifactPebble: 680
     ZoneArtifactRosin: 1020
-    ZoneArtifactStoneCube: 2040
+    ZoneArtifactStoneCube: 1520
     # Gravity group - 2
     ZoneArtifactVyvert: 680
     ZoneArtifactAmoeba: 1020

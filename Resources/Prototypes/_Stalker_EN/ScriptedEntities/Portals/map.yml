@@ -144,3 +144,24 @@
     cooldownEnabled: true
     cooldownTime: 5
     godmodeCooldown: 5
+
+# Duty
+
+- type: entity
+  parent: MapTeleportBase
+  id: Duty-Bar
+  name: Duty-Bar
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: Duty-Bar
+  - type: AccessReader
+    access: [["Dolg"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Duty-BarUncollide
+  name: Duty-BarUncollide
+  components:
+  - type: NewMapTeleport
+    portalName: Duty-Bar

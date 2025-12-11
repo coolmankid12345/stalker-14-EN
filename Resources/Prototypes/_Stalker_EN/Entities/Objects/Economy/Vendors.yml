@@ -1,0 +1,112 @@
+﻿# OKSOP Enlisted - Restock on RU's Vendor File
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesPSZMilitaryEN
+  name: OKSOP Kit Warehouse
+  description: Army Supply Depot with OKSOP kits inside.
+  suffix: Stalker, EN
+  components:
+  - type: VendingMachine
+    ejectDelay: 0.1
+    pack: MilitaryPSZInventoryEN
+    dispenseOnHitChance: 0.0
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+  - type: ApcPowerReceiver
+    needsPower: False
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/military_lot_of_boxes.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.05,-0.15,1,0.65"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 200
+  - type: AccessReader
+    access: [["Military"]]
+  - type: AmbientSound
+    range: 0
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 0
+
+- type: vendingMachineInventory
+  id: MilitaryPSZInventoryEN
+  startingInventory:
+    OKSOPAK74uCrate: 8 # T2 Enlisted - (Amount of Enlisted x 2)
+    OKSOPAK74Crate: 4 # T2 Sergeant - (Amount of SGT x 4)
+    ArmyProvisionCrate: 6
+    ArmyMedkitMilitaryCrate: 6
+    Army545Mag30Crate: 6
+    Army545FMJCrate: 6
+    STBoltBagFilled: 10
+    BaseRadio: 10
+
+# OKSOP Officers - Restock on RU's Vendor File
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesPSZMilitaryOfficerEN
+  name: OKSOP Officer Kit Box
+  description: A crate containing the PSZ officer kits inside.
+  suffix: Stalker, EN
+  components:
+  - type: VendingMachine
+    ejectDelay: 0.1
+    pack: MilitaryPSZInventoryOfficerEN
+    dispenseOnHitChance: 0.0
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+  - type: ApcPowerReceiver
+    needsPower: False
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,0.25,0.25,0.35"
+        density: 50
+        mask:
+        - CrateMask
+        layer:
+        - MachineLayer
+  - type: AccessReader
+    access: [["MilitaryOfficer"]]
+  - type: AmbientSound
+    range: 0
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 0
+
+- type: vendingMachineInventory
+  id: MilitaryPSZInventoryOfficerEN
+  startingInventory:
+    OKSOPOfficerCrate: 4 # T3 Officer
+    MilitaryPSZInventoryRestock: 6
+    Screwdriver: 1
+    ClothingBandageStalkerSopOne: 10
+    ClothingBandageStalkerSopTwo: 10
+    STBoltBagFilled: 10
+    BaseRadio: 10

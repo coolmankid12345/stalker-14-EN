@@ -1,5 +1,5 @@
 - type: shopPreset
-  id: NpcSidorEN # 0.5x PENDING REWORK
+  id: NpcSidorEN # 0.75x Barman - Pending Economy Change
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 405
@@ -22,7 +22,7 @@
     ZoneArtifactWhirlwind: 550
     ZoneArtifactPebble: 405
     ZoneArtifactRosin: 610
-    ZoneArtifactStoneCube: 1215
+    ZoneArtifactStoneCube: 850
     # Gravity group - 2
     ZoneArtifactVyvert: 405
     ZoneArtifactAmoeba: 610
@@ -315,7 +315,6 @@
         Paper: 2
         Pen: 5
         FishingRod: 500
-        FishingRodGolden: 5000
         Binocularus1: 800
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
@@ -326,6 +325,7 @@
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
+        STHeadLight: 475
 
     - name: shop-category-customization
       priority: 11

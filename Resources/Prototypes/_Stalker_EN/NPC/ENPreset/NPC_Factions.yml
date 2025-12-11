@@ -332,22 +332,44 @@
     - Common
 
 - type: entity
-  parent: StalkerShop
-  id: STPremiumShopMilitaryEN # OKSOP Premium Vendor
-  name: Premium OKSOP Torgomat
-  description: OKSOP premium supply. Works on premium coupons, just like in the USSR.
-  suffix: ST, OKSOP, EN-TRADER
+  parent: NPCDoll
+  id: NPCMilitaryOfficerEN # OKSOP Officers
+  name: Vitaly 'Quartermaster'[→ ←]
+  suffix: ST, Military, EN-TRADER
+  description: He's the Quartermaster sells government property among the soldiers.
   components:
   - type: Sprite
-    drawdepth: Objects
-    sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_blue.rsi
-    layers:
-    - state: torgomat_dark_blue
-      map: [ "enum.ConstructionVisuals.Layer" ]
-    - state: normal-unshaded
+    sprite: _Stalker/NPC/Groups/Military.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
-    moneyId: PremiumSupplyTalons
-    shopPresetId: MilitaryPremiumShopPresetEN
+    moneyId: Roubles
+    shopPresetId: OKSOPOfficerShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
 
 # Renegades - 7
 

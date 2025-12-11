@@ -1,7 +1,7 @@
 - type: shopPreset
-  id: FreedomShopPresetEN
+  id: FreedomShopPresetEN # Artifacts 1.5x Barman - Pending Economy Change
   itemsForSale:
-    # Thermal group - 1 x1.5 Sidorovich
+    # Thermal group - 1
     ZoneArtifactFireball: 810
     ZoneArtifactEye: 1215
     ZoneArtifactFlame: 2430
@@ -22,7 +22,7 @@
     ZoneArtifactWhirlwind: 1000
     ZoneArtifactPebble: 810
     ZoneArtifactRosin: 1215
-    ZoneArtifactStoneCube: 2430
+    ZoneArtifactStoneCube: 1825
     # Gravity group - 2
     ZoneArtifactVyvert: 810
     ZoneArtifactAmoeba: 1215

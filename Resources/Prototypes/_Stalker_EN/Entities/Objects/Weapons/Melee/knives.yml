@@ -38,6 +38,7 @@
   parent: [BaseKnife, BaseRestrictedContraband]
   id: HuntingKnife
   description: A tool for chopping up dead animals. It butchers 30% faster than other knives but deals less damage.
+  suffix: ST
   components:
   - type: Tag
     tags:
@@ -68,3 +69,35 @@
   - type: Engraveable
   - type: Sharp
     butcherDelayModifier: 0.7
+
+- type: entity
+  name: Shiv # Loner spawn knife, meant to be horrible
+  parent: [BaseKnife, BaseMinorContraband]
+  id: STShiv
+  description: A crude weapon made from a piece of cloth and a glass shard. This will get you by, but worth trying to get an upgrade.
+  suffix: ST
+  components:
+  - type: Tag
+    tags:
+    - STCombatKnife
+    - Knife
+    - Shiv
+  - type: Construction
+    graph: Shiv
+    node: icon
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/shiv.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Slash: 10
+  - type: Item
+    sprite: Objects/Weapons/Melee/shiv.rsi
+  - type: DisarmMalus
+    malus: 0.225
+  - type: Sharp
+    butcherDelayModifier: 2
+  - type: Trash
+    time: 300

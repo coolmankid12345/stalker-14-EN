@@ -208,23 +208,23 @@
     legs: ClothingLegsJeansUa
     torso: ClothingTorsoTurtlenecksUa
     shoes: STClothingShoesBootsCombatFilled
-    id: MilitaryPDA
+    id: STOKSOPPdaEN
 
 - type: startingGear
   id: MilitaryGearOfficer
   equipment:
-    legs: ClothingLegsJeansUa
-    torso: ClothingTorsoTurtlenecksUa
+    legs: ClothingLegsJeansGreenCargo
+    torso: ClothingTorsoTurtlenecksMilitary
     shoes: STClothingShoesBootsCombatFilled
-    id: MilitaryPDA
+    id: STOKSOPPdaEN
 
 - type: startingGear
   id: MilitaryGearHead
   equipment:
-    legs: ClothingLegsJeansUa
-    torso: ClothingTorsoTurtlenecksUa
+    legs: ClothingLegsJeansGreenCargo
+    torso: ClothingTorsoTurtlenecksMilitary
     shoes: STClothingShoesBootsCombatFilled
-    id: MilitaryPDA
+    id: STOKSOPPdaEN
 
 - type: startingGear
   id: MilitarySpecGear

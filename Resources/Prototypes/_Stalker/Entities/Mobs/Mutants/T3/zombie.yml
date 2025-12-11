@@ -37,7 +37,7 @@
       damageModifierSet: STNPCGuardModifierSet
     - type: Bands
       band: Zombie
-      bandIcon: zombie
+      bandIcon: zombieEN
     - type: Destructible
       thresholds:
         - trigger:

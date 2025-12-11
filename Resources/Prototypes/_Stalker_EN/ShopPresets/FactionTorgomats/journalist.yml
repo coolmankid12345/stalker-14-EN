@@ -1,5 +1,5 @@
 - type: shopPreset
-  id: JournalistShopPreset
+  id: JournalistShopPreset # 0x
   categories:
     - name: shop-category-weapons
       priority: 1

@@ -1,5 +1,5 @@
 - type: shopPreset
-  id: RenegadesShopPresetEN
+  id: RenegadesShopPresetEN # Pending Economy Change
   itemsForSale:
     # Exclusive -
     ToothStalker: 450
@@ -26,7 +26,7 @@
     ZoneArtifactNightStar: 2400
     ZoneArtifactPebble: 400
     ZoneArtifactRosin: 600
-    ZoneArtifactStoneCube: 1200
+    ZoneArtifactStoneCube: 845
     # Gravity group - 2
     ZoneArtifactVyvert: 400
     ZoneArtifactAmoeba: 600
