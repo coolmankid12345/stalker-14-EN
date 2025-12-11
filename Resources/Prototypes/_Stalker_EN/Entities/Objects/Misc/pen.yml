@@ -1,0 +1,11 @@
+﻿- type: entity
+  name: Colonel's Pen
+  parent: [BaseAdvancedPen, BaseCentcommContraband]
+  id: PenColonel
+  description: The Colonel’s pen is a polished steel officer’s pen with a green enamel finish matching military colors. The brass clip is engraved with his rank insignia, and the cartridge flows with smooth, precise ink. It’s a symbol as much as a tool authority in the form of cold metal.
+  suffix: DO NOT MAP, ST
+  components:
+  - type: Sprite
+    state: pen_centcom
+  - type: Item
+    heldPrefix: pen_centcom

@@ -1,5 +1,5 @@
 - type: shopPreset
-  id: NeutralsShopPresetZoneEN
+  id: NeutralsShopPresetZoneEN # Sidorovich Prices
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 405
@@ -22,7 +22,7 @@
     ZoneArtifactWhirlwind: 550
     ZoneArtifactPebble: 405
     ZoneArtifactRosin: 610
-    ZoneArtifactStoneCube: 1215
+    ZoneArtifactStoneCube: 850
     # Gravity group - 2
     ZoneArtifactVyvert: 405
     ZoneArtifactAmoeba: 610

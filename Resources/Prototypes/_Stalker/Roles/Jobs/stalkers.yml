@@ -41,6 +41,9 @@
   special:
     - !type:AddComponentSpecial
       components:
+      - type: NpcFactionMember
+        factions:
+        - Stalker
       - type: Access
         tags:
           - Stalker
@@ -99,6 +102,9 @@
   special:
     - !type:AddComponentSpecial
       components:
+      - type: NpcFactionMember
+        factions:
+        - Stalker
       - type: Access
         tags:
           - Stalker
@@ -121,8 +127,8 @@
     id: StalkerPDA
     belt: ClothingBeltBandolierStalker
     shoes: ClothingShoesNovice
-    pocket1: Cartridge7mmBuckshot
-    pocket2: Cartridge7mmBuckshot
+    pocket1: STShiv
+    pocket2: 7mmBuckshotBox
     mask: ClothingMaskGasMarlya
     suitstorage: STWeaponShotgunMP155T
 

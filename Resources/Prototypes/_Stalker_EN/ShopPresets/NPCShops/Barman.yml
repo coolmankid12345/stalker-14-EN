@@ -1,5 +1,5 @@
 - type: shopPreset
-  id: STNPCBarmanPresetEN # 0.7x PENDING REWORK
+  id: STNPCBarmanPresetEN # 1x Standard - Pending Economy Change
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 540
@@ -22,7 +22,7 @@
     ZoneArtifactWhirlwind: 500
     ZoneArtifactPebble: 540
     ZoneArtifactRosin: 810
-    ZoneArtifactStoneCube: 1620
+    ZoneArtifactStoneCube: 1215
     # Gravity group - 2
     ZoneArtifactVyvert: 540
     ZoneArtifactAmoeba: 810

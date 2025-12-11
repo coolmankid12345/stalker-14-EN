@@ -534,6 +534,7 @@ entities:
             3035: -6,91
             3036: -6,90
             3044: -3,116
+            3062: -5,94
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinLineN
@@ -5016,6 +5017,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.5,120.5
       parent: 1
+  - uid: 1854
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 2.5,118.5
+      parent: 1
 - proto: Bar-BarStalkerUncollide
   entities:
   - uid: 2
@@ -6299,6 +6306,13 @@ entities:
     - type: Transform
       pos: -15.788495,79.457245
       parent: 1
+- proto: Duty-BarUncollide
+  entities:
+  - uid: 1821
+    components:
+    - type: Transform
+      pos: 2.5,17.5
+      parent: 1
 - proto: ElectroShieldHigh
   entities:
   - uid: 1687
@@ -6735,7 +6749,7 @@ entities:
       pos: -1.5,24.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -15104.85
+      secondsUntilStateChange: -15777.205
       state: Denying
     - type: Physics
       canCollide: False
@@ -10046,18 +10060,13 @@ entities:
   - uid: 776
     components:
     - type: Transform
-      pos: -8.5,10.5
-      parent: 1
-  - uid: 777
-    components:
-    - type: Transform
-      pos: -0.5,10.5
+      rot: 1.5707963267948966 rad
+      pos: -11.5,10.5
       parent: 1
   - uid: 778
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 1.5,11.5
+      pos: 0.5,10.5
       parent: 1
   - uid: 779
     components:
@@ -10331,6 +10340,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,76.5
+      parent: 1
+  - uid: 1387
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -4.5,10.5
       parent: 1
   - uid: 1423
     components:
@@ -11500,6 +11515,51 @@ entities:
     components:
     - type: Transform
       pos: 26.5,75.5
+      parent: 1
+  - uid: 1822
+    components:
+    - type: Transform
+      pos: 1.5,18.5
+      parent: 1
+  - uid: 1823
+    components:
+    - type: Transform
+      pos: 1.5,17.5
+      parent: 1
+  - uid: 1824
+    components:
+    - type: Transform
+      pos: 1.5,16.5
+      parent: 1
+  - uid: 1825
+    components:
+    - type: Transform
+      pos: 2.5,18.5
+      parent: 1
+  - uid: 1826
+    components:
+    - type: Transform
+      pos: 2.5,17.5
+      parent: 1
+  - uid: 1827
+    components:
+    - type: Transform
+      pos: 2.5,16.5
+      parent: 1
+  - uid: 1828
+    components:
+    - type: Transform
+      pos: 3.5,18.5
+      parent: 1
+  - uid: 1829
+    components:
+    - type: Transform
+      pos: 3.5,17.5
+      parent: 1
+  - uid: 1830
+    components:
+    - type: Transform
+      pos: 3.5,16.5
       parent: 1
 - proto: StalkerStairs
   entities:
@@ -13096,12 +13156,6 @@ entities:
     - type: Transform
       pos: -7.5,89.5
       parent: 1
-  - uid: 1387
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,94.5
-      parent: 1
   - uid: 1413
     components:
     - type: Transform
@@ -13137,6 +13191,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -1.5,116.5
+      parent: 1
+  - uid: 1855
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,94.5
       parent: 1
 - proto: STMetalBarDoorFalloutNeutralsClosed
   entities:
@@ -18768,12 +18828,6 @@ entities:
     - type: Transform
       pos: -3.5,89.5
       parent: 1
-  - uid: 1345
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -10.5,84.5
-      parent: 1
   - uid: 1352
     components:
     - type: Transform
@@ -19677,6 +19731,11 @@ entities:
     components:
     - type: Transform
       pos: 23.5,76.5
+      parent: 1
+  - uid: 1856
+    components:
+    - type: Transform
+      pos: -10.5,84.5
       parent: 1
   - uid: 6063
     components:
@@ -21443,6 +21502,11 @@ entities:
       parent: 1
 - proto: WoodenFloorCommonFallout
   entities:
+  - uid: 777
+    components:
+    - type: Transform
+      pos: -4.5,93.5
+      parent: 1
   - uid: 814
     components:
     - type: Transform
@@ -21763,6 +21827,11 @@ entities:
     - type: Transform
       pos: -6.5,78.5
       parent: 1
+  - uid: 1345
+    components:
+    - type: Transform
+      pos: -3.5,94.5
+      parent: 1
   - uid: 1637
     components:
     - type: Transform
@@ -21857,6 +21926,116 @@ entities:
     components:
     - type: Transform
       pos: 3.5,116.5
+      parent: 1
+  - uid: 1831
+    components:
+    - type: Transform
+      pos: -4.5,92.5
+      parent: 1
+  - uid: 1832
+    components:
+    - type: Transform
+      pos: -4.5,91.5
+      parent: 1
+  - uid: 1833
+    components:
+    - type: Transform
+      pos: -4.5,90.5
+      parent: 1
+  - uid: 1834
+    components:
+    - type: Transform
+      pos: -3.5,93.5
+      parent: 1
+  - uid: 1835
+    components:
+    - type: Transform
+      pos: -3.5,92.5
+      parent: 1
+  - uid: 1837
+    components:
+    - type: Transform
+      pos: -3.5,91.5
+      parent: 1
+  - uid: 1838
+    components:
+    - type: Transform
+      pos: -2.5,93.5
+      parent: 1
+  - uid: 1839
+    components:
+    - type: Transform
+      pos: -2.5,92.5
+      parent: 1
+  - uid: 1840
+    components:
+    - type: Transform
+      pos: -3.5,90.5
+      parent: 1
+  - uid: 1841
+    components:
+    - type: Transform
+      pos: -2.5,91.5
+      parent: 1
+  - uid: 1842
+    components:
+    - type: Transform
+      pos: -2.5,90.5
+      parent: 1
+  - uid: 1843
+    components:
+    - type: Transform
+      pos: -1.5,93.5
+      parent: 1
+  - uid: 1844
+    components:
+    - type: Transform
+      pos: -1.5,92.5
+      parent: 1
+  - uid: 1845
+    components:
+    - type: Transform
+      pos: -1.5,91.5
+      parent: 1
+  - uid: 1846
+    components:
+    - type: Transform
+      pos: -1.5,90.5
+      parent: 1
+  - uid: 1847
+    components:
+    - type: Transform
+      pos: -0.5,93.5
+      parent: 1
+  - uid: 1848
+    components:
+    - type: Transform
+      pos: -0.5,92.5
+      parent: 1
+  - uid: 1849
+    components:
+    - type: Transform
+      pos: -0.5,91.5
+      parent: 1
+  - uid: 1850
+    components:
+    - type: Transform
+      pos: -0.5,90.5
+      parent: 1
+  - uid: 1851
+    components:
+    - type: Transform
+      pos: -2.5,94.5
+      parent: 1
+  - uid: 1852
+    components:
+    - type: Transform
+      pos: -1.5,94.5
+      parent: 1
+  - uid: 1853
+    components:
+    - type: Transform
+      pos: -0.5,94.5
       parent: 1
 - proto: WoodenFloorFancyBrokenFallout
   entities:

@@ -1,0 +1,35 @@
+﻿- type: entity
+  parent: StalkerShop
+  id: STMilitaryUniformVendorEN # OKSOP Uniform Vendor
+  name: OKSOP Uniform Torgomat
+  description:
+  suffix: ST, Mapping, Military, EN-Trader
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_blue.rsi
+    layers:
+    - state: torgomat_blue
+      map: [ "enum.ConstructionVisuals.Layer" ]
+    - state: normal-unshaded
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: OKSOPClothingShopPresetEN
+
+- type: entity
+  parent: StalkerShop
+  id: STPremiumShopMilitaryEN # OKSOP Premium Vendor
+  name: Premium OKSOP Torgomat
+  description: OKSOP premium supply. Works on premium coupons, just like in the USSR.
+  suffix: ST, OKSOP, EN-TRADER
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_blue.rsi
+    layers:
+    - state: torgomat_dark_blue
+      map: [ "enum.ConstructionVisuals.Layer" ]
+    - state: normal-unshaded
+  - type: Shop
+    moneyId: PremiumSupplyTalons
+    shopPresetId: MilitaryPremiumShopPresetEN

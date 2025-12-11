@@ -18,6 +18,8 @@
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
 
+# Factions
+
 - type: entity
   parent: BaseItem
   id: CasseteBandit
@@ -59,7 +61,7 @@
   id: CasseteArstotzka1984 #1984
   suffix: Stalker, Cassette, (Glory to Arstotzka)
   name: Cassette "Glory to Arstotzka"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  description: A brand new cassette tape. It's believed to contain a song.
   components:
   - type: STWeight
     self: 0.15
@@ -77,7 +79,7 @@
   id: CasseteArstotzka1
   suffix: Stalker, Cassette, (Arstotzka Good)
   name: Cassette "Arstotzka Good"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  description: A brand new cassette tape. It's believed to contain a song.
   components:
   - type: STWeight
     self: 0.15
@@ -95,12 +97,66 @@
   id: CasseteArstotzka2
   suffix: Stalker, Cassette, (Arstotzka Bad)
   name: Cassette "Arstotzka Bad"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  description: A brand new cassette tape. It's believed to contain a song.
   components:
   - type: STWeight
     self: 0.15
   - type: Cassete
     sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_3.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CasseteArmy2
+  suffix: Stalker, Cassette, (Bomzh)
+  name: Cassette "Bomzh"
+  description: A brand new cassette tape. It's believed to contain a song.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/army_radio2.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CasseteArmy3
+  suffix: Stalker, Cassette, (Chansonette)
+  name: Cassette "Chansonette"
+  description: A brand new cassette tape. It's believed to contain a song.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/army_radio3.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CasseteArmy4
+  suffix: Stalker, Cassette, (On the line I drive)
+  name: Cassette "On the line I drive"
+  description: A brand new cassette tape. It's believed to contain a song.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/ua_radio.ogg
   - type: Tag
     tags:
     - Cassete
@@ -125,6 +181,8 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c7
+
+# Admeme
 
 - type: entity
   parent: BaseItem

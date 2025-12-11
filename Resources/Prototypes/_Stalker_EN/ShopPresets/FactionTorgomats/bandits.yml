@@ -1,5 +1,5 @@
 - type: shopPreset
-  id: BandsShopPresetEN
+  id: BandsShopPresetEN # Pending Economy Change
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 310
@@ -22,7 +22,7 @@
     ZoneArtifactWhirlwind: 400
     ZoneArtifactPebble: 510
     ZoneArtifactRosin: 1000
-    ZoneArtifactStoneCube: 1620
+    ZoneArtifactStoneCube: 700
     # Gravity group - 2
     ZoneArtifactVyvert: 260
     ZoneArtifactAmoeba: 450

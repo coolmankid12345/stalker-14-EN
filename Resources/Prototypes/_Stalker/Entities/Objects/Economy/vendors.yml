@@ -392,8 +392,8 @@
   components:
     - type: VendingMachineRestock
       canRestock:
-        - MilitaryPSZInventory
-        - MilitaryPSZInventoryOfficer
+        - MilitaryPSZInventoryEN
+        - MilitaryPSZInventoryOfficerEN
     - type: STWeight
       self: 87.2
     - type: Item
@@ -467,7 +467,7 @@
   components:
     - type: VendingMachineRestock
       canRestock:
-        - MilitaryPSZInventoryOfficer
+        - MilitaryPSZInventoryOfficerEN
     - type: STWeight
       self: 87.2
     - type: Item

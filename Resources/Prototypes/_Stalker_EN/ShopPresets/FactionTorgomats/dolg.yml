@@ -1,6 +1,6 @@
 - type: shopPreset
-  id: DolgShopPresetEN
-  itemsForSale:  # Mutant parts 1.5x Sidorovich
+  id: DolgShopPresetEN # Mutant parts 1.5x Barman - Pending Economy Change
+  itemsForSale:
     #Boars -------- Health * T
     MutantPartBoarHoof: 275 # T1
     MutantPartSeasonedBoarHoof: 545 # T2

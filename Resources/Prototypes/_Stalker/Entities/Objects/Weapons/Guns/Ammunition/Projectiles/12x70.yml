@@ -60,7 +60,7 @@
     count: 10
     spread: 12
 
-# 8.5 mm
+# 8.5 mm Stalker EN
 
 - type: entity
   id: STPellet85mm
@@ -71,8 +71,8 @@
     projectileClass: 2
     damage:
       types:
-        Piercing: 20
-        Mutant: 11
+        Piercing: 15
+        Mutant: 16
 
 - type: entity
   id: Bullet8mmBuckshot

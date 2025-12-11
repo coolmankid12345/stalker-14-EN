@@ -5,7 +5,7 @@
   id: STJewelrySilver
   name: Jewelry silver
   desciption: Silver jewelry, which you can make not bad money on!
-  suffix: ST
+  suffix: ST, Jewelry
   components:
     - type: Sprite
       state: icon
@@ -19,7 +19,7 @@
   id: STJewelryGold
   name: Jewelry gold
   desciption: Gold jewelry, which you can make good money on!
-  suffix: ST
+  suffix: ST, Jewelry
   components:
     - type: Sprite
       state: icon
@@ -32,7 +32,7 @@
   parent: [ Wristwatch , STBaseItem ]
   name: Gold watch
   description: A fancy watch worth more than your kidney.
-  suffix: ST
+  suffix: ST, Jewelry
   components:
   - type: Sprite
     sprite: Objects/Devices/goldwatch.rsi
@@ -52,7 +52,7 @@
   id: STGoldRingBigDiamond
   name: Gold big diamond ring
   description: A ring with a SOOOOOOOOO big diamond.
-  suffix: ST
+  suffix: ST, Jewelry
   components:
     - type: Sprite
       state: icon

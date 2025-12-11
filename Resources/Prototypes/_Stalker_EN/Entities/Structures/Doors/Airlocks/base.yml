@@ -93,6 +93,18 @@
         layer:
         - AirlockLayer
 
+# Military
+
+- type: entity
+  id: MetalGrateDoorFalloutMilitaryOfficerClosedEN
+  name: Military Detention Facility Door
+  parent: MetalGrateDoorFallout
+  description: A strong lattice door with a reliable lock.
+  suffix: ST, mapping, Military, Officer
+  components:
+  - type: AccessReader
+    access: [["MilitaryOfficer"]]
+
 # Duty
 
 - type: entity
@@ -183,3 +195,15 @@
   components:
   - type: AccessReader
     access: [["Merc"]]
+
+# Renegades
+
+- type: entity
+  id: MetalBarDoorFalloutRenegadesClosedEN
+  name: Lattice door
+  parent: MetalBarDoorFallout
+  description: Lattice door with a secure lock.
+  suffix: ST, Mapping, Renegade
+  components:
+  - type: AccessReader
+    access: [["Renegat"]]

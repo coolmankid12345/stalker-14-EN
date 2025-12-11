@@ -30,7 +30,7 @@
     deniedPopup: christmas-tree-no-gift
     requiredHoliday: FestiveSeason
   - type: AmbientSound
-    volume: -6
+    volume: -8
     range: 25
     enabled: true
     sound:
