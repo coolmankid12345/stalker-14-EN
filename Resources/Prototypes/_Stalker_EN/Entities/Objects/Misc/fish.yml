@@ -350,10 +350,10 @@
     - metallic
   - type: Butcherable
     spawned:
-    - id: IngotGold1
+    - id: STJewelryGold
       Amount: 1
       prob: 0.35
-    - id: GoldRing
+    - id: STWristwatchGold
       Amount: 1
       prob: 0.2
     - id: ZoneArtifactGoldfish

@@ -1,28 +1,10 @@
 - type: shopPreset
   id: NpcErjanAlimovEN
   itemsForSale:
-    ClothingNeckBronzeheart: 100
-    ClothingNeckCargomedal: 100
-    ClothingNeckEngineermedal: 100
-    Wristwatch: 400
-    SilverRing: 200
-    GoldRing: 500
-    TreasureCoinIron: 100
-    TreasureCoinGold: 300
-    TreasureCoinSilver: 200
-    SilverRingDiamond: 850
-    GoldRingDiamond: 600
-    ClothingNeckGoldAutismPin: 2
-    MaterialDiamond1: 1000
-    DrinkGoldenCup: 1000
-    SilverRingGem: 1000
-    GoldRingGem: 1000
-    ClothingNeckGoldmedal: 600
-    IngotSilver1: 300
-    IngotGold1: 500
-    WristwatchGold: 2500
-    ClothingNeckBling: 1000
-    TreasureCoinAdamantine: 300
+    STJewelrySilver: 400
+    STJewelryGold: 600
+    STWristwatchGold: 1500
+    STGoldRingBigDiamond: 2000
   categories:
     - name: Items
       priority: 1

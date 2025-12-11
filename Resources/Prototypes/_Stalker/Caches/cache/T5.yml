@@ -85,21 +85,21 @@
           prob: 0.075
         - id: STHeadLight
           prob: 0.075
-        - id: IngotGold1
+        - id: STJewelryGold
           prob: 0.1
-        - id: IngotGold1
+        - id: STJewelryGold
           prob: 0.1
-        - id: IngotSilver1
+        - id: STJewelrySilver
           prob: 0.1
-        - id: IngotSilver1
+        - id: STJewelrySilver
           prob: 0.1
-        - id: MaterialDiamond1
+        - id: STGoldRingBigDiamond
           prob: 0.1
-        - id: MaterialDiamond1
+        - id: STGoldRingBigDiamond
           prob: 0.1
-        - id: DrinkGoldenCup
+        - id: STWristwatchGold
           prob: 0.1
-        - id: DrinkGoldenCup
+        - id: STWristwatchGold
           prob: 0.1
         - id: CraftMaterialGunpowder
           prob: 0.1

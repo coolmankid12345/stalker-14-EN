@@ -103,13 +103,13 @@
           prob: 0.02
         - id: CigPackKosmos
           prob: 0.02
-        - id: IngotGold1
+        - id: STJewelryGold
           prob: 0.04
-        - id: IngotSilver1
+        - id: STJewelrySilver
           prob: 0.04
-        - id: MaterialDiamond1
+        - id: STGoldRingBigDiamond
           prob: 0.04
-        - id: DrinkGoldenCup
+        - id: STWristwatchGold
           prob: 0.04
         - id: CraftMaterialGunpowder
           prob: 0.04
