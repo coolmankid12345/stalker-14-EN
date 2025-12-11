@@ -28,7 +28,9 @@
         density: 1
         restitution: 0.0
         mask:
-        - ItemMask
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   parent: STBaseBolt
