@@ -10,6 +10,7 @@
   suffix: Stalker, Mutant
   components:
   - type: ZoneAnomalyActivator
+  - type: LagCompensation
   - type: Tag
     tags:
       - CannotSuicide
@@ -188,6 +189,7 @@
   suffix: ST
   components:
     - type: ZoneAnomalyActivator
+    - type: LagCompensation
     - type: Tag
       tags:
         - CannotSuicide
