@@ -37,7 +37,8 @@
     - name: FAMINE
       priority: 2
       items:
-        FoodBagel: 9
-        SnapPop: 9
+        FoodSnackCookieFortune: 5
+        FluteInstrument: 20
+        ClothingHeadHatBeretEngineering: 75
         FlippoEngravedLighter: 20
         STCookingOracleGumbo: 90

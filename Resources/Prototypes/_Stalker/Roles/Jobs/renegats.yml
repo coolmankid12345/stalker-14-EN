@@ -47,7 +47,7 @@
     species:
     - Human
     - Dwarf
-  startingGear: ReneGear
+  startingGear: ReneGearHead # EN
   supervisors: you're the boss.
   canBeAntag: false
   special:
@@ -70,11 +70,25 @@
   id: ReneGear
   equipment:
     id: BandPDA
+    neck: ClothingNeckDogtagRenegade # EN
     head: ClothingHeadHatGreyFlatcap
     torso: ClothingTorsoTShirtColorBlack
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesBootsWork
     back: ClothingBackpackDuffelBlackStalker
+
+# EN
+- type: startingGear
+  id: ReneGearHead
+  equipment:
+    id: BandPDA
+    neck: ClothingNeckDogtagRenegadeLeader # EN
+    head: ClothingHeadHatGreyFlatcap
+    torso: ClothingTorsoTShirtColorBlack
+    legs: ClothingLegsJeansBlue
+    shoes: ClothingShoesBootsWork
+    back: ClothingBackpackDuffelBlackStalker
+
 - type: stBand
   id: STRenegatsBand
   name: Renegades

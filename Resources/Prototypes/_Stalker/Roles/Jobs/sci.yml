@@ -91,7 +91,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: SciGear
+  startingGear: SciGearHead
   supervisors: job-scientist-supervisor
   canBeAntag: false
   special:
@@ -119,9 +119,21 @@
   id: SciGear
   equipment:
     id: ScientistPDA
+    neck: ClothingNeckDogtagEco # EN
     legs: ClothingLegsJeansSandCargo
     shoes: STClothingShoesBootsCombatFilled
     torso: ClothingTorsoShirtWhiteScientific
+
+# EN
+- type: startingGear
+  id: SciGearHead
+  equipment:
+    id: ScientistPDA
+    neck: ClothingNeckDogtagEcoLeader # EN
+    legs: ClothingLegsJeansSandCargo
+    shoes: STClothingShoesBootsCombatFilled
+    torso: ClothingTorsoShirtWhiteScientific
+
 - type: stBand
   id: STSciBand
   name: Scientists

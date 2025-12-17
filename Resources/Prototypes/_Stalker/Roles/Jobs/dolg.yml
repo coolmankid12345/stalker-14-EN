@@ -52,7 +52,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: DolgGear
+  startingGear: DolgGearHead # EN
   supervisors: job-head-dolg-supervisor
   canBeAntag: false
   special:
@@ -82,6 +82,18 @@
   id: DolgGear
   equipment:
     id: DolgPDA
+    neck: ClothingNeckDogtagDuty # EN
+    legs: ClothingLegsJeansDolgCamouflage
+    shoes: STClothingShoesBootsCombatFilled
+    torso: ClothingTorsoTurtlenecksDolgCamouflage
+    back: ClothingBackpackDuffelBlackStalker
+
+ # EN
+- type: startingGear
+  id: DolgGearHead
+  equipment:
+    id: DolgPDA
+    neck: ClothingNeckDogtagDutyCommander
     legs: ClothingLegsJeansDolgCamouflage
     shoes: STClothingShoesBootsCombatFilled
     torso: ClothingTorsoTurtlenecksDolgCamouflage

@@ -40,6 +40,7 @@
   id: JurGear
   equipment:
     id: StalkerPDA
+    neck: ClothingNeckDogtagJournalist # EN
     torso: ClothingTorsoSweaterStalkerGreen
     legs: ClothingLegsJeansBlue
     shoes: STClothingShoesBootsCombatFilled

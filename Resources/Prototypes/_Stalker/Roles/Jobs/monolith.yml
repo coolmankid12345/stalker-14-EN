@@ -105,6 +105,7 @@
   equipment:
     ears: STClothingChip
     id: MonolithPDA
+    neck: ClothingNeckDogtagMonolith # EN
     torso: ClothingTorsoTurtlenecksMonolithCamouflage
     legs: ClothingLegsJeansMonolithCamouflage
     shoes: STClothingShoesBootsCombat

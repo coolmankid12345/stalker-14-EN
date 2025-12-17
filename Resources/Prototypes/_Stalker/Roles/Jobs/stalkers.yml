@@ -125,6 +125,7 @@
   id: StalkerGear
   equipment:
     id: StalkerPDA
+    neck: ClothingNeckDogtagLoner # EN
     belt: ClothingBeltBandolierStalker
     shoes: ClothingShoesNovice
     pocket1: STShiv
