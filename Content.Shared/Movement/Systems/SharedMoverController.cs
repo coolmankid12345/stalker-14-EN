@@ -2,7 +2,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.CCVar;
-using Content.Shared._ES.Viewcone;
 using Content.Shared.Friction;
 using Content.Shared.Gravity;
 using Content.Shared.Inventory;
@@ -21,7 +20,6 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Controllers;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
@@ -48,9 +46,6 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] protected readonly SharedPhysicsSystem Physics = default!;
     [Dependency] private   readonly SharedTransformSystem _transform = default!;
     [Dependency] private   readonly TagSystem _tags = default!;
-    // ES START
-    [Dependency] private   readonly ESViewconeEffectSystem _viewconeEffect = default!;
-    // ES END
 
     protected EntityQuery<InputMoverComponent> MoverQuery;
     protected EntityQuery<MobMoverComponent> MobMoverQuery;
@@ -64,10 +59,6 @@ public abstract partial class SharedMoverController : VirtualController
     protected EntityQuery<NoRotateOnMoveComponent> NoRotateQuery;
     protected EntityQuery<FootstepModifierComponent> FootstepModifierQuery;
     protected EntityQuery<MapGridComponent> MapGridQuery;
-    // ES START
-    private static readonly EntProtoId ESFootstepViewconeEffect = "ESViewconeEffectFootstep";
-    // ES END
-
 
     /// <summary>
     /// <see cref="CCVars.StopSpeed"/>
@@ -279,13 +270,6 @@ public abstract partial class SharedMoverController : VirtualController
                 {
                     _audio.PlayPredicted(sound, uid, uid, audioParams);
                 }
-                // ES START (modified slightly)
-                if (worldTotal != Vector2.Zero)
-                {
-                    var wishDir = worldTotal.Normalized();
-                    _viewconeEffect.SpawnEffect(uid, ESFootstepViewconeEffect, wishDir.ToWorldAngle());
-                }
-                // ES END
             }
         }
 
