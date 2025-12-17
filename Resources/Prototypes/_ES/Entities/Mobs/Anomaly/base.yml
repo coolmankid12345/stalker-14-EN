@@ -1,8 +1,0 @@
-# Base mob components that originate from ES.
-- type: entity
-  id: ESBaseMobAnomaly
-  abstract: true
-  components:
-  - type: ESViewconeOccludable
-
-  # i doubt i will ever actually use this.
