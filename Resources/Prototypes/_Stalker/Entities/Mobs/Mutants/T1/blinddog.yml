@@ -1,5 +1,5 @@
 - type: entity
-  parent: STBaseMobMutant
+  parent: BaseMobMutant
   id: BaseMobMutantBlindDog
   name: база слепого пса
   abstract: true

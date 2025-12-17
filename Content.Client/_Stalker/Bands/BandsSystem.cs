@@ -2,6 +2,7 @@ using Content.Shared._Stalker.Bands;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Prototypes;
+using Content.Shared._ES.Viewcone;
 
 namespace Content.Client._Stalker.Bands;
 /// <summary>
@@ -19,6 +20,8 @@ public sealed class BandsSystem : SharedBandsSystem
 
     private void OnGetStatusIcon(EntityUid uid, BandsComponent component, ref GetStatusIconsEvent args)
     {
+        if (EntityManager.TryGetComponent<ESViewconeOccludableComponent>(uid, out var occ) && occ.IsHidden)
+            return;
         args.StatusIcons.Add(_proto.Index<JobIconPrototype>(component.BandStatusIcon));
     }
 }
