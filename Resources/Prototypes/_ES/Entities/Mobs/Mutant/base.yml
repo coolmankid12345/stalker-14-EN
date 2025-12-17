@@ -1,0 +1,7 @@
+# Base mob components that originate from ES.
+- type: entity
+  id: ESBaseMobMutant
+  abstract: true
+  components:
+  - type: ESViewcone
+  - type: ESViewconeOccludable

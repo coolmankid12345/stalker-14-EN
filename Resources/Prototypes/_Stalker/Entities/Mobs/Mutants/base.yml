@@ -1,6 +1,7 @@
 - type: entity
   parent:
   - MobAnomalyTarget
+  - ESBaseMobMutant
   - MobWeight
   - MobStaminaDamageable
   - MobLay
