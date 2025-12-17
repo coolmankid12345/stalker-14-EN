@@ -280,11 +280,11 @@ public abstract partial class SharedMoverController : VirtualController
                     _audio.PlayPredicted(sound, uid, uid, audioParams);
                 }
                 // ES START (modified slightly)
-                if (worldTotal != Vector2.Zero)
-                {
-                    var wishDir = worldTotal.Normalized();
-                    _viewconeEffect.SpawnEffect(uid, ESFootstepViewconeEffect, wishDir.ToWorldAngle());
-                }
+                // if (worldTotal != Vector2.Zero)
+                // {
+                //     var wishDir = worldTotal.Normalized();
+                //     _viewconeEffect.SpawnEffect(uid, ESFootstepViewconeEffect, wishDir.ToWorldAngle());
+                // }
                 // ES END
             }
         }
