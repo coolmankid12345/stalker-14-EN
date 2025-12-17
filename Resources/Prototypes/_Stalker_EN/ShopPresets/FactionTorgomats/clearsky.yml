@@ -303,6 +303,7 @@
       HatchetStalker: 150
       CasseteSevenRadio: 500
       ClothingHeatBagStalker: 100
+      ClothingNeckDogtagLoner: 250
 
   - name: shop-category-modules
     priority: 11

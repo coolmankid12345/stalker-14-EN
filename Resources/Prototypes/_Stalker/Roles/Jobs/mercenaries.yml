@@ -38,6 +38,7 @@
   id: StalkerMercenaryGear
   equipment:
     id: MercPDA
+    neck: ClothingNeckDogtagMercenary # EN
     torso: STClothingTorsoJacketGray
     legs: STClothingLegsPantsGray
     shoes: ClothingShoesSwat
@@ -84,7 +85,7 @@
   id: StalkerHeadMercenaryGear
   equipment:
     id: MercPDA
-    neck: ClothingNeckDogtagBrigand
+    neck: ClothingNeckDogtagMercenaryCommander # EN
     eyes: ClothingEyesGlassesSunglasses
     torso: STClothingTorsoJacketGray
     legs: STClothingLegsPantsGray

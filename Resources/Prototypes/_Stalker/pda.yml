@@ -152,7 +152,7 @@
         startingItem: PowerCellSmall
       dogtag_slot:
         name: Dogtag
-        startingItem: ClothingNeckDogtagStalker
+#        startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
             - ClothingNeckDogtagStalker
@@ -400,7 +400,7 @@
         startingItem: PowerCellSmall
       dogtag_slot:
         name: Dogtag
-        startingItem: ClothingNeckDogtagOfficial
+#        startingItem: ClothingNeckDogtagOfficial
         whitelist:
           tags:
             - ClothingNeckDogtagOfficial
@@ -440,7 +440,7 @@
         startingItem: PowerCellSmall
       dogtag_slot:
         name: Dogtag
-        startingItem: ClothingNeckDogtagBrigand
+#        startingItem: ClothingNeckDogtagBrigand
         whitelist:
           tags:
             - ClothingNeckDogtagBrigand
@@ -555,7 +555,7 @@
         startingItem: PowerCellSmall
       dogtag_slot:
         name: Dogtag
-        startingItem: ClothingNeckDogtagStalker
+#        startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
             - ClothingNeckDogtagStalker
@@ -631,7 +631,7 @@
         startingItem: PowerCellSmall
       dogtag_slot:
         name: Dogtag
-        startingItem: ClothingNeckDogtagStalker
+#        startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
             - ClothingNeckDogtagStalker
@@ -713,7 +713,7 @@
         startingItem: PowerCellSmall
       dogtag_slot:
         name: Dogtag
-        startingItem: ClothingNeckDogtagStalker
+#        startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
             - ClothingNeckDogtagStalker
@@ -802,7 +802,7 @@
         startingItem: PowerCellSmall
       dogtag_slot:
         name: Dogtag
-        startingItem: ClothingNeckDogtagOfficial
+#        startingItem: ClothingNeckDogtagOfficial
         whitelist:
           tags:
             - ClothingNeckDogtagOfficial
@@ -915,7 +915,7 @@
         startingItem: PowerCellSmall
       dogtag_slot:
         name: Dogtag
-        startingItem: ClothingNeckDogtagBrigand
+#        startingItem: ClothingNeckDogtagBrigand
         whitelist:
           tags:
             - ClothingNeckDogtagBrigand

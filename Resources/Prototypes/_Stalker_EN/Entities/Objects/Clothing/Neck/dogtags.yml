@@ -1,0 +1,259 @@
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagLoner
+  name: stalker dogtag
+  description: A standard metal dogtag engraved with an identifier. A common sight in the zone.
+  suffix: ST, Stalkers
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/loner.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 1
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagBandit
+  name: bandit dogtag
+  description: A dark steel dogtag decorated with a skull.
+  suffix: ST, Bandits
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/band.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 2
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagBanditPahan
+  name: bandit pahan dogtag
+  description: A dark steel dogtag decorated with a skull wearing a crown.
+  suffix: ST, Bandits
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/band_pahan.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 2
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagClearSky
+  name: stalker dogtag
+  description: A lightweight galvanized dogtag in pale blue, an image of the sun is pressed into it.
+  suffix: ST, Clear Sky
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/cs.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 1
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagClearSkyLeader
+  name: stalker dogtag
+  description: A lightweight galvanized dogtag in pale blue, an image of the sun is pressed into it and small, intricate birds decorate the back.
+  suffix: ST, Clear Sky
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/cs_lead.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 1
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagDuty
+  name: duty dogtag
+  description: A durable reddog tag with a black rubber sleeve, an identifier is carved into it.
+  suffix: ST, Duty
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/duty.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 1
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagDutyCommander
+  name: duty commander dogtag
+  description: A durable reddog tag with a black rubber sleeve, a military rank and identifier are carved into it.
+  suffix: ST, Duty
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/duty_command.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 1
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagEco
+  name: scientist dogtag
+  description: A clean steel dogtag with a blue and red flask on the front and a barcode on the back.
+  suffix: ST, Ecologists
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/eco.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 0
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagEcoLeader
+  name: scientist leader dogtag
+  description: A clean steel dogtag with a blue and red flask overlayed with the Ukrainian flag. A barcode is printed on the back.
+  suffix: ST, Ecologists
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/eco_lead.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 0
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagFreedom
+  name: freedom dogtag
+  description: A dented metal dogtag with a dog crudely carved into it.
+  suffix: ST, Freedom
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/free.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 1
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagFreedomAtaman
+  name: freedom ataman dogtag
+  description: A dented metal dogtag with a dog crudely carved into it. It's been carefully painted.
+  suffix: ST, Freedom
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/free_ataman.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 1
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagJournalist
+  name: press ID
+  description: A laminated ID designating the owner as a reporter.
+  suffix: ST, Journalist
+  components:
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/journalist.rsi
+    - type: Currency
+      price:
+        PremiumSupplyTalons: 1
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagMercenary
+  name: mercenary dogtag
+  description: A lightweight dogtag in dark blue with identifying numbers carved into it.
+  suffix: ST, Mercenary
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/merc.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 2
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagMercenaryCommander
+  name: mercenary commander dogtag
+  description: A lightweight dogtag in dark blue with identifying numbers carved into it. It's dented and scratched.
+  suffix: ST, Mercenary
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/merc_command.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 2
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagMilitary
+  name: military dogtag
+  description: A military dogtag in standard green, a rank and identifying number has been engraved into it.
+  suffix: ST, Military
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/mili.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 0
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagMilitaryCommander
+  name: military commander dogtag
+  description: A military dogtag in standard green, a rank and identifying number has been engraved into it.
+  suffix: ST, Military
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/mili_command.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 0
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagMonolith
+  name: monolith dogtag
+  description: A pale white dogtag with no identifying features.
+  suffix: ST, Monolith
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/mono.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 2
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagNeutral
+  name: neutral dogtag
+  description: A metal dogtag on a reflective yellow lanyard, a blue free stalker symbol had been pressed into it.
+  suffix: ST, Neutral
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/neutral.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 1
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagRenegade
+  name: renegade dogtag
+  description: A dogtag caked in mud and grime, it's decorated with a gold and green scorpion.
+  suffix: ST, Renegades
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/renegat.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 2
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagRenegadeLeader
+  name: renegade leader dogtag
+  description: A dogtag caked in blood, it's decorated with a gold and green scorpion.
+  suffix: ST, Renegades
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/renegat_lead.rsi
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 2

@@ -82,6 +82,7 @@
   id: BandGear
   equipment:
     id: BandPDA
+    neck: ClothingNeckDogtagBandit # EN
     belt: ClothingBeltBandolierStalker
     shoes: ClothingShoesBootsCombat
     legs: ClothingLegsJeansBlue
@@ -95,6 +96,7 @@
   id: BandHeadGear
   equipment:
     id: BandPDA
+    neck: ClothingNeckDogtagBanditPahan # EN
     shoes: ClothingShoesBootsCombat
     legs: ClothingLegsJeansBlue
     torso: ClothingTorsoJacketAdidas

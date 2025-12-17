@@ -209,6 +209,7 @@
     torso: ClothingTorsoTurtlenecksUa
     shoes: STClothingShoesBootsCombatFilled
     id: STOKSOPPdaEN
+    neck: ClothingNeckDogtagMilitary # EN
 
 - type: startingGear
   id: MilitaryGearOfficer
@@ -217,6 +218,7 @@
     torso: ClothingTorsoTurtlenecksMilitary
     shoes: STClothingShoesBootsCombatFilled
     id: STOKSOPPdaEN
+    neck: ClothingNeckDogtagMilitary # EN
 
 - type: startingGear
   id: MilitaryGearHead
@@ -225,6 +227,7 @@
     torso: ClothingTorsoTurtlenecksMilitary
     shoes: STClothingShoesBootsCombatFilled
     id: STOKSOPPdaEN
+    neck: ClothingNeckDogtagMilitaryCommander # EN
 
 - type: startingGear
   id: MilitarySpecGear
