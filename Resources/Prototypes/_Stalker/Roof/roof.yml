@@ -1,0 +1,17 @@
+- type: entity
+  id: StalkerRoof
+  parent: MarkerBase
+  name: крыша
+  description: Создаёт тень на тайле, как под крышей.
+  suffix: Stalker, Mapping
+  components:
+    - type: IsRoof
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static

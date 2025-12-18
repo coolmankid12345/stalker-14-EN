@@ -287,7 +287,7 @@
         STClothingOuterArmorBandits: 2000
         STClothingOuterArmorRCBZ: 2000
         ClothingOuterArmorBandits: 5500
-        ClothingOuterArmorHeavyJaba: 10000
+        STClothingOuterArmorLightPlateVestBaseHeavyBandit: 10000
     - name: shop-category-storage-and-containers
       priority: 5
       items:

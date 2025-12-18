@@ -32,10 +32,10 @@
         Slash: 0.60
         Piercing: 0.7
         Compression: 0.85
-        Radiation: 0.60
-        Heat: 0.55
-        Caustic: 0.70
-        Shock: 0.65
+        Radiation: 0.90
+        Heat: 0.75
+        Caustic: 0.80
+        Shock: 0.75
   - type: ExplosionResistance
     damageCoefficient: 0.8
   - type: Craftable
@@ -127,6 +127,22 @@
     tags:
     - BlockCloak
     - BlockBack
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 2
+        Slash: 2
+        Piercing: 7
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.7
+        Compression: 0.95
+        Radiation: 0.95
+        Heat: 0.95
+        Caustic: 0.85
+        Shock: 0.95
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -242,6 +258,19 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetDolgPS5M
     slot: head
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 6
+        Piercing: 6
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.55
+        Piercing: 0.65
+        Radiation: 0.95
+        Heat: 0.85
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -268,6 +297,23 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetFreedomDefender
     slot: head
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 6
+        Piercing: 5
+        Radiation: 1
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.65
+        Piercing: 0.7
+        Compression: 0.65
+        Radiation: 0.80
+        Heat: 0.65
+        Caustic: 0.70
+        Shock: 0.65
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -305,6 +351,22 @@
       - 6,3,6,4
   - type: Armor
     armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 6
+        Piercing: 2
+        Radiation: 1
+        Heat: 1
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.65
+        Radiation: 0.8
+        Compression: 0.65
+        Piercing: 0.9
+        Heat: 0.7
+        Caustic: 0.75
+        Shock: 0.8
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
@@ -349,6 +411,26 @@
       - 11,0,11,2
       - 13,4,14,5
       - 1,4,1,5
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 6.5
+        Piercing: 4
+        Radiation: 2
+        Heat: 1
+        Caustic: 1
+        Shock: 1
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.55
+        Piercing: 0.85
+        Compression: 0.65
+        Radiation: 0.75
+        Heat: 0.75
+        Caustic: 0.70
+        Shock: 0.75
 
 - type: entity
   parent: STClothingOuterArmorBase

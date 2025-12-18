@@ -42,12 +42,26 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/tvm-12.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/tvm-12.rsi
-  - type: Armor
-    armorLevels:
-      environment: 3
-      piercing: -1
   - type: Storage
     maxItemSize: Large
     grid:
       - 0,0,2,2
       - 4,0,4,2
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 7
+        Piercing: 4
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.5
+        Piercing: 0.8
+        Heat: 0.7
+        Radiation: 0.6
+        Caustic: 0.7
+        Shock: 0.7
+        Compression: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.7

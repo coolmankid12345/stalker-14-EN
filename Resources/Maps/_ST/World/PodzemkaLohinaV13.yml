@@ -47,6 +47,7 @@ entities:
     - type: MetaData
       name: Подземка лощины
     - type: Transform
+    - type: Roof
     - type: Map
       mapPaused: True
     - type: GridTree

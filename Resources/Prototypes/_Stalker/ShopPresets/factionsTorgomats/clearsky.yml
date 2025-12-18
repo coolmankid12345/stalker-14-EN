@@ -161,6 +161,7 @@
         ClothingOuterArmorCN3a: 5000
         STClothingOuterArmorLightPlateVestBaseANABlue: 3270
         ClothingOuterArmorSevaCN: 6500
+        ClothingOuterArmorStalkerCombatCN: 9000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
