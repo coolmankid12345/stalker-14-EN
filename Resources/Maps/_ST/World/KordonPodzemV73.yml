@@ -85,6 +85,7 @@ entities:
     - type: MetaData
       name: Подземка Кордона
     - type: Transform
+    - type: Roof
     - type: Map
       mapPaused: True
     - type: GridTree

@@ -222,6 +222,18 @@
       - 2,2,2,3
       - 4,2,4,3
       - 6,2,6,3
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 4
+        Slash: 7
+        Piercing: 3
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.6
+        Compression: 0.7
+        Piercing: 0.8
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -247,25 +259,6 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_poisk.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_poisk.rsi
-# Bandits - 5
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Mods
 

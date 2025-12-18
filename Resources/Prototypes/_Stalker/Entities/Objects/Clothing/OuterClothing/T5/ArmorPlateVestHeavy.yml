@@ -66,6 +66,22 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_heavy_bandit.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_heavy_bandit.rsi
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 2
+        Slash: 4
+        Piercing: 8
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.6
+        Heat: 0.9
+        Radiation: 0.95
+        Caustic: 0.95
+        Shock: 0.9
+        Compression: 0.9
 
 # Jab
 - type: entity

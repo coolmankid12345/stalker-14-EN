@@ -18,8 +18,6 @@
   components:
   - type: TimedPortal
     portalName: "RedForest"
-    activeDays:
-      - Friday
-    activeTimeStart: 13h # 13:00 UTC
+    activeTimeStart: 7h # 13:00 UTC
     activeTimeEnd: 18h   # 18:00 UTC
     allowAll: true

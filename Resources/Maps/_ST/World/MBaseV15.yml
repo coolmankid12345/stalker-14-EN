@@ -52,6 +52,7 @@ entities:
     - type: MetaData
       name: Voenka
     - type: Transform
+    - type: Roof
     - type: Map
       mapPaused: True
     - type: GridTree

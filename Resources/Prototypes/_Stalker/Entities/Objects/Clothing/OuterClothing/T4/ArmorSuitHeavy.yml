@@ -49,9 +49,6 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodMerc
     slot: head
-  - type: Tag
-    tags:
-    - BlockCloak
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}

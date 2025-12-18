@@ -48,6 +48,7 @@ entities:
     - type: Map
       mapPaused: True
     - type: GridTree
+    - type: Roof
     - type: Broadphase
     - type: OccluderTree
     - type: MapGrid

@@ -62,6 +62,7 @@ entities:
     - type: MetaData
       name: болота
     - type: Transform
+    - type: Roof
     - type: Map
       mapPaused: True
     - type: GridTree
