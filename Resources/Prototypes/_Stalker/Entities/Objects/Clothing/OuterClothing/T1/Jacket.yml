@@ -44,9 +44,6 @@
   - type: ExplosionResistance
     damageCoefficient: 0.95
   - type: Craftable
-  - type: Tag
-    tags:
-    - BlockCloak
 
 - type: entity
   parent: STClothingHeadHatBase

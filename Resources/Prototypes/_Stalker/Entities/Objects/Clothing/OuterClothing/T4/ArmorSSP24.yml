@@ -51,9 +51,7 @@
     sprintModifier: 0.95
   - type: Tag
     tags:
-    - BlockCloak
     - BlockBack
-    - BlockBelt
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
@@ -99,7 +97,7 @@
   id: ClothingOuterArmorSSP24Ruby
   name: Красный ССП-24 «Рубин»
   description: Высококачественный модифицированный комбинезон ССП-24 с улучшенной защитой от пуль и осколков, которым снабжаются передовые отряды Экологов, когда возможна вероятность столкновения с мутировавшими животными.
-  components: 
+  components:
   - type: Armor
     armorClass: 2
     modifiers:

@@ -49,9 +49,7 @@
         ents: []
   - type: Tag
     tags:
-    - BlockCloak
     - BlockBack
-    - BlockBelt
 
 - type: entity
   parent: ClothingHeadHardsuitBase
