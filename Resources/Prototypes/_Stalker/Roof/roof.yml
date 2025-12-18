@@ -13,5 +13,3 @@
       anchored: True
     - type: InteractionOutline
     - type: Clickable
-    - type: Physics
-      bodyType: Static

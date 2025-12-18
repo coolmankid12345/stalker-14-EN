@@ -62,10 +62,6 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodMerc2
     slot: head
-  - type: Tag
-    tags:
-    - BlockCloak
-    - BlockBack
   - type: Storage
     maxItemSize: Large
     grid:
@@ -123,10 +119,6 @@
       - 6,3,6,4
       - 8,3,8,4
       - 10,3,10,4
-  - type: Tag
-    tags:
-    - BlockCloak
-    - BlockBack
   - type: Armor
     armorClass: 3
     modifiers:
@@ -190,10 +182,6 @@
       - 6,3,6,4
       - 8,3,8,4
       - 10,3,10,4
-  - type: Tag
-    tags:
-    - BlockCloak
-    - BlockBack
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -229,10 +217,6 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodMerc2
     slot: head
-  - type: Tag
-    tags:
-    - BlockCloak
-    - BlockBack
 
 - type: entity
   parent: STClothingHeadHatHoodBase
