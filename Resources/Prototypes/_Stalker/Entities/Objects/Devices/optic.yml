@@ -16,7 +16,7 @@
     state: icon
   - type: Craftable
   - type: Scope
-    zoom: 2.3
+    zoom: 1.65
     delay: 0.4
-    offset: 0
+    offset: 14
     useInHand: true
