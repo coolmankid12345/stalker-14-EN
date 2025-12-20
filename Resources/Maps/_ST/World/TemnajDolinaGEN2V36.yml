@@ -68590,7 +68590,7 @@ entities:
         tile: FloorPlanetGrass
       seed: 1329276934
     - type: MapLight
-      ambientLightColor: '#DFCEB6FF'
+      ambientLightColor: '#fffafa'
     - type: MapAtmosphere
       space: False
       mixture:

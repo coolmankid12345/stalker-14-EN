@@ -16970,7 +16970,7 @@ entities:
       inherent: True
       enabled: True
     - type: MapLight
-      ambientLightColor: '#D8B059FF'
+      ambientLightColor: '#fffafa'
     - type: MapAtmosphere
       space: False
       mixture:
