@@ -21,6 +21,8 @@
             StalkerClearSky: [ 0, -1 ]
             StalkerHeadClearSky: [ 0, -1 ]
             StalkerNeutral: [ 0, -1 ]
+            StalkerPostulant: [ 0, -1 ]
+            StalkerBishop: [ 0, -1 ]
             # Science
             StalkerScientist: [ 0, -1 ]
             StalkerHeadScientist: [ 0, -1 ]
