@@ -1,0 +1,234 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "sprites by carousel, moth sprite made by PuroSlavKing (Github)",
+    "states": [
+        {
+            "name": "stalker0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "stalker1"
+        },
+        {
+            "name": "stalker2"
+        },
+        {
+            "name": "ne0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "ne1"
+        },
+        {
+            "name": "ne2"
+        },
+        {
+            "name": "band0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "band1"
+        },
+        {
+            "name": "band2"
+        },
+        {
+            "name": "cs0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "cs1"
+        },
+        {
+            "name": "cs2"
+        },
+        {
+            "name": "duty0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "duty1"
+        },
+        {
+            "name": "duty2"
+        },
+        {
+            "name": "free0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "free1"
+        },
+        {
+            "name": "free2"
+        },
+        {
+            "name": "journo0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "journo1"
+        },
+        {
+            "name": "journo2"
+        },
+        {
+            "name": "merc0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "merc1"
+        },
+        {
+            "name": "merc2"
+        },
+        {
+            "name": "mili0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "mili1"
+        },
+        {
+            "name": "mili2"
+        },
+        {
+            "name": "mono0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "mono1"
+        },
+        {
+            "name": "mono2"
+        },
+        {
+            "name": "rene0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "rene1",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "rene2",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "sci0",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "sci1"
+        },
+        {
+            "name": "sci2"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+- type: typingIndicator
+  id: stalker
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: stalker0
+
+- type: typingIndicator
+  id: neutral
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: ne0
+
+- type: typingIndicator
+  id: bandit
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: band0
+
+- type: typingIndicator
+  id: cs
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: cs0
+  offset: -0.055, 0.025
+
+- type: typingIndicator
+  id: duty
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: duty0
+  offset: -0.055, 0
+
+- type: typingIndicator
+  id: freedom
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: free0
+  offset: -0.075, 0.125
+
+- type: typingIndicator
+  id: journalist
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: journo0
+
+- type: typingIndicator
+  id: mercenary
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: merc0
+  offset: -0.055, 0
+
+- type: typingIndicator
+  id: military
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: mili0
+  offset: 0, 0.125
+
+- type: typingIndicator
+  id: monolith
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: mono0
+  offset: -0.055, 0
+
+- type: typingIndicator
+  id: renegade
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: rene0
+
+- type: typingIndicator
+  id: ecologist
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: sci0
+  offset: -0.055, 0
