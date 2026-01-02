@@ -4,13 +4,13 @@
   id: Hryvnias
 
 - type: Tag
+  id: Lighter
+
+- type: Tag
   id: MagazineDesertEagle
 
 - type: Tag
   id: MagazineDesertEagleMagnum
-
-- type: Tag
-  id: Matryoshka
 
 - type: Tag
   id: Plate

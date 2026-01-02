@@ -7,6 +7,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/loner.rsi
+  - type: TypingIndicatorClothing
+    proto: stalker
   - type: Currency
     price:
       PremiumSupplyTalons: 1
@@ -20,6 +22,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/band.rsi
+  - type: TypingIndicatorClothing
+    proto: bandit
   - type: Currency
     price:
       PremiumSupplyTalons: 2
@@ -33,6 +37,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/band_pahan.rsi
+  - type: TypingIndicatorClothing
+    proto: bandit
   - type: Currency
     price:
       PremiumSupplyTalons: 2
@@ -46,6 +52,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/cs.rsi
+  - type: TypingIndicatorClothing
+    proto: cs
   - type: Currency
     price:
       PremiumSupplyTalons: 1
@@ -59,6 +67,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/cs_lead.rsi
+  - type: TypingIndicatorClothing
+    proto: cs
   - type: Currency
     price:
       PremiumSupplyTalons: 1
@@ -72,6 +82,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/duty.rsi
+  - type: TypingIndicatorClothing
+    proto: duty
   - type: Currency
     price:
       PremiumSupplyTalons: 1
@@ -85,6 +97,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/duty_command.rsi
+  - type: TypingIndicatorClothing
+    proto: duty
   - type: Currency
     price:
       PremiumSupplyTalons: 1
@@ -98,6 +112,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/eco.rsi
+  - type: TypingIndicatorClothing
+    proto: ecologist
   - type: Currency
     price:
       PremiumSupplyTalons: 0
@@ -111,6 +127,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/eco_lead.rsi
+  - type: TypingIndicatorClothing
+    proto: ecologist
   - type: Currency
     price:
       PremiumSupplyTalons: 0
@@ -124,6 +142,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/free.rsi
+  - type: TypingIndicatorClothing
+    proto: freedom
   - type: Currency
     price:
       PremiumSupplyTalons: 1
@@ -137,6 +157,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/free_ataman.rsi
+  - type: TypingIndicatorClothing
+    proto: freedom
   - type: Currency
     price:
       PremiumSupplyTalons: 1
@@ -150,6 +172,8 @@
   components:
     - type: Sprite
       sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/journalist.rsi
+    - type: TypingIndicatorClothing
+      proto: journalist
     - type: Currency
       price:
         PremiumSupplyTalons: 1
@@ -163,6 +187,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/merc.rsi
+  - type: TypingIndicatorClothing
+    proto: mercenary
   - type: Currency
     price:
       PremiumSupplyTalons: 2
@@ -176,6 +202,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/merc_command.rsi
+  - type: TypingIndicatorClothing
+    proto: mercenary
   - type: Currency
     price:
       PremiumSupplyTalons: 2
@@ -189,6 +217,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/mili.rsi
+  - type: TypingIndicatorClothing
+    proto: military
   - type: Currency
     price:
       PremiumSupplyTalons: 0
@@ -202,6 +232,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/mili_command.rsi
+  - type: TypingIndicatorClothing
+    proto: military
   - type: Currency
     price:
       PremiumSupplyTalons: 0
@@ -215,6 +247,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/mono.rsi
+  - type: TypingIndicatorClothing
+    proto: monolith
   - type: Currency
     price:
       PremiumSupplyTalons: 2
@@ -228,6 +262,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/neutral.rsi
+  - type: TypingIndicatorClothing
+    proto: neutral
   - type: Currency
     price:
       PremiumSupplyTalons: 1
@@ -241,6 +277,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/renegat.rsi
+  - type: TypingIndicatorClothing
+    proto: renegade
   - type: Currency
     price:
       PremiumSupplyTalons: 2
@@ -254,6 +292,8 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/renegat_lead.rsi
+  - type: TypingIndicatorClothing
+    proto: renegade
   - type: Currency
     price:
       PremiumSupplyTalons: 2
