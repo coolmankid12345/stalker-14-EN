@@ -193,7 +193,7 @@
   id: recipeTrashDetectorTier2
   resultProtos:
     - TrashDetectorTier2
-  craftTime: 0.2
+  craftTime: 10
   items:
     TrashDetectorTier2Blueprint:
       amount: 1
@@ -209,7 +209,7 @@
   id: recipeTrashDetectorTier3
   resultProtos:
     - TrashDetectorTier3
-  craftTime: 1
+  craftTime: 20
   items:
     TrashDetectorTier3Blueprint:
       amount: 1
@@ -217,30 +217,30 @@
     TrashDetectorTier2:
       amount: 1
     STCraftPlasticFittingT2:
+      amount: 3
+    STCraftMultilayerPCBT3:
       amount: 1
-    STCraftStandardPCBT2:
-      amount: 1
-    STCraftTapeKitT2:
+    STCraftGlueKitT3:
       amount: 1
 
 - type: craftRecipe
   id: recipeTrashDetectorTier4
   resultProtos:
     - TrashDetectorTier4
-  craftTime: 10
+  craftTime: 20
   items:
     TrashDetectorTier4Blueprint:
       amount: 1
       catalyzer: true
     TrashDetectorTier3:
       amount: 1
-    STCraftPlasticFittingT2:
+    STCraftPlasticFittingT3:
       amount: 2
-    STCraftMultilayerPCBT3:
+    STCraftHighPerformanceChipT4:
       amount: 1
     STCraftTapeKitT2:
-      amount: 2
-    ZoneArtifactVyvert:
+      amount: 1
+    ZoneArtifactFlower:
       amount: 1
 
 - type: craftRecipe
@@ -254,9 +254,9 @@
       catalyzer: true
     TrashDetectorTier4:
       amount: 1
-    STCraftPlasticFittingT2:
-      amount: 5
-    STCraftSheetBrassT3:
+    STCraftPlasticFittingT4:
       amount: 2
-    ZoneArtifactAmoeba:
+    STCraftNanoChipT5:
+      amount: 1
+    ZoneArtifactGravi:
       amount: 1

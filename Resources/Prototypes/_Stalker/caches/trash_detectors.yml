@@ -130,7 +130,7 @@
       sprite: _Stalker/Objects/Tools/Trash_detectors/T4_trash_detector.rsi
       state: icon
     - type: TrashDetector
-      searchTime: 0
+      searchTime: 10
       probability: 0.80
 
 - type: entity
@@ -150,5 +150,5 @@
       sprite: _Stalker/Objects/Tools/Trash_detectors/T5_trash_detector.rsi
       state: icon
     - type: TrashDetector
-      searchTime: 0
+      searchTime: 10
       probability: 1
