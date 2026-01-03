@@ -41,6 +41,8 @@
           prob: 0.1
         - id: STCraftHighStrengthKitT5
           prob: 0.1
+        - id: TrashDetectorTier5Blueprint
+          prob: 0.03
         - id: STBrutepack
           prob: 0.4
         - id: STBrutepack

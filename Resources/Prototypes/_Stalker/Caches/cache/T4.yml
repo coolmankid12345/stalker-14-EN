@@ -33,6 +33,8 @@
           prob: 0.3
         - id: STCraftPolymerFabricT4
           prob: 0.1
+        - id: TrashDetectorTier4Blueprint
+          prob: 0.03
         - id: STCraftIndustrialThreadStaplesKitT4
           prob: 0.1
         - id: STBrutepack

@@ -59,6 +59,8 @@
           prob: 0.05
         - id: STZoneArtifactDetectorResponseBlueprint
           prob: 0.05
+        - id: TrashDetectorTier2Blueprint
+          prob: 0.05
         - id: STBrutepack
           prob: 0.25
         - id: STBrutepack
