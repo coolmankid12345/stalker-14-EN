@@ -201,11 +201,9 @@
     TrashDetectorTier1:
       amount: 1
     STCraftPlasticFittingT1:
-      amount: 1
+      amount: 3
     STCraftBasicPCBT1:
       amount: 1
-    STCraftCapacitor:
-      amount: 2
 
 - type: craftRecipe
   id: recipeTrashDetectorTier3
@@ -222,8 +220,8 @@
       amount: 1
     STCraftStandardPCBT2:
       amount: 1
-    STCraftCapacitor:
-      amount: 2
+    STCraftTapeKitT2:
+      amount: 1
 
 - type: craftRecipe
   id: recipeTrashDetectorTier4
@@ -244,10 +242,6 @@
       amount: 2
     ZoneArtifactVyvert:
       amount: 1
-    STCraftSheetCopperT1:
-      amount: 2
-    STCraftCoil:
-      amount: 1
 
 - type: craftRecipe
   id: recipeTrashDetectorTier5
@@ -262,12 +256,7 @@
       amount: 1
     STCraftPlasticFittingT2:
       amount: 5
-    STCraftHighPerformanceChipT4:
-      amount: 1
+    STCraftSheetBrassT3:
+      amount: 2
     ZoneArtifactAmoeba:
       amount: 1
-    STCraftSheetIronT2:
-      amount: 1
-    STCraftTransformer:
-      amount: 1
-
