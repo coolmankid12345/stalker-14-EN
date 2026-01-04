@@ -18,6 +18,7 @@
   parent: STBaseBlueprint
   id: TrashDetectorTier4Blueprint
   name: Рецепт металлоискатель "Находка"
+  description: Для создания требуеться артефакт "Каменный цветок"
   components:
     - type: STBlueprint
       blueprint: recipeTrashDetectorTier4
@@ -26,6 +27,7 @@
   parent: STBaseBlueprint
   id: TrashDetectorTier5Blueprint
   name: Рецепт металлоискатель "Аномалист"
+  description: Для создания требуеться артефакт "Грави"
   components:
     - type: STBlueprint
       blueprint: recipeTrashDetectorTier5
