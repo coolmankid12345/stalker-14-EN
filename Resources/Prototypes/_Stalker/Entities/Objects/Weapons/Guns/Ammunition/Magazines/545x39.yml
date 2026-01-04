@@ -24,6 +24,9 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      storagebase: !type:Container
+        ents: []
+      item_slot: !type:ContainerSlot {}
   - type: RepositoryItem
     categoryName: repository-magazines-category
   - type: Sprite
@@ -38,6 +41,31 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/545/elastic_rubber.rsi
 
 - type: entity
   id: 545Mag20

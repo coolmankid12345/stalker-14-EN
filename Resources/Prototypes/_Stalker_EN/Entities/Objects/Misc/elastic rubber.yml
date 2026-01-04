@@ -1,0 +1,41 @@
+- type: entity
+  parent: STBaseItem
+  id: STElasticRubberRed
+  name: elastic rubber
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/elastic_rubber.rsi
+    state: icon
+    color: red
+    scale: 0.2,0.2
+  - type: Tag
+    tags:
+      - STElasticRubberRed
+
+- type: entity
+  parent: STBaseItem
+  id: STElasticRubberGreen
+  name: elastic rubber
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/elastic_rubber.rsi
+    state: icon
+    color: green
+    scale: 0.2,0.2
+  - type: Tag
+    tags:
+      - STElasticRubberGreen
+
+- type: entity
+  parent: STBaseItem
+  id: STElasticRubberBlue
+  name: elastic rubber
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/elastic_rubber.rsi
+    state: icon
+    color: blue
+    scale: 0.2,0.2
+  - type: Tag
+    tags:
+      - STElasticRubberBlue
