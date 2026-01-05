@@ -1,0 +1,12 @@
+﻿- type: entity
+  parent: STClothingHeadBase
+  id: ClothingHeadBeretNeutral
+  name: Neutral Beret
+  description: A beret of the Neutral's faction
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret-Neutral.rsi
+    scale: 0.8, 0.8
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret-Neutral.rsi
