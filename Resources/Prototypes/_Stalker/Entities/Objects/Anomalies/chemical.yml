@@ -101,6 +101,11 @@
   id: ZoneAnomalySmoke
   suffix: Stalker, Smoke, Anomaly
   components:
+    - type: PointLight
+      radius: 3
+      energy: 3
+      color: "Yellow"
+      castShadows: false
     - type: ZoneAnomalyUpdateTriggerCollide
       blacklist:
         components:
@@ -128,3 +133,37 @@
         - id: ZoneArtifactBaloon
           tier: 4
           ratio: 10
+
+#-PIVO-UPDATE
+
+- type: entity
+  id: ZoneAnomalyBeer
+  parent: ZoneAnomalyBaseChemical
+  suffix: Stalker, Kissel, Anomaly, Beer
+  components:
+    - type: ZoneAnomalyUpdateTriggerCollide
+    - type: ZoneAnomalyEffectDamage
+      damage:
+        types:
+          Caustic: 10
+    - type: ZoneAnomalyEffectDestroy
+      whitelist:
+        tags:
+        - STBolt
+    - type: ZoneAnomaly
+      detectedLevel: 0
+      preparingDelay: 0
+      activationDelay: 0
+      chargingDelay: 0.05
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Other/Anomalys/beer.rsi
+      layers:
+        - state: idle
+          shader: unshaded
+    - type: ZoneArtifactSpawner
+      artifacts:
+      - id: null
+        ratio: 1350
+      - id: ZoneArtifactBlood
+        tier: 1
+        ratio: 20
