@@ -203,6 +203,7 @@
       ClothingHeadHelmetLight: 300 # T1 - uni
       STClothingHeadHelmetFASTNeutral: 800 # T2 - uni
       ClothingHeadHelmetSH68: 250 # T1 - PVP:
+      ClothingHeadHelmetVityazNeutral: 3000 # T3 PVP
       # OuterClothing #
       ClothingOuterJacketNeytral: 100 # T1 - uni
       STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
@@ -210,6 +211,7 @@
       STClothingOuterArmorRCBZ: 1800 # T2 - ENV
       ClothingOuterArmorZaryaNeutral: 2000 # T2 - PVE
       STSkinsKitNeutral: 500
+      STClothingOuterArmorSevaNeutral: 4500
 
   - name: shop-category-storage-and-containers
     priority: 7
@@ -229,6 +231,7 @@
       ClothingBeltBandolierStalker: 20 # T1 - PVE
       ClothingBeltTarzanGreen: 200 # T1 - PVP
       ClothingBeltTarzanOrange: 200 # T1 - PVP
+      ClothingBeltWebbingHolsterLoner: 500 # t3? idk man
       # Containers
       MedkitCMSStalker: 250 # T1
       MedkitGrizzlyStalker: 850 # T2
@@ -239,6 +242,7 @@
     items:
       # Cloaks
       ClothingOuterCoatDoshdevik: 1000 # T1
+      ClothingOuterCoatPoisk: 500 # t0
       # Gasmasks
       ClothingMaskGasZarya: 90 # T1
       ClothingMaskGP5: 350 # T2
@@ -290,6 +294,7 @@
     items:
       ClothingBandageStalkerJid: 50
       ClothingBandageStalkerBelarus: 50
+      ClothingHeadBeretNeutral: 50
       ClothingHeadHatBeaniehat: 10
       ClothingMaskNeckFacemask: 10
       ClothingMaskNeckBalaklava1: 10
