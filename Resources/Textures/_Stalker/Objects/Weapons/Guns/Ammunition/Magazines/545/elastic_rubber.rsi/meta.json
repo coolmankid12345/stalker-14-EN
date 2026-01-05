@@ -8,13 +8,49 @@
   },
   "states": [
     {
-      "name": "red"
+      "name": "red_10"
     },
     {
-      "name": "green"
+      "name": "green_10"
     },
     {
-      "name": "blue"
+      "name": "blue_10"
+    },
+    {
+      "name": "red_20"
+    },
+    {
+      "name": "green_20"
+    },
+    {
+      "name": "blue_20"
+    },
+    {
+      "name": "red_30"
+    },
+    {
+      "name": "green_30"
+    },
+    {
+      "name": "blue_30"
+    },
+    {
+      "name": "red_45"
+    },
+    {
+      "name": "green_45"
+    },
+    {
+      "name": "blue_45"
+    },
+    {
+      "name": "red_60"
+    },
+    {
+      "name": "green_60"
+    },
+    {
+      "name": "blue_60"
     }
   ]
 }

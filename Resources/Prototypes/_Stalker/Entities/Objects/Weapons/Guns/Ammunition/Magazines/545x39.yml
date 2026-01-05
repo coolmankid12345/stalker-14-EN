@@ -53,15 +53,15 @@
             - STElasticRubberBlue
   - type: ItemMapper
     mapLayers:
-      red:
+      red_10:
         whitelist:
           tags:
             - STElasticRubberRed
-      green:
+      green_10:
         whitelist:
           tags:
             - STElasticRubberGreen
-      blue:
+      blue_10:
         whitelist:
           tags:
             - STElasticRubberBlue
@@ -89,6 +89,20 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemMapper
+    mapLayers:
+      red_20:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_20:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_20:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
 
 - type: entity
   id: 545Mag30
@@ -112,6 +126,20 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemMapper
+    mapLayers:
+      red_30:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_30:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_30:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
 
 - type: entity
   id: 545Mag45
@@ -135,6 +163,20 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemMapper
+    mapLayers:
+      red_45:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_45:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_45:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
 
 - type: entity
   id: 545Mag60
@@ -158,3 +200,17 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemMapper
+    mapLayers:
+      red_60:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_60:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_60:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
