@@ -24,6 +24,9 @@
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
+        storagebase: !type:Container
+          ents: []
+        item_slot: !type:ContainerSlot {}
     - type: Sprite
       scale: 0.8, 0.8
       sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/754/svd5.rsi
@@ -37,6 +40,32 @@
       steps: 2
       zeroVisible: false
     - type: Appearance
+    - type: ItemSlots
+      slots:
+        item_slot:
+          name: mop-bucket-slot-component-slot-name-item123
+          ejectVerbText: mop-bucket-slot-component-eject-verb123
+          whitelist:
+            tags:
+              - STElasticRubberRed
+              - STElasticRubberGreen
+              - STElasticRubberBlue
+    - type: ItemMapper
+      mapLayers:
+        red_5:
+          whitelist:
+            tags:
+              - STElasticRubberRed
+        green_5:
+          whitelist:
+            tags:
+              - STElasticRubberGreen
+        blue_5:
+          whitelist:
+            tags:
+              - STElasticRubberBlue
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/754/elastic_rubber.rsi
+
 - type: entity
   id: 754Mag10
   name: магазин 7,62x54 (10)
@@ -60,6 +89,32 @@
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-1
           map: ["enum.GunVisualLayers.Mag"]
+    - type: ItemSlots
+      slots:
+        item_slot:
+          name: mop-bucket-slot-component-slot-name-item123
+          ejectVerbText: mop-bucket-slot-component-eject-verb123
+          whitelist:
+            tags:
+              - STElasticRubberRed
+              - STElasticRubberGreen
+              - STElasticRubberBlue
+    - type: ItemMapper
+      mapLayers:
+        red_10:
+          whitelist:
+            tags:
+              - STElasticRubberRed
+        green_10:
+          whitelist:
+            tags:
+              - STElasticRubberGreen
+        blue_10:
+          whitelist:
+            tags:
+              - STElasticRubberBlue
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/754/elastic_rubber.rsi
+
 - type: entity
   id: 754Mag20
   name: магазин 7,62x54 (20)
@@ -83,3 +138,28 @@
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-1
           map: ["enum.GunVisualLayers.Mag"]
+    - type: ItemSlots
+      slots:
+        item_slot:
+          name: mop-bucket-slot-component-slot-name-item123
+          ejectVerbText: mop-bucket-slot-component-eject-verb123
+          whitelist:
+            tags:
+              - STElasticRubberRed
+              - STElasticRubberGreen
+              - STElasticRubberBlue
+    - type: ItemMapper
+      mapLayers:
+        red_20:
+          whitelist:
+            tags:
+              - STElasticRubberRed
+        green_20:
+          whitelist:
+            tags:
+              - STElasticRubberGreen
+        blue_20:
+          whitelist:
+            tags:
+              - STElasticRubberBlue
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/754/elastic_rubber.rsi
