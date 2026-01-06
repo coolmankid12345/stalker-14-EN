@@ -100,23 +100,6 @@ marking-VitiligoHeadJaw = Vitiligo (Jaw)
 marking-VitiligoHeadLeft = Vitiligo (Left Eye)
 marking-VitiligoHeadRight = Vitiligo (Right Eye)
 
-# do we have catgirls in the zone is that canon
-marking-CatEarsStubby = Cat Ears (Stubby)
-marking-CatEarsStubby-ears_stubby_outer = Outer
-marking-CatEarsStubby-ears_stubby_inner = Inner
-marking-CatEarsCurled = Cat Ears (Curled)
-marking-CatEarsCurled-ears_curled_outer = Outer
-marking-CatEarsCurled-ears_curled_inner = Inner
-marking-CatEarsTorn = Cat Ears (Torn)
-marking-CatEarsTorn-ears_torn_outer = Outer
-marking-CatEarsTorn-ears_torn_inner = Inner
-marking-CatTailStripes = Cat Tail (Stripes)
-marking-CatTailStripes-tail_cat_wag_stripes_prime = Tail
-marking-CatTailStripes-tail_cat_wag_stripes_second = Stripes
-marking-FoxEars = Fox Ears
-marking-FoxEars-ears_fox_outer = Outer
-marking-FoxEars-ears_fox_inner = Inner
-
 # CHEST
 marking-TattooAnchor = Tattoo (Anchor)
 marking-TattooAnchor-anchorback = Tattoo
