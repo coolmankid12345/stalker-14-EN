@@ -66,6 +66,7 @@
           tags:
             - STElasticRubberBlue
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/545/elastic_rubber.rsi
+    color: 
 
 - type: entity
   id: 545Mag20
