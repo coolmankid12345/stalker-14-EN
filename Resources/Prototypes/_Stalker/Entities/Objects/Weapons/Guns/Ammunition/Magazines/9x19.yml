@@ -24,6 +24,9 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      storagebase: !type:Container
+        ents: []
+      item_slot: !type:ContainerSlot {}
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/35mp5.rsi
@@ -39,6 +42,31 @@
   - type: Appearance
   - type: RepositoryItem
     categoryName: repository-magazines-category
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_35mp5:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_35mp5:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_35mp5:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: MP5Mag50
@@ -63,6 +91,21 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemMapper
+    mapLayers:
+      red_glock_33:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_glock_33:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_glock_33:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: BaseGlockMag10
@@ -87,9 +130,6 @@
       size: Small
       shape:
         - 0,0,0,0
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       scale: 0.8, 0.8
       sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/glock/10.rsi
@@ -103,6 +143,21 @@
       steps: 2
       zeroVisible: false
     - type: Appearance
+    - type: ItemMapper
+      mapLayers:
+        red_glock_10:
+          whitelist:
+            tags:
+              - STElasticRubberRed
+        green_glock_10:
+          whitelist:
+            tags:
+              - STElasticRubberGreen
+        blue_glock_10:
+          whitelist:
+            tags:
+              - STElasticRubberBlue
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: GlockMag17
@@ -132,6 +187,21 @@
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-1
           map: ["enum.GunVisualLayers.Mag"]
+    - type: ItemMapper
+      mapLayers:
+        red_glock_17:
+          whitelist:
+            tags:
+              - STElasticRubberRed
+        green_glock_17:
+          whitelist:
+            tags:
+              - STElasticRubberGreen
+        blue_glock_17:
+          whitelist:
+            tags:
+              - STElasticRubberBlue
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: GlockMag24
@@ -161,6 +231,22 @@
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-1
           map: ["enum.GunVisualLayers.Mag"]
+    - type: ItemMapper
+      mapLayers:
+        red_glock_24:
+          whitelist:
+            tags:
+              - STElasticRubberRed
+        green_glock_24:
+          whitelist:
+            tags:
+              - STElasticRubberGreen
+        blue_glock_24:
+          whitelist:
+            tags:
+              - STElasticRubberBlue
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
+
 - type: entity
   id: GlockMag33
   name: магазин Glock 9x19 (33)
@@ -185,6 +271,21 @@
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-1
           map: ["enum.GunVisualLayers.Mag"]
+    - type: ItemMapper
+      mapLayers:
+        red_glock_33:
+          whitelist:
+            tags:
+              - STElasticRubberRed
+        green_glock_33:
+          whitelist:
+            tags:
+              - STElasticRubberGreen
+        blue_glock_33:
+          whitelist:
+            tags:
+              - STElasticRubberBlue
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: BaseGSH-18Mag10
@@ -209,9 +310,6 @@
       size: Small
       shape:
         - 0,0,0,0
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       scale: 0.8, 0.8
       sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/gsh-18/10.rsi
@@ -225,6 +323,21 @@
       steps: 5
       zeroVisible: false
     - type: Appearance
+    - type: ItemMapper
+      mapLayers:
+        red_gsh_10:
+          whitelist:
+            tags:
+              - STElasticRubberRed
+        green_gsh_10:
+          whitelist:
+            tags:
+              - STElasticRubberGreen
+        blue_gsh_10:
+          whitelist:
+            tags:
+              - STElasticRubberBlue
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: GSH-18Mag18
@@ -259,6 +372,21 @@
       steps: 5
       zeroVisible: false
     - type: Appearance
+    - type: ItemMapper
+      mapLayers:
+        red_gsh_18:
+          whitelist:
+            tags:
+              - STElasticRubberRed
+        green_gsh_18:
+          whitelist:
+            tags:
+              - STElasticRubberGreen
+        blue_gsh_18:
+          whitelist:
+            tags:
+              - STElasticRubberBlue
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: VityazMag
@@ -283,9 +411,6 @@
     size: Small
     shape:
       - 0,0,0,1
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/vityaz.rsi
@@ -299,6 +424,21 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: ItemMapper
+    mapLayers:
+      red_vityaz:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_vityaz:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_vityaz:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: BizonMag919
@@ -323,9 +463,6 @@
     size: Normal
     shape:
       - 0,0,1,1
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/bizon.rsi
@@ -340,6 +477,21 @@
     zeroVisible: false
   - type: Appearance
   - type: Craftable
+  - type: ItemMapper
+    mapLayers:
+      red_bizon:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_bizon:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_bizon:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: BaseTEC9Mag
@@ -366,6 +518,21 @@
   - type: Tag
     tags:
       - MagazineTEC
+  - type: ItemMapper
+    mapLayers:
+      red_tec9:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_tec9:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_tec9:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: MP40Mag
@@ -390,9 +557,6 @@
     size: Small
     shape:
       - 0,0,0,1
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/vityaz.rsi
@@ -406,6 +570,21 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: ItemMapper
+    mapLayers:
+      red_vityaz:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_vityaz:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_vityaz:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: PP91Mag
@@ -446,6 +625,21 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: ItemMapper
+    mapLayers:
+      red_vityaz:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_vityaz:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_vityaz:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: P90Mag
@@ -470,9 +664,6 @@
     size: Small
     shape:
       - 0,0,0,1
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/p90.rsi
@@ -486,6 +677,21 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: ItemMapper
+    mapLayers:
+      red_p90:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_p90:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_p90:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
 
 - type: entity
   id: LP08Drum
@@ -518,3 +724,18 @@
   - type: Tag
     tags:
       - LugerMagazin
+  - type: ItemMapper
+    mapLayers:
+      red_luger_drum:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_luger_drum:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_luger_drum:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
