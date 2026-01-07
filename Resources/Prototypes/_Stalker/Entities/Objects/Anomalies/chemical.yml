@@ -138,32 +138,51 @@
 
 - type: entity
   id: ZoneAnomalyBeer
-  parent: ZoneAnomalyBaseChemical
+  parent: STBaseToxic
   suffix: Stalker, Kissel, Anomaly, Beer
   components:
+    - type: PointLight
+      radius: 3
+      energy: 3
+      color: "Yellow"
+      castShadows: false
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectDamage
       damage:
         types:
-          Caustic: 10
+          Caustic: 2
     - type: ZoneAnomalyEffectDestroy
       whitelist:
         tags:
         - STBolt
-    - type: ZoneAnomaly
-      detectedLevel: 0
-      preparingDelay: 0
-      activationDelay: 0
-      chargingDelay: 0.05
     - type: Sprite
       sprite: _Stalker_EN/Objects/Other/Anomalys/beer.rsi
       layers:
         - state: idle
           shader: unshaded
+    - type: SyncSprite
+    - type: STChemicalsDelivery
+      reagent: Beer
+      amount: 20
+      deliverSound: /Audio/Items/hiss.ogg
+      entry:
+        id: STAcidicEffect
+        amount: 2
+    - type: ZoneAnomaly
+      detectedLevel: 1
+      activationDelay: 0
+      preparingDelay: 0
+      chargeTime: 10
     - type: ZoneArtifactSpawner
       artifacts:
-      - id: null
-        ratio: 1350
-      - id: ZoneArtifactBlood
-        tier: 1
-        ratio: 20
+        - id: null
+          ratio: 1300
+        - id: ZoneArtifactKolobok
+          tier: 3
+          ratio: 5
+        - id: ZoneArtifactPellicle
+          tier: 1
+          ratio: 15
+        - id: ZoneArtifactBaloon
+          tier: 4
+          ratio: 10
