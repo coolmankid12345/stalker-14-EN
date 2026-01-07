@@ -280,3 +280,18 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-seraph.rsi
 
+- type: entity
+  parent: STWeaponRifleStalkerAK12
+  id: STWeaponRifleAM17
+  name: AM-17
+  description: Russian compact assault rifle developed by the Kalashnikov Concern. This rifle was created to replace the AKS-74U assault rifles in special forces of the Russian Armed Forces and the Ministry of Internal Affairs.
+  components:
+  - type: Gun
+    fireRate: 8
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/am17.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/am17.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/am17.rsi
+    scale: 1, 1
