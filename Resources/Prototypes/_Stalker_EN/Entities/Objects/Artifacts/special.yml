@@ -70,3 +70,43 @@
         Heat: 1
       coefficients:
         Poison: 0.2
+
+#-PIVO-UPDATE-
+
+- type: entity
+  parent: [BaseArtifact,DrinkWaterBottleFull]
+  id: ZoneArtifactBeer
+  name: Artifact
+  description: beer
+  suffix: Stalker, Beer, Artifact
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+        reagents:
+        - ReagentId: AnomalyBeer
+          Quantity: 100
+  - type: Drink
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Artifacts/beer.rsi
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: icon-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: PointLight
+    radius: 1.5
+    energy: 4.5
+    color: "#fbf236"
+    castShadows: false
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 1
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: icon-
+    inHandsMaxFillLevels: 2
+    inHandsFillBaseName: -fill-
+  - type: Sealable

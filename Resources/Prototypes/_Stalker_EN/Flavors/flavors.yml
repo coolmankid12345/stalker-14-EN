@@ -1,0 +1,4 @@
+- type: flavor
+  id: AnomalyBeer
+  flavorType: Complex
+  description: flavor-complex-anomaly-beer
