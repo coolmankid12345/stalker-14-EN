@@ -38,6 +38,7 @@
     ZoneArtifactBlood: 2040
     ZoneArtifactMeat: 4080
     ZoneArtifactKolobok: 6120
+    ZoneArtifactBeer: 720
     # Acidic group - 2
     ZoneArtifactPellicle: 680
     ZoneArtifactBaloon: 6120
