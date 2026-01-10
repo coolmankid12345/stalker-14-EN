@@ -26,3 +26,16 @@
     slots:
     - Hair
     - HeadTop
+
+- type: entity
+  parent: STClothingHeadBase
+  id: ClothingHeadHatSmuggler
+  name: smuggler's cap
+  description: A durable cap with goggles, both unassuming and good for crossing any kind of terrain.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/smuggler_hat.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/smuggler_hat.rsi
+  - type: Craftable

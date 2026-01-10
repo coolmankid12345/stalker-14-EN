@@ -1,0 +1,15 @@
+- type: craftRecipe
+  id: recipeClothingHeadHatSmuggler
+  resultProtos:
+    - ClothingHeadHatSmuggler
+  craftTime: 5
+  items:
+    ClothingHeadHatSmugglerBlueprint:
+      amount: 1
+      catalyzer: true
+    STCraftCottonFabricT1:
+      amount: 2
+    STCraftPlasticFittingT1:
+      amount: 1
+    STCraftBasicThreadKitT1:
+      amount: 1

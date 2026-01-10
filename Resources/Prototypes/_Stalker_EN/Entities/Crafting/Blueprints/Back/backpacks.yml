@@ -1,0 +1,7 @@
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingBackpackSmugglerBlueprint
+  name: smuggler's backpack blueprint
+  components:
+    - type: STBlueprint
+      blueprint: recipeClothingBackpackSmuggler

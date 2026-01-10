@@ -1,0 +1,17 @@
+- type: craftRecipe
+  id: recipeClothingOuterCoatSmuggler
+  resultProtos:
+    - ClothingOuterCoatSmuggler
+  craftTime: 10
+  items:
+    ClothingOuterCoatSmugglerBlueprint:
+      amount: 1
+      catalyzer: true
+    ClothingOuterCoatDoshdevik:
+      amount: 1
+    STCraftHideT2:
+      amount: 5
+    STCraftSturdyHideT3:
+      amount: 2
+    STCraftBasicThreadKitT1:
+      amount: 1
