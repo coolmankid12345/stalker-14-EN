@@ -24,3 +24,26 @@
       - !type:AdjustReagent
         reagent: Cossack
         amount: 0.5
+
+- type: reagent
+  id: AnomalyBeer
+  name: reagent-name-beer
+  parent: BaseAlcohol
+  desc: reagent-desc-beer
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: AnomalyBeer
+  color: "#fbf236"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/beerglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.3
+
