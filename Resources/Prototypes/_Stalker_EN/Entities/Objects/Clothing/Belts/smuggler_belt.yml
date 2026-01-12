@@ -1,0 +1,31 @@
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltSmuggler
+  name: smuggler's waistbag
+  description: A roomy set of pouches made for carrying supplies through the zone. Hidden pockets are sewn into the fabric.
+  suffix: ST
+  components:
+  - type: STWeight
+    self: 3
+  - type: Storage
+    maxItemsize: Large
+    grid:
+    - 0,0,1,1
+    - 3,0,5,1
+    - 7,0,8,1
+    - 0,2,0,2
+    - 8,2,8,2
+    - 0,3,1,4
+    - 3,3,5,4
+    - 7,3,8,4
+    quickInsert: true
+    areaInsert: true
+    blacklist:
+      tags:
+      - STArtifact
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/belt/smuggler_belt.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/belt/smuggler_belt.rsi
+  - type: Craftable

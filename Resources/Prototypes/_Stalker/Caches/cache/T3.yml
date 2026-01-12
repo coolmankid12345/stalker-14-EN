@@ -134,6 +134,10 @@
         # EN additions
         - id: STCookingSnorkSoup
           prob: 0.05
+        - id: ClothingBeltSmugglerBlueprint
+          prob: 0.05
+        - id: ClothingBackpackSmugglerBlueprint
+          prob: 0.03
 
 - type: entity
   parent: [ STCacheStorageFillT3, STBaseCache]
