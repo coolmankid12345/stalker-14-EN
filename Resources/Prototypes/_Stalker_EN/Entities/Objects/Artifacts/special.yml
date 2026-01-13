@@ -89,7 +89,7 @@
           Quantity: 100
   - type: Drink
   - type: Sprite
-    sprite: _Stalker_EN/Objects/Artifacts/beer.rsi
+    sprite: _Stalker_EN/Objects/artifacts.rsi/beer.rsi
     layers:
       - state: icon
         map: ["enum.OpenableVisuals.Layer"]
