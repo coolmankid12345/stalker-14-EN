@@ -6,6 +6,8 @@
   components:
   - type: STPackSpawner
     protoId: STBearFamilyPack
+    chance: 1.0
+    cooldown: 600
   - type: ApproachTrigger
   - type: Sprite
     layers:
