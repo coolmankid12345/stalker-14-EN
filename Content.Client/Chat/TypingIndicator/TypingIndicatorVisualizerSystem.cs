@@ -36,9 +36,11 @@ public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingInd
         }
 
         AppearanceSystem.TryGetData<bool>(uid, TypingIndicatorVisuals.IsTyping, out var isTyping, args.Component);
-        var layerExists = args.Sprite.LayerMapTryGet(TypingIndicatorLayers.Base, out var layer);
-        if (!layerExists)
-            layer = args.Sprite.LayerMapReserveBlank(TypingIndicatorLayers.Base);
+
+        if (args.Sprite.LayerMapTryGet(TypingIndicatorLayers.Base, out var existingLayer))
+            args.Sprite.RemoveLayer(existingLayer);
+
+        var layer = args.Sprite.LayerMapReserveBlank(TypingIndicatorLayers.Base);
 
         args.Sprite.LayerSetRSI(layer, proto.SpritePath);
         args.Sprite.LayerSetState(layer, proto.TypingState);
