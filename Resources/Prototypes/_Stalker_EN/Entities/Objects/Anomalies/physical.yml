@@ -40,6 +40,7 @@
       ActiveDouble:
       - group: TimeDelayActive
         state: Idle
+  - type: STAnomalyVisualState
   - type: STAnomalyEffectDamage
     options:
       StateActiveBase:
@@ -68,20 +69,14 @@
         damage:
           types:
             Slash: 24
-  - type: STAnomalyEffectSound
-    options:
-      StateActiveBase:
-        sound: /Audio/_Stalker_EN/Effects/glass_shards.ogg
-      StateActiveDouble:
-        sound: /Audio/_Stalker_EN/Effects/glass_shards.ogg
-  - type: STAnomalyEffectGenericVisualizer
-    options:
-      StateActiveBase:
-        state: active
-      StateActiveDouble:
-        state: active
-      StateIdle:
-        state: idle
+  - type: STAnomalyEffectDamageSoundConditional
+    passthroughSound: /Audio/_Stalker_EN/Effects/glass_shards_passthrough.ogg
+    weightThreshold: 100
+    baseDamageSound: /Audio/_Stalker_EN/Effects/glass_hit_01.ogg
+    doubleDamageSound: /Audio/_Stalker_EN/Effects/glass_hit_02.ogg
+    weightBonusSound: /Audio/_Stalker_EN/Effects/glass_hit_03.ogg
+    doubleDamageGroup: StateActiveDouble
+    range: 0.5
   - type: Sprite
     sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
     drawdepth: Effects
@@ -92,8 +87,9 @@
     visuals:
       enum.ZoneAnomalyVisuals.Layer:
         base:
-          active: { state: active }
-          idle: { state: idle }
+          Idle: { state: idle }
+          ActiveBase: { state: active }
+          ActiveDouble: { state: active }
   - type: ZoneAnomaly
     detectedLevel: 1
     activationDelay: 0
