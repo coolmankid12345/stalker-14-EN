@@ -96,6 +96,7 @@
       - state: icon-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+    scale: 0.5, 0.5
   - type: PointLight
     radius: 1.5
     energy: 4.5

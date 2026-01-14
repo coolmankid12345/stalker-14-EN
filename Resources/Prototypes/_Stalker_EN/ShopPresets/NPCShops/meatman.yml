@@ -37,8 +37,8 @@
     - name: FAMINE
       priority: 2
       items:
-        FoodSnackCookieFortune: 5
-        FluteInstrument: 20
-        ClothingHeadHatBeretEngineering: 75
-        FlippoEngravedLighter: 20
-        STCookingOracleGumbo: 90
+        DrinkIcedTeaCan: 5
+        ViolinInstrument: 20
+        ToyGygax: 20
+        ClothingNeckLGBTPin: 15
+        ClothingNeckStoleChaplain: 100

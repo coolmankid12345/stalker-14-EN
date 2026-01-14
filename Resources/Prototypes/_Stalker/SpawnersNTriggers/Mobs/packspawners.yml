@@ -7,7 +7,7 @@
     - type: STPackSpawner
       protoId: STBlindDogPack
       chance: 1.0
-      cooldown: 600
+      cooldown: 3600
     - type: ApproachTrigger
     - type: Sprite
       layers:
@@ -25,7 +25,7 @@
     - type: STPackSpawner
       protoId: STSpiderLapachPack
       chance: 1.0
-      cooldown: 600
+      cooldown: 3600
     - type: ApproachTrigger
     - type: Sprite
       layers:
@@ -43,7 +43,7 @@
     - type: STPackSpawner
       protoId: STControllerBlindDogPack
       chance: 1.0
-      cooldown: 600
+      cooldown: 3600
     - type: ApproachTrigger
     - type: Sprite
       layers:

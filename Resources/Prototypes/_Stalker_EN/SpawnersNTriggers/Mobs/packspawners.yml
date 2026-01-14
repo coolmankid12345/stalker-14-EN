@@ -7,7 +7,7 @@
   - type: STPackSpawner
     protoId: STBearFamilyPack
     chance: 1.0
-    cooldown: 600
+    cooldown: 3600
   - type: ApproachTrigger
   - type: Sprite
     layers:
