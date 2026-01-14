@@ -8,7 +8,7 @@ namespace Content.Shared.Chat.TypingIndicator;
 ///     If an item is equipped to someones inventory (Anything but the pockets), and has this component
 ///     the users typing indicator will be replaced by the prototype given in <c>TypingIndicatorPrototype</c>.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
 [Access(typeof(SharedTypingIndicatorSystem))]
 public sealed partial class TypingIndicatorClothingComponent : Component
 {
@@ -23,6 +23,6 @@ public sealed partial class TypingIndicatorClothingComponent : Component
     /// <summary>
     ///     This stores the time the item was equipped in someones inventory. If null, item is currently not equipped.
     /// </summary>
-    [DataField, AutoPausedField]
+    [DataField, AutoPausedField, AutoNetworkedField]
     public TimeSpan? GotEquippedTime = null;
 }
