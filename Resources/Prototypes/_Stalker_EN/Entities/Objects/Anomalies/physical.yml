@@ -84,6 +84,7 @@
         state: idle
   - type: Sprite
     sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
+    drawdepth: Effects
     layers:
     - state: idle
       map: ["base"]
