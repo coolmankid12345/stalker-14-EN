@@ -4,6 +4,10 @@ using Robust.Server.GameObjects;
 
 namespace Content.Server._Stalker.Anomaly.Visuals;
 
+/// <summary>
+/// Updates appearance data when STAnomaly state changes.
+/// Allows GenericVisualizer to change sprites based on anomaly state.
+/// </summary>
 public sealed class STAnomalyVisualStateSystem : EntitySystem
 {
     [Dependency] private readonly AppearanceSystem _appearance = default!;
