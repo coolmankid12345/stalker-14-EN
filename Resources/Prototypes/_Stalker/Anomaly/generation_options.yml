@@ -296,7 +296,7 @@
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
       weight: 0.5
-    # Physical
+    # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 0.8
 
@@ -338,6 +338,6 @@
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
       weight: 0.5
-    # Physical
+    # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 1

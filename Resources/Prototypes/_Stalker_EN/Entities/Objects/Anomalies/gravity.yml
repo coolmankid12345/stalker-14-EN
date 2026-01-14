@@ -98,4 +98,4 @@
   - type: STAnomalyTips
     icon:
       sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
-      state: physical
+      state: gravi
