@@ -13,7 +13,7 @@
     self: 0.2
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/belt/herbalists_pouch.rsi
-    state: closed
+    state: icon
   - type: Storage
     grid:
     - 0,0,7,4
