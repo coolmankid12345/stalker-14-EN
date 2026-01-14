@@ -1,5 +1,6 @@
 ﻿using Content.Server._Stalker.Anomaly.Effects.Components;
 using Content.Shared._Stalker.Anomaly.Triggers.Events;
+using Content.Shared._Stalker.ZoneAnomaly;
 using Robust.Server.GameObjects;
 
 namespace Content.Server._Stalker.Anomaly.Effects.Systems;
@@ -22,7 +23,7 @@ public sealed class STAnomalyEffectGenericVisualizerSystem : EntitySystem
             if (!effect.Comp.Options.TryGetValue(group, out var options))
                 continue;
 
-            _appearance.SetData(effect, STAnomalyGenericVisualizerEffectVisuals.Layer, options.State);
+            _appearance.SetData(effect, ZoneAnomalyVisuals.Layer, options.State);
         }
     }
 }

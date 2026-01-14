@@ -13,9 +13,3 @@ public partial struct STAnomalyGenericVisualizerEffectOptions
     [DataField]
     public string State;
 }
-
-[Serializable]
-public enum STAnomalyGenericVisualizerEffectVisuals
-{
-    Layer,
-}

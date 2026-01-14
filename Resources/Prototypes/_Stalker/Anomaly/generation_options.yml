@@ -296,6 +296,9 @@
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
       weight: 0.5
+    # Physical
+    - protoId: ZoneAnomalyGlassShards
+      weight: 0.8
 
 # Оазис XXX
 - type: stAnomalyGenerationOptions
@@ -335,3 +338,6 @@
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
       weight: 0.5
+    # Physical
+    - protoId: ZoneAnomalyGlassShards
+      weight: 1

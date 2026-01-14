@@ -1,0 +1,104 @@
+- type: entity
+  parent: ZoneAnomalyBase
+  id: ZoneAnomalyGlassShards
+  name: glass shards
+  suffix: Stalker, GlassShards, Anomaly
+  description: A field of nearly invisible glass shards that cut through anyone running carelessly.
+  components:
+  - type: STAnomalyTriggerGroupsStateTransition
+  - type: STAnomalyTriggerStartCollide
+    blacklist:
+      components:
+      - Projectile
+  - type: STAnomalyTriggerStartCollideSprinting
+    sprintingTriggerGroup: Sprinting
+  - type: STAnomalyTriggerStartCollideBoots
+    noBootsSprintingGroup: NoBootsSprinting
+    noBootsWalkingGroup: NoBootsWalking
+    slotName: shoes
+  - type: STAnomalyTriggerTimeDelay
+    options:
+      ActiveBase:
+        group: TimeDelayActive
+        delay: 2
+      ActiveDouble:
+        group: TimeDelayActive
+        delay: 2
+  - type: STAnomaly
+    state: Idle
+    states:
+      Idle:
+      - group: NoBootsSprinting
+        state: ActiveDouble
+      - group: NoBootsWalking
+        state: ActiveBase
+      - group: Sprinting
+        state: ActiveBase
+      ActiveBase:
+      - group: TimeDelayActive
+        state: Idle
+      ActiveDouble:
+      - group: TimeDelayActive
+        state: Idle
+  - type: STAnomalyEffectDamage
+    options:
+      StateActiveBase:
+        range: 0.5
+        damage:
+          types:
+            Slash: 12
+      StateActiveDouble:
+        range: 0.5
+        damage:
+          types:
+            Slash: 24
+  - type: STAnomalyEffectDamageWeightBonus
+    weightThreshold: 100
+    weightCap: 190
+    bonusPerTenKg: 0.1
+    maxBonus: 1.0
+    options:
+      StateActiveBase:
+        range: 0.5
+        damage:
+          types:
+            Slash: 12
+      StateActiveDouble:
+        range: 0.5
+        damage:
+          types:
+            Slash: 24
+  - type: STAnomalyEffectSound
+    options:
+      StateActiveBase:
+        sound: /Audio/_Stalker_EN/Effects/glass_shards.ogg
+      StateActiveDouble:
+        sound: /Audio/_Stalker_EN/Effects/glass_shards.ogg
+  - type: STAnomalyEffectGenericVisualizer
+    options:
+      StateActiveBase:
+        state: active
+      StateActiveDouble:
+        state: active
+      StateIdle:
+        state: idle
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
+    layers:
+    - state: idle
+      map: ["base"]
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneAnomalyVisuals.Layer:
+        base:
+          active: { state: active }
+          idle: { state: idle }
+  - type: ZoneAnomaly
+    detectedLevel: 1
+    activationDelay: 0
+    preparingDelay: 0
+    chargeTime: 2
+  - type: STAnomalyTips
+    icon:
+      sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
+      state: physical
