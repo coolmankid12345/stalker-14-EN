@@ -108,7 +108,7 @@
           - Military
       - type: Bands
         band: Stalker
-        bandIcon: voen1
+        bandIcon: voen1EN
         bandProto: STMilitaryBand
         bandRankId: 1
       - type: BlockTackingHolyItems
@@ -148,7 +148,7 @@
             - MilitaryHead
         - type: Bands
           band: Stalker
-          bandIcon: voen2
+          bandIcon: voen2EN
           bandProto: STMilitaryBand
           bandRankId: 3
         - type: BlockTackingHolyItems
@@ -189,7 +189,7 @@
             - MilitaryOfficer
         - type: Bands
           band: Stalker
-          bandIcon: voen3
+          bandIcon: voen3EN
           bandProto: STMilitaryBand
           bandRankId: 2
         - type: BlockTackingHolyItems

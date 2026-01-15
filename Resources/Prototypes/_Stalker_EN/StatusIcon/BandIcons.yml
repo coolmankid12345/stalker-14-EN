@@ -18,3 +18,30 @@
     sprite: /Textures/_Stalker_EN/Icons/Patches/band.rsi
     hideOnStealth: true
     state: Zombie
+
+- type: jobIcon
+  id: voen1EN
+  locationPreference: Right
+  isShaded: true
+  icon:
+    sprite: /Textures/_Stalker_EN/Icons/Patches/band.rsi
+    hideOnStealth: true
+    state: voen1
+
+- type: jobIcon
+  id: voen2EN
+  locationPreference: Right
+  isShaded: true
+  icon:
+    sprite: /Textures/_Stalker_EN/Icons/Patches/band.rsi
+    hideOnStealth: true
+    state: voen2
+
+- type: jobIcon
+  id: voen3EN
+  locationPreference: Right
+  isShaded: true
+  icon:
+    sprite: /Textures/_Stalker_EN/Icons/Patches/band.rsi
+    hideOnStealth: true
+    state: voen3
