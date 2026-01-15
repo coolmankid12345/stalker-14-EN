@@ -23,6 +23,7 @@ ent-STCraftMortarAndPestle = mortar and pestle
     .desc = At first, man came up with the idea of grinding with a stone. The next day he came up with the idea of grinding with two stones
     .suffix = { ent-BoltCutter.suffix }
 ent-CraftSaw = saw
+    .desc = A simple saw for cutting materials.
     .suffix = { ent-BoltCutter.suffix }
 ent-ChainsawStalker = chainsaw
     .desc = A type of manual chainsaw equipped with an internal combustion engine, usually a two-stroke engine.

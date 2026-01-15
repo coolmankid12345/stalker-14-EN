@@ -1,4 +1,5 @@
 ent-STClothingOuterArmorStorageBasic = Armor Suit Base with Pouches
+    .desc = Base armor suit with integrated storage pouches.
     .suffix = ST
 ent-ClothingOuterArmorStorageToggleableBasic = { ent-STClothingOuterArmorStorageBasic }
     .suffix = { ent-STClothingOuterArmorStorageBasic.suffix }
