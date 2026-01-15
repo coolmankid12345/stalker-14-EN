@@ -29,6 +29,10 @@
       whitelist:
         components:
           - MobState
+    - type: ZoneAnomalyEffectBlast
+      throwRange: 5
+      throwForce: 60
+      delay: 0.5
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
       idle: 0.2  
