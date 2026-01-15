@@ -11,4 +11,5 @@ ent-TommyGunDrum2 = original Thompson SMG drum (60)
 ent-TommyGunBigDrum = Thompson SMG drum (100)
     .desc = A huge and rare Drum for "Tommy Gun" using .45ACP. Bullet capacity 100. They sell empty.
 ent-STSpeedLoader45ACPEmpty = Speedloader (.45 ACP)
+    .desc = An empty speedloader for .45 ACP cartridges.
     .suffix = Stalker

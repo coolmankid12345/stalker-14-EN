@@ -1,10 +1,15 @@
 ent-LogStalker = Log
+    .desc = An ordinary log. In the Zone - often radioactive.
     .suffix = Stalker, kraft
 ent-STLogStalkerT1 = Pine log
+    .desc = A pine log. In the Zone - often radioactive.
     .suffix = { ent-LogStalker.suffix }
 ent-STLogStalkerT2 = Birch log
+    .desc = A birch log. In the Zone - often radioactive.
     .suffix = { ent-LogStalker.suffix }
 ent-STLogStalkerT3 = Log of the Red Forest
+    .desc = A log from the Red Forest. In the Zone - often radioactive.
     .suffix = { ent-LogStalker.suffix }
 ent-STLogStalkerT4 = Willow Log
+    .desc = A willow log. In the Zone - often radioactive.
     .suffix = { ent-LogStalker.suffix }
