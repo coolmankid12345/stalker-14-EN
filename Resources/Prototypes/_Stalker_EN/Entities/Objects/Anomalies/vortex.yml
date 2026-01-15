@@ -19,7 +19,7 @@
       gradient: ReversedLinear
     - type: ZoneAnomalyEffectGib
       coreRadius: 0.5
-      gibDelay: 3.5
+      gibDelay: 2.5
       gibOrgans: true
       throwOnGib: true
       throwRange: 5
