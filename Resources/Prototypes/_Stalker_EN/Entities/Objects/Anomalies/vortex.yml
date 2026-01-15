@@ -5,10 +5,16 @@
   description: A deadly gravitational vortex. You'll hear it before you see it. Those caught inside are paralyzed and dragged to their doom.
   components:
     - type: ZoneAnomalyTriggerStartCollide
+    - type: ZoneAnomalyEffectDamage
+      damageUpdate: true
+      damageUpdateDelay: 1.0
+      damage:
+        types:
+          Compression: 2
     - type: ZoneAnomalyEffectGravityWell
       distance: 3
       period: 1.0
-      radial: 25
+      radial: 40
       tangential: 0.5
       gradient: ReversedLinear
       whitelist:
@@ -28,9 +34,9 @@
           - MobState
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: 0.2  # Starting visibility (will be pulsed by ZoneAnomalyStealthPulse)
+      idle: 0.2  
       activated: 1
-      charging: 0  # Fully invisible during grace period
+      charging: 0  
     - type: ZoneAnomaly
       detectedLevel: 3
       activationDelay: 3
