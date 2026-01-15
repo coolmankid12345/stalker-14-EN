@@ -1,6 +1,7 @@
 using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
+using Content.Shared._Stalker_EN.ZoneAnomaly.Effects.Components;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
@@ -69,6 +70,13 @@ public sealed class ZoneAnomalyEffectGravityWellSystem : EntitySystem
             if (distance == 0)
                 continue; // Avoid division by zero
 
+            // Skip pulling entities already in gib core radius
+            if (TryComp<ZoneAnomalyEffectGibComponent>(effect.Owner, out var gib) &&
+                distance <= gib.CoreRadius)
+            {
+                continue;
+            }
+
             // Normalized vector pointing towards the epicenter
             var radialDirection = displacement / distance;
 
@@ -117,5 +125,4 @@ public sealed class ZoneAnomalyEffectGravityWellSystem : EntitySystem
                 return 1f;
         }
     }
-
 }

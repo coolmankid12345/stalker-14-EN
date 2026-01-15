@@ -8,6 +8,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Random;
@@ -33,6 +34,7 @@ namespace Content.Server._Stalker_EN.ZoneAnomaly.Effects.Systems;
 public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
 {
     [Dependency] private readonly AppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
@@ -54,12 +56,16 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
             var anyNewDoomed = false;
             var anyGibbed = false;
 
-            // Phase 1: Mark new doomed entities (ONLY when activated)
+            // Phase 1: Track entities in core (escapable doom timer)
+            // Entities can escape if they leave core radius before timer expires
             if (anomaly.State == ZoneAnomalyState.Activated)
             {
+                gib.PendingRemovalBuffer.Clear();
+
+                // Check all entities in anomaly range
                 foreach (var entityUid in anomaly.InAnomaly)
                 {
-                    // Skip if already doomed
+                    // Skip if already doomed (being gibbed)
                     if (gib.DoomedEntities.ContainsKey(entityUid))
                         continue;
 
@@ -75,21 +81,64 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
                     // Check distance to core
                     var entityPos = _transform.GetWorldPosition(entityUid);
                     var distance = (anomalyPos - entityPos).Length();
+                    var inCore = distance <= gib.CoreRadius;
 
-                    if (distance > gib.CoreRadius)
-                        continue;
+                    if (inCore)
+                    {
+                        // Entity is in core - start or continue doom timer
+                        if (!gib.PendingDoom.ContainsKey(entityUid))
+                        {
+                            // Just entered core - start timer
+                            gib.PendingDoom[entityUid] = _timing.CurTime + gib.GibDelay;
 
-                    // Mark as doomed!
-                    var gibTime = _timing.CurTime + gib.GibDelay;
-                    gib.DoomedEntities[entityUid] = gibTime;
-                    anyNewDoomed = true;
+                            // Visual feedback: show "doomed" sprite when first entity enters pending
+                            if (gib.PendingDoom.Count == 1)
+                                _appearance.SetData(uid, ZoneAnomalyGibVisuals.Doomed, true);
 
-                    // Paralyze (stun + knockdown) for the duration
-                    var stunDuration = gib.GibDelay + TimeSpan.FromSeconds(1);
-                    _stun.TryParalyze(entityUid, stunDuration, true);
+                            // Audio feedback: play warning sound
+                            if (gib.PendingDoomSound != null)
+                                _audio.PlayPvs(gib.PendingDoomSound, uid);
+                        }
+                        else if (_timing.CurTime >= gib.PendingDoom[entityUid])
+                        {
+                            // Timer expired while in core - DOOMED!
+                            gib.DoomedEntities[entityUid] = _timing.CurTime; // Gib immediately
+                            gib.PendingDoom.Remove(entityUid);
+                            anyNewDoomed = true;
 
-                    // Teleport to exact center
-                    _transform.SetWorldPosition(entityUid, anomalyPos);
+                            // Paralyze to prevent escape
+                            var stunDuration = TimeSpan.FromSeconds(2);
+                            _stun.TryParalyze(entityUid, stunDuration, true);
+                        }
+                        // else: still waiting, keep pulling them
+                    }
+                    else
+                    {
+                        // Entity escaped core - remove from pending
+                        if (gib.PendingDoom.ContainsKey(entityUid))
+                        {
+                            gib.PendingRemovalBuffer.Add(entityUid);
+                        }
+                    }
+                }
+
+                // Clean up escaped entities
+                foreach (var escaped in gib.PendingRemovalBuffer)
+                {
+                    gib.PendingDoom.Remove(escaped);
+                }
+
+                // Check if we should enter grace period after escapes
+                if (gib.PendingRemovalBuffer.Count > 0)
+                {
+                    TryEnterGracePeriod(uid, gib, anomaly);
+                }
+
+                // Check grace period even if no escapes occurred
+                // This handles the case where anomaly activated but no valid targets entered core
+                if (gib.PendingDoom.Count == 0 && gib.DoomedEntities.Count == 0)
+                {
+                    TryEnterGracePeriod(uid, gib, anomaly);
                 }
             }
 
@@ -97,14 +146,14 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
             // (even if anomaly state changed to Charging/Idle)
             if (gib.DoomedEntities.Count > 0)
             {
-                var toRemove = new List<EntityUid>();
+                gib.GibRemovalBuffer.Clear();
 
                 foreach (var (entityUid, gibTime) in gib.DoomedEntities)
                 {
                     // Check if entity was deleted
                     if (Deleted(entityUid))
                     {
-                        toRemove.Add(entityUid);
+                        gib.GibRemovalBuffer.Add(entityUid);
                         continue;
                     }
 
@@ -119,11 +168,11 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
                         anyGibbed = true;
                     }
 
-                    toRemove.Add(entityUid);
+                    gib.GibRemovalBuffer.Add(entityUid);
                 }
 
                 // Remove gibbed/deleted entities from tracking
-                foreach (var entityUid in toRemove)
+                foreach (var entityUid in gib.GibRemovalBuffer)
                 {
                     gib.DoomedEntities.Remove(entityUid);
                 }
@@ -132,6 +181,12 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
                 if (anyGibbed && gib.ThrowOnGib)
                 {
                     ThrowNearbyEntities(uid, gib, anomalyPos);
+                }
+
+                // Check if we should enter grace period after gib
+                if (anyGibbed)
+                {
+                    TryEnterGracePeriod(uid, gib, anomaly);
                 }
 
                 // Pin remaining doomed entities to center
@@ -151,14 +206,12 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
                 }
             }
 
-            // Phase 3: Update appearance based on doomed count
-            if (anyNewDoomed && gib.DoomedEntities.Count > 0)
+            // Phase 3: Update appearance based on pending + doomed count (only when changed)
+            var hasDanger = gib.DoomedEntities.Count > 0 || gib.PendingDoom.Count > 0;
+            if (hasDanger != gib.LastDangerState)
             {
-                _appearance.SetData(uid, ZoneAnomalyGibVisuals.Doomed, true);
-            }
-            else if (gib.DoomedEntities.Count == 0)
-            {
-                _appearance.SetData(uid, ZoneAnomalyGibVisuals.Doomed, false);
+                gib.LastDangerState = hasDanger;
+                _appearance.SetData(uid, ZoneAnomalyGibVisuals.Doomed, hasDanger);
             }
         }
     }
@@ -206,5 +259,54 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
 
             _physics.ApplyLinearImpulse(target, force, body: physics);
         }
+    }
+
+    /// <summary>
+    /// Checks if the anomaly should enter grace period.
+    /// Triggers when: no pending doom, no doomed entities, and no valid targets in range.
+    /// </summary>
+    private void TryEnterGracePeriod(
+        EntityUid uid,
+        ZoneAnomalyEffectGibComponent gib,
+        ZoneAnomalyComponent anomaly)
+    {
+        // Only enter grace period from Activated state
+        if (anomaly.State != ZoneAnomalyState.Activated)
+            return;
+
+        // Must have no entities being processed
+        if (gib.PendingDoom.Count > 0 || gib.DoomedEntities.Count > 0)
+            return;
+
+        // Check for remaining valid targets in range
+        gib.StaleEntityBuffer.Clear();
+        foreach (var entityUid in anomaly.InAnomaly)
+        {
+            // Clean up stale (deleted) entities
+            if (Deleted(entityUid))
+            {
+                gib.StaleEntityBuffer.Add(entityUid);
+                continue;
+            }
+
+            if (gib.Whitelist is { } whitelist &&
+                !_whitelistSystem.IsWhitelistPass(whitelist, entityUid))
+                continue;
+
+            if (!HasComp<BodyComponent>(entityUid))
+                continue;
+
+            // Found a valid target - don't enter grace period
+            return;
+        }
+
+        // Remove stale entities from tracking
+        foreach (var stale in gib.StaleEntityBuffer)
+        {
+            anomaly.InAnomaly.Remove(stale);
+        }
+
+        // No pending, no doomed, no valid targets → grace period
+        _zoneAnomaly.TryRecharge((uid, anomaly));
     }
 }

@@ -1,4 +1,5 @@
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Stalker_EN.ZoneAnomaly.Effects.Components;
@@ -45,6 +46,24 @@ public sealed partial class ZoneAnomalyEffectGibComponent : Component
     public Dictionary<EntityUid, TimeSpan> DoomedEntities = new();
 
     /// <summary>
+    /// Entities currently in the core radius with their doom deadline.
+    /// If they stay until the deadline, they become doomed.
+    /// If they escape before, they're removed from this tracking.
+    /// </summary>
+    /// <remarks>
+    /// Runtime state - not serialized. Entities can escape by leaving the core radius
+    /// before their deadline expires.
+    /// </remarks>
+    [ViewVariables]
+    public Dictionary<EntityUid, TimeSpan> PendingDoom = new();
+
+    /// <summary>
+    /// Sound to play when an entity enters pending doom state (warning of imminent death).
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public SoundSpecifier? PendingDoomSound;
+
+    /// <summary>
     /// Whether to also gib organs when gibbing the body.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
@@ -83,4 +102,19 @@ public sealed partial class ZoneAnomalyEffectGibComponent : Component
     /// </remarks>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float ThrowForce = 50f;
+
+    /// <summary>
+    /// Tracks the last sent danger state to avoid redundant appearance updates.
+    /// </summary>
+    /// <remarks>
+    /// Runtime state - not serialized. Used to prevent calling SetData every frame
+    /// when the danger state hasn't changed.
+    /// </remarks>
+    [ViewVariables]
+    public bool LastDangerState;
+
+    // Reusable lists to avoid per-frame allocations
+    public readonly List<EntityUid> PendingRemovalBuffer = new();
+    public readonly List<EntityUid> GibRemovalBuffer = new();
+    public readonly List<EntityUid> StaleEntityBuffer = new();
 }
