@@ -30,7 +30,10 @@
       weight: 0.1
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
-      weight: 0.5
+      weight: 0.6
+    # Gravity
+    - protoId: ZoneAnomalyGlassShards
+      weight: 0.2
 
 # Garbage - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -55,7 +58,10 @@
     - protoId: ZoneAnomalyLamp
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
-      weight: 0.5
+      weight: 0.1
+    # Gravity
+    - protoId: ZoneAnomalyGlassShards
+      weight: 1
 
 # Болота
 - type: stAnomalyGenerationOptions
@@ -86,7 +92,6 @@
     - protoId: ZoneAnomalyGrabber
       weight: 3
     # Thermal
-    - protoId: ZoneAnomalyWitchesCircle
     - protoId: ZoneAnomalySteam
       weight: 2
     # Psy
@@ -126,8 +131,6 @@
     - protoId: ZoneAnomalyJarkaStrong
     - protoId: ZoneAnomalyJarka
     - protoId: ZoneAnomalySteam
-    - protoId: ZoneAnomalyWitchesCircle
-      weight: 1.5
     # Psy
     - protoId: ZoneAnomalyBarabashka
       weight: 0.5
@@ -135,7 +138,10 @@
       weight: 0.1
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
-      weight: 0.5
+      weight: 0.6
+    # Gravity
+    - protoId: ZoneAnomalyGlassShards
+      weight: 0.2
 
 # Dark Hollow - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -161,7 +167,10 @@
       weight: 2
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
-      weight: 0.5
+      weight: 0.4
+    # Gravity
+    - protoId: ZoneAnomalyGlassShards
+      weight: 0.3
 
 # Dark Valley - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -194,7 +203,10 @@
     - protoId: ZoneAnomalyRift
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
-      weight: 0.5
+      weight: 0.2
+    # Gravity
+    - protoId: ZoneAnomalyGlassShards
+      weight: 0.8
 
 # Топи
 - type: stAnomalyGenerationOptions
@@ -223,7 +235,10 @@
       weight: 0.5
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
-      weight: 0.5
+      weight: 0.7
+    # Gravity
+    - protoId: ZoneAnomalyGlassShards
+      weight: 0.2
 
 # Red Forest - Testing Stalker EN
 - type: stAnomalyGenerationOptions
@@ -245,10 +260,6 @@
     - protoId: ZoneAnomalySource
       weight: 0.5
     - protoId: ZoneAnomalyGrabber
-    - protoId: ZoneAnomalyWitchesCircle
-      weight: 0.5
-    - protoId: ZoneAnomalyFreezer
-      weight: 0.5
     - protoId: ZoneAnomalySteam
     - protoId: ZoneAnomalySol
       weight: 0.5
@@ -256,6 +267,9 @@
       weight: 0.5
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
+      weight: 0.5
+    # Gravity
+    - protoId: ZoneAnomalyGlassShards
       weight: 0.5
 
 # Rostok and The Wilds - Stalker EN
@@ -287,7 +301,6 @@
     - protoId: ZoneAnomalyGrabber
       weight: 3
     # Thermal
-    - protoId: ZoneAnomalyWitchesCircle
     - protoId: ZoneAnomalySteam
       weight: 2
     # Psy
@@ -295,7 +308,7 @@
       weight: 0.5
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
-      weight: 0.5
+      weight: 0.3
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 0.8
@@ -337,7 +350,7 @@
     - protoId: ZoneAnomalyRift
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
-      weight: 0.5
+      weight: 0.2
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 1
