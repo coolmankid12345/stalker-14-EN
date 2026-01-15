@@ -17,9 +17,6 @@
       radial: 40
       tangential: 0.5
       gradient: ReversedLinear
-      whitelist:
-        components:
-          - MobState
     - type: ZoneAnomalyEffectGib
       coreRadius: 0.5
       gibDelay: 3.5
