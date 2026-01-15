@@ -278,6 +278,10 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
         if (gib.PendingDoom.Count > 0 || gib.DoomedEntities.Count > 0)
             return;
 
+        // Respect the configured activation delay as minimum duration
+        if (_timing.CurTime < anomaly.ActivationTime)
+            return;
+
         // Check for remaining valid targets in range
         gib.StaleEntityBuffer.Clear();
         foreach (var entityUid in anomaly.InAnomaly)
