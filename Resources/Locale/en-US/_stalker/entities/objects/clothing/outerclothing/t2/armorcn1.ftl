@@ -6,4 +6,5 @@ ent-ClothingOuterArmorCN1 = body armor with "CH-1" overalls.
     .desc = Standard Type II body armor, providing decent protection against most types of damage
     .suffix = ST, T2, Universal
 ent-ClothingHeadHelmetCN1 = hood "CH-1"
+    .desc = CN-1 protective hood with basic ballistic protection.
     .suffix = ST, T2, Universal

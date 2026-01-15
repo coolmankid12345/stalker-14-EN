@@ -8,6 +8,7 @@ ent-CraftHide = hide
     .desc = Raw animal skin.
     .suffix = { ent-CraftGunpowderBank.suffix }
 ent-PartRodMetalStalker = Metal Pipes
+    .desc = Metal pipes used for crafting.
     .suffix = { ent-CraftGunpowderBank.suffix }
 ent-CraftBag = bag
     .desc = A burlap bag used for storing and transporting materials.
