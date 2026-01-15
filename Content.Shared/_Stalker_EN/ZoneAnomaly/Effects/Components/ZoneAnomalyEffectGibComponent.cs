@@ -29,7 +29,7 @@ public sealed partial class ZoneAnomalyEffectGibComponent : Component
     /// Time before doomed entity gets gibbed.
     /// </summary>
     /// <remarks>
-    /// Recommended range: 2.0 to 10.0 seconds. Longer delays build tension.
+    /// Recommended range: 2.0 to 4 seconds.
     /// Entity remains stunned and pinned to center during this time.
     /// </remarks>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
