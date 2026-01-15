@@ -29,7 +29,7 @@ public sealed partial class ZoneAnomalyComponent : Component
     [DataField, AutoNetworkedField]
     public TimeSpan ActivationTime;
 
-    [DataField, AutoNetworkedField]
+    [DataField("chargeTime"), AutoNetworkedField]
     public TimeSpan ChargingDelay = TimeSpan.FromSeconds(2);
 
     [DataField, AutoNetworkedField]
