@@ -1,10 +1,15 @@
 ent-MobMonolithGuardPatroolBase = Unknown Monolith
+    .desc = A Monolith guard NPC.
     .suffix = Stalker, NPC
 ent-MobMonolithGuardPatroolMarlyaAKS = { ent-MobMonolithGuardPatroolBase }
+    .desc = { ent-MobMonolithGuardPatroolBase.desc }
     .suffix = Stalker, NPC, T3
 ent-MobMonolithGuardPatroolGas1L85 = { ent-MobMonolithGuardPatroolBase }
+    .desc = { ent-MobMonolithGuardPatroolBase.desc }
     .suffix = { ent-MobMonolithGuardPatroolMarlyaAKS.suffix }
 ent-MobMonolithGuardPatroolBalaLR300 = { ent-MobMonolithGuardPatroolBase }
+    .desc = { ent-MobMonolithGuardPatroolBase.desc }
     .suffix = { ent-MobMonolithGuardPatroolMarlyaAKS.suffix }
 ent-MobMonolithGuardPatroolSevaAbakan = { ent-MobMonolithGuardPatroolBase }
+    .desc = { ent-MobMonolithGuardPatroolBase.desc }
     .suffix = Stalker, NPC, T4

@@ -1,6 +1,9 @@
 ent-STAltarPilgrim = Pilgrims' Altar
+    .desc = An altar for pilgrims.
     .suffix = ST, Mapping
 ent-STSeraAltar = Altar of Seraphim
+    .desc = An altar of the Seraphim faction.
     .suffix = { ent-STAltarPilgrim.suffix }
 ent-STSeraAltar2 = { ent-STSeraAltar }
+    .desc = { ent-STSeraAltar.desc }
     .suffix = { ent-STAltarPilgrim.suffix }

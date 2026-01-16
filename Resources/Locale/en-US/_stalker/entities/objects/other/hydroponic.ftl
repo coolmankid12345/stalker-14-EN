@@ -2,6 +2,7 @@ ent-ClothingBackpackDuffelGreenStalkerHydroponic = Botanical Kit
     .desc = The set contains everything you need to start your botanist journey.
     .suffix = Stalker
 ent-SoilStalker = soil
+    .desc = Soil for planting crops.
     .suffix = { ent-ClothingBackpackDuffelGreenStalkerHydroponic.suffix }
 ent-ManureStalker = manure
     .desc = Organic fertilizer used to improve soil fertility and promote plant growth, in a special case used immediately to create good soil.

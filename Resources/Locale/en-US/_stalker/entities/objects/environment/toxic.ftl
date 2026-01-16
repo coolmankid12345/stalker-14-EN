@@ -11,4 +11,5 @@ ent-STToxicBarrelBase = acid barrel
   .desc = suspicious-looking barrel of green liquid
 
 ent-STCraftGlassMetallT3Trigger = Acid T3 Steel and Glass Trigger (20%)
+    .desc = Trigger for spawning T3 steel and glass crafting materials.
     .suffix = ST | CD 1 hour

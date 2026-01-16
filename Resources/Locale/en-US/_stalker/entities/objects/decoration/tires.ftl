@@ -1,10 +1,15 @@
 ent-tire1 = Tire
+    .desc = An old tire.
     .suffix = ST, Mapping
 ent-tire2 = { ent-tire1 }
+    .desc = { ent-tire1.desc }
     .suffix = { ent-tire1.suffix }
 ent-tire3 = { ent-tire1 }
+    .desc = { ent-tire1.desc }
     .suffix = { ent-tire1.suffix }
 ent-tire4 = { ent-tire1 }
+    .desc = { ent-tire1.desc }
     .suffix = Stalker
 ent-tire5 = { ent-tire1 }
+    .desc = { ent-tire1.desc }
     .suffix = { ent-tire1.suffix }
