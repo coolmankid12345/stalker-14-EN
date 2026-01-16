@@ -37,6 +37,7 @@ ent-STClothingHeadPeakCap = visor
     .desc = Sailorless Visor, it's strange to see it in the Zone.
     .suffix = ST, Deliko
 ent-ClothingHeadCapMerc = merc's cap
+    .desc = A mercenary's tactical cap.
     .suffix = Stalker
 ent-STClothingHeadHatFoma = Old Ushanka
     .desc = Gray Soviet ushanka is a practical winter headdress made of thick cloth with fur lapels. It reliably protects against frost, is versatile and concise. Classics of the Soviet era.

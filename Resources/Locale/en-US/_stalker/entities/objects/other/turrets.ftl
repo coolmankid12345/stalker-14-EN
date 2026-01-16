@@ -8,4 +8,5 @@ ent-WeaponRPKTurretNanoTrasen = { ent-BaseWeaponRPKTurret }
     .desc = { ent-BaseWeaponRPKTurret.desc }
     .suffix = { ent-BaseWeaponRPKTurret.suffix }
 ent-WeaponTurretNanoTrasenDisposableStalker = RP-74 stationary disposable
+    .desc = A disposable stationary RP-74 machine gun.
     .suffix = NanoTrasen, Disposable [DO NOT MAPPIT]

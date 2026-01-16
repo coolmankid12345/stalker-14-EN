@@ -1,5 +1,7 @@
-ent-STSpawnMobStalkerT4 = Меченый T4 Spawner
+ent-STSpawnMobStalkerT4 = Marked One T4 Spawner
+    .desc = NPC spawner
     .suffix = DEBUG
-ent-STSpawnMobStalker = Меченый Spawner
+ent-STSpawnMobStalker = Marked One Spawner
+    .desc = NPC spawner
     .suffix = DEBUG
 ent-STSpawnPointStalker = stalker

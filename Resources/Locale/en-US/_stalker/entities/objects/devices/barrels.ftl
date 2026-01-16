@@ -11,6 +11,7 @@ ent-Barrel3 = { ent-BaseBarrel }
     .desc = { ent-BaseBarrel }
     .suffix = Stalker, DO NOT MAP
 ent-BarrelExpl = { ent-BaseBarrel }
+    .desc = An explosive barrel.
     .suffix = Stalker, DO NOT MAP
 ent-BarrelWooden1 = wooden barrel
     .desc = { ent-BaseBarrel.desc }

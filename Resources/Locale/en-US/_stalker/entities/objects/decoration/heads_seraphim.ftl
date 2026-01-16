@@ -1,8 +1,12 @@
 ent-HeadSeraphimStalker1 = bayonet with head
+    .desc = A gruesome trophy of the Seraphim.
     .suffix = ST, Mapping
 ent-HeadSeraphimStalker2 = { ent-HeadSeraphimStalker1 }
+    .desc = { ent-HeadSeraphimStalker1.desc }
     .suffix = { ent-HeadSeraphimStalker1.suffix }
 ent-HeadSeraphimStalker3 = { ent-HeadSeraphimStalker1 }
+    .desc = { ent-HeadSeraphimStalker1.desc }
     .suffix = { ent-HeadSeraphimStalker1.suffix }
 ent-HeadSeraphimStalker4 = { ent-HeadSeraphimStalker1 }
+    .desc = { ent-HeadSeraphimStalker1.desc }
     .suffix = { ent-HeadSeraphimStalker1.suffix }

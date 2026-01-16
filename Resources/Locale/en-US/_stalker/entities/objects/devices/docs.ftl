@@ -23,4 +23,5 @@ ent-BookStalkerSeraphimFAQ = Diary
     .desc = Diary with a strange symbol. Signed - under someone Lex.
     .suffix = Stalker, book, PodpivAss_Lex
 ent-STPilgrimBible = Covenant
+    .desc = The holy scripture of the Pilgrims.
     .suffix = Stalker, book, Pilgrims

@@ -8,4 +8,5 @@ ent-ClothingNeckDogtagOfficial = { ent-ClothingNeckDogtagBase }
 ent-ClothingNeckDogtagStalker = { ent-ClothingNeckDogtagBase }
     .desc = { ent-ClothingNeckDogtagBase.desc }
 ent-ClothingNeckDogtagPilgrim = cross
+    .desc = A pilgrim's cross worn as a symbol of faith.
     .suffix = ST, Pilgrims
