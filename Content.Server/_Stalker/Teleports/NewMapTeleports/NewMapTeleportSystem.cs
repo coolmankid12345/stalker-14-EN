@@ -1,8 +1,12 @@
 using System.Linq;
 using System.Threading.Tasks;
+using Content.Server._Stalker_EN.NoobDenyer;
 using Content.Server._Stalker.IncomingDamage;
+using Content.Server.Administration.Commands;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
+using Content.Server.Mind;
+using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._Stalker.Teleport;
 using Content.Shared.Access.Systems;
 using Content.Shared.CombatMode.Pacification;
@@ -10,13 +14,16 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Movement.Pulling.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Teleportation.Systems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Players.PlayTimeTracking;
 
 namespace Content.Server._Stalker.Teleports.NewMapTeleports;
 // TODO: Rename this system
@@ -34,6 +41,9 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly LinkedEntitySystem _linkedEntitySystem = default!;
+    [Dependency] private readonly PlayTimeTrackingManager _playTimeTrackingManager = default!;
+    [Dependency] private readonly MindSystem _mindSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -144,6 +154,17 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
         if (_pulling.IsPulling(subject) || _pulling.IsPulled(subject))
             return;
 
+        if (HasComp<NoobDenyerComponent>(uid) && TryComp<ActorComponent>(subject, out var actorComponent))
+        {
+            var session = actorComponent.PlayerSession;
+            var playtime = _playTimeTrackingManager.GetOverallPlaytime(session).TotalHours;
+
+            if (playtime < 2)
+            {
+                _popup.PopupEntity("You need at least 2 hours of playtime to go to Bar. Follow the arrows on the floor to Rookie Village.", subject);
+                return;
+            }
+        }
 
         // If there are no linked entity - link one
         if (!TryComp<LinkedEntityComponent>(uid, out var link))

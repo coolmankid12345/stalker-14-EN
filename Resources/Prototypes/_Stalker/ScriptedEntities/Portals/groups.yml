@@ -29,6 +29,7 @@
       portalName: Bar-BarStalker
     - type: AccessReader
       access: [["Stalker"]]
+    - type: NoobDenyer
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Bar-BarStalkerUncollide
