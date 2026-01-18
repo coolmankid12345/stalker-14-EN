@@ -87,6 +87,8 @@
         reagents:
         - ReagentId: AnomalyBeer
           Quantity: 100
+  - type: Clothing
+    quickEquip: false
   - type: Drink
   - type: Sprite
     sprite: _Stalker_EN/Objects/artifacts.rsi/beer.rsi
