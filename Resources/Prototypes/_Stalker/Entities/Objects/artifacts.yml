@@ -45,7 +45,7 @@
       tags:
       - Plate
   - type: Clothing
-    quickEquip: true
+    quickEquip: false
     slots:
       - ARTIFACT
   - type: RadiationBlockingContainer
