@@ -38,9 +38,9 @@
     ZoneArtifactPellicle: 400
     ZoneArtifactBaloon: 3600
 
-     # Mutant parts
+    # Mutant parts
 
-  #Boars -------- Health * T * 0.45
+    #Boars -------- Health * T * 0.45
     MutantPartBoarHoof: 200 # T1
     MutantPartSeasonedBoarHoof: 290 # T2
     MutantPartOldBoarHoof: 385 # T3
@@ -61,7 +61,7 @@
     MutantPartPseudogiantHeart: 2800
     MutantPartZombieHand: 420
 
-     #Weapons and armour ---- min cost / 2
+    #Weapons and armour ---- min cost / 2
 
     #12x70
     STWeaponShotgunMP155T: 20
@@ -158,170 +158,168 @@
     TradeBox: 3000
 
   categories:
-    - name: shop-category-weapons
-      priority: 1
-      items:
-            # Melee
-        StalkerBallBat: 70
-            # Guns
-        # 7mm
-        STWeaponShotgunSPAS: 4000 # T3
-        # Smg
-        STWeaponSMGMP5: 2500
-        STWeaponSMGPP91: 2000
-        STWeaponSMGStalkerCP2Veresk: 4000
-        # Other
-        STWeaponRifleSaiga739: 1400
-        WeaponPistolStalkerTT: 250
-        WeaponPistolStalkerAPS: 500
-        STWeaponRevolverSWPC325TR: 1000
-        STWeaponRevolverTaurusTracker455: 4000
-        STWeaponRevolverChiappaRhino60DS: 5000
-    - name: shop-category-magazines
-      priority: 2
-      items:
-          # Smg
-        BaseMP5Mag: 200
-        PP91Mag: 300
-        PPSHDrum: 2000
-        BasePPSHMag: 350
-        VityazMag: 400
-          # Other
-        TTMag: 100
-        STSpeedLoader45ACPEmpty: 200
-        BaseAPSMag: 100
-    - name: shop-category-ammunition
-      priority: 3
-      items:
-        6mmBuckshotBox: 220
-        7mmBuckshotBox: 20
-        8mmBuckshotBox: 400
-         # 7.25
-        725PBox: 100
-        725PTBox: 500
-        725PSTBox: 2000
-        725LRNPCBox: 50
-        # 9.19
-        919PSOGJBox: 65
-        919PSTBox: 400
-        919RIPBox: 200
-        919PBMBox: 1000
-        # 5.56
-        556FMJBox: 700
-        556M855Box: 1500
-        556WarmagBox: 300
-        # 5.45
-        545FMJBox: 700
-        545HPBox: 200
-        545PCBox: 1500
-         # .45
-        45ACPLFMJBox: 100
-        45ACPMFMJBox: 450
-        45ACPRIPBox: 300
-        45ACPAPBox: 1000
+  - name: shop-category-weapons
+    priority: 1
+    items:
+      # Melee
+      StalkerBallBat: 70
+      # Guns
+      # 7mm
+      STWeaponShotgunBenelliM4Super90: 800
+      STWeaponShotgunSPAS: 1500
+      # Smg
+      STWeaponSMGMP5: 2500
+      STWeaponSMGPP91: 2000
+      STWeaponSMGStalkerCP2Veresk: 4000
+      # Other
+      STWeaponRifleGalatz: 3500
+      STWeaponRevolverSWPC325TR: 140
+      STWeaponRevolverChiappaRhino60DS: 1100
+  - name: shop-category-magazines
+    priority: 2
+    items:
+      # Smg
+      BaseMP5Mag: 200
+      PP91Mag: 300
+      PPSHDrum: 2000
+      BasePPSHMag: 350
+      VityazMag: 400
+      # Other
+      TTMag: 100
+      STSpeedLoader45ACPEmpty: 200
+      BaseAPSMag: 100
+  - name: shop-category-ammunition
+    priority: 3
+    items:
+      6mmBuckshotBox: 220
+      7mmBuckshotBox: 20
+      8mmBuckshotBox: 400
+      # 7.25
+      725PBox: 100
+      725PTBox: 500
+      725PSTBox: 2000
+      725LRNPCBox: 50
+      # 9.19
+      919PSOGJBox: 65
+      919PSTBox: 400
+      919RIPBox: 200
+      919PBMBox: 1000
+      # 5.56
+      556FMJBox: 700
+      556M855Box: 1500
+      556WarmagBox: 300
+      # 5.45
+      545FMJBox: 700
+      545HPBox: 200
+      545PCBox: 1500
+      # .45
+      45ACPLFMJBox: 100
+      45ACPMFMJBox: 450
+      45ACPRIPBox: 300
+      45ACPAPBox: 1000
 
-    - name: shop-category-armor
-      priority: 4
-      items:
-          # OuterClothing #
-        STClothingOuterArmorRCBZ: 2000
-        STClothingOuterArmorLightPlateVestBaseStalker: 2000
-        ClothingOuterArmor6B2: 3000
-        ClothingHeadHelmetInfantry: 400
-        STClothingHeadHelmetMakeshiftTacticalT3: 1500
-        ClothingOuterArmorSpark: 1500
-        ClothingOuterArmorZaryaStalkerModifedType2: 2000
-        ClothingOuterArmorZaryaStalkerModifedType1: 3500
-        ClothingOuterArmorZaryaHunter: 2000
-        ClothingHeadHelmetVityaz1C: 3500
-        ClothingOuterArmorAborigineStalker: 6000
-        ClothingOuterArmorStalker: 7500
-    - name: shop-category-storage-and-containers
-      priority: 5
-      items:
-          # BackPacks
-        ClothingBackpackTownBlackStalker: 50 # T1
-        ClothingBackpackTownWhiteStalker: 50 # T1
+  - name: shop-category-armor
+    priority: 4
+    items:
+      # OuterClothing #
+      STClothingOuterArmorRCBZ: 2000
+      STClothingOuterArmorLightPlateVestBaseStalker: 2000
+      ClothingOuterArmor6B2: 3000
+      ClothingHeadHelmetInfantry: 400
+      STClothingHeadHelmetMakeshiftTacticalT3: 1500
+      ClothingOuterArmorSpark: 1500
+      ClothingOuterArmorZaryaStalkerModifedType2: 2000
+      ClothingOuterArmorZaryaStalkerModifedType1: 3500
+      ClothingOuterArmorZaryaHunter: 2000
+      ClothingHeadHelmetVityaz1C: 3500
+      ClothingOuterArmorAborigineStalker: 6000
+      ClothingOuterArmorStalker: 7500
+  - name: shop-category-storage-and-containers
+    priority: 5
+    items:
+      # BackPacks
+      ClothingBackpackTownBlackStalker: 50 # T1
+      ClothingBackpackTownWhiteStalker: 50 # T1
         ##-------------------------------------------
-          # Belts
-        ClothingBeltBandolierStalker: 20 # T1 - PVE
-          # Containers
-        MedkitCMSStalker: 1000 # T1
-        MedkitGrizzlyStalker: 2000 # T2
-    - name: shop-category-raincoats-and-gasmasks
-      priority: 6
-      items:
-        ClothingMaskXoma: 100 # T1
-        ClothingMaskGP5: 200 # T2
-        ClothingMaskGP7: 600 # T3
-    - name: shop-category-research-equipment
-      priority: 7
-      items:
-        STBoltBagFilled: 50
-        BoxArtcont: 1000 # T1
-        ZoneAnomalyDetectorAD1: 500 # T1
-        ZoneAnomalyDetectorUpgradeAD2: 3000
-        TrashDetectorTier1: 200
-        TrashDetectorTier2: 1600
-        TrashDetectorTier3: 4000
-    - name: shop-category-utilities
-      priority: 8
-      items:
-        ToolkitTearOne: 35000
-        CraftSaw: 20000
-        STCombatKnife: 25
-        BoxZiptie: 50
-        BoxSafebox: 300
-        CheapLighter: 5
-        GeigerCounter: 50
-        BaseRadio: 50
-        STFlashlightSeclite: 50
-        PowerCellHyper: 50
-        HandheldGPSBasic: 50
-        Paper: 2
-        Pen: 5
-        Binocularus1: 2500
-        BoxFlare: 60
-        Beaker: 40
-        Syringe: 20
-        ClothingGoPro: 250
-        ExtendedEmergencyOxygenTankFilledStalker: 50
-        Matchbox: 10
-        HatchetStalker: 150
-    - name: shop-category-provisions
-      priority: 9
-      items:
-        STEnergyDrink: 200
-        STEnergyDrinkMonster: 300
-        STEnergyDrinkRevo: 150
-        STDrinkBeerCanBaltic: 40
-        DrinkVodkaBottleFull: 100
-        STFoodBreadPlain: 60
-        DrinkFlaskOld: 60
-        DrinkWaterBottleFull: 100
-        FoodTinMRE: 500
-        DrinkLemonadehBottleFull: 100
-        STFoodMeatSalami: 1000
-    - name: shop-category-medicine # 50% скидка от сталкеров
-      priority: 10
-      items:
-        STPillboxAntirad: 200
-        STGauze: 80
-        STOintment: 100
-        STBrutepack: 100
-        Bloodpack: 1000
-        MedkitAI2: 200
-        Defibrillator: 1000
-        AntiRadMedipen: 200
-    - name: shop-category-modules
-      priority: 11
-      items:
-        STModuleScopeRiflesT1Ru: 1600
-        STModuleScopeRiflesT1Nato: 1600
-        STModuleSilencerRiflesT1Ru: 1400
-        STModuleSilencerRiflesT1Nato: 1400
-        STModuleShotgunChokeT1: 1200
-        STModuleSMGGripT1: 1600
-        STModuleSilencerSMGT1: 1600
-        STModuleSniperSightT1: 1600
-        STModuleSilencerSniperT1: 1400
+      # Belts
+      ClothingBeltBandolierStalker: 20 # T1 - PVE
+      # Containers
+      MedkitCMSStalker: 1000 # T1
+      MedkitGrizzlyStalker: 2000 # T2
+  - name: shop-category-raincoats-and-gasmasks
+    priority: 6
+    items:
+      ClothingMaskXoma: 100 # T1
+      ClothingMaskGP5: 200 # T2
+      ClothingMaskGP7: 600 # T3
+  - name: shop-category-research-equipment
+    priority: 7
+    items:
+      STBoltBagFilled: 50
+      BoxArtcont: 1000 # T1
+      ZoneAnomalyDetectorAD1: 500 # T1
+      ZoneAnomalyDetectorUpgradeAD2: 3000
+      TrashDetectorTier1: 200
+      TrashDetectorTier2: 1600
+      TrashDetectorTier3: 4000
+  - name: shop-category-utilities
+    priority: 8
+    items:
+      ToolkitTearOne: 35000
+      CraftSaw: 20000
+      STCombatKnife: 25
+      BoxZiptie: 50
+      BoxSafebox: 300
+      CheapLighter: 5
+      GeigerCounter: 50
+      BaseRadio: 50
+      STFlashlightSeclite: 50
+      PowerCellHyper: 50
+      HandheldGPSBasic: 50
+      Paper: 2
+      Pen: 5
+      Binocularus1: 2500
+      BoxFlare: 60
+      Beaker: 40
+      Syringe: 20
+      ClothingGoPro: 250
+      ExtendedEmergencyOxygenTankFilledStalker: 50
+      Matchbox: 10
+      HatchetStalker: 150
+  - name: shop-category-provisions
+    priority: 9
+    items:
+      STEnergyDrink: 200
+      STEnergyDrinkMonster: 300
+      STEnergyDrinkRevo: 150
+      STDrinkBeerCanBaltic: 40
+      DrinkVodkaBottleFull: 100
+      STFoodBreadPlain: 60
+      DrinkFlaskOld: 60
+      DrinkWaterBottleFull: 100
+      FoodTinMRE: 500
+      DrinkLemonadehBottleFull: 100
+      STFoodMeatSalami: 1000
+  - name: shop-category-medicine # 50% скидка от сталкеров
+    priority: 10
+    items:
+      STPillboxAntirad: 200
+      STGauze: 80
+      STOintment: 100
+      STBrutepack: 100
+      Bloodpack: 1000
+      MedkitAI2: 200
+      Defibrillator: 1000
+      AntiRadMedipen: 200
+  - name: shop-category-modules
+    priority: 11
+    items:
+      STModuleScopeRiflesT1Ru: 1600
+      STModuleScopeRiflesT1Nato: 1600
+      STModuleSilencerRiflesT1Ru: 1400
+      STModuleSilencerRiflesT1Nato: 1400
+      STModuleShotgunChokeT1: 1200
+      STModuleSMGGripT1: 1600
+      STModuleSilencerSMGT1: 1600
+      STModuleSniperSightT1: 1600
+      STModuleSilencerSniperT1: 1400
