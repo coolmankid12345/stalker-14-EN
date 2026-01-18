@@ -105,7 +105,7 @@
     slope: 0.2
 
 - type: entity
-  id: Rad7
+  id: Rad10
   name: радиация (10 рад в центре, 6 тайлов)
   suffix: Stalker
   parent: Rad1
@@ -120,7 +120,7 @@
     slope: 1
 
 - type: entity
-  id: Rad8
+  id: Rad11
   name: радиация (10 рад в центре, 10 тайлов)
   suffix: Stalker
   parent: Rad1
