@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Stalker-14-EN",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "idle",
+      "delays": [[0.2, 0.2, 0.2, 0.2, 0.2]]
+    },
+    {
+      "name": "charging",
+      "delays": [[0.15, 0.15, 0.15, 0.15, 0.15]]
+    },
+    {
+      "name": "active",
+      "delays": [[0.1, 0.1, 0.1, 0.1, 0.1]]
+    },
+    {
+      "name": "doomed",
+      "delays": [[0.05, 0.05, 0.05, 0.05, 0.05]]
+    }
+  ]
+}
