@@ -104,6 +104,51 @@
     intensity: 5
     slope: 0.2
 
+- type: entity
+  id: Rad7
+  name: радиация (10 рад в центре, 6 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+  - type: RadiationSource
+    intensity: 10
+    slope: 1
+
+- type: entity
+  id: Rad8
+  name: радиация (10 рад в центре, 10 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+  - type: RadiationSource
+    intensity: 10
+    slope: 0.5
+
+- type: entity
+  id: Rad9
+  name: радиация (10 рад в центре, 25 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+  - type: RadiationSource
+    intensity: 10
+    slope: 0.2
+
 #####################################################
 #Огненные источники
 #####################################################
@@ -171,6 +216,70 @@
     slope: 0.2
     damageType: Heat
 
+- type: entity
+  id: FireSource9
+  name: жара (5 ед в центре, 10 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+  - type: RadiationSource
+    intensity: 5
+    slope: 0.2
+    damageType: Heat
+
+- type: entity
+  id: FireSource10
+  name: жара (5 ед в центре, 20 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+  - type: RadiationSource
+    intensity: 5
+    slope: 0.1
+    damageType: Heat
+
+- type: entity
+  id: FireSource11
+  name: жара (10 ед в центре, 10 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+  - type: RadiationSource
+    intensity: 10
+    slope: 0.2
+    damageType: Heat
+
+- type: entity
+  id: FireSource12
+  name: жара (10 ед в центре, 20 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+  - type: RadiationSource
+    intensity: 10
+    slope: 0.1
+    damageType: Heat
+
 #####################################################
 #ПСИ источники
 #####################################################
@@ -236,6 +345,70 @@
   - type: RadiationSource
     intensity: 2
     slope: 0.2
+    damageType: Psy
+
+- type: entity
+  id: AnomalyHeatPsy5
+  name: источник пси (5 ед в центре, 10 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+  - type: RadiationSource
+    intensity: 5
+    slope: 0.2
+    damageType: Psy
+
+- type: entity
+  id: AnomalyHeatPsy6
+  name: источник пси (5 ед в центре, 20 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+  - type: RadiationSource
+    intensity: 5
+    slope: 0.1
+    damageType: Psy
+
+- type: entity
+  id: AnomalyHeatPsy7
+  name: источник пси (10 ед в центре, 10 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+  - type: RadiationSource
+    intensity: 10
+    slope: 0.2
+    damageType: Psy
+
+- type: entity
+  id: AnomalyHeatPsy8
+  name: источник пси (10 ед в центре, 20 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+  - type: RadiationSource
+    intensity: 10
+    slope: 0.1
     damageType: Psy
 
 #####################################################
@@ -367,5 +540,69 @@
         state: icon
   - type: RadiationSource
     intensity: 5
+    slope: 0.1
+    damageType: Caustic
+
+- type: entity
+  id: AnomalyChemSource9
+  name: источник токсинов (10 ед в центре, 6 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Icons/DangerZone/chem_caustic.rsi
+      state: icon
+  - type: RadiationSource
+    intensity: 10
+    slope: 1
+    damageType: Caustic
+
+- type: entity
+  id: AnomalyChemSource10
+  name: источник токсинов (10 ед в центре, 10 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Icons/DangerZone/chem_caustic.rsi
+      state: icon
+  - type: RadiationSource
+    intensity: 10
+    slope: 0.5
+    damageType: Caustic
+
+- type: entity
+  id: AnomalyChemSource11
+  name: источник токсинов (10 ед в центре, 25 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Icons/DangerZone/chem_caustic.rsi
+      state: icon
+  - type: RadiationSource
+    intensity: 10
+    slope: 0.2
+    damageType: Caustic
+
+- type: entity
+  id: AnomalyChemSource12
+  name: источник токсинов (10 ед в центре, 35 тайлов)
+  suffix: Stalker
+  parent: Rad1
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Icons/DangerZone/chem_caustic.rsi
+      state: icon
+  - type: RadiationSource
+    intensity: 10
     slope: 0.1
     damageType: Caustic
