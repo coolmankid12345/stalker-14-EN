@@ -7,6 +7,9 @@
     - protoId: ZoneAnomalyGravi
     - protoId: ZoneAnomalyJarka
     - protoId: ZoneAnomalyElectra
+    # Gravity
+    - protoId: ZoneAnomalyVortex
+      weight: 0.5
 
 # Cordon - Stalker EN - Orginal 100
 - type: stAnomalyGenerationOptions
@@ -34,6 +37,8 @@
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 0.2
+    - protoId: ZoneAnomalyVortex
+      weight: 0.1
 
 # Garbage - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -62,6 +67,8 @@
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 1
+    - protoId: ZoneAnomalyVortex
+      weight: 0.2
 
 # Болота
 - type: stAnomalyGenerationOptions
@@ -100,6 +107,9 @@
     #-PIVO-UPDATE-S
     - protoId: ZoneAnomalyBeer
       weight: 0.5
+    # Gravity
+    - protoId: ZoneAnomalyVortex
+      weight: 0.35
 
 # Agroprom - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -142,6 +152,8 @@
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 0.2
+    - protoId: ZoneAnomalyVortex
+      weight: 0.4
 
 # Dark Hollow - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -171,6 +183,8 @@
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 0.3
+    - protoId: ZoneAnomalyVortex
+      weight: 0.25
 
 # Dark Valley - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -207,6 +221,8 @@
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 0.8
+    - protoId: ZoneAnomalyVortex
+      weight: 0.3
 
 # Топи
 - type: stAnomalyGenerationOptions
@@ -239,6 +255,8 @@
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 0.2
+    - protoId: ZoneAnomalyVortex
+      weight: 0.7
 
 # Red Forest - Testing Stalker EN
 - type: stAnomalyGenerationOptions
@@ -271,6 +289,8 @@
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 0.5
+    - protoId: ZoneAnomalyVortex
+      weight: 0.85
 
 # Rostok and The Wilds - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -312,6 +332,8 @@
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 0.8
+    - protoId: ZoneAnomalyVortex
+      weight: 0.15
 
 # Оазис XXX
 - type: stAnomalyGenerationOptions
@@ -321,6 +343,9 @@
     anomalyEntries:
     - protoId: ZoneAnomalySource
     - protoId: ZoneAnomalyGrabber
+    # Gravity
+    - protoId: ZoneAnomalyVortex
+      weight: 0.5
 
 # Limansk - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -354,3 +379,5 @@
     # Gravity
     - protoId: ZoneAnomalyGlassShards
       weight: 1
+    - protoId: ZoneAnomalyVortex
+      weight: 1.0
