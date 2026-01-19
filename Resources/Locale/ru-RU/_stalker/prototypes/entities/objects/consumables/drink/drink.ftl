@@ -7,3 +7,5 @@ ent-STEnergyDrinkMonster = Энергетик Монстер
     .desc = Освободи зверя
 ent-STEnergyDrinkRevo = Энергетик Revo
     .desc = Энергия для твоей тусовки!
+ent-DrinkBorodaBottleFull = Чай Бороды
+    .desc = Тот самый чай. Бодрит!
