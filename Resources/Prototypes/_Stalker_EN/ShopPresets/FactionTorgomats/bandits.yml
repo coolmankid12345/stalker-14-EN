@@ -38,7 +38,7 @@
     ZoneArtifactBlood: 1520
     ZoneArtifactMeat: 3140
     ZoneArtifactKolobok: 4760
-    ZoneArtifactBeer: 450
+    ZoneArtifactBeer: 475
     # Acidic group - 2
     ZoneArtifactPellicle: 440
     ZoneArtifactBaloon: 3300
@@ -73,25 +73,34 @@
     MutantPartOraculeEye: 400
     MutantPartPseudogiantHeart: 3400
     MutantPartZombieHand: 450
+    MutantPartIzlomArm: 545
 
-    #Valueables PENDING REWORK
+    #Value
     STJewelrySilver: 400
     STJewelryGold: 600
+    TreasureCoinIron: 100
+    TreasureCoinSilver: 200
+    TreasureCoinGold: 300
     STWristwatchGold: 1500
-    STGoldRingBigDiamond: 2000
 
-    # Materials
-    STCraftBasicThreadKitT1: 100
-    STCraftCottonFabricT1: 100
-    STCraftPinePlankT1: 100
-    STCraftSheetCopperT1: 100
-    STCraftStandardPCBT2: 150
-    STCraftSheetIronT2: 150
-    STCraftBirchPlankT2: 150
-    STCraftPlasticFittingT2: 150
-    STCraftGlassT2: 150
-    STCraftHideT2: 150
-    STCraftTapeKitT2: 150
+    #Misc
+    ZoneAnomalyDetectorAD1: 50
+    ZoneAnomalyDetectorUpgradeAD1: 50
+    ZoneAnomalyDetectorAD2: 225
+    ZoneAnomalyDetectorUpgradeAD2: 225
+    ZoneAnomalyDetectorAD3: 550
+    ZoneArtifactDetectorPulse: 20
+    ZoneArtifactDetectorHunter: 30
+    ZoneArtifactDetectorModifiedHunter: 30
+    ZoneArtifactDetectorBush: 50
+    ZoneArtifactDetectorResponse: 150
+    ZoneArtifactDetectorSpruce: 500
+    ZoneArtifactDetectorBarracuda: 750
+    ZoneArtifactDetectorSeaDevil: 750
+    ZoneArtifactDetectorBear: 2000
+    ZoneArtifactDetectorWolfhound: 5000
+    longrangemetaldetector: 900
+    Binocularus1: 200
 
   categories:
     - name: shop-category-weapons
@@ -204,18 +213,18 @@
     - name: shop-category-provisions
       priority: 5
       items:
-            STEnergyDrink: 100
-            STEnergyDrinkMonster: 100
-            STEnergyDrinkRevo: 85
-            STDrinkBeerCanBaltic: 90
-            DrinkCossackVodkaBottleFull: 55
-            STFoodBreadPlain: 35
-            DrinkFlaskOld: 30
-            DrinkWaterBottleFull: 45
-            FoodTinMRE: 120
-            DrinkLemonadehBottleFull: 50
-            STFoodMeatSalami: 350
-            CigPackSuka: 100
+        STEnergyDrink: 100
+        STEnergyDrinkMonster: 100
+        STEnergyDrinkRevo: 85
+        STDrinkBeerCanBaltic: 90
+        DrinkCossackVodkaBottleFull: 55
+        STFoodBreadPlain: 35
+        DrinkFlaskOld: 30
+        DrinkWaterBottleFull: 45
+        FoodTinMRE: 120
+        DrinkLemonadehBottleFull: 50
+        STFoodMeatSalami: 350
+        CigPackSuka: 100
 
     - name: shop-category-armor
       priority: 6
@@ -223,17 +232,17 @@
           # Helmets #
         ClothingHeadHelmetLight: 200 # T1 - PVE
         ClothingHeadHelmetInfantryBand: 600 # T2 - PVP
-        ClothingHeadHelmetVityaz1B: 3000 # T3 - PVE
-        ClothingHeadAssaultHelmetBandit: 3500 # T3 - PVP
+        ClothingHeadHelmetVityaz1B: 3500 # T3 - PVE
+        ClothingHeadAssaultHelmetBandit: 3000 # T3 - PVP
           # OuterClothing #
-        ClothingOuterCoatBanditBrown: 325 # T1 - uni
-        ClothingOuterCoatBanditBlack: 325 # T1 - uni
+        ClothingOuterCoatBanditBrown: 550 # T1 - uni
+        ClothingOuterCoatBanditBlack: 550 # T1 - uni
         STClothingOuterArmorLightPlateVestBaseBand: 1000 # T2 - PvP
         SetArmoutJacketBanditBuyableCrate: 1025 # T2 - PvP
         ClothingOuterArmourCoatBanditBrown: 1050 # T2 - PvP
         ClothingOuterArmourCoatBanditBlack: 1050 # T2 - PvP
         STClothingOuterArmorBandits: 2000 #T2
-        ClothingOuterArmorSevaBandit: 5000 # T3 - PVE
+        ClothingOuterArmorSevaBandit: 4500 # T3 - PVE
         STClothingOuterArmorRCBZ: 2000
         ClothingOuterArmorBandits: 13000 #T3
 
@@ -253,17 +262,14 @@
         ClothingBeltBandolierStalker: 20 # T1 - PvE
         ClothingBeltTarzanBlack: 200 # T1 - PvP
         ClothingBeltWebbingHolsterMercBandit: 700
-          # Containers
-        MedkitCMSStalker: 450 # T1
-        MedkitGrizzlyStalker: 850 # T2
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8
       items:
           # Cloaks
         ClothingOuterCoatPahan: 140 # T1
-        ClothingOuterCoatKolchyga: 550 # T2
-        ClothingOuterCoatLoyalist: 3000 # T3
+        ClothingOuterCoatKolchyga: 550 # T1
+        ClothingOuterCoatLoyalist: 2500 # T2
           # Gasmasks
         ClothingMaskXoma: 100 # T1
         ClothingMaskGP5: 200 # T2
@@ -302,18 +308,15 @@
         ExtendedEmergencyOxygenTankFilledStalker: 50
         Matchbox: 10
         HatchetStalker: 150
-        CasseteBandit: 500
         ClothingHeatBagStalker: 100
         STElasticRubberRed: 50
-        STElasticRubberGreen: 50 
+        STElasticRubberGreen: 50
         STElasticRubberBlue: 50
 
     - name: shop-category-modules
       priority: 11
       items:
         STModuleScopeRiflesT1Ru: 600
-        STModuleSilencerRiflesT1Ru: 400
-        STModuleSilencerRiflesT1Nato: 400
         STModuleShotgunChokeT1: 200
         STModuleSMGGripT1: 600
         STModuleSniperSightT1: 600
@@ -321,9 +324,11 @@
     - name: shop-category-grenades
       priority: 12
       items:
+        SnapPop: 50
+        CraftGunpowderBank: 200
         KhattabkaGrenade: 350
-        DG05SmokeGrenade: 225
-        TearGasGrenadeStalker: 750
+        DG05SmokeGrenade: 500
+        TearGasGrenadeStalker: 850 #not sure about this one
         RGD5Grenade: 1000
         DynamiteOne: 1500
 
@@ -393,3 +398,11 @@
         ClothingTorsoTurtlenecksMatrosska: 50
         ClothingEyesGlassesCheapSunglasses: 5
         ClothingNeckScarfBandit: 100
+    - name: shop-category-entertainment
+      priority: 14
+      items:
+        HarmonicaInstrument: 500
+        CardBin: 300
+        PokerCardBin: 450
+        DiceBag: 50
+        CasseteBandit: 500
