@@ -25,7 +25,7 @@
   # Artifact radar (visual UI)
   - type: ArtifactRadar
     detectionRange: 17
-    level: 3
+    level: 4
   - type: ActivatableUI
     key: enum.ArtifactRadarUiKey.Key
     inHandsOnly: true

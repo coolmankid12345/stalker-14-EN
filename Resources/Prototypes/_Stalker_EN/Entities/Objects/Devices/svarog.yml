@@ -13,9 +13,11 @@
         map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
         shader: unshaded
         visible: false
+  - type: ArtifactRadar                                                                                                                                                                                                                       
+    level: 5     
   # Anomaly detection (audio beeping) - adds to Veles artifact radar
   - type: ZoneAnomalyDetector
-    level: 4
+    level: 5
     distance: 17
     maxBeepInterval: 1
     minBeepInterval: 0.01
