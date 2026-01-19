@@ -31,24 +31,24 @@
         <!-- Controls Section -->
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
             <!-- Anomaly Detector Button - hidden when device lacks ZoneAnomalyDetectorComponent -->
-            <Control Name="AnomalyDetectorPanel">
+            <Control Name="AnomalyDetectorPanel" Visible="False">
                 <ContainerButton Name="AnomalyDetectorButton" StyleClasses="button" MinWidth="160" Margin="5 0 5 0">
                     <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
                         <Label Text="{Loc 'artifact-radar-label-anomaly-detector'}" />
-                        <Label Name="AnomalyDetectorStateLabel" Margin="4 0 0 0" />
+                        <Label Name="AnomalyDetectorStateLabel" Margin="4 0 0 0" Text="---" />
                     </BoxContainer>
                 </ContainerButton>
             </Control>
             <ContainerButton Name="ArtifactScannerButton" StyleClasses="button" MinWidth="160" Margin="5 0 5 0">
                 <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label Text="{Loc 'artifact-radar-label-artifact-scanner'}" />
-                    <Label Name="ArtifactScannerStateLabel" Margin="4 0 0 0" />
+                    <Label Name="ArtifactScannerStateLabel" Margin="4 0 0 0" Text="---" />
                 </BoxContainer>
             </ContainerButton>
         </BoxContainer>
 
         <!-- Waveform Section -->
-        <PanelContainer Name="WaveformPanel" Margin="0 5 0 0">
+        <PanelContainer Name="WaveformPanel" Margin="0 5 0 0" Visible="False">
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#050A05" BorderColor="#1A3A1A" BorderThickness="1" />
             </PanelContainer.PanelOverride>
