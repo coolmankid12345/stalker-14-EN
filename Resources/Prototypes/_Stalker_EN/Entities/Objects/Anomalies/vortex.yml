@@ -12,7 +12,7 @@
         types:
           Compression: 2
     - type: ZoneAnomalyEffectGravityWell
-      distance: 3
+      distance: 3.5
       period: 1.0
       radial: 40
       tangential: 0.5
@@ -25,7 +25,7 @@
       throwRange: 5
       throwForce: 60
       pendingDoomSound:
-        path: /Audio/_Stalker/Effects/gravi_blowout.ogg
+        path: /Audio/_Stalker_EN/Anomalies/Vortex/blowout.ogg
       whitelist:
         components:
           - MobState
@@ -79,9 +79,9 @@
       pulseDuration: 2.0
       updateInterval: 0.1
     - type: ZoneAnomalyProximitySound
-      maxRange: 5
+      maxRange: 6
       minVolume: 0.1
       maxVolume: 1.0
       updateCooldown: 0.25
       sound:
-        path: /Audio/_Stalker/Effects/anomaly_gravy_idle.ogg
+        path: /Audio/_Stalker_EN/Anomalies/Vortex/idle.ogg
