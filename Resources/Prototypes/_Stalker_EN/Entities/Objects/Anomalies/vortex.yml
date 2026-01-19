@@ -85,3 +85,22 @@
       updateCooldown: 0.25
       sound:
         path: /Audio/_Stalker_EN/Anomalies/Vortex/idle.ogg
+    - type: ZoneArtifactSpawner
+      artifacts:
+      - id: null
+        ratio: 290
+      # Tier 1
+      - id: ArtMedusa
+        tier: 1
+        ratio: 15
+      - id: ZoneArtifactPebble
+        tier: 1
+        ratio: 19
+      # Tier 2
+      - id: ZoneArtifactAmoeba
+        tier: 2
+        ratio: 18
+      # Tier 3
+      - id: ZoneArtifactStoneCube
+        tier: 3
+        ratio: 12
