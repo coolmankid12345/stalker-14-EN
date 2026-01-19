@@ -3,7 +3,7 @@ using Content.Server._Stalker.ZoneArtifact.Components.Spawner;
 using Content.Server._Stalker.ZoneArtifact.Systems;
 using Content.Server.Popups;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
-using Content.Shared._Stalker_EN.Devices.Veles;
+using Content.Shared._Stalker_EN.Devices.ArtifactRadar;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.UserInterface;
@@ -13,9 +13,9 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Server._Stalker_EN.Devices.Veles;
+namespace Content.Server._Stalker_EN.Devices.ArtifactRadar;
 
-public sealed class VelesSystem : EntitySystem
+public sealed class ArtifactRadarSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -26,30 +26,30 @@ public sealed class VelesSystem : EntitySystem
     [Dependency] private readonly ZoneArtifactSpawnerSystem _artifactSpawner = default!;
 
     // Reusable list to avoid allocations per update
-    private readonly List<VelesBlip> _blipBuffer = new();
+    private readonly List<ArtifactRadarBlip> _blipBuffer = new();
 
     public override void Initialize()
     {
         base.Initialize();
 
         // Context menu verbs (anomaly detector only)
-        SubscribeLocalEvent<VelesComponent, GetVerbsEvent<ActivationVerb>>(OnGetVerbs);
+        SubscribeLocalEvent<ArtifactRadarComponent, GetVerbsEvent<ActivationVerb>>(OnGetVerbs);
 
         // UI events
-        SubscribeLocalEvent<VelesComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUIOpen);
-        SubscribeLocalEvent<VelesComponent, BoundUIClosedEvent>(OnBoundUIClosed);
+        SubscribeLocalEvent<ArtifactRadarComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUIOpen);
+        SubscribeLocalEvent<ArtifactRadarComponent, BoundUIClosedEvent>(OnBoundUIClosed);
 
         // UI messages from buttons
-        SubscribeLocalEvent<VelesComponent, VelesToggleAnomalyDetectorMessage>(OnToggleAnomalyDetectorMessage);
-        SubscribeLocalEvent<VelesComponent, VelesToggleArtifactScannerMessage>(OnToggleArtifactScannerMessage);
+        SubscribeLocalEvent<ArtifactRadarComponent, ArtifactRadarToggleAnomalyDetectorMessage>(OnToggleAnomalyDetectorMessage);
+        SubscribeLocalEvent<ArtifactRadarComponent, ArtifactRadarToggleArtifactScannerMessage>(OnToggleArtifactScannerMessage);
 
         // Item events - disable when dropped/stored
-        SubscribeLocalEvent<VelesComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
+        SubscribeLocalEvent<ArtifactRadarComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
     }
 
     #region Context Menu Verbs
 
-    private void OnGetVerbs(Entity<VelesComponent> entity, ref GetVerbsEvent<ActivationVerb> args)
+    private void OnGetVerbs(Entity<ArtifactRadarComponent> entity, ref GetVerbsEvent<ActivationVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;
@@ -61,7 +61,7 @@ public sealed class VelesSystem : EntitySystem
         {
             args.Verbs.Add(new ActivationVerb
             {
-                Text = Loc.GetString("veles-verb-toggle-anomaly-detector"),
+                Text = Loc.GetString("artifact-radar-verb-toggle-anomaly-detector"),
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/dot.svg.192dpi.png")),
                 Act = () => ToggleAnomalyDetector(entity, user)
             });
@@ -72,12 +72,12 @@ public sealed class VelesSystem : EntitySystem
 
     #region UI Message Handlers
 
-    private void OnToggleAnomalyDetectorMessage(Entity<VelesComponent> entity, ref VelesToggleAnomalyDetectorMessage args)
+    private void OnToggleAnomalyDetectorMessage(Entity<ArtifactRadarComponent> entity, ref ArtifactRadarToggleAnomalyDetectorMessage args)
     {
         ToggleAnomalyDetector(entity, args.Actor);
     }
 
-    private void OnToggleArtifactScannerMessage(Entity<VelesComponent> entity, ref VelesToggleArtifactScannerMessage args)
+    private void OnToggleArtifactScannerMessage(Entity<ArtifactRadarComponent> entity, ref ArtifactRadarToggleArtifactScannerMessage args)
     {
         ToggleArtifactScanner(entity, args.Actor);
     }
@@ -86,14 +86,14 @@ public sealed class VelesSystem : EntitySystem
 
     #region Toggle Methods
 
-    private void ToggleAnomalyDetector(Entity<VelesComponent> entity, EntityUid user)
+    private void ToggleAnomalyDetector(Entity<ArtifactRadarComponent> entity, EntityUid user)
     {
         if (!TryComp<ZoneAnomalyDetectorComponent>(entity, out var detector))
             return;
 
         detector.Enabled = !detector.Enabled;
 
-        var msg = detector.Enabled ? "veles-anomaly-detector-on" : "veles-anomaly-detector-off";
+        var msg = detector.Enabled ? "artifact-radar-anomaly-detector-on" : "artifact-radar-anomaly-detector-off";
         _popup.PopupEntity(Loc.GetString(msg), entity, user);
 
         if (detector.Enabled)
@@ -103,11 +103,11 @@ public sealed class VelesSystem : EntitySystem
         SendUIUpdate(entity, user);
     }
 
-    private void ToggleArtifactScanner(Entity<VelesComponent> entity, EntityUid user)
+    private void ToggleArtifactScanner(Entity<ArtifactRadarComponent> entity, EntityUid user)
     {
         entity.Comp.Enabled = !entity.Comp.Enabled;
 
-        var msg = entity.Comp.Enabled ? "veles-artifact-scanner-on" : "veles-artifact-scanner-off";
+        var msg = entity.Comp.Enabled ? "artifact-radar-artifact-scanner-on" : "artifact-radar-artifact-scanner-off";
         _popup.PopupEntity(Loc.GetString(msg), entity, user);
 
         if (entity.Comp.Enabled)
@@ -116,7 +116,7 @@ public sealed class VelesSystem : EntitySystem
         UpdateAppearance(entity);
 
         // Send radar update if scanner enabled and UI is open
-        if (entity.Comp.Enabled && _ui.IsUiOpen(entity.Owner, VelesUiKey.Key))
+        if (entity.Comp.Enabled && _ui.IsUiOpen(entity.Owner, ArtifactRadarUiKey.Key))
         {
             UpdateRadar(entity, user);
         }
@@ -126,14 +126,14 @@ public sealed class VelesSystem : EntitySystem
         }
     }
 
-    private void UpdateAppearance(Entity<VelesComponent> entity)
+    private void UpdateAppearance(Entity<ArtifactRadarComponent> entity)
     {
         var anomalyOn = TryComp<ZoneAnomalyDetectorComponent>(entity, out var d) && d.Enabled;
         var scannerOn = entity.Comp.Enabled;
         _appearance.SetData(entity, ZoneAnomalyDetectorVisuals.Enabled, anomalyOn || scannerOn);
     }
 
-    private void OnGotUnequippedHand(Entity<VelesComponent> entity, ref GotUnequippedHandEvent args)
+    private void OnGotUnequippedHand(Entity<ArtifactRadarComponent> entity, ref GotUnequippedHandEvent args)
     {
         // Disable anomaly detector
         if (TryComp<ZoneAnomalyDetectorComponent>(entity, out var detector))
@@ -149,7 +149,7 @@ public sealed class VelesSystem : EntitySystem
 
     #region UI Update
 
-    private void OnBeforeActivatableUIOpen(Entity<VelesComponent> entity, ref BeforeActivatableUIOpenEvent args)
+    private void OnBeforeActivatableUIOpen(Entity<ArtifactRadarComponent> entity, ref BeforeActivatableUIOpenEvent args)
     {
         // Send initial state when UI opens - radar update if scanner enabled, otherwise just state
         if (entity.Comp.Enabled)
@@ -158,9 +158,9 @@ public sealed class VelesSystem : EntitySystem
             SendUIUpdate(entity, args.User);
     }
 
-    private void OnBoundUIClosed(Entity<VelesComponent> entity, ref BoundUIClosedEvent args)
+    private void OnBoundUIClosed(Entity<ArtifactRadarComponent> entity, ref BoundUIClosedEvent args)
     {
-        if (args.UiKey is not VelesUiKey)
+        if (args.UiKey is not ArtifactRadarUiKey)
             return;
 
         // Disable artifact scanner when UI closes
@@ -171,20 +171,29 @@ public sealed class VelesSystem : EntitySystem
         UpdateAppearance(entity);
     }
 
-    private void SendUIUpdate(Entity<VelesComponent> entity, EntityUid? user = null)
+    private void SendUIUpdate(Entity<ArtifactRadarComponent> entity, EntityUid? user = null)
     {
-        var anomalyEnabled = TryComp<ZoneAnomalyDetectorComponent>(entity, out var d) && d.Enabled;
+        var hasAnomalyDetector = TryComp<ZoneAnomalyDetectorComponent>(entity, out var detector);
+        var anomalyEnabled = hasAnomalyDetector && detector!.Enabled;
         _blipBuffer.Clear();
 
         float? closestAnomalyDistance = null;
         if (anomalyEnabled && user != null)
-            closestAnomalyDistance = GetClosestAnomalyDistance(entity, user.Value, d!);
+            closestAnomalyDistance = GetClosestAnomalyDistance(entity, user.Value, detector!);
 
-        var state = new VelesBoundUIState(_blipBuffer, entity.Comp.DetectionRange, anomalyEnabled, entity.Comp.Enabled, closestAnomalyDistance);
-        _ui.SetUiState(entity.Owner, VelesUiKey.Key, state);
+        var deviceName = Name(entity);
+        var state = new ArtifactRadarBoundUIState(
+            _blipBuffer,
+            entity.Comp.DetectionRange,
+            entity.Comp.Enabled,
+            hasAnomalyDetector,
+            anomalyEnabled,
+            deviceName,
+            closestAnomalyDistance);
+        _ui.SetUiState(entity.Owner, ArtifactRadarUiKey.Key, state);
     }
 
-    private float? GetClosestAnomalyDistance(Entity<VelesComponent> entity, EntityUid user, ZoneAnomalyDetectorComponent detector)
+    private float? GetClosestAnomalyDistance(Entity<ArtifactRadarComponent> entity, EntityUid user, ZoneAnomalyDetectorComponent detector)
     {
         var xformQuery = GetEntityQuery<TransformComponent>();
         if (!xformQuery.TryGetComponent(user, out var userXform))
@@ -215,31 +224,31 @@ public sealed class VelesSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<VelesComponent>();
-        while (query.MoveNext(out var uid, out var veles))
+        var query = EntityQueryEnumerator<ArtifactRadarComponent>();
+        while (query.MoveNext(out var uid, out var radar))
         {
-            if (!veles.Enabled)
+            if (!radar.Enabled)
                 continue;
 
-            if (_timing.CurTime < veles.NextUpdateTime)
+            if (_timing.CurTime < radar.NextUpdateTime)
                 continue;
 
             // Only update if UI is open
-            if (!_ui.IsUiOpen(uid, VelesUiKey.Key))
+            if (!_ui.IsUiOpen(uid, ArtifactRadarUiKey.Key))
                 continue;
 
-            var user = GetUser((uid, veles));
+            var user = GetUser((uid, radar));
             if (user == null)
                 continue;
 
-            UpdateRadar((uid, veles), user.Value);
-            veles.NextUpdateTime = _timing.CurTime + veles.UpdateInterval;
+            UpdateRadar((uid, radar), user.Value);
+            radar.NextUpdateTime = _timing.CurTime + radar.UpdateInterval;
         }
     }
 
-    private EntityUid? GetUser(Entity<VelesComponent> entity)
+    private EntityUid? GetUser(Entity<ArtifactRadarComponent> entity)
     {
-        foreach (var actor in _ui.GetActors(entity.Owner, VelesUiKey.Key))
+        foreach (var actor in _ui.GetActors(entity.Owner, ArtifactRadarUiKey.Key))
         {
             return actor;
         }
@@ -247,7 +256,7 @@ public sealed class VelesSystem : EntitySystem
         return null;
     }
 
-    private void UpdateRadar(Entity<VelesComponent> entity, EntityUid user)
+    private void UpdateRadar(Entity<ArtifactRadarComponent> entity, EntityUid user)
     {
         _blipBuffer.Clear();
 
@@ -289,28 +298,29 @@ public sealed class VelesSystem : EntitySystem
                 }
             }
 
-            // Calculate absolute angle to target
-            // Convert from math coords (0=east, counterclockwise) to radar coords (0=north, clockwise)
-            var targetAngle = new Angle(diff);
-            var radarAngle = (float)(Math.PI / 2 - targetAngle.Theta);
+            // Use raw angle - game's visual coords are rotated so +X=north, +Y=east
+            var radarAngle = (float)new Angle(diff).Theta;
 
-            // Normalize to -PI to PI
-            while (radarAngle > MathF.PI)
-                radarAngle -= MathF.PI * 2;
-            while (radarAngle < -MathF.PI)
-                radarAngle += MathF.PI * 2;
-
-            _blipBuffer.Add(new VelesBlip(GetNetEntity(target), radarAngle, distance, target.Comp.DetectedLevel));
+            _blipBuffer.Add(new ArtifactRadarBlip(GetNetEntity(target), radarAngle, distance, target.Comp.DetectedLevel));
         }
 
-        var anomalyEnabled = TryComp<ZoneAnomalyDetectorComponent>(entity, out var d) && d.Enabled;
+        var hasAnomalyDetector = TryComp<ZoneAnomalyDetectorComponent>(entity, out var detector);
+        var anomalyEnabled = hasAnomalyDetector && detector!.Enabled;
 
         float? closestAnomalyDistance = null;
         if (anomalyEnabled)
-            closestAnomalyDistance = GetClosestAnomalyDistance(entity, user, d!);
+            closestAnomalyDistance = GetClosestAnomalyDistance(entity, user, detector!);
 
-        var state = new VelesBoundUIState(_blipBuffer, entity.Comp.DetectionRange, anomalyEnabled, entity.Comp.Enabled, closestAnomalyDistance);
-        _ui.SetUiState(entity.Owner, VelesUiKey.Key, state);
+        var deviceName = Name(entity);
+        var state = new ArtifactRadarBoundUIState(
+            _blipBuffer,
+            entity.Comp.DetectionRange,
+            entity.Comp.Enabled,
+            hasAnomalyDetector,
+            anomalyEnabled,
+            deviceName,
+            closestAnomalyDistance);
+        _ui.SetUiState(entity.Owner, ArtifactRadarUiKey.Key, state);
     }
 
     #endregion

@@ -1,9 +1,9 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Stalker_EN.Devices.Veles;
+namespace Content.Shared._Stalker_EN.Devices.ArtifactRadar;
 
 [Serializable, NetSerializable]
-public enum VelesUiKey : byte
+public enum ArtifactRadarUiKey : byte
 {
     Key,
 }
@@ -12,7 +12,7 @@ public enum VelesUiKey : byte
 /// Message sent when user clicks anomaly detector toggle button.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class VelesToggleAnomalyDetectorMessage : BoundUserInterfaceMessage
+public sealed class ArtifactRadarToggleAnomalyDetectorMessage : BoundUserInterfaceMessage
 {
 }
 
@@ -20,15 +20,15 @@ public sealed class VelesToggleAnomalyDetectorMessage : BoundUserInterfaceMessag
 /// Message sent when user clicks artifact scanner toggle button.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class VelesToggleArtifactScannerMessage : BoundUserInterfaceMessage
+public sealed class ArtifactRadarToggleArtifactScannerMessage : BoundUserInterfaceMessage
 {
 }
 
 /// <summary>
-/// Represents a single blip on the Veles radar.
+/// Represents a single blip on the artifact radar.
 /// </summary>
 [Serializable, NetSerializable]
-public struct VelesBlip
+public struct ArtifactRadarBlip
 {
     /// <summary>
     /// Unique identifier for this artifact.
@@ -51,7 +51,7 @@ public struct VelesBlip
     /// </summary>
     public int Level;
 
-    public VelesBlip(NetEntity id, float angle, float distance, int level)
+    public ArtifactRadarBlip(NetEntity id, float angle, float distance, int level)
     {
         Id = id;
         Angle = angle;
@@ -64,12 +64,12 @@ public struct VelesBlip
 /// UI state sent from server to client containing radar blip data.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class VelesBoundUIState : BoundUserInterfaceState
+public sealed class ArtifactRadarBoundUIState : BoundUserInterfaceState
 {
     /// <summary>
     /// List of artifact blips to display on the radar.
     /// </summary>
-    public readonly List<VelesBlip> Blips;
+    public readonly List<ArtifactRadarBlip> Blips;
 
     /// <summary>
     /// Maximum detection range of the device.
@@ -77,26 +77,45 @@ public sealed class VelesBoundUIState : BoundUserInterfaceState
     public readonly float Range;
 
     /// <summary>
+    /// Whether the artifact scanner (radar) is enabled.
+    /// </summary>
+    public readonly bool ArtifactScannerEnabled;
+
+    /// <summary>
+    /// Whether the device has anomaly detection capability (ZoneAnomalyDetectorComponent).
+    /// </summary>
+    public readonly bool HasAnomalyDetector;
+
+    /// <summary>
     /// Whether the anomaly detector (beeping) is enabled.
     /// </summary>
     public readonly bool AnomalyDetectorEnabled;
 
     /// <summary>
-    /// Whether the artifact scanner (radar) is enabled.
+    /// Localized device name for display in UI header.
     /// </summary>
-    public readonly bool ArtifactScannerEnabled;
+    public readonly string DeviceName;
 
     /// <summary>
     /// Distance to the closest detected anomaly (null if none detected or detector disabled).
     /// </summary>
     public readonly float? ClosestAnomalyDistance;
 
-    public VelesBoundUIState(List<VelesBlip> blips, float range, bool anomalyDetectorEnabled, bool artifactScannerEnabled, float? closestAnomalyDistance = null)
+    public ArtifactRadarBoundUIState(
+        List<ArtifactRadarBlip> blips,
+        float range,
+        bool artifactScannerEnabled,
+        bool hasAnomalyDetector,
+        bool anomalyDetectorEnabled,
+        string deviceName,
+        float? closestAnomalyDistance = null)
     {
         Blips = blips;
         Range = range;
-        AnomalyDetectorEnabled = anomalyDetectorEnabled;
         ArtifactScannerEnabled = artifactScannerEnabled;
+        HasAnomalyDetector = hasAnomalyDetector;
+        AnomalyDetectorEnabled = anomalyDetectorEnabled;
+        DeviceName = deviceName;
         ClosestAnomalyDistance = closestAnomalyDistance;
     }
 }

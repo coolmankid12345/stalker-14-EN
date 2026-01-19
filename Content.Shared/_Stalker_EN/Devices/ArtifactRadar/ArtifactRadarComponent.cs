@@ -1,13 +1,13 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Stalker_EN.Devices.Veles;
+namespace Content.Shared._Stalker_EN.Devices.ArtifactRadar;
 
 /// <summary>
-/// Component for the Veles artifact radar device.
-/// This device displays nearby artifacts on a 180-degree arc radar UI.
+/// Component for artifact radar devices (Veles, Svarog, etc.).
+/// This device displays nearby artifacts on a 360-degree radar UI.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
-public sealed partial class VelesComponent : Component
+public sealed partial class ArtifactRadarComponent : Component
 {
     /// <summary>
     /// Maximum distance at which artifacts can be detected.

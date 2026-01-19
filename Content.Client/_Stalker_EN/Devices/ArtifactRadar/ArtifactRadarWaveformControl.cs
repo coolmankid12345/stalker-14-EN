@@ -5,14 +5,14 @@ using Robust.Shared.IoC;
 using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 
-namespace Content.Client._Stalker_EN.Devices.Veles;
+namespace Content.Client._Stalker_EN.Devices.ArtifactRadar;
 
 /// <summary>
 /// Custom control that renders an animated sine waveform that oscillates faster
 /// as the player gets closer to anomalies, matching the beep frequency.
 /// Wave amplitude increases with proximity (more "bouncy" when closer).
 /// </summary>
-public sealed class VelesWaveformControl : Control
+public sealed class ArtifactRadarWaveformControl : Control
 {
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -44,7 +44,7 @@ public sealed class VelesWaveformControl : Control
     private static readonly Color WaveColorDim = new(0.1f, 0.5f, 0.1f, 0.6f);
     private static readonly Color FlatLineColor = new(0.1f, 0.3f, 0.1f, 0.5f);
 
-    public VelesWaveformControl()
+    public ArtifactRadarWaveformControl()
     {
         IoCManager.InjectDependencies(this);
     }

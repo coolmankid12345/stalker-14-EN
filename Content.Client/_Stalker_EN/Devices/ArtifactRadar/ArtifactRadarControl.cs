@@ -1,17 +1,17 @@
 using System.Numerics;
-using Content.Shared._Stalker_EN.Devices.Veles;
+using Content.Shared._Stalker_EN.Devices.ArtifactRadar;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Shared.IoC;
 using Robust.Shared.Timing;
 
-namespace Content.Client._Stalker_EN.Devices.Veles;
+namespace Content.Client._Stalker_EN.Devices.ArtifactRadar;
 
 /// <summary>
 /// Custom control that renders a 360-degree radar display showing artifact blips
 /// with animated sonar sweep and fading blip reveal.
 /// </summary>
-public sealed class VelesRadarControl : Control
+public sealed class ArtifactRadarControl : Control
 {
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -52,7 +52,7 @@ public sealed class VelesRadarControl : Control
     private static readonly Color RingColor = new(0.1f, 0.5f, 0.1f, 0.6f);
     private static readonly Color CenterColor = new(0.2f, 0.8f, 0.2f, 0.8f);
 
-    public VelesRadarControl()
+    public ArtifactRadarControl()
     {
         IoCManager.InjectDependencies(this);
     }
@@ -60,7 +60,7 @@ public sealed class VelesRadarControl : Control
     /// <summary>
     /// Updates the radar display with current artifact blip data.
     /// </summary>
-    public void UpdateBlips(List<VelesBlip> blips, float range, bool scannerEnabled)
+    public void UpdateBlips(List<ArtifactRadarBlip> blips, float range, bool scannerEnabled)
     {
         _range = range;
 
@@ -102,14 +102,20 @@ public sealed class VelesRadarControl : Control
 
             if (crossedBlip)
             {
-                // Reveal/update with current position
-                _revealedBlips[blip.Id] = new RevealedBlip
+                // BUG FIX: Only reveal if not already revealed (prevents fade reset when player moves)
+                // This ensures blips stay at their revealed position until fully faded,
+                // then can be re-revealed on the next sweep cycle.
+                if (!_revealedBlips.ContainsKey(blip.Id))
                 {
-                    Angle = blip.Angle,
-                    Distance = blip.Distance,
-                    Level = blip.Level,
-                    RevealTime = currentTime
-                };
+                    _revealedBlips[blip.Id] = new RevealedBlip
+                    {
+                        Angle = blip.Angle,
+                        Distance = blip.Distance,
+                        Level = blip.Level,
+                        RevealTime = currentTime
+                    };
+                }
+                // If already revealed, keep existing position and fade progress
             }
             // If not crossed, keep existing revealed position (if any)
         }

@@ -1,0 +1,24 @@
+- type: entity
+  parent: Veles
+  id: Svarog
+  name: Svarog
+  description: An advanced detection device combining artifact radar with anomaly detection. The upgraded version of Veles.
+  suffix: Stalker EN, Advanced Radar
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Devices/svarog.rsi
+    layers:
+      - state: base
+      - state: screen_on
+        map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
+        shader: unshaded
+        visible: false
+  # Anomaly detection (audio beeping) - adds to Veles artifact radar
+  - type: ZoneAnomalyDetector
+    level: 4
+    distance: 17
+    maxBeepInterval: 1
+    minBeepInterval: 0.01
+    beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
+  - type: STWeight
+    self: 1.8
