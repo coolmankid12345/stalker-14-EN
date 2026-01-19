@@ -1,9 +1,11 @@
 using Content.Server._Stalker.ZoneArtifact.Components.Detector;
+using Content.Server._Stalker.ZoneArtifact.Components.Spawner;
+using Content.Server._Stalker.ZoneArtifact.Systems;
 using Content.Server.Popups;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker_EN.Devices.Veles;
-using Content.Shared.Movement.Components;
-using Content.Shared.Movement.Systems;
+using Content.Shared.Hands;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
@@ -17,25 +19,32 @@ public sealed class VelesSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedMoverController _mover = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly ZoneArtifactSpawnerSystem _artifactSpawner = default!;
+
+    // Reusable list to avoid allocations per update
+    private readonly List<VelesBlip> _blipBuffer = new();
 
     public override void Initialize()
     {
         base.Initialize();
 
-        // Context menu verbs
+        // Context menu verbs (anomaly detector only)
         SubscribeLocalEvent<VelesComponent, GetVerbsEvent<ActivationVerb>>(OnGetVerbs);
 
         // UI events
         SubscribeLocalEvent<VelesComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUIOpen);
+        SubscribeLocalEvent<VelesComponent, BoundUIClosedEvent>(OnBoundUIClosed);
 
         // UI messages from buttons
         SubscribeLocalEvent<VelesComponent, VelesToggleAnomalyDetectorMessage>(OnToggleAnomalyDetectorMessage);
         SubscribeLocalEvent<VelesComponent, VelesToggleArtifactScannerMessage>(OnToggleArtifactScannerMessage);
+
+        // Item events - disable when dropped/stored
+        SubscribeLocalEvent<VelesComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
     }
 
     #region Context Menu Verbs
@@ -57,14 +66,6 @@ public sealed class VelesSystem : EntitySystem
                 Act = () => ToggleAnomalyDetector(entity, user)
             });
         }
-
-        // Artifact Scanner toggle
-        args.Verbs.Add(new ActivationVerb
-        {
-            Text = Loc.GetString("veles-verb-toggle-artifact-scanner"),
-            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/dot.svg.192dpi.png")),
-            Act = () => ToggleArtifactScanner(entity, user)
-        });
     }
 
     #endregion
@@ -99,7 +100,7 @@ public sealed class VelesSystem : EntitySystem
             detector.NextBeepTime = _timing.CurTime;
 
         UpdateAppearance(entity);
-        SendUIUpdate(entity);
+        SendUIUpdate(entity, user);
     }
 
     private void ToggleArtifactScanner(Entity<VelesComponent> entity, EntityUid user)
@@ -117,13 +118,11 @@ public sealed class VelesSystem : EntitySystem
         // Send radar update if scanner enabled and UI is open
         if (entity.Comp.Enabled && _ui.IsUiOpen(entity.Owner, VelesUiKey.Key))
         {
-            var uiUser = GetUser(entity);
-            if (uiUser != null)
-                UpdateRadar(entity, uiUser.Value);
+            UpdateRadar(entity, user);
         }
         else
         {
-            SendUIUpdate(entity);
+            SendUIUpdate(entity, user);
         }
     }
 
@@ -132,6 +131,18 @@ public sealed class VelesSystem : EntitySystem
         var anomalyOn = TryComp<ZoneAnomalyDetectorComponent>(entity, out var d) && d.Enabled;
         var scannerOn = entity.Comp.Enabled;
         _appearance.SetData(entity, ZoneAnomalyDetectorVisuals.Enabled, anomalyOn || scannerOn);
+    }
+
+    private void OnGotUnequippedHand(Entity<VelesComponent> entity, ref GotUnequippedHandEvent args)
+    {
+        // Disable anomaly detector
+        if (TryComp<ZoneAnomalyDetectorComponent>(entity, out var detector))
+            detector.Enabled = false;
+
+        // Disable artifact scanner
+        entity.Comp.Enabled = false;
+
+        UpdateAppearance(entity);
     }
 
     #endregion
@@ -144,16 +155,56 @@ public sealed class VelesSystem : EntitySystem
         if (entity.Comp.Enabled)
             UpdateRadar(entity, args.User);
         else
-            SendUIUpdate(entity);
+            SendUIUpdate(entity, args.User);
     }
 
-    private void SendUIUpdate(Entity<VelesComponent> entity)
+    private void OnBoundUIClosed(Entity<VelesComponent> entity, ref BoundUIClosedEvent args)
+    {
+        if (args.UiKey is not VelesUiKey)
+            return;
+
+        // Disable artifact scanner when UI closes
+        if (!entity.Comp.Enabled)
+            return;
+
+        entity.Comp.Enabled = false;
+        UpdateAppearance(entity);
+    }
+
+    private void SendUIUpdate(Entity<VelesComponent> entity, EntityUid? user = null)
     {
         var anomalyEnabled = TryComp<ZoneAnomalyDetectorComponent>(entity, out var d) && d.Enabled;
-        var blips = new List<VelesBlip>();
+        _blipBuffer.Clear();
 
-        var state = new VelesBoundUIState(blips, entity.Comp.DetectionRange, anomalyEnabled, entity.Comp.Enabled);
+        float? closestAnomalyDistance = null;
+        if (anomalyEnabled && user != null)
+            closestAnomalyDistance = GetClosestAnomalyDistance(entity, user.Value, d!);
+
+        var state = new VelesBoundUIState(_blipBuffer, entity.Comp.DetectionRange, anomalyEnabled, entity.Comp.Enabled, closestAnomalyDistance);
         _ui.SetUiState(entity.Owner, VelesUiKey.Key, state);
+    }
+
+    private float? GetClosestAnomalyDistance(Entity<VelesComponent> entity, EntityUid user, ZoneAnomalyDetectorComponent detector)
+    {
+        var xformQuery = GetEntityQuery<TransformComponent>();
+        if (!xformQuery.TryGetComponent(user, out var userXform))
+            return null;
+
+        var userMapCoords = _transform.GetMapCoordinates(userXform);
+        var userWorldPos = _transform.GetWorldPosition(userXform, xformQuery);
+
+        float? closestDistance = null;
+        foreach (var ent in _entityLookup.GetEntitiesInRange<ZoneAnomalyComponent>(userMapCoords, detector.Distance))
+        {
+            if (!ent.Comp.Detected || ent.Comp.DetectedLevel > detector.Level)
+                continue;
+
+            var dist = (userWorldPos - _transform.GetWorldPosition(ent, xformQuery)).Length();
+            if (dist < (closestDistance ?? float.MaxValue))
+                closestDistance = dist;
+        }
+
+        return closestDistance;
     }
 
     #endregion
@@ -198,7 +249,7 @@ public sealed class VelesSystem : EntitySystem
 
     private void UpdateRadar(Entity<VelesComponent> entity, EntityUid user)
     {
-        var blips = new List<VelesBlip>();
+        _blipBuffer.Clear();
 
         var xformQuery = GetEntityQuery<TransformComponent>();
         if (!xformQuery.TryGetComponent(user, out var userXform))
@@ -206,19 +257,6 @@ public sealed class VelesSystem : EntitySystem
 
         var userMapCoords = _transform.GetMapCoordinates(userXform);
         var userWorldPos = _transform.GetWorldPosition(userXform, xformQuery);
-
-        // Get the player's facing direction in world-space
-        Angle userFacingAngle;
-        if (TryComp<InputMoverComponent>(user, out var mover))
-        {
-            // Player with movement input - get actual facing direction
-            userFacingAngle = _mover.GetParentGridAngle(mover);
-        }
-        else
-        {
-            // Fallback for entities without movement (NPCs, etc.)
-            userFacingAngle = _transform.GetWorldRotation(userXform, xformQuery);
-        }
 
         var entities = _entityLookup.GetEntitiesInRange<ZoneArtifactDetectorTargetComponent>(
             userMapCoords, entity.Comp.DetectionRange);
@@ -231,43 +269,48 @@ public sealed class VelesSystem : EntitySystem
             if (target.Comp.DetectedLevel > entity.Comp.Level)
                 continue;
 
-            if (!InMap(target.Owner, xformQuery))
-                continue;
-
             var targetXform = xformQuery.GetComponent(target);
             var targetWorldPos = _transform.GetWorldPosition(targetXform, xformQuery);
 
             var diff = targetWorldPos - userWorldPos;
             var distance = diff.Length();
 
-            // Calculate angle relative to player's facing direction
-            var targetAngle = Angle.FromWorldVec(diff);
+            // Skip spawners that don't have artifacts ready (empty cooldown spawners)
+            if (TryComp<ZoneArtifactSpawnerComponent>(target, out var spawner))
+            {
+                if (!_artifactSpawner.Ready((target, spawner)))
+                    continue;
 
-            // Relative angle: target direction minus player facing direction
-            var relativeAngle = (float)(targetAngle.Theta - userFacingAngle.Theta);
+                // Spawn artifact if player is close enough (like regular detectors do)
+                if (distance <= entity.Comp.ActivationDistance)
+                {
+                    _artifactSpawner.TrySpawn((target, spawner));
+                    continue; // Spawner no longer ready - actual artifact will be found next update
+                }
+            }
+
+            // Calculate absolute angle to target
+            // Convert from math coords (0=east, counterclockwise) to radar coords (0=north, clockwise)
+            var targetAngle = new Angle(diff);
+            var radarAngle = (float)(Math.PI / 2 - targetAngle.Theta);
 
             // Normalize to -PI to PI
-            while (relativeAngle > MathF.PI)
-                relativeAngle -= MathF.PI * 2;
-            while (relativeAngle < -MathF.PI)
-                relativeAngle += MathF.PI * 2;
+            while (radarAngle > MathF.PI)
+                radarAngle -= MathF.PI * 2;
+            while (radarAngle < -MathF.PI)
+                radarAngle += MathF.PI * 2;
 
-            // Only include blips within the 180-degree arc (-PI/2 to PI/2)
-            if (relativeAngle < -MathF.PI / 2 || relativeAngle > MathF.PI / 2)
-                continue;
-
-            blips.Add(new VelesBlip(relativeAngle, distance, target.Comp.DetectedLevel));
+            _blipBuffer.Add(new VelesBlip(GetNetEntity(target), radarAngle, distance, target.Comp.DetectedLevel));
         }
 
         var anomalyEnabled = TryComp<ZoneAnomalyDetectorComponent>(entity, out var d) && d.Enabled;
-        var state = new VelesBoundUIState(blips, entity.Comp.DetectionRange, anomalyEnabled, entity.Comp.Enabled);
-        _ui.SetUiState(entity.Owner, VelesUiKey.Key, state);
-    }
 
-    private bool InMap(EntityUid entityUid, EntityQuery<TransformComponent> xformQuery)
-    {
-        var parent = xformQuery.GetComponent(entityUid).ParentUid;
-        return HasComp<MapComponent>(parent) || HasComp<MapGridComponent>(parent);
+        float? closestAnomalyDistance = null;
+        if (anomalyEnabled)
+            closestAnomalyDistance = GetClosestAnomalyDistance(entity, user, d!);
+
+        var state = new VelesBoundUIState(_blipBuffer, entity.Comp.DetectionRange, anomalyEnabled, entity.Comp.Enabled, closestAnomalyDistance);
+        _ui.SetUiState(entity.Owner, VelesUiKey.Key, state);
     }
 
     #endregion

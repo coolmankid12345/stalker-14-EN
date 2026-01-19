@@ -8,26 +8,43 @@ using Robust.Shared.Timing;
 namespace Content.Client._Stalker_EN.Devices.Veles;
 
 /// <summary>
-/// Custom control that renders a 180-degree arc radar display showing artifact blips
+/// Custom control that renders a 360-degree radar display showing artifact blips
 /// with animated sonar sweep and fading blip reveal.
 /// </summary>
 public sealed class VelesRadarControl : Control
 {
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    private List<VelesBlip> _blips = new();
     private float _range = 17f;
+    private bool _scannerEnabled;
 
-    // Pre-allocated array for DrawFilledArc to avoid per-frame allocation
-    private readonly Vector2[] _arcPoints = new Vector2[34]; // segments (32) + 2
+    // Pre-allocated array for DrawFilledCircle to avoid per-frame allocation
+    private readonly Vector2[] _circlePoints = new Vector2[66]; // 64 segments + 2
+
+    // Reusable collections to avoid per-frame allocations
+    private readonly HashSet<NetEntity> _currentIds = new();
+    private readonly List<NetEntity> _toRemove = new();
+    private readonly Vector2[] _triangleVerts = new Vector2[3];
 
     // Sonar sweep animation
-    private const float SweepSpeed = 0.4f; // Oscillations per second
+    private const float SweepSpeed = 0.25f; // Rotations per second
     private const float BlipFadeDuration = 2.5f; // Seconds for blip to fully fade
     private const float SweepHitThreshold = 0.15f; // Radians tolerance for sweep detection
 
     private float _lastSweepAngle;
-    private readonly Dictionary<int, float> _blipRevealTimes = new(); // blip index -> reveal time
+    private float _sweepStartTime;
+
+    // Struct to hold revealed blip state (position at time of reveal)
+    private struct RevealedBlip
+    {
+        public float Angle;
+        public float Distance;
+        public int Level;
+        public float RevealTime;
+    }
+
+    // ID-based tracking: blips "stick" to their revealed position until faded or re-swept
+    private readonly Dictionary<NetEntity, RevealedBlip> _revealedBlips = new();
 
     // Colors for the radar display (green stalker aesthetic)
     private static readonly Color BackgroundColor = new(0.05f, 0.1f, 0.05f, 0.9f);
@@ -40,31 +57,102 @@ public sealed class VelesRadarControl : Control
         IoCManager.InjectDependencies(this);
     }
 
-    public void UpdateBlips(List<VelesBlip> blips, float range)
+    /// <summary>
+    /// Updates the radar display with current artifact blip data.
+    /// </summary>
+    public void UpdateBlips(List<VelesBlip> blips, float range, bool scannerEnabled)
     {
-        _blips = blips;
         _range = range;
 
-        // Check which blips the sweep just passed over
-        var currentTime = (float)_timing.CurTime.TotalSeconds;
-        var sweepAngle = MathF.Sin(currentTime * SweepSpeed * MathF.PI) * (MathF.PI / 2);
-
-        for (int i = 0; i < blips.Count; i++)
+        // Handle scanner disabled
+        if (!scannerEnabled)
         {
-            var blipAngle = blips[i].Angle;
+            _revealedBlips.Clear();
+            _scannerEnabled = false;
+            return;
+        }
 
-            // Check if sweep passed this blip since last frame
-            var crossedBlip = (_lastSweepAngle <= blipAngle && sweepAngle >= blipAngle) ||
-                              (_lastSweepAngle >= blipAngle && sweepAngle <= blipAngle) ||
-                              MathF.Abs(sweepAngle - blipAngle) < SweepHitThreshold;
+        // If scanner just turned on, reset sweep to start from top (0 radians)
+        if (!_scannerEnabled && scannerEnabled)
+        {
+            _sweepStartTime = (float)_timing.CurTime.TotalSeconds;
+            _lastSweepAngle = 0f; // Start at top
+        }
+
+        _scannerEnabled = scannerEnabled;
+
+        var currentTime = (float)_timing.CurTime.TotalSeconds;
+        var elapsedTime = currentTime - _sweepStartTime;
+
+        // Rotating sweep: continuous rotation around full circle
+        var sweepAngle = (elapsedTime * SweepSpeed * MathF.PI * 2) % (MathF.PI * 2);
+        // Adjust to -PI to PI range for comparison with blip angles
+        if (sweepAngle > MathF.PI)
+            sweepAngle -= MathF.PI * 2;
+
+        // Build set of current blip IDs for cleanup
+        _currentIds.Clear();
+
+        foreach (var blip in blips)
+        {
+            _currentIds.Add(blip.Id);
+
+            // Check if sweep crossed this blip's CURRENT position
+            var crossedBlip = DidSweepCross(_lastSweepAngle, sweepAngle, blip.Angle);
 
             if (crossedBlip)
             {
-                _blipRevealTimes[i] = currentTime;
+                // Reveal/update with current position
+                _revealedBlips[blip.Id] = new RevealedBlip
+                {
+                    Angle = blip.Angle,
+                    Distance = blip.Distance,
+                    Level = blip.Level,
+                    RevealTime = currentTime
+                };
             }
+            // If not crossed, keep existing revealed position (if any)
+        }
+
+        // Remove revealed blips that are no longer in range OR have fully faded
+        _toRemove.Clear();
+        foreach (var kvp in _revealedBlips)
+        {
+            var timeSinceReveal = currentTime - kvp.Value.RevealTime;
+            if (!_currentIds.Contains(kvp.Key) || timeSinceReveal >= BlipFadeDuration)
+            {
+                _toRemove.Add(kvp.Key);
+            }
+        }
+        foreach (var id in _toRemove)
+        {
+            _revealedBlips.Remove(id);
         }
 
         _lastSweepAngle = sweepAngle;
+    }
+
+    private bool DidSweepCross(float lastAngle, float currentAngle, float targetAngle)
+    {
+        // Normal crossing check
+        if ((lastAngle <= targetAngle && currentAngle >= targetAngle) ||
+            (lastAngle >= targetAngle && currentAngle <= targetAngle))
+        {
+            return true;
+        }
+
+        // Handle wraparound from PI to -PI
+        if (lastAngle > MathF.PI / 2 && currentAngle < -MathF.PI / 2)
+        {
+            if (targetAngle > lastAngle || targetAngle < currentAngle)
+                return true;
+        }
+
+        // Threshold check for blips very close to sweep
+        if (MathF.Abs(currentAngle - targetAngle) < SweepHitThreshold)
+            return true;
+
+        return false;
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -79,21 +167,19 @@ public sealed class VelesRadarControl : Control
 
         var size = PixelSize;
         var centerX = size.X / 2f;
-        var centerY = size.Y - 10; // Bottom center with small margin
-        var maxRadiusByWidth = (size.X / 2f) - 10; // Horizontal constraint
-        var maxRadiusByHeight = centerY - 10; // Vertical constraint (10px top margin)
-        var radius = Math.Min(maxRadiusByWidth, maxRadiusByHeight);
+        var centerY = size.Y / 2f; // True center for 360° radar
+        var radius = Math.Min(size.X, size.Y) / 2f - 10; // Full circle fitting with margin
 
-        // Draw background arc
-        DrawFilledArc(handle, new Vector2(centerX, centerY), radius, BackgroundColor);
+        // Draw background circle
+        DrawFilledCircle(handle, new Vector2(centerX, centerY), radius, BackgroundColor);
 
         // Draw range rings (at 33%, 66%, 100%)
-        DrawArcRing(handle, new Vector2(centerX, centerY), radius * 0.33f, RingColor);
-        DrawArcRing(handle, new Vector2(centerX, centerY), radius * 0.66f, RingColor);
-        DrawArcRing(handle, new Vector2(centerX, centerY), radius, RingColor);
+        DrawCircleRing(handle, new Vector2(centerX, centerY), radius * 0.33f, RingColor);
+        DrawCircleRing(handle, new Vector2(centerX, centerY), radius * 0.66f, RingColor);
+        DrawCircleRing(handle, new Vector2(centerX, centerY), radius, RingColor);
 
-        // Draw radial grid lines (at -60, -30, 0, 30, 60 degrees)
-        for (var angle = -60; angle <= 60; angle += 30)
+        // Draw radial grid lines at 45° intervals around full circle
+        for (var angle = 0; angle < 360; angle += 45)
         {
             var rad = angle * MathF.PI / 180f;
             var endX = centerX + MathF.Sin(rad) * radius;
@@ -101,8 +187,9 @@ public sealed class VelesRadarControl : Control
             handle.DrawLine(new Vector2(centerX, centerY), new Vector2(endX, endY), GridColor);
         }
 
-        // Draw sweep line with trail
-        DrawSweepLine(handle, centerX, centerY, radius);
+        // Draw sweep line with trail (only if scanner enabled)
+        if (_scannerEnabled)
+            DrawSweepLine(handle, centerX, centerY, radius);
 
         // Draw center point
         handle.DrawCircle(new Vector2(centerX, centerY), 3f, CenterColor);
@@ -114,14 +201,15 @@ public sealed class VelesRadarControl : Control
     private void DrawSweepLine(DrawingHandleScreen handle, float centerX, float centerY, float radius)
     {
         var time = (float)_timing.CurTime.TotalSeconds;
-        var sweepAngle = MathF.Sin(time * SweepSpeed * MathF.PI) * (MathF.PI / 2);
+        var elapsedTime = time - _sweepStartTime;
 
-        // Draw fading trail
-        var sweepDirection = MathF.Cos(time * SweepSpeed * MathF.PI);
+        // Rotating sweep: continuous clockwise rotation around full circle
+        var sweepAngle = (elapsedTime * SweepSpeed * MathF.PI * 2) % (MathF.PI * 2);
+
+        // Draw fading trail (always trails behind the sweep direction)
         for (int i = 5; i >= 1; i--)
         {
-            var trailAngle = sweepAngle - (i * 0.08f * MathF.Sign(sweepDirection));
-            trailAngle = Math.Clamp(trailAngle, -MathF.PI / 2, MathF.PI / 2);
+            var trailAngle = sweepAngle - (i * 0.08f); // Trail behind sweep
 
             var trailEndX = centerX + MathF.Sin(trailAngle) * radius;
             var trailEndY = centerY - MathF.Cos(trailAngle) * radius;
@@ -147,84 +235,78 @@ public sealed class VelesRadarControl : Control
     {
         var currentTime = (float)_timing.CurTime.TotalSeconds;
 
-        for (int i = 0; i < _blips.Count; i++)
+        foreach (var kvp in _revealedBlips)
         {
-            var blip = _blips[i];
+            var revealed = kvp.Value;
 
-            // Calculate blip alpha based on time since revealed
-            float alpha = 0f;
-            if (_blipRevealTimes.TryGetValue(i, out var revealTime))
-            {
-                var timeSinceReveal = currentTime - revealTime;
-                if (timeSinceReveal < BlipFadeDuration)
-                {
-                    // Bright at reveal, fades to 0 over BlipFadeDuration
-                    alpha = 1f - (timeSinceReveal / BlipFadeDuration);
-                }
-            }
+            // Calculate alpha based on time since revealed
+            var timeSinceReveal = currentTime - revealed.RevealTime;
+            if (timeSinceReveal >= BlipFadeDuration)
+                continue;
 
+            var alpha = 1f - (timeSinceReveal / BlipFadeDuration);
             if (alpha <= 0.01f)
-                continue; // Don't draw invisible blips
+                continue;
 
-            // Convert blip angle and distance to screen coordinates
-            var screenAngle = blip.Angle;
-            var normalizedDistance = blip.Distance / _range;
+            // Use REVEALED position (not current position)
+            var normalizedDistance = revealed.Distance / _range;
             var blipRadius = normalizedDistance * radius;
 
-            var blipX = centerX + MathF.Sin(screenAngle) * blipRadius;
-            var blipY = centerY - MathF.Cos(screenAngle) * blipRadius;
+            var blipX = centerX + MathF.Sin(revealed.Angle) * blipRadius;
+            var blipY = centerY - MathF.Cos(revealed.Angle) * blipRadius;
 
             // Size based on distance (closer = larger)
             var blipSize = 4f + (1f - normalizedDistance) * 4f;
 
-            // Color with fade alpha - bright when just revealed
-            var intensity = alpha > 0.8f ? 1f : 0.8f;
-            var color = new Color(intensity, intensity, intensity, alpha);
+            // Color with fade alpha
+            var color = new Color(1f, 1f, 1f, alpha);
 
             handle.DrawCircle(new Vector2(blipX, blipY), blipSize, color);
         }
     }
 
-    private void DrawFilledArc(DrawingHandleScreen handle, Vector2 center, float radius, Color color)
+    private void DrawFilledCircle(DrawingHandleScreen handle, Vector2 center, float radius, Color color)
     {
-        // Draw a filled semi-circle (180-degree arc facing up)
-        const int segments = 32;
-        _arcPoints[0] = center;
+        // Draw a filled circle (360 degrees)
+        const int segments = 64;
+        _circlePoints[0] = center;
 
         for (var i = 0; i <= segments; i++)
         {
-            var angle = MathF.PI - MathF.PI * i / segments;
-            _arcPoints[i + 1] = new Vector2(
-                center.X + MathF.Cos(angle) * radius,
-                center.Y - MathF.Sin(angle) * radius
+            var angle = MathF.PI * 2 * i / segments;
+            _circlePoints[i + 1] = new Vector2(
+                center.X + MathF.Sin(angle) * radius,
+                center.Y - MathF.Cos(angle) * radius
             );
         }
 
         // Draw as triangles from center
-        for (var i = 1; i < _arcPoints.Length - 1; i++)
+        for (var i = 1; i < segments + 1; i++)
         {
-            DrawTriangle(handle, _arcPoints[0], _arcPoints[i], _arcPoints[i + 1], color);
+            DrawTriangle(handle, _circlePoints[0], _circlePoints[i], _circlePoints[i + 1], color);
         }
     }
 
     private void DrawTriangle(DrawingHandleScreen handle, Vector2 a, Vector2 b, Vector2 c, Color color)
     {
-        var vertices = new Vector2[] { a, b, c };
-        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, vertices, color);
+        _triangleVerts[0] = a;
+        _triangleVerts[1] = b;
+        _triangleVerts[2] = c;
+        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, _triangleVerts, color);
     }
 
-    private void DrawArcRing(DrawingHandleScreen handle, Vector2 center, float radius, Color color)
+    private void DrawCircleRing(DrawingHandleScreen handle, Vector2 center, float radius, Color color)
     {
-        // Draw a semi-circle arc (180 degrees facing up)
-        const int segments = 32;
+        // Draw a full circle ring (360 degrees)
+        const int segments = 64;
         Vector2? prevPoint = null;
 
         for (var i = 0; i <= segments; i++)
         {
-            var angle = MathF.PI - MathF.PI * i / segments;
+            var angle = MathF.PI * 2 * i / segments;
             var point = new Vector2(
-                center.X + MathF.Cos(angle) * radius,
-                center.Y - MathF.Sin(angle) * radius
+                center.X + MathF.Sin(angle) * radius,
+                center.Y - MathF.Cos(angle) * radius
             );
 
             if (prevPoint != null)

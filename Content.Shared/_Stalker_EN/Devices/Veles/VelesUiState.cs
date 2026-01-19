@@ -31,6 +31,11 @@ public sealed class VelesToggleArtifactScannerMessage : BoundUserInterfaceMessag
 public struct VelesBlip
 {
     /// <summary>
+    /// Unique identifier for this artifact.
+    /// </summary>
+    public NetEntity Id;
+
+    /// <summary>
     /// Angle in radians relative to the player's facing direction.
     /// 0 = directly ahead, positive = clockwise.
     /// </summary>
@@ -46,8 +51,9 @@ public struct VelesBlip
     /// </summary>
     public int Level;
 
-    public VelesBlip(float angle, float distance, int level)
+    public VelesBlip(NetEntity id, float angle, float distance, int level)
     {
+        Id = id;
         Angle = angle;
         Distance = distance;
         Level = level;
@@ -80,11 +86,17 @@ public sealed class VelesBoundUIState : BoundUserInterfaceState
     /// </summary>
     public readonly bool ArtifactScannerEnabled;
 
-    public VelesBoundUIState(List<VelesBlip> blips, float range, bool anomalyDetectorEnabled, bool artifactScannerEnabled)
+    /// <summary>
+    /// Distance to the closest detected anomaly (null if none detected or detector disabled).
+    /// </summary>
+    public readonly float? ClosestAnomalyDistance;
+
+    public VelesBoundUIState(List<VelesBlip> blips, float range, bool anomalyDetectorEnabled, bool artifactScannerEnabled, float? closestAnomalyDistance = null)
     {
         Blips = blips;
         Range = range;
         AnomalyDetectorEnabled = anomalyDetectorEnabled;
         ArtifactScannerEnabled = artifactScannerEnabled;
+        ClosestAnomalyDistance = closestAnomalyDistance;
     }
 }

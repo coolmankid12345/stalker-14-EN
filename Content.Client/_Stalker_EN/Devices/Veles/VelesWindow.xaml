@@ -3,8 +3,8 @@
                       xmlns:veles="clr-namespace:Content.Client._Stalker_EN.Devices.Veles"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                       Title="{Loc 'veles-window-title'}"
-                      MinSize="420 450"
-                      SetSize="420 450">
+                      MinSize="420 510"
+                      SetSize="420 510">
     <BoxContainer Orientation="Vertical" Margin="5">
         <!-- Header Section -->
         <PanelContainer Margin="0 0 0 5">
@@ -29,20 +29,27 @@
         </PanelContainer>
 
         <!-- Controls Section -->
-        <PanelContainer>
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <ContainerButton Name="AnomalyDetectorButton" StyleClasses="button" MinWidth="160" Margin="5 0 5 0">
+                <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Text="{Loc 'veles-label-anomaly-detector'}" />
+                    <Label Name="AnomalyDetectorStateLabel" Margin="4 0 0 0" />
+                </BoxContainer>
+            </ContainerButton>
+            <ContainerButton Name="ArtifactScannerButton" StyleClasses="button" MinWidth="160" Margin="5 0 5 0">
+                <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Text="{Loc 'veles-label-artifact-scanner'}" />
+                    <Label Name="ArtifactScannerStateLabel" Margin="4 0 0 0" />
+                </BoxContainer>
+            </ContainerButton>
+        </BoxContainer>
+
+        <!-- Waveform Section -->
+        <PanelContainer Name="WaveformPanel" Margin="0 5 0 0">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#0A150A" BorderColor="#1A3A1A" BorderThickness="1" />
+                <gfx:StyleBoxFlat BackgroundColor="#050A05" BorderColor="#1A3A1A" BorderThickness="1" />
             </PanelContainer.PanelOverride>
-            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <Button Name="AnomalyDetectorButton"
-                        Text="{Loc 'veles-button-anomaly-detector-off'}"
-                        MinWidth="160"
-                        Margin="5 0 5 0" />
-                <Button Name="ArtifactScannerButton"
-                        Text="{Loc 'veles-button-artifact-scanner-off'}"
-                        MinWidth="160"
-                        Margin="5 0 5 0" />
-            </BoxContainer>
+            <veles:VelesWaveformControl Name="WaveformControl" MinHeight="40" Margin="5" />
         </PanelContainer>
     </BoxContainer>
 </controls:FancyWindow>

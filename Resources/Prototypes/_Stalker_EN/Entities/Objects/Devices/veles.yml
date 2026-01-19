@@ -3,7 +3,7 @@
   id: Veles
   name: Veles
   description: An advanced artifact radar that displays nearby artifacts on a 180-degree arc display and detects anomalies via audio beeping.
-  suffix: Stalker, Artifact Radar
+  suffix: Stalker EN, Artifact Radar
   components:
   - type: Item
     size: Normal

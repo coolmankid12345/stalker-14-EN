@@ -23,10 +23,16 @@ public sealed partial class VelesComponent : Component
     public int Level = 5;
 
     /// <summary>
+    /// Distance at which artifacts are spawned from anomalies.
+    /// </summary>
+    [DataField]
+    public float ActivationDistance = 3f;
+
+    /// <summary>
     /// How often the radar updates.
     /// </summary>
     [DataField]
-    public TimeSpan UpdateInterval = TimeSpan.FromMilliseconds(250);
+    public TimeSpan UpdateInterval = TimeSpan.FromMilliseconds(125);
 
     /// <summary>
     /// Next time to update the radar blips.
