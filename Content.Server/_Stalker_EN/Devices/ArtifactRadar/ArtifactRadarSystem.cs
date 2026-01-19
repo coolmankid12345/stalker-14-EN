@@ -19,6 +19,7 @@ public sealed class ArtifactRadarSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
@@ -267,6 +268,12 @@ public sealed class ArtifactRadarSystem : EntitySystem
         var userMapCoords = _transform.GetMapCoordinates(userXform);
         var userWorldPos = _transform.GetWorldPosition(userXform, xformQuery);
 
+        // Get the grid the user is on for consistent angle calculation
+        var userGridUid = userXform.GridUid;
+        MapGridComponent? userGrid = null;
+        if (userGridUid != null)
+            TryComp(userGridUid.Value, out userGrid);
+
         var entities = _entityLookup.GetEntitiesInRange<ZoneArtifactDetectorTargetComponent>(
             userMapCoords, entity.Comp.DetectionRange);
 
@@ -298,8 +305,31 @@ public sealed class ArtifactRadarSystem : EntitySystem
                 }
             }
 
-            // Use raw angle - game's visual coords are rotated so +X=north, +Y=east
-            var radarAngle = (float)new Angle(diff).Theta;
+            // Calculate angle in grid-local space for consistency across restarts
+            float radarAngle;
+            if (userGrid != null && userGridUid != null)
+            {
+                // Convert positions to grid-local coordinates
+                var userLocalPos = _map.WorldToLocal(userGridUid.Value, userGrid, userWorldPos);
+                var targetLocalPos = _map.WorldToLocal(userGridUid.Value, userGrid, targetWorldPos);
+                var localDiff = targetLocalPos - userLocalPos;
+
+                // Angle in grid-local space (consistent regardless of grid rotation)
+                var localAngle = new Angle(localDiff);
+                radarAngle = (float)(Math.PI / 2 - localAngle.Theta);
+            }
+            else
+            {
+                // Fallback to world-space if not on a grid
+                var worldAngle = new Angle(diff);
+                radarAngle = (float)(Math.PI / 2 - worldAngle.Theta);
+            }
+
+            // Normalize to -PI to PI range
+            while (radarAngle > MathF.PI)
+                radarAngle -= MathF.PI * 2;
+            while (radarAngle < -MathF.PI)
+                radarAngle += MathF.PI * 2;
 
             _blipBuffer.Add(new ArtifactRadarBlip(GetNetEntity(target), radarAngle, distance, target.Comp.DetectedLevel));
         }
