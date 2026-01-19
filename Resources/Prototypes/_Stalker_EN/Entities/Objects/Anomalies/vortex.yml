@@ -79,9 +79,9 @@
       pulseDuration: 2.0
       updateInterval: 0.1
     - type: ZoneAnomalyProximitySound
-      maxRange: 6
-      minVolume: 0.1
-      maxVolume: 1.0
+      maxRange: 10
+      minVolume: 0.2
+      maxVolume: 2
       updateCooldown: 0.25
       sound:
         path: /Audio/_Stalker_EN/Anomalies/Vortex/idle.ogg
