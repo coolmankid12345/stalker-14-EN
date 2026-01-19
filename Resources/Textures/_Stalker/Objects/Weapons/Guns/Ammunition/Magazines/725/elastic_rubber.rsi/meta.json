@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "sprites by SciencePowerCM",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "red_mag"
+    },
+    {
+      "name": "green_mag"
+    },
+    {
+      "name": "blue_mag"
+    },
+    {
+      "name": "red_magazine"
+    },
+    {
+      "name": "green_magazine"
+    },
+    {
+      "name": "blue_magazine"
+    },
+    {
+      "name": "red_drum"
+    },
+    {
+      "name": "green_drum"
+    },
+    {
+      "name": "blue_drum"
+    }
+  ]
+}
