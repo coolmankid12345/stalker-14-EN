@@ -129,6 +129,46 @@
     moneyId: Roubles
     shopPresetId: NpcNikitaAlkashEN
 
+- type: entity
+  parent: NPCDoll
+  id: NPCKeshaEN
+  name: Kesha [→ ? ←]
+  description: A shady fellow who's set up his business in Garbage. It's better to avoid getting on his bad side.
+  suffix: ST, EN-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Buyer.rsi
+    state: buyer
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: KekeshaShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
 # Donate
 
 - type: entity
