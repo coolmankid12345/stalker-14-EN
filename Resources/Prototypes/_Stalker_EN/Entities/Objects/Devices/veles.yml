@@ -1,0 +1,46 @@
+- type: entity
+  parent: BaseItem
+  id: Veles
+  name: Veles
+  description: An advanced artifact radar that displays nearby artifacts on a 180-degree arc display and detects anomalies via audio beeping.
+  suffix: Stalker, Artifact Radar
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Devices/veles.rsi
+    layers:
+      - state: base
+      - state: screen_on
+        map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
+        shader: unshaded
+        visible: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneAnomalyDetectorVisuals.Enabled:
+        enum.ZoneAnomalyDetectorVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  # Artifact radar (visual UI)
+  - type: Veles
+    detectionRange: 17
+    level: 5
+  - type: ActivatableUI
+    key: enum.VelesUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.VelesUiKey.Key:
+        type: VelesBoundUserInterface
+  # Anomaly detection (audio beeping) - reuses existing system
+  - type: ZoneAnomalyDetector
+    level: 5
+    distance: 17
+    maxBeepInterval: 1
+    minBeepInterval: 0.01
+    beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
+  - type: STWeight
+    self: 1.5
