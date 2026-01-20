@@ -81,7 +81,12 @@
     TreasureCoinIron: 100
     TreasureCoinSilver: 200
     TreasureCoinGold: 300
-    STWristwatchGold: 1500
+    STWristwatchGold: 1750
+    Wristwatch: 300
+    STGoldRingBigDiamond: 2250
+    IngotSilver1: 700
+    IngotGold1: 1000
+    MaterialDiamond1: 1500
 
     #Misc
     ZoneAnomalyDetectorAD1: 50
@@ -242,7 +247,7 @@
         ClothingOuterArmourCoatBanditBrown: 1050 # T2 - PvP
         ClothingOuterArmourCoatBanditBlack: 1050 # T2 - PvP
         STClothingOuterArmorBandits: 2000 #T2
-        ClothingOuterArmorSevaBandit: 4500 # T3 - PVE
+        ClothingOuterArmorSevaBandit: 4000 # T3 - PVE
         STClothingOuterArmorRCBZ: 2000
         ClothingOuterArmorBandits: 13000 #T3
 
@@ -328,7 +333,6 @@
         CraftGunpowderBank: 200
         KhattabkaGrenade: 350
         DG05SmokeGrenade: 500
-        TearGasGrenadeStalker: 850 #not sure about this one
         RGD5Grenade: 1000
         DynamiteOne: 1500
 
