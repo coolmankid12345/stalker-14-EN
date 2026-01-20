@@ -61,6 +61,22 @@ One stalker's trash is another stalker's treasure. [color=yellow]Metal detectors
 
 The Zone is littered with these piles. A good detector and some patience can yield surprising results.
 
+## Long-Range Metal Detector
+
+For stalkers seeking hidden riches, the [color=yellow]long-range metal detector[/color] is an essential tool. Unlike basic detectors used for trash piles, this specialized device can locate [color=cyan]hidden caches[/color] scattered throughout the Zone.
+
+  <Box>
+    <GuideEntityEmbed Entity="longrangemetaldetector" Caption="Long-Range Detector"/>
+  </Box>
+
+[bullet] The detector beeps faster as you approach a hidden cache
+
+[bullet] [color=yellow]Caches can be hidden inside trees![/color] Search around birch, spruce, pine, and oak trees
+
+[bullet] Hidden caches come in multiple tiers - deeper zones hold better rewards
+
+[italic]Listen for the beeps. The Zone hides its treasures well, but rewards those who search.[/italic]
+
 ## Environmental Sources
 
 Some objects in the Zone can be broken down for materials. Not everything is what it appears to be.

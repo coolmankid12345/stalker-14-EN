@@ -1,0 +1,43 @@
+<Document>
+
+# Finding Artifacts
+
+Artifacts are strange objects born from the Zone's anomalies. Traders pay well for them, and some stalkers risk everything to collect them.
+
+## Two Tools, Two Purposes
+
+Rookies often confuse these devices. Don't make that mistake.
+
+### Anomaly Detectors
+
+These warn you when danger is near. The beeping gets faster as you approach an anomaly. They keep you alive, but they [color=red]won't help you find artifacts[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="ZoneAnomalyDetectorAD1" Caption="AD-1"/>
+  </Box>
+
+### Artifact Detectors
+
+These locate artifacts hidden inside anomaly fields. Without one, you're searching blind.
+
+  <Box>
+    <GuideEntityEmbed Entity="ZoneArtifactDetectorHunter" Caption="Hunter"/>
+  </Box>
+
+## How to Hunt Artifacts
+
+[bullet] Equip an artifact detector and hold it ready
+
+[bullet] Approach anomaly fields carefully
+
+[bullet] Listen for the signal - faster beeps mean you're closer
+
+[bullet] Find the artifact and grab it before something else finds you
+
+## A Word from Veterans
+
+Not all detectors are equal. Cheap models only pick up common artifacts. If you want the rare stuff, you'll need better equipment. Ask around, or find out the hard way.
+
+[italic]The Zone gives nothing for free.[/italic]
+
+</Document>

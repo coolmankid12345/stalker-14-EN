@@ -13,7 +13,7 @@ The Zone is home to many dangerous creatures. A skilled stalker can turn these t
 Any [color=yellow]sharp weapon[/color] can butcher a dead mutant. A hunting knife is faster than most blades.
 
   <Box>
-    <GuideEntityEmbed Entity="HuntingKnife" Caption="Hunting Knife"/>
+    <GuideEntityEmbed Entity="STShiv" Caption="Shiv"/>
   </Box>
 
 ## How to Butcher
