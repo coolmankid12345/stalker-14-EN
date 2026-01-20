@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseItem
+  id: Veles
+  name: Veles
+  description: An artifact radar that displays nearby artifacts on a 360-degree display.
+  suffix: Stalker EN, Artifact Radar
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Devices/veles.rsi
+    layers:
+      - state: base
+      - state: screen_on
+        map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
+        shader: unshaded
+        visible: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneAnomalyDetectorVisuals.Enabled:
+        enum.ZoneAnomalyDetectorVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  # Artifact radar (visual UI)
+  - type: ArtifactRadar
+    detectionRange: 17
+    level: 4
+  - type: ActivatableUI
+    key: enum.ArtifactRadarUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ArtifactRadarUiKey.Key:
+        type: ArtifactRadarBoundUserInterface
+  - type: STWeight
+    self: 1.5
