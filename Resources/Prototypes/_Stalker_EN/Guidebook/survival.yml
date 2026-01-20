@@ -1,0 +1,23 @@
+- type: guideEntry
+  id: STGathering
+  name: guide-entry-st-gathering
+  text: "/ServerInfo/_Stalker_EN/Guidebook/Survival/MaterialGathering.xml"
+  children:
+  - STMaterialGathering
+  - STHuntingMutants
+  - STFindingArtifacts
+
+- type: guideEntry
+  id: STMaterialGathering
+  name: guide-entry-material-gathering
+  text: "/ServerInfo/_Stalker_EN/Guidebook/Survival/MaterialGathering.xml"
+
+- type: guideEntry
+  id: STHuntingMutants
+  name: guide-entry-hunting-mutants
+  text: "/ServerInfo/_Stalker_EN/Guidebook/Survival/HuntingMutants.xml"
+
+- type: guideEntry
+  id: STFindingArtifacts
+  name: guide-entry-finding-artifacts
+  text: "/ServerInfo/_Stalker_EN/Guidebook/Survival/FindingArtifacts.xml"

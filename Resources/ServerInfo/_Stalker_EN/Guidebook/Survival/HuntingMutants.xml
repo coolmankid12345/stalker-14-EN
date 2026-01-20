@@ -1,0 +1,47 @@
+<Document>
+
+# Hunting Mutants
+
+The Zone is home to many dangerous creatures. A skilled stalker can turn these threats into valuable resources.
+
+  <Box>
+    <GuideEntityEmbed Entity="MobMutantBoar" Caption=""/>
+  </Box>
+
+## What You Need
+
+Any [color=yellow]sharp weapon[/color] can butcher a dead mutant. A hunting knife is faster than most blades.
+
+  <Box>
+    <GuideEntityEmbed Entity="STShiv" Caption="Shiv"/>
+  </Box>
+
+## How to Butcher
+
+[bullet] Kill the mutant
+
+[bullet] Equip a knife or sharp weapon
+
+[bullet] Click the corpse with knife to butcher
+
+[bullet] Wait for the process to complete
+
+[bullet] Collect what drops
+
+## What to Expect
+
+Butchering mutants can yield [color=yellow]meat[/color], [color=yellow]mutant parts[/color], and [color=yellow]hides[/color]. What you get depends on what you hunt.
+
+[bullet] Meat can be cooked for food
+
+[bullet] Parts are used in crafting or sold to traders
+
+[bullet] Hides can be processed into materials for armor
+
+## A Word of Caution
+
+Not all mutants are equal. Some are slow and manageable. Others are fast, invisible, or deadly in ways you won't expect. Learn what you're hunting before you engage.
+
+[italic]The Zone rewards those who prepare.[/italic]
+
+</Document>

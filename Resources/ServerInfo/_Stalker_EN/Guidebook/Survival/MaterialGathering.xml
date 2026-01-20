@@ -1,0 +1,113 @@
+<Document>
+
+# Gathering Materials
+
+The Zone is harsh, but it provides for those who know where to look. Materials are essential for crafting equipment, repairing gear, and trading with other stalkers. This guide will introduce you to the various ways you can gather what you need to survive.
+
+[bold]A word of advice[/bold]: The Zone rewards those who explore. Higher-tier areas hold better materials, but also greater dangers. Start small, gear up, and work your way deeper.
+
+  <Box>
+    <GuideEntityEmbed Entity="Roubles" Caption=""/>
+  </Box>
+
+## Finding Caches
+
+Hidden throughout the Zone are [color=yellow]caches[/color] - containers left behind by stalkers past. These can contain anything from basic supplies to valuable materials.
+
+  <Box>
+    <GuideEntityEmbed Entity="STCache1T1" Caption="Cache"/>
+  </Box>
+
+[bullet] Caches are scattered across all areas of the Zone
+
+[bullet] Higher-tier zones tend to have better loot
+
+[bullet] Search thoroughly - caches are often hidden in unexpected places
+
+## Fishing
+
+The waters of the Zone are... unusual. A patient stalker with a fishing rod can pull up more than just fish.
+
+  <Box>
+    <GuideEntityEmbed Entity="FishingRod" Caption="Fishing Rod"/>
+    <GuideEntityEmbed Entity="FishingRodMakeshift" Caption="Makeshift Rod"/>
+  </Box>
+
+[bullet] Find a body of water and equip your fishing rod
+
+[bullet] Cast your line and wait for a bite
+
+[bullet] Build up progress by reeling in at the right moments
+
+[bullet] Different fishing spots yield different materials
+
+## Metal Detectors & Trash Piles
+
+One stalker's trash is another stalker's treasure. [color=yellow]Metal detectors[/color] allow you to search through the debris scattered across the Zone.
+
+  <Box>
+    <GuideEntityEmbed Entity="TrashDetectorTier1" Caption="Basic Detector"/>
+  </Box>
+
+[bullet] Equip a metal detector and use it on trash piles
+
+[bullet] Better quality detectors work more effectively
+
+[bullet] Trash piles are everywhere - keep your eyes open
+
+  <Box>
+    <GuideEntityEmbed Entity="StalkerTrashPile1" Caption="Trash Pile"/>
+  </Box>
+
+The Zone is littered with these piles. A good detector and some patience can yield surprising results.
+
+## Long-Range Metal Detector
+
+For stalkers seeking hidden riches, the [color=yellow]long-range metal detector[/color] is an essential tool. Unlike basic detectors used for trash piles, this specialized device can locate [color=cyan]hidden caches[/color] scattered throughout the Zone.
+
+  <Box>
+    <GuideEntityEmbed Entity="longrangemetaldetector" Caption="Long-Range Detector"/>
+  </Box>
+
+[bullet] The detector beeps faster as you approach a hidden cache
+
+[bullet] [color=yellow]Caches can be hidden inside trees![/color] Search around birch, spruce, pine, and oak trees
+
+[bullet] Hidden caches come in multiple tiers - deeper zones hold better rewards
+
+[italic]Listen for the beeps. The Zone hides its treasures well, but rewards those who search.[/italic]
+
+## Environmental Sources
+
+Some objects in the Zone can be broken down for materials. Not everything is what it appears to be.
+
+  <Box>
+    <GuideEntityEmbed Entity="WoodenBoxWithLoot1" Caption="Wooden Box"/>
+    <GuideEntityEmbed Entity="BarrelExpl" Caption="Barrel"/>
+  </Box>
+
+[bullet] Certain objects can be destroyed to yield materials
+
+[bullet] Dangerous areas may have unique resources
+
+[bullet] Trees can be harvested for wood with the right tools
+
+## Tips for New Stalkers
+
+[bullet] [color=yellow]Start safe[/color]: Fishing and caches in beginner areas are low-risk
+
+[bullet] [color=yellow]Gear up first[/color]: Better equipment before venturing into dangerous zones
+
+[bullet] [color=yellow]Talk to people[/color]: Experienced stalkers know where the good stuff is
+
+[bullet] [color=yellow]Be patient[/color]: The Zone rewards persistence, not recklessness
+
+  <Box>
+    <GuideEntityEmbed Entity="MobHumanDummy" Caption=""/>
+  </Box>
+
+Remember: materials come and go, but knowledge stays with you. Learn the Zone, learn its patterns, and you'll never go hungry.
+
+[italic]The Zone rewards patience and persistence. Good hunting, stalker.[/italic]
+
+</Document>
