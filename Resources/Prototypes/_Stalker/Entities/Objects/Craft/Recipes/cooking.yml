@@ -1,0 +1,13 @@
+- type: craftRecipe
+  id: recipeFoodSTBorodaTea
+  resultProtos:
+    - DrinkBorodaBottleFull
+  craftTime: 3
+  requiredWorkbench: StalkerCookingStation
+  items:
+    StalkerFoodBarbarisBonfire:
+      amount: 1
+    DrinkWaterBottleFull:
+      amount: 1
+    StalkerFoodKrijovnikBonfire:
+      amount: 1

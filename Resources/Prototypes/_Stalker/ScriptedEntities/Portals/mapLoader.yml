@@ -1,7 +1,7 @@
 - type: mapLoader
   id: StalkerBaseMaps
   mapPaths:
-    KordonUnerground: /Maps/_ST/World/KordonPodzemV73.yml
+    KordonUnerground: /Maps/_ST/World/KordonPodzemV74.yml
     Svalka: /Maps/_ST/World/SvalkaV157.yml
     SvalkaUnderground: /Maps/_ST/World/SvalkaPodzemkaV60.yml
     Agroprom: /Maps/_ST/World/AgropromV96.yml

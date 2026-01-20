@@ -51,3 +51,22 @@
     sprite: _Stalker/Objects/Counsumable/Drinks/revo.yml
   - type: Item
     sprite: _Stalker/Objects/Counsumable/Drinks/revo.yml
+
+- type: entity
+  parent: DrinkWaterBottleFull
+  id: DrinkBorodaBottleFull
+  name: boroda tea
+  description: Boroda tea.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 20
+        - ReagentId: STTaurine
+          Quantity: 10
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Drinks/boroda.yml
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Drinks/boroda.yml

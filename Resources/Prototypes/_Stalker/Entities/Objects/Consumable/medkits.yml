@@ -242,6 +242,7 @@
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
+  - type: Craftable
 
 - type: stack
   id: STGauze
@@ -250,6 +251,85 @@
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
   spawn: STGauze
+  maxCount: 10
+
+- type: entity
+  parent: STGauze
+  id: STGauzeBarbaris
+  suffix: ST, T1
+  name: пропитанный в мякоти барбариса бинт
+  description: Мякоть зоновского барбариса обладает сильными антисептическими свойствами, сталкеры используют её для пропитки бинтов, что позволяет эффективно бороться с инфекциями и ускоряет заживление ран.
+  components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Slash: -2
+        Piercing: -2
+    bloodlossModifier: -17
+    delay: 6
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  - type: Stack
+    stackType: STGauzeBarbaris
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauzebarbaris
+
+- type: stack
+  id: STGauzeBarbaris
+  name: stack-st-gauze-barbaris
+  icon:
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauzebarbaris
+  spawn: STGauzeBarbaris
+  maxCount: 10
+
+- type: entity
+  parent: STGauze
+  id: STGauzeUniversal
+  suffix: ST, T1
+  name: пропитанный в универсальной мази бинт
+  description: Универсальная мазь, созданная из смеси мякоти различных зоновских ягод и трав, обладает мощными антисептическими свойствами и способствует быстрому заживлению разных ран.
+  components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Heat: -10
+        Cold: -5
+        Shock: -5
+        Caustic: -10
+        Slash: -5
+        Blunt: -5
+    bloodlossModifier: -2
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  - type: Stack
+    stackType: STGauzeUniversal
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: cast
+
+- type: stack
+  id: STGauzeUniversal
+  name: stack-st-gauze-barbaris
+  icon:
+    sprite: _Stalker/Objects/medicine.rsi
+    state: cast
+  spawn: STGauzeUniversal
   maxCount: 10
 
 - type: entity

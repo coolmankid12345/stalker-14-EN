@@ -22,6 +22,7 @@
         Bloodloss: -0.5
         Radiation: -0.6
         Caustic: -1
+
     interval: 1
   - type: Armor
     hiddenExamine: true

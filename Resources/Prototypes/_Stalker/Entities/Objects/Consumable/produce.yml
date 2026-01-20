@@ -30,6 +30,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries1
@@ -108,6 +109,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries2
@@ -186,6 +188,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries3
@@ -264,6 +267,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries4
@@ -342,6 +346,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries5
@@ -420,6 +425,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries6
@@ -498,6 +504,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries7
@@ -576,6 +583,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries8
@@ -654,6 +662,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries9
@@ -732,6 +741,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries10
@@ -810,6 +820,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries11
@@ -888,6 +899,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries12
@@ -966,6 +978,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries13
@@ -1044,6 +1057,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries14
@@ -1122,6 +1136,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries15
@@ -1200,6 +1215,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries16
@@ -1276,6 +1292,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries17
@@ -1352,6 +1369,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries18
@@ -1428,6 +1446,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries19
@@ -1506,6 +1525,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries20
@@ -1584,6 +1604,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries21
@@ -1662,6 +1683,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries22
@@ -1740,6 +1762,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries23
@@ -1818,6 +1841,7 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Craftable
 
 - type: ore
   id: StalkerOreBerries24
@@ -1863,6 +1887,178 @@
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+
+############### Сушёные ягоды
+
+- type: entity
+  name: dried barberry
+  parent: StalkerFoodBarbaris
+  id: StalkerFoodBarbarisBonfire
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: StalkerBonfireBarbaris
+  - type: Craftable
+
+- type: entity
+  name: dried goji
+  parent: StalkerFoodGoji
+  id: StalkerFoodGojiBonfire
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: StalkerBonfireGoji
+  - type: Craftable
+
+- type: entity
+  name: dried krijovnik
+  parent: StalkerFoodKrijovnik
+  id: StalkerFoodKrijovnikBonfire
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: StalkerBonfireKrijovnik
+  - type: Craftable
+
+- type: entity
+  name: dried malina
+  parent: StalkerFoodMalina
+  id: StalkerFoodMalinaBonfire
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: StalkerBonfireMalina
+  - type: Craftable
+
+- type: entity
+  name: dried vishna
+  parent: StalkerFoodVishna
+  id: StalkerFoodVishnaBonfire
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: StalkerBonfireVishna
+  - type: Craftable
+
+############### Мякоть
+
+- type: entity
+  name: pulp barbaris
+  parent: StalkerFoodBarbaris
+  id: StalkerFoodBarbarisPulb
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: PulpBarbaris
+  - type: Craftable
+
+- type: entity
+  name: pulp chereshnyas
+  parent: StalkerFoodChereshna
+  id: StalkerFoodChereshnaPulb
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: PulpChereshnyas
+  - type: Craftable
+
+- type: entity
+  name: pulp ejevika
+  parent: StalkerFoodEjevika
+  id: StalkerFoodEjevikaPulb
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: PulpEjevika
+  - type: Craftable
+
+- type: entity
+  name: pulp goji
+  parent: StalkerFoodGoji
+  id: StalkerFoodGojiPulb
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: PulpGoji
+  - type: Craftable
+
+- type: entity
+  name: pulp golubika
+  parent: StalkerFoodGolubika
+  id: StalkerFoodGolubikaPulb
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: PulpGolubika
+  - type: Craftable
+
+- type: entity
+  name: pulp irga
+  parent: StalkerFoodIrga
+  id: StalkerFoodIrgaPulb
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: PulpIrga
+  - type: Craftable
+
+- type: entity
+  name: pulp klukva
+  parent: StalkerFoodKlukva
+  id: StalkerFoodKlukvaPulb
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: PulpKlukva
+  - type: Craftable
+
+- type: entity
+  name: pulp volk
+  parent: StalkerFoodVolk
+  id: StalkerFoodVolkPulb
+  description: This is a cherished fruit that can be found in abandoned gardens and abandoned areas of the Zone. Its bright red berries contrast with the dull palette of dead forests and crumbling buildings, attracting the attention of stalkers sophisticated in cooking and alchemy. Despite its beauty, barberry is an ambiguous symbol its sweet taste is deceptive, and only experienced stalkers are aware of its possible properties.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: PulpVolk
+  - type: Craftable
+
+- type: entity
+  name: universal ointment
+  parent: StalkerFoodVolk
+  id: StalkerFoodUniPulb
+  description: Used by stalkers to create healing bandages.
+  suffix: Stalker, Berries
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Craft/produce.rsi
+    state: PulpVolk
+  - type: Craftable
 
 ############### Реагенты
 #########Масла
