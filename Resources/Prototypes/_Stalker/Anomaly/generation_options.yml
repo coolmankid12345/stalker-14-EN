@@ -290,7 +290,7 @@
     - protoId: ZoneAnomalyGlassShards
       weight: 0.5
     - protoId: ZoneAnomalyVortex
-      weight: 0.85
+      weight: 0.6
 
 # Rostok and The Wilds - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -380,4 +380,4 @@
     - protoId: ZoneAnomalyGlassShards
       weight: 1
     - protoId: ZoneAnomalyVortex
-      weight: 1.0
+      weight: 0.7
