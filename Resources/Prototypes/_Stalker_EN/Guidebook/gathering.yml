@@ -1,0 +1,11 @@
+- type: guideEntry
+  id: STGathering
+  name: guide-entry-st-gathering
+  text: "/ServerInfo/_Stalker/Guidebook/Gathering/MaterialGathering.xml"
+  children:
+  - STMaterialGathering
+
+- type: guideEntry
+  id: STMaterialGathering
+  name: guide-entry-material-gathering
+  text: "/ServerInfo/_Stalker/Guidebook/Gathering/MaterialGathering.xml"

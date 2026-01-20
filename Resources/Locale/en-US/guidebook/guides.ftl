@@ -56,6 +56,9 @@ guide-entry-yourfirstcharacter = Your First Character
 guide-entry-controls = Controls
 guide-entry-radio = Radio and Speech
 
+guide-entry-st-gathering = Survival & Gathering
+guide-entry-material-gathering = Gathering Materials
+
 guide-entry-references = Tables & References
 guide-entry-drinks = Drinks
 guide-entry-foodrecipes = Food Recipes
