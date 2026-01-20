@@ -10,11 +10,11 @@
       damageUpdateDelay: 1.0
       damage:
         types:
-          Compression: 2
+          Compression: 3
     - type: ZoneAnomalyEffectGravityWell
       distance: 3.5
       period: 1.0
-      radial: 40
+      radial: 50
       tangential: 0.5
       gradient: ReversedLinear
     - type: ZoneAnomalyEffectGib
@@ -80,8 +80,8 @@
       updateInterval: 0.1
     - type: ZoneAnomalyProximitySound
       maxRange: 10
-      minVolume: 0.2
-      maxVolume: 2
+      minVolume: 0.1
+      maxVolume: 1
       updateCooldown: 0.25
       sound:
         path: /Audio/_Stalker_EN/Anomalies/Vortex/idle.ogg
