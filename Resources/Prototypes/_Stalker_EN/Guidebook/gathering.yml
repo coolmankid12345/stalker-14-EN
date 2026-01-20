@@ -4,8 +4,14 @@
   text: "/ServerInfo/_Stalker/Guidebook/Gathering/MaterialGathering.xml"
   children:
   - STMaterialGathering
+  - STHuntingMutants
 
 - type: guideEntry
   id: STMaterialGathering
   name: guide-entry-material-gathering
   text: "/ServerInfo/_Stalker/Guidebook/Gathering/MaterialGathering.xml"
+
+- type: guideEntry
+  id: STHuntingMutants
+  name: guide-entry-hunting-mutants
+  text: "/ServerInfo/_Stalker/Guidebook/Gathering/HuntingMutants.xml"

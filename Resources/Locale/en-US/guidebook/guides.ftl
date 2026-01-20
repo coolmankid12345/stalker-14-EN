@@ -58,6 +58,7 @@ guide-entry-radio = Radio and Speech
 
 guide-entry-st-gathering = Survival & Gathering
 guide-entry-material-gathering = Gathering Materials
+guide-entry-hunting-mutants = Hunting Mutants
 
 guide-entry-references = Tables & References
 guide-entry-drinks = Drinks
