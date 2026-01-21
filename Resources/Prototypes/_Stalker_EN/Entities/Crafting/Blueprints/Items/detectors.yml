@@ -1,0 +1,15 @@
+﻿- type: entity
+  parent: STBaseBlueprint
+  id: DetectorVelesBlueprint
+  name: veles detector blueprint
+  components:
+  - type: STBlueprint
+    blueprint: recipeDetectorVeles
+
+- type: entity
+  parent: STBaseBlueprint
+  id: DetectorSvarogBlueprint
+  name: svarog detector blueprint
+  components:
+  - type: STBlueprint
+    blueprint: recipeDetectorSvarog

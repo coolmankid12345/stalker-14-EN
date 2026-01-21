@@ -155,6 +155,7 @@
         ZoneArtifactDetectorResponse: 700 # T2
         ZoneArtifactDetectorSpruce: 2200 # T2
         ZoneArtifactDetectorBarracuda: 3500 # T3
+        Veles: 4500 # T3
         # ZoneArtifactDetectorBear: 8000 #T4 Disabled for now
 
         # RP Items / Anomaly Destructors
@@ -196,7 +197,7 @@
         CigarCase: 500
         CigarGoldCase: 1000
         STElasticRubberRed: 50
-        STElasticRubberGreen: 50 
+        STElasticRubberGreen: 50
         STElasticRubberBlue: 50
 
     - name: shop-category-customization

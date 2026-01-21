@@ -10,6 +10,7 @@
     - id: STFishPike
     - id: STFishSunbleak
     - id: STFishTench
+    - id: STFishFlish
 
 - type: entityTable
   id: Tier2STFish
@@ -21,12 +22,16 @@
     - id: STFishLuminantGudgeon
     - id: STFishSwiftLurker
     - id: STFishDenseTench
+    - id: STFishSneakyTench
 
 - type: entityTable
   id: Tier3STFish
   table: !type:GroupSelector
     children:
     - id: STFishCatfish
+    - id: STFishDoubleEel
+    - id: STFishPallidSturgeon
+    - id: STFishJellyfish
 
 - type: entityTable
   id: Tier4STFish

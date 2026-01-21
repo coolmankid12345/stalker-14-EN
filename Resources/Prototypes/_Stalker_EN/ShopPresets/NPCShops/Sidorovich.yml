@@ -300,6 +300,7 @@
         ZoneArtifactDetectorPulse: 100 # T1
         ZoneArtifactDetectorHunter: 500 # T2
         ZoneArtifactDetectorResponse: 1500 # T2
+        Veles: 5500 # T3
 
     - name: shop-category-utilities
       priority: 10
@@ -328,7 +329,7 @@
         HatchetStalker: 150
         STHeadLight: 475
         STElasticRubberRed: 50
-        STElasticRubberGreen: 50 
+        STElasticRubberGreen: 50
         STElasticRubberBlue: 50
 
     - name: shop-category-customization
@@ -416,6 +417,7 @@
         STDetectorAD1Blueprint: 2000
         STZoneArtifactDetectorBushBlueprint: 4000
         STZoneArtifactDetectorResponseBlueprint: 8000
+        DetectorVelesBlueprint: 12000
         STClothingOuterJacketStalkerUpgradeBlueprint: 2000
         ClothingOuterAnomalyStalkerJacketBlueprint: 2000
         STCookingRice: 2000
