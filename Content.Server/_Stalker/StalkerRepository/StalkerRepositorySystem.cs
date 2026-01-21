@@ -319,6 +319,9 @@ public sealed class StalkerRepositorySystem : EntitySystem
         _stalkerStorageSystem.SaveStorage(component);
         RaiseLocalEvent(args.User, new RepositoryItemInjectedEvent(args.Target, itemInfo));
 
+        // Mark as handled BEFORE deletion - prevents interaction system from continuing with deleted entity
+        args.Handled = true;
+
         // removing by hashset we got from above
         // i had to move it here because of references
         if (toDelete == null)

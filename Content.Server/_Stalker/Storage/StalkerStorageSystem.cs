@@ -228,13 +228,36 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
 
         if (!TryComp(inputItem, out BallisticAmmoProviderComponent? ammoProvider))
             return returnList;
+
+        // Set Proto from first contained entity if not already set
         if (ammoProvider.Container.ContainedEntities.Count != 0)
         {
             var ent = ammoProvider.Container.ContainedEntities.First();
             var entProto = GetPrototypeName(ent);
             ammoProvider.Proto ??= entProto;
         }
-        returnList.Add(new AmmoContainerStalker(GetPrototypeName(inputItem), ammoProvider.Proto, ammoProvider.EntProtos, ammoProvider.Count));
+
+        // Convert EntProtoId list to strings for JSON serialization compatibility.
+        // EntProtoId is a readonly record struct that System.Text.Json cannot reliably deserialize.
+        var completeEntProtos = ammoProvider.EntProtos.Select(e => (string)e).ToList();
+
+        // Pad with default Proto for any unspawned ammo not yet tracked in EntProtos.
+        // Inserted at beginning because unspawned ammo is oldest and used last (LIFO order).
+        var untracked = ammoProvider.Count - completeEntProtos.Count;
+        if (untracked > 0 && ammoProvider.Proto != null)
+        {
+            for (var i = 0; i < untracked; i++)
+            {
+                completeEntProtos.Insert(0, (string)ammoProvider.Proto.Value);
+            }
+        }
+
+        returnList.Add(new AmmoContainerStalker(
+            GetPrototypeName(inputItem),
+            ammoProvider.Proto,
+            completeEntProtos,
+            ammoProvider.Count));
+
         return returnList;
     }
 
@@ -327,9 +350,13 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         }
     }
 
-    private List<EntProtoId> MapPrototype(in List<EntProtoId> protoIds)
+    /// <summary>
+    /// Maps a list of prototype IDs through the prototype mapping table.
+    /// Used to handle prototype ID changes between game versions.
+    /// </summary>
+    private List<string> MapPrototype(in List<string> protoIds)
     {
-        return protoIds.Select(MapPrototype).ToList();
+        return protoIds.Select(id => (string)MapPrototype((EntProtoId)id)).ToList();
     }
 
     private EntProtoId MapPrototype(EntProtoId protoId)
@@ -386,7 +413,8 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                 {
                     ammoProvider.Proto = options.AmmoPrototypeName;
                     ammoProvider.UnspawnedCount = options.AmmoCount;
-                    ammoProvider.EntProtos = options.EntProtoIds;
+                    // Convert strings back to EntProtoId for the component
+                    ammoProvider.EntProtos = options.EntProtoIds.Select(s => (EntProtoId)s).ToList();
                     Dirty(inputItemUid, ammoProvider);
                 }
                 break;
@@ -774,7 +802,38 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                         playerInventory.AllItems.Add(newObject);
                     break;
                 case "AmmoContainerStalker":
-                    newObject = node.Deserialize<AmmoContainerStalker>();
+                    // Manual parsing required for backward compatibility with existing database entries.
+                    // Old format serialized EntProtoIds as [{"Id":"..."}] (EntProtoId objects).
+                    // New format serializes as ["..."] (plain strings).
+                    // This handles both formats to preserve existing player stash data.
+                    var protoName = node["PrototypeName"]?.GetValue<string>() ?? "";
+                    var ammoProtoName = node["AmmoPrototypeName"]?.GetValue<string>();
+                    var ammoCount = node["AmmoCount"]?.GetValue<int>() ?? 0;
+                    var countVending = node["CountVendingMachine"]?.GetValue<uint>() ?? 1;
+
+                    var entProtoIds = new List<string>();
+                    var entProtoIdsNode = node["EntProtoIds"]?.AsArray();
+                    if (entProtoIdsNode != null)
+                    {
+                        foreach (var item in entProtoIdsNode)
+                        {
+                            if (item == null)
+                                continue;
+
+                            // Old format: {"Id": "..."} - extract the Id property
+                            if (item is JsonObject obj && obj["Id"] != null)
+                            {
+                                entProtoIds.Add(obj["Id"]!.GetValue<string>());
+                            }
+                            // New format: "..." - use value directly
+                            else
+                            {
+                                entProtoIds.Add(item.GetValue<string>());
+                            }
+                        }
+                    }
+
+                    newObject = new AmmoContainerStalker(protoName, ammoProtoName, entProtoIds, ammoCount, countVending);
                     if (newObject != null)
                         playerInventory.AllItems.Add(newObject);
                     break;
