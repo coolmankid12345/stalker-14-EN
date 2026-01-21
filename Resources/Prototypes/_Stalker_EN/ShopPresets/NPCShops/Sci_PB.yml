@@ -74,6 +74,18 @@
     ClothingMaskChimera: 1 # its gross why would they want it
     MutantPartIzlomArm: 1150
 
+    #Fish -------- Unc * 1.5
+    #Only anomalous fish
+    STFishGoldfish: 1500
+    STFishLuminantGudgeon: 450
+    STFishSwiftLurker: 375
+    STFishDenseTench: 375
+    STFishSneakyTench: 375
+    STFishFlish: 300
+    STFishDoubleEel: 725
+    STFishJellyfish: 1125
+    STFishPallidSturgeon: 2250 # might be a bit too high but also these things suck to carry so...
+
     #Other
     STJunkHardDrive: 100
     STJunkHardDriveBroken: 1

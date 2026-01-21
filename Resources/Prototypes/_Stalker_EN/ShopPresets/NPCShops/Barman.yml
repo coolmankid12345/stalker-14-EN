@@ -341,6 +341,7 @@
         ZoneArtifactDetectorHunter: 700
         ZoneArtifactDetectorResponse: 2100
         ZoneArtifactDetectorSpruce: 6575 #T3
+        Veles: 7500 # T3
         TrashDetectorTier1: 200
         TrashDetectorTier2: 400
 
@@ -370,7 +371,7 @@
         STHeadLight: 350
         HatchetStalker: 150
         STElasticRubberRed: 50
-        STElasticRubberGreen: 50 
+        STElasticRubberGreen: 50
         STElasticRubberBlue: 50
 
     - name: shop-category-modules

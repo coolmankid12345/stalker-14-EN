@@ -1,0 +1,43 @@
+﻿- type: craftRecipe
+  id: recipeDetectorVeles
+  resultProtos:
+  - Veles
+  craftTime: 12
+  items:
+    DetectorVelesBlueprint:
+      amount: 1
+      catalyzer: true
+    STCraftMultilayerPCBT3:
+      amount: 2
+    STCraftGlassT2:
+      amount: 1
+    STCraftSheetIronT2:
+      amount: 2
+    STCraftPlasticFittingT2:
+      amount: 2
+    STCraftCapacitor:
+      amount: 2
+
+- type: craftRecipe
+  id: recipeDetectorSvarog
+  resultProtos:
+  - Svarog
+  craftTime: 15
+  items:
+    DetectorSvarogBlueprint:
+      amount: 1
+      catalyzer: true
+    Veles:
+      amount: 1
+    STCraftSheetAluminumT4:
+      amount: 1
+    STCraftHighPerformanceChipT4:
+      amount: 1
+    STCraftQuartzCrystalT3:
+      amount: 1
+    STCraftPlasticFittingT3:
+      amount: 2
+    STCraftCoil:
+      amount: 2
+    STCraftBattery:
+      amount: 2

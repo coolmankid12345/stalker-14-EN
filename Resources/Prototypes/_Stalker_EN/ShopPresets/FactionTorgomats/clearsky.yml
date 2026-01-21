@@ -91,6 +91,17 @@
     FoodMeatSTFishSteakCooked: 125
     FoodMeatSTEelCooked: 250
 
+    #Fish -------- Unc * .8
+    STFishGoldfish: 800
+    STFishLuminantGudgeon: 240
+    STFishSwiftLurker: 200
+    STFishDenseTench: 200
+    STFishSneakyTench: 200
+    STFishFlish: 160
+    STFishDoubleEel: 400
+    STFishJellyfish: 600
+    STFishPallidSturgeon: 1200
+
     # Special
     # gonna need adjusting
     STJunkHardDrive: 750
@@ -306,7 +317,7 @@
       ClothingHeatBagStalker: 100
       ClothingNeckDogtagLoner: 250
       STElasticRubberRed: 50
-      STElasticRubberGreen: 50 
+      STElasticRubberGreen: 50
       STElasticRubberBlue: 50
 
   - name: shop-category-modules
@@ -384,3 +395,9 @@
       ClothingTorsoTurtlenecksClearSky: 50
       ClothingLegsJeansClearSky: 50
       ClothingNeckScarfWhite: 100
+
+  - name: shop-category-blueprints
+    priority: 13
+    items:
+      DetectorVelesBlueprint: 6500
+      DetectorSvarogBlueprint: 20000
