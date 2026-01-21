@@ -173,7 +173,7 @@
       types:
         Blunt: 5
   - type: SleepEmitSound
-#  - type: SSDIndicator # stalker-changes
+  - type: SSDIndicator
   - type: StandingState
   - type: Dna
   - type: MindContainer
