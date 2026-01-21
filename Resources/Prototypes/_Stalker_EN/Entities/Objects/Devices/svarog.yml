@@ -13,9 +13,15 @@
         map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
         shader: unshaded
         visible: false
-  - type: ArtifactRadar
+  # Override artifact target source with higher level
+  - type: ArtifactRadarTargetSource
+    detectionRange: 17
     level: 4
-  # Anomaly detection (audio beeping) - adds to Veles artifact radar
+  # Anomaly target source for radar display
+  - type: AnomalyRadarTargetSource
+    detectionRange: 17
+    level: 5
+  # Anomaly detection (audio beeping) - kept for beeping functionality
   - type: ZoneAnomalyDetector
     level: 5
     distance: 17

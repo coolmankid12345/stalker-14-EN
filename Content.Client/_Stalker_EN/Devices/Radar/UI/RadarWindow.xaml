@@ -1,6 +1,6 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-                      xmlns:radar="clr-namespace:Content.Client._Stalker_EN.Devices.ArtifactRadar"
+                      xmlns:radar="clr-namespace:Content.Client._Stalker_EN.Devices.Radar.UI"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                       Title="{Loc 'artifact-radar-window-title'}"
                       MinSize="420 510"
@@ -22,27 +22,35 @@
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#050A05" BorderColor="#1A3A1A" BorderThickness="1" />
             </PanelContainer.PanelOverride>
-            <radar:ArtifactRadarControl Name="RadarControl"
+            <radar:RadarControl Name="RadarControl"
                                      HorizontalExpand="True"
                                      VerticalExpand="True"
                                      Margin="5" />
         </PanelContainer>
 
+        <!-- Capability Indicators -->
+        <BoxContainer Name="CapabilitiesPanel" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Label Text="{Loc 'radar-detects-label'}" Margin="0 0 5 0" />
+            <Label Name="ArtifactIndicator" Text="{Loc 'radar-detects-artifacts'}" FontColorOverride="#FFFFFF" />
+            <Label Name="SeparatorLabel" Text=" | " Visible="False" />
+            <Label Name="AnomalyIndicator" Text="{Loc 'radar-detects-anomalies'}" FontColorOverride="#FFA500" Visible="False" />
+        </BoxContainer>
+
         <!-- Controls Section -->
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-            <!-- Anomaly Detector Button - hidden when device lacks ZoneAnomalyDetectorComponent -->
+            <!-- Audio Alert Button - hidden when device lacks ZoneAnomalyDetectorComponent -->
             <Control Name="AnomalyDetectorPanel" Visible="False">
                 <ContainerButton Name="AnomalyDetectorButton" StyleClasses="button" MinWidth="160" Margin="5 0 5 0">
                     <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Label Text="{Loc 'artifact-radar-label-anomaly-detector'}" />
+                        <Label Text="{Loc 'radar-label-audio-alert'}" />
                         <Label Name="AnomalyDetectorStateLabel" Margin="4 0 0 0" Text="---" />
                     </BoxContainer>
                 </ContainerButton>
             </Control>
-            <ContainerButton Name="ArtifactScannerButton" StyleClasses="button" MinWidth="160" Margin="5 0 5 0">
+            <ContainerButton Name="RadarButton" StyleClasses="button" MinWidth="160" Margin="5 0 5 0">
                 <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Text="{Loc 'artifact-radar-label-artifact-scanner'}" />
-                    <Label Name="ArtifactScannerStateLabel" Margin="4 0 0 0" Text="---" />
+                    <Label Text="{Loc 'radar-label-radar'}" />
+                    <Label Name="RadarStateLabel" Margin="4 0 0 0" Text="---" />
                 </BoxContainer>
             </ContainerButton>
         </BoxContainer>
@@ -52,7 +60,7 @@
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#050A05" BorderColor="#1A3A1A" BorderThickness="1" />
             </PanelContainer.PanelOverride>
-            <radar:ArtifactRadarWaveformControl Name="WaveformControl" MinHeight="40" Margin="5" />
+            <radar:RadarWaveformControl Name="WaveformControl" MinHeight="40" Margin="5" />
         </PanelContainer>
     </BoxContainer>
 </controls:FancyWindow>

@@ -22,18 +22,21 @@
         enum.ZoneAnomalyDetectorVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
-  # Artifact radar (visual UI)
-  - type: ArtifactRadar
+  # Radar display (visual UI)
+  - type: RadarDisplay
+    displayRange: 17
+  # Artifact target source
+  - type: ArtifactRadarTargetSource
     detectionRange: 17
     level: 3
   - type: ActivatableUI
-    key: enum.ArtifactRadarUiKey.Key
+    key: enum.RadarDisplayUiKey.Key
     inHandsOnly: true
     requireActiveHand: false
     singleUser: true
   - type: UserInterface
     interfaces:
-      enum.ArtifactRadarUiKey.Key:
-        type: ArtifactRadarBoundUserInterface
+      enum.RadarDisplayUiKey.Key:
+        type: RadarDisplayBoundUserInterface
   - type: STWeight
     self: 1.5

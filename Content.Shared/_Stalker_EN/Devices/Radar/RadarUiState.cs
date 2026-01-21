@@ -1,9 +1,9 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Stalker_EN.Devices.ArtifactRadar;
+namespace Content.Shared._Stalker_EN.Devices.Radar;
 
 [Serializable, NetSerializable]
-public enum ArtifactRadarUiKey : byte
+public enum RadarDisplayUiKey : byte
 {
     Key,
 }
@@ -12,7 +12,7 @@ public enum ArtifactRadarUiKey : byte
 /// Message sent when user clicks anomaly detector toggle button.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class ArtifactRadarToggleAnomalyDetectorMessage : BoundUserInterfaceMessage
+public sealed class RadarToggleAnomalyDetectorMessage : BoundUserInterfaceMessage
 {
 }
 
@@ -20,66 +20,30 @@ public sealed class ArtifactRadarToggleAnomalyDetectorMessage : BoundUserInterfa
 /// Message sent when user clicks artifact scanner toggle button.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class ArtifactRadarToggleArtifactScannerMessage : BoundUserInterfaceMessage
+public sealed class RadarToggleArtifactScannerMessage : BoundUserInterfaceMessage
 {
-}
-
-/// <summary>
-/// Represents a single blip on the artifact radar.
-/// </summary>
-[Serializable, NetSerializable]
-public struct ArtifactRadarBlip
-{
-    /// <summary>
-    /// Unique identifier for this artifact.
-    /// </summary>
-    public NetEntity Id;
-
-    /// <summary>
-    /// Angle in radians relative to the player's facing direction.
-    /// 0 = directly ahead, positive = clockwise.
-    /// </summary>
-    public float Angle;
-
-    /// <summary>
-    /// Distance to the artifact in units.
-    /// </summary>
-    public float Distance;
-
-    /// <summary>
-    /// Detection level of the artifact (used for coloring).
-    /// </summary>
-    public int Level;
-
-    public ArtifactRadarBlip(NetEntity id, float angle, float distance, int level)
-    {
-        Id = id;
-        Angle = angle;
-        Distance = distance;
-        Level = level;
-    }
 }
 
 /// <summary>
 /// UI state sent from server to client containing radar blip data.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class ArtifactRadarBoundUIState : BoundUserInterfaceState
+public sealed class RadarDisplayBoundUIState : BoundUserInterfaceState
 {
     /// <summary>
-    /// List of artifact blips to display on the radar.
+    /// List of blips to display on the radar.
     /// </summary>
-    public readonly List<ArtifactRadarBlip> Blips;
+    public readonly List<RadarBlip> Blips;
 
     /// <summary>
-    /// Maximum detection range of the device.
+    /// Maximum display range of the device.
     /// </summary>
     public readonly float Range;
 
     /// <summary>
-    /// Whether the artifact scanner (radar) is enabled.
+    /// Whether the radar display is enabled.
     /// </summary>
-    public readonly bool ArtifactScannerEnabled;
+    public readonly bool RadarEnabled;
 
     /// <summary>
     /// Whether the device has anomaly detection capability (ZoneAnomalyDetectorComponent).
@@ -92,6 +56,16 @@ public sealed class ArtifactRadarBoundUIState : BoundUserInterfaceState
     public readonly bool AnomalyDetectorEnabled;
 
     /// <summary>
+    /// Whether the device can detect artifacts (has ArtifactRadarTargetSourceComponent).
+    /// </summary>
+    public readonly bool HasArtifactDetection;
+
+    /// <summary>
+    /// Whether the device can detect anomalies on radar (has AnomalyRadarTargetSourceComponent).
+    /// </summary>
+    public readonly bool HasAnomalyDetection;
+
+    /// <summary>
     /// Localized device name for display in UI header.
     /// </summary>
     public readonly string DeviceName;
@@ -101,21 +75,25 @@ public sealed class ArtifactRadarBoundUIState : BoundUserInterfaceState
     /// </summary>
     public readonly float? ClosestAnomalyDistance;
 
-    public ArtifactRadarBoundUIState(
-        List<ArtifactRadarBlip> blips,
+    public RadarDisplayBoundUIState(
+        List<RadarBlip> blips,
         float range,
-        bool artifactScannerEnabled,
+        bool radarEnabled,
         bool hasAnomalyDetector,
         bool anomalyDetectorEnabled,
         string deviceName,
+        bool hasArtifactDetection,
+        bool hasAnomalyDetection,
         float? closestAnomalyDistance = null)
     {
         Blips = blips;
         Range = range;
-        ArtifactScannerEnabled = artifactScannerEnabled;
+        RadarEnabled = radarEnabled;
         HasAnomalyDetector = hasAnomalyDetector;
         AnomalyDetectorEnabled = anomalyDetectorEnabled;
         DeviceName = deviceName;
+        HasArtifactDetection = hasArtifactDetection;
+        HasAnomalyDetection = hasAnomalyDetection;
         ClosestAnomalyDistance = closestAnomalyDistance;
     }
 }
