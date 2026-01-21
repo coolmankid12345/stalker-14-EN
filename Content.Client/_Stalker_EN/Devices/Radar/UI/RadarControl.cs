@@ -1,17 +1,17 @@
 using System.Numerics;
-using Content.Shared._Stalker_EN.Devices.ArtifactRadar;
+using Content.Shared._Stalker_EN.Devices.Radar;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Shared.IoC;
 using Robust.Shared.Timing;
 
-namespace Content.Client._Stalker_EN.Devices.ArtifactRadar;
+namespace Content.Client._Stalker_EN.Devices.Radar.UI;
 
 /// <summary>
-/// Custom control that renders a 360-degree radar display showing artifact blips
+/// Custom control that renders a 360-degree radar display showing blips
 /// with animated sonar sweep and fading blip reveal.
 /// </summary>
-public sealed class ArtifactRadarControl : Control
+public sealed class RadarControl : Control
 {
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -40,6 +40,7 @@ public sealed class ArtifactRadarControl : Control
         public float Angle;
         public float Distance;
         public int Level;
+        public RadarBlipType Type;
         public float RevealTime;
     }
 
@@ -52,15 +53,29 @@ public sealed class ArtifactRadarControl : Control
     private static readonly Color RingColor = new(0.1f, 0.5f, 0.1f, 0.6f);
     private static readonly Color CenterColor = new(0.2f, 0.8f, 0.2f, 0.8f);
 
-    public ArtifactRadarControl()
+    // Blip colors by type
+    private static readonly Dictionary<RadarBlipType, Color> BlipColors = new()
+    {
+        { RadarBlipType.Artifact, Color.White },
+        { RadarBlipType.Anomaly, Color.FromHex("#FFA500") },  // Orange (matches UI indicator)
+    };
+
+    // Blip priority - higher value = higher priority (drawn on top / preferred)
+    private static readonly Dictionary<RadarBlipType, int> BlipPriority = new()
+    {
+        { RadarBlipType.Anomaly, 1 },
+        { RadarBlipType.Artifact, 2 },
+    };
+
+    public RadarControl()
     {
         IoCManager.InjectDependencies(this);
     }
 
     /// <summary>
-    /// Updates the radar display with current artifact blip data.
+    /// Updates the radar display with current blip data.
     /// </summary>
-    public void UpdateBlips(List<ArtifactRadarBlip> blips, float range, bool scannerEnabled)
+    public void UpdateBlips(List<RadarBlip> blips, float range, bool scannerEnabled)
     {
         _range = range;
 
@@ -102,22 +117,28 @@ public sealed class ArtifactRadarControl : Control
 
             if (crossedBlip)
             {
-                // BUG FIX: Only reveal if not already revealed (prevents fade reset when player moves)
-                // This ensures blips stay at their revealed position until fully faded,
-                // then can be re-revealed on the next sweep cycle.
-                if (!_revealedBlips.ContainsKey(blip.Id))
+                // Check if already revealed with same or higher priority
+                if (_revealedBlips.TryGetValue(blip.Id, out var existing))
                 {
-                    _revealedBlips[blip.Id] = new RevealedBlip
-                    {
-                        Angle = blip.Angle,
-                        Distance = blip.Distance,
-                        Level = blip.Level,
-                        RevealTime = currentTime
-                    };
+                    var existingPriority = BlipPriority.GetValueOrDefault(existing.Type, 0);
+                    var newPriority = BlipPriority.GetValueOrDefault(blip.Type, 0);
+
+                    // Only replace if new blip has higher priority
+                    if (newPriority <= existingPriority)
+                        continue;
                 }
-                // If already revealed, keep existing position and fade progress
+
+                _revealedBlips[blip.Id] = new RevealedBlip
+                {
+                    Angle = blip.Angle,
+                    Distance = blip.Distance,
+                    Level = blip.Level,
+                    Type = blip.Type,
+                    RevealTime = _revealedBlips.TryGetValue(blip.Id, out var prev)
+                        ? prev.RevealTime  // Preserve reveal time if upgrading
+                        : currentTime
+                };
             }
-            // If not crossed, keep existing revealed position (if any)
         }
 
         // Remove revealed blips that are no longer in range OR have fully faded
@@ -264,8 +285,9 @@ public sealed class ArtifactRadarControl : Control
             // Size based on distance (closer = larger)
             var blipSize = 4f + (1f - normalizedDistance) * 4f;
 
-            // Color with fade alpha
-            var color = new Color(1f, 1f, 1f, alpha);
+            // Get base color from type, apply fade alpha
+            var baseColor = BlipColors.GetValueOrDefault(revealed.Type, Color.White);
+            var color = new Color(baseColor.R, baseColor.G, baseColor.B, alpha);
 
             handle.DrawCircle(new Vector2(blipX, blipY), blipSize, color);
         }
