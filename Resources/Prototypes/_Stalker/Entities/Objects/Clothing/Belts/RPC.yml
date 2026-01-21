@@ -74,8 +74,9 @@
       grid:
         - 0,0,7,7
       whitelist:
-        tags:
+        components:
           - CartridgeAmmo
+        tags:
           - Cartridge
 
 - type: entity
