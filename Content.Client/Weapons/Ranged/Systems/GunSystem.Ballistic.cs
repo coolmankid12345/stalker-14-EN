@@ -41,9 +41,9 @@ public sealed partial class GunSystem
         else if (component.UnspawnedCount > 0)
         {
             component.UnspawnedCount--;
-            var copy = component.EntProtos; // stalker-changes-start
-            copy.Reverse();
-            var proto = copy.FirstOrNull();
+            var proto = component.EntProtos.Count > 0 // stalker-changes-start
+                ? (Robust.Shared.Prototypes.EntProtoId?)component.EntProtos[^1]
+                : null;
             if (proto != null)
             {
                 ent = Spawn(proto.Value, coordinates);

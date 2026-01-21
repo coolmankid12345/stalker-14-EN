@@ -262,9 +262,9 @@ public abstract partial class SharedGunSystem
             }
             else if (component.UnspawnedCount > 0)
             { // stalker-changes-start
-                var copy = component.EntProtos;
-                copy.Reverse();
-                var proto = copy.FirstOrNull();
+                var proto = component.EntProtos.Count > 0
+                    ? (Robust.Shared.Prototypes.EntProtoId?)component.EntProtos[^1]
+                    : null;
                 if (proto != null)
                 {
                     entity = Spawn(proto.Value, args.Coordinates);

@@ -224,6 +224,11 @@ public class StackItemStalker : IItemStalkerStorage
         return PrototypeName + "_" + StackCount;
     }
 }
+/// <summary>
+/// Storage data for magazines with ballistic ammo providers.
+/// Uses List&lt;string&gt; instead of List&lt;EntProtoId&gt; because EntProtoId is a readonly record struct
+/// that System.Text.Json cannot reliably deserialize without custom converters.
+/// </summary>
 [Serializable, NetSerializable]
 public sealed class AmmoContainerStalker : IItemStalkerStorage
 {
@@ -232,8 +237,14 @@ public sealed class AmmoContainerStalker : IItemStalkerStorage
     public string? AmmoPrototypeName { get; set; }
     public int AmmoCount { get; set; }
     public uint CountVendingMachine { get; set; }
-    public List<EntProtoId> EntProtoIds { get; set; }
-    public AmmoContainerStalker(string prototypeName, string? ammoPrototypeName, List<EntProtoId> entProtoIds, int ammoCount = 1, uint countVendingMachine = 1)
+
+    /// <summary>
+    /// List of ammo prototype IDs stored as strings for JSON serialization compatibility.
+    /// Converted to/from EntProtoId at storage boundaries.
+    /// </summary>
+    public List<string> EntProtoIds { get; set; }
+
+    public AmmoContainerStalker(string prototypeName, string? ammoPrototypeName, List<string> entProtoIds, int ammoCount = 1, uint countVendingMachine = 1)
     {
         PrototypeName = prototypeName;
         AmmoPrototypeName = ammoPrototypeName;
@@ -244,7 +255,11 @@ public sealed class AmmoContainerStalker : IItemStalkerStorage
 
     public string Identifier()
     {
-        return PrototypeName + "_" + AmmoPrototypeName + "_" + AmmoCount;
+        // Include hash of EntProtoIds to distinguish magazines with different ammo compositions
+        var entProtosHash = EntProtoIds.Count > 0
+            ? string.Join(",", EntProtoIds).GetHashCode()
+            : 0;
+        return $"{PrototypeName}_{AmmoPrototypeName}_{AmmoCount}_{entProtosHash}";
     }
 }
 [Serializable, NetSerializable]
