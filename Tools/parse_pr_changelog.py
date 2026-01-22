@@ -37,24 +37,27 @@ def strip_html_comments(text: str) -> str:
     return re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
 
 
+def strip_code_blocks(text: str) -> str:
+    """Remove code blocks from text."""
+    return re.sub(r"```.*?```", "", text, flags=re.DOTALL)
+
+
 def extract_changelog_section(body: str) -> str | None:
     """Extract the changelog section from PR body."""
     if not body:
         return None
 
+    # Strip code blocks first to avoid matching ## Changelog inside examples
+    clean_body = strip_code_blocks(body)
+
     # Find ## Changelog section
     pattern = r"^## Changelog\s*\n(.*?)(?=^## |\Z)"
-    match = re.search(pattern, body, re.MULTILINE | re.DOTALL)
+    match = re.search(pattern, clean_body, re.MULTILINE | re.DOTALL)
 
     if not match:
         return None
 
     return match.group(1).strip()
-
-
-def strip_code_blocks(text: str) -> str:
-    """Remove code blocks from text."""
-    return re.sub(r"```.*?```", "", text, flags=re.DOTALL)
 
 
 def has_orphaned_changelog_entries(body: str) -> bool:
@@ -196,6 +199,16 @@ def main():
         print("Error: Changelog section found but no valid entries.", file=sys.stderr)
         print("Please add entries in format: '- type: message' (types: add, remove, tweak, fix)", file=sys.stderr)
         sys.exit(1)
+
+    # Check for duplicate entries
+    seen_messages = set()
+    for entry in entries:
+        msg_key = (entry["type"], entry["message"].lower())
+        if msg_key in seen_messages:
+            print(f"Error: Duplicate changelog entry detected: '{entry['message']}'", file=sys.stderr)
+            print("Each changelog entry must be unique.", file=sys.stderr)
+            sys.exit(1)
+        seen_messages.add(msg_key)
 
     # Parse author - required if there are changelog entries
     custom_author, has_author_field = parse_author(changelog_section)

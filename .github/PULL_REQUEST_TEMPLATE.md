@@ -17,7 +17,7 @@ Available types:
   - fix: Bug fix
 
 Fill in your username and replace the example entry below.
-Multiple entries allowed (one per line).
+Multiple entries allowed (one per line), but each entry must be unique.
 -->
 author: @YourName
 
