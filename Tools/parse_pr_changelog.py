@@ -33,6 +33,11 @@ CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
 PARTS_DIR = "Resources/Changelog/Parts"
 
 
+def strip_html_comments(text: str) -> str:
+    """Remove HTML comments from text, including multi-line comments."""
+    return re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+
+
 def extract_changelog_section(body: str) -> str | None:
     """Extract the changelog section from PR body."""
     if not body:
@@ -50,14 +55,13 @@ def extract_changelog_section(body: str) -> str | None:
 
 def parse_author(section: str) -> str | None:
     """Parse author from the changelog section."""
+    # Strip HTML comments first
+    clean_section = strip_html_comments(section)
+
     # Match "author: name" or "author: @name"
     pattern = r"^\s*author\s*:\s*@?(.+?)\s*$"
 
-    for line in section.split("\n"):
-        # Skip HTML comments
-        if "<!--" in line or "-->" in line:
-            continue
-
+    for line in clean_section.split("\n"):
         match = re.match(pattern, line, re.IGNORECASE)
         if match:
             author = match.group(1).strip()
@@ -70,16 +74,15 @@ def parse_author(section: str) -> str | None:
 
 def parse_changelog_entries(section: str) -> list[dict]:
     """Parse changelog entries from the section text."""
+    # Strip HTML comments first
+    clean_section = strip_html_comments(section)
+
     entries = []
 
     # Match lines like "- add: message" or "* fix: message"
     pattern = r"^\s*[-*]\s*(add|remove|tweak|fix)\s*:\s*(.+?)\s*$"
 
-    for line in section.split("\n"):
-        # Skip HTML comments
-        if "<!--" in line or "-->" in line:
-            continue
-
+    for line in clean_section.split("\n"):
         match = re.match(pattern, line, re.IGNORECASE)
         if match:
             entry_type = match.group(1).lower()

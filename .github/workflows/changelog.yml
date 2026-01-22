@@ -34,6 +34,6 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update changelog for PR #${{ github.event.pull_request.number }}"
+          commit_message: "docs(changelog): update for PR #${{ github.event.pull_request.number }}"
           branch: ${{ github.event.pull_request.base.ref }}
           file_pattern: Resources/Changelog/Changelog.yml
