@@ -3,6 +3,23 @@
 ## What I changed
 <!-- Write what you changed or add pictures -->
 
+## Changelog
+<!--
+Optional: Describe player-facing changes for the in-game changelog.
+Delete this section or leave empty if no changelog entry is needed.
+
+Available types:
+  - add: New feature or content
+  - remove: Removed feature or content
+  - tweak: Adjustment or enhancement to existing feature
+  - fix: Bug fix
+
+Multiple entries allowed (one per line).
+-->
+author: @
+
+- add: Your change here
+
 <!-- Put X — [X]: -->
 ## Make sure you check and agree to the following
 - [ ] Yes, I ran my code and tested that the changes worked
