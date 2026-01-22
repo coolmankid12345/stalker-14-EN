@@ -171,3 +171,20 @@
       falloff: 0.07
     - range: 15
       falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBase45ACP #Low range
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.03
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 2
+      falloff: 0.03
+    - range: 10
+      falloff: 0.2
