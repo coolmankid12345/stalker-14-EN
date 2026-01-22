@@ -17,7 +17,7 @@
   - type: ArtifactRadarTargetSource
     detectionRange: 18
     level: 4
-    activationDistance: 3
+    activationDistance: 2
   # Anomaly target source for radar display
   - type: AnomalyRadarTargetSource
     detectionRange: 17
