@@ -5,5 +5,5 @@
   name: game-preset-stalker-title
   description: game-preset-stalker-description
   rules:
-    - STAnomalyExplosionEventScheduler
+    - STEmissionEventScheduler
   supportedMaps: STDefaultMapPool

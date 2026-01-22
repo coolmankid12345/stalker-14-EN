@@ -1,0 +1,50 @@
+- type: entity
+  id: STEmissionEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 0
+    minMaxEventTiming:
+      min: 7200   # 2 hours
+      max: 14400  # 4 hours
+    scheduledGameRules: !type:EntSelector
+      id: STEmissionEvent
+
+- type: entity
+  parent: BaseGameRule
+  id: STEmissionEvent
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      earliestStart: 120
+      reoccurrenceDelay: 0
+      duration: 360  # Total event duration (must be >= damageEndDelay + buffer)
+    - type: EmissionEventRule
+      # Timing configuration (all values in seconds)
+      mainAmbientDelay: 30    # Main ambient track (emission.ogg)
+      stage2Delay: 60         # Stage 2 sound + announcement
+      redHueDelay: 100        # Red hue effect starts
+      damageStartDelay: 100   # Damage begins
+      damageEndDelay: 310     # Damage ends, stage 3 plays, red hue clears
+      damageInterval: 3
+
+      # Damage configuration
+      damage:
+        types:
+          Psy: 5
+
+      # Visual effects
+      shakeStrength: 50
+      emissionColor: "#FF0000FF"
+
+      # Announcements
+      announcementSender: "S.T.A.L.K.E.R Network"
+      announcementStage1: "Attention stalkers, an emission is approaching! I repeat, an emission is approaching. Seek cover immediately."
+      announcementStage2: "Attention stalkers, an emission will start any minute now. Find cover if you want to live."
+      announcementStage3: "Stalkers, the emission is finally over. I hope you're all in one piece."
+
+      # Rain configuration (starts 40 seconds before stage 3)
+      rainStartBeforeEnd: 40
+      rainDurationMin: 360    # 6-10 minutes random duration
+      rainDurationMax: 600
+      rainWeather: Rain
