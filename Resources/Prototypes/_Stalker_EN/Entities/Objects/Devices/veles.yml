@@ -27,8 +27,9 @@
     displayRange: 17
   # Artifact target source
   - type: ArtifactRadarTargetSource
-    detectionRange: 17
+    detectionRange: 18
     level: 3
+    activationDistane: 2
   - type: ActivatableUI
     key: enum.RadarDisplayUiKey.Key
     inHandsOnly: true
