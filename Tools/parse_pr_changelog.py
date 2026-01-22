@@ -50,8 +50,8 @@ def extract_changelog_section(body: str) -> str | None:
     # Strip code blocks first to avoid matching ## Changelog inside examples
     clean_body = strip_code_blocks(body)
 
-    # Find ## Changelog section
-    pattern = r"^## Changelog\s*\n(.*?)(?=^## |\Z)"
+    # Find ## Changelog section (allow optional leading whitespace)
+    pattern = r"^\s*## Changelog\s*\n(.*?)(?=^\s*## |\Z)"
     match = re.search(pattern, clean_body, re.MULTILINE | re.DOTALL)
 
     if not match:
