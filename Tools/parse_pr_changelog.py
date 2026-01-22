@@ -162,8 +162,9 @@ def main():
     entries = parse_changelog_entries(changelog_section)
 
     if not entries:
-        print("No valid changelog entries found. Skipping.")
-        return
+        print("Error: Changelog section found but no valid entries.", file=sys.stderr)
+        print("Please add entries in format: '- type: message' (types: add, remove, tweak, fix)", file=sys.stderr)
+        sys.exit(1)
 
     # Parse author - required if there are changelog entries
     custom_author, has_author_field = parse_author(changelog_section)
