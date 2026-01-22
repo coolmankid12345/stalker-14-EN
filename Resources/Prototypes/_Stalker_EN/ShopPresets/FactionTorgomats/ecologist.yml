@@ -76,6 +76,7 @@
         MedkitScience: 175
         MedkitMilitary: 100
         Defibrillator: 700
+        HandheldHealthAnalyzer: 300
         MedkitElite: 500
         MedkitLAR: 650
         # Crates
@@ -186,6 +187,7 @@
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         Beaker: 40
         Syringe: 20
+        MedTekCartridge: 150
         LargeBeaker: 50
         BaseChemistryEmptyVial: 40
         ClothingGoPro: 250
