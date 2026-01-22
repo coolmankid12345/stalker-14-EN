@@ -1,4 +1,5 @@
 using Content.Shared.Clothing.Components;
+using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
@@ -9,6 +10,7 @@ using Content.Shared.Item;
 using Content.Shared.Strip.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Clothing.EntitySystems;
 
@@ -19,6 +21,8 @@ public abstract class ClothingSystem : EntitySystem
     [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly InventorySystem _invSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -33,12 +37,16 @@ public abstract class ClothingSystem : EntitySystem
 
         SubscribeLocalEvent<ClothingComponent, ClothingEquipDoAfterEvent>(OnEquipDoAfter);
         SubscribeLocalEvent<ClothingComponent, ClothingUnequipDoAfterEvent>(OnUnequipDoAfter);
+        SubscribeLocalEvent<ClothingComponent, ClothingQuickEquipSwapDoAfterEvent>(OnQuickEquipSwapDoAfter);
 
         SubscribeLocalEvent<ClothingComponent, BeforeItemStrippedEvent>(OnItemStripped);
     }
 
     private void OnUseInHand(Entity<ClothingComponent> ent, ref UseInHandEvent args)
     {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         if (args.Handled || !ent.Comp.QuickEquip)
             return;
 
@@ -56,32 +64,55 @@ public abstract class ClothingSystem : EntitySystem
         Entity<ClothingComponent> toEquipEnt,
         Entity<InventoryComponent, HandsComponent> userEnt)
     {
+        // First pass: Try to find an empty slot that fits
         foreach (var slotDef in userEnt.Comp1.Slots)
         {
             if (!_invSystem.CanEquip(userEnt, toEquipEnt, slotDef.Name, out _, slotDef, userEnt, toEquipEnt))
                 continue;
 
-            if (_invSystem.TryGetSlotEntity(userEnt, slotDef.Name, out var slotEntity, userEnt))
+            // Skip occupied slots in first pass
+            if (_invSystem.TryGetSlotEntity(userEnt, slotDef.Name, out _, userEnt))
+                continue;
+
+            // Empty slot found - try to equip and ALWAYS return
+            // TryEquip returns false if it starts a DoAfter, but the DoAfter will complete the equip
+            _invSystem.TryEquip(userEnt, toEquipEnt, slotDef.Name, true, inventory: userEnt, clothing: toEquipEnt, checkDoafter: true);
+            return;
+        }
+
+        // Second pass: No empty slots, try to swap with first compatible occupied slot
+        foreach (var slotDef in userEnt.Comp1.Slots)
+        {
+            if (!_invSystem.CanEquip(userEnt, toEquipEnt, slotDef.Name, out _, slotDef, userEnt, toEquipEnt))
+                continue;
+
+            if (!_invSystem.TryGetSlotEntity(userEnt, slotDef.Name, out var slotEntity, userEnt))
+                continue;
+
+            // Item in slot has to be quick equipable as well
+            if (!TryComp(slotEntity, out ClothingComponent? item) || !item.QuickEquip)
+                continue;
+
+            // Start a custom swap DoAfter that handles the full operation atomically
+            var delay = toEquipEnt.Comp.EquipDelay > item.UnequipDelay
+                ? toEquipEnt.Comp.EquipDelay
+                : item.UnequipDelay;
+
+            var args = new DoAfterArgs(
+                EntityManager,
+                userEnt,
+                delay,
+                new ClothingQuickEquipSwapDoAfterEvent(slotDef.Name, GetNetEntity(slotEntity.Value)),
+                toEquipEnt,  // EventTarget: the new item
+                userEnt,     // Target: the inventory owner
+                toEquipEnt)  // Used: the new item
             {
-                // Item in slot has to be quick equipable as well
-                if (TryComp(slotEntity, out ClothingComponent? item) && !item.QuickEquip)
-                    continue;
+                BreakOnMove = false,
+                NeedHand = true,
+            };
 
-                if (!_invSystem.TryUnequip(userEnt, slotDef.Name, true, inventory: userEnt, checkDoafter: true))
-                    continue;
-
-                if (!_invSystem.TryEquip(userEnt, toEquipEnt, slotDef.Name, true, inventory: userEnt, clothing: toEquipEnt, checkDoafter: true))
-                    continue;
-
-                _handsSystem.PickupOrDrop(userEnt, slotEntity.Value, handsComp: userEnt);
-            }
-            else
-            {
-                if (!_invSystem.TryEquip(userEnt, toEquipEnt, slotDef.Name, true, inventory: userEnt, clothing: toEquipEnt, checkDoafter: true))
-                    continue;
-            }
-
-            break;
+            _doAfter.TryStartDoAfter(args);
+            return;
         }
     }
 
@@ -193,6 +224,33 @@ public abstract class ClothingSystem : EntitySystem
         args.Handled = _invSystem.TryUnequip(args.User, target, args.Slot, clothing: ent.Comp, predicted: true, checkDoafter: false);
         if (args.Handled)
             _handsSystem.TryPickup(args.User, ent);
+    }
+
+    private void OnQuickEquipSwapDoAfter(Entity<ClothingComponent> ent, ref ClothingQuickEquipSwapDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled || args.Target is not { } target)
+            return;
+
+        var oldItem = GetEntity(args.OldItem);
+        if (!Exists(oldItem))
+            return;
+
+        TryComp(oldItem, out ClothingComponent? oldClothing);
+
+        // Perform atomic swap: unequip old -> equip new -> pickup old
+        if (!_invSystem.TryUnequip(args.User, target, args.Slot, clothing: oldClothing, predicted: true, checkDoafter: false))
+            return;
+
+        if (!_invSystem.TryEquip(args.User, target, ent, args.Slot, clothing: ent.Comp, predicted: true, checkDoafter: false))
+        {
+            // Equip failed - try to re-equip the old item
+            _invSystem.TryEquip(args.User, target, oldItem, args.Slot, clothing: oldClothing, predicted: true, checkDoafter: false);
+            return;
+        }
+
+        // Swap succeeded - pickup the old item
+        _handsSystem.PickupOrDrop(args.User, oldItem);
+        args.Handled = true;
     }
 
     private void OnItemStripped(Entity<ClothingComponent> ent, ref BeforeItemStrippedEvent args)

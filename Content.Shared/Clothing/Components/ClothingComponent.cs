@@ -99,7 +99,10 @@ public enum ClothingMask : byte
 [Serializable, NetSerializable]
 public sealed partial class ClothingEquipDoAfterEvent : DoAfterEvent
 {
-    public string Slot;
+    [DataField]
+    public string Slot = string.Empty;
+
+    private ClothingEquipDoAfterEvent() { }
 
     public ClothingEquipDoAfterEvent(string slot)
     {
@@ -112,11 +115,34 @@ public sealed partial class ClothingEquipDoAfterEvent : DoAfterEvent
 [Serializable, NetSerializable]
 public sealed partial class ClothingUnequipDoAfterEvent : DoAfterEvent
 {
-    public string Slot;
+    [DataField]
+    public string Slot = string.Empty;
+
+    private ClothingUnequipDoAfterEvent() { }
 
     public ClothingUnequipDoAfterEvent(string slot)
     {
         Slot = slot;
+    }
+
+    public override DoAfterEvent Clone() => this;
+}
+
+[Serializable, NetSerializable]
+public sealed partial class ClothingQuickEquipSwapDoAfterEvent : DoAfterEvent
+{
+    [DataField]
+    public string Slot = string.Empty;
+
+    [DataField]
+    public NetEntity OldItem;
+
+    private ClothingQuickEquipSwapDoAfterEvent() { }
+
+    public ClothingQuickEquipSwapDoAfterEvent(string slot, NetEntity oldItem)
+    {
+        Slot = slot;
+        OldItem = oldItem;
     }
 
     public override DoAfterEvent Clone() => this;
