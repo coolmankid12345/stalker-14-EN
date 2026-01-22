@@ -127,23 +127,3 @@ public sealed partial class ClothingUnequipDoAfterEvent : DoAfterEvent
 
     public override DoAfterEvent Clone() => this;
 }
-
-[Serializable, NetSerializable]
-public sealed partial class ClothingQuickEquipSwapDoAfterEvent : DoAfterEvent
-{
-    [DataField]
-    public string Slot = string.Empty;
-
-    [DataField]
-    public NetEntity OldItem;
-
-    private ClothingQuickEquipSwapDoAfterEvent() { }
-
-    public ClothingQuickEquipSwapDoAfterEvent(string slot, NetEntity oldItem)
-    {
-        Slot = slot;
-        OldItem = oldItem;
-    }
-
-    public override DoAfterEvent Clone() => this;
-}
