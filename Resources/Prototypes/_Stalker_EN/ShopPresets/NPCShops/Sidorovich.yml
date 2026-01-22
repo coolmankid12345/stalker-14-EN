@@ -300,7 +300,6 @@
         ZoneArtifactDetectorPulse: 100 # T1
         ZoneArtifactDetectorHunter: 500 # T2
         ZoneArtifactDetectorResponse: 1500 # T2
-        Veles: 5500 # T3
 
     - name: shop-category-utilities
       priority: 10

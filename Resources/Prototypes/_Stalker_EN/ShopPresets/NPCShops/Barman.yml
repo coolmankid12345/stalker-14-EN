@@ -341,7 +341,7 @@
         ZoneArtifactDetectorHunter: 700
         ZoneArtifactDetectorResponse: 2100
         ZoneArtifactDetectorSpruce: 6575 #T3
-        Veles: 7500 # T3
+        Veles: 8000 # T3
         TrashDetectorTier1: 200
         TrashDetectorTier2: 400
 
