@@ -184,7 +184,7 @@
       falloff: 0.03
   - type: STProjectileDamageFalloff
     thresholds:
-    - range: 2
+    - range: 5
       falloff: 0.03
-    - range: 10
+    - range: 12
       falloff: 0.2
