@@ -130,11 +130,8 @@ public sealed class RadarDisplaySystem : EntitySystem
 
     private void OnGotUnequippedHand(Entity<RadarDisplayComponent> entity, ref GotUnequippedHandEvent args)
     {
-        // Disable anomaly detector
-        if (TryComp<ZoneAnomalyDetectorComponent>(entity, out var detector))
-            detector.Enabled = false;
-
-        // Disable radar
+        // Disable radar display when unequipped, but keep anomaly detector (beeping) enabled
+        // The beeping system doesn't require the item to be in hand - it just checks position and plays sound
         entity.Comp.Enabled = false;
 
         UpdateAppearance(entity);
@@ -146,11 +143,15 @@ public sealed class RadarDisplaySystem : EntitySystem
 
     private void OnBeforeActivatableUIOpen(Entity<RadarDisplayComponent> entity, ref BeforeActivatableUIOpenEvent args)
     {
-        // Send initial state when UI opens - radar update if enabled, otherwise just state
-        if (entity.Comp.Enabled)
-            UpdateRadar(entity, args.User);
-        else
-            SendUIUpdate(entity, args.User);
+        // Auto-enable radar when UI opens for better UX
+        if (!entity.Comp.Enabled)
+        {
+            entity.Comp.Enabled = true;
+            entity.Comp.NextUpdateTime = _timing.CurTime;
+            UpdateAppearance(entity);
+        }
+
+        UpdateRadar(entity, args.User);
     }
 
     private void OnBoundUIClosed(Entity<RadarDisplayComponent> entity, ref BoundUIClosedEvent args)
@@ -158,10 +159,7 @@ public sealed class RadarDisplaySystem : EntitySystem
         if (args.UiKey is not RadarDisplayUiKey)
             return;
 
-        // Disable radar when UI closes
-        if (!entity.Comp.Enabled)
-            return;
-
+        // Disable radar when UI closes (auto-enables on next open)
         entity.Comp.Enabled = false;
         UpdateAppearance(entity);
     }

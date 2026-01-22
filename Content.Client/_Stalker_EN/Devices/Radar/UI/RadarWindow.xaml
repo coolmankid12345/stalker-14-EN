@@ -3,8 +3,7 @@
                       xmlns:radar="clr-namespace:Content.Client._Stalker_EN.Devices.Radar.UI"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                       Title="{Loc 'artifact-radar-window-title'}"
-                      MinSize="420 510"
-                      SetSize="420 510">
+                      MinSize="280 340">
     <BoxContainer Orientation="Vertical" Margin="5">
         <!-- Header Section -->
         <PanelContainer Margin="0 0 0 5">
@@ -47,12 +46,6 @@
                     </BoxContainer>
                 </ContainerButton>
             </Control>
-            <ContainerButton Name="RadarButton" StyleClasses="button" MinWidth="160" Margin="5 0 5 0">
-                <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Text="{Loc 'radar-label-radar'}" />
-                    <Label Name="RadarStateLabel" Margin="4 0 0 0" Text="---" />
-                </BoxContainer>
-            </ContainerButton>
         </BoxContainer>
 
         <!-- Waveform Section -->
