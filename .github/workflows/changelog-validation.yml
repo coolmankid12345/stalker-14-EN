@@ -1,0 +1,18 @@
+name: Validate Changelog
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+    branches: [master, test]
+
+jobs:
+  validate-changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate changelog format
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: python3 Tools/parse_pr_changelog.py --validate
