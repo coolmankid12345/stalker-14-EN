@@ -12,15 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install pyyaml
-
       - name: Validate changelog format
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
-        run: python Tools/parse_pr_changelog.py --validate
+        run: python3 Tools/parse_pr_changelog.py --validate

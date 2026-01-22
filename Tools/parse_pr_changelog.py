@@ -25,8 +25,6 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-import yaml
-
 VALID_TYPES = {"add", "remove", "tweak", "fix"}
 TYPE_MAP = {"add": "Add", "remove": "Remove", "tweak": "Tweak", "fix": "Fix"}
 
@@ -108,6 +106,8 @@ def parse_changelog_entries(section: str) -> list[dict]:
 
 def create_part_file(author: str, url: str, pr_number: str, changes: list[dict]) -> Path:
     """Create a changelog part file."""
+    import yaml  # Lazy import - only needed when creating files, not for validation
+
     part_data = {
         "author": author,
         "changes": changes,
