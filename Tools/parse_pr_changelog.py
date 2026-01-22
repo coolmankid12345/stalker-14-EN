@@ -52,6 +52,32 @@ def extract_changelog_section(body: str) -> str | None:
     return match.group(1).strip()
 
 
+def strip_code_blocks(text: str) -> str:
+    """Remove code blocks from text."""
+    return re.sub(r"```.*?```", "", text, flags=re.DOTALL)
+
+
+def has_orphaned_changelog_entries(body: str) -> bool:
+    """Check if the PR body contains changelog-like entries outside a proper section.
+
+    This detects cases where someone wrote changelog entries but forgot the ## Changelog header.
+    """
+    # Strip code blocks and HTML comments to avoid false positives from examples
+    clean_body = strip_code_blocks(body)
+    clean_body = strip_html_comments(clean_body)
+
+    # Look for changelog entry patterns (- add:, - fix:, etc.)
+    entry_pattern = r"^\s*[-*]\s*(add|remove|tweak|fix)\s*:\s*(?!Your change here).+"
+    has_entries = bool(re.search(entry_pattern, clean_body, re.MULTILINE | re.IGNORECASE))
+
+    # Look for author field pattern
+    author_pattern = r"^\s*author\s*:\s*@\w+"
+    has_author = bool(re.search(author_pattern, clean_body, re.MULTILINE | re.IGNORECASE))
+
+    # If we find both entries and author, it's likely someone meant to add a changelog
+    return has_entries and has_author
+
+
 def parse_author(section: str) -> tuple[str | None, bool]:
     """Parse author from the changelog section.
 
@@ -155,6 +181,11 @@ def main():
     changelog_section = extract_changelog_section(pr_body)
 
     if not changelog_section:
+        # Check for orphaned changelog entries (entries outside proper ## Changelog section)
+        if has_orphaned_changelog_entries(pr_body):
+            print("Error: Changelog entries detected but not in a proper '## Changelog' section.", file=sys.stderr)
+            print("Please add a '## Changelog' header above your changelog entries.", file=sys.stderr)
+            sys.exit(1)
         print("No changelog section found in PR body. Skipping.")
         return
 

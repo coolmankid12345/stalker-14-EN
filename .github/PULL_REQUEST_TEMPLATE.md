@@ -6,7 +6,9 @@
 ## Changelog
 <!--
 Optional: Describe player-facing changes for the in-game changelog.
-Delete this section or leave empty if no changelog entry is needed.
+If no changelog entry is needed, delete EVERYTHING from "## Changelog" to the end of this section.
+
+IMPORTANT: Keep the "## Changelog" header exactly as-is - the automation requires it.
 
 Available types:
   - add: New feature or content
@@ -14,9 +16,10 @@ Available types:
   - tweak: Adjustment or enhancement to existing feature
   - fix: Bug fix
 
+Fill in your username and replace the example entry below.
 Multiple entries allowed (one per line).
 -->
-author: @
+author: @YourName
 
 - add: Your change here
 
