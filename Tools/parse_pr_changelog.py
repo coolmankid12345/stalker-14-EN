@@ -17,6 +17,7 @@ Changelog section format in PR body:
 - remove: Removed old feature
 """
 
+import argparse
 import os
 import re
 import subprocess
@@ -53,23 +54,30 @@ def extract_changelog_section(body: str) -> str | None:
     return match.group(1).strip()
 
 
-def parse_author(section: str) -> str | None:
-    """Parse author from the changelog section."""
+def parse_author(section: str) -> tuple[str | None, bool]:
+    """Parse author from the changelog section.
+
+    Returns:
+        Tuple of (author_name, has_author_field)
+        - author_name: The parsed author name, or None if placeholder/empty
+        - has_author_field: True if an author: field was found (even if placeholder)
+    """
     # Strip HTML comments first
     clean_section = strip_html_comments(section)
 
-    # Match "author: name" or "author: @name"
-    pattern = r"^\s*author\s*:\s*@?(.+?)\s*$"
+    # Match "author: name" or "author: @name" or just "author:" or "author: @"
+    pattern = r"^\s*author\s*:\s*@?(.*?)\s*$"
 
     for line in clean_section.split("\n"):
         match = re.match(pattern, line, re.IGNORECASE)
         if match:
             author = match.group(1).strip()
-            # Skip placeholder values
+            # Return author if valid, None if placeholder/empty
             if author and author not in ("", "@"):
-                return author
+                return (author, True)
+            return (None, True)  # Field exists but is placeholder
 
-    return None
+    return (None, False)  # No author field found
 
 
 def parse_changelog_entries(section: str) -> list[dict]:
@@ -131,8 +139,15 @@ def run_update_changelog():
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Parse changelog from PR body")
+    parser.add_argument(
+        "--validate",
+        action="store_true",
+        help="Only validate the changelog format, don't update files",
+    )
+    args = parser.parse_args()
+
     pr_body = os.environ.get("PR_BODY", "")
-    pr_author = os.environ.get("PR_AUTHOR", "Unknown")
     pr_url = os.environ.get("PR_URL", "")
     pr_number = os.environ.get("PR_NUMBER", "unknown")
 
@@ -143,20 +158,31 @@ def main():
         print("No changelog section found in PR body. Skipping.")
         return
 
-    # Parse entries
+    # Parse entries first to check if there are any valid changelog entries
     entries = parse_changelog_entries(changelog_section)
 
     if not entries:
         print("No valid changelog entries found. Skipping.")
         return
 
-    # Parse author (use custom author if specified, otherwise fall back to PR author)
-    custom_author = parse_author(changelog_section)
-    author = custom_author if custom_author else pr_author
+    # Parse author - required if there are changelog entries
+    custom_author, has_author_field = parse_author(changelog_section)
+
+    if not custom_author:
+        print("Error: Author field is required for changelog entries.", file=sys.stderr)
+        print("Please fill in the 'author: @YourName' field in the changelog section.", file=sys.stderr)
+        sys.exit(1)
+
+    author = custom_author
 
     print(f"Found {len(entries)} changelog entries from {author}")
     for entry in entries:
         print(f"  - {entry['type']}: {entry['message']}")
+
+    # If validate only, exit successfully here
+    if args.validate:
+        print("Changelog validation passed!")
+        return
 
     # Create part file
     part_path = create_part_file(author, pr_url, pr_number, entries)
