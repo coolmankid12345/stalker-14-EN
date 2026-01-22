@@ -14,7 +14,7 @@
     - type: Gun
       projectileSpeed: 40
       minAngle:  5
-      maxAngle: 40
+      maxAngle: 80
       angleIncrease: 20
       angleDecay: 20
       fireRate: 3
