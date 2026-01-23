@@ -24,5 +24,9 @@ public sealed partial class FarGunshotComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float SilencerDecrease = 1f;
 
-    // TODO: silencer impl
+    /// <summary>
+    /// The base volume of the far gunshot sound before any modifications.
+    /// </summary>
+    [DataField]
+    public float BaseVolume;
 }
