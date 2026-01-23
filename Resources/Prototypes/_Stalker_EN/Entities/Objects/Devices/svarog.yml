@@ -25,7 +25,7 @@
   # Anomaly detection (audio beeping) - kept for beeping functionality
   - type: ZoneAnomalyDetector
     level: 5
-    distance: 18
+    distance: 7
     maxBeepInterval: 1
     minBeepInterval: 0.01
     beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
