@@ -7,6 +7,8 @@
   components:
   - type: Item
     size: Normal
+  - type: RepositoryItem
+    categoryName: repository-detectors-category
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/veles.rsi
     layers:

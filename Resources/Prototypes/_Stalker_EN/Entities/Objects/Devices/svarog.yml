@@ -5,6 +5,8 @@
   description: An advanced detection device combining artifact radar with anomaly detection. The upgraded version of Veles.
   suffix: Stalker EN, Advanced Radar
   components:
+  - type: RepositoryItem
+    categoryName: repository-detectors-category
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/svarog.rsi
     layers:
