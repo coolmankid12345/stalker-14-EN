@@ -63,12 +63,16 @@
         - id: WristwatchGold
           prob: 0.005
         - id: STWeaponShotgunAnomalyToz34
-          prob: 0.02
+          prob: 0.01
         - id: STWeaponSMGVZ61
-          prob: 0.02
+          prob: 0.015
         - id: ClothingNeckBling
           prob: 0.02
-        - id: STWeaponShotgunSawedOfAnomaly
+        - id: STWeaponSMGMP40 #EN
+          prob: 0.02
+        - id: STWeaponSMGMP40ruust #EN
+          prob: 0.01
+        - id: WeaponStalkerPistolTec9 #EN
           prob: 0.02
         - id: SilverRingGem
           prob: 0.07
@@ -76,18 +80,18 @@
           prob: 0.5
         - id: ZoneArtifactBattery
           prob: 0.1
-        - id: ZoneArtifactBaloon
-          prob: 0.02
+        - id: ZoneArtifactKolobok #EN
+          prob: 0.01
         - id: Roubles2000
           prob: 0.2
         - id: Roubles5000
           prob: 0.05
         - id: DG05SmokeGrenade
           prob: 0.2
-        - id: IpritGrenadeStalker
-          prob: 0.2
         - id: RGD5Grenade
           prob: 0.1
+        - id: ClothingBeltSmuggler #EN
+          prob: 0.02
       sound:
         path: /Audio/Effects/unwrap.ogg
 

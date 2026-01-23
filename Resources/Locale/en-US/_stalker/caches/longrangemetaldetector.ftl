@@ -1,5 +1,5 @@
 ent-longrangemetaldetector = Long-range metal detector
-    .desc = Anomalous handheld metal detector, has been specifically modified to search for caches.
+    .desc = A metal detector that's been modified to detect hidden caches from a distance.
     .suffix = ST
 ent-longrangemetaldetectorBox = Cache box
     .desc = Cache Crate

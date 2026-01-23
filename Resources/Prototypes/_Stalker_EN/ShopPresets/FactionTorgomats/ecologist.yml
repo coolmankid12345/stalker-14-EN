@@ -287,6 +287,7 @@
         STZoneArtifactDetectorBushBlueprint: 3000
         STZoneArtifactDetectorResponseBlueprint: 6000
         STZoneArtifactDetectorSpruceBlueprint: 12000
+        DetectorVelesBlueprint: 10000
         STZoneArtifactDetectorBarracudaBlueprint: 18000
         STZoneArtifactDetectorBearBlueprint: 25000
         # STZoneArtifactDetectorWolfhoundBlueprint: 40000 Disabled for now

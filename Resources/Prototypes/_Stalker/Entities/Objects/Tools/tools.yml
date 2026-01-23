@@ -370,8 +370,8 @@
   id: AAAAStalkerLopata
   description: Для тайников
   components:
-    - type: StalkerShovel
-      canPlow: False
+#    - type: StalkerShovel
+#      canPlow: False
     - type: Tool
       qualities:
         - Pulsing
