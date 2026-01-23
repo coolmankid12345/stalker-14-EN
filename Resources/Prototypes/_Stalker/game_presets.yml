@@ -6,4 +6,5 @@
   description: game-preset-stalker-description
   rules:
     - STEmissionEventScheduler
+    - STWeatherScheduler
   supportedMaps: STDefaultMapPool
