@@ -27,7 +27,7 @@
       gradient: Linear
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: -0.3
+      idle: 0.2
       activated: 1
     - type: ZoneAnomaly
       detectedLevel: 1
@@ -85,7 +85,7 @@
       gradient: Linear
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: -0.3
+      idle: 0.2
       activated: 1
     - type: ZoneAnomaly
       detectedLevel: 2
