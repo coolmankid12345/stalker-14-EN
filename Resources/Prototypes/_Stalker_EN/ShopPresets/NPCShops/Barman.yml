@@ -373,6 +373,7 @@
         STElasticRubberRed: 50
         STElasticRubberGreen: 50
         STElasticRubberBlue: 50
+        AAAAStalkerLopata: 2000
 
     - name: shop-category-modules
       priority: 12

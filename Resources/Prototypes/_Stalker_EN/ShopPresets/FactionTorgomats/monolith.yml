@@ -1,0 +1,45 @@
+﻿# not actually a torg but whatevr
+- type: vendingMachineInventory
+  id: MonolithInventoryEN
+  startingInventory:
+    SetMonolithMarlyaBuyableCrate: 10
+    SetMonolithBalaklavaBuyableCrate: 10
+    SetMonolithGasBuyableCrate: 10
+    SetMonolithOldBuyableCrate: 10
+    ClothingOuterArmorSevaMonolith: 10
+    ClothingOuterCoatKevlarMonolith: 10
+    MonolithCrateMedkit: 10
+    STWeaponRifleAKS74Green: 10
+    STWeaponRifleAKS74UWhite: 10
+    STWeaponRifleL85: 10
+    STWeaponRifleLR300v1: 10
+    MonolithCrate545Mag30: 10
+    MonolithCrate545PC: 10
+    MonolithCrate556Mag30: 10
+    MonolithCrate556M855: 10
+    BoxZiptie: 10
+    ClothingHeatBagStalker: 10
+    Paper: 10
+    BloodyPaper: 10
+    Pen: 10
+    ClothingNeckScarfWhite: 10
+    MonolithInventoryRestockEN: 1
+    Screwdriver: 1
+
+- type: entity
+  parent: BaseItem
+  id: MonolithInventoryRestockEN
+  name: пополнительный ящик «Монолита»
+  description: Класть на склад.
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - MonolithInventoryEN
+  - type: STWeight
+    self: 47.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+    state: icon

@@ -37,3 +37,5 @@ ent-VendingMachineBoxesMonolith = Monolith Supply Crate Storage
     .suffix = ST
 ent-MonolithInventoryRestock = Monolith Restock Crate
     .desc = Place into storage.
+ent-MonolithInventoryRestockEN = Monolith Restock Crate
+    .desc = Place into storage.
