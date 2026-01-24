@@ -29,26 +29,40 @@ public sealed class WeatherSchedulerRuleSystem : GameRuleSystem<WeatherScheduler
         GameRuleComponent gameRule, float frameTime)
     {
         base.ActiveTick(uid, component, gameRule, frameTime);
+        var curTime = _timing.CurTime;
 
-        if (component.PauseDuringEmission && IsEmissionActive())
+        // Only check emission when close to weather change OR periodically during emission
+        if (component.PauseDuringEmission)
         {
-            component.WaitingForEmission = true;
-            return;
+            var shouldCheck = curTime >= component.NextEmissionCheckTime ||
+                              curTime >= component.NextWeatherChangeTime - TimeSpan.FromSeconds(5);
+
+            if (shouldCheck)
+            {
+                component.CachedEmissionActive = IsEmissionActive();
+                component.NextEmissionCheckTime = curTime + TimeSpan.FromSeconds(2);
+            }
+
+            if (component.CachedEmissionActive)
+            {
+                component.WaitingForEmission = true;
+                return;
+            }
         }
 
         if (component.WaitingForEmission)
         {
             component.WaitingForEmission = false;
-            component.NextWeatherChangeTime = _timing.CurTime + TimeSpan.FromSeconds(60);
+            component.NextWeatherChangeTime = curTime + TimeSpan.FromSeconds(60);
             return;
         }
 
-        if (_timing.CurTime < component.NextWeatherChangeTime)
+        if (curTime < component.NextWeatherChangeTime)
             return;
 
         ChangeWeather(component);
         var nextInterval = component.ChangeInterval.Next(_random);
-        component.NextWeatherChangeTime = _timing.CurTime + TimeSpan.FromSeconds(nextInterval);
+        component.NextWeatherChangeTime = curTime + TimeSpan.FromSeconds(nextInterval);
     }
 
     private void ChangeWeather(WeatherSchedulerRuleComponent component)
