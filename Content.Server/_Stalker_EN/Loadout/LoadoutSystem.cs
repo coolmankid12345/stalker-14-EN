@@ -18,6 +18,8 @@ using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+using EntityPrototype = Robust.Shared.Prototypes.EntityPrototype;
 
 namespace Content.Server._Stalker_EN.Loadout;
 
@@ -30,6 +32,7 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -301,6 +304,14 @@ public sealed class LoadoutSystem : EntitySystem
 
         if (forcedId >= 0)
             loadout.Id = forcedId;
+
+        // Debug logging for item count verification
+        _sawmill.Debug($"Loadout capture: {loadout.SlotItems.Count} slots, {loadout.HandItems.Count} hands");
+        foreach (var slot in loadout.SlotItems)
+            _sawmill.Debug($"  Slot [{slot.SlotName}]: {slot.PrototypeId} with {slot.NestedItems.Count} nested");
+        foreach (var hand in loadout.HandItems)
+            _sawmill.Debug($"  Hand: {hand.PrototypeId} with {hand.NestedItems.Count} nested");
+        _sawmill.Debug($"  Total count: {loadout.GetTotalItemCount()}");
 
         return loadout;
     }
@@ -833,7 +844,7 @@ public sealed class LoadoutSystem : EntitySystem
             var stashLookup = BuildStashLookup(component.ContainedItems);
             foreach (var loadout in loadouts)
             {
-                loadout.MissingCount = CalculateMissingCount(loadout, stashLookup);
+                CalculateMissingItems(loadout, stashLookup);
             }
 
             // Sort: Quick Save first, then by name
@@ -847,7 +858,7 @@ public sealed class LoadoutSystem : EntitySystem
         }
     }
 
-    private int CalculateMissingCount(PlayerLoadout loadout, Dictionary<string, RepositoryItemInfo> stashLookup)
+    private void CalculateMissingItems(PlayerLoadout loadout, Dictionary<string, RepositoryItemInfo> stashLookup)
     {
         // Create a copy of the lookup to track consumed items during count
         var tempLookup = new Dictionary<string, RepositoryItemInfo>();
@@ -862,35 +873,54 @@ public sealed class LoadoutSystem : EntitySystem
             };
         }
 
-        var missing = 0;
+        var missingItems = new List<MissingLoadoutItem>();
 
         foreach (var slotItem in loadout.SlotItems)
         {
             if (!TryConsumeFromLookup(slotItem.Identifier, slotItem.PrototypeId, tempLookup))
-                missing++;
-            missing += CountMissingNested(slotItem.NestedItems, tempLookup);
+            {
+                var name = GetPrototypeName(slotItem.PrototypeId);
+                missingItems.Add(new MissingLoadoutItem(name, slotItem.SlotName));
+            }
+            CollectMissingNested(slotItem.NestedItems, slotItem.SlotName, tempLookup, missingItems);
         }
 
         foreach (var handItem in loadout.HandItems)
         {
             if (!TryConsumeFromLookup(handItem.Identifier, handItem.PrototypeId, tempLookup))
-                missing++;
-            missing += CountMissingNested(handItem.NestedItems, tempLookup);
+            {
+                var name = GetPrototypeName(handItem.PrototypeId);
+                missingItems.Add(new MissingLoadoutItem(name, "hand"));
+            }
+            CollectMissingNested(handItem.NestedItems, "hand", tempLookup, missingItems);
         }
 
-        return missing;
+        loadout.MissingCount = missingItems.Count;
+        loadout.MissingItems = missingItems;
     }
 
-    private int CountMissingNested(List<LoadoutNestedItem> items, Dictionary<string, RepositoryItemInfo> lookup)
+    private void CollectMissingNested(
+        List<LoadoutNestedItem> items,
+        string parentLocation,
+        Dictionary<string, RepositoryItemInfo> lookup,
+        List<MissingLoadoutItem> missingItems)
     {
-        var missing = 0;
         foreach (var item in items)
         {
             if (!TryConsumeFromLookup(item.Identifier, item.PrototypeId, lookup))
-                missing++;
-            missing += CountMissingNested(item.NestedItems, lookup);
+            {
+                var name = GetPrototypeName(item.PrototypeId);
+                missingItems.Add(new MissingLoadoutItem(name, parentLocation));
+            }
+            CollectMissingNested(item.NestedItems, parentLocation, lookup, missingItems);
         }
-        return missing;
+    }
+
+    private string GetPrototypeName(string prototypeId)
+    {
+        if (_prototypeManager.TryIndex<EntityPrototype>(prototypeId, out var proto))
+            return proto.Name;
+        return prototypeId;
     }
 
     private bool TryConsumeFromLookup(string identifier, string prototypeId, Dictionary<string, RepositoryItemInfo> lookup)

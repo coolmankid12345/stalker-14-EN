@@ -40,6 +40,12 @@ public sealed class PlayerLoadout
     public int MissingCount { get; set; }
 
     /// <summary>
+    /// Details of missing items (names and locations).
+    /// Populated by server when sending state to client.
+    /// </summary>
+    public List<MissingLoadoutItem> MissingItems { get; set; } = new();
+
+    /// <summary>
     /// Gets the total count of items in this loadout (slots + hands + nested).
     /// </summary>
     public int GetTotalItemCount()

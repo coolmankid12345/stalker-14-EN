@@ -18,13 +18,21 @@ public sealed partial class LoadoutMenu : FancyWindow
 
     private List<PlayerLoadout> _loadouts = new();
     private string _searchFilter = "";
+    private PlayerLoadout? _selectedLoadout;
 
     public LoadoutMenu()
     {
         RobustXamlLoader.Load(this);
 
         QuickSaveButton.OnPressed += _ => OnQuickSave?.Invoke();
-        QuickLoadButton.OnPressed += _ => OnQuickLoad?.Invoke();
+        QuickLoadButton.OnPressed += _ =>
+        {
+            // Update preview to quick save loadout before loading
+            var quickSave = _loadouts.FirstOrDefault(l => l.Id == 0);
+            if (quickSave != null)
+                OnLoadoutSelected(quickSave);
+            OnQuickLoad?.Invoke();
+        };
 
         SearchEdit.OnTextChanged += OnSearchChanged;
 
@@ -55,6 +63,17 @@ public sealed partial class LoadoutMenu : FancyWindow
     {
         _loadouts = loadouts;
         RefreshLoadoutList();
+
+        // If we had a selected loadout, try to keep it selected
+        if (_selectedLoadout != null)
+        {
+            var stillExists = loadouts.FirstOrDefault(l => l.Id == _selectedLoadout.Id);
+            if (stillExists != null)
+            {
+                _selectedLoadout = stillExists;
+                PreviewPanel.UpdatePreview(_selectedLoadout);
+            }
+        }
     }
 
     private void OnSearchChanged(LineEdit.LineEditEventArgs args)
@@ -76,10 +95,17 @@ public sealed partial class LoadoutMenu : FancyWindow
             var control = new LoadoutItemControl(loadout);
             control.OnLoadPressed += id => OnLoad?.Invoke(id);
             control.OnDeletePressed += id => OnDelete?.Invoke(id);
+            control.OnSelected += OnLoadoutSelected;
             LoadoutList.AddChild(control);
         }
 
         UpdateQuickLoadButtonState();
+    }
+
+    private void OnLoadoutSelected(PlayerLoadout loadout)
+    {
+        _selectedLoadout = loadout;
+        PreviewPanel.UpdatePreview(loadout);
     }
 
     private void UpdateQuickLoadButtonState()

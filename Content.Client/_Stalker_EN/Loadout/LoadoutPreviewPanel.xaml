@@ -1,0 +1,12 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <PanelContainer VerticalExpand="True" MinWidth="160">
+        <PanelContainer.PanelOverride>
+            <gfx:StyleBoxFlat BorderThickness="1" BackgroundColor="#1A1A1A" BorderColor="#3A3A3A"/>
+        </PanelContainer.PanelOverride>
+        <BoxContainer Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8">
+            <BoxContainer Name="ViewBox" Orientation="Horizontal" HorizontalAlignment="Center" MinSize="128 128"/>
+            <Label Name="PreviewLabel" Text="{Loc loadout-preview-select}" HorizontalAlignment="Center" Margin="0 8 0 0" FontColorOverride="#888888"/>
+        </BoxContainer>
+    </PanelContainer>
+</Control>

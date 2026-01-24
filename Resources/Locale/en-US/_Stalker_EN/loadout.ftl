@@ -28,6 +28,10 @@ loadout-item-count = {$count} {$count ->
     *[other] items
 }
 loadout-missing-items = ({$count} missing)
+loadout-missing-details = Missing: {$items}
+
+# Preview panel
+loadout-preview-select = Select a loadout
 
 # Popup messages
 loadout-saved = Loadout saved

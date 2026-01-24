@@ -1,35 +1,42 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                      xmlns:loadout="clr-namespace:Content.Client._Stalker_EN.Loadout"
                       Title="{Loc loadout-window-title}"
-                      MinSize="320 400"
-                      SetSize="320 450">
-    <BoxContainer Orientation="Vertical" Margin="8" HorizontalExpand="True" VerticalExpand="True">
-        <!-- Quick Save/Load -->
-        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 0 0 8">
-            <Button Name="QuickSaveButton" Text="{Loc loadout-quick-save}" HorizontalExpand="True" Margin="0 0 4 0"/>
-            <Button Name="QuickLoadButton" Text="{Loc loadout-quick-load}" HorizontalExpand="True" Margin="4 0 0 0"/>
-        </BoxContainer>
+                      MinSize="500 400"
+                      SetSize="520 450">
+    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True" Margin="8">
+        <!-- Left: Character Preview -->
+        <loadout:LoadoutPreviewPanel Name="PreviewPanel" Margin="0 0 8 0"/>
 
-        <!-- Save New Loadout -->
-        <PanelContainer HorizontalExpand="True" Margin="0 0 0 8">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BorderThickness="1" BackgroundColor="#1A1A1A" BorderColor="#3A3A3A"/>
-            </PanelContainer.PanelOverride>
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="8">
-                <Label Text="{Loc loadout-save-section-title}" FontColorOverride="#AAAAAA" Margin="0 0 0 4"/>
-                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                    <LineEdit Name="LoadoutNameEdit" PlaceHolder="{Loc loadout-name-placeholder}" HorizontalExpand="True" Margin="0 0 8 0"/>
-                    <Button Name="SaveButton" Text="{Loc loadout-save-new}" MinWidth="80"/>
-                </BoxContainer>
+        <!-- Right: Loadout List Content -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+            <!-- Quick Save/Load -->
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 0 0 8">
+                <Button Name="QuickSaveButton" Text="{Loc loadout-quick-save}" HorizontalExpand="True" Margin="0 0 4 0"/>
+                <Button Name="QuickLoadButton" Text="{Loc loadout-quick-load}" HorizontalExpand="True" Margin="4 0 0 0"/>
             </BoxContainer>
-        </PanelContainer>
 
-        <!-- Loadout List -->
-        <Label Text="{Loc loadout-list-title}" FontColorOverride="#AAAAAA" Margin="0 0 0 4"/>
-        <LineEdit Name="SearchEdit" PlaceHolder="{Loc loadout-search-placeholder}" HorizontalExpand="True" Margin="0 0 0 5"/>
-        <ScrollContainer VerticalExpand="True" HorizontalExpand="True" HScrollEnabled="False">
-            <BoxContainer Name="LoadoutList" Orientation="Vertical" HorizontalExpand="True"/>
-        </ScrollContainer>
+            <!-- Save New Loadout -->
+            <PanelContainer HorizontalExpand="True" Margin="0 0 0 8">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BorderThickness="1" BackgroundColor="#1A1A1A" BorderColor="#3A3A3A"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="8">
+                    <Label Text="{Loc loadout-save-section-title}" FontColorOverride="#AAAAAA" Margin="0 0 0 4"/>
+                    <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                        <LineEdit Name="LoadoutNameEdit" PlaceHolder="{Loc loadout-name-placeholder}" HorizontalExpand="True" Margin="0 0 8 0"/>
+                        <Button Name="SaveButton" Text="{Loc loadout-save-new}" MinWidth="80"/>
+                    </BoxContainer>
+                </BoxContainer>
+            </PanelContainer>
+
+            <!-- Loadout List -->
+            <Label Text="{Loc loadout-list-title}" FontColorOverride="#AAAAAA" Margin="0 0 0 4"/>
+            <LineEdit Name="SearchEdit" PlaceHolder="{Loc loadout-search-placeholder}" HorizontalExpand="True" Margin="0 0 0 5"/>
+            <ScrollContainer VerticalExpand="True" HorizontalExpand="True" HScrollEnabled="False">
+                <BoxContainer Name="LoadoutList" Orientation="Vertical" HorizontalExpand="True"/>
+            </ScrollContainer>
+        </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>

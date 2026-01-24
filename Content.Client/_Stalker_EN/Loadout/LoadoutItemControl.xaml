@@ -5,18 +5,24 @@
         <PanelContainer.PanelOverride>
             <gfx:StyleBoxFlat BorderThickness="1" BackgroundColor="#1A1A1A" BorderColor="#3A3A3A"/>
         </PanelContainer.PanelOverride>
-        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="4">
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
-                <Label Name="LoadoutName" FontColorOverride="#DDDDDD"/>
-                <BoxContainer Orientation="Horizontal">
-                    <Label Name="LoadoutInfo" FontColorOverride="#888888"/>
-                    <Label Name="MissingLabel" FontColorOverride="#FF6B6B" Visible="False" Margin="8 0 0 0"/>
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="4">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
+                    <Label Name="LoadoutName" FontColorOverride="#DDDDDD"/>
+                    <BoxContainer Orientation="Horizontal">
+                        <Label Name="LoadoutInfo" FontColorOverride="#888888"/>
+                        <BoxContainer Orientation="Horizontal" Margin="8 0 0 0">
+                            <Label Name="MissingLabel" FontColorOverride="#FF6B6B" Visible="False"/>
+                            <Button Name="ToggleMissingDetails" Text="+" MinWidth="20" MinHeight="16" Visible="False" Margin="4 0 0 0" VerticalAlignment="Center"/>
+                        </BoxContainer>
+                    </BoxContainer>
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal" VerticalAlignment="Center" Margin="4 0 0 0">
+                    <Button Name="LoadButton" Text="Load" MinWidth="50" Margin="0 0 4 0"/>
+                    <Button Name="DeleteButton" Text="X" MinWidth="28" StyleClasses="ButtonColorRed"/>
                 </BoxContainer>
             </BoxContainer>
-            <BoxContainer Orientation="Horizontal" VerticalAlignment="Center" Margin="4 0 0 0">
-                <Button Name="LoadButton" Text="Load" MinWidth="50" Margin="0 0 4 0"/>
-                <Button Name="DeleteButton" Text="X" MinWidth="28" StyleClasses="ButtonColorRed"/>
-            </BoxContainer>
+            <Label Name="MissingDetails" FontColorOverride="#FF6B6B" Visible="False" Margin="8 0 0 0"/>
         </BoxContainer>
     </PanelContainer>
 </Control>
