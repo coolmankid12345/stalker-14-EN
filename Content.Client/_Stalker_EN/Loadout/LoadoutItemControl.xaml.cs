@@ -54,14 +54,25 @@ public sealed partial class LoadoutItemControl : Control
             MissingLabel.Visible = true;
             ToggleMissingDetails.Visible = true;
 
-            // Build the missing items detail string
-            var missingNames = loadout.MissingItems.Select(m => m.Name).ToList();
-            MissingDetails.Text = Loc.GetString("loadout-missing-details", ("items", string.Join(", ", missingNames)));
+            // Build the missing items list
+            MissingDetailsContainer.AddChild(new Label
+            {
+                Text = Loc.GetString("loadout-missing-header"),
+                FontColorOverride = Color.FromHex("#FF6B6B")
+            });
+            foreach (var item in loadout.MissingItems)
+            {
+                MissingDetailsContainer.AddChild(new Label
+                {
+                    Text = $"  - {item.Name}",
+                    FontColorOverride = Color.FromHex("#FF6B6B")
+                });
+            }
 
             ToggleMissingDetails.OnPressed += _ =>
             {
                 _detailsExpanded = !_detailsExpanded;
-                MissingDetails.Visible = _detailsExpanded;
+                MissingDetailsContainer.Visible = _detailsExpanded;
                 ToggleMissingDetails.Text = _detailsExpanded ? "-" : "+";
             };
         }

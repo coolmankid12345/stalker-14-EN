@@ -305,14 +305,6 @@ public sealed class LoadoutSystem : EntitySystem
         if (forcedId >= 0)
             loadout.Id = forcedId;
 
-        // Debug logging for item count verification
-        _sawmill.Debug($"Loadout capture: {loadout.SlotItems.Count} slots, {loadout.HandItems.Count} hands");
-        foreach (var slot in loadout.SlotItems)
-            _sawmill.Debug($"  Slot [{slot.SlotName}]: {slot.PrototypeId} with {slot.NestedItems.Count} nested");
-        foreach (var hand in loadout.HandItems)
-            _sawmill.Debug($"  Hand: {hand.PrototypeId} with {hand.NestedItems.Count} nested");
-        _sawmill.Debug($"  Total count: {loadout.GetTotalItemCount()}");
-
         return loadout;
     }
 

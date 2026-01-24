@@ -1,7 +1,7 @@
 <Control xmlns="https://spacestation14.io"
          xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
          HorizontalExpand="True">
-    <PanelContainer HorizontalExpand="True" Name="Panel">
+    <PanelContainer HorizontalExpand="True" Name="Panel" CanKeyboardFocus="True">
         <PanelContainer.PanelOverride>
             <gfx:StyleBoxFlat BorderThickness="1" BackgroundColor="#1A1A1A" BorderColor="#3A3A3A"/>
         </PanelContainer.PanelOverride>
@@ -22,7 +22,7 @@
                     <Button Name="DeleteButton" Text="X" MinWidth="28" StyleClasses="ButtonColorRed"/>
                 </BoxContainer>
             </BoxContainer>
-            <Label Name="MissingDetails" FontColorOverride="#FF6B6B" Visible="False" Margin="8 0 0 0"/>
+            <BoxContainer Name="MissingDetailsContainer" Orientation="Vertical" Visible="False" Margin="8 4 0 0"/>
         </BoxContainer>
     </PanelContainer>
 </Control>

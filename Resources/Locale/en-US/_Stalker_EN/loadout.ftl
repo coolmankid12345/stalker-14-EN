@@ -28,7 +28,7 @@ loadout-item-count = {$count} {$count ->
     *[other] items
 }
 loadout-missing-items = ({$count} missing)
-loadout-missing-details = Missing: {$items}
+loadout-missing-header = Missing:
 
 # Preview panel
 loadout-preview-select = Select a loadout
