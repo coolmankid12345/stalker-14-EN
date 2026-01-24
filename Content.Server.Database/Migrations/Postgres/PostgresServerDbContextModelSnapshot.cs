@@ -1317,6 +1317,10 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Loadouts")
+                        .HasColumnType("text")
+                        .HasColumnName("loadouts");
+
                     b.Property<string>("Login")
                         .IsRequired()
                         .HasColumnType("text")

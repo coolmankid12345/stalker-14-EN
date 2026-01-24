@@ -54,3 +54,37 @@
       interfaces:
         enum.StalkerRepositoryUiKey.Key:
           type: StalkerRepositoryBoundUserInterface
+
+# Example: Repository with custom loadout configuration
+# The StalkerLoadout component is OPTIONAL - defaults work when omitted
+#- type: entity
+#  parent: DebugRepository
+#  id: CustomLoadoutRepository
+#  suffix: Loadout Example
+#  components:
+#    - type: StalkerRepository
+#      maxWeight: 100
+#    # Loadout-specific configuration (optional)
+#    - type: StalkerLoadout
+#      # Slots excluded from loadout save/load (default: [id])
+#      slotBlacklist:
+#      - id
+#      - pocket1
+#      - pocket2
+#      # Containers to skip when capturing nested items (default: [toggleable-clothing, actions])
+#      containerBlacklist:
+#      - toggleable-clothing
+#      - actions
+#      - cell_slot
+#      # Entities matching these criteria are EXCLUDED from loadouts
+#      entityBlacklist:
+#        components:
+#        - Organ
+#        - InstantAction
+#        - SubdermalImplant
+#        - BodyPart
+#        - VirtualItem
+#        - MindContainer
+#        - Solution
+#        tags:
+#        - IgnoreLoadout

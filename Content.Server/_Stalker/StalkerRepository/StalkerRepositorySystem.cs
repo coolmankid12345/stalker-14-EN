@@ -36,6 +36,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using RepositoryEjectMessage = Content.Shared._Stalker.StalkerRepository.RepositoryEjectMessage;
 using Content.Server._Stalker.Sponsors.SponsorManager;
+using Content.Server._Stalker_EN.Loadout;
+using Content.Shared._Stalker_EN.Loadout;
 using Content.Shared.Verbs;
 
 namespace Content.Server._Stalker.StalkerRepository;
@@ -55,6 +57,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!; // for searching by ckey
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!; // for checks for whitelist
+    [Dependency] private readonly LoadoutSystem _loadoutSystem = default!; // for loadout state updates
     private ISawmill _sawmill = default!;
 
     // caching new records in database to get them later inside sponsors stuff
@@ -82,8 +85,19 @@ public sealed class StalkerRepositorySystem : EntitySystem
         SubscribeLocalEvent<StorageAfterRemoveItemEvent>(OnAfterRemove);
         SubscribeLocalEvent<StorageAfterInsertItemIntoLocationEvent>(OnAfterInsert);
 
+        // loadout operations - refresh UI after save/load
+        SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutOperationCompletedEvent>(OnLoadoutOperationCompleted);
 
         _sawmill = Logger.GetSawmill("repository");
+    }
+
+    private void OnLoadoutOperationCompleted(EntityUid uid, StalkerRepositoryComponent component, ref LoadoutOperationCompletedEvent args)
+    {
+        // First update repository UI (stash contents changed)
+        UpdateUiState(args.Actor, args.Repository, component);
+
+        // Then update loadout UI - must be LAST to not be overwritten by repository state
+        _loadoutSystem.SendLoadoutStateUpdate(args.Repository, component, args.Actor);
     }
 
     #endregion
@@ -172,7 +186,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
     private void OnDeselected(EntityUid uid, ItemComponent component, HandDeselectedEvent args)
     {
-        if(!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
@@ -186,6 +200,8 @@ public sealed class StalkerRepositorySystem : EntitySystem
         BeforeActivatableUIOpenEvent args)
     {
         UpdateUiState(args.User, uid, component);
+        // Note: Loadout state is sent on demand when user opens the loadout menu,
+        // not here, to avoid race conditions with the async database call.
     }
 
     private void UpdateUiState(EntityUid? user, EntityUid repository, StalkerRepositoryComponent? component = null)
@@ -257,6 +273,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
                 _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(msg.Actor):user} ejected {msg.Count} {msg.Item.Name} from repository");
                 _stalkerStorageSystem.SaveStorage(component);
                 UpdateUiState(msg.Actor, GetEntity(msg.Entity), component);
+                _loadoutSystem.SendLoadoutStateUpdate(GetEntity(msg.Entity), component, msg.Actor);
             }
         }
         finally
@@ -297,6 +314,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         _stalkerStorageSystem.SaveStorage(component);
         RaiseLocalEvent(msg.Actor, new RepositoryItemInjectedEvent(uid, msg.Item));
         UpdateUiState(msg.Actor, GetEntity(msg.Entity), component);
+        _loadoutSystem.SendLoadoutStateUpdate(uid, component, msg.Actor);
     }
 
     private void OnInteractUsing(EntityUid uid, StalkerRepositoryComponent component, InteractUsingEvent args)
@@ -318,6 +336,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(args.User):user} inserted 1 {Name(args.Used)} into repository");
         _stalkerStorageSystem.SaveStorage(component);
         RaiseLocalEvent(args.User, new RepositoryItemInjectedEvent(args.Target, itemInfo));
+        _loadoutSystem.SendLoadoutStateUpdate(uid, component, args.User);
 
         // Mark as handled BEFORE deletion - prevents interaction system from continuing with deleted entity
         args.Handled = true;

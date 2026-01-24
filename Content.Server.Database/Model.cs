@@ -1332,10 +1332,16 @@ namespace Content.Server.Database
         [Required]
         public string? Storage { get; set; }
 
-        public Stalker(string storage, string login)
+        /// <summary>
+        /// JSON-serialized loadouts data for the player.
+        /// </summary>
+        public string? Loadouts { get; set; }
+
+        public Stalker(string storage, string login, string? loadouts = null)
         {
             Storage = storage;
             Login = login;
+            Loadouts = loadouts;
         }
     }
 
