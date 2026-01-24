@@ -96,7 +96,7 @@ public sealed class LoadoutSystem : EntitySystem
 
         // Capture loadout metadata (items stay equipped - use Quick Store to move items to stash)
         var loadout = CaptureCurrentLoadout(msg.Actor, name, msg.IsQuickSave ? 0 : -1);
-        if (loadout == null || loadout.SlotItems.Count == 0 && loadout.HandItems.Count == 0)
+        if (loadout == null || loadout.SlotItems.Count == 0)
         {
             _popup.PopupEntity(Loc.GetString("loadout-empty"), msg.Actor, msg.Actor, PopupType.SmallCaution);
             return;
@@ -285,20 +285,12 @@ public sealed class LoadoutSystem : EntitySystem
         {
             while (enumerator.NextItem(out var item, out var slotDef))
             {
+                if (IsBlacklistedSlot(slotDef.Name))
+                    continue;
+
                 var slotItem = CaptureSlotItem(item, slotDef.Name);
                 if (slotItem != null)
                     loadout.SlotItems.Add(slotItem);
-            }
-        }
-
-        // Capture hand items
-        if (TryComp<HandsComponent>(player, out var hands))
-        {
-            foreach (var held in _hands.EnumerateHeld(player, hands))
-            {
-                var nestedItem = CaptureNestedItem(held, "hand", 0);
-                if (nestedItem != null)
-                    loadout.HandItems.Add(nestedItem);
             }
         }
 
@@ -440,13 +432,6 @@ public sealed class LoadoutSystem : EntitySystem
                 missingCount++;
         }
 
-        // Process hand items
-        foreach (var handItem in loadout.HandItems)
-        {
-            if (!TryEquipHandItem(player, repository, handItem, stashLookup))
-                missingCount++;
-        }
-
         return new LoadResult(true, missingCount);
     }
 
@@ -493,47 +478,6 @@ public sealed class LoadoutSystem : EntitySystem
 
         // Restore nested items
         RestoreNestedItems(spawned, slotItem.NestedItems, repository, stashLookup, 0);
-
-        return true;
-    }
-
-    private bool TryEquipHandItem(
-        EntityUid player,
-        Entity<StalkerRepositoryComponent> repository,
-        LoadoutNestedItem handItem,
-        Dictionary<string, RepositoryItemInfo> stashLookup)
-    {
-        // Find the item in stash
-        var stashItem = FindItemInStash(handItem.Identifier, handItem.PrototypeId, stashLookup);
-        if (stashItem == null)
-        {
-            _sawmill.Debug($"Hand item not found in stash: {handItem.PrototypeId} ({handItem.Identifier})");
-            return false;
-        }
-
-        // Remove item from stash
-        RemoveFromStash(repository, stashItem, stashLookup);
-
-        // Spawn the item
-        var xform = Transform(player);
-        var spawned = Spawn(stashItem.ProductEntity, xform.Coordinates);
-
-        // Restore item state
-        if (stashItem.SStorageData is IItemStalkerStorage iss)
-        {
-            _stalkerStorage.SpawnedItem(spawned, iss);
-        }
-
-        // Try to pick up the item
-        if (!_hands.TryPickup(player, spawned))
-        {
-            _sawmill.Warning($"Failed to pick up hand item {handItem.PrototypeId}");
-            QueueDel(spawned);
-            return false;
-        }
-
-        // Restore nested items
-        RestoreNestedItems(spawned, handItem.NestedItems, repository, stashLookup, 0);
 
         return true;
     }
@@ -622,7 +566,7 @@ public sealed class LoadoutSystem : EntitySystem
 
     /// <summary>
     /// Unequips all items from player and inserts them into the repository.
-    /// This includes inventory slots and hand items.
+    /// Excludes blacklisted slots (id) and hand items.
     /// </summary>
     private void MoveEquipmentToStash(EntityUid player, Entity<StalkerRepositoryComponent> repository)
     {
@@ -632,6 +576,9 @@ public sealed class LoadoutSystem : EntitySystem
         {
             while (enumerator.NextItem(out var item, out var slotDef))
             {
+                if (IsBlacklistedSlot(slotDef.Name))
+                    continue;
+
                 itemsToMove.Add((item, slotDef.Name));
             }
         }
@@ -642,19 +589,6 @@ public sealed class LoadoutSystem : EntitySystem
             if (_inventory.TryUnequip(player, slot, out var unequipped, true, true))
             {
                 InsertItemToStash(repository, unequipped.Value);
-            }
-        }
-
-        // Collect hand items to move
-        if (TryComp<HandsComponent>(player, out var hands))
-        {
-            var handItems = _hands.EnumerateHeld(player, hands).ToList();
-            foreach (var item in handItems)
-            {
-                if (_hands.TryDrop(player, item, handsComp: hands))
-                {
-                    InsertItemToStash(repository, item);
-                }
             }
         }
 
@@ -803,6 +737,13 @@ public sealed class LoadoutSystem : EntitySystem
         return containerName is "toggleable-clothing" or "actions";
     }
 
+    private static readonly HashSet<string> BlacklistedSlots = new() { "id" };
+
+    private static bool IsBlacklistedSlot(string slotName)
+    {
+        return BlacklistedSlots.Contains(slotName);
+    }
+
     private bool IsBlacklistedEntity(EntityUid item)
     {
         // Similar to StalkerRepositorySystem blacklist
@@ -875,16 +816,6 @@ public sealed class LoadoutSystem : EntitySystem
                 missingItems.Add(new MissingLoadoutItem(name, slotItem.SlotName));
             }
             CollectMissingNested(slotItem.NestedItems, slotItem.SlotName, tempLookup, missingItems);
-        }
-
-        foreach (var handItem in loadout.HandItems)
-        {
-            if (!TryConsumeFromLookup(handItem.Identifier, handItem.PrototypeId, tempLookup))
-            {
-                var name = GetPrototypeName(handItem.PrototypeId);
-                missingItems.Add(new MissingLoadoutItem(name, "hand"));
-            }
-            CollectMissingNested(handItem.NestedItems, "hand", tempLookup, missingItems);
         }
 
         loadout.MissingCount = missingItems.Count;
