@@ -153,6 +153,7 @@ public abstract class SharedWeatherSystem : EntitySystem
             return;
 
         var weatherComp = EnsureComp<WeatherComponent>(mapUid.Value);
+        var modified = false;
 
         foreach (var (eProto, weather) in weatherComp.Weather)
         {
@@ -167,7 +168,7 @@ public abstract class SharedWeatherSystem : EntitySystem
                 if (weather.State == WeatherState.Ending)
                     weather.State = WeatherState.Running;
 
-                Dirty(mapUid.Value, weatherComp);
+                modified = true;
                 continue;
             }
 
@@ -177,12 +178,15 @@ public abstract class SharedWeatherSystem : EntitySystem
             if (weather.EndTime == null || weather.EndTime > end)
             {
                 weather.EndTime = end;
-                Dirty(mapUid.Value, weatherComp);
+                modified = true;
             }
         }
 
         if (proto != null)
-            StartWeather(mapUid.Value, weatherComp, proto, endTime);
+            modified |= StartWeatherInternal(mapUid.Value, weatherComp, proto, endTime);
+
+        if (modified)
+            Dirty(mapUid.Value, weatherComp);
     }
 
     /// <summary>
@@ -192,17 +196,23 @@ public abstract class SharedWeatherSystem : EntitySystem
 
     protected void StartWeather(EntityUid uid, WeatherComponent component, WeatherPrototype weather, TimeSpan? endTime)
     {
-        if (component.Weather.ContainsKey(weather.ID))
-            return;
+        if (StartWeatherInternal(uid, component, weather, endTime))
+            Dirty(uid, component);
+    }
 
-        var data = new WeatherData()
+    private bool StartWeatherInternal(EntityUid uid, WeatherComponent component, WeatherPrototype weather, TimeSpan? endTime)
+    {
+        if (component.Weather.ContainsKey(weather.ID))
+            return false;
+
+        var data = new WeatherData
         {
             StartTime = Timing.CurTime,
             EndTime = endTime,
         };
 
         component.Weather.Add(weather.ID, data);
-        Dirty(uid, component);
+        return true;
     }
 
     protected virtual void EndWeather(EntityUid uid, WeatherComponent component, string proto)

@@ -41,4 +41,6 @@ public sealed partial class WeatherSchedulerRuleComponent : Component
     public TimeSpan NextWeatherChangeTime;
     public ProtoId<WeatherPrototype>? CurrentWeather;
     public bool WaitingForEmission;
+    public bool CachedEmissionActive;
+    public TimeSpan NextEmissionCheckTime;
 }
