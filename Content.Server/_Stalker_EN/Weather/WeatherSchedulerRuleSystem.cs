@@ -1,3 +1,5 @@
+using Content.Server._Stalker.Map;
+using Content.Server._Stalker.StationEvents.Components;
 using Content.Server._Stalker_EN.Emission;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
@@ -16,6 +18,7 @@ public sealed class WeatherSchedulerRuleSystem : GameRuleSystem<WeatherScheduler
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    [Dependency] private readonly STMapKeySystem _mapKey = default!;
 
     protected override void Started(EntityUid uid, WeatherSchedulerRuleComponent component,
         GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -67,21 +70,73 @@ public sealed class WeatherSchedulerRuleSystem : GameRuleSystem<WeatherScheduler
 
     private void ChangeWeather(WeatherSchedulerRuleComponent component)
     {
-        var selectedWeather = PickWeather(component);
-        var duration = component.WeatherDuration.Next(_random);
-        var endTime = _timing.CurTime + TimeSpan.FromSeconds(duration);
-
-        component.CurrentWeather = selectedWeather;
-
-        WeatherPrototype? weatherProto = null;
-        if (selectedWeather.HasValue)
-            weatherProto = _protoManager.Index(selectedWeather.Value);
+        var baseDuration = component.WeatherDuration.Next(_random);
 
         var query = EntityQueryEnumerator<MapComponent>();
-        while (query.MoveNext(out _, out var mapComp))
+        while (query.MoveNext(out var mapUid, out var mapComp))
         {
-            _weather.SetWeather(mapComp.MapId, weatherProto, endTime);
+            // Try to get STMapKey for this map
+            string? mapKey = null;
+            if (TryComp<STMapKeyComponent>(mapUid, out var keyComp))
+                mapKey = keyComp.Value;
+
+            // Check for per-map override
+            MapWeatherOverride? mapOverride = null;
+            if (mapKey != null && component.MapOverrides.TryGetValue(mapKey, out mapOverride))
+            {
+                if (!mapOverride.WeatherEnabled)
+                    continue; // Skip this map entirely
+            }
+
+            // Fallback: Skip safe zones (underground maps without STMapKey override)
+            if (mapOverride == null && HasComp<StalkerSafeZoneComponent>(mapUid))
+                continue;
+
+            // Pick weather using override pool or default
+            var weatherProto = PickWeatherForMap(component, mapOverride);
+
+            // Calculate duration with multiplier
+            var durationMultiplier = mapOverride?.WeatherDurationMultiplier ?? 1.0f;
+            var duration = TimeSpan.FromSeconds(baseDuration * durationMultiplier);
+            var endTime = _timing.CurTime + duration;
+
+            WeatherPrototype? proto = null;
+            if (weatherProto.HasValue)
+                proto = _protoManager.Index(weatherProto.Value);
+
+            _weather.SetWeather(mapComp.MapId, proto, endTime);
         }
+
+        // Update current weather (using default pool for tracking)
+        component.CurrentWeather = PickWeather(component);
+    }
+
+    private ProtoId<WeatherPrototype>? PickWeatherForMap(
+        WeatherSchedulerRuleComponent component,
+        MapWeatherOverride? mapOverride)
+    {
+        // Use override pool if available, otherwise default
+        var weatherPool = mapOverride?.WeatherPool ?? component.WeatherPool;
+        var clearWeight = mapOverride?.ClearWeatherWeight ?? component.ClearWeatherWeight;
+
+        var totalWeight = clearWeight;
+        foreach (var weight in weatherPool.Values)
+            totalWeight += weight;
+
+        var rand = _random.NextFloat() * totalWeight;
+        var accumulated = clearWeight;
+
+        if (rand < accumulated)
+            return null;
+
+        foreach (var (weatherId, weight) in weatherPool)
+        {
+            accumulated += weight;
+            if (rand < accumulated)
+                return weatherId;
+        }
+
+        return null;
     }
 
     private ProtoId<WeatherPrototype>? PickWeather(WeatherSchedulerRuleComponent component)

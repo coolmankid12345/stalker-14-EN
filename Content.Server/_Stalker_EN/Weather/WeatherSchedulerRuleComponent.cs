@@ -37,6 +37,13 @@ public sealed partial class WeatherSchedulerRuleComponent : Component
     [DataField]
     public bool PauseDuringEmission = true;
 
+    /// <summary>
+    /// Per-map weather overrides, keyed by STMapKey value.
+    /// Maps not listed use default pool.
+    /// </summary>
+    [DataField]
+    public Dictionary<string, MapWeatherOverride> MapOverrides = new();
+
     // Runtime state (not serialized)
     public TimeSpan NextWeatherChangeTime;
     public ProtoId<WeatherPrototype>? CurrentWeather;
