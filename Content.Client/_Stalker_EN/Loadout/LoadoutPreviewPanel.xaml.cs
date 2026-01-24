@@ -25,6 +25,8 @@ public sealed partial class LoadoutPreviewPanel : Control
     private HumanoidAppearanceSystem? _humanoid;
     private ClientInventorySystem? _inventory;
     private EntityUid? _previewDummy;
+    private Direction _previewRotation = Direction.South;
+    private SpriteView? _currentSpriteView;
 
     public LoadoutPreviewPanel()
     {
@@ -33,6 +35,20 @@ public sealed partial class LoadoutPreviewPanel : Control
 
         _humanoid = _entManager.System<HumanoidAppearanceSystem>();
         _inventory = _entManager.System<ClientInventorySystem>();
+
+        RotateLeftButton.OnPressed += _ => RotatePreview(clockwise: false);
+        RotateRightButton.OnPressed += _ => RotatePreview(clockwise: true);
+    }
+
+    private void RotatePreview(bool clockwise)
+    {
+        // Rotate through cardinal directions (South -> East -> North -> West)
+        _previewRotation = clockwise
+            ? (Direction)(((int)_previewRotation + 2) % 8)
+            : (Direction)(((int)_previewRotation + 6) % 8);
+
+        if (_currentSpriteView != null)
+            _currentSpriteView.OverrideDirection = _previewRotation;
     }
 
     public void UpdatePreview(PlayerLoadout? loadout)
@@ -80,13 +96,14 @@ public sealed partial class LoadoutPreviewPanel : Control
         ViewBox.DisposeAllChildren();
         var spriteView = new SpriteView
         {
-            OverrideDirection = Direction.South,
-            Scale = new Vector2(4f, 4f),
-            MaxSize = new Vector2(128, 128),
+            OverrideDirection = _previewRotation,
+            Scale = new Vector2(5.5f, 5.5f),
+            MaxSize = new Vector2(180, 180),
             Stretch = SpriteView.StretchMode.Fill,
         };
         spriteView.SetEntity(_previewDummy.Value);
         ViewBox.AddChild(spriteView);
+        _currentSpriteView = spriteView;
 
         PreviewLabel.Text = loadout.Name;
     }

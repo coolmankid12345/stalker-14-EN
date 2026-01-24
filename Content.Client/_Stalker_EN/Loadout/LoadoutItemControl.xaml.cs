@@ -77,20 +77,12 @@ public sealed partial class LoadoutItemControl : Control
             };
         }
 
+        PreviewButton.OnPressed += _ => OnSelected?.Invoke(loadout);
         LoadButton.OnPressed += _ =>
         {
             OnSelected?.Invoke(loadout);
             OnLoadPressed?.Invoke(loadout.Id);
         };
         DeleteButton.OnPressed += _ => OnDeletePressed?.Invoke(loadout.Id);
-
-        // Allow clicking anywhere on the panel to select (for preview)
-        Panel.OnKeyBindDown += args =>
-        {
-            if (args.Function == Robust.Shared.Input.EngineKeyFunctions.UIClick)
-            {
-                OnSelected?.Invoke(loadout);
-            }
-        };
     }
 }
