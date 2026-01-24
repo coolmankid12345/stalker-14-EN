@@ -15,6 +15,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.UserInterface;
+using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
@@ -33,12 +34,17 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     private ISawmill _sawmill = default!;
 
     private const int MaxRecursionDepth = 5;
     private const int MaxLoadoutNameLength = 32;
     private static readonly string[] ContainerFallbacks = { "storagebase", "storage" };
+
+    // Default blacklists (used when component is missing or field is null)
+    private static readonly HashSet<string> DefaultSlotBlacklist = new();
+    private static readonly HashSet<string> DefaultContainerBlacklist = new() { "toggleable-clothing", "actions" };
 
     public override void Initialize()
     {
@@ -95,7 +101,7 @@ public sealed class LoadoutSystem : EntitySystem
             name = name[..MaxLoadoutNameLength];
 
         // Capture loadout metadata (items stay equipped - use Quick Store to move items to stash)
-        var loadout = CaptureCurrentLoadout(msg.Actor, name, msg.IsQuickSave ? 0 : -1);
+        var loadout = CaptureCurrentLoadout(msg.Actor, uid, name, msg.IsQuickSave ? 0 : -1);
         if (loadout == null || loadout.SlotItems.Count == 0)
         {
             _popup.PopupEntity(Loc.GetString("loadout-empty"), msg.Actor, msg.Actor, PopupType.SmallCaution);
@@ -272,8 +278,10 @@ public sealed class LoadoutSystem : EntitySystem
     /// <summary>
     /// Captures the current equipment of a player as a loadout.
     /// </summary>
-    private PlayerLoadout? CaptureCurrentLoadout(EntityUid player, string name, int forcedId = -1)
+    private PlayerLoadout? CaptureCurrentLoadout(EntityUid player, EntityUid repository, string name, int forcedId = -1)
     {
+        TryComp<StalkerLoadoutComponent>(repository, out var loadoutComp);
+
         var loadout = new PlayerLoadout
         {
             Name = name,
@@ -285,10 +293,10 @@ public sealed class LoadoutSystem : EntitySystem
         {
             while (enumerator.NextItem(out var item, out var slotDef))
             {
-                if (IsBlacklistedSlot(slotDef.Name))
+                if (IsBlacklistedSlot(slotDef.Name, loadoutComp))
                     continue;
 
-                var slotItem = CaptureSlotItem(item, slotDef.Name);
+                var slotItem = CaptureSlotItem(item, slotDef.Name, loadoutComp);
                 if (slotItem != null)
                     loadout.SlotItems.Add(slotItem);
             }
@@ -300,7 +308,7 @@ public sealed class LoadoutSystem : EntitySystem
         return loadout;
     }
 
-    private LoadoutSlotItem? CaptureSlotItem(EntityUid item, string slotName)
+    private LoadoutSlotItem? CaptureSlotItem(EntityUid item, string slotName, StalkerLoadoutComponent? loadoutComp = null)
     {
         var meta = MetaData(item);
         if (meta.EntityPrototype == null)
@@ -324,12 +332,12 @@ public sealed class LoadoutSystem : EntitySystem
         {
             foreach (var container in containerMan.Containers)
             {
-                if (IsBlacklistedContainer(container.Key))
+                if (IsBlacklistedContainer(container.Key, loadoutComp))
                     continue;
 
                 foreach (var contained in container.Value.ContainedEntities)
                 {
-                    var nested = CaptureNestedItem(contained, container.Key, 1);
+                    var nested = CaptureNestedItem(contained, container.Key, 1, loadoutComp);
                     if (nested != null)
                         slotItem.NestedItems.Add(nested);
                 }
@@ -339,12 +347,12 @@ public sealed class LoadoutSystem : EntitySystem
         return slotItem;
     }
 
-    private LoadoutNestedItem? CaptureNestedItem(EntityUid item, string containerName, int depth)
+    private LoadoutNestedItem? CaptureNestedItem(EntityUid item, string containerName, int depth, StalkerLoadoutComponent? loadoutComp = null)
     {
         if (depth > MaxRecursionDepth)
             return null;
 
-        if (IsBlacklistedEntity(item))
+        if (IsBlacklistedEntity(item, loadoutComp))
             return null;
 
         var meta = MetaData(item);
@@ -369,12 +377,12 @@ public sealed class LoadoutSystem : EntitySystem
         {
             foreach (var container in containerMan.Containers)
             {
-                if (IsBlacklistedContainer(container.Key))
+                if (IsBlacklistedContainer(container.Key, loadoutComp))
                     continue;
 
                 foreach (var contained in container.Value.ContainedEntities)
                 {
-                    var nested = CaptureNestedItem(contained, container.Key, depth + 1);
+                    var nested = CaptureNestedItem(contained, container.Key, depth + 1, loadoutComp);
                     if (nested != null)
                         nestedItem.NestedItems.Add(nested);
                 }
@@ -570,13 +578,15 @@ public sealed class LoadoutSystem : EntitySystem
     /// </summary>
     private void MoveEquipmentToStash(EntityUid player, Entity<StalkerRepositoryComponent> repository)
     {
+        TryComp<StalkerLoadoutComponent>(repository, out var loadoutComp);
+
         // Collect inventory items to move (can't modify while iterating)
         var itemsToMove = new List<(EntityUid item, string slot)>();
         if (_inventory.TryGetContainerSlotEnumerator(player, out var enumerator))
         {
             while (enumerator.NextItem(out var item, out var slotDef))
             {
-                if (IsBlacklistedSlot(slotDef.Name))
+                if (IsBlacklistedSlot(slotDef.Name, loadoutComp))
                     continue;
 
                 itemsToMove.Add((item, slotDef.Name));
@@ -588,7 +598,7 @@ public sealed class LoadoutSystem : EntitySystem
         {
             if (_inventory.TryUnequip(player, slot, out var unequipped, true, true))
             {
-                InsertItemToStash(repository, unequipped.Value);
+                InsertItemToStash(repository, unequipped.Value, loadoutComp);
             }
         }
 
@@ -600,7 +610,7 @@ public sealed class LoadoutSystem : EntitySystem
     /// Inserts a single item (with nested contents) into the repository.
     /// Uses the repository's existing insert logic for proper handling of containers.
     /// </summary>
-    private void InsertItemToStash(Entity<StalkerRepositoryComponent> repository, EntityUid item)
+    private void InsertItemToStash(Entity<StalkerRepositoryComponent> repository, EntityUid item, StalkerLoadoutComponent? loadoutComp = null)
     {
         // Generate repository info using the repository system
         var info = GenerateRepositoryItemInfo(item);
@@ -623,18 +633,18 @@ public sealed class LoadoutSystem : EntitySystem
         {
             foreach (var container in containerMan.Containers)
             {
-                if (IsBlacklistedContainer(container.Key))
+                if (IsBlacklistedContainer(container.Key, loadoutComp))
                     continue;
 
                 // Copy the list to avoid modification during iteration
                 var containedEntities = container.Value.ContainedEntities.ToList();
                 foreach (var contained in containedEntities)
                 {
-                    if (IsBlacklistedEntity(contained))
+                    if (IsBlacklistedEntity(contained, loadoutComp))
                         continue;
 
                     // Recursively insert nested items
-                    InsertItemToStash(repository, contained);
+                    InsertItemToStash(repository, contained, loadoutComp);
                 }
             }
         }
@@ -732,21 +742,27 @@ public sealed class LoadoutSystem : EntitySystem
         };
     }
 
-    private bool IsBlacklistedContainer(string containerName)
+    private bool IsBlacklistedContainer(string containerName, StalkerLoadoutComponent? loadoutComp = null)
     {
-        return containerName is "toggleable-clothing" or "actions";
+        if (loadoutComp?.ContainerBlacklist != null)
+            return loadoutComp.ContainerBlacklist.Contains(containerName);
+        return DefaultContainerBlacklist.Contains(containerName);
     }
 
-    private static readonly HashSet<string> BlacklistedSlots = new() { "id" };
-
-    private static bool IsBlacklistedSlot(string slotName)
+    private bool IsBlacklistedSlot(string slotName, StalkerLoadoutComponent? loadoutComp = null)
     {
-        return BlacklistedSlots.Contains(slotName);
+        if (loadoutComp?.SlotBlacklist != null)
+            return loadoutComp.SlotBlacklist.Contains(slotName);
+        return DefaultSlotBlacklist.Contains(slotName);
     }
 
-    private bool IsBlacklistedEntity(EntityUid item)
+    private bool IsBlacklistedEntity(EntityUid item, StalkerLoadoutComponent? loadoutComp = null)
     {
-        // Similar to StalkerRepositorySystem blacklist
+        // Use custom blacklist if configured
+        if (loadoutComp?.EntityBlacklist != null)
+            return _whitelistSystem.IsWhitelistPass(loadoutComp.EntityBlacklist, item);
+
+        // Default component checks (similar to StalkerRepositorySystem)
         return HasComp<Content.Shared.Body.Organ.OrganComponent>(item) ||
                HasComp<Content.Shared.Actions.InstantActionComponent>(item) ||
                HasComp<Content.Shared.Actions.WorldTargetActionComponent>(item) ||

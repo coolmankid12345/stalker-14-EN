@@ -186,7 +186,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
     private void OnDeselected(EntityUid uid, ItemComponent component, HandDeselectedEvent args)
     {
-        if(!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
@@ -273,6 +273,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
                 _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(msg.Actor):user} ejected {msg.Count} {msg.Item.Name} from repository");
                 _stalkerStorageSystem.SaveStorage(component);
                 UpdateUiState(msg.Actor, GetEntity(msg.Entity), component);
+                _loadoutSystem.SendLoadoutStateUpdate(GetEntity(msg.Entity), component, msg.Actor);
             }
         }
         finally
@@ -313,6 +314,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         _stalkerStorageSystem.SaveStorage(component);
         RaiseLocalEvent(msg.Actor, new RepositoryItemInjectedEvent(uid, msg.Item));
         UpdateUiState(msg.Actor, GetEntity(msg.Entity), component);
+        _loadoutSystem.SendLoadoutStateUpdate(uid, component, msg.Actor);
     }
 
     private void OnInteractUsing(EntityUid uid, StalkerRepositoryComponent component, InteractUsingEvent args)
@@ -334,6 +336,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(args.User):user} inserted 1 {Name(args.Used)} into repository");
         _stalkerStorageSystem.SaveStorage(component);
         RaiseLocalEvent(args.User, new RepositoryItemInjectedEvent(args.Target, itemInfo));
+        _loadoutSystem.SendLoadoutStateUpdate(uid, component, args.User);
 
         // Mark as handled BEFORE deletion - prevents interaction system from continuing with deleted entity
         args.Handled = true;
