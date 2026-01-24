@@ -3,14 +3,14 @@
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                       xmlns:loadout="clr-namespace:Content.Client._Stalker_EN.Loadout"
                       Title="{Loc loadout-window-title}"
-                      MinSize="500 400"
-                      SetSize="520 450">
+                      MinSize="650 400"
+                      SetSize="700 500">
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True" Margin="8">
-        <!-- Left: Character Preview -->
-        <loadout:LoadoutPreviewPanel Name="PreviewPanel" Margin="0 0 8 0"/>
+        <!-- Left: Character Preview (1/3 width) -->
+        <loadout:LoadoutPreviewPanel Name="PreviewPanel" Margin="0 0 8 0" MinWidth="220" MaxWidth="240"/>
 
-        <!-- Right: Loadout List Content -->
-        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <!-- Right: Loadout List Content (2/3 width) -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" MinWidth="400">
             <!-- Quick Save/Load -->
             <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 0 0 8">
                 <Button Name="QuickSaveButton" Text="{Loc loadout-quick-save}" HorizontalExpand="True" Margin="0 0 4 0"/>

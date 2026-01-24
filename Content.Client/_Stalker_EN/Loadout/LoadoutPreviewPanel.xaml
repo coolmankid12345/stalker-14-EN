@@ -1,17 +1,22 @@
 <Control xmlns="https://spacestation14.io"
          xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
-    <PanelContainer VerticalExpand="True" MinWidth="200">
+    <PanelContainer VerticalExpand="True" HorizontalExpand="True">
         <PanelContainer.PanelOverride>
             <gfx:StyleBoxFlat BorderThickness="1" BackgroundColor="#1A1A1A" BorderColor="#3A3A3A"/>
         </PanelContainer.PanelOverride>
-        <BoxContainer Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8">
-            <BoxContainer Name="ViewBox" Orientation="Horizontal" HorizontalAlignment="Center" MinSize="180 180"/>
-            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0">
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" Margin="8">
+            <!-- Top: Loadout name label -->
+            <Label Name="PreviewLabel" Text="{Loc loadout-preview-select}" HorizontalAlignment="Center" Margin="0 0 0 8" FontColorOverride="#888888"/>
+
+            <!-- Center: Character preview (expands to fill space) -->
+            <BoxContainer Name="ViewBox" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalExpand="True" MinSize="180 180"/>
+
+            <!-- Bottom: Rotation controls -->
+            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 8 0 0">
                 <Button Name="RotateLeftButton" Text="◀" MinWidth="32"/>
                 <Control MinWidth="8"/>
                 <Button Name="RotateRightButton" Text="▶" MinWidth="32"/>
             </BoxContainer>
-            <Label Name="PreviewLabel" Text="{Loc loadout-preview-select}" HorizontalAlignment="Center" Margin="0 4 0 0" FontColorOverride="#888888"/>
         </BoxContainer>
     </PanelContainer>
 </Control>
