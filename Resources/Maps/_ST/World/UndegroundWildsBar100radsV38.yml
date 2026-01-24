@@ -44,6 +44,8 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: StalkerSafeZone
+    - type: STMapKey
+      value: UndergroundWildsBar
     - type: NoPausing
     - type: MapGrid
       chunks:

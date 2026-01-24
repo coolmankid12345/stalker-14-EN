@@ -3,6 +3,7 @@
   parent: BaseGameRule
   components:
   - type: WeatherSchedulerRule
+    # Default pool for maps without overrides
     weatherPool:
       Rain: 3.0
       Storm: 1.0
@@ -18,3 +19,50 @@
       min: 300
       max: 900
     pauseDuringEmission: true
+
+    # Per-map overrides using STMapKey values
+    # Maps without STMapKey that have StalkerSafeZoneComponent are auto-skipped
+    mapOverrides:
+      # Red Forest - Dense forest, high radiation, ominous atmosphere
+      RedForest:
+        weatherPool:
+          STFogHeavy: 4.0
+          STFogLight: 3.0
+          Rain: 2.0
+          Storm: 1.0
+        clearWeatherWeight: 2.0
+
+      # Svalka (Garbage) - Junkyard area, more fog
+      Svalka:
+        weatherPool:
+          STFogLight: 3.0
+          STFogHeavy: 2.0
+          Rain: 2.0
+          Storm: 0.5
+        clearWeatherWeight: 3.0
+
+      # Dark Valley - Industrial valley, foggy and rainy
+      TemnajDolina:
+        weatherPool:
+          STFogLight: 3.0
+          STFogHeavy: 2.5
+          Rain: 3.0
+          Storm: 1.5
+        clearWeatherWeight: 2.5
+
+      # TemnajLohina - Dark hollow/ravine, very foggy
+      TemnajLohina:
+        weatherPool:
+          STFogHeavy: 4.0
+          STFogLight: 3.0
+          Rain: 1.5
+        clearWeatherWeight: 2.0
+
+      # Topi (Marshes) - Swampy area, lots of rain and fog
+      Topi:
+        weatherPool:
+          Rain: 4.0
+          STFogLight: 3.0
+          STFogHeavy: 2.0
+          Storm: 1.0
+        clearWeatherWeight: 2.0

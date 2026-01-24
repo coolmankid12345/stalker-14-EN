@@ -49,6 +49,8 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
+    - type: STMapKey
+      value: MBase
     - type: Biome
       forcedMarkerLayers: []
       markerLayers: []

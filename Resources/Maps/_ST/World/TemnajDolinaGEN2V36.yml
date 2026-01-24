@@ -66,6 +66,8 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
+    - type: STMapKey
+      value: TemnajDolina
     - type: MapGrid
       chunks:
         4,5:
