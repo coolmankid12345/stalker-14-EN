@@ -84,7 +84,8 @@ public sealed class ChatUIController : UIController
         {SharedChatSystem.EmotesAltPrefix, ChatSelectChannel.Emotes},
         {SharedChatSystem.AdminPrefix, ChatSelectChannel.Admin},
         {SharedChatSystem.RadioCommonPrefix, ChatSelectChannel.Radio},
-        {SharedChatSystem.DeadPrefix, ChatSelectChannel.Dead}
+        {SharedChatSystem.DeadPrefix, ChatSelectChannel.Dead},
+        {SharedChatSystem.NarrationPrefix, ChatSelectChannel.Narration}
     };
 
     public static readonly Dictionary<ChatSelectChannel, char> ChannelPrefixes = new()
@@ -97,7 +98,8 @@ public sealed class ChatUIController : UIController
         {ChatSelectChannel.Emotes, SharedChatSystem.EmotesPrefix},
         {ChatSelectChannel.Admin, SharedChatSystem.AdminPrefix},
         {ChatSelectChannel.Radio, SharedChatSystem.RadioCommonPrefix},
-        {ChatSelectChannel.Dead, SharedChatSystem.DeadPrefix}
+        {ChatSelectChannel.Dead, SharedChatSystem.DeadPrefix},
+        {ChatSelectChannel.Narration, SharedChatSystem.NarrationPrefix}
     };
 
     /// <summary>
@@ -525,12 +527,13 @@ public sealed class ChatUIController : UIController
 
         if (_state.CurrentState is GameplayStateBase)
         {
-            // can always hear local / radio / emote / notifications when in the game
+            // can always hear local / radio / emote / notifications / narration when in the game
             FilterableChannels |= ChatChannel.Local;
             FilterableChannels |= ChatChannel.Whisper;
             FilterableChannels |= ChatChannel.Radio;
             FilterableChannels |= ChatChannel.Emotes;
             FilterableChannels |= ChatChannel.Notifications;
+            FilterableChannels |= ChatChannel.Narration;
 
             // Can only send local / radio / emote when attached to a non-ghost entity.
             // TODO: this logic is iffy (checking if controlling something that's NOT a ghost), is there a better way to check this?
@@ -557,6 +560,12 @@ public sealed class ChatUIController : UIController
             FilterableChannels |= ChatChannel.AdminAlert;
             FilterableChannels |= ChatChannel.AdminChat;
             CanSendChannels |= ChatSelectChannel.Admin;
+        }
+
+        // only admins with Fun flag can send narration
+        if (_admin.HasFlag(AdminFlags.Fun))
+        {
+            CanSendChannels |= ChatSelectChannel.Narration;
         }
 
         SelectableChannels = CanSendChannels;

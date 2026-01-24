@@ -77,6 +77,10 @@ internal sealed class ChatManager : IChatManager
                 _consoleHost.ExecuteCommand($"whisper \"{CommandParsing.Escape(str)}\"");
                 break;
 
+            case ChatSelectChannel.Narration:
+                _consoleHost.ExecuteCommand($"narrate \"{CommandParsing.Escape(str)}\"");
+                break;
+
             default:
                 throw new ArgumentOutOfRangeException(nameof(channel), channel, null);
         }
