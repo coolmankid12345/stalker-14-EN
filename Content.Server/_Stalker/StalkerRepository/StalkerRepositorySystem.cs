@@ -36,6 +36,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using RepositoryEjectMessage = Content.Shared._Stalker.StalkerRepository.RepositoryEjectMessage;
 using Content.Server._Stalker.Sponsors.SponsorManager;
+using Content.Server._Stalker_EN.Loadout;
+using Content.Shared._Stalker_EN.Loadout;
 using Content.Shared.Verbs;
 
 namespace Content.Server._Stalker.StalkerRepository;
@@ -55,6 +57,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!; // for searching by ckey
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!; // for checks for whitelist
+    [Dependency] private readonly LoadoutSystem _loadoutSystem = default!; // for loadout state updates
     private ISawmill _sawmill = default!;
 
     // caching new records in database to get them later inside sponsors stuff
@@ -82,8 +85,19 @@ public sealed class StalkerRepositorySystem : EntitySystem
         SubscribeLocalEvent<StorageAfterRemoveItemEvent>(OnAfterRemove);
         SubscribeLocalEvent<StorageAfterInsertItemIntoLocationEvent>(OnAfterInsert);
 
+        // loadout operations - refresh UI after save/load
+        SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutOperationCompletedEvent>(OnLoadoutOperationCompleted);
 
         _sawmill = Logger.GetSawmill("repository");
+    }
+
+    private void OnLoadoutOperationCompleted(EntityUid uid, StalkerRepositoryComponent component, ref LoadoutOperationCompletedEvent args)
+    {
+        // First update repository UI (stash contents changed)
+        UpdateUiState(args.Actor, args.Repository, component);
+
+        // Then update loadout UI - must be LAST to not be overwritten by repository state
+        _loadoutSystem.SendLoadoutStateUpdate(args.Repository, component, args.Actor);
     }
 
     #endregion
@@ -186,6 +200,8 @@ public sealed class StalkerRepositorySystem : EntitySystem
         BeforeActivatableUIOpenEvent args)
     {
         UpdateUiState(args.User, uid, component);
+        // Note: Loadout state is sent on demand when user opens the loadout menu,
+        // not here, to avoid race conditions with the async database call.
     }
 
     private void UpdateUiState(EntityUid? user, EntityUid repository, StalkerRepositoryComponent? component = null)

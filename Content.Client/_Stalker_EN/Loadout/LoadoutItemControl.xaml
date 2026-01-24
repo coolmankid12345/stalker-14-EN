@@ -1,0 +1,22 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+         HorizontalExpand="True">
+    <PanelContainer HorizontalExpand="True" Name="Panel">
+        <PanelContainer.PanelOverride>
+            <gfx:StyleBoxFlat BorderThickness="1" BackgroundColor="#1A1A1A" BorderColor="#3A3A3A"/>
+        </PanelContainer.PanelOverride>
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="4">
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
+                <Label Name="LoadoutName" FontColorOverride="#DDDDDD"/>
+                <BoxContainer Orientation="Horizontal">
+                    <Label Name="LoadoutInfo" FontColorOverride="#888888"/>
+                    <Label Name="MissingLabel" FontColorOverride="#FF6B6B" Visible="False" Margin="8 0 0 0"/>
+                </BoxContainer>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" VerticalAlignment="Center" Margin="4 0 0 0">
+                <Button Name="LoadButton" Text="Load" MinWidth="50" Margin="0 0 4 0"/>
+                <Button Name="DeleteButton" Text="X" MinWidth="28" StyleClasses="ButtonColorRed"/>
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+</Control>
