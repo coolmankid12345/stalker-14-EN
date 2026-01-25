@@ -46,3 +46,4 @@ loadout-load-failed = Could not load loadout
 loadout-empty = Nothing to save - no equipment
 loadout-name-required = Enter a name for the loadout
 loadout-not-found = Loadout not found
+loadout-stash-full = Stash is full
