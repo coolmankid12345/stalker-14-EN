@@ -1,9 +1,11 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._RMC14.CCVar;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Audio;
+using Content.Shared.Camera;
 using Content.Shared.CombatMode;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
@@ -25,11 +27,13 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
@@ -47,6 +51,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] protected readonly IPrototypeManager ProtoManager = default!;
     [Dependency] protected readonly IRobustRandom Random = default!;
     [Dependency] protected readonly ISharedAdminLogManager Logs = default!;
+    [Dependency] private   readonly IConfigurationManager _config = default!;
     [Dependency] protected readonly DamageableSystem Damageable = default!;
     [Dependency] protected readonly ExamineSystemShared Examine = default!;
     [Dependency] private   readonly SharedHandsSystem _hands = default!;
@@ -55,6 +60,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] protected readonly SharedActionsSystem Actions = default!;
     [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
+    [Dependency] private   readonly SharedCameraRecoilSystem _recoil = default!;
     [Dependency] private   readonly SharedCombatModeSystem _combatMode = default!;
     [Dependency] protected readonly SharedContainerSystem Containers = default!;
     [Dependency] protected readonly SharedPointLightSystem Lights = default!;
@@ -76,8 +82,12 @@ public abstract partial class SharedGunSystem : EntitySystem
     protected const string FireRateExamineColor = "yellow";
     public const string ModeExamineColor = "cyan";
 
+    public bool GunPrediction { get; private set; }
+
     public override void Initialize()
     {
+        Subs.CVar(_config, RMCCVars.RMCGunPrediction, v => GunPrediction = v, true);
+
         SubscribeAllEvent<RequestShootEvent>(OnShootRequest);
         SubscribeAllEvent<RequestStopShootEvent>(OnStopShootRequest);
         SubscribeLocalEvent<GunComponent, MeleeHitEvent>(OnGunMelee);
@@ -228,6 +238,186 @@ public abstract partial class SharedGunSystem : EntitySystem
         var result = AttemptShoot(gunUid, gunUid, gun);
         gun.ShotCounter = 0;
         return result;
+    }
+
+    /// <summary>
+    /// Prediction-compatible AttemptShoot overload that returns spawned projectile EntityUids.
+    /// Used by the gun prediction system for client-side prediction.
+    /// </summary>
+    public List<EntityUid>? AttemptShoot(
+        EntityUid user,
+        EntityUid gunUid,
+        GunComponent gun,
+        List<int>? predictedProjectiles,
+        ICommonSession? userSession)
+    {
+        var result = AttemptShoot(user, gunUid, gun, predictedProjectiles, userSession, out var projectiles);
+        gun.ShotCounter = 0;
+        DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
+        return result ? projectiles : null;
+    }
+
+    private bool AttemptShoot(
+        EntityUid user,
+        EntityUid gunUid,
+        GunComponent gun,
+        List<int>? predictedProjectiles,
+        ICommonSession? userSession,
+        out List<EntityUid> shotProjectiles)
+    {
+        shotProjectiles = new List<EntityUid>();
+
+        if (gun.FireRateModified <= 0f ||
+            !_actionBlockerSystem.CanAttack(user))
+        {
+            return false;
+        }
+
+        var toCoordinates = gun.ShootCoordinates;
+
+        if (toCoordinates == null)
+            return false;
+
+        var curTime = Timing.CurTime;
+
+        // check if anything wants to prevent shooting
+        var prevention = new ShotAttemptedEvent
+        {
+            User = user,
+            Used = (gunUid, gun)
+        };
+        RaiseLocalEvent(gunUid, ref prevention, true); // stalker-changes
+        if (prevention.Cancelled)
+            return false;
+
+        RaiseLocalEvent(user, ref prevention);
+        if (prevention.Cancelled)
+            return false;
+
+        // Need to do this to play the clicking sound for empty automatic weapons
+        // but not play anything for burst fire.
+        if (gun.NextFire > curTime)
+            return false;
+
+        var fireRate = TimeSpan.FromSeconds(1f / gun.FireRateModified);
+
+        if (gun.SelectedMode == SelectiveFire.Burst || gun.BurstActivated)
+            fireRate = TimeSpan.FromSeconds(1f / gun.BurstFireRate);
+
+        // First shot
+        if (gun.NextFire < curTime - fireRate || gun.ShotCounter == 0 && gun.NextFire < curTime)
+            gun.NextFire = curTime;
+
+        var shots = 0;
+        var lastFire = gun.NextFire;
+
+        while (gun.NextFire <= curTime)
+        {
+            gun.NextFire += fireRate;
+            shots++;
+        }
+
+        DirtyField(gunUid, gun, nameof(GunComponent.NextFire));
+
+        if (!gun.BurstActivated)
+        {
+            switch (gun.SelectedMode)
+            {
+                case SelectiveFire.SemiAuto:
+                    shots = Math.Min(shots, 1 - gun.ShotCounter);
+                    break;
+                case SelectiveFire.Burst:
+                    shots = Math.Min(shots, gun.ShotsPerBurstModified - gun.ShotCounter);
+                    break;
+                case SelectiveFire.FullAuto:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException($"No implemented shooting behavior for {gun.SelectedMode}!");
+            }
+        }
+        else
+        {
+            shots = Math.Min(shots, gun.ShotsPerBurstModified - gun.ShotCounter);
+        }
+
+        var attemptEv = new AttemptShootEvent(user, null);
+        RaiseLocalEvent(gunUid, ref attemptEv);
+
+        if (attemptEv.Cancelled)
+        {
+            if (attemptEv.Message != null)
+            {
+                PopupSystem.PopupClient(attemptEv.Message, gunUid, user);
+            }
+            gun.BurstActivated = false;
+            gun.BurstShotsCount = 0;
+            gun.NextFire = TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.NextFire.TotalSeconds));
+            return false;
+        }
+
+        var fromCoordinates = Transform(user).Coordinates;
+        var ev = new TakeAmmoEvent(shots, new List<(EntityUid? Entity, IShootable Shootable)>(), fromCoordinates, user);
+
+        if (shots > 0)
+            RaiseLocalEvent(gunUid, ev);
+
+        DebugTools.Assert(ev.Ammo.Count <= shots);
+        DebugTools.Assert(shots >= 0);
+        UpdateAmmoCount(gunUid);
+
+        gun.ShotCounter += shots;
+        DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
+
+        if (ev.Ammo.Count <= 0)
+        {
+            var emptyGunShotEvent = new OnEmptyGunShotEvent(user);
+            RaiseLocalEvent(gunUid, ref emptyGunShotEvent);
+
+            gun.BurstActivated = false;
+            gun.BurstShotsCount = 0;
+            gun.NextFire += TimeSpan.FromSeconds(gun.BurstCooldown);
+
+            if (shots > 0)
+            {
+                PopupSystem.PopupCursor(ev.Reason ?? Loc.GetString("gun-magazine-fired-empty"));
+                gun.NextFire = TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.NextFire.TotalSeconds));
+                Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
+                return false;
+            }
+
+            return false;
+        }
+
+        // Handle burstfire
+        if (gun.SelectedMode == SelectiveFire.Burst)
+        {
+            gun.BurstActivated = true;
+        }
+        if (gun.BurstActivated)
+        {
+            gun.BurstShotsCount += shots;
+            if (gun.BurstShotsCount >= gun.ShotsPerBurstModified)
+            {
+                gun.NextFire += TimeSpan.FromSeconds(gun.BurstCooldown);
+                gun.BurstActivated = false;
+                gun.BurstShotsCount = 0;
+            }
+        }
+
+        // Shoot with prediction support
+        shotProjectiles = Shoot(gunUid, gun, ev.Ammo, fromCoordinates, toCoordinates.Value, out var userImpulse, user, throwItems: attemptEv.ThrowItems, predictedProjectiles, userSession);
+        var shotEv = new GunShotEvent(user, ev.Ammo);
+        RaiseLocalEvent(gunUid, ref shotEv);
+
+        if (!userImpulse || !TryComp<PhysicsComponent>(user, out var userPhysics))
+            return true;
+
+        var shooterEv = new ShooterImpulseEvent();
+        RaiseLocalEvent(user, ref shooterEv);
+
+        if (shooterEv.Push)
+            CauseImpulse(fromCoordinates, toCoordinates.Value, user, userPhysics);
+        return true;
     }
 
     private bool AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun)
@@ -423,7 +613,30 @@ public abstract partial class SharedGunSystem : EntitySystem
         EntityUid? user = null,
         bool throwItems = false);
 
-    public void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = 20f)
+    /// <summary>
+    /// Prediction-compatible Shoot overload that returns spawned projectile EntityUids.
+    /// Default implementation calls the abstract Shoot and returns empty list.
+    /// Override in client/server for proper prediction support.
+    /// </summary>
+    public virtual List<EntityUid> Shoot(
+        EntityUid gunUid,
+        GunComponent gun,
+        List<(EntityUid? Entity, IShootable Shootable)> ammo,
+        EntityCoordinates fromCoordinates,
+        EntityCoordinates toCoordinates,
+        out bool userImpulse,
+        EntityUid? user = null,
+        bool throwItems = false,
+        List<int>? predictedProjectiles = null,
+        ICommonSession? userSession = null)
+    {
+        // Default implementation: call abstract Shoot, return empty list
+        // Client/Server override this for proper prediction behavior
+        Shoot(gunUid, gun, ammo, fromCoordinates, toCoordinates, out userImpulse, user, throwItems);
+        return new List<EntityUid>();
+    }
+
+    public virtual void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = 20f)
     {
         var physics = EnsureComp<PhysicsComponent>(uid);
         Physics.SetBodyStatus(uid, physics, BodyStatus.InAir);

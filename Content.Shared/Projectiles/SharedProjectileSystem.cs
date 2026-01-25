@@ -211,6 +211,34 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         Dirty(id, component);
     }
 
+    /// <summary>
+    /// Handles projectile collision with a target entity.
+    /// Used by the gun prediction system to simulate collisions.
+    /// Override in server for full damage handling.
+    /// </summary>
+    public virtual void ProjectileCollide(Entity<ProjectileComponent, PhysicsComponent> projectile, EntityUid target, bool predicted = false)
+    {
+        var component = projectile.Comp1;
+
+        if (component.ProjectileSpent || component is { Weapon: null, OnlyCollideWhenShot: true })
+            return;
+
+        // Check for reflection
+        var attemptEv = new ProjectileReflectAttemptEvent(projectile, component, false);
+        RaiseLocalEvent(target, ref attemptEv);
+        if (attemptEv.Cancelled)
+        {
+            SetShooter(projectile, component, target);
+            return;
+        }
+
+        // Mark projectile as spent
+        component.ProjectileSpent = true;
+
+        if (component.DeleteOnCollide)
+            PredictedQueueDel(projectile);
+    }
+
     #region Stalker-EN-Changes: Thrown knives fixes
     /// <summary>
     /// Imp port : Unembeds all child entities on a given entity.
