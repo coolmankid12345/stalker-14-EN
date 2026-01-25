@@ -764,19 +764,18 @@ public sealed class LoadoutSystem : EntitySystem
         if (loadoutComp?.EntityBlacklist != null)
             return _whitelistSystem.IsWhitelistPass(loadoutComp.EntityBlacklist, item);
 
-        // Default component checks - aligned with StalkerRepositorySystem
+        // Default component checks
+        // Note: CartridgeComponent intentionally NOT blacklisted - we want to track bullets in loadouts
         return HasComp<Content.Shared.Body.Organ.OrganComponent>(item) ||
                HasComp<Content.Shared.Actions.InstantActionComponent>(item) ||
                HasComp<Content.Shared.Actions.WorldTargetActionComponent>(item) ||
                HasComp<Content.Shared.Actions.EntityTargetActionComponent>(item) ||
                HasComp<Content.Shared.Implants.Components.SubdermalImplantComponent>(item) ||
                HasComp<Content.Shared.Body.Part.BodyPartComponent>(item) ||
-               // CartridgeComponent with Dogtag exception (from InsertToRepositoryRecursively line 729)
-               (HasComp<Content.Shared.CartridgeLoader.CartridgeComponent>(item) && !_tags.HasTag(item, "Dogtag")) ||
                HasComp<Content.Shared.Inventory.VirtualItem.VirtualItemComponent>(item) ||
                HasComp<Content.Shared.Mind.Components.MindContainerComponent>(item) ||
                HasComp<Content.Shared.Chemistry.Components.SolutionComponent>(item) ||
-               // Unremovable components (from StalkerRepositorySystem lines 661-662, 731-732)
+               // Unremovable components
                HasComp<Content.Shared.Interaction.Components.UnremoveableComponent>(item) ||
                HasComp<Content.Shared.Clothing.Components.SelfUnremovableClothingComponent>(item);
     }
@@ -814,9 +813,9 @@ public sealed class LoadoutSystem : EntitySystem
     }
 
     /// <summary>
-    /// Calculates missing items for a loadout with hierarchical nesting.
-    /// Key insight: If a parent item is missing from stash, ALL nested items are also missing.
-    /// If the parent IS found in stash, nested items are inside it (not missing).
+    /// Calculates missing items for a loadout by checking each item against the stash.
+    /// Note: Nested items are stored as separate stash entries, not physically inside parents.
+    /// Each item (parent or nested) must be checked individually.
     /// </summary>
     private void CalculateMissingItems(PlayerLoadout loadout, Dictionary<string, RepositoryItemInfo> stashLookup)
     {
@@ -825,9 +824,11 @@ public sealed class LoadoutSystem : EntitySystem
 
         foreach (var slotItem in loadout.SlotItems)
         {
-            if (!TryConsumeFromLookup(slotItem.Identifier, slotItem.PrototypeId, tempLookup))
+            var parentMissing = !TryConsumeFromLookup(slotItem.Identifier, slotItem.PrototypeId, tempLookup);
+
+            if (parentMissing)
             {
-                // Parent is missing - ALL nested items are also missing
+                // Parent is missing - add it, then check which nested items are also missing
                 var missing = new MissingLoadoutItem
                 {
                     Name = GetPrototypeName(slotItem.PrototypeId),
@@ -835,11 +836,15 @@ public sealed class LoadoutSystem : EntitySystem
                     Count = 1
                 };
 
-                // Recursively add all nested items as children
-                CollectAllNestedAsMissing(slotItem.NestedItems, missing.Children);
+                // Only add nested items as children if they're ALSO missing from stash
+                CollectMissingNestedItems(slotItem.NestedItems, tempLookup, missing.Children);
                 missingItems.Add(missing);
             }
-            // NOTE: If parent IS found, nested items are inside it - NOT missing
+            else
+            {
+                // Parent found - but nested items are stored separately, check them too
+                CollectMissingNestedItems(slotItem.NestedItems, tempLookup, missingItems);
+            }
         }
 
         loadout.MissingItems = GroupMissingItems(missingItems);
@@ -847,21 +852,37 @@ public sealed class LoadoutSystem : EntitySystem
     }
 
     /// <summary>
-    /// Recursively collects ALL nested items as missing children.
+    /// Recursively checks nested items against the stash lookup.
+    /// Only adds items that are actually missing from the stash.
     /// </summary>
-    private void CollectAllNestedAsMissing(List<LoadoutNestedItem> items, List<MissingLoadoutItem> target)
+    private void CollectMissingNestedItems(
+        List<LoadoutNestedItem> items,
+        Dictionary<string, RepositoryItemInfo> lookup,
+        List<MissingLoadoutItem> target)
     {
         foreach (var item in items)
         {
-            var missing = new MissingLoadoutItem
-            {
-                Name = GetPrototypeName(item.PrototypeId),
-                Location = item.ContainerName,
-                Count = 1
-            };
+            var itemMissing = !TryConsumeFromLookup(item.Identifier, item.PrototypeId, lookup);
 
-            CollectAllNestedAsMissing(item.NestedItems, missing.Children);
-            target.Add(missing);
+            if (itemMissing)
+            {
+                // This nested item is missing from stash
+                var missing = new MissingLoadoutItem
+                {
+                    Name = GetPrototypeName(item.PrototypeId),
+                    Location = item.ContainerName,
+                    Count = 1
+                };
+
+                // Recursively check its children (only add if also missing)
+                CollectMissingNestedItems(item.NestedItems, lookup, missing.Children);
+                target.Add(missing);
+            }
+            else
+            {
+                // Item found in stash - still check its nested items
+                CollectMissingNestedItems(item.NestedItems, lookup, target);
+            }
         }
     }
 
