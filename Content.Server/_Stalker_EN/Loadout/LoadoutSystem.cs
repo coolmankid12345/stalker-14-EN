@@ -73,7 +73,6 @@ public sealed class LoadoutSystem : EntitySystem
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutDeleteMessage>(OnDeleteMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutRenameMessage>(OnRenameMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutRequestMessage>(OnRequestMessage);
-        SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutQuickStoreMessage>(OnQuickStoreMessage);
     }
 
     #region Message Handlers
@@ -273,64 +272,6 @@ public sealed class LoadoutSystem : EntitySystem
             return;
 
         SendLoadoutStateUpdate(uid, component, msg.Actor);
-    }
-
-    private void OnQuickStoreMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutQuickStoreMessage msg)
-    {
-        if (msg.Actor == null)
-            return;
-
-        TryComp<StalkerLoadoutComponent>(uid, out var loadoutComp);
-
-        // Collect inventory items to move (can't modify while iterating)
-        var itemsToMove = new List<(EntityUid item, string slot)>();
-        if (_inventory.TryGetContainerSlotEnumerator(msg.Actor, out var enumerator))
-        {
-            while (enumerator.NextItem(out var item, out var slotDef))
-            {
-                if (IsBlacklistedSlot(slotDef.Name, loadoutComp))
-                    continue;
-
-                // Pre-validate - skip items that can't be stored
-                if (!_repositorySystem.CanStoreItem((uid, component), item))
-                    continue;
-
-                itemsToMove.Add((item, slotDef.Name));
-            }
-        }
-
-        var storedCount = 0;
-        foreach (var (item, slot) in itemsToMove)
-        {
-            // Unequip from slot first
-            if (!_inventory.TryUnequip(msg.Actor, slot, out var unequipped, true, true))
-                continue;
-
-            // Use repository system's proven insertion logic
-            if (_repositorySystem.InsertEquippedItem(msg.Actor, (uid, component), unequipped.Value))
-            {
-                storedCount++;
-            }
-            else
-            {
-                // Weight limit reached - re-equip the item
-                _inventory.TryEquip(msg.Actor, unequipped.Value, slot, true, true);
-                _popup.PopupEntity(Loc.GetString("loadout-stash-full"), msg.Actor, msg.Actor, PopupType.SmallCaution);
-                break;
-            }
-        }
-
-        if (storedCount > 0)
-        {
-            _popup.PopupEntity(Loc.GetString("loadout-items-stored"), msg.Actor, msg.Actor, PopupType.Small);
-        }
-
-        // Save repository state
-        _stalkerStorage.SaveStorage(component);
-
-        // Refresh stash UI
-        var ev = new LoadoutOperationCompletedEvent(msg.Actor, uid);
-        RaiseLocalEvent(uid, ref ev);
     }
 
     #endregion
@@ -754,8 +695,15 @@ public sealed class LoadoutSystem : EntitySystem
     private bool IsBlacklistedSlot(string slotName, StalkerLoadoutComponent? loadoutComp = null)
     {
         if (loadoutComp?.SlotBlacklist != null)
-            return loadoutComp.SlotBlacklist.Contains(slotName);
-        return DefaultSlotBlacklist.Contains(slotName);
+        {
+            var result = loadoutComp.SlotBlacklist.Contains(slotName);
+            _sawmill.Debug($"IsBlacklistedSlot: '{slotName}' custom check = {result}");
+            return result;
+        }
+
+        var defaultResult = DefaultSlotBlacklist.Contains(slotName);
+        _sawmill.Debug($"IsBlacklistedSlot: '{slotName}' default check = {defaultResult}");
+        return defaultResult;
     }
 
     private bool IsBlacklistedEntity(EntityUid item, StalkerLoadoutComponent? loadoutComp = null)

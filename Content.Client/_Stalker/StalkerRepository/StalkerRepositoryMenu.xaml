@@ -35,10 +35,9 @@
             </BoxContainer>
         </BoxContainer>
 
-        <!-- Loadouts and Quick Store Buttons -->
+        <!-- Loadouts Button -->
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="4 4 4 4">
             <Control HorizontalExpand="True"/>
-            <Button Name="QuickStoreButton" Text="{Loc 'loadout-quick-store'}" MinWidth="120" Margin="0 0 8 0"/>
             <Button Name="OpenLoadoutsButton" Text="{Loc 'loadout-open-button'}" MinWidth="120"/>
         </BoxContainer>
     </BoxContainer>

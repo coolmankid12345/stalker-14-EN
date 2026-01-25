@@ -11,10 +11,9 @@ loadout-open-button = Loadouts (Beta)
 loadout-save-section-title = Save New Loadout
 loadout-list-title = Saved Loadouts
 
-# Quick save/load/store buttons
+# Quick save/load buttons
 loadout-quick-save = Quick Save
 loadout-quick-load = Quick Load
-loadout-quick-store = Quick Store (Beta)
 
 # Warnings
 loadout-beta-warning = This feature is in beta. There is a possibility of losing items.

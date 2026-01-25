@@ -45,12 +45,6 @@ public sealed class StalkerRepositoryBoundUserInterface : BoundUserInterface
 
         // Loadout button handler - opens separate window
         _menu.OpenLoadoutsPressed += OpenLoadoutMenu;
-
-        // Quick Store button deposits all equipped items to stash
-        _menu.QuickStorePressed += () =>
-        {
-            SendMessage(new LoadoutQuickStoreMessage());
-        };
     }
 
     private void OpenLoadoutMenu()
@@ -117,10 +111,6 @@ public sealed class StalkerRepositoryBoundUserInterface : BoundUserInterface
                 SendMessage(new RepositoryEjectMessage(item, count));
             };
             _menu.OpenLoadoutsPressed += OpenLoadoutMenu;
-            _menu.QuickStorePressed += () =>
-            {
-                SendMessage(new LoadoutQuickStoreMessage());
-            };
         }
 
         if (!_menu.IsOpen)

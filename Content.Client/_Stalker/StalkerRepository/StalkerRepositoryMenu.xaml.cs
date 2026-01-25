@@ -25,7 +25,6 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
     public event Action<RepositoryItemInfo, int>? RepositoryButtonPutPressed;
     public event Action<RepositoryItemInfo, int>? RepositoryButtonGetPressed;
     public event Action? OpenLoadoutsPressed;
-    public event Action? QuickStorePressed;
 
     private (string, int) _currentCategory;
     private List<RepositoryItemInfo>? _curItems;
@@ -56,9 +55,6 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
 
         // Loadout button opens separate window
         OpenLoadoutsButton.OnPressed += _ => OpenLoadoutsPressed?.Invoke();
-
-        // Quick Store button deposits all equipped items to stash
-        QuickStoreButton.OnPressed += _ => QuickStorePressed?.Invoke();
     }
 
     private void OnTextChanged(LineEdit.LineEditEventArgs args)
