@@ -36,6 +36,9 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: Loadout
+          prototypes: [ DolgGear ]
+          roleLoadout: [ StalkerDolg ]
 
 - type: job
   id: StalkerHeadDolg
@@ -77,6 +80,9 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: Loadout
+          prototypes: [ DolgGear ]
+          roleLoadout: [ StalkerHeadDolg ]
 
 - type: startingGear
   id: DolgGear
@@ -86,7 +92,7 @@
     shoes: STClothingShoesBootsCombatFilled
     torso: ClothingTorsoTurtlenecksDolgCamouflage
     back: ClothingBackpackDuffelBlackStalker
-    
+
 - type: stBand
   id: STDolgBand
   name: Dolg

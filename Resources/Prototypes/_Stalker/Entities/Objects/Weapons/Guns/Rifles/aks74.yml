@@ -165,6 +165,7 @@
   parent: STBaseWeaponRifleAKS74
   id: STWeaponRifleZastavaM92
   name: Zastava M92
+  suffix: ST, Кастомка
   description: Yugoslav and Serbian assault rifle. Variant of the Zastava M85 assault rifle chambered for the 7.62 × 39 mm cartridge. It has a recoil capacitor, a PS-2 sight, and a handle.
   components:
   - type: STWeight
@@ -284,6 +285,7 @@
   parent: STWeaponRifleStalkerAK12
   id: STWeaponRifleAM17
   name: AM-17
+  suffix: ST, Кастомка
   description: Russian compact assault rifle developed by the Kalashnikov Concern. This rifle was created to replace the AKS-74U assault rifles in special forces of the Russian Armed Forces and the Ministry of Internal Affairs.
   components:
   - type: Gun

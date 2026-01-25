@@ -75,6 +75,9 @@
       - type: NpcFactionMember
         factions:
         - Sci
+      - type: Loadout
+        prototypes: [ SciGear ]
+        roleLoadout: [ sci ]
 
 - type: job
   id: sci_decan
@@ -114,6 +117,9 @@
       - type: NpcFactionMember
         factions:
         - Sci
+      - type: Loadout
+        prototypes: [ SciGear2 ]
+        roleLoadout: [ sci_decan ]
 
 - type: job
   id: sci_rector
@@ -153,6 +159,9 @@
         - type: NpcFactionMember
           factions:
           - Sci
+        - type: Loadout
+          prototypes: [ SciGear3 ]
+          roleLoadout: [ sci_rector ]
 
 - type: startingGear
   id: SciGear

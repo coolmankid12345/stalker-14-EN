@@ -1,0 +1,159 @@
+# Сталкеры
+- type: roleLoadout
+  id: StalkerLoadout
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STOuterClothingStalkerGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+
+- type: roleLoadout
+  id: StalkerVeteran
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STOuterClothingStalkerGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+
+- type: roleLoadout
+  id: StalkerGuide
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STOuterClothingStalkerGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+
+# Бандиты
+- type: roleLoadout
+  id: StalkerBandit
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingBandit
+
+- type: roleLoadout
+  id: StalkerHeadBandit
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingBandit
+
+# Долг
+- type: roleLoadout
+  id: StalkerDolg
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingDolg
+
+- type: roleLoadout
+  id: StalkerHeadDolg
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingDolg
+
+# Свобода
+- type: roleLoadout
+  id: StalkerFreedom
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingFreedom
+
+- type: roleLoadout
+  id: StalkerHeadFreedom
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingFreedom
+
+# Ученые
+- type: roleLoadout
+  id: sci
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingSci
+
+- type: roleLoadout
+  id: sci_decan
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingSci
+
+- type: roleLoadout
+  id: sci_rector
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingSci
+
+# Серафимы
+- type: roleLoadout
+  id: Seraphim
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingSeraphims
+
+- type: roleLoadout
+  id: SeraphimHead
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingSeraphims
+
+- type: roleLoadout
+  id: SeraphimCherubim
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingSeraphims
+
+# Чистое небо
+- type: roleLoadout
+  id: StalkerClearSky
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingStalkerClearSky
+
+- type: roleLoadout
+  id: StalkerClearSkyHead
+  groups:
+  - STTrinketsGroup
+  - STBackpackGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STOuterClothingStalkerClearSky

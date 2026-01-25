@@ -38,6 +38,9 @@
           factions:
           - BandsUnion
           - Bandit
+        - type: Loadout
+          prototypes: [ BandGear ]
+          roleLoadout: [ StalkerBandit ]
 
 - type: job
   id: StalkerHeadBandit
@@ -79,6 +82,9 @@
           factions:
           - BandsUnion
           - Bandit
+        - type: Loadout
+          prototypes: [ BandHeadGear ]
+          roleLoadout: [ StalkerHeadBandit ]
 
 - type: startingGear
   id: BandGear

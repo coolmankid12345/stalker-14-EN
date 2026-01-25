@@ -57,3 +57,6 @@
         teethCount: 3
         initialTeeth: 3
       - type: STAnomalyTipsViewing
+      - type: Loadout
+        prototypes: [ StalkerGear ]
+        roleLoadout: [ StalkerGuide ]
