@@ -44,7 +44,7 @@ public sealed class LoadoutSystem : EntitySystem
     private static readonly string[] ContainerFallbacks = { "storagebase", "storage" };
 
     // Default blacklists (used when component is missing or field is null)
-    private static readonly HashSet<string> DefaultSlotBlacklist = new();
+    private static readonly HashSet<string> DefaultSlotBlacklist = new() { "id" };
     private static readonly HashSet<string> DefaultContainerBlacklist = new() { "toggleable-clothing", "actions" };
 
     public override void Initialize()
