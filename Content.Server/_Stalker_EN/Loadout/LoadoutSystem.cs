@@ -819,17 +819,12 @@ public sealed class LoadoutSystem : EntitySystem
     private void ReturnSpawnedItemToStash(
         EntityUid spawned,
         Entity<StalkerRepositoryComponent> repository,
-        Dictionary<string, RepositoryItemInfo> stashLookup,
+        StashLookup stashLookup,
         EntityUid player,
         string itemName)
     {
-        var info = GenerateRepositoryItemInfo(spawned);
-        if (info != null)
+        if (_repositorySystem.InsertEquippedItem(player, repository, spawned))
         {
-            InsertToRepository(repository, info);
-            stashLookup.TryAdd(info.Identifier, info);
-            stashLookup.TryAdd($"proto:{info.ProductEntity}", info);
-            QueueDel(spawned);
             _sawmill.Info($"Returned {itemName} to stash after insertion failure");
         }
         else
