@@ -43,6 +43,9 @@ public sealed class LoadoutSystem : EntitySystem
 
     private ISawmill _sawmill = default!;
 
+    // Concurrent operation protection - prevents same actor from running multiple loadout operations simultaneously
+    private readonly HashSet<EntityUid> _currentlyProcessingLoadouts = new();
+
     private const int MaxRecursionDepth = 5;
     private const int MaxLoadoutNameLength = 32;
     // Gun-specific containers first, then general storage as fallback
@@ -96,6 +99,22 @@ public sealed class LoadoutSystem : EntitySystem
 
     private async void OnSaveMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutSaveMessage msg)
     {
+        if (msg.Actor == null || _currentlyProcessingLoadouts.Contains(msg.Actor))
+            return;
+
+        _currentlyProcessingLoadouts.Add(msg.Actor);
+        try
+        {
+            await ProcessSaveMessage(uid, component, msg);
+        }
+        finally
+        {
+            _currentlyProcessingLoadouts.Remove(msg.Actor);
+        }
+    }
+
+    private async Task ProcessSaveMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutSaveMessage msg)
+    {
         if (msg.Actor == null)
             return;
 
@@ -138,6 +157,22 @@ public sealed class LoadoutSystem : EntitySystem
     }
 
     private async void OnLoadMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutLoadMessage msg)
+    {
+        if (msg.Actor == null || _currentlyProcessingLoadouts.Contains(msg.Actor))
+            return;
+
+        _currentlyProcessingLoadouts.Add(msg.Actor);
+        try
+        {
+            await ProcessLoadMessage(uid, component, msg);
+        }
+        finally
+        {
+            _currentlyProcessingLoadouts.Remove(msg.Actor);
+        }
+    }
+
+    private async Task ProcessLoadMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutLoadMessage msg)
     {
         if (msg.Actor == null)
             return;
@@ -200,6 +235,22 @@ public sealed class LoadoutSystem : EntitySystem
 
     private async void OnDeleteMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutDeleteMessage msg)
     {
+        if (msg.Actor == null || _currentlyProcessingLoadouts.Contains(msg.Actor))
+            return;
+
+        _currentlyProcessingLoadouts.Add(msg.Actor);
+        try
+        {
+            await ProcessDeleteMessage(uid, component, msg);
+        }
+        finally
+        {
+            _currentlyProcessingLoadouts.Remove(msg.Actor);
+        }
+    }
+
+    private async Task ProcessDeleteMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutDeleteMessage msg)
+    {
         if (msg.Actor == null)
             return;
 
@@ -230,6 +281,22 @@ public sealed class LoadoutSystem : EntitySystem
     }
 
     private async void OnRenameMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutRenameMessage msg)
+    {
+        if (msg.Actor == null || _currentlyProcessingLoadouts.Contains(msg.Actor))
+            return;
+
+        _currentlyProcessingLoadouts.Add(msg.Actor);
+        try
+        {
+            await ProcessRenameMessage(uid, component, msg);
+        }
+        finally
+        {
+            _currentlyProcessingLoadouts.Remove(msg.Actor);
+        }
+    }
+
+    private async Task ProcessRenameMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutRenameMessage msg)
     {
         if (msg.Actor == null)
             return;
@@ -511,7 +578,7 @@ public sealed class LoadoutSystem : EntitySystem
             return;
 
         // Check for ItemSlotsComponent (used by guns for magazine/chamber slots)
-        var hasItemSlots = HasComp<ItemSlotsComponent>(parent);
+        TryComp<ItemSlotsComponent>(parent, out var itemSlotsComp);
 
         foreach (var nestedItem in nestedItems)
         {
@@ -523,19 +590,24 @@ public sealed class LoadoutSystem : EntitySystem
                 continue;
             }
 
-            // Find container - try multiple methods
+            // Find container and ItemSlot (if applicable) - try multiple methods
             BaseContainer? container = null;
+            ItemSlot? itemSlot = null;
+            string? foundSlotId = null;
 
-            // Method 1: Direct container lookup
-            containerMan.Containers.TryGetValue(nestedItem.ContainerName, out container);
-
-            // Method 2: Try ItemSlots if available (for gun_magazine, gun_chamber, etc.)
-            if (container == null && hasItemSlots)
+            // Method 1: Try ItemSlots first (for gun_magazine, gun_chamber, etc.)
+            // This is preferred because it allows proper whitelist/blacklist validation
+            if (itemSlotsComp != null && _itemSlots.TryGetSlot(parent, nestedItem.ContainerName, out var slot) && slot.ContainerSlot != null)
             {
-                if (_itemSlots.TryGetSlot(parent, nestedItem.ContainerName, out var slot) && slot.ContainerSlot != null)
-                {
-                    container = slot.ContainerSlot;
-                }
+                container = slot.ContainerSlot;
+                itemSlot = slot;
+                foundSlotId = nestedItem.ContainerName;
+            }
+
+            // Method 2: Direct container lookup (if not an ItemSlot)
+            if (container == null)
+            {
+                containerMan.Containers.TryGetValue(nestedItem.ContainerName, out container);
             }
 
             // Method 3: Try fallbacks
@@ -543,15 +615,18 @@ public sealed class LoadoutSystem : EntitySystem
             {
                 foreach (var fallback in ContainerFallbacks)
                 {
+                    // Try ItemSlots for fallbacks first
+                    if (itemSlotsComp != null && _itemSlots.TryGetSlot(parent, fallback, out var fallbackSlot) && fallbackSlot.ContainerSlot != null)
+                    {
+                        container = fallbackSlot.ContainerSlot;
+                        itemSlot = fallbackSlot;
+                        foundSlotId = fallback;
+                        break;
+                    }
+                    // Then try regular containers
                     if (containerMan.Containers.TryGetValue(fallback, out var fallbackContainer))
                     {
                         container = fallbackContainer;
-                        break;
-                    }
-                    // Also try ItemSlots for fallbacks
-                    if (hasItemSlots && _itemSlots.TryGetSlot(parent, fallback, out var fallbackSlot) && fallbackSlot.ContainerSlot != null)
-                    {
-                        container = fallbackSlot.ContainerSlot;
                         break;
                     }
                 }
@@ -562,7 +637,19 @@ public sealed class LoadoutSystem : EntitySystem
             {
                 var lowerName = nestedItem.ContainerName.ToLower();
                 if (lowerName != nestedItem.ContainerName)
-                    containerMan.Containers.TryGetValue(lowerName, out container);
+                {
+                    // Try ItemSlot first
+                    if (itemSlotsComp != null && _itemSlots.TryGetSlot(parent, lowerName, out var lowerSlot) && lowerSlot.ContainerSlot != null)
+                    {
+                        container = lowerSlot.ContainerSlot;
+                        itemSlot = lowerSlot;
+                        foundSlotId = lowerName;
+                    }
+                    else
+                    {
+                        containerMan.Containers.TryGetValue(lowerName, out container);
+                    }
+                }
             }
 
             if (container == null)
@@ -571,11 +658,11 @@ public sealed class LoadoutSystem : EntitySystem
                 continue;
             }
 
-            // Clear any existing item in the container (e.g., gun's default magazine from startingItem)
+            // Track existing item for potential removal (but don't remove yet!)
+            EntityUid? existingItem = null;
             if (container is ContainerSlot containerSlot && containerSlot.ContainedEntity is { } existing)
             {
-                _container.Remove(existing, container, reparent: false, force: true);
-                QueueDel(existing);
+                existingItem = existing;
             }
 
             // Remove item from stash AFTER confirming container exists
@@ -591,12 +678,55 @@ public sealed class LoadoutSystem : EntitySystem
                 _stalkerStorage.SpawnedItem(spawned, iss);
             }
 
-            // Insert into container
-            if (!_container.Insert(spawned, container))
+            // Insert into container - use ItemSlots validation if available
+            bool inserted;
+            if (itemSlot != null && foundSlotId != null)
+            {
+                // Use ItemSlotsSystem.TryInsert which validates whitelist/blacklist/locked status
+                // First, temporarily remove existing item if present (required for TryInsert to work)
+                if (existingItem.HasValue)
+                {
+                    _container.Remove(existingItem.Value, container, reparent: false, force: true);
+                }
+
+                inserted = _itemSlots.TryInsert(parent, foundSlotId, spawned, null, itemSlotsComp);
+
+                if (!inserted && existingItem.HasValue)
+                {
+                    // Restore the existing item since insertion failed
+                    _container.Insert(existingItem.Value, container);
+                    existingItem = null; // Don't delete it
+                }
+            }
+            else
+            {
+                // For non-ItemSlot containers, remove existing first then insert
+                if (existingItem.HasValue)
+                {
+                    _container.Remove(existingItem.Value, container, reparent: false, force: true);
+                }
+
+                inserted = _container.Insert(spawned, container);
+
+                if (!inserted && existingItem.HasValue)
+                {
+                    // Restore the existing item since insertion failed
+                    _container.Insert(existingItem.Value, container);
+                    existingItem = null; // Don't delete it
+                }
+            }
+
+            if (!inserted)
             {
                 _sawmill.Warning($"Failed to insert {nestedItem.PrototypeId} into container {nestedItem.ContainerName}");
                 QueueDel(spawned);
                 continue;
+            }
+
+            // Only delete the existing item AFTER successful insertion
+            if (existingItem.HasValue)
+            {
+                QueueDel(existingItem.Value);
             }
 
             // Recursively restore nested items
