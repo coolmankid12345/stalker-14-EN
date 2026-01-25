@@ -1,3 +1,4 @@
+using Content.Shared._Stalker.Storage;
 using Content.Shared.Charges.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -7,7 +8,7 @@ namespace Content.Shared.Charges.Components;
 /// <summary>
 /// Specifies the attached action has discrete charges, separate to a cooldown.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedChargesSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedChargesSystem), typeof(SharedStalkerStorageSystem))] // Stalker-EN-Changes: StorageSystem
 public sealed partial class LimitedChargesComponent : Component
 {
     [DataField, AutoNetworkedField]

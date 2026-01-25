@@ -23,9 +23,10 @@ using Content.Shared.Paper;
 using Content.Shared.Stacks;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Server.Botany.Components;
-using Content.Server.Crayon;
 using Content.Shared._Stalker;
 using Content.Shared._Stalker.Storage;
+using Content.Shared.Charges.Components;
+using Content.Shared.Crayon;
 using Content.Shared.Power.Components;
 using Robust.Shared.Prototypes;
 
@@ -290,9 +291,9 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
     private List<object> ConverterCrayonItemStalker(EntityUid item)
     {
         var returnList = new List<object>(capacity: 0);
-        if (!TryComp<CrayonComponent>(item, out var crayon))
+        if (!TryComp<LimitedChargesComponent>(item, out var charges))
             return returnList;
-        returnList.Add(new CrayonItemStalker(GetPrototypeName(item), crayon.Charges));
+        returnList.Add(new CrayonItemStalker(GetPrototypeName(item), charges.MaxCharges));
         return returnList;
     }
 
@@ -428,10 +429,10 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                     break;
                 }
             case CrayonItemStalker options:
-                if (TryComp<CrayonComponent>(inputItemUid, out var crayonComponent))
+                if (TryComp<LimitedChargesComponent>(inputItemUid, out var chargesComponent))
                 {
-                    crayonComponent.Charges = options.Charges;
-                    Dirty(inputItemUid, crayonComponent);
+                    chargesComponent.MaxCharges = options.Charges;
+                    Dirty(inputItemUid, chargesComponent);
                 }
                 break;
         }
