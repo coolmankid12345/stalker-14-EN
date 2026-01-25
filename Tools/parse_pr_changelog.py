@@ -28,7 +28,7 @@ from pathlib import Path
 VALID_TYPES = {"add", "remove", "tweak", "fix"}
 TYPE_MAP = {"add": "Add", "remove": "Remove", "tweak": "Tweak", "fix": "Fix"}
 
-CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
+CHANGELOG_FILE = "Resources/Changelog/Stalker.yml"
 PARTS_DIR = "Resources/Changelog/Parts"
 
 
