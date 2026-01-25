@@ -1,16 +1,4 @@
 ﻿Entries:
-- author: to4no_fix
-  changes:
-  - message: Now it takes 5 seconds to take off or put on a muzzle
-    type: Tweak
-  - message: Now it takes 5 seconds to take off or put on a blindfold
-    type: Tweak
-  - message: Added a recipe for producing a straitjacket, it opens when researching
-      the Special Means technology, it can be produced at the security techfab
-    type: Add
-  id: 7152
-  time: '2024-08-19T03:05:25.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31095
 - author: Magicalus
   changes:
   - message: Suit sensors, borgs, and PDAs can no longer be saved to device-lists.
@@ -3927,3 +3915,18 @@
   id: 7651
   time: '2026-01-25T08:21:49.705443+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/342
+- author: crocodilecarousel
+  changes:
+  - message: Redline Jacket for bandits (Thank you Wassuy for the sprites)
+    type: Add
+  - message: Monolith altars are prayable
+    type: Tweak
+  - message: M-51 gas mask no longer hides hair
+    type: Tweak
+  - message: Glass Shards anomaly sprite change
+    type: Tweak
+  - message: Adjustments to weather scheduler
+    type: Tweak
+  id: 7652
+  time: '2026-01-25T16:30:30.337367+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/343
