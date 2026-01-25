@@ -1,5 +1,6 @@
 ent-STClothingOuterArmorStorageBasic = Armor Suit Base with Pouches
     .suffix = ST
+    .desc = { ClothingOuterArmorBase.desc }
 ent-ClothingOuterArmorStorageToggleableBasic = { ent-STClothingOuterArmorStorageBasic }
     .suffix = { ent-STClothingOuterArmorStorageBasic.suffix }
 ent-STClothingHeadHatBase = Built-in head base

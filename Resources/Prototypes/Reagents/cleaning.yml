@@ -24,7 +24,7 @@
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
       - !type:Emote
-        emote: STScream # Stalker-changes
+        emote: Scream
         probability: 0.15
   tileReactions:
   - !type:CleanTileReaction

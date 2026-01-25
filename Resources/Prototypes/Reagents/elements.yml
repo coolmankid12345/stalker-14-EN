@@ -186,10 +186,10 @@
           types:
             Poison: 0.05
       - !type:Emote
-        emote: STScream # Stalker-changes
+        emote: Scream
         probability: 0.05
       - !type:Emote
-        emote: STLaugh # Stalker-changes
+        emote: Laugh
         probability: 0.05
 
   # TODO: cause some brain damage when woundmed, and generally reduce the stutter/scrambledaccent unless high doses

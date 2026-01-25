@@ -3,7 +3,7 @@
   suffix: Audio (Scream Male)
   parent: AdminInstantEffectBase
   components:
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
     removeOnTrigger: true
     sound:
       collection: MaleScreams
@@ -15,7 +15,7 @@
   suffix: Audio (Scream Female)
   parent: AdminInstantEffectBase
   components:
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
     removeOnTrigger: true
     sound:
       collection: FemaleScreams
@@ -27,7 +27,7 @@
   suffix: Audio (Psi Voices)
   parent: AdminInstantEffectBase
   components:
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
     removeOnTrigger: true
     sound:
       path: /Audio/_Stalker_EN/Effects/psi_voices.ogg
@@ -39,8 +39,7 @@
   suffix: Audio (Gosha)
   parent: AdminInstantEffectBase
   components:
-  - type: SoundOnTrigger
-    removeOnTrigger: true
+  - type: EmitSoundOnTrigger
     sound:
       path: /Audio/_Stalker/Mutated/Gosha/gosha_roar.ogg
       volume: 5
@@ -51,8 +50,7 @@
   suffix: Audio (Wind)
   parent: AdminInstantEffectBase
   components:
-  - type: SoundOnTrigger
-    removeOnTrigger: true
+  - type: EmitSoundOnTrigger
     sound:
       path: /Audio/_Stalker/Ambient/rnd_darkwind3.ogg
       volume: 5
@@ -63,8 +61,7 @@
   suffix: Audio (Hush)
   parent: AdminInstantEffectBase
   components:
-  - type: SoundOnTrigger
-    removeOnTrigger: true
+  - type: EmitSoundOnTrigger
     sound:
       path: /Audio/_Stalker/Effects/hush.ogg
       volume: 5

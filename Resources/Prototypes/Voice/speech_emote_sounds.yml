@@ -1,46 +1,44 @@
-# Stalker-Changes: Some emote ids were commented because they does not exist in Stalker build (currently they are commented)
-
 # species
 - type: emoteSounds
   id: MaleHuman
   params:
     variation: 0.125
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       collection: MaleScreams
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: MaleLaugh
-    # Sneeze:
-      # collection: MaleSneezes
+    Sneeze:
+      collection: MaleSneezes
     Cough:
       collection: MaleCoughs
-    # CatMeow:
-      # collection: CatMeows
-    # CatHisses:
-      # collection: CatHisses
-    # MonkeyScreeches:
-      # collection: MonkeyScreeches
-    # RobotBeep:
-      # collection: RobotBeeps
-    # Yawn:
-      # collection: MaleYawn
-    # Snore:
-      # collection: Snores
-    # Honk:
-      # collection: BikeHorn
-    STSigh: # Stalker-changes
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
       collection: MaleSigh
-    STCrying: # Stalker-changes
+    Crying:
       collection: MaleCry
-    STWhistle: # Stalker-changes
+    Whistle:
       collection: Whistles
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       collection: MaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: MaleDeathGasp
 
 - type: emoteSounds
@@ -48,41 +46,41 @@
   params:
     variation: 0.125
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       collection: FemaleScreams
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: FemaleLaugh
-    # Sneeze:
-      # collection: FemaleSneezes
+    Sneeze:
+      collection: FemaleSneezes
     Cough:
       collection: FemaleCoughs
-    # CatMeow:
-      # collection: CatMeows
-    # CatHisses:
-      # collection: CatHisses
-    # MonkeyScreeches:
-      # collection: MonkeyScreeches
-    # RobotBeep:
-      # collection: RobotBeeps
-    # Yawn:
-      # collection: FemaleYawn
-    # Snore:
-      # collection: Snores
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
     Honk:
       collection: CluwneHorn
-    STSigh: # Stalker-changes
+    Sigh:
       collection: FemaleSigh
-    STCrying: # Stalker-changes
+    Crying:
       collection: FemaleCry
-    STWhistle: # Stalker-changes
+    Whistle:
       collection: Whistles
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       collection: FemaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: FemaleDeathGasp
 
 - type: emoteSounds
@@ -90,23 +88,23 @@
   params:
     variation: 0.125
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
-    STLaugh: # Stalker-changes
+    Laugh:
       path: /Audio/Animals/lizard_happy.ogg
-    # Honk:
-      # collection: BikeHorn
-    STWhistle: # Stalker-changes
+    Honk:
+      collection: BikeHorn
+    Whistle:
       collection: Whistles
-    STCrying: # Stalker-changes
+    Crying:
       collection: MaleCry
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       collection: MaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: DeathGasp
 
 - type: emoteSounds
@@ -114,23 +112,23 @@
   params:
     variation: 0.125
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
-    STLaugh: # Stalker-changes
+    Laugh:
       path: /Audio/Animals/lizard_happy.ogg
-    # Honk:
-      # collection: BikeHorn
-    STWhistle: # Stalker-changes
+    Honk:
+      collection: BikeHorn
+    Whistle:
       collection: Whistles
-    STCrying: # Stalker-changes
+    Crying:
       collection: FemaleCry
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       collection: FemaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: FemaleDeathGasp
 
 - type: emoteSounds
@@ -138,41 +136,41 @@
   sounds:
     Squish:
       collection: Squishes
-    STScream: # Stalker-changes
+    Scream:
       collection: MaleScreams
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: MaleLaugh
-    # Sneeze:
-      # collection: MaleSneezes
+    Sneeze:
+      collection: MaleSneezes
     Cough:
       collection: MaleCoughs
-    # CatMeow:
-      # collection: CatMeows
-    # CatHisses:
-      # collection: CatHisses
-    # MonkeyScreeches:
-      # collection: MonkeyScreeches
-    # RobotBeep:
-      # collection: RobotBeeps
-    # Yawn:
-      # collection: MaleYawn
-    # Snore:
-      # collection: Snores
-    # Honk:
-      # collection: BikeHorn
-    STSigh: # Stalker-changes
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
       collection: MaleSigh
-    STCrying: # Stalker-changes
+    Crying:
       collection: MaleCry
-    STWhistle: # Stalker-changes
+    Whistle:
       collection: Whistles
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       collection: MaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: MaleDeathGasp
   params:
     variation: 0.125
@@ -182,41 +180,41 @@
   sounds:
     Squish:
       collection: Squishes
-    STScream: # Stalker-changes
+    Scream:
       collection: FemaleScreams
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: FemaleLaugh
-    # Sneeze:
-      # collection: FemaleSneezes
+    Sneeze:
+      collection: FemaleSneezes
     # Cough:
       # collection: FemaleCoughs
-    # CatMeow:
-      # collection: CatMeows
-    # CatHisses:
-      # collection: CatHisses
-    # MonkeyScreeches:
-      # collection: MonkeyScreeches
-    # RobotBeep:
-      # collection: RobotBeeps
-    # Yawn:
-      # collection: FemaleYawn
-    # Snore:
-      # collection: Snores
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
     # Honk:
       # collection: CluwneHorn
-    STSigh: # Stalker-changes
+    Sigh:
       collection: FemaleSigh
-    STCrying: # Stalker-changes
+    Crying:
       collection: FemaleCry
-    STWhistle: # Stalker-changes
+    Whistle:
       collection: Whistles
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       collection: FemaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: FemaleDeathGasp
   params:
     variation: 0.125
@@ -224,29 +222,29 @@
 - type: emoteSounds
   id: UnisexVox
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       path: /Audio/Voice/Vox/shriek1.ogg
-    STLaugh: # Stalker-changes
+    Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
     Cough:
       path: /Audio/Voice/Vox/vox_cough.ogg
-    STSigh: # Stalker-changes
+    Sigh:
       path: /Audio/Voice/Vox/vox_sigh.ogg
     Click:
       path: /Audio/Voice/Vox/vox_click.ogg
     Chitter:
       path: /Audio/Voice/Vox/vox_chitter.ogg
-    # Honk:
-      # collection: BikeHorn
-    STCrying: # Stalker-changes
+    Honk:
+      collection: BikeHorn
+    Crying:
       path: /Audio/Voice/Vox/vox_cry.ogg
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       path: /Audio/Effects/Gasp/vox_gasp.ogg
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       path: /Audio/Effects/Gasp/vox_DeathGasp.ogg
   params:
     variation: 0.125
@@ -255,21 +253,21 @@
 - type: emoteSounds
   id: UnisexDiona
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       path: /Audio/Voice/Diona/diona_scream.ogg
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: DionaLaugh
     Chirp:
       path: /Audio/Animals/nymph_chirp.ogg
-    # Honk:
-      # collection: BikeHorn
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Honk:
+      collection: BikeHorn
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       collection: MaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: DeathGasp
   params:
     variation: 0.125
@@ -279,63 +277,63 @@
   params:
     variation: 0.125
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
-    STLaugh: # Stalker-changes
+    Laugh:
       path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
     Chitter:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    # Honk:
-      # collection: BikeHorn
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    Gasp:
       collection: MaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: DeathGasp
 
 - type: emoteSounds
   id: UnisexDwarf
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       collection: MaleScreams
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: MaleLaugh
-    # Sneeze:
-      # collection: MaleSneezes
+    Sneeze:
+      collection: MaleSneezes
     Cough:
       collection: MaleCoughs
-    # CatMeow:
-      # collection: CatMeows
-    # CatHisses:
-      # collection: CatHisses
-    # MonkeyScreeches:
-      # collection: MonkeyScreeches
-    # RobotBeep:
-      # collection: RobotBeeps
-    # Yawn:
-      # collection: MaleYawn
-    # Snore:
-      # collection: Snores
-    STSigh: # Stalker-changes
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
       collection: MaleSigh
-    # Honk:
-      # collection: BikeHorn
-    STCrying: # Stalker-changes
+    Honk:
+      collection: BikeHorn
+    Crying:
       collection: MaleCry
-    STWhistle: # Stalker-changes
+    Whistle:
       collection: Whistles
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       collection: MaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: MaleDeathGasp
   params:
     variation: 0.125
@@ -344,41 +342,41 @@
 - type: emoteSounds
   id: FemaleDwarf
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       collection: FemaleScreams
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: FemaleLaugh
-    # Sneeze:
-      # collection: FemaleSneezes
+    Sneeze:
+      collection: FemaleSneezes
     Cough:
       collection: FemaleCoughs
-    # CatMeow:
-      # collection: CatMeows
-    # CatHisses:
-      # collection: CatHisses
-    # MonkeyScreeches:
-      # collection: MonkeyScreeches
-    # RobotBeep:
-      # collection: RobotBeeps
-    # Yawn:
-      # collection: FemaleYawn
-    # Snore:
-      # collection: Snores
-    STSigh: # Stalker-changes
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
       collection: FemaleSigh
-    # Honk:
-      # collection: BikeHorn
-    STCrying: # Stalker-changes
+    Honk:
+      collection: BikeHorn
+    Crying:
       collection: FemaleCry
-    STWhistle: # Stalker-changes
+    Whistle:
       collection: Whistles
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
       collection: FemaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: FemaleDeathGasp
   params:
     variation: 0.125
@@ -391,23 +389,23 @@
   sounds:
     Buzz:
       path: /Audio/Voice/Moth/moth_scream.ogg
-    STScream: # Stalker-changes
+    Scream:
       path: /Audio/Voice/Moth/moth_scream.ogg
-    STLaugh: # Stalker-changes
+    Laugh:
       path: /Audio/Voice/Moth/moth_laugh.ogg
     Chitter:
       path: /Audio/Voice/Moth/moth_chitter.ogg
     Squeak:
       path: /Audio/Voice/Moth/moth_squeak.ogg
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    # Honk:
-      # collection: BikeHorn
-    STGasp: # Stalker-changes
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    Gasp:
       collection: MaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: MothDeathGasp
 
 - type: emoteSounds
@@ -415,7 +413,7 @@
   params:
     variation: 0.05
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       collection: SiliconScreams
     Beep:
       path: /Audio/Machines/twobeep.ogg
@@ -435,9 +433,9 @@
   params:
     variation: 0.05
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       collection: SiliconScreams
-    STLaugh: # Stalker-changes
+    Laugh:
       path: /Audio/Voice/Silicon/syndieborg_laugh.ogg
     Beep:
       path: /Audio/Machines/twobeep.ogg
@@ -447,8 +445,8 @@
       path: /Audio/Machines/buzz-sigh.ogg
     Buzz-Two:
       path: /Audio/Machines/buzz-two.ogg
-    # Honk:
-      # path: /Audio/Items/bikehorn.ogg
+    Honk:
+      path: /Audio/Items/bikehorn.ogg
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
 
@@ -457,9 +455,9 @@
   params:
     variation: 0.05
   sounds:
-    STScream: # Stalker-changes
+    Scream:
       collection: XenoborgScream
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: XenoborgLaugh
     Beep:
       collection: XenoborgBeep
@@ -469,8 +467,8 @@
       collection: XenoborgBuzz
     Buzz-Two:
       collection: XenoborgBuzzTwo
-    # Honk:
-      # collection: XenoborgBikeHorn
+    Honk:
+      collection: XenoborgBikeHorn
     Ping:
       collection: XenoborgPing
 
@@ -480,17 +478,17 @@
   params:
     variation: 0.125
   sounds:
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: MaleLaugh
-    # Sneeze:
-      # collection: MaleSneezes
+    Sneeze:
+      collection: MaleSneezes
     Cough:
       collection: MaleCoughs
-    STWhistle: # Stalker-changes
+    Whistle:
       collection: Whistles
-    STSigh: # Stalker-changes
+    Sigh:
       collection: MaleSigh
-    STScream: # Stalker-changes
+    Scream:
       collection: VulpkaninScreams
     Growl:
       collection: VulpkaninGrowls
@@ -500,13 +498,13 @@
       collection: VulpkaninBarks
     Whine:
       collection: VulpkaninWhines
-    STCrying: # Stalker-changes
+    Crying:
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
-    STGasp: # Stalker-changes
+    Gasp:
       collection: MaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: MaleDeathGasp
 
 - type: emoteSounds
@@ -514,17 +512,17 @@
   params:
     variation: 0.125
   sounds:
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: FemaleLaugh
-    # Sneeze:
-      # collection: FemaleSneezes
+    Sneeze:
+      collection: FemaleSneezes
     Cough:
       collection: FemaleCoughs
-    STWhistle: # Stalker-changes
+    Whistle:
       collection: Whistles
-    STSigh: # Stalker-changes
+    Sigh:
       collection: FemaleSigh
-    STScream: # Stalker-changes
+    Scream:
       collection: VulpkaninScreams
     Growl:
       collection: VulpkaninGrowls
@@ -534,43 +532,43 @@
       collection: VulpkaninBarks
     Whine:
       collection: VulpkaninWhines
-    STCrying: # Stalker-Changes
+    Crying:
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
-    STGasp: # Stalker-changes
+    Gasp:
       collection: FemaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: FemaleDeathGasp
 
 # body emotes
 - type: emoteSounds
   id: GeneralBodyEmotes
   sounds:
-    STClap: # Stalker-changes
+    Clap:
       collection: Claps
-    STClapSingle: # Stalker-changes
+    ClapSingle:
       collection: ClapSingle
-    STSnap: # Stalker-changes
+    Snap:
       collection: Snaps
       params:
         volume: -6
-    STSalute: # Stalker-changes
+    Salute:
       collection: Salutes
 
 - type: emoteSounds
   id: DionaBodyEmotes
   sounds:
-    STClap: # Stalker-changes
+    Clap:
       path: /Audio/Voice/Diona/diona_clap.ogg
     # TODO: Replace this with a similar wood themed single clap
-    STClapSingle: # Stalker-changes
+    ClapSingle:
       collection: ClapSingle
-    STSnap: # Stalker-changes
+    Snap:
       path: /Audio/Voice/Diona/diona_snap.ogg
       params:
         volume: -10
-    STSalute: # Stalker-changes
+    Salute:
       path: /Audio/Voice/Diona/diona_salute.ogg
       params:
        volume: -5
@@ -582,15 +580,15 @@
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
       params:
         variation: 0.125
-    STClap: # Stalker-changes
+    Clap:
       collection: Claps
-    STClapSingle: # Stalker-changes
+    ClapSingle:
       collection: ClapSingle
-    STSnap: # Stalker-changes
+    Snap:
       collection: Snaps
       params:
         volume: -6
-    STSalute: # Stalker-changes
+    Salute:
       collection: Salutes
 
 # mobs
@@ -672,41 +670,41 @@
       path: /Audio/Effects/soft_thump.ogg
       params:
         variation: 0.125
-    STClap: # Stalker-changes
+    Clap:
       collection: Claps
-    STClapSingle: # Stalker-changes
+    ClapSingle:
       collection: ClapSingle
-    STSnap: # Stalker-changes
+    Snap:
       collection: Snaps
       params:
         volume: -6
-    STSalute: # Stalker-changes
+    Salute:
       collection: Salutes
-    STLaugh: # Stalker-changes
+    Laugh:
       collection: WawaLaugh
-    # Sneeze:
-      # collection: WawaSneeze
+    Sneeze:
+      collection: WawaSneeze
     Cough:
       collection: MaleCoughs
-    STWhistle: # Stalker-changes
+    Whistle:
       collection: Whistles
-    STSigh: # Stalker-changes
+    Sigh:
       collection: WawaSigh
-    STScream: # Stalker-changes
+    Scream:
       collection: WawaScream
-    # Yawn:
-      # collection: WawaYawn
-    STCrying: # Stalker-changes
+    Yawn:
+      collection: WawaYawn
+    Crying:
       collection: WawaCry
-    # Snore:
-      # collection: Snores
-    # Weh:
-      # collection: Weh
-    # Hew:
-      # collection: Hew
-    # Honk:
-      # collection: BikeHorn
-    STGasp: # Stalker-changes
+    Snore:
+      collection: Snores
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    Gasp:
       collection: MaleGasp
-    STDefaultDeathgasp: # Stalker-changes
+    DefaultDeathgasp:
       collection: WawaDeath

@@ -659,7 +659,7 @@
           time: 3
           type: Add
         - !type:Emote
-          emote: STLaugh # Stalker-changes
+          emote: Laugh
           probability: 0.005
         - !type:GenericStatusEffect
           key: TemporaryBlindness
@@ -732,7 +732,7 @@
           type: Local
           probability: 0.05
         - !type:Emote
-          emote: STLaugh # Stalker-changes
+          emote: Laugh
           probability: 0.005
         - !type:GenericStatusEffect
           key: TemporaryBlindness

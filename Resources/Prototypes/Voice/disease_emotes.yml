@@ -26,10 +26,10 @@
      - cough!
      - coughs!
      - coughed!
-    # Stalker-RU
-    - кашель
-    - кашляет
-    - кашлянул
+     # Stalker-RU
+     - кашель
+     - кашляет
+     - кашлянул
 
  - type: emote
    id: CatMeow
@@ -70,9 +70,9 @@
    chatTriggers:
      - yawn
      - yawns
-    # Stalker-RU
-    - зевок
-    - зевает
+     # Stalker-RU
+     - зевок
+     - зевает
 
  - type: emote
    id: Snore

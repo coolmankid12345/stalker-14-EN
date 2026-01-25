@@ -68,6 +68,6 @@
 #        acts: ["Destruction"]
 #  - type: FlashOnTrigger
 #    range: 8
-#  - type: SoundOnTrigger
+#  - type: EmitSoundOnTrigger
 #    sound:
 #      path: "/Audio/Effects/flash_bang.ogg"

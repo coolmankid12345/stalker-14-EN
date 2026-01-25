@@ -45,7 +45,7 @@
         ents: []
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: STClothingHeadHardsuitSevaHelmBase
   name: шлем севы #base
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
@@ -279,7 +279,7 @@
     clothingPrototype: ClothingHeadHardsuitSevaHelmPoisk
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHardsuitSevaHelmPoisk
   name: шлем севы поиска
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.

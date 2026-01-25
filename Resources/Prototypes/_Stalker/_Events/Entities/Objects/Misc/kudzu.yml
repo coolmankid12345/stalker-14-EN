@@ -86,7 +86,7 @@
           - ReagentId: Protein
             Quantity: 2
     - type: Respirator
-      gaspEmote: STGasp
+      gaspEmote: Gasp
       damage:
         types:
           Asphyxiation: 0.25

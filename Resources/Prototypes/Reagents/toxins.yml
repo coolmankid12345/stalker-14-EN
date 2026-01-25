@@ -150,7 +150,7 @@
           types:
             Caustic: 0.5
       - !type:Emote
-        emote: STScream # Stalker-changes
+        emote: Scream
         probability: 0.3
   metabolisms:
     Poison:
@@ -166,7 +166,7 @@
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
       - !type:Emote
-        emote: STScream # Stalker-changes
+        emote: Scream
         probability: 0.3
 
 - type: reagent
@@ -210,7 +210,7 @@
           types:
             Caustic: 0.3
       - !type:Emote
-        emote: STScream # Stalker-changes
+        emote: Scream
         probability: 0.2
   metabolisms:
     Poison:
@@ -226,7 +226,7 @@
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
       - !type:Emote
-        emote: STScream # Stalker-changes
+        emote: Scream
         probability: 0.25
 
 - type: reagent
@@ -259,7 +259,7 @@
           types:
             Caustic: 0.1
       - !type:Emote
-        emote: STScream # Stalker-changes
+        emote: Scream
         probability: 0.1
   metabolisms:
     Poison:
@@ -275,7 +275,7 @@
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
       - !type:Emote
-        emote: STScream # Stalker-changes
+        emote: Scream
         probability: 0.2
 
 - type: reagent
@@ -578,12 +578,12 @@
     Poison:
       metabolismRate: 0.05
       effects:
-      # - !type:Emote # Stalker-changes-start
-        # emote: Honk
-        # showInChat: true
-        # showInGuidebook: true
-        # force: true
-        # probability: 0.2 # Stalker-changes-end
+      - !type:Emote
+        emote: Honk
+        showInChat: true
+        showInGuidebook: true
+        force: true
+        probability: 0.2
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition

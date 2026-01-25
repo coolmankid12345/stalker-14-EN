@@ -13,7 +13,7 @@
   - type: Tag
     tags:
       - ClothMade
-  - type: Food
+  - type: Edible
     requiresSpecialDigestion: true
     useSound:
       collection: ToySqueak

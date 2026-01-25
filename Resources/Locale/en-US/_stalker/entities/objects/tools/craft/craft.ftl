@@ -10,6 +10,7 @@ ent-CraftHide = hide
 ent-PartRodMetalStalker = Metal Pipes
     .suffix = { ent-CraftGunpowderBank.suffix }
 ent-CraftBag = bag
+    .desc = { ent-CraftGunpowderBank.desc }
     .suffix = { ent-CraftGunpowderBank.suffix }
 ent-CraftFerments = fermentation kit
     .desc = One-time fermentation kit, should be used with extreme caution.

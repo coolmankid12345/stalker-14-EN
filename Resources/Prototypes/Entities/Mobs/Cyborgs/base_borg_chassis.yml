@@ -356,7 +356,7 @@
   - type: Speech
     speechSounds: SyndieBorg
     allowedEmotes:
-    - STLaugh # Stalker-changes
+    - Laugh
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconSyndicate
@@ -413,7 +413,7 @@
   - type: Speech
     speechSounds: SyndieBorg
     allowedEmotes:
-    - STLaugh # Stalker-changes
+    - Laugh
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconSyndicate
@@ -468,7 +468,7 @@
     speechVerb: Robotic
     speechSounds: Xenoborg
     allowedEmotes:
-    - STLaugh # Stalker-changes
+    - Laugh
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconXenoborg

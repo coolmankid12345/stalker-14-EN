@@ -360,10 +360,10 @@
           reagent: ChlorineStalker
           min: 5
       - !type:Emote
-        emote: STCrying
+        emote: Crying
         probability: 0.1
       - !type:Emote
-        emote: STScream
+        emote: Scream
         probability: 0.2
       - !type:GenericStatusEffect
         key: TemporaryBlindness
@@ -425,7 +425,7 @@
           reagent: IpritStalker
           min: 5
       - !type:Emote
-        emote: STCrying
+        emote: Crying
         probability: 0.3
       - !type:GenericStatusEffect
         key: TemporaryBlindness
@@ -488,10 +488,10 @@
           reagent: LewisiteStalker
           min: 5
       - !type:Emote
-        emote: STCrying
+        emote: Crying
         probability: 0.3
       - !type:Emote
-        emote: STScream
+        emote: Scream
         probability: 0.3
       - !type:GenericStatusEffect
         key: TemporaryBlindness
@@ -591,7 +591,7 @@
         multiplier: 0.05
       - !type:Ignite
       - !type:Emote
-        emote: STScream
+        emote: Scream
         probability: 0.2
 
 ##############################

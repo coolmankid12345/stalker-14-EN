@@ -134,7 +134,7 @@
     speechVerb: Robotic
     speechSounds: Xenoborg
     allowedEmotes:
-    - STLaugh # Stalker-changes
+    - Laugh
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconXenoborg

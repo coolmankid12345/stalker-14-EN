@@ -67,8 +67,6 @@
       lifetime: 0.4
     - type: BonusMeleeDamage
       heavyDamageMultiplier: 1.8
-    - type: MeleeThrowOnHit # im not sold on this, willing to kill it if its annoying
-      speed: 3
     - type: StaminaDamageOnHit
       damage: 10
     - type: MovementSpeedModifier

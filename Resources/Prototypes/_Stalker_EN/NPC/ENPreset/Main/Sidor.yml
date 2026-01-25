@@ -11,8 +11,8 @@
     state: sidor
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerSidorAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerSidorAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true

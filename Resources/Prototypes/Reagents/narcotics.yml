@@ -411,7 +411,7 @@
         - norepinephricacid-effect-darkness
         - norepinephricacid-effect-blindness
       - !type:Emote
-        emote: STScream # Stalker-changes
+        emote: Scream
         probability: 0.08
         conditions:
         - !type:ReagentCondition
@@ -448,7 +448,7 @@
     Narcotic:
       effects:
       - !type:Emote
-        emote: STLaugh # Stalker-changes
+        emote: Laugh
         showInChat: true
         probability: 0.1
         conditions:
@@ -456,7 +456,7 @@
           reagent: Happiness
           max: 20
       - !type:Emote
-        emote: STWhistle # Stalker-changes
+        emote: Whistle
         showInChat: true
         probability: 0.1
         conditions:
@@ -464,7 +464,7 @@
           reagent: Happiness
           max: 20
       - !type:Emote
-        emote: STCrying # Stalker-changes
+        emote: Crying
         showInChat: true
         probability: 0.1
         conditions:

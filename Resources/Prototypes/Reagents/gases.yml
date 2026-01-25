@@ -278,7 +278,7 @@
         - !type:MetabolizerTypeCondition
           type: [ Slime ]
           inverted: true
-        emote: STLaugh # Stalker-changes
+        emote: Laugh
         showInChat: true
         probability: 0.1
       - !type:Emote
@@ -287,7 +287,7 @@
         - !type:MetabolizerTypeCondition
           type: [ Slime ]
           inverted: true
-        emote: STScream # Stalker-changes
+        emote: Scream
         showInChat: true
         probability: 0.01
       - !type:PopupMessage
