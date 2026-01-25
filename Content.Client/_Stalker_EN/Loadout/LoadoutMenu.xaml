@@ -37,6 +37,9 @@
             <ScrollContainer VerticalExpand="True" HorizontalExpand="True" HScrollEnabled="False">
                 <BoxContainer Name="LoadoutList" Orientation="Vertical" HorizontalExpand="True"/>
             </ScrollContainer>
+
+            <!-- Beta warning -->
+            <Label Text="{Loc loadout-beta-warning}" FontColorOverride="#AA6600" Margin="0 8 0 0" HorizontalAlignment="Center"/>
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>

@@ -18,6 +18,7 @@ using Content.Shared.Database;
 using Content.Shared.Hands;
 using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item;
@@ -656,7 +657,9 @@ public sealed class StalkerRepositorySystem : EntitySystem
                     HasComp<BodyPartComponent>(element) ||
                     HasComp<CartridgeComponent>(element) ||
                     HasComp<VirtualItemComponent>(element) ||
-                    HasComp<MindContainerComponent>(element)) // Do not insert alive objects(mice, etc.)
+                    HasComp<MindContainerComponent>(element) || // Do not insert alive objects(mice, etc.)
+                    HasComp<UnremoveableComponent>(element) ||
+                    HasComp<SelfUnremovableClothingComponent>(element))
                     continue;
                 // recursively call the same method and add its result to our
                 if (TryComp<ContainerManagerComponent>(element, out var manager))
@@ -724,7 +727,9 @@ public sealed class StalkerRepositorySystem : EntitySystem
                 if (HasComp<SolutionComponent>(item) || // Do not insert solutions
                     HasComp<InstantActionComponent>(item) || // Do not insert actions
                     HasComp<CartridgeComponent>(item) && !_tags.HasTag(item, "Dogtag") ||
-                    HasComp<BallisticAmmoProviderComponent>(playerItem) && _tags.HasTag(item, "Cartridge"))  // Do not insert program cartridges
+                    HasComp<BallisticAmmoProviderComponent>(playerItem) && _tags.HasTag(item, "Cartridge") || // Do not insert program cartridges
+                    HasComp<UnremoveableComponent>(item) ||
+                    HasComp<SelfUnremovableClothingComponent>(item))
                     continue;
 
                 items.Add(item);
@@ -838,6 +843,24 @@ public sealed class StalkerRepositorySystem : EntitySystem
         return allowInsert;
     }
 
+    /// <summary>
+    /// Checks if an item can be stored in the repository.
+    /// Validates unremovable components and whitelist. Does NOT check weight.
+    /// </summary>
+    public bool CanStoreItem(Entity<StalkerRepositoryComponent> repository, EntityUid item)
+    {
+        // Check unremovable components (same check as nested items in InsertToRepositoryRecursively)
+        if (HasComp<UnremoveableComponent>(item) ||
+            HasComp<SelfUnremovableClothingComponent>(item))
+            return false;
+
+        // Check whitelist if repository has one
+        if (repository.Comp.Whitelist != null &&
+            !_whitelistSystem.IsWhitelistPass(repository.Comp.Whitelist, item))
+            return false;
+
+        return true;
+    }
 
     /// <summary>
     /// Method to insert ONE item into repository
@@ -1028,4 +1051,35 @@ public sealed class StalkerRepositorySystem : EntitySystem
         }
     }
 #endregion
+
+    #region PublicHelpers
+
+    /// <summary>
+    /// Inserts a single equipped item into the repository using the proven insertion logic.
+    /// Used by LoadoutSystem's quick store feature.
+    /// </summary>
+    public bool InsertEquippedItem(EntityUid user, Entity<StalkerRepositoryComponent> repository, EntityUid item)
+    {
+        // Pre-validate: check unremovable and whitelist
+        if (!CanStoreItem(repository, item))
+            return false;
+
+        var itemInfo = GenerateItemInfo(item, true);
+
+        // Check weight limit
+        var newWeight = repository.Comp.CurrentWeight + itemInfo.SumWeight;
+        if (Math.Round(newWeight, 2) > repository.Comp.MaxWeight)
+            return false;
+
+        // Use proven recursive insertion logic
+        var toDelete = InsertToRepositoryRecursively(user, repository, itemInfo);
+        if (toDelete == null)
+            return false;
+
+        // Delete the original item
+        RemoveItems(user, toDelete.Value.Item1, toDelete.Value.Item2);
+        return true;
+    }
+
+    #endregion
 }

@@ -13,9 +13,12 @@ using Content.Shared._Stalker_EN.Loadout;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Storage;
 using Content.Shared.UserInterface;
 using Content.Shared.Whitelist;
+using Content.Shared.Tag;
+using Content.Shared.Weapons.Ranged.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
@@ -35,15 +38,33 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly StalkerRepositorySystem _repositorySystem = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly TagSystem _tags = default!;
 
     private ISawmill _sawmill = default!;
 
+    // Concurrent operation protection - prevents same actor from running multiple loadout operations simultaneously
+    private readonly HashSet<EntityUid> _currentlyProcessingLoadouts = new();
+
     private const int MaxRecursionDepth = 5;
     private const int MaxLoadoutNameLength = 32;
-    private static readonly string[] ContainerFallbacks = { "storagebase", "storage" };
+    // Gun-specific containers first, then general storage as fallback
+    private static readonly string[] ContainerFallbacks =
+    {
+        "gun_magazine",           // Magazine slot
+        "gun_chamber",            // Chambered round
+        "gun_module_muzzle",      // Silencers
+        "gun_module_scope",       // Scopes
+        "gun_module_underbarrel", // Grips, flashlights
+        "gun_auto_sear",          // Auto-sear module
+        "revolver-ammo",          // Revolver ammunition
+        "storagebase",            // General storage
+        "storage"                 // Fallback storage
+    };
 
     // Default blacklists (used when component is missing or field is null)
-    private static readonly HashSet<string> DefaultSlotBlacklist = new();
+    private static readonly HashSet<string> DefaultSlotBlacklist = new() { "id" };
     private static readonly HashSet<string> DefaultContainerBlacklist = new() { "toggleable-clothing", "actions" };
 
     public override void Initialize()
@@ -56,7 +77,6 @@ public sealed class LoadoutSystem : EntitySystem
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutDeleteMessage>(OnDeleteMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutRenameMessage>(OnRenameMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutRequestMessage>(OnRequestMessage);
-        SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutQuickStoreMessage>(OnQuickStoreMessage);
     }
 
     #region Message Handlers
@@ -79,6 +99,22 @@ public sealed class LoadoutSystem : EntitySystem
     }
 
     private async void OnSaveMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutSaveMessage msg)
+    {
+        if (msg.Actor == null || _currentlyProcessingLoadouts.Contains(msg.Actor))
+            return;
+
+        _currentlyProcessingLoadouts.Add(msg.Actor);
+        try
+        {
+            await ProcessSaveMessage(uid, component, msg);
+        }
+        finally
+        {
+            _currentlyProcessingLoadouts.Remove(msg.Actor);
+        }
+    }
+
+    private async Task ProcessSaveMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutSaveMessage msg)
     {
         if (msg.Actor == null)
             return;
@@ -122,6 +158,22 @@ public sealed class LoadoutSystem : EntitySystem
     }
 
     private async void OnLoadMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutLoadMessage msg)
+    {
+        if (msg.Actor == null || _currentlyProcessingLoadouts.Contains(msg.Actor))
+            return;
+
+        _currentlyProcessingLoadouts.Add(msg.Actor);
+        try
+        {
+            await ProcessLoadMessage(uid, component, msg);
+        }
+        finally
+        {
+            _currentlyProcessingLoadouts.Remove(msg.Actor);
+        }
+    }
+
+    private async Task ProcessLoadMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutLoadMessage msg)
     {
         if (msg.Actor == null)
             return;
@@ -184,6 +236,22 @@ public sealed class LoadoutSystem : EntitySystem
 
     private async void OnDeleteMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutDeleteMessage msg)
     {
+        if (msg.Actor == null || _currentlyProcessingLoadouts.Contains(msg.Actor))
+            return;
+
+        _currentlyProcessingLoadouts.Add(msg.Actor);
+        try
+        {
+            await ProcessDeleteMessage(uid, component, msg);
+        }
+        finally
+        {
+            _currentlyProcessingLoadouts.Remove(msg.Actor);
+        }
+    }
+
+    private async Task ProcessDeleteMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutDeleteMessage msg)
+    {
         if (msg.Actor == null)
             return;
 
@@ -214,6 +282,22 @@ public sealed class LoadoutSystem : EntitySystem
     }
 
     private async void OnRenameMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutRenameMessage msg)
+    {
+        if (msg.Actor == null || _currentlyProcessingLoadouts.Contains(msg.Actor))
+            return;
+
+        _currentlyProcessingLoadouts.Add(msg.Actor);
+        try
+        {
+            await ProcessRenameMessage(uid, component, msg);
+        }
+        finally
+        {
+            _currentlyProcessingLoadouts.Remove(msg.Actor);
+        }
+    }
+
+    private async Task ProcessRenameMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutRenameMessage msg)
     {
         if (msg.Actor == null)
             return;
@@ -258,19 +342,6 @@ public sealed class LoadoutSystem : EntitySystem
         SendLoadoutStateUpdate(uid, component, msg.Actor);
     }
 
-    private void OnQuickStoreMessage(EntityUid uid, StalkerRepositoryComponent component, LoadoutQuickStoreMessage msg)
-    {
-        if (msg.Actor == null)
-            return;
-
-        MoveEquipmentToStash(msg.Actor, (uid, component));
-        _popup.PopupEntity(Loc.GetString("loadout-items-stored"), msg.Actor, msg.Actor, PopupType.Small);
-
-        // Refresh stash UI
-        var ev = new LoadoutOperationCompletedEvent(msg.Actor, uid);
-        RaiseLocalEvent(uid, ref ev);
-    }
-
     #endregion
 
     #region Save Logic
@@ -294,6 +365,10 @@ public sealed class LoadoutSystem : EntitySystem
             while (enumerator.NextItem(out var item, out var slotDef))
             {
                 if (IsBlacklistedSlot(slotDef.Name, loadoutComp))
+                    continue;
+
+                // Skip blacklisted entities (unremovable items, organs, etc.)
+                if (IsBlacklistedEntity(item, loadoutComp))
                     continue;
 
                 var slotItem = CaptureSlotItem(item, slotDef.Name, loadoutComp);
@@ -337,7 +412,7 @@ public sealed class LoadoutSystem : EntitySystem
 
                 foreach (var contained in container.Value.ContainedEntities)
                 {
-                    var nested = CaptureNestedItem(contained, container.Key, 1, loadoutComp);
+                    var nested = CaptureNestedItem(contained, container.Key, 1, item, loadoutComp);
                     if (nested != null)
                         slotItem.NestedItems.Add(nested);
                 }
@@ -347,12 +422,20 @@ public sealed class LoadoutSystem : EntitySystem
         return slotItem;
     }
 
-    private LoadoutNestedItem? CaptureNestedItem(EntityUid item, string containerName, int depth, StalkerLoadoutComponent? loadoutComp = null)
+    private LoadoutNestedItem? CaptureNestedItem(EntityUid item, string containerName, int depth,
+        EntityUid? parentEntity = null, StalkerLoadoutComponent? loadoutComp = null)
     {
         if (depth > MaxRecursionDepth)
             return null;
 
         if (IsBlacklistedEntity(item, loadoutComp))
+            return null;
+
+        // Skip cartridges inside magazines (same as repository system)
+        // The magazine's AmmoContainerStalker already tracks ammo count
+        if (parentEntity != null &&
+            HasComp<BallisticAmmoProviderComponent>(parentEntity.Value) &&
+            _tags.HasTag(item, "Cartridge"))
             return null;
 
         var meta = MetaData(item);
@@ -382,7 +465,7 @@ public sealed class LoadoutSystem : EntitySystem
 
                 foreach (var contained in container.Value.ContainedEntities)
                 {
-                    var nested = CaptureNestedItem(contained, container.Key, depth + 1, loadoutComp);
+                    var nested = CaptureNestedItem(contained, container.Key, depth + 1, item, loadoutComp);
                     if (nested != null)
                         nestedItem.NestedItems.Add(nested);
                 }
@@ -421,21 +504,77 @@ public sealed class LoadoutSystem : EntitySystem
 
     /// <summary>
     /// Applies a loadout to a player, pulling items from their stash.
-    /// First moves any currently equipped items to stash, then equips loadout items.
+    /// Uses smart equipment handling to avoid cycling items that are already correctly equipped.
+    /// This prevents item duplication that occurs when items are moved to stash and back.
     /// </summary>
     private LoadResult ApplyLoadout(EntityUid player, Entity<StalkerRepositoryComponent> repository, PlayerLoadout loadout)
     {
         var missingCount = 0;
+        TryComp<StalkerLoadoutComponent>(repository, out var loadoutComp);
 
-        // First, move any currently equipped items to stash
-        MoveEquipmentToStash(player, repository);
-
-        // Rebuild lookup after moving items (stash contents changed)
-        var stashLookup = BuildStashLookup(repository.Comp.ContainedItems);
-
-        // Process each slot in the loadout
+        // Build set of prototypes the loadout needs (including nested items)
+        var loadoutPrototypes = new HashSet<string>();
         foreach (var slotItem in loadout.SlotItems)
         {
+            loadoutPrototypes.Add(slotItem.PrototypeId);
+            CollectNestedPrototypes(slotItem.NestedItems, loadoutPrototypes);
+        }
+
+        // Build set of prototypes currently equipped and identify items to unequip
+        var equippedPrototypes = new HashSet<string>();
+        var itemsToUnequip = new List<(EntityUid item, string slot)>();
+
+        if (_inventory.TryGetContainerSlotEnumerator(player, out var enumerator))
+        {
+            while (enumerator.NextItem(out var item, out var slotDef))
+            {
+                if (IsBlacklistedSlot(slotDef.Name, loadoutComp))
+                    continue;
+
+                var proto = MetaData(item).EntityPrototype?.ID;
+                if (proto == null)
+                    continue;
+
+                if (loadoutPrototypes.Contains(proto))
+                {
+                    // Item matches something in the loadout - keep it equipped
+                    equippedPrototypes.Add(proto);
+                    _sawmill.Debug($"Smart equip: keeping {proto} in slot {slotDef.Name} (matches loadout)");
+                }
+                else
+                {
+                    // Item not in loadout - unequip it
+                    itemsToUnequip.Add((item, slotDef.Name));
+                }
+            }
+        }
+
+        // Only unequip items that are NOT in the loadout
+        foreach (var (item, slot) in itemsToUnequip)
+        {
+            if (_inventory.TryUnequip(player, slot, out var unequipped, true, true))
+            {
+                if (!_repositorySystem.InsertEquippedItem(player, repository, unequipped.Value))
+                {
+                    _sawmill.Debug($"Could not insert {ToPrettyString(unequipped.Value)} to stash - weight limit");
+                }
+            }
+        }
+
+        // Build stash lookup for items that need to be pulled
+        var stashLookup = BuildStashLookup(repository.Comp.ContainedItems);
+
+        // Only equip items that are NOT already equipped (by prototype)
+        foreach (var slotItem in loadout.SlotItems)
+        {
+            if (equippedPrototypes.Contains(slotItem.PrototypeId))
+            {
+                _sawmill.Debug($"Smart equip: skipping {slotItem.PrototypeId} - already equipped");
+                // Mark as consumed so we don't count it as satisfied twice
+                equippedPrototypes.Remove(slotItem.PrototypeId);
+                continue;
+            }
+
             if (!TryEquipSlotItem(player, repository, slotItem, stashLookup))
                 missingCount++;
         }
@@ -443,11 +582,23 @@ public sealed class LoadoutSystem : EntitySystem
         return new LoadResult(true, missingCount);
     }
 
+    /// <summary>
+    /// Recursively collects all prototype IDs from nested items into the provided set.
+    /// </summary>
+    private void CollectNestedPrototypes(List<LoadoutNestedItem> nestedItems, HashSet<string> prototypes)
+    {
+        foreach (var nested in nestedItems)
+        {
+            prototypes.Add(nested.PrototypeId);
+            CollectNestedPrototypes(nested.NestedItems, prototypes);
+        }
+    }
+
     private bool TryEquipSlotItem(
         EntityUid player,
         Entity<StalkerRepositoryComponent> repository,
         LoadoutSlotItem slotItem,
-        Dictionary<string, RepositoryItemInfo> stashLookup)
+        StashLookup stashLookup)
     {
         // Find the item in stash
         var stashItem = FindItemInStash(slotItem.Identifier, slotItem.PrototypeId, stashLookup);
@@ -494,7 +645,7 @@ public sealed class LoadoutSystem : EntitySystem
         EntityUid parent,
         List<LoadoutNestedItem> nestedItems,
         Entity<StalkerRepositoryComponent> repository,
-        Dictionary<string, RepositoryItemInfo> stashLookup,
+        StashLookup stashLookup,
         int depth,
         EntityUid player)
     {
@@ -503,6 +654,9 @@ public sealed class LoadoutSystem : EntitySystem
 
         if (!TryComp<ContainerManagerComponent>(parent, out var containerMan))
             return;
+
+        // Check for ItemSlotsComponent (used by guns for magazine/chamber slots)
+        TryComp<ItemSlotsComponent>(parent, out var itemSlotsComp);
 
         foreach (var nestedItem in nestedItems)
         {
@@ -514,36 +668,82 @@ public sealed class LoadoutSystem : EntitySystem
                 continue;
             }
 
-            // Check if container exists
-            if (!containerMan.Containers.TryGetValue(nestedItem.ContainerName, out var container))
+            // Find container and ItemSlot (if applicable) - try multiple methods
+            BaseContainer? container = null;
+            ItemSlot? itemSlot = null;
+            string? foundSlotId = null;
+
+            // Method 1: Try ItemSlots first (for gun_magazine, gun_chamber, etc.)
+            // This is preferred because it allows proper whitelist/blacklist validation
+            if (itemSlotsComp != null && _itemSlots.TryGetSlot(parent, nestedItem.ContainerName, out var slot) && slot.ContainerSlot != null)
             {
-                // Try common container names in order of likelihood
-                container = null;
+                container = slot.ContainerSlot;
+                itemSlot = slot;
+                foundSlotId = nestedItem.ContainerName;
+            }
+
+            // Method 2: Direct container lookup (if not an ItemSlot)
+            if (container == null)
+            {
+                containerMan.Containers.TryGetValue(nestedItem.ContainerName, out container);
+            }
+
+            // Method 3: Try fallbacks
+            if (container == null)
+            {
                 foreach (var fallback in ContainerFallbacks)
                 {
+                    // Try ItemSlots for fallbacks first
+                    if (itemSlotsComp != null && _itemSlots.TryGetSlot(parent, fallback, out var fallbackSlot) && fallbackSlot.ContainerSlot != null)
+                    {
+                        container = fallbackSlot.ContainerSlot;
+                        itemSlot = fallbackSlot;
+                        foundSlotId = fallback;
+                        break;
+                    }
+                    // Then try regular containers
                     if (containerMan.Containers.TryGetValue(fallback, out var fallbackContainer))
                     {
                         container = fallbackContainer;
                         break;
                     }
                 }
+            }
 
-                // Also try lowercase of original container name
-                if (container == null)
+            // Method 4: Lowercase fallback
+            if (container == null)
+            {
+                var lowerName = nestedItem.ContainerName.ToLower();
+                if (lowerName != nestedItem.ContainerName)
                 {
-                    var lowerName = nestedItem.ContainerName.ToLower();
-                    if (lowerName != nestedItem.ContainerName)
+                    // Try ItemSlot first
+                    if (itemSlotsComp != null && _itemSlots.TryGetSlot(parent, lowerName, out var lowerSlot) && lowerSlot.ContainerSlot != null)
+                    {
+                        container = lowerSlot.ContainerSlot;
+                        itemSlot = lowerSlot;
+                        foundSlotId = lowerName;
+                    }
+                    else
+                    {
                         containerMan.Containers.TryGetValue(lowerName, out container);
-                }
-
-                if (container == null)
-                {
-                    _sawmill.Debug($"No suitable container found for {nestedItem.PrototypeId} (tried: {nestedItem.ContainerName}, storagebase, storage)");
-                    continue;
+                    }
                 }
             }
 
-            // Remove item from stash
+            if (container == null)
+            {
+                _sawmill.Debug($"No suitable container found for {nestedItem.PrototypeId} (tried: {nestedItem.ContainerName}, fallbacks, ItemSlots)");
+                continue;
+            }
+
+            // Track existing item for potential removal (but don't remove yet!)
+            EntityUid? existingItem = null;
+            if (container is ContainerSlot containerSlot && containerSlot.ContainedEntity is { } existing)
+            {
+                existingItem = existing;
+            }
+
+            // Remove item from stash AFTER confirming container exists
             RemoveFromStash(repository, stashItem, stashLookup);
 
             // Spawn the item
@@ -556,12 +756,55 @@ public sealed class LoadoutSystem : EntitySystem
                 _stalkerStorage.SpawnedItem(spawned, iss);
             }
 
-            // Insert into container
-            if (!_container.Insert(spawned, container))
+            // Insert into container - use ItemSlots validation if available
+            bool inserted;
+            if (itemSlot != null && foundSlotId != null)
+            {
+                // Use ItemSlotsSystem.TryInsert which validates whitelist/blacklist/locked status
+                // First, temporarily remove existing item if present (required for TryInsert to work)
+                if (existingItem.HasValue)
+                {
+                    _container.Remove(existingItem.Value, container, reparent: false, force: true);
+                }
+
+                inserted = _itemSlots.TryInsert(parent, foundSlotId, spawned, null, itemSlotsComp);
+
+                if (!inserted && existingItem.HasValue)
+                {
+                    // Restore the existing item since insertion failed
+                    _container.Insert(existingItem.Value, container);
+                    existingItem = null; // Don't delete it
+                }
+            }
+            else
+            {
+                // For non-ItemSlot containers, remove existing first then insert
+                if (existingItem.HasValue)
+                {
+                    _container.Remove(existingItem.Value, container, reparent: false, force: true);
+                }
+
+                inserted = _container.Insert(spawned, container);
+
+                if (!inserted && existingItem.HasValue)
+                {
+                    // Restore the existing item since insertion failed
+                    _container.Insert(existingItem.Value, container);
+                    existingItem = null; // Don't delete it
+                }
+            }
+
+            if (!inserted)
             {
                 _sawmill.Warning($"Failed to insert {nestedItem.PrototypeId} into container {nestedItem.ContainerName}");
                 ReturnSpawnedItemToStash(spawned, repository, stashLookup, player, nestedItem.PrototypeId);
                 continue;
+            }
+
+            // Only delete the existing item AFTER successful insertion
+            if (existingItem.HasValue)
+            {
+                QueueDel(existingItem.Value);
             }
 
             // Recursively restore nested items
@@ -605,6 +848,7 @@ public sealed class LoadoutSystem : EntitySystem
     /// <summary>
     /// Unequips all items from player and inserts them into the repository.
     /// Excludes blacklisted slots (id) and hand items.
+    /// Uses StalkerRepositorySystem's proven insertion logic.
     /// </summary>
     private void MoveEquipmentToStash(EntityUid player, Entity<StalkerRepositoryComponent> repository)
     {
@@ -623,91 +867,72 @@ public sealed class LoadoutSystem : EntitySystem
             }
         }
 
-        // Move inventory items to stash
+        // Move inventory items to stash using repository system's proven logic
         foreach (var (item, slot) in itemsToMove)
         {
             if (_inventory.TryUnequip(player, slot, out var unequipped, true, true))
             {
-                InsertItemToStash(repository, unequipped.Value, loadoutComp);
-            }
-        }
-
-        // Save repository state after all insertions
-        _stalkerStorage.SaveStorage(repository.Comp);
-    }
-
-    /// <summary>
-    /// Inserts a single item (with nested contents) into the repository.
-    /// Uses the repository's existing insert logic for proper handling of containers.
-    /// </summary>
-    private void InsertItemToStash(Entity<StalkerRepositoryComponent> repository, EntityUid item, StalkerLoadoutComponent? loadoutComp = null)
-    {
-        // Generate repository info using the repository system
-        var info = GenerateRepositoryItemInfo(item);
-        if (info == null)
-        {
-            _sawmill.Warning($"Could not generate repository info for item {ToPrettyString(item)}");
-            return;
-        }
-
-        // Check weight limit
-        var newWeight = repository.Comp.CurrentWeight + info.SumWeight;
-        if (newWeight > repository.Comp.MaxWeight)
-        {
-            _sawmill.Debug($"Stash weight limit reached, cannot insert {info.Name}");
-            return;
-        }
-
-        // Insert nested items first (items inside containers)
-        if (TryComp<ContainerManagerComponent>(item, out var containerMan))
-        {
-            foreach (var container in containerMan.Containers)
-            {
-                if (IsBlacklistedContainer(container.Key, loadoutComp))
-                    continue;
-
-                // Copy the list to avoid modification during iteration
-                var containedEntities = container.Value.ContainedEntities.ToList();
-                foreach (var contained in containedEntities)
+                // Use the repository system's InsertEquippedItem - handles all recursive insertion
+                if (!_repositorySystem.InsertEquippedItem(player, repository, unequipped.Value))
                 {
-                    if (IsBlacklistedEntity(contained, loadoutComp))
-                        continue;
-
-                    // Recursively insert nested items
-                    InsertItemToStash(repository, contained, loadoutComp);
+                    // If insertion fails (weight limit), just drop the item
+                    _sawmill.Debug($"Could not insert {ToPrettyString(unequipped.Value)} to stash - weight limit");
                 }
             }
         }
 
-        // Insert the item itself
-        InsertToRepository(repository, info);
-
-        // Delete the physical entity
-        QueueDel(item);
+        // NOTE: SaveStorage intentionally NOT called here - caller is responsible for saving
+        // after the full operation completes. This prevents saving intermediate state with
+        // duplicated item counts.
     }
 
-    private Dictionary<string, RepositoryItemInfo> BuildStashLookup(List<RepositoryItemInfo> items)
+    /// <summary>
+    /// Lookup structure that tracks items by identifier and prototype.
+    /// Supports multiple items per prototype (common after equipment cycling).
+    /// </summary>
+    private sealed class StashLookup
     {
-        var lookup = new Dictionary<string, RepositoryItemInfo>();
+        public Dictionary<string, RepositoryItemInfo> ByIdentifier { get; } = new();
+        public Dictionary<string, List<RepositoryItemInfo>> ByPrototype { get; } = new();
+    }
+
+    private StashLookup BuildStashLookup(List<RepositoryItemInfo> items)
+    {
+        var lookup = new StashLookup();
         foreach (var item in items)
         {
             // Primary lookup by identifier
-            lookup.TryAdd(item.Identifier, item);
-            // Fallback lookup by prototype
-            lookup.TryAdd($"proto:{item.ProductEntity}", item);
+            lookup.ByIdentifier.TryAdd(item.Identifier, item);
+
+            // Fallback lookup by prototype - store ALL items per prototype
+            var protoKey = item.ProductEntity;
+            if (!lookup.ByPrototype.TryGetValue(protoKey, out var protoList))
+            {
+                protoList = new List<RepositoryItemInfo>();
+                lookup.ByPrototype[protoKey] = protoList;
+            }
+            protoList.Add(item);
         }
         return lookup;
     }
 
-    private RepositoryItemInfo? FindItemInStash(string identifier, string prototypeId, Dictionary<string, RepositoryItemInfo> lookup)
+    private RepositoryItemInfo? FindItemInStash(string identifier, string prototypeId, StashLookup lookup)
     {
         // Try exact match first
-        if (lookup.TryGetValue(identifier, out var item) && item.Count > 0)
+        if (lookup.ByIdentifier.TryGetValue(identifier, out var item) && item.Count > 0)
             return item;
 
-        // Fallback to prototype match
-        if (lookup.TryGetValue($"proto:{prototypeId}", out item) && item.Count > 0)
-            return item;
+        // Fallback to prototype match - return ANY item with count > 0
+        // Prefer items at the end of the list (most recently added from MoveEquipmentToStash)
+        if (lookup.ByPrototype.TryGetValue(prototypeId, out var protoList))
+        {
+            // Iterate in reverse to prefer recently added items
+            for (var i = protoList.Count - 1; i >= 0; i--)
+            {
+                if (protoList[i].Count > 0)
+                    return protoList[i];
+            }
+        }
 
         return null;
     }
@@ -715,61 +940,20 @@ public sealed class LoadoutSystem : EntitySystem
     private void RemoveFromStash(
         Entity<StalkerRepositoryComponent> repository,
         RepositoryItemInfo item,
-        Dictionary<string, RepositoryItemInfo> lookup)
+        StashLookup lookup)
     {
         item.Count--;
         if (item.Count <= 0)
         {
             repository.Comp.ContainedItems.Remove(item);
-            // Remove from lookup when exhausted so duplicate items are handled correctly
-            lookup.Remove(item.Identifier);
-            lookup.Remove($"proto:{item.ProductEntity}");
+            // Remove from identifier lookup
+            lookup.ByIdentifier.Remove(item.Identifier);
+            // Remove from prototype list
+            if (lookup.ByPrototype.TryGetValue(item.ProductEntity, out var protoList))
+            {
+                protoList.Remove(item);
+            }
         }
-    }
-
-    private void InsertToRepository(Entity<StalkerRepositoryComponent> repository, RepositoryItemInfo info)
-    {
-        // Try to find existing stack
-        var existing = repository.Comp.ContainedItems.FirstOrDefault(i => i.Identifier == info.Identifier);
-        if (existing != null && !HasComp<StorageComponent>(GetEntity(info.Entities?.FirstOrDefault() ?? NetEntity.Invalid)))
-        {
-            existing.Count++;
-            if (existing.SStorageData is IItemStalkerStorage iss)
-                iss.CountVendingMachine++;
-        }
-        else
-        {
-            repository.Comp.ContainedItems.Add(info);
-        }
-
-        repository.Comp.CurrentWeight += info.Weight;
-    }
-
-    private RepositoryItemInfo? GenerateRepositoryItemInfo(EntityUid item)
-    {
-        var meta = MetaData(item);
-        if (meta.EntityPrototype == null)
-            return null;
-
-        var storageData = _stalkerStorage.ConvertToIItemStalkerStorage(item);
-        var identifier = "";
-        if (storageData.Count > 0 && storageData[0] is IItemStalkerStorage iss)
-            identifier = iss.Identifier();
-
-        if (!TryComp<Content.Shared._Stalker.Weight.STWeightComponent>(item, out var weight))
-            return null;
-
-        return new RepositoryItemInfo
-        {
-            Count = 1,
-            ProductEntity = meta.EntityPrototype.ID,
-            Name = meta.EntityName,
-            Desc = meta.EntityDescription,
-            Weight = weight.Self,
-            SumWeight = weight.Total,
-            SStorageData = storageData.Count > 0 ? storageData[0] : null,
-            Identifier = identifier
-        };
     }
 
     private bool IsBlacklistedContainer(string containerName, StalkerLoadoutComponent? loadoutComp = null)
@@ -782,8 +966,15 @@ public sealed class LoadoutSystem : EntitySystem
     private bool IsBlacklistedSlot(string slotName, StalkerLoadoutComponent? loadoutComp = null)
     {
         if (loadoutComp?.SlotBlacklist != null)
-            return loadoutComp.SlotBlacklist.Contains(slotName);
-        return DefaultSlotBlacklist.Contains(slotName);
+        {
+            var result = loadoutComp.SlotBlacklist.Contains(slotName);
+            _sawmill.Debug($"IsBlacklistedSlot: '{slotName}' custom check = {result}");
+            return result;
+        }
+
+        var defaultResult = DefaultSlotBlacklist.Contains(slotName);
+        _sawmill.Debug($"IsBlacklistedSlot: '{slotName}' default check = {defaultResult}");
+        return defaultResult;
     }
 
     private bool IsBlacklistedEntity(EntityUid item, StalkerLoadoutComponent? loadoutComp = null)
@@ -792,17 +983,20 @@ public sealed class LoadoutSystem : EntitySystem
         if (loadoutComp?.EntityBlacklist != null)
             return _whitelistSystem.IsWhitelistPass(loadoutComp.EntityBlacklist, item);
 
-        // Default component checks (similar to StalkerRepositorySystem)
+        // Default component checks
+        // Note: CartridgeComponent intentionally NOT blacklisted - we want to track bullets in loadouts
         return HasComp<Content.Shared.Body.Organ.OrganComponent>(item) ||
                HasComp<Content.Shared.Actions.InstantActionComponent>(item) ||
                HasComp<Content.Shared.Actions.WorldTargetActionComponent>(item) ||
                HasComp<Content.Shared.Actions.EntityTargetActionComponent>(item) ||
                HasComp<Content.Shared.Implants.Components.SubdermalImplantComponent>(item) ||
                HasComp<Content.Shared.Body.Part.BodyPartComponent>(item) ||
-               HasComp<Content.Shared.CartridgeLoader.CartridgeComponent>(item) ||
                HasComp<Content.Shared.Inventory.VirtualItem.VirtualItemComponent>(item) ||
                HasComp<Content.Shared.Mind.Components.MindContainerComponent>(item) ||
-               HasComp<Content.Shared.Chemistry.Components.SolutionComponent>(item);
+               HasComp<Content.Shared.Chemistry.Components.SolutionComponent>(item) ||
+               // Unremovable components
+               HasComp<Content.Shared.Interaction.Components.UnremoveableComponent>(item) ||
+               HasComp<Content.Shared.Clothing.Components.SelfUnremovableClothingComponent>(item);
     }
 
     /// <summary>
@@ -819,11 +1013,14 @@ public sealed class LoadoutSystem : EntitySystem
             var container = await GetLoadoutsAsync(owner);
             var loadouts = container?.Loadouts ?? new List<PlayerLoadout>();
 
+            // Build equipped prototypes lookup (items are not "missing" if currently worn)
+            var equippedPrototypes = BuildEquippedPrototypesLookup(actor);
+
             // Calculate missing items for each loadout
             var stashLookup = BuildStashLookup(component.ContainedItems);
             foreach (var loadout in loadouts)
             {
-                CalculateMissingItems(loadout, stashLookup);
+                CalculateMissingItems(loadout, stashLookup, equippedPrototypes);
             }
 
             // Sort: Quick Save first, then by name
@@ -837,52 +1034,216 @@ public sealed class LoadoutSystem : EntitySystem
         }
     }
 
-    private void CalculateMissingItems(PlayerLoadout loadout, Dictionary<string, RepositoryItemInfo> stashLookup)
+    /// <summary>
+    /// Builds a lookup of currently equipped item prototypes (with counts) for the player.
+    /// Used to determine which loadout items are already satisfied by worn equipment.
+    /// </summary>
+    private Dictionary<string, int> BuildEquippedPrototypesLookup(EntityUid? player)
     {
-        // Create a copy of the lookup to track consumed items during count
-        var tempLookup = new Dictionary<string, RepositoryItemInfo>();
-        foreach (var kvp in stashLookup)
+        var equipped = new Dictionary<string, int>();
+        if (!player.HasValue)
+            return equipped;
+
+        if (_inventory.TryGetContainerSlotEnumerator(player.Value, out var enumerator))
         {
-            // Clone the item info to avoid modifying the original
-            tempLookup[kvp.Key] = new RepositoryItemInfo
+            while (enumerator.NextItem(out var item, out _))
+            {
+                CollectItemAndNestedPrototypes(item, equipped);
+            }
+        }
+
+        return equipped;
+    }
+
+    /// <summary>
+    /// Recursively collects the prototype of an item and all its nested contents.
+    /// </summary>
+    private void CollectItemAndNestedPrototypes(EntityUid item, Dictionary<string, int> lookup)
+    {
+        var proto = MetaData(item).EntityPrototype?.ID;
+        if (proto != null)
+        {
+            lookup.TryGetValue(proto, out var count);
+            lookup[proto] = count + 1;
+        }
+
+        // Recursively check containers
+        if (TryComp<ContainerManagerComponent>(item, out var containerMan))
+        {
+            foreach (var container in containerMan.Containers)
+            {
+                foreach (var contained in container.Value.ContainedEntities)
+                {
+                    CollectItemAndNestedPrototypes(contained, lookup);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Calculates missing items for a loadout by checking each item against equipped items and stash.
+    /// Note: Nested items are stored as separate stash entries, not physically inside parents.
+    /// Each item (parent or nested) must be checked individually.
+    /// Items are first checked against equipped items (on player), then against stash.
+    /// </summary>
+    private void CalculateMissingItems(PlayerLoadout loadout, StashLookup stashLookup, Dictionary<string, int> equippedPrototypes)
+    {
+        var tempLookup = CloneLookup(stashLookup);
+        var tempEquipped = new Dictionary<string, int>(equippedPrototypes); // Clone to allow consumption
+        var missingItems = new List<MissingLoadoutItem>();
+
+        foreach (var slotItem in loadout.SlotItems)
+        {
+            var parentMissing = !TryConsumeFromEquippedOrStash(slotItem.PrototypeId, tempEquipped, slotItem.Identifier, tempLookup);
+
+            if (parentMissing)
+            {
+                // Parent is missing - add it, then check which nested items are also missing
+                var missing = new MissingLoadoutItem
+                {
+                    Name = GetPrototypeName(slotItem.PrototypeId),
+                    Location = slotItem.SlotName,
+                    Count = 1
+                };
+
+                // Only add nested items as children if they're ALSO missing from stash/equipped
+                CollectMissingNestedItems(slotItem.NestedItems, tempLookup, tempEquipped, missing.Children);
+                missingItems.Add(missing);
+            }
+            else
+            {
+                // Parent found - but nested items are stored separately, check them too
+                CollectMissingNestedItems(slotItem.NestedItems, tempLookup, tempEquipped, missingItems);
+            }
+        }
+
+        loadout.MissingItems = GroupMissingItems(missingItems);
+        loadout.MissingCount = CountAllMissing(loadout.MissingItems);
+    }
+
+    /// <summary>
+    /// Tries to consume an item from equipped items first, then from stash.
+    /// Returns true if the item was found (not missing), false if missing.
+    /// </summary>
+    private bool TryConsumeFromEquippedOrStash(string prototypeId, Dictionary<string, int> equipped, string identifier, StashLookup stashLookup)
+    {
+        // First check equipped items (by prototype only)
+        if (equipped.TryGetValue(prototypeId, out var count) && count > 0)
+        {
+            equipped[prototypeId] = count - 1;
+            return true;
+        }
+
+        // Then check stash (by identifier first, then prototype)
+        return TryConsumeFromLookup(identifier, prototypeId, stashLookup);
+    }
+
+    /// <summary>
+    /// Recursively checks nested items against the stash lookup and equipped items.
+    /// Only adds items that are actually missing from both sources.
+    /// </summary>
+    private void CollectMissingNestedItems(
+        List<LoadoutNestedItem> items,
+        StashLookup lookup,
+        Dictionary<string, int> equipped,
+        List<MissingLoadoutItem> target)
+    {
+        foreach (var item in items)
+        {
+            var itemMissing = !TryConsumeFromEquippedOrStash(item.PrototypeId, equipped, item.Identifier, lookup);
+
+            if (itemMissing)
+            {
+                // This nested item is missing from stash and equipped
+                var missing = new MissingLoadoutItem
+                {
+                    Name = GetPrototypeName(item.PrototypeId),
+                    Location = item.ContainerName,
+                    Count = 1
+                };
+
+                // Recursively check its children (only add if also missing)
+                CollectMissingNestedItems(item.NestedItems, lookup, equipped, missing.Children);
+                target.Add(missing);
+            }
+            else
+            {
+                // Item found - still check its nested items
+                CollectMissingNestedItems(item.NestedItems, lookup, equipped, target);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Groups items by name, preserving hierarchy.
+    /// Items with the same name at the same level are merged with increased count.
+    /// Children are recursively grouped as well.
+    /// </summary>
+    private List<MissingLoadoutItem> GroupMissingItems(List<MissingLoadoutItem> items)
+    {
+        var groups = new Dictionary<string, MissingLoadoutItem>();
+
+        foreach (var item in items)
+        {
+            if (groups.TryGetValue(item.Name, out var existing))
+            {
+                existing.Count++;
+                // Merge children recursively
+                foreach (var child in item.Children)
+                    existing.Children.Add(child);
+                existing.Children = GroupMissingItems(existing.Children);
+            }
+            else
+            {
+                groups[item.Name] = new MissingLoadoutItem
+                {
+                    Name = item.Name,
+                    Location = item.Location,
+                    Count = item.Count,
+                    Children = GroupMissingItems(item.Children)
+                };
+            }
+        }
+
+        return groups.Values.ToList();
+    }
+
+    /// <summary>
+    /// Counts total missing items including nested children.
+    /// </summary>
+    private int CountAllMissing(List<MissingLoadoutItem> items)
+    {
+        return items.Sum(m => m.Count + CountAllMissing(m.Children));
+    }
+
+    /// <summary>
+    /// Creates a deep clone of the stash lookup for consumption tracking.
+    /// </summary>
+    private StashLookup CloneLookup(StashLookup original)
+    {
+        var clone = new StashLookup();
+
+        // Clone identifier lookup
+        foreach (var kvp in original.ByIdentifier)
+        {
+            var clonedItem = new RepositoryItemInfo
             {
                 Count = kvp.Value.Count,
                 ProductEntity = kvp.Value.ProductEntity,
                 Identifier = kvp.Value.Identifier
             };
-        }
+            clone.ByIdentifier[kvp.Key] = clonedItem;
 
-        var missingItems = new List<MissingLoadoutItem>();
-
-        foreach (var slotItem in loadout.SlotItems)
-        {
-            if (!TryConsumeFromLookup(slotItem.Identifier, slotItem.PrototypeId, tempLookup))
+            // Also add to prototype lookup
+            if (!clone.ByPrototype.TryGetValue(clonedItem.ProductEntity, out var protoList))
             {
-                var name = GetPrototypeName(slotItem.PrototypeId);
-                missingItems.Add(new MissingLoadoutItem(name, slotItem.SlotName));
+                protoList = new List<RepositoryItemInfo>();
+                clone.ByPrototype[clonedItem.ProductEntity] = protoList;
             }
-            CollectMissingNested(slotItem.NestedItems, slotItem.SlotName, tempLookup, missingItems);
+            protoList.Add(clonedItem);
         }
 
-        loadout.MissingCount = missingItems.Count;
-        loadout.MissingItems = missingItems;
-    }
-
-    private void CollectMissingNested(
-        List<LoadoutNestedItem> items,
-        string parentLocation,
-        Dictionary<string, RepositoryItemInfo> lookup,
-        List<MissingLoadoutItem> missingItems)
-    {
-        foreach (var item in items)
-        {
-            if (!TryConsumeFromLookup(item.Identifier, item.PrototypeId, lookup))
-            {
-                var name = GetPrototypeName(item.PrototypeId);
-                missingItems.Add(new MissingLoadoutItem(name, parentLocation));
-            }
-            CollectMissingNested(item.NestedItems, parentLocation, lookup, missingItems);
-        }
+        return clone;
     }
 
     private string GetPrototypeName(string prototypeId)
@@ -892,20 +1253,26 @@ public sealed class LoadoutSystem : EntitySystem
         return prototypeId;
     }
 
-    private bool TryConsumeFromLookup(string identifier, string prototypeId, Dictionary<string, RepositoryItemInfo> lookup)
+    private bool TryConsumeFromLookup(string identifier, string prototypeId, StashLookup lookup)
     {
         // Try exact match first
-        if (lookup.TryGetValue(identifier, out var item) && item.Count > 0)
+        if (lookup.ByIdentifier.TryGetValue(identifier, out var item) && item.Count > 0)
         {
             item.Count--;
             return true;
         }
 
-        // Fallback to prototype match
-        if (lookup.TryGetValue($"proto:{prototypeId}", out item) && item.Count > 0)
+        // Fallback to prototype match - find any item with count > 0
+        if (lookup.ByPrototype.TryGetValue(prototypeId, out var protoList))
         {
-            item.Count--;
-            return true;
+            foreach (var protoItem in protoList)
+            {
+                if (protoItem.Count > 0)
+                {
+                    protoItem.Count--;
+                    return true;
+                }
+            }
         }
 
         return false;

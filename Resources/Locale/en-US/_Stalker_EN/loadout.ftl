@@ -4,17 +4,19 @@
 loadout-section-title = LOADOUTS
 
 # Window and button
-loadout-window-title = Loadouts
-loadout-open-button = Loadouts
+loadout-window-title = Loadouts (Beta)
+loadout-open-button = Loadouts (Beta)
 
 # Save section
 loadout-save-section-title = Save New Loadout
 loadout-list-title = Saved Loadouts
 
-# Quick save/load/store buttons
+# Quick save/load buttons
 loadout-quick-save = Quick Save
 loadout-quick-load = Quick Load
-loadout-quick-store = Quick Store
+
+# Warnings
+loadout-beta-warning = This feature is in beta. There is a possibility of losing items.
 
 # New loadout input
 loadout-name-label = Name:
@@ -46,3 +48,4 @@ loadout-load-failed = Could not load loadout
 loadout-empty = Nothing to save - no equipment
 loadout-name-required = Enter a name for the loadout
 loadout-not-found = Loadout not found
+loadout-stash-full = Stash is full

@@ -105,14 +105,6 @@ public sealed class LoadoutRequestMessage : BoundUserInterfaceMessage
 }
 
 /// <summary>
-/// Client requests to store all equipped items to stash without saving a loadout.
-/// </summary>
-[Serializable, NetSerializable]
-public sealed class LoadoutQuickStoreMessage : BoundUserInterfaceMessage
-{
-}
-
-/// <summary>
 /// Raised on the repository entity after a loadout save or load operation completes.
 /// Used to notify StalkerRepositorySystem to refresh the stash UI.
 /// </summary>
