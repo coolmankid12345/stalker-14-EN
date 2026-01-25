@@ -13,6 +13,7 @@ using Content.Shared._Stalker_EN.Loadout;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Storage;
 using Content.Shared.UserInterface;
 using Content.Shared.Whitelist;
@@ -36,12 +37,25 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly StalkerRepositorySystem _repositorySystem = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
 
     private ISawmill _sawmill = default!;
 
     private const int MaxRecursionDepth = 5;
     private const int MaxLoadoutNameLength = 32;
-    private static readonly string[] ContainerFallbacks = { "storagebase", "storage" };
+    // Gun-specific containers first, then general storage as fallback
+    private static readonly string[] ContainerFallbacks =
+    {
+        "gun_magazine",           // Magazine slot
+        "gun_chamber",            // Chambered round
+        "gun_module_muzzle",      // Silencers
+        "gun_module_scope",       // Scopes
+        "gun_module_underbarrel", // Grips, flashlights
+        "gun_auto_sear",          // Auto-sear module
+        "revolver-ammo",          // Revolver ammunition
+        "storagebase",            // General storage
+        "storage"                 // Fallback storage
+    };
 
     // Default blacklists (used when component is missing or field is null)
     private static readonly HashSet<string> DefaultSlotBlacklist = new() { "id" };
@@ -544,6 +558,9 @@ public sealed class LoadoutSystem : EntitySystem
         if (!TryComp<ContainerManagerComponent>(parent, out var containerMan))
             return;
 
+        // Check for ItemSlotsComponent (used by guns for magazine/chamber slots)
+        var hasItemSlots = HasComp<ItemSlotsComponent>(parent);
+
         foreach (var nestedItem in nestedItems)
         {
             // Find the item in stash
@@ -554,11 +571,24 @@ public sealed class LoadoutSystem : EntitySystem
                 continue;
             }
 
-            // Check if container exists
-            if (!containerMan.Containers.TryGetValue(nestedItem.ContainerName, out var container))
+            // Find container - try multiple methods
+            BaseContainer? container = null;
+
+            // Method 1: Direct container lookup
+            containerMan.Containers.TryGetValue(nestedItem.ContainerName, out container);
+
+            // Method 2: Try ItemSlots if available (for gun_magazine, gun_chamber, etc.)
+            if (container == null && hasItemSlots)
             {
-                // Try common container names in order of likelihood
-                container = null;
+                if (_itemSlots.TryGetSlot(parent, nestedItem.ContainerName, out var slot) && slot.ContainerSlot != null)
+                {
+                    container = slot.ContainerSlot;
+                }
+            }
+
+            // Method 3: Try fallbacks
+            if (container == null)
+            {
                 foreach (var fallback in ContainerFallbacks)
                 {
                     if (containerMan.Containers.TryGetValue(fallback, out var fallbackContainer))
@@ -566,24 +596,37 @@ public sealed class LoadoutSystem : EntitySystem
                         container = fallbackContainer;
                         break;
                     }
-                }
-
-                // Also try lowercase of original container name
-                if (container == null)
-                {
-                    var lowerName = nestedItem.ContainerName.ToLower();
-                    if (lowerName != nestedItem.ContainerName)
-                        containerMan.Containers.TryGetValue(lowerName, out container);
-                }
-
-                if (container == null)
-                {
-                    _sawmill.Debug($"No suitable container found for {nestedItem.PrototypeId} (tried: {nestedItem.ContainerName}, storagebase, storage)");
-                    continue;
+                    // Also try ItemSlots for fallbacks
+                    if (hasItemSlots && _itemSlots.TryGetSlot(parent, fallback, out var fallbackSlot) && fallbackSlot.ContainerSlot != null)
+                    {
+                        container = fallbackSlot.ContainerSlot;
+                        break;
+                    }
                 }
             }
 
-            // Remove item from stash
+            // Method 4: Lowercase fallback
+            if (container == null)
+            {
+                var lowerName = nestedItem.ContainerName.ToLower();
+                if (lowerName != nestedItem.ContainerName)
+                    containerMan.Containers.TryGetValue(lowerName, out container);
+            }
+
+            if (container == null)
+            {
+                _sawmill.Debug($"No suitable container found for {nestedItem.PrototypeId} (tried: {nestedItem.ContainerName}, fallbacks, ItemSlots)");
+                continue;
+            }
+
+            // Clear any existing item in the container (e.g., gun's default magazine from startingItem)
+            if (container is ContainerSlot containerSlot && containerSlot.ContainedEntity is { } existing)
+            {
+                _container.Remove(existing, container, reparent: false, force: true);
+                QueueDel(existing);
+            }
+
+            // Remove item from stash AFTER confirming container exists
             RemoveFromStash(repository, stashItem, stashLookup);
 
             // Spawn the item
