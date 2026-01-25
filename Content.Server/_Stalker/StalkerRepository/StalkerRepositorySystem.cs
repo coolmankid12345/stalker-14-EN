@@ -843,6 +843,24 @@ public sealed class StalkerRepositorySystem : EntitySystem
         return allowInsert;
     }
 
+    /// <summary>
+    /// Checks if an item can be stored in the repository.
+    /// Validates unremovable components and whitelist. Does NOT check weight.
+    /// </summary>
+    public bool CanStoreItem(Entity<StalkerRepositoryComponent> repository, EntityUid item)
+    {
+        // Check unremovable components (same check as nested items in InsertToRepositoryRecursively)
+        if (HasComp<UnremoveableComponent>(item) ||
+            HasComp<SelfUnremovableClothingComponent>(item))
+            return false;
+
+        // Check whitelist if repository has one
+        if (repository.Comp.Whitelist != null &&
+            !_whitelistSystem.IsWhitelistPass(repository.Comp.Whitelist, item))
+            return false;
+
+        return true;
+    }
 
     /// <summary>
     /// Method to insert ONE item into repository
@@ -1042,6 +1060,10 @@ public sealed class StalkerRepositorySystem : EntitySystem
     /// </summary>
     public bool InsertEquippedItem(EntityUid user, Entity<StalkerRepositoryComponent> repository, EntityUid item)
     {
+        // Pre-validate: check unremovable and whitelist
+        if (!CanStoreItem(repository, item))
+            return false;
+
         var itemInfo = GenerateItemInfo(item, true);
 
         // Check weight limit

@@ -17,6 +17,7 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Storage;
 using Content.Shared.UserInterface;
 using Content.Shared.Whitelist;
+using Content.Shared.Tag;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
@@ -38,6 +39,7 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly StalkerRepositorySystem _repositorySystem = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly TagSystem _tags = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -288,6 +290,11 @@ public sealed class LoadoutSystem : EntitySystem
             {
                 if (IsBlacklistedSlot(slotDef.Name, loadoutComp))
                     continue;
+
+                // Pre-validate - skip items that can't be stored
+                if (!_repositorySystem.CanStoreItem((uid, component), item))
+                    continue;
+
                 itemsToMove.Add((item, slotDef.Name));
             }
         }
@@ -757,17 +764,21 @@ public sealed class LoadoutSystem : EntitySystem
         if (loadoutComp?.EntityBlacklist != null)
             return _whitelistSystem.IsWhitelistPass(loadoutComp.EntityBlacklist, item);
 
-        // Default component checks (similar to StalkerRepositorySystem)
+        // Default component checks - aligned with StalkerRepositorySystem
         return HasComp<Content.Shared.Body.Organ.OrganComponent>(item) ||
                HasComp<Content.Shared.Actions.InstantActionComponent>(item) ||
                HasComp<Content.Shared.Actions.WorldTargetActionComponent>(item) ||
                HasComp<Content.Shared.Actions.EntityTargetActionComponent>(item) ||
                HasComp<Content.Shared.Implants.Components.SubdermalImplantComponent>(item) ||
                HasComp<Content.Shared.Body.Part.BodyPartComponent>(item) ||
-               HasComp<Content.Shared.CartridgeLoader.CartridgeComponent>(item) ||
+               // CartridgeComponent with Dogtag exception (from InsertToRepositoryRecursively line 729)
+               (HasComp<Content.Shared.CartridgeLoader.CartridgeComponent>(item) && !_tags.HasTag(item, "Dogtag")) ||
                HasComp<Content.Shared.Inventory.VirtualItem.VirtualItemComponent>(item) ||
                HasComp<Content.Shared.Mind.Components.MindContainerComponent>(item) ||
-               HasComp<Content.Shared.Chemistry.Components.SolutionComponent>(item);
+               HasComp<Content.Shared.Chemistry.Components.SolutionComponent>(item) ||
+               // Unremovable components (from StalkerRepositorySystem lines 661-662, 731-732)
+               HasComp<Content.Shared.Interaction.Components.UnremoveableComponent>(item) ||
+               HasComp<Content.Shared.Clothing.Components.SelfUnremovableClothingComponent>(item);
     }
 
     /// <summary>
