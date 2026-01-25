@@ -1028,4 +1028,31 @@ public sealed class StalkerRepositorySystem : EntitySystem
         }
     }
 #endregion
+
+    #region PublicHelpers
+
+    /// <summary>
+    /// Inserts a single equipped item into the repository using the proven insertion logic.
+    /// Used by LoadoutSystem's quick store feature.
+    /// </summary>
+    public bool InsertEquippedItem(EntityUid user, Entity<StalkerRepositoryComponent> repository, EntityUid item)
+    {
+        var itemInfo = GenerateItemInfo(item, true);
+
+        // Check weight limit
+        var newWeight = repository.Comp.CurrentWeight + itemInfo.SumWeight;
+        if (Math.Round(newWeight, 2) > repository.Comp.MaxWeight)
+            return false;
+
+        // Use proven recursive insertion logic
+        var toDelete = InsertToRepositoryRecursively(user, repository, itemInfo);
+        if (toDelete == null)
+            return false;
+
+        // Delete the original item
+        RemoveItems(user, toDelete.Value.Item1, toDelete.Value.Item2);
+        return true;
+    }
+
+    #endregion
 }

@@ -35,6 +35,7 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly StalkerRepositorySystem _repositorySystem = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -263,8 +264,48 @@ public sealed class LoadoutSystem : EntitySystem
         if (msg.Actor == null)
             return;
 
-        MoveEquipmentToStash(msg.Actor, (uid, component));
-        _popup.PopupEntity(Loc.GetString("loadout-items-stored"), msg.Actor, msg.Actor, PopupType.Small);
+        TryComp<StalkerLoadoutComponent>(uid, out var loadoutComp);
+
+        // Collect inventory items to move (can't modify while iterating)
+        var itemsToMove = new List<(EntityUid item, string slot)>();
+        if (_inventory.TryGetContainerSlotEnumerator(msg.Actor, out var enumerator))
+        {
+            while (enumerator.NextItem(out var item, out var slotDef))
+            {
+                if (IsBlacklistedSlot(slotDef.Name, loadoutComp))
+                    continue;
+                itemsToMove.Add((item, slotDef.Name));
+            }
+        }
+
+        var storedCount = 0;
+        foreach (var (item, slot) in itemsToMove)
+        {
+            // Unequip from slot first
+            if (!_inventory.TryUnequip(msg.Actor, slot, out var unequipped, true, true))
+                continue;
+
+            // Use repository system's proven insertion logic
+            if (_repositorySystem.InsertEquippedItem(msg.Actor, (uid, component), unequipped.Value))
+            {
+                storedCount++;
+            }
+            else
+            {
+                // Weight limit reached - re-equip the item
+                _inventory.TryEquip(msg.Actor, unequipped.Value, slot, true, true);
+                _popup.PopupEntity(Loc.GetString("loadout-stash-full"), msg.Actor, msg.Actor, PopupType.SmallCaution);
+                break;
+            }
+        }
+
+        if (storedCount > 0)
+        {
+            _popup.PopupEntity(Loc.GetString("loadout-items-stored"), msg.Actor, msg.Actor, PopupType.Small);
+        }
+
+        // Save repository state
+        _stalkerStorage.SaveStorage(component);
 
         // Refresh stash UI
         var ev = new LoadoutOperationCompletedEvent(msg.Actor, uid);
@@ -575,6 +616,7 @@ public sealed class LoadoutSystem : EntitySystem
     /// <summary>
     /// Unequips all items from player and inserts them into the repository.
     /// Excludes blacklisted slots (id) and hand items.
+    /// Uses StalkerRepositorySystem's proven insertion logic.
     /// </summary>
     private void MoveEquipmentToStash(EntityUid player, Entity<StalkerRepositoryComponent> repository)
     {
@@ -593,67 +635,22 @@ public sealed class LoadoutSystem : EntitySystem
             }
         }
 
-        // Move inventory items to stash
+        // Move inventory items to stash using repository system's proven logic
         foreach (var (item, slot) in itemsToMove)
         {
             if (_inventory.TryUnequip(player, slot, out var unequipped, true, true))
             {
-                InsertItemToStash(repository, unequipped.Value, loadoutComp);
+                // Use the repository system's InsertEquippedItem - handles all recursive insertion
+                if (!_repositorySystem.InsertEquippedItem(player, repository, unequipped.Value))
+                {
+                    // If insertion fails (weight limit), just drop the item
+                    _sawmill.Debug($"Could not insert {ToPrettyString(unequipped.Value)} to stash - weight limit");
+                }
             }
         }
 
         // Save repository state after all insertions
         _stalkerStorage.SaveStorage(repository.Comp);
-    }
-
-    /// <summary>
-    /// Inserts a single item (with nested contents) into the repository.
-    /// Uses the repository's existing insert logic for proper handling of containers.
-    /// </summary>
-    private void InsertItemToStash(Entity<StalkerRepositoryComponent> repository, EntityUid item, StalkerLoadoutComponent? loadoutComp = null)
-    {
-        // Generate repository info using the repository system
-        var info = GenerateRepositoryItemInfo(item);
-        if (info == null)
-        {
-            _sawmill.Warning($"Could not generate repository info for item {ToPrettyString(item)}");
-            return;
-        }
-
-        // Check weight limit
-        var newWeight = repository.Comp.CurrentWeight + info.SumWeight;
-        if (newWeight > repository.Comp.MaxWeight)
-        {
-            _sawmill.Debug($"Stash weight limit reached, cannot insert {info.Name}");
-            return;
-        }
-
-        // Insert nested items first (items inside containers)
-        if (TryComp<ContainerManagerComponent>(item, out var containerMan))
-        {
-            foreach (var container in containerMan.Containers)
-            {
-                if (IsBlacklistedContainer(container.Key, loadoutComp))
-                    continue;
-
-                // Copy the list to avoid modification during iteration
-                var containedEntities = container.Value.ContainedEntities.ToList();
-                foreach (var contained in containedEntities)
-                {
-                    if (IsBlacklistedEntity(contained, loadoutComp))
-                        continue;
-
-                    // Recursively insert nested items
-                    InsertItemToStash(repository, contained, loadoutComp);
-                }
-            }
-        }
-
-        // Insert the item itself
-        InsertToRepository(repository, info);
-
-        // Delete the physical entity
-        QueueDel(item);
     }
 
     private Dictionary<string, RepositoryItemInfo> BuildStashLookup(List<RepositoryItemInfo> items)
@@ -695,51 +692,6 @@ public sealed class LoadoutSystem : EntitySystem
             lookup.Remove(item.Identifier);
             lookup.Remove($"proto:{item.ProductEntity}");
         }
-    }
-
-    private void InsertToRepository(Entity<StalkerRepositoryComponent> repository, RepositoryItemInfo info)
-    {
-        // Try to find existing stack
-        var existing = repository.Comp.ContainedItems.FirstOrDefault(i => i.Identifier == info.Identifier);
-        if (existing != null && !HasComp<StorageComponent>(GetEntity(info.Entities?.FirstOrDefault() ?? NetEntity.Invalid)))
-        {
-            existing.Count++;
-            if (existing.SStorageData is IItemStalkerStorage iss)
-                iss.CountVendingMachine++;
-        }
-        else
-        {
-            repository.Comp.ContainedItems.Add(info);
-        }
-
-        repository.Comp.CurrentWeight += info.Weight;
-    }
-
-    private RepositoryItemInfo? GenerateRepositoryItemInfo(EntityUid item)
-    {
-        var meta = MetaData(item);
-        if (meta.EntityPrototype == null)
-            return null;
-
-        var storageData = _stalkerStorage.ConvertToIItemStalkerStorage(item);
-        var identifier = "";
-        if (storageData.Count > 0 && storageData[0] is IItemStalkerStorage iss)
-            identifier = iss.Identifier();
-
-        if (!TryComp<Content.Shared._Stalker.Weight.STWeightComponent>(item, out var weight))
-            return null;
-
-        return new RepositoryItemInfo
-        {
-            Count = 1,
-            ProductEntity = meta.EntityPrototype.ID,
-            Name = meta.EntityName,
-            Desc = meta.EntityDescription,
-            Weight = weight.Self,
-            SumWeight = weight.Total,
-            SStorageData = storageData.Count > 0 ? storageData[0] : null,
-            Identifier = identifier
-        };
     }
 
     private bool IsBlacklistedContainer(string containerName, StalkerLoadoutComponent? loadoutComp = null)
@@ -822,36 +774,50 @@ public sealed class LoadoutSystem : EntitySystem
             };
         }
 
-        var missingItems = new List<MissingLoadoutItem>();
+        // Use dictionary to group missing items by name
+        var missingGroups = new Dictionary<string, MissingLoadoutItem>();
 
         foreach (var slotItem in loadout.SlotItems)
         {
             if (!TryConsumeFromLookup(slotItem.Identifier, slotItem.PrototypeId, tempLookup))
             {
                 var name = GetPrototypeName(slotItem.PrototypeId);
-                missingItems.Add(new MissingLoadoutItem(name, slotItem.SlotName));
+                AddOrIncrementMissing(missingGroups, name, slotItem.SlotName);
             }
-            CollectMissingNested(slotItem.NestedItems, slotItem.SlotName, tempLookup, missingItems);
+            CollectMissingNestedGrouped(slotItem.NestedItems, slotItem.SlotName, tempLookup, missingGroups);
         }
 
-        loadout.MissingCount = missingItems.Count;
+        var missingItems = missingGroups.Values.ToList();
+        loadout.MissingCount = missingItems.Sum(m => m.Count);
         loadout.MissingItems = missingItems;
     }
 
-    private void CollectMissingNested(
+    private void AddOrIncrementMissing(Dictionary<string, MissingLoadoutItem> groups, string name, string location)
+    {
+        if (groups.TryGetValue(name, out var existing))
+        {
+            existing.Count++;
+        }
+        else
+        {
+            groups[name] = new MissingLoadoutItem(name, location);
+        }
+    }
+
+    private void CollectMissingNestedGrouped(
         List<LoadoutNestedItem> items,
         string parentLocation,
         Dictionary<string, RepositoryItemInfo> lookup,
-        List<MissingLoadoutItem> missingItems)
+        Dictionary<string, MissingLoadoutItem> groups)
     {
         foreach (var item in items)
         {
             if (!TryConsumeFromLookup(item.Identifier, item.PrototypeId, lookup))
             {
                 var name = GetPrototypeName(item.PrototypeId);
-                missingItems.Add(new MissingLoadoutItem(name, parentLocation));
+                AddOrIncrementMissing(groups, name, parentLocation);
             }
-            CollectMissingNested(item.NestedItems, parentLocation, lookup, missingItems);
+            CollectMissingNestedGrouped(item.NestedItems, parentLocation, lookup, groups);
         }
     }
 

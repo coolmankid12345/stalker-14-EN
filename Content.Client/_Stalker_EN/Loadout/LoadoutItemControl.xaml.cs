@@ -62,9 +62,13 @@ public sealed partial class LoadoutItemControl : Control
             });
             foreach (var item in loadout.MissingItems)
             {
+                var displayText = item.Count > 1
+                    ? $"  - {item.Count}x {item.Name}"
+                    : $"  - {item.Name}";
+
                 MissingDetailsContainer.AddChild(new Label
                 {
-                    Text = $"  - {item.Name}",
+                    Text = displayText,
                     FontColorOverride = Color.FromHex("#FF6B6B")
                 });
             }

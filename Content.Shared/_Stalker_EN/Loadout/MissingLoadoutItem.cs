@@ -18,11 +18,17 @@ public sealed class MissingLoadoutItem
     /// </summary>
     public string Location { get; set; } = string.Empty;
 
+    /// <summary>
+    /// Number of this item that are missing.
+    /// </summary>
+    public int Count { get; set; } = 1;
+
     public MissingLoadoutItem() { }
 
     public MissingLoadoutItem(string name, string location)
     {
         Name = name;
         Location = location;
+        Count = 1;
     }
 }
