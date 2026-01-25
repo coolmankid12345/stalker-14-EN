@@ -6,7 +6,7 @@
   components:
   - type: Transform
     anchored: true
-  - type: IgnorePredictionHide
+  #- type: IgnorePredictionHide # Temporarily commented for build fixing
   - type: Marker
   - type: Clickable
   - type: InteractionOutline

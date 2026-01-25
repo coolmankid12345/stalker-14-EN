@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿// Temporarily commented for build fixing
+/*
+using System.Linq;
 using Content.Client.Projectiles;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Projectiles;
@@ -184,3 +186,4 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         }
     }
 }
+*/
