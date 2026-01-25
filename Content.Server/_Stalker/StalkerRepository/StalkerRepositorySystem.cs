@@ -18,6 +18,7 @@ using Content.Shared.Database;
 using Content.Shared.Hands;
 using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item;
@@ -656,7 +657,9 @@ public sealed class StalkerRepositorySystem : EntitySystem
                     HasComp<BodyPartComponent>(element) ||
                     HasComp<CartridgeComponent>(element) ||
                     HasComp<VirtualItemComponent>(element) ||
-                    HasComp<MindContainerComponent>(element)) // Do not insert alive objects(mice, etc.)
+                    HasComp<MindContainerComponent>(element) || // Do not insert alive objects(mice, etc.)
+                    HasComp<UnremoveableComponent>(element) ||
+                    HasComp<SelfUnremovableClothingComponent>(element))
                     continue;
                 // recursively call the same method and add its result to our
                 if (TryComp<ContainerManagerComponent>(element, out var manager))
@@ -724,7 +727,9 @@ public sealed class StalkerRepositorySystem : EntitySystem
                 if (HasComp<SolutionComponent>(item) || // Do not insert solutions
                     HasComp<InstantActionComponent>(item) || // Do not insert actions
                     HasComp<CartridgeComponent>(item) && !_tags.HasTag(item, "Dogtag") ||
-                    HasComp<BallisticAmmoProviderComponent>(playerItem) && _tags.HasTag(item, "Cartridge"))  // Do not insert program cartridges
+                    HasComp<BallisticAmmoProviderComponent>(playerItem) && _tags.HasTag(item, "Cartridge") || // Do not insert program cartridges
+                    HasComp<UnremoveableComponent>(item) ||
+                    HasComp<SelfUnremovableClothingComponent>(item))
                     continue;
 
                 items.Add(item);
