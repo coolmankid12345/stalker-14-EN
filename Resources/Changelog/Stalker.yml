@@ -25,5 +25,12 @@
   id: 2
   time: '2026-01-25T20:11:00.059464+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/345
+- author: teecoding
+  changes:
+  - message: Loadout system build error from incomplete merge
+    type: Fix
+  id: 3
+  time: '2026-01-25T21:31:08.870051+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/346
 Name: Stalker
 Order: -1
