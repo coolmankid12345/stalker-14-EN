@@ -41,4 +41,4 @@ jobs:
         with:
           commit_message: "docs(changelog): update for PR #${{ github.event.pull_request.number }}"
           branch: ${{ github.event.pull_request.base.ref }}
-          file_pattern: Resources/Changelog/Changelog.yml
+          file_pattern: Resources/Changelog/Stalker.yml
