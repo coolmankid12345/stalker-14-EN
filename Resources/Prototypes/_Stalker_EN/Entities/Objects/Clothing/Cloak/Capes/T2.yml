@@ -89,3 +89,43 @@
     sprite: _Stalker_EN/Objects/Clothing/cloak/smuggler_coat.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodCoatStalker
+
+- type: entity
+  parent: STClothingCapeT2Base
+  id: ClothingOuterCoatBanditRedline
+  name: redline coat
+  suffix: ST, T2, Bandit
+  description: A modified bandit jacket reinforced with durable leather. Made in-house by the bandits themselves.
+  components:
+  - type: STWeight
+    self: 1.5
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.80
+        Piercing: 0.85
+        Heat: 0.95
+        Cold: 0.95
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/cloak/redline.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/cloak/redline.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCoatBanditRedline
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHatHoodCoatBanditRedline
+  categories: [ HideSpawnMenu ]
+  name: redline hood
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/coat_hat_redline.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/coat_hat_redline.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop

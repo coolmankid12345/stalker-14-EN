@@ -104,3 +104,42 @@
     size: Tiny
   - type: Appearance
   - type: PaperVisuals
+
+- type: entity
+  id: PonderingWisp
+  name: wisp
+  description: An incandescent orb of light that floats through the air. What does it want?
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: orb
+    drawdepth: Items
+    noRot: false
+    shader: unshaded
+  - type: PointLight
+    radius: 2
+    color: "#00CCFF"
+  - type: TileFrictionModifier
+    modifier: 0.001
+  - type: MovedByPressure
+  - type: EmitSoundOnCollide
+    sound:
+      collection: WeakHit
+  - type: CollisionWake
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: Pullable
+  - type: STWeight
+    self: -100
