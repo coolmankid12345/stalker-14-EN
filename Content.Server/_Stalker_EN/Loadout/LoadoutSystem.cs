@@ -630,13 +630,13 @@ public sealed class LoadoutSystem : EntitySystem
             // Put item in hands or drop it
             if (!_hands.TryPickup(player, spawned))
             {
-                QueueDel(spawned);
+                ReturnSpawnedItemToStash(spawned, repository, stashLookup, player, slotItem.PrototypeId);
                 return false;
             }
         }
 
         // Restore nested items
-        RestoreNestedItems(spawned, slotItem.NestedItems, repository, stashLookup, 0);
+        RestoreNestedItems(spawned, slotItem.NestedItems, repository, stashLookup, 0, player);
 
         return true;
     }
@@ -646,7 +646,8 @@ public sealed class LoadoutSystem : EntitySystem
         List<LoadoutNestedItem> nestedItems,
         Entity<StalkerRepositoryComponent> repository,
         StashLookup stashLookup,
-        int depth)
+        int depth,
+        EntityUid player)
     {
         if (depth > MaxRecursionDepth)
             return;
@@ -796,7 +797,7 @@ public sealed class LoadoutSystem : EntitySystem
             if (!inserted)
             {
                 _sawmill.Warning($"Failed to insert {nestedItem.PrototypeId} into container {nestedItem.ContainerName}");
-                QueueDel(spawned);
+                ReturnSpawnedItemToStash(spawned, repository, stashLookup, player, nestedItem.PrototypeId);
                 continue;
             }
 
@@ -807,7 +808,36 @@ public sealed class LoadoutSystem : EntitySystem
             }
 
             // Recursively restore nested items
-            RestoreNestedItems(spawned, nestedItem.NestedItems, repository, stashLookup, depth + 1);
+            RestoreNestedItems(spawned, nestedItem.NestedItems, repository, stashLookup, depth + 1, player);
+        }
+    }
+
+    /// <summary>
+    /// Returns a spawned item back to the stash when insertion fails.
+    /// Falls back to dropping near player if stash insertion also fails.
+    /// </summary>
+    private void ReturnSpawnedItemToStash(
+        EntityUid spawned,
+        Entity<StalkerRepositoryComponent> repository,
+        Dictionary<string, RepositoryItemInfo> stashLookup,
+        EntityUid player,
+        string itemName)
+    {
+        var info = GenerateRepositoryItemInfo(spawned);
+        if (info != null)
+        {
+            InsertToRepository(repository, info);
+            stashLookup.TryAdd(info.Identifier, info);
+            stashLookup.TryAdd($"proto:{info.ProductEntity}", info);
+            QueueDel(spawned);
+            _sawmill.Info($"Returned {itemName} to stash after insertion failure");
+        }
+        else
+        {
+            // Last resort: drop near player (never delete)
+            var xform = Transform(player);
+            Transform(spawned).Coordinates = xform.Coordinates;
+            _sawmill.Warning($"Dropped {itemName} near player - could not return to stash");
         }
     }
 

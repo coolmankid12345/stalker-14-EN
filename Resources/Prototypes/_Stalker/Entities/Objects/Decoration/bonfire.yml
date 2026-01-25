@@ -11,6 +11,11 @@
     layers:
       - state: Monolit
       - state: MonolitFire
+  - type: Prayable # EN
+    sentMessage: prayer-popup-notify-monolit-sent
+    notificationPrefix: prayer-chat-notify-monolit
+    verb: prayer-verbs-pray
+    verbImage: null
 
 - type: entity
   id: StalkerBarrelBonFire
