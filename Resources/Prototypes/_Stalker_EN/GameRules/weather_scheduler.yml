@@ -11,7 +11,7 @@
       STFogHeavy: 0.5
     clearWeatherWeight: 4.0
     changeInterval:
-      min: 1800
+      min: 1500
       max: 2700
     weatherDuration:
       min: 120
@@ -24,10 +24,11 @@
       # Red Forest - Dense forest, high radiation, ominous atmosphere
       RedForest:
         weatherPool:
-          STFogHeavy: 4.0
-          STFogLight: 3.0
-          Rain: 2.0
-          Storm: 1.0
+          STFogHeavy: 0.5
+          STFogLight: 0.8
+          STRain: 2.0
+          STStorm: 1.0
+          STRedStorm: 0.2
         clearWeatherWeight: 2.0
 
       # Svalka (Garbage) - Junkyard area, more fog
@@ -35,8 +36,9 @@
         weatherPool:
           STFogLight: 3.0
           STFogHeavy: 2.0
-          Rain: 2.0
-          Storm: 0.5
+          STRain: 2.0
+          STStorm: 0.5
+          AshfallLight: 0.1
         clearWeatherWeight: 3.0
 
       # Dark Valley - Industrial valley, foggy and rainy
@@ -44,8 +46,8 @@
         weatherPool:
           STFogLight: 3.0
           STFogHeavy: 2.5
-          Rain: 3.0
-          Storm: 1.5
+          STRain: 3.0
+          STStorm: 1.5
         clearWeatherWeight: 2.5
 
       # TemnajLohina - Dark hollow/ravine, very foggy
@@ -53,7 +55,7 @@
         weatherPool:
           STFogHeavy: 4.0
           STFogLight: 3.0
-          Rain: 1.5
+          STRain: 1.5
         clearWeatherWeight: 2.0
 
       # Topi (Marshes) - Swampy area, lots of rain and fog
@@ -61,6 +63,14 @@
         weatherPool:
           Rain: 4.0
           STFogLight: 3.0
-          STFogHeavy: 2.0
-          Storm: 1.0
+          STFogHeavy: 1.0
+          STStorm: 1.0
         clearWeatherWeight: 2.0
+
+      # Cordon - Beginner friendly
+      Kordon:
+        weatherPool:
+          STFogLight: 0.7
+          STRain: 2.0
+          STStorm: 1.0
+        clearWeatherWeight: 3.0
