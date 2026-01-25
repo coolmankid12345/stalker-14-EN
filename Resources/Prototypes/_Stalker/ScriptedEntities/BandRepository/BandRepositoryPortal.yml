@@ -640,9 +640,9 @@
   parent: BandRepositoryBase
   id: PortalBandMonolithRepository
   suffix: 2500
-  noSpawn: false
   name: Band-Monolith-Repository
   description: Band-MilitaryStalker-Repository-desc
+  categories: [ HideSpawnMenu ]
   components:
   - type: AccessReader
     access: [["Monolith"]]

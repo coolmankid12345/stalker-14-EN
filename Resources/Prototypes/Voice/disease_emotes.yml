@@ -1,5 +1,3 @@
-# stalker14-no-vanila-emotes
-
  - type: emote
    id: Sneeze
    name: chat-emote-name-sneeze
@@ -28,6 +26,10 @@
      - cough!
      - coughs!
      - coughed!
+    # Stalker-RU
+    - кашель
+    - кашляет
+    - кашлянул
 
  - type: emote
    id: CatMeow
@@ -68,10 +70,12 @@
    chatTriggers:
      - yawn
      - yawns
+    # Stalker-RU
+    - зевок
+    - зевает
 
  - type: emote
    id: Snore
    name: chat-emote-name-snore
    category: Vocal
    chatMessages: ["chat-emote-msg-snore"]
-

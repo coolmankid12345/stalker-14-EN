@@ -130,22 +130,22 @@
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,2,0,3
-    - 0,-2,0,0
-    - 2,2,2,3
-    - 2,-1,3,-0
-    - 4,2,4,3
-    - 5,-1,6,-0
-    - 6,2,6,3
-    - 8,2,8,3
-    - 8,-2,8,0
+    - 0,4,0,5
+    - 0,0,0,2
+    - 2,4,2,5
+    - 2,1,3,2
+    - 4,4,4,5
+    - 5,1,6,2
+    - 6,4,6,5
+    - 8,4,8,5
+    - 8,0,8,2
 
 - type: entity
   parent: STClothingCapeBase
   id: STClothingNeckExoskeletonSci
   suffix: Stalker
-  name: ent-STClothingNeckExoskeletonSci
-  description: .desc
+  name: Экзоскелет грузового типа
+  description: Разработанный учеными НИИ, данный экзоскелет был для эффективного перемещения больших объемов грузов без использования транспорта. Никакой защиты против аномалий, мутантов или пуль нет.
   components:
   - type: STWeight
     self: 10
@@ -163,7 +163,9 @@
     drawRate: 0.4
   - type: ContainerContainer
     containers:
-      cell_slot: !type:ContainerSlot
+      cell_slot: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
   - type: ItemSlots
     slots:
       cell_slot:

@@ -18,6 +18,7 @@ public abstract class SharedBiomeSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] protected readonly ITileDefinitionManager TileDefManager = default!;
     [Dependency] private readonly TileSystem _tile = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     protected const byte ChunkSize = 8;
 
@@ -79,7 +80,7 @@ public abstract class SharedBiomeSystem : EntitySystem
 
     public bool TryGetBiomeTile(EntityUid uid, MapGridComponent grid, Vector2i indices, [NotNullWhen(true)] out Tile? tile)
     {
-        if (grid.TryGetTileRef(indices, out var tileRef) && !tileRef.Tile.IsEmpty)
+        if (_map.TryGetTileRef(uid, grid, indices, out var tileRef) && !tileRef.Tile.IsEmpty)
         {
             tile = tileRef.Tile;
             return true;
@@ -91,15 +92,15 @@ public abstract class SharedBiomeSystem : EntitySystem
             return false;
         }
 
-        return TryGetBiomeTile(indices, biome.Layers, biome.Seed, grid, out tile);
+        return TryGetBiomeTile(indices, biome.Layers, biome.Seed, (uid, grid), out tile);
     }
 
     /// <summary>
     /// Tries to get the tile, real or otherwise, for the specified indices.
     /// </summary>
-    public bool TryGetBiomeTile(Vector2i indices, List<IBiomeLayer> layers, int seed, MapGridComponent? grid, [NotNullWhen(true)] out Tile? tile)
+    public bool TryGetBiomeTile(Vector2i indices, List<IBiomeLayer> layers, int seed, Entity<MapGridComponent>? grid, [NotNullWhen(true)] out Tile? tile)
     {
-        if (grid?.TryGetTileRef(indices, out var tileRef) == true && !tileRef.Tile.IsEmpty)
+        if (grid is { } gridEnt && _map.TryGetTileRef(gridEnt, gridEnt.Comp, indices, out var tileRef) && !tileRef.Tile.IsEmpty)
         {
             tile = tileRef.Tile;
             return true;
@@ -109,9 +110,18 @@ public abstract class SharedBiomeSystem : EntitySystem
     }
 
     /// <summary>
+    /// Tries to get the tile, real or otherwise, for the specified indices.
+    /// </summary>
+    [Obsolete("Use the Entity<MapGridComponent>? overload")]
+    public bool TryGetBiomeTile(Vector2i indices, List<IBiomeLayer> layers, int seed, MapGridComponent? grid, [NotNullWhen(true)] out Tile? tile)
+    {
+        return TryGetBiomeTile(indices, layers, seed, grid == null ? null : (grid.Owner, grid), out tile);
+    }
+
+    /// <summary>
     /// Gets the underlying biome tile, ignoring any existing tile that may be there.
     /// </summary>
-    public bool TryGetTile(Vector2i indices, List<IBiomeLayer> layers, int seed, MapGridComponent? grid, [NotNullWhen(true)] out Tile? tile)
+    public bool TryGetTile(Vector2i indices, List<IBiomeLayer> layers, int seed, Entity<MapGridComponent>? grid, [NotNullWhen(true)] out Tile? tile)
     {
         // Respect the global disable flag: if generation is disabled then don't compute
         // biome tiles from layers. This avoids invoking expensive noise and prototype logic.
@@ -147,7 +157,7 @@ public abstract class SharedBiomeSystem : EntitySystem
             if (layer is not BiomeTileLayer tileLayer)
                 continue;
 
-            if (TryGetTile(indices, noiseCopy, tileLayer.Invert, tileLayer.Threshold, ProtoManager.Index<ContentTileDefinition>(tileLayer.Tile), tileLayer.Variants, out tile))
+            if (TryGetTile(indices, noiseCopy, tileLayer.Invert, tileLayer.Threshold, ProtoManager.Index(tileLayer.Tile), tileLayer.Variants, out tile))
             {
                 return true;
             }
@@ -155,6 +165,15 @@ public abstract class SharedBiomeSystem : EntitySystem
 
         tile = null;
         return false;
+    }
+
+    /// <summary>
+    /// Gets the underlying biome tile, ignoring any existing tile that may be there.
+    /// </summary>
+    [Obsolete("Use the Entity<MapGridComponent>? overload")]
+    public bool TryGetTile(Vector2i indices, List<IBiomeLayer> layers, int seed, MapGridComponent? grid, [NotNullWhen(true)] out Tile? tile)
+    {
+        return TryGetTile(indices, layers, seed, grid == null ? null : (grid.Owner, grid), out tile);
     }
 
     /// <summary>
@@ -178,17 +197,17 @@ public abstract class SharedBiomeSystem : EntitySystem
         if (variantCount > 1)
         {
             var variantValue = (noise.GetNoise(indices.X * 8, indices.Y * 8, variantCount) + 1f) * 100;
-            variant = _tile.PickVariant(tileDef, (int) variantValue);
+            variant = _tile.PickVariant(tileDef, (int)variantValue);
         }
 
-        tile = new Tile(tileDef.TileId, 0, variant);
+        tile = new Tile(tileDef.TileId, variant);
         return true;
     }
 
     /// <summary>
     /// Tries to get the relevant entity for this tile.
     /// </summary>
-    public bool TryGetEntity(Vector2i indices, BiomeComponent component, MapGridComponent grid,
+    public bool TryGetEntity(Vector2i indices, BiomeComponent component, Entity<MapGridComponent>? grid,
         [NotNullWhen(true)] out string? entity)
     {
         if (!TryGetBiomeTile(indices, component.Layers, component.Seed, grid, out var tile))
@@ -200,8 +219,17 @@ public abstract class SharedBiomeSystem : EntitySystem
         return TryGetEntity(indices, component.Layers, tile.Value, component.Seed, grid, out entity);
     }
 
+    /// <summary>
+    /// Tries to get the relevant entity for this tile.
+    /// </summary>
+    [Obsolete("Use the Entity<MapGridComponent>? overload")]
+    public bool TryGetEntity(Vector2i indices, BiomeComponent component, MapGridComponent grid,
+        [NotNullWhen(true)] out string? entity)
+    {
+        return TryGetEntity(indices, component, grid == null ? null : (grid.Owner, grid), out entity);
+    }
 
-    public bool TryGetEntity(Vector2i indices, List<IBiomeLayer> layers, Tile tileRef, int seed, MapGridComponent grid,
+    public bool TryGetEntity(Vector2i indices, List<IBiomeLayer> layers, Tile tileRef, int seed, Entity<MapGridComponent>? grid,
         [NotNullWhen(true)] out string? entity)
     {
         var tileId = TileDefManager[tileRef.TypeId].ID;
@@ -260,10 +288,17 @@ public abstract class SharedBiomeSystem : EntitySystem
         return false;
     }
 
+    [Obsolete("Use the Entity<MapGridComponent>? overload")]
+    public bool TryGetEntity(Vector2i indices, List<IBiomeLayer> layers, Tile tileRef, int seed, MapGridComponent grid,
+        [NotNullWhen(true)] out string? entity)
+    {
+        return TryGetEntity(indices, layers, tileRef, seed, grid == null ? null : (grid.Owner, grid), out entity);
+    }
+
     /// <summary>
     /// Tries to get the relevant decals for this tile.
     /// </summary>
-    public bool TryGetDecals(Vector2i indices, List<IBiomeLayer> layers, int seed, MapGridComponent grid,
+    public bool TryGetDecals(Vector2i indices, List<IBiomeLayer> layers, int seed, Entity<MapGridComponent>? grid,
         [NotNullWhen(true)] out List<(string ID, Vector2 Position)>? decals)
     {
         if (!TryGetBiomeTile(indices, layers, seed, grid, out var tileRef))
@@ -345,6 +380,16 @@ public abstract class SharedBiomeSystem : EntitySystem
 
         decals = null;
         return false;
+    }
+
+    /// <summary>
+    /// Tries to get the relevant decals for this tile.
+    /// </summary>
+    [Obsolete("Use the Entity<MapGridComponent>? overload")]
+    public bool TryGetDecals(Vector2i indices, List<IBiomeLayer> layers, int seed, MapGridComponent grid,
+        [NotNullWhen(true)] out List<(string ID, Vector2 Position)>? decals)
+    {
+        return TryGetDecals(indices, layers, seed, grid == null ? null : (grid.Owner, grid), out decals);
     }
 
     private FastNoiseLite GetNoise(FastNoiseLite seedNoise, int seed)

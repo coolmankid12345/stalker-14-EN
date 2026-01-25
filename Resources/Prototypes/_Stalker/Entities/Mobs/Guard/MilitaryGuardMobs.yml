@@ -17,17 +17,13 @@
   - type: Bands
     bandIcon: army
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: alive
-      sprite: /Textures/_Stalker/Mobs/Military/Vist.rsi
-  - type: BatterySelfRecharger
-    autoRecharge: true
+    sprite: /Textures/_Stalker/Mobs/Military/Vist.rsi
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 50
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 200
     startingCharge: 200
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet918PGJ
     fireCost: 1
   - type: Gun
@@ -53,10 +49,7 @@
   - type: Bands
     bandIcon: army
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: alive
-      sprite: /Textures/_Stalker/Mobs/Military/Sniper.rsi
+    sprite: /Textures/_Stalker/Mobs/Military/Sniper.rsi
   - type: DamageStateVisuals
     states:
       Alive:
@@ -73,13 +66,12 @@
         30
       AggroVisionRadius: !type:Single
         25
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 25
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 100
     startingCharge: 100
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet754FMJ
     fireCost: 80
   - type: Gun

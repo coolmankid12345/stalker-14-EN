@@ -1,0 +1,23 @@
+﻿- type: entity
+  abstract: true
+  parent: STBaseTeleport
+  id: STBaseTimedPortal
+  components:
+  - type: Sprite
+    layers:
+      - state: portal-red
+    sprite: /Textures/Effects/portal.rsi
+  - type: PointLight
+    color: Yellow
+    radius: 3
+    energy: 1
+
+- type: entity
+  parent: STBaseTimedPortal
+  id: TimedPortalRedForest
+  components:
+  - type: TimedPortal
+    portalName: "RedForest"
+    activeTimeStart: 7h # 13:00 UTC
+    activeTimeEnd: 18h   # 18:00 UTC
+    allowAll: true

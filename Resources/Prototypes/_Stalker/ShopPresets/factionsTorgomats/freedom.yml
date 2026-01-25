@@ -41,8 +41,8 @@
     STFoodMeatSalo: 135
     FoodMeatBoar: 70
     FoodMeatDog: 35
-    FoodMeatBoarCooked: 135
-    FoodMeatDogCooked: 95
+    FoodMeatBoarCooked: 115
+    FoodMeatDogCooked: 75
 
     # Mutant parts
 
@@ -134,6 +134,7 @@
       priority: 4
       items:
           # Helmets #
+        ClothingHeadHelmetLight: 200 # T1
         ClothingHeadHelmetInfantry: 600 # T2 - PVP
         ClothingHeadHelmetVityaz1C: 2250 # T2 - PVE
         ClothingHeadAssaultHelmet: 3250

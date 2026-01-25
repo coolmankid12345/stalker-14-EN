@@ -51,14 +51,14 @@
 
 - type: currency
   id: Roubles
-  displayName: Roubles
+  displayName: store-currency-display-ruble
   cash:
     1: Roubles
   canWithdraw: true
 
 - type: stack
   id: Roubles
-  name: shop-currency-name
+  name: stack-rouble
   icon: { sprite: /Textures/_Stalker/Objects/Economy/rubles.rsi, state: cash }
   spawn: Roubles
   itemSize: 1

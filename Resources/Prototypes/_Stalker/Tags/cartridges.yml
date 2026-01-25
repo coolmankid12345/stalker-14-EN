@@ -11,6 +11,9 @@
   id: STCartridge918
 
 - type: Tag
+  id: STCartridge13x108
+
+- type: Tag
   id: STCartridge754
 
 - type: Tag
@@ -30,3 +33,12 @@
 
 - type: Tag
   id: STSpeedLoader45ACP
+
+- type: Tag
+  id: STCartridge921
+
+- type: Tag
+  id: STCartridge921PGJ
+
+- type: Tag
+  id: ShellKS23

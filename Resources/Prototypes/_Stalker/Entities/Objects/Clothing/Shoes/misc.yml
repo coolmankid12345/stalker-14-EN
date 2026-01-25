@@ -24,11 +24,11 @@
     time: 900
 
 - type: entity
-  parent: [ClothingShoesMilitaryBase, BaseRestrictedContraband]
+  parent: ClothingShoesMilitaryBase
   id: STClothingShoesBootsCombat
-  name: ent-STClothingShoesBootsCombat
+  name: армейские ботинки
   suffix: ST
-  description: .desc
+  description: Надёжные армейские ботинки, для боевых операций или боевых действий. Борьба - всё, борьба - всегда.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/shoes/boots_army.rsi
@@ -38,9 +38,7 @@
 - type: entity
   parent: STClothingShoesBootsCombat
   id: STClothingShoesBootsCombatFilled
-  name: ent-STClothingShoesBootsCombatFilled
   suffix: ST, Filled
-  description: .desc
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/shoes/boots_army.rsi

@@ -22,8 +22,9 @@
             StalkerHeadClearSky: [ 0, -1 ]
             StalkerNeutral: [ 0, -1 ]
             # Science
-            StalkerScientist: [ 0, -1 ]
-            StalkerHeadScientist: [ 0, -1 ]
+            sci: [ 0, -1 ]
+            sci_decan: [ 0, -1 ]
+            sci_rector: [ 0, -1 ]
             # Military
             Military: [ 0, -1 ]
             MilitaryOfficer: [ 0, -1 ]

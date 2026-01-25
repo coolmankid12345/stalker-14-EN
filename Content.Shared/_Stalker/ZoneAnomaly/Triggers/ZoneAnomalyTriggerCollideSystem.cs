@@ -107,6 +107,6 @@ public sealed class ZoneAnomalyTriggerCollideSystem : EntitySystem
         if (blacklist is null)
             return true;
 
-        return _whitelistSystem.IsBlacklistFail(blacklist, uid);
+        return _whitelistSystem.IsWhitelistFail(blacklist, uid);
     }
 }

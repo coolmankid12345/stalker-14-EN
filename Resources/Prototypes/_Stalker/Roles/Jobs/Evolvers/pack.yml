@@ -21,7 +21,7 @@
       components:
         - type: Access
           tags:
-            - Pack
+            - EvolverPack
             - Evolver
         - type: Bands
           band: Evolver
@@ -68,7 +68,7 @@
         - type: Access
           tags:
             - Evolver
-            - Pack
+            - EvolverPack
         - type: Bands
           band: Evolver
           bandIcon: pack

@@ -44,6 +44,8 @@
   id: BaseArtifactStorage
   abstract: true
   components:
+    - type: Item
+      size: Huge
     - type: Storage
       maxItemSize: Huge
       grid:

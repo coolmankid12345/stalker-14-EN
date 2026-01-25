@@ -14,15 +14,15 @@
     areaInsertRadius: 2
     grid:
       - 0,2,0,3
-      - 1,-0,1,-0
+      - 1,0,1,0
       - 2,2,2,3
-      - 3,-0,3,-0
+      - 3,0,3,0
       - 4,2,4,3
-      - 5,-0,5,-0
+      - 5,0,5,0
       - 6,2,6,3
-      - 7,-0,7,-0
+      - 7,0,7,0
       - 8,2,8,3
-      - 9,-0,9,-0
+      - 9,0,9,0
       - 10,2,10,3
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/belt/tarzan_black.rsi
@@ -75,8 +75,9 @@
         - 0,0,7,7
       whitelist:
         tags:
-          - CartridgeAmmo
           - Cartridge
+        components:
+          - CartridgeAmmo
 
 - type: entity
   parent: ClothingBeltStorageStalkerBase
@@ -122,7 +123,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 2,0,7,3
         - 0,4,0,2
@@ -144,7 +145,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 4,0,9,3
         - 0,1,0,1
@@ -168,7 +169,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 3,0,8,3
         - 0,1,0,1
@@ -189,7 +190,7 @@
     - type: STWeight
       self: 5
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 4,0,9,3
         - 0,0,2,3
@@ -209,7 +210,7 @@
     - type: STWeight
       self: 4
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 4,0,9,3
         - 0,1,0,1
@@ -233,7 +234,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 3,0,8,3
         - 0,1,0,1
@@ -254,7 +255,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 3,0,8,3
         - 0,1,0,1
@@ -275,7 +276,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 3,0,8,3
         - 0,1,0,1
@@ -296,7 +297,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 3,0,8,3
         - 0,1,0,1
@@ -317,7 +318,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 3,0,8,3
         - 0,1,0,1
@@ -338,7 +339,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 3,0,8,3
         - 0,1,0,1
@@ -359,7 +360,7 @@
     - type: STWeight
       self: 5
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 4,0,9,3
         - 0,0,2,3
@@ -379,7 +380,7 @@
     - type: STWeight
       self: 3
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 3,0,8,3
         - 0,1,0,1
@@ -416,7 +417,7 @@
     - type: STWeight
       self: 4
     - type: Storage
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 4,0,9,3
         - 0,1,0,1

@@ -42,6 +42,7 @@ entities:
     - type: GridTree
     - type: MovedGrids
     - type: Broadphase
+    - type: Roof
     - type: OccluderTree
     - type: StalkerSafeZone
     - type: NoPausing

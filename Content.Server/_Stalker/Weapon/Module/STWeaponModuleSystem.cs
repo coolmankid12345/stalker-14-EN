@@ -72,7 +72,9 @@ public sealed class STWeaponModuleSystem : STSharedWeaponModuleSystem
         if (TryComp(entity.Owner, out FarGunshotComponent? farGunshotComponent)
             && farGunshotComponent.Sound is not null)
         {
-            farGunshotComponent.SilencerDecrease = effect.FarshotSoundDecrease;
+            farGunshotComponent.SilencerDecrease = MathHelper.CloseToPercent(effect.FarshotSoundDecrease, FarGunshotComponent.DefaultSilencerDecrease)
+                ? effect.FarshotSoundDecrease
+                : null;
 
             var farAudioParams = farGunshotComponent.Sound.Params;
 
@@ -129,7 +131,7 @@ public sealed class STWeaponModuleSystem : STSharedWeaponModuleSystem
         entity.Comp.CachedEffect = effect;
         Dirty(entity);
 
-        if (!entity.Comp.IntegratedScopeEffect)
+        if (!entity.Comp.IntegratedScopeEffect && container.ID == "gun_module_scope")
             _sharedScope.TrySet(entity.Owner, scopeEffect);
 
         if (!TryComp<GunComponent>(entity, out var gun))

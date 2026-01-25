@@ -37,7 +37,7 @@
   - type: Item
     sprite: Objects/Consumable/Food/snacks.rsi
     heldPrefix: packet
-    size: Tiny
+    size: Small
   - type: DamageOnLand
     damage:
       types:
@@ -63,7 +63,7 @@
   - type: Item
     sprite: Objects/Consumable/Food/snacks.rsi
     heldPrefix: packet
-    size: Tiny
+    size: Small
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -81,13 +81,15 @@
   name: tinned peaches
   description: Just a nice can of ripe peaches swimming in their own juices.
   components:
+  - type: Item
+    storedOffset: 0,-3
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/peaches.rsi
   - type: FlavorProfile
     flavors:
     - sweet
     - funny
-  - type: Food
+  - type: Edible
     trash:
     - FoodTinPeachesTrash
   - type: Tag
@@ -99,6 +101,8 @@
   id: FoodTinPeachesTrash
   name: tinned peaches
   components:
+  - type: Item
+    storedOffset: 0,-3
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/peaches.rsi
 
@@ -110,7 +114,7 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/maint_peaches.rsi
-  - type: Food
+  - type: Edible
     trash:
     - FoodTinPeachesMaintTrash
 
@@ -132,6 +136,8 @@
   id: FoodTinPeachesMaintTrash
   name: maintenance peaches
   components:
+  - type: Item
+    storedOffset: 0,-3
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/maint_peaches.rsi
 
@@ -141,6 +147,8 @@
   name: tin of beans
   description: Musical fruit in a slightly less musical container.
   components:
+  - type: Item
+    storedOffset: 0,-3
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/beans.rsi
   - type: FlavorProfile
@@ -148,7 +156,7 @@
     - savory
     - salty
     - cheap
-  - type: Food
+  - type: Edible
     trash:
     - FoodTinBeansTrash
 
@@ -157,6 +165,8 @@
   id: FoodTinBeansTrash
   name: tin of beans
   components:
+  - type: Item
+    storedOffset: 0,-3
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/beans.rsi
 
@@ -168,6 +178,10 @@
   name: tinned meat
   description: A standard issue tin of meat with a convenient pull tab.
   components:
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/meat.rsi
   # the convenient pull tab
@@ -178,7 +192,7 @@
     - meaty
     - salty
     - cheap
-  - type: Food
+  - type: Edible
     trash:
     - FoodTinMRETrash
   - type: Tag
@@ -190,6 +204,10 @@
   id: FoodTinMRETrash
   name: tinned meat
   components:
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/meat.rsi
   - type: Trash

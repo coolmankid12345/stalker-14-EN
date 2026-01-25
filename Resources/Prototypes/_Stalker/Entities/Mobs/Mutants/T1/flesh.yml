@@ -49,8 +49,6 @@
         - Passive
     - type: MeleeWeapon
       attackRate: 0.4
-      heavyWindupModifier: 1
-      heavyDamageModifier: 1.5
       angle: 30
       range: 1.5
       soundHit:
@@ -67,6 +65,8 @@
         types:
           Blunt: 13
           Slash: 8
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier
       baseWalkSpeed: 3.4
       baseSprintSpeed: 4.2
@@ -139,8 +139,6 @@
       - Passive
     - type: MeleeWeapon
       attackRate: 0.4
-      heavyWindupModifier: 1
-      heavyDamageModifier: 1.5
       angle: 30
       range: 1.5
       soundHit:
@@ -157,6 +155,8 @@
         types:
           Blunt: 13
           Slash: 12
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier
       baseWalkSpeed: 3.4
       baseSprintSpeed: 4.2

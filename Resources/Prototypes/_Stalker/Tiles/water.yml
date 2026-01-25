@@ -71,7 +71,7 @@
         - Catwalk
   - type: TileEntityEffect
     effects:
-    - !type:ExtinguishReaction
+    - !type:Extinguish
 
 - type: entity
   parent: STFloorWaterEntity

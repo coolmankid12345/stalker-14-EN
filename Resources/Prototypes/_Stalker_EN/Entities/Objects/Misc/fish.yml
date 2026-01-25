@@ -9,7 +9,7 @@
     sprite: _Stalker_EN/Objects/Misc/fish.rsi
   - type: RandomMetadata
     descriptionSegments: [ STFishSize ]
-  - type: Food
+  - type: Edible
   - type: FlavorProfile
     flavors:
     - fishy
@@ -153,7 +153,7 @@
           Quantity: 2
   - type: Butcherable
     spawned:
-    - id: FoodMeatSTEelRaw
+    - id: FoodMeatSTFishEelRaw
       maxAmount: 3
       prob: 0.8
   - type: Trash
@@ -357,7 +357,6 @@
       Amount: 1
       prob: 0.2
     - id: ZoneArtifactGoldfish
-      Amount: 1
       prob: 0.01
     - id: WristwatchGold
       Amount: 1
@@ -390,7 +389,6 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
-      Amount: 1
   - type: PointLight
     radius: 1.5
     energy: 1.5
@@ -420,7 +418,6 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishSteakRaw
-      Amount: 1
     - id: ZoneArtifactVyvert
       maxAmount: 1
       prob: 0.25
@@ -468,7 +465,7 @@
     shape:
     - 0,0,4,3
   - type: MultiHandedItem
-  - type: Food
+  - type: Edible
   - type: SolutionContainerManager
     solutions:
       food:
