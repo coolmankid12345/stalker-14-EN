@@ -802,66 +802,116 @@ public sealed class LoadoutSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Calculates missing items for a loadout with hierarchical nesting.
+    /// Key insight: If a parent item is missing from stash, ALL nested items are also missing.
+    /// If the parent IS found in stash, nested items are inside it (not missing).
+    /// </summary>
     private void CalculateMissingItems(PlayerLoadout loadout, Dictionary<string, RepositoryItemInfo> stashLookup)
     {
-        // Create a copy of the lookup to track consumed items during count
-        var tempLookup = new Dictionary<string, RepositoryItemInfo>();
-        foreach (var kvp in stashLookup)
+        var tempLookup = CloneLookup(stashLookup);
+        var missingItems = new List<MissingLoadoutItem>();
+
+        foreach (var slotItem in loadout.SlotItems)
         {
-            // Clone the item info to avoid modifying the original
-            tempLookup[kvp.Key] = new RepositoryItemInfo
+            if (!TryConsumeFromLookup(slotItem.Identifier, slotItem.PrototypeId, tempLookup))
+            {
+                // Parent is missing - ALL nested items are also missing
+                var missing = new MissingLoadoutItem
+                {
+                    Name = GetPrototypeName(slotItem.PrototypeId),
+                    Location = slotItem.SlotName,
+                    Count = 1
+                };
+
+                // Recursively add all nested items as children
+                CollectAllNestedAsMissing(slotItem.NestedItems, missing.Children);
+                missingItems.Add(missing);
+            }
+            // NOTE: If parent IS found, nested items are inside it - NOT missing
+        }
+
+        loadout.MissingItems = GroupMissingItems(missingItems);
+        loadout.MissingCount = CountAllMissing(loadout.MissingItems);
+    }
+
+    /// <summary>
+    /// Recursively collects ALL nested items as missing children.
+    /// </summary>
+    private void CollectAllNestedAsMissing(List<LoadoutNestedItem> items, List<MissingLoadoutItem> target)
+    {
+        foreach (var item in items)
+        {
+            var missing = new MissingLoadoutItem
+            {
+                Name = GetPrototypeName(item.PrototypeId),
+                Location = item.ContainerName,
+                Count = 1
+            };
+
+            CollectAllNestedAsMissing(item.NestedItems, missing.Children);
+            target.Add(missing);
+        }
+    }
+
+    /// <summary>
+    /// Groups items by name, preserving hierarchy.
+    /// Items with the same name at the same level are merged with increased count.
+    /// Children are recursively grouped as well.
+    /// </summary>
+    private List<MissingLoadoutItem> GroupMissingItems(List<MissingLoadoutItem> items)
+    {
+        var groups = new Dictionary<string, MissingLoadoutItem>();
+
+        foreach (var item in items)
+        {
+            if (groups.TryGetValue(item.Name, out var existing))
+            {
+                existing.Count++;
+                // Merge children recursively
+                foreach (var child in item.Children)
+                    existing.Children.Add(child);
+                existing.Children = GroupMissingItems(existing.Children);
+            }
+            else
+            {
+                groups[item.Name] = new MissingLoadoutItem
+                {
+                    Name = item.Name,
+                    Location = item.Location,
+                    Count = item.Count,
+                    Children = GroupMissingItems(item.Children)
+                };
+            }
+        }
+
+        return groups.Values.ToList();
+    }
+
+    /// <summary>
+    /// Counts total missing items including nested children.
+    /// </summary>
+    private int CountAllMissing(List<MissingLoadoutItem> items)
+    {
+        return items.Sum(m => m.Count + CountAllMissing(m.Children));
+    }
+
+    /// <summary>
+    /// Creates a deep clone of the stash lookup for consumption tracking.
+    /// </summary>
+    private Dictionary<string, RepositoryItemInfo> CloneLookup(Dictionary<string, RepositoryItemInfo> original)
+    {
+        var clone = new Dictionary<string, RepositoryItemInfo>();
+        foreach (var kvp in original)
+        {
+            clone[kvp.Key] = new RepositoryItemInfo
             {
                 Count = kvp.Value.Count,
                 ProductEntity = kvp.Value.ProductEntity,
                 Identifier = kvp.Value.Identifier
             };
         }
-
-        // Use dictionary to group missing items by name
-        var missingGroups = new Dictionary<string, MissingLoadoutItem>();
-
-        foreach (var slotItem in loadout.SlotItems)
-        {
-            if (!TryConsumeFromLookup(slotItem.Identifier, slotItem.PrototypeId, tempLookup))
-            {
-                var name = GetPrototypeName(slotItem.PrototypeId);
-                AddOrIncrementMissing(missingGroups, name, slotItem.SlotName);
-            }
-            CollectMissingNestedGrouped(slotItem.NestedItems, slotItem.SlotName, tempLookup, missingGroups);
-        }
-
-        var missingItems = missingGroups.Values.ToList();
-        loadout.MissingCount = missingItems.Sum(m => m.Count);
-        loadout.MissingItems = missingItems;
-    }
-
-    private void AddOrIncrementMissing(Dictionary<string, MissingLoadoutItem> groups, string name, string location)
-    {
-        if (groups.TryGetValue(name, out var existing))
-        {
-            existing.Count++;
-        }
-        else
-        {
-            groups[name] = new MissingLoadoutItem(name, location);
-        }
-    }
-
-    private void CollectMissingNestedGrouped(
-        List<LoadoutNestedItem> items,
-        string parentLocation,
-        Dictionary<string, RepositoryItemInfo> lookup,
-        Dictionary<string, MissingLoadoutItem> groups)
-    {
-        foreach (var item in items)
-        {
-            if (!TryConsumeFromLookup(item.Identifier, item.PrototypeId, lookup))
-            {
-                var name = GetPrototypeName(item.PrototypeId);
-                AddOrIncrementMissing(groups, name, parentLocation);
-            }
-            CollectMissingNestedGrouped(item.NestedItems, parentLocation, lookup, groups);
-        }
+        return clone;
     }
 
     private string GetPrototypeName(string prototypeId)

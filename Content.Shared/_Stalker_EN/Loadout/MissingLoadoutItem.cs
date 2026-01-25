@@ -4,6 +4,7 @@ namespace Content.Shared._Stalker_EN.Loadout;
 
 /// <summary>
 /// Represents a missing item from a loadout, used for detailed display.
+/// Supports nested children for hierarchical display of container contents.
 /// </summary>
 [Serializable, NetSerializable]
 public sealed class MissingLoadoutItem
@@ -14,7 +15,7 @@ public sealed class MissingLoadoutItem
     public string Name { get; set; } = string.Empty;
 
     /// <summary>
-    /// Location of the item (slot name or "hand").
+    /// Location of the item (slot name or container name).
     /// </summary>
     public string Location { get; set; } = string.Empty;
 
@@ -22,6 +23,11 @@ public sealed class MissingLoadoutItem
     /// Number of this item that are missing.
     /// </summary>
     public int Count { get; set; } = 1;
+
+    /// <summary>
+    /// Nested children (items that were inside this container).
+    /// </summary>
+    public List<MissingLoadoutItem> Children { get; set; } = new();
 
     public MissingLoadoutItem() { }
 

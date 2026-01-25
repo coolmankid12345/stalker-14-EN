@@ -54,24 +54,13 @@ public sealed partial class LoadoutItemControl : Control
             MissingLabel.Visible = true;
             ToggleMissingDetails.Visible = true;
 
-            // Build the missing items list
+            // Build the missing items list with hierarchical display
             MissingDetailsContainer.AddChild(new Label
             {
                 Text = Loc.GetString("loadout-missing-header"),
                 FontColorOverride = Color.FromHex("#FF6B6B")
             });
-            foreach (var item in loadout.MissingItems)
-            {
-                var displayText = item.Count > 1
-                    ? $"  - {item.Count}x {item.Name}"
-                    : $"  - {item.Name}";
-
-                MissingDetailsContainer.AddChild(new Label
-                {
-                    Text = displayText,
-                    FontColorOverride = Color.FromHex("#FF6B6B")
-                });
-            }
+            AddMissingItemsRecursive(loadout.MissingItems, 0);
 
             ToggleMissingDetails.OnPressed += _ =>
             {
@@ -88,5 +77,33 @@ public sealed partial class LoadoutItemControl : Control
             OnLoadPressed?.Invoke(loadout.Id);
         };
         DeleteButton.OnPressed += _ => OnDeletePressed?.Invoke(loadout.Id);
+    }
+
+    /// <summary>
+    /// Recursively adds missing items to the display with proper indentation for hierarchy.
+    /// </summary>
+    private void AddMissingItemsRecursive(List<MissingLoadoutItem> items, int depth)
+    {
+        foreach (var item in items)
+        {
+            var indent = new string(' ', depth * 4);  // 4 spaces per level
+            var prefix = depth > 0 ? "└ " : "- ";
+
+            var displayText = item.Count > 1
+                ? $"  {indent}{prefix}{item.Count}x {item.Name}"
+                : $"  {indent}{prefix}{item.Name}";
+
+            MissingDetailsContainer.AddChild(new Label
+            {
+                Text = displayText,
+                FontColorOverride = Color.FromHex("#FF6B6B")
+            });
+
+            // Recursively add children
+            if (item.Children.Count > 0)
+            {
+                AddMissingItemsRecursive(item.Children, depth + 1);
+            }
+        }
     }
 }
