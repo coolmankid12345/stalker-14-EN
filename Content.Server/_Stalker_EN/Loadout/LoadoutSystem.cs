@@ -299,6 +299,10 @@ public sealed class LoadoutSystem : EntitySystem
                 if (IsBlacklistedSlot(slotDef.Name, loadoutComp))
                     continue;
 
+                // Skip blacklisted entities (unremovable items, organs, etc.)
+                if (IsBlacklistedEntity(item, loadoutComp))
+                    continue;
+
                 var slotItem = CaptureSlotItem(item, slotDef.Name, loadoutComp);
                 if (slotItem != null)
                     loadout.SlotItems.Add(slotItem);
