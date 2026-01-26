@@ -1,3 +1,4 @@
+using Content.Shared.Storage;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Stalker_EN.Loadout;
@@ -30,6 +31,12 @@ public sealed class LoadoutNestedItem
     /// Unique identifier for matching items in stash.
     /// </summary>
     public string Identifier { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Position and rotation within grid-based storage (if applicable).
+    /// Null for non-storage containers like ItemSlots.
+    /// </summary>
+    public ItemStorageLocation? StorageLocation { get; set; }
 
     /// <summary>
     /// Items nested inside this item's container (recursive).

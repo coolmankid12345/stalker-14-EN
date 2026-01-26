@@ -719,6 +719,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         {
             if (container.Key == "toggleable-clothing") // We don't need to add something from this container
                 continue;
+
             foreach (var item in container.Value.ContainedEntities)
             {
                 allowInsertRecursively = CheckForWhitelist(entity, GenerateItemInfo(item));
@@ -747,10 +748,11 @@ public sealed class StalkerRepositorySystem : EntitySystem
                 }
                 else
                 {
-                    allowInsert = CheckForWhitelist(entity, toInsertItem);
+                    var itemInfo = GenerateItemInfo(item);
+                    allowInsert = CheckForWhitelist(entity, itemInfo);
                     if (!allowInsert)
                         continue;
-                    InsertIntoRepository(entity, GenerateItemInfo(item), amount);
+                    InsertIntoRepository(entity, itemInfo, amount);
                 }
             }
         }
