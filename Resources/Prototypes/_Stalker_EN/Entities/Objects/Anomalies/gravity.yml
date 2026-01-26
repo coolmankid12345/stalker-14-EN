@@ -44,7 +44,7 @@
   - type: STAnomalyEffectDamage
     options:
       StateActiveBase:
-        range: 0.5
+        range: 0.8
         damage:
           types:
             Slash: 12
@@ -60,12 +60,12 @@
     maxBonus: 1.0
     options:
       StateActiveBase:
-        range: 0.5
+        range: 0.8
         damage:
           types:
             Slash: 12
       StateActiveDouble:
-        range: 0.5
+        range: 0.8
         damage:
           types:
             Slash: 24
@@ -76,13 +76,25 @@
     doubleDamageSound: /Audio/_Stalker_EN/Effects/glass_hit_02.ogg
     weightBonusSound: /Audio/_Stalker_EN/Effects/glass_hit_03.ogg
     doubleDamageGroup: StateActiveDouble
-    range: 0.5
+    range: 0.8
   - type: Sprite
     sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
     drawdepth: Effects
     layers:
     - state: idle
       map: ["base"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.8
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
   - type: GenericVisualizer
     visuals:
       enum.ZoneAnomalyVisuals.Layer:
