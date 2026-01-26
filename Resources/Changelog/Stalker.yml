@@ -32,5 +32,12 @@
   id: 3
   time: '2026-01-25T21:31:08.870051+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/346
+- author: crocodilecarousel
+  changes:
+  - message: Fixes the glass shard anomaly hitbox
+    type: Fix
+  id: 4
+  time: '2026-01-26T01:56:32.527350+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/347
 Name: Stalker
 Order: -1
