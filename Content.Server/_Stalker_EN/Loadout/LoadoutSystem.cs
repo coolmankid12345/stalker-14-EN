@@ -643,7 +643,12 @@ public sealed class LoadoutSystem : EntitySystem
             // Case 1: Check if this slot already has the correct item (perfect match)
             if (equippedBySlot.TryGetValue(slotItem.SlotName, out var currentEquipped) &&
                 currentEquipped.proto == slotItem.PrototypeId)
+            {
+                // Item is already equipped, but we still need to restore nested items
+                if (slotItem.NestedItems.Count > 0)
+                    RestoreNestedItems(currentEquipped.item, slotItem.NestedItems, repository, stashLookup, 0, player);
                 continue;
+            }
 
             // Case 2: Check if we can MOVE an equipped item to this slot
             var movedItem = TryMoveEquippedItemToSlot(player, slotItem, equippedByProto, equippedBySlot, itemsToMove, loadoutComp);
@@ -834,6 +839,17 @@ public sealed class LoadoutSystem : EntitySystem
 
         foreach (var nestedItem in nestedItems)
         {
+            // Check if correct item already exists at target location
+            // This prevents unnecessary stash pulls when items are already in place
+            var existingCorrectItem = FindExistingCorrectItem(parent, nestedItem, containerMan, itemSlotsComp);
+            if (existingCorrectItem.HasValue)
+            {
+                // Item already in place - just restore its nested items
+                if (nestedItem.NestedItems.Count > 0)
+                    RestoreNestedItems(existingCorrectItem.Value, nestedItem.NestedItems, repository, stashLookup, depth + 1, player);
+                continue;
+            }
+
             // Find the item in stash
             var stashItem = FindItemInStash(nestedItem.Identifier, nestedItem.PrototypeId, stashLookup);
             if (stashItem == null)
@@ -986,9 +1002,7 @@ public sealed class LoadoutSystem : EntitySystem
 
                 // Fallback to auto-placement if position fails (e.g., position conflict)
                 if (!inserted)
-                {
                     inserted = _storage.Insert(parent, spawned, out _, player, parentStorageComp, playSound: false);
-                }
 
                 if (!inserted && existingItem.HasValue)
                 {
@@ -1119,6 +1133,58 @@ public sealed class LoadoutSystem : EntitySystem
             protoList.Add(item);
         }
         return lookup;
+    }
+
+    /// <summary>
+    /// Checks if the correct item already exists at the target location.
+    /// Returns the existing item if found, null otherwise.
+    /// This prevents unnecessary stash pulls when items are already in position.
+    /// </summary>
+    private EntityUid? FindExistingCorrectItem(
+        EntityUid parent,
+        LoadoutNestedItem nestedItem,
+        ContainerManagerComponent containerMan,
+        ItemSlotsComponent? itemSlotsComp)
+    {
+        // Case 1: Grid-based storage with saved position
+        if (nestedItem.StorageLocation.HasValue &&
+            TryComp<StorageComponent>(parent, out var storageComp))
+        {
+            foreach (var (item, location) in storageComp.StoredItems)
+            {
+                if (location.Position == nestedItem.StorageLocation.Value.Position &&
+                    TryComp<MetaDataComponent>(item, out var meta) &&
+                    meta.EntityPrototype?.ID == nestedItem.PrototypeId)
+                {
+                    return item;
+                }
+            }
+        }
+
+        // Case 2: ItemSlots (magazines, chambers, etc.)
+        if (itemSlotsComp != null &&
+            _itemSlots.TryGetSlot(parent, nestedItem.ContainerName, out var slot) &&
+            slot.ContainerSlot?.ContainedEntity is { } slotItem &&
+            TryComp<MetaDataComponent>(slotItem, out var slotMeta) &&
+            slotMeta.EntityPrototype?.ID == nestedItem.PrototypeId)
+        {
+            return slotItem;
+        }
+
+        // Case 3: Regular containers (check if same prototype exists in container)
+        if (containerMan.Containers.TryGetValue(nestedItem.ContainerName, out var container))
+        {
+            foreach (var contained in container.ContainedEntities)
+            {
+                if (TryComp<MetaDataComponent>(contained, out var containedMeta) &&
+                    containedMeta.EntityPrototype?.ID == nestedItem.PrototypeId)
+                {
+                    return contained;
+                }
+            }
+        }
+
+        return null;
     }
 
     private RepositoryItemInfo? FindItemInStash(string identifier, string prototypeId, StashLookup lookup)

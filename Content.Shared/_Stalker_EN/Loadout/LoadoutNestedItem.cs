@@ -1,4 +1,5 @@
 using Content.Shared.Storage;
+using Robust.Shared.Maths;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Stalker_EN.Loadout;
@@ -33,10 +34,49 @@ public sealed class LoadoutNestedItem
     public string Identifier { get; set; } = string.Empty;
 
     /// <summary>
-    /// Position and rotation within grid-based storage (if applicable).
-    /// Null for non-storage containers like ItemSlots.
+    /// Grid position X coordinate within storage (if applicable).
     /// </summary>
-    public ItemStorageLocation? StorageLocation { get; set; }
+    public int? StoragePositionX { get; set; }
+
+    /// <summary>
+    /// Grid position Y coordinate within storage (if applicable).
+    /// </summary>
+    public int? StoragePositionY { get; set; }
+
+    /// <summary>
+    /// Rotation direction (0-7, corresponding to Direction enum) within storage.
+    /// </summary>
+    public int? StorageDirection { get; set; }
+
+    /// <summary>
+    /// Gets the storage location as ItemStorageLocation if position data exists.
+    /// Computed property - not serialized directly (uses StoragePositionX/Y/Direction).
+    /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    public ItemStorageLocation? StorageLocation
+    {
+        get
+        {
+            if (StoragePositionX.HasValue && StoragePositionY.HasValue && StorageDirection.HasValue)
+                return new ItemStorageLocation(((Direction)StorageDirection.Value).ToAngle(), new Vector2i(StoragePositionX.Value, StoragePositionY.Value));
+            return null;
+        }
+        set
+        {
+            if (value.HasValue)
+            {
+                StoragePositionX = value.Value.Position.X;
+                StoragePositionY = value.Value.Position.Y;
+                StorageDirection = (int)value.Value.Direction;
+            }
+            else
+            {
+                StoragePositionX = null;
+                StoragePositionY = null;
+                StorageDirection = null;
+            }
+        }
+    }
 
     /// <summary>
     /// Items nested inside this item's container (recursive).
