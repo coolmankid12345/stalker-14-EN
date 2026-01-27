@@ -59,5 +59,12 @@
   id: 5
   time: '2026-01-27T02:15:49.453679+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/348
+- author: teecoding
+  changes:
+  - message: 5-second cooldown to personal stash portal to prevent rapid teleportation
+    type: Add
+  id: 6
+  time: '2026-01-27T22:45:36.512994+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/351
 Name: Stalker
 Order: -1
