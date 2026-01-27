@@ -15,6 +15,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Robust.Shared.Timing;
 using SponsorSystem = Content.Server._Stalker.Sponsors.System.SponsorSystem;
 
 namespace Content.Server._Stalker.Teleports.DuplicateTeleport;
@@ -31,8 +32,10 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
     [Dependency] private readonly StalkerPortalSystem _stalkerPortals = default!;
     [Dependency] private readonly StalkerRepositorySystem _repositorySystem = default!;
     [Dependency] private readonly SponsorSystem _sponsorSystem = default!;
-    
+    [Dependency] private readonly IGameTiming _timing = default!;
+
     private const string MoneyId = "Roubles";
+    private const float StashPortalCooldownTime = 5f;
     private ISawmill _sawmill = default!;
     private Dictionary<string, EntityUid> ArenaMap { get; } = new();
     private Dictionary<string, EntityUid?> ArenaGrid { get; } = new();
@@ -48,9 +51,16 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
         var subject = args.OtherEntity;
         var portalEnt = args.OurEntity;
 
-        // timeout entity
-        if (HasComp<PortalTimeoutComponent>(subject))
-            return;
+        // Check cooldown - block if still in cooldown period
+        if (TryComp<PortalTimeoutComponent>(subject, out var existingTimeout))
+        {
+            if (existingTimeout.Cooldown != null && existingTimeout.Cooldown > _timing.CurTime)
+                return;
+
+            // Existing back-teleport prevention (if component exists but we passed cooldown check)
+            if (existingTimeout.EnteredPortal != portalEnt)
+                return;
+        }
 
         if (!TryComp<ActorComponent>(subject, out var actor))
             return;
@@ -60,6 +70,7 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
 
         var timeout = EnsureComp<PortalTimeoutComponent>(subject);
         timeout.EnteredPortal = portalEnt;
+        timeout.Cooldown = _timing.CurTime + TimeSpan.FromSeconds(StashPortalCooldownTime);
         Dirty(subject, timeout);
 
         var (mapUid, gridUid) = StalkerAssertArenaLoaded(actor.PlayerSession.Name, actor.PlayerSession.UserId, entity.Comp, entity);
