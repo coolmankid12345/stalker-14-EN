@@ -153,6 +153,19 @@ public sealed class LoadoutSystem : EntitySystem
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutDeleteMessage>(OnDeleteMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutRenameMessage>(OnRenameMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutRequestMessage>(OnRequestMessage);
+
+        // Cleanup stale entries from _currentlyProcessingLoadouts when entities are deleted
+        // This prevents memory growth from EntityUids that no longer exist
+        SubscribeLocalEvent<ActorComponent, ComponentRemove>(OnActorRemoved);
+    }
+
+    /// <summary>
+    /// Cleans up the processing loadouts dictionary when an actor is removed.
+    /// Prevents memory growth from stale EntityUid entries.
+    /// </summary>
+    private void OnActorRemoved(EntityUid uid, ActorComponent component, ComponentRemove args)
+    {
+        _currentlyProcessingLoadouts.TryRemove(uid, out _);
     }
 
     #region Message Handlers
@@ -930,8 +943,8 @@ public sealed class LoadoutSystem : EntitySystem
         if (stashItem == null)
             return false;
 
-        // Remove item from stash (decrements count)
-        RemoveFromStash(repository, stashItem, stashLookup);
+        // NOTE: Don't remove from stash yet - wait until equip succeeds
+        // This prevents losing the original item state if equip fails
 
         // Spawn the item
         var xform = Transform(player);
@@ -982,10 +995,15 @@ public sealed class LoadoutSystem : EntitySystem
             // Put item in hands or drop it
             if (!_hands.TryPickup(player, spawned))
             {
-                ReturnSpawnedItemToStash(spawned, repository, stashLookup, player, slotItem.PrototypeId);
+                // Item never left stash (RemoveFromStash wasn't called yet), just delete spawned entity
+                QueueDel(spawned);
                 return false;
             }
         }
+
+        // SUCCESS: Now remove from stash since equip/pickup succeeded
+        // This preserves original item state if equip fails
+        RemoveFromStash(repository, stashItem, stashLookup);
 
         // Restore nested items
         if (slotItem.NestedItems.Count > 0)
@@ -1115,15 +1133,16 @@ public sealed class LoadoutSystem : EntitySystem
                 continue;
             }
 
-            // Track existing item for potential removal (but don't remove yet!)
-            EntityUid? existingItem = null;
+            // Track item that will be displaced by the new item (e.g., old magazine being replaced)
+            // This item will be returned to stash after successful insertion
+            EntityUid? displacedItem = null;
             if (container is ContainerSlot containerSlot && containerSlot.ContainedEntity is { } existing)
             {
-                existingItem = existing;
+                displacedItem = existing;
             }
 
-            // Remove item from stash AFTER confirming container exists
-            RemoveFromStash(repository, stashItem, stashLookup);
+            // NOTE: Don't remove from stash yet - wait until insertion succeeds
+            // This prevents losing the original item state if insertion fails
 
             // Spawn the item
             var xform = Transform(parent);
@@ -1169,35 +1188,35 @@ public sealed class LoadoutSystem : EntitySystem
             {
                 // Use ItemSlotsSystem.TryInsert which validates whitelist/blacklist/locked status
                 // First, temporarily remove existing item if present (required for TryInsert to work)
-                if (existingItem.HasValue)
+                if (displacedItem.HasValue)
                 {
-                    _container.Remove(existingItem.Value, container, reparent: false, force: true);
+                    _container.Remove(displacedItem.Value, container, reparent: false, force: true);
                 }
 
                 inserted = _itemSlots.TryInsert(parent, foundSlotId, spawned, null, itemSlotsComp);
 
-                if (!inserted && existingItem.HasValue)
+                if (!inserted && displacedItem.HasValue)
                 {
                     // Restore the existing item since insertion failed
-                    if (!_container.Insert(existingItem.Value, container))
+                    if (!_container.Insert(displacedItem.Value, container))
                     {
                         // Container became invalid - salvage item to stash or drop
-                        if (!_repositorySystem.InsertEquippedItem(player, repository, existingItem.Value))
+                        if (!_repositorySystem.InsertEquippedItem(player, repository, displacedItem.Value))
                         {
-                            Transform(existingItem.Value).Coordinates = Transform(player).Coordinates;
+                            Transform(displacedItem.Value).Coordinates = Transform(player).Coordinates;
                             _sawmill.Warning($"Could not restore existing item to container or stash - dropped near player");
                         }
                     }
-                    existingItem = null; // Don't delete it
+                    displacedItem = null; // Item was restored, not displaced
                 }
             }
             else if (nestedItem.StorageLocation.HasValue &&
                      TryComp<StorageComponent>(parent, out var parentStorageComp))
             {
                 // Grid-based storage with saved position
-                if (existingItem.HasValue)
+                if (displacedItem.HasValue)
                 {
-                    _container.Remove(existingItem.Value, container, reparent: false, force: true);
+                    _container.Remove(displacedItem.Value, container, reparent: false, force: true);
                 }
 
                 // Try position-based insertion first
@@ -1207,62 +1226,67 @@ public sealed class LoadoutSystem : EntitySystem
                 if (!inserted)
                     inserted = _storage.Insert(parent, spawned, out _, player, parentStorageComp, playSound: false);
 
-                if (!inserted && existingItem.HasValue)
+                if (!inserted && displacedItem.HasValue)
                 {
                     // Restore the existing item since insertion failed
-                    if (!_container.Insert(existingItem.Value, container))
+                    if (!_container.Insert(displacedItem.Value, container))
                     {
                         // Container became invalid - salvage item to stash or drop
-                        if (!_repositorySystem.InsertEquippedItem(player, repository, existingItem.Value))
+                        if (!_repositorySystem.InsertEquippedItem(player, repository, displacedItem.Value))
                         {
-                            Transform(existingItem.Value).Coordinates = Transform(player).Coordinates;
+                            Transform(displacedItem.Value).Coordinates = Transform(player).Coordinates;
                             _sawmill.Warning($"Could not restore existing item to container or stash - dropped near player");
                         }
                     }
-                    existingItem = null; // Don't delete it
+                    displacedItem = null; // Item was restored, not displaced
                 }
             }
             else
             {
                 // For non-ItemSlot containers, remove existing first then insert (auto-place)
-                if (existingItem.HasValue)
+                if (displacedItem.HasValue)
                 {
-                    _container.Remove(existingItem.Value, container, reparent: false, force: true);
+                    _container.Remove(displacedItem.Value, container, reparent: false, force: true);
                 }
 
                 // Try position-aware insertion for StorageComponent containers (holsters, etc.)
                 inserted = TryInsertAtPosition(parent, spawned, nestedItem);
 
-                if (!inserted && existingItem.HasValue)
+                if (!inserted && displacedItem.HasValue)
                 {
                     // Restore the existing item since insertion failed
-                    if (!_container.Insert(existingItem.Value, container))
+                    if (!_container.Insert(displacedItem.Value, container))
                     {
                         // Container became invalid - salvage item to stash or drop
-                        if (!_repositorySystem.InsertEquippedItem(player, repository, existingItem.Value))
+                        if (!_repositorySystem.InsertEquippedItem(player, repository, displacedItem.Value))
                         {
-                            Transform(existingItem.Value).Coordinates = Transform(player).Coordinates;
+                            Transform(displacedItem.Value).Coordinates = Transform(player).Coordinates;
                             _sawmill.Warning($"Could not restore existing item to container or stash - dropped near player");
                         }
                     }
-                    existingItem = null; // Don't delete it
+                    displacedItem = null; // Item was restored, not displaced
                 }
             }
 
             if (!inserted)
             {
-                ReturnSpawnedItemToStash(spawned, repository, stashLookup, player, nestedItem.PrototypeId);
+                // Item never left stash (RemoveFromStash wasn't called yet), just delete spawned entity
+                QueueDel(spawned);
                 continue;
             }
 
+            // SUCCESS: Now remove from stash since insertion succeeded
+            // This preserves original item state if insertion fails
+            RemoveFromStash(repository, stashItem, stashLookup);
+
             // Return displaced item to stash instead of deleting it
-            if (existingItem.HasValue)
+            if (displacedItem.HasValue)
             {
-                var displacedName = MetaData(existingItem.Value).EntityName;
-                if (!_repositorySystem.InsertEquippedItem(player, repository, existingItem.Value))
+                var displacedName = MetaData(displacedItem.Value).EntityName;
+                if (!_repositorySystem.InsertEquippedItem(player, repository, displacedItem.Value))
                 {
                     // Stash full - drop near player (never delete)
-                    Transform(existingItem.Value).Coordinates = Transform(player).Coordinates;
+                    Transform(displacedItem.Value).Coordinates = Transform(player).Coordinates;
                     _popup.PopupEntity(Loc.GetString("loadout-item-dropped", ("item", displacedName)), player, player, PopupType.SmallCaution);
                     _sawmill.Warning($"Dropped displaced item {displacedName} near player - stash full");
                 }
@@ -1273,27 +1297,11 @@ public sealed class LoadoutSystem : EntitySystem
             }
 
             // Recursively restore nested items
-            if (nestedItem.NestedItems.Count > 0)
+            // CRITICAL: Verify spawned entity still exists - it could be deleted by:
+            // - ContainerInsertAttemptEvent triggering a system that deletes entities
+            // - Admin intervention or QueueDel marking
+            if (nestedItem.NestedItems.Count > 0 && Exists(spawned))
                 RestoreNestedItems(spawned, nestedItem.NestedItems, repository, stashLookup, depth + 1, player, consumedExistingItems);
-        }
-    }
-
-    /// <summary>
-    /// Returns a spawned item back to the stash when insertion fails.
-    /// Falls back to dropping near player if stash insertion also fails.
-    /// </summary>
-    private void ReturnSpawnedItemToStash(
-        EntityUid spawned,
-        Entity<StalkerRepositoryComponent> repository,
-        StashLookup stashLookup,
-        EntityUid player,
-        string itemName)
-    {
-        if (!_repositorySystem.InsertEquippedItem(player, repository, spawned))
-        {
-            // Last resort: drop near player (never delete)
-            var xform = Transform(player);
-            Transform(spawned).Coordinates = xform.Coordinates;
         }
     }
 
