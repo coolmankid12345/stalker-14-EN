@@ -240,6 +240,13 @@ public sealed class StalkerRepositorySystem : EntitySystem
         if (msg.Actor == null || _currentlyProcessingEjects.Contains(msg.Actor))
             return;
 
+        // Block operations during loadout processing to prevent race conditions
+        if (component.LoadoutOperationInProgress)
+        {
+            _sawmill.Debug($"Blocked eject during loadout operation for {Name(msg.Actor)}");
+            return;
+        }
+
         _currentlyProcessingEjects.Add(msg.Actor);
 
         try
@@ -290,6 +297,14 @@ public sealed class StalkerRepositorySystem : EntitySystem
     {
         if (msg.Actor == null)
             return;
+
+        // Block operations during loadout processing to prevent race conditions
+        if (component.LoadoutOperationInProgress)
+        {
+            _sawmill.Debug($"Blocked inject during loadout operation for {Name(msg.Actor)}");
+            return;
+        }
+
         // Check for weight is valid
         var sum = component.CurrentWeight + msg.Item.Weight;
         if (Math.Round(sum, 2) > component.MaxWeight)

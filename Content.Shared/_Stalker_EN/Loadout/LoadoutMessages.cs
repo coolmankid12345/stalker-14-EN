@@ -109,14 +109,4 @@ public sealed class LoadoutRequestMessage : BoundUserInterfaceMessage
 /// Used to notify StalkerRepositorySystem to refresh the stash UI.
 /// </summary>
 [ByRefEvent]
-public readonly struct LoadoutOperationCompletedEvent
-{
-    public readonly EntityUid Actor;
-    public readonly EntityUid Repository;
-
-    public LoadoutOperationCompletedEvent(EntityUid actor, EntityUid repository)
-    {
-        Actor = actor;
-        Repository = repository;
-    }
-}
+public readonly record struct LoadoutOperationCompletedEvent(EntityUid Actor, EntityUid Repository);
