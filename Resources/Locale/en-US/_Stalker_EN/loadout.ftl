@@ -51,3 +51,4 @@ loadout-not-found = Loadout not found
 loadout-stash-full = Stash is full
 loadout-limit-reached = Cannot save more loadouts. Maximum of {$max} reached.
 loadout-item-dropped = {$item} could not be stored and was dropped.
+loadout-rate-limited = Please wait before performing another loadout operation.

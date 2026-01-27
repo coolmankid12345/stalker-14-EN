@@ -82,4 +82,42 @@ public sealed class LoadoutNestedItem
     /// Items nested inside this item's container (recursive).
     /// </summary>
     public List<LoadoutNestedItem> NestedItems { get; set; } = new();
+
+    #region Grid Position (for StorageComponent containers)
+
+    /// <summary>
+    /// Grid position X coordinate. Null = auto-place (backward compatible with old loadouts).
+    /// </summary>
+    public int? GridX { get; set; }
+
+    /// <summary>
+    /// Grid position Y coordinate. Null = auto-place (backward compatible with old loadouts).
+    /// </summary>
+    public int? GridY { get; set; }
+
+    /// <summary>
+    /// Item rotation in storage grid. Null = default rotation (South).
+    /// </summary>
+    public Direction? GridRotation { get; set; }
+
+    /// <summary>
+    /// Returns true if this item has a saved grid position.
+    /// </summary>
+    public bool HasGridPosition => GridX.HasValue && GridY.HasValue;
+
+    /// <summary>
+    /// Converts the saved grid position to an ItemStorageLocation.
+    /// Returns null if no position is saved.
+    /// </summary>
+    public ItemStorageLocation? GetStorageLocation()
+    {
+        if (!HasGridPosition)
+            return null;
+
+        return new ItemStorageLocation(
+            (GridRotation ?? Direction.South).ToAngle(),
+            new Vector2i(GridX!.Value, GridY!.Value));
+    }
+
+    #endregion
 }

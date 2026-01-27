@@ -1,4 +1,5 @@
 using System.Collections.Concurrent;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,10 @@ using Content.Server._Stalker.StalkerDB;
 using Content.Server._Stalker.StalkerRepository;
 using Content.Server._Stalker.Storage;
 using Content.Server.Database;
+using Content.Server.Players.RateLimiting;
+using Content.Shared._Stalker_EN.CCVar;
+using Content.Shared.Database;
+using Content.Shared.Players.RateLimiting;
 using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Shared._Stalker.StalkerRepository;
@@ -46,12 +51,47 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly TagSystem _tags = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
+    [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
 
     private ISawmill _sawmill = default!;
+
+    private const string RateLimitKey = "Loadout";
 
     // Concurrent operation protection - prevents same actor from running multiple loadout operations simultaneously
     // Uses ConcurrentDictionary for thread safety during async operations
     private readonly ConcurrentDictionary<EntityUid, byte> _currentlyProcessingLoadouts = new();
+
+    /// <summary>
+    /// Validates that entities still exist and are valid after an async operation.
+    /// Returns false if any entity has been deleted or the repository component is missing.
+    /// </summary>
+    private bool ValidateEntities(
+        EntityUid repositoryUid,
+        EntityUid actorUid,
+        [NotNullWhen(true)] out StalkerRepositoryComponent? component)
+    {
+        component = null;
+
+        if (!Exists(repositoryUid))
+        {
+            _sawmill.Warning($"Repository entity {repositoryUid} no longer exists after async operation");
+            return false;
+        }
+
+        if (!Exists(actorUid))
+        {
+            _sawmill.Warning($"Actor entity {actorUid} no longer exists after async operation");
+            return false;
+        }
+
+        if (!TryComp(repositoryUid, out component))
+        {
+            _sawmill.Warning($"Repository component missing from {repositoryUid} after async operation");
+            return false;
+        }
+
+        return true;
+    }
 
     /// <summary>
     /// Maximum depth for capturing/restoring nested container items.
@@ -96,6 +136,16 @@ public sealed class LoadoutSystem : EntitySystem
         base.Initialize();
         _sawmill = Logger.GetSawmill("loadout");
 
+        // Register rate limiter for loadout operations (save, load, delete, rename)
+        _rateLimitManager.Register(RateLimitKey, new RateLimitRegistration
+        {
+            CVarLimitPeriodLength = STCCVars.LoadoutRateLimitPeriod,
+            CVarLimitCount = STCCVars.LoadoutRateLimitCount,
+            PlayerLimitedAction = session =>
+                _popup.PopupEntity(Loc.GetString("loadout-rate-limited"), session.AttachedEntity!.Value, session.AttachedEntity!.Value, PopupType.SmallCaution),
+            AdminLogType = LogType.Action
+        });
+
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutSaveMessage>(OnSaveMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutLoadMessage>(OnLoadMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, LoadoutDeleteMessage>(OnDeleteMessage);
@@ -126,6 +176,14 @@ public sealed class LoadoutSystem : EntitySystem
     {
         if (msg.Actor == null || !_currentlyProcessingLoadouts.TryAdd(msg.Actor, 0))
             return;
+
+        // Rate limit check
+        if (TryComp<ActorComponent>(msg.Actor, out var actorComp) &&
+            _rateLimitManager.CountAction(actorComp.PlayerSession, RateLimitKey) != RateLimitStatus.Allowed)
+        {
+            _currentlyProcessingLoadouts.TryRemove(msg.Actor, out _);
+            return;
+        }
 
         try
         {
@@ -163,6 +221,11 @@ public sealed class LoadoutSystem : EntitySystem
         if (!msg.IsQuickSave)
         {
             var existingContainer = await GetLoadoutsAsync(owner);
+
+            // Validate entities after async operation
+            if (!ValidateEntities(uid, msg.Actor, out _))
+                return;
+
             var namedCount = existingContainer?.Loadouts.Count(l => l.Id != 0) ?? 0;
             if (namedCount >= MaxNamedLoadouts)
             {
@@ -197,6 +260,14 @@ public sealed class LoadoutSystem : EntitySystem
         if (msg.Actor == null || !_currentlyProcessingLoadouts.TryAdd(msg.Actor, 0))
             return;
 
+        // Rate limit check
+        if (TryComp<ActorComponent>(msg.Actor, out var actorComp) &&
+            _rateLimitManager.CountAction(actorComp.PlayerSession, RateLimitKey) != RateLimitStatus.Allowed)
+        {
+            _currentlyProcessingLoadouts.TryRemove(msg.Actor, out _);
+            return;
+        }
+
         // Set flag to prevent race conditions with manual stash operations during async load
         component.LoadoutOperationInProgress = true;
         try
@@ -225,6 +296,11 @@ public sealed class LoadoutSystem : EntitySystem
         try
         {
             var container = await GetLoadoutsAsync(owner);
+
+            // CRITICAL: Validate entities still exist after async DB operation
+            if (!ValidateEntities(uid, msg.Actor, out var freshComponent))
+                return;
+
             if (container == null)
             {
                 _popup.PopupEntity(Loc.GetString("loadout-not-found"), msg.Actor, msg.Actor, PopupType.SmallCaution);
@@ -238,8 +314,8 @@ public sealed class LoadoutSystem : EntitySystem
                 return;
             }
 
-            // This now runs on main thread after await
-            var result = ApplyLoadout(msg.Actor, (uid, component), loadout);
+            // Use fresh component reference after validation
+            var result = ApplyLoadout(msg.Actor, (uid, freshComponent), loadout);
             if (result.Success)
             {
                 if (result.MissingCount > 0)
@@ -275,6 +351,14 @@ public sealed class LoadoutSystem : EntitySystem
     {
         if (msg.Actor == null || !_currentlyProcessingLoadouts.TryAdd(msg.Actor, 0))
             return;
+
+        // Rate limit check
+        if (TryComp<ActorComponent>(msg.Actor, out var actorComp) &&
+            _rateLimitManager.CountAction(actorComp.PlayerSession, RateLimitKey) != RateLimitStatus.Allowed)
+        {
+            _currentlyProcessingLoadouts.TryRemove(msg.Actor, out _);
+            return;
+        }
 
         try
         {
@@ -321,6 +405,14 @@ public sealed class LoadoutSystem : EntitySystem
     {
         if (msg.Actor == null || !_currentlyProcessingLoadouts.TryAdd(msg.Actor, 0))
             return;
+
+        // Rate limit check
+        if (TryComp<ActorComponent>(msg.Actor, out var actorComp) &&
+            _rateLimitManager.CountAction(actorComp.PlayerSession, RateLimitKey) != RateLimitStatus.Allowed)
+        {
+            _currentlyProcessingLoadouts.TryRemove(msg.Actor, out _);
+            return;
+        }
 
         try
         {
@@ -1075,7 +1167,8 @@ public sealed class LoadoutSystem : EntitySystem
                     _container.Remove(existingItem.Value, container, reparent: false, force: true);
                 }
 
-                inserted = _container.Insert(spawned, container);
+                // Try position-aware insertion for StorageComponent containers (holsters, etc.)
+                inserted = TryInsertAtPosition(parent, spawned, nestedItem);
 
                 if (!inserted && existingItem.HasValue)
                 {
@@ -1131,6 +1224,53 @@ public sealed class LoadoutSystem : EntitySystem
             var xform = Transform(player);
             Transform(spawned).Coordinates = xform.Coordinates;
         }
+    }
+
+    /// <summary>
+    /// Attempts to insert an item into a StorageComponent at its saved grid position.
+    /// Falls back to auto-placement if position is unavailable or occupied.
+    /// For non-StorageComponent containers, uses standard container insertion.
+    /// </summary>
+    private bool TryInsertAtPosition(EntityUid storage, EntityUid item, LoadoutNestedItem nestedItem)
+    {
+        // Check if storage has StorageComponent for grid-based insertion
+        if (!TryComp<StorageComponent>(storage, out var storageComp))
+        {
+            // Not a grid storage - use standard container insertion
+            if (TryComp<ContainerManagerComponent>(storage, out var containerMan) &&
+                containerMan.Containers.TryGetValue(nestedItem.ContainerName, out var container))
+            {
+                return _container.Insert(item, container);
+            }
+            return false;
+        }
+
+        // Try position-aware insertion if we have saved coordinates
+        var savedLocation = nestedItem.StorageLocation;
+        if (savedLocation != null)
+        {
+            // Check if item fits at saved position
+            if (_storage.ItemFitsInGridLocation(
+                (item, null),
+                (storage, storageComp),
+                savedLocation.Value))
+            {
+                if (_storage.InsertAt(
+                    (storage, storageComp),
+                    (item, null),
+                    savedLocation.Value,
+                    out _,
+                    playSound: false))
+                {
+                    _sawmill.Debug($"Inserted {nestedItem.PrototypeId} at saved position ({savedLocation.Value.Position.X}, {savedLocation.Value.Position.Y})");
+                    return true;
+                }
+            }
+            _sawmill.Debug($"Could not insert {nestedItem.PrototypeId} at saved position - falling back to auto-place");
+        }
+
+        // Fallback to auto-placement
+        return _storage.Insert(storage, item, out _, storageComp: storageComp, playSound: false);
     }
 
     #endregion
