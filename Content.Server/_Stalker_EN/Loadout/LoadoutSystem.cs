@@ -382,6 +382,11 @@ public sealed class LoadoutSystem : EntitySystem
         try
         {
             var container = await GetLoadoutsAsync(owner);
+
+            // Validate entities after async operation
+            if (!ValidateEntities(uid, msg.Actor, out var freshComponent))
+                return;
+
             if (container == null)
                 return;
 
@@ -392,8 +397,12 @@ public sealed class LoadoutSystem : EntitySystem
             container.Loadouts.Remove(loadout);
             await SetLoadoutsAsync(owner, container);
 
+            // Re-validate after second async operation
+            if (!ValidateEntities(uid, msg.Actor, out freshComponent))
+                return;
+
             _popup.PopupEntity(Loc.GetString("loadout-deleted"), msg.Actor, msg.Actor, PopupType.Small);
-            await SendLoadoutStateUpdateAsync(uid, component, msg.Actor);
+            await SendLoadoutStateUpdateAsync(uid, freshComponent, msg.Actor);
         }
         catch (Exception e)
         {
@@ -443,6 +452,11 @@ public sealed class LoadoutSystem : EntitySystem
         try
         {
             var container = await GetLoadoutsAsync(owner);
+
+            // Validate entities after async operation
+            if (!ValidateEntities(uid, msg.Actor, out var freshComponent))
+                return;
+
             if (container == null)
                 return;
 
@@ -453,7 +467,11 @@ public sealed class LoadoutSystem : EntitySystem
             loadout.Name = newName;
             await SetLoadoutsAsync(owner, container);
 
-            await SendLoadoutStateUpdateAsync(uid, component, msg.Actor);
+            // Re-validate after second async operation
+            if (!ValidateEntities(uid, msg.Actor, out freshComponent))
+                return;
+
+            await SendLoadoutStateUpdateAsync(uid, freshComponent, msg.Actor);
         }
         catch (Exception e)
         {
@@ -1514,13 +1532,21 @@ public sealed class LoadoutSystem : EntitySystem
         try
         {
             var container = await GetLoadoutsAsync(owner);
+
+            // Validate entity still exists after async operation
+            if (!Exists(uid) || !TryComp<StalkerRepositoryComponent>(uid, out var freshComponent))
+            {
+                _sawmill.Debug($"Repository entity {uid} no longer exists after async loadout fetch");
+                return;
+            }
+
             var loadouts = container?.Loadouts ?? new List<PlayerLoadout>();
 
             // Build equipped prototypes lookup (items are not "missing" if currently worn)
             var equippedPrototypes = BuildEquippedPrototypesLookup(actor);
 
-            // Calculate missing items for each loadout
-            var stashLookup = BuildStashLookup(component.ContainedItems);
+            // Calculate missing items for each loadout (use fresh component)
+            var stashLookup = BuildStashLookup(freshComponent.ContainedItems);
             foreach (var loadout in loadouts)
             {
                 CalculateMissingItems(loadout, stashLookup, equippedPrototypes);
