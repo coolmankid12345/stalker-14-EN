@@ -49,3 +49,5 @@ loadout-empty = Nothing to save - no equipment
 loadout-name-required = Enter a name for the loadout
 loadout-not-found = Loadout not found
 loadout-stash-full = Stash is full
+loadout-limit-reached = Cannot save more loadouts. Maximum of {$max} reached.
+loadout-item-dropped = {$item} could not be stored and was dropped.

@@ -24,6 +24,13 @@ public sealed partial class StalkerRepositoryComponent : Component
     public float MaxWeight = 75f; // kilos
 
     public float CurrentWeight = 0f;
+
+    /// <summary>
+    /// Set to true during async loadout operations to prevent race conditions
+    /// with manual stash operations (eject/inject).
+    /// </summary>
+    [ViewVariables]
+    public bool LoadoutOperationInProgress;
 }
 /// <summary>
 /// Raised on user entity
