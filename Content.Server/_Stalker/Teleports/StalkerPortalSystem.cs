@@ -16,6 +16,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 using Content.Server._Stalker.Trash;
 using Content.Server.Advertise.Components;
 using Content.Shared.Buckle.Components;
@@ -40,6 +41,9 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IEntityManager _ent = default!;
     [Dependency] private readonly SponsorSystem _sponsorSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+
+    private const float StashPortalCooldownTime = 5f;
     private ISawmill _sawmill = default!;
 
 
@@ -85,6 +89,17 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         if (!TryComp(otherEntity, out ActorComponent? actor))
             return;
 
+        // Check cooldown first
+        if (TryComp<PortalTimeoutComponent>(otherEntity, out var existingTimeout))
+        {
+            if (existingTimeout.Cooldown != null && existingTimeout.Cooldown > _timing.CurTime)
+                return; // Still in cooldown
+
+            // Existing back-teleport prevention logic
+            if (existingTimeout.EnteredPortal != ourEntity)
+                RemCompDeferred<PortalTimeoutComponent>(otherEntity);
+        }
+
         // Check for access
         if (!component.AllowAll)
         {
@@ -94,6 +109,13 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
         var player = actor.PlayerSession;
         var (mapUid, gridUid) = StalkerAssertArenaLoaded(player, component.PortalName, uid);
+
+        // Set cooldown before teleport
+        var timeout = EnsureComp<PortalTimeoutComponent>(otherEntity);
+        timeout.EnteredPortal = ourEntity;
+        timeout.Cooldown = _timing.CurTime + TimeSpan.FromSeconds(StashPortalCooldownTime);
+        Dirty(otherEntity, timeout);
+
         TeleportEntity(otherEntity, new EntityCoordinates(gridUid ?? mapUid, Vector2.One));
     }
     private void OnInteractStalkerPortalPersonal(EntityUid uid, StalkerPortalPersonalComponent component, GetVerbsEvent<InteractionVerb> args)
@@ -156,14 +178,25 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         if (!TryComp<ActorComponent>(otherEntity, out var actor))
             return;
 
-        if (TryComp<PortalTimeoutComponent>(otherEntity, out var timeout) &&
-            timeout.EnteredPortal != ourEntity)
+        // Check cooldown first
+        if (TryComp<PortalTimeoutComponent>(otherEntity, out var existingTimeout))
         {
-            RemCompDeferred<PortalTimeoutComponent>(otherEntity);
+            if (existingTimeout.Cooldown != null && existingTimeout.Cooldown > _timing.CurTime)
+                return; // Still in cooldown
+
+            // Existing back-teleport prevention logic
+            if (existingTimeout.EnteredPortal != ourEntity)
+                RemCompDeferred<PortalTimeoutComponent>(otherEntity);
         }
 
         if (component.ReturnPortalEntity.IsValid())
         {
+            // Set cooldown before teleport
+            var timeout = EnsureComp<PortalTimeoutComponent>(otherEntity);
+            timeout.EnteredPortal = ourEntity;
+            timeout.Cooldown = _timing.CurTime + TimeSpan.FromSeconds(StashPortalCooldownTime);
+            Dirty(otherEntity, timeout);
+
             TeleportEntity(otherEntity, new EntityCoordinates(component.ReturnPortalEntity, new Vector2(0, -1f)));
         }
     }
