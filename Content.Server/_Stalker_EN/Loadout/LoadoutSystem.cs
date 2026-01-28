@@ -820,9 +820,11 @@ public sealed class LoadoutSystem : EntitySystem
 
                 if (equippedIdentifier == slotItem.Identifier)
                 {
-                    // Same item - restore nested items
                     if (slotItem.NestedItems.Count > 0)
+                    {
+                        ClearAutoFilledContents(currentEquipped.item);
                         RestoreNestedItems(currentEquipped.item, slotItem.NestedItems, repository, stashLookup, 0, player, consumedExistingItems);
+                    }
                 }
                 else
                 {
@@ -837,7 +839,10 @@ public sealed class LoadoutSystem : EntitySystem
             if (movedItem != null)
             {
                 if (slotItem.NestedItems.Count > 0)
+                {
+                    ClearAutoFilledContents(movedItem.Value);
                     RestoreNestedItems(movedItem.Value, slotItem.NestedItems, repository, stashLookup, 0, player, consumedExistingItems);
+                }
                 continue;
             }
 
@@ -950,64 +955,27 @@ public sealed class LoadoutSystem : EntitySystem
         var xform = Transform(player);
         var spawned = Spawn(stashItem.ProductEntity, xform.Coordinates);
 
-        // Restore item state
         if (stashItem.SStorageData is IItemStalkerStorage iss)
-        {
             _stalkerStorage.SpawnedItem(spawned, iss);
-        }
 
-        // Clear auto-filled contents if we have nested items to restore
-        // StorageFill auto-populates on spawn, but we want exact loadout contents
-        if (slotItem.NestedItems.Count > 0)
-        {
-            var clearedCount = 0;
-
-            // Clear Storage containers (backpacks, cigarette packs, etc.)
-            if (TryComp<StorageComponent>(spawned, out var storageComp))
-            {
-                clearedCount = storageComp.Container.ContainedEntities.Count;
-                foreach (var contained in storageComp.Container.ContainedEntities.ToList())
-                {
-                    QueueDel(contained);
-                }
-                storageComp.StoredItems.Clear();
-            }
-
-            // Clear ItemSlots containers (pill boxes, etc.)
-            if (TryComp<ItemSlotsComponent>(spawned, out var slotsComp))
-            {
-                foreach (var slot in slotsComp.Slots.Values)
-                {
-                    if (slot.ContainerSlot?.ContainedEntity is { } slotEntity)
-                    {
-                        _container.Remove(slotEntity, slot.ContainerSlot, force: true);
-                        QueueDel(slotEntity);
-                        clearedCount++;
-                    }
-                }
-            }
-
-        }
-
-        // Equip item
+        // Equip before removing from stash - if equip fails, item state is preserved
         if (!_inventory.TryEquip(player, spawned, slotItem.SlotName, true, true))
         {
-            // Put item in hands or drop it
             if (!_hands.TryPickup(player, spawned))
             {
-                // Item never left stash (RemoveFromStash wasn't called yet), just delete spawned entity
                 QueueDel(spawned);
                 return false;
             }
         }
 
-        // SUCCESS: Now remove from stash since equip/pickup succeeded
-        // This preserves original item state if equip fails
         RemoveFromStash(repository, stashItem, stashLookup);
 
-        // Restore nested items
+        // Clear and restore after equip - StorageFill may trigger during equip
         if (slotItem.NestedItems.Count > 0)
+        {
+            ClearAutoFilledContents(spawned);
             RestoreNestedItems(spawned, slotItem.NestedItems, repository, stashLookup, 0, player, consumedExistingItems);
+        }
 
         return true;
     }
@@ -1154,33 +1122,8 @@ public sealed class LoadoutSystem : EntitySystem
                 _stalkerStorage.SpawnedItem(spawned, iss);
             }
 
-            // Clear auto-filled contents for nested items with children
-            // StorageFill auto-populates on spawn, but we want exact loadout contents
-            if (nestedItem.NestedItems.Count > 0)
-            {
-                // Clear Storage containers (backpacks, cigarette packs, etc.)
-                if (TryComp<StorageComponent>(spawned, out var nestedStorage))
-                {
-                    foreach (var contained in nestedStorage.Container.ContainedEntities.ToList())
-                    {
-                        QueueDel(contained);
-                    }
-                    nestedStorage.StoredItems.Clear();
-                }
-
-                // Clear ItemSlots containers (pill boxes, etc.)
-                if (TryComp<ItemSlotsComponent>(spawned, out var nestedSlotsComp))
-                {
-                    foreach (var nestedSlot in nestedSlotsComp.Slots.Values)
-                    {
-                        if (nestedSlot.ContainerSlot?.ContainedEntity is { } slotEntity)
-                        {
-                            _container.Remove(slotEntity, nestedSlot.ContainerSlot, force: true);
-                            QueueDel(slotEntity);
-                        }
-                    }
-                }
-            }
+            // NOTE: Don't clear auto-fill here - StorageFill may trigger during insertion
+            // We clear AFTER successful insertion, before recursive restore
 
             // Insert into container - use ItemSlots validation if available
             bool inserted;
@@ -1275,17 +1218,16 @@ public sealed class LoadoutSystem : EntitySystem
                 continue;
             }
 
-            // SUCCESS: Now remove from stash since insertion succeeded
-            // This preserves original item state if insertion fails
             RemoveFromStash(repository, stashItem, stashLookup);
 
-            // Return displaced item to stash instead of deleting it
+            // Prevent subsequent iterations from matching this item via FindExistingCorrectItem
+            consumedExistingItems.Add(spawned);
+
             if (displacedItem.HasValue)
             {
                 var displacedName = MetaData(displacedItem.Value).EntityName;
                 if (!_repositorySystem.InsertEquippedItem(player, repository, displacedItem.Value))
                 {
-                    // Stash full - drop near player (never delete)
                     Transform(displacedItem.Value).Coordinates = Transform(player).Coordinates;
                     _popup.PopupEntity(Loc.GetString("loadout-item-dropped", ("item", displacedName)), player, player, PopupType.SmallCaution);
                     _sawmill.Warning($"Dropped displaced item {displacedName} near player - stash full");
@@ -1296,12 +1238,12 @@ public sealed class LoadoutSystem : EntitySystem
                 }
             }
 
-            // Recursively restore nested items
-            // CRITICAL: Verify spawned entity still exists - it could be deleted by:
-            // - ContainerInsertAttemptEvent triggering a system that deletes entities
-            // - Admin intervention or QueueDel marking
+            // Entity may have been deleted by ContainerInsertAttemptEvent or admin intervention
             if (nestedItem.NestedItems.Count > 0 && Exists(spawned))
+            {
+                ClearAutoFilledContents(spawned);
                 RestoreNestedItems(spawned, nestedItem.NestedItems, repository, stashLookup, depth + 1, player, consumedExistingItems);
+            }
         }
     }
 
@@ -1550,6 +1492,39 @@ public sealed class LoadoutSystem : EntitySystem
                // Unremovable components
                HasComp<Content.Shared.Interaction.Components.UnremoveableComponent>(item) ||
                HasComp<Content.Shared.Clothing.Components.SelfUnremovableClothingComponent>(item);
+    }
+
+    /// <summary>
+    /// Clears auto-filled storage contents from an item. StorageFillComponent auto-populates
+    /// items on spawn, but we want to restore exact loadout contents instead.
+    /// </summary>
+    /// <remarks>
+    /// Must remove from container before QueueDel - queued entities still occupy container
+    /// slots and will be found by FindExistingCorrectItem until actually deleted.
+    /// </remarks>
+    private void ClearAutoFilledContents(EntityUid item)
+    {
+        if (TryComp<StorageComponent>(item, out var storageComp))
+        {
+            foreach (var contained in storageComp.Container.ContainedEntities.ToList())
+            {
+                _container.Remove(contained, storageComp.Container, force: true);
+                QueueDel(contained);
+            }
+            storageComp.StoredItems.Clear();
+        }
+
+        if (TryComp<ItemSlotsComponent>(item, out var slotsComp))
+        {
+            foreach (var slot in slotsComp.Slots.Values)
+            {
+                if (slot.ContainerSlot?.ContainedEntity is { } slotEntity)
+                {
+                    _container.Remove(slotEntity, slot.ContainerSlot, force: true);
+                    QueueDel(slotEntity);
+                }
+            }
+        }
     }
 
     /// <summary>
