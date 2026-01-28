@@ -41,7 +41,7 @@ public sealed class STAnomalyEffectDamageWeightBonusSystem : EntitySystem
 
                 // Apply bonus damage (base damage * bonus multiplier)
                 var bonusDamage = options.Damage * bonus;
-                _damageable.TryChangeDamage(entity, bonusDamage);
+                _damageable.TryChangeDamage(entity.Owner, bonusDamage);
             }
         }
     }
