@@ -1287,6 +1287,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("stalkers_id");
 
+                    b.Property<string>("Loadouts")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("loadouts");
+
                     b.Property<string>("Login")
                         .IsRequired()
                         .HasColumnType("TEXT")

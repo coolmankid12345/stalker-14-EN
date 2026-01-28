@@ -24,6 +24,7 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
 
     public event Action<RepositoryItemInfo, int>? RepositoryButtonPutPressed;
     public event Action<RepositoryItemInfo, int>? RepositoryButtonGetPressed;
+    public event Action? OpenLoadoutsPressed;
 
     private (string, int) _currentCategory;
     private List<RepositoryItemInfo>? _curItems;
@@ -34,6 +35,7 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
     private RepositorySlider.RepositorySlider? _slider;
     private StalkerRepositoryItemControl? _selectedControl;
     private float _maxWeight = 150f;
+
     public StalkerRepositoryMenu()
     {
         RobustXamlLoader.Load(this);
@@ -50,6 +52,9 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
         AddAllCategory();
 
         _curItems = null;
+
+        // Loadout button opens separate window
+        OpenLoadoutsButton.OnPressed += _ => OpenLoadoutsPressed?.Invoke();
     }
 
     private void OnTextChanged(LineEdit.LineEditEventArgs args)
@@ -62,11 +67,33 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
     public void UpdateAll(List<RepositoryItemInfo> items, List<RepositoryItemInfo> userItems, float maxWeight)
     {
         Clear();
+
+        // Preserve current category selection
+        var previousCategory = _currentCategory;
+
+        ResetCategories();
         PopulateCategorySelector(items);
         SetupWeight(items, maxWeight);
         items.AddRange(userItems);
         _curItems = items;
+
+        // Restore previous category if it still exists
+        var matchingCategory = _categories.FirstOrDefault(c => c.Item1 == previousCategory.Item1);
+        if (matchingCategory != default)
+        {
+            _currentCategory = matchingCategory;
+            CategorySelector.SelectId(matchingCategory.Item2);
+        }
+
         PopulateCurrentCategory(items, SearchLine.Text);
+    }
+
+    private void ResetCategories()
+    {
+        CategorySelector.Clear();
+        _categories.Clear();
+        AddUserCategory();
+        AddAllCategory();
     }
 
     private void SetupWeight(List<RepositoryItemInfo> items, float maxWeight)

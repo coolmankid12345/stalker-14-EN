@@ -570,6 +570,31 @@ public new const int VoiceRange = 15; // how far voice goes in world units
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Emote from {source}: {action}");
     }
 
+    /// <summary>
+    ///     Sends a narration message to players within voice range.
+    ///     Unlike emotes, this does NOT include the entity name - it's a pure scene description.
+    /// </summary>
+    public void SendNarration(EntityUid source, string message, IConsoleShell? shell = null, ICommonSession? player = null)
+    {
+        if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
+            return;
+
+        message = FormattedMessage.EscapeText(message.Trim());
+
+        if (string.IsNullOrEmpty(message))
+            return;
+
+        var wrappedMessage = Loc.GetString("chat-manager-narration-wrap-message",
+            ("message", message));
+
+        SendInVoiceRange(ChatChannel.Narration, message, wrappedMessage, source, ChatTransmitRange.Normal);
+
+        if (player != null)
+            _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Narration from {player:Player}: {message}");
+        else
+            _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Narration from {ToPrettyString(source):user}: {message}");
+    }
+
     // ReSharper disable once InconsistentNaming
     private void SendLOOC(EntityUid source, ICommonSession player, string message, bool hideChat)
     {

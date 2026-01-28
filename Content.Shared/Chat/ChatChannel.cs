@@ -86,9 +86,14 @@ namespace Content.Shared.Chat
         Unspecified = 1 << 14,
 
         /// <summary>
+        ///     Narration - Admin/GM scene descriptions visible to nearby players.
+        /// </summary>
+        Narration = 1 << 15,
+
+        /// <summary>
         ///     Channels considered to be IC.
         /// </summary>
-        IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Notifications,
+        IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Notifications | Narration,
 
         AdminRelated = Admin | AdminAlert | AdminChat,
     }

@@ -1,0 +1,43 @@
+﻿Entries:
+- author: teecoding
+  changes:
+  - message: S.T.A.L.K.E.R. 14 changelog tab for EN fork changes
+    type: Add
+  id: 1
+  time: '2026-01-25T19:12:48.141047+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/344
+- author: teecoding
+  changes:
+  - message: Fixed item duplication when loading loadouts
+    type: Fix
+  - message: Fixed gun magazines and attachments not restoring from loadouts
+    type: Fix
+  - message: Fixed nested items in containers not showing as missing correctly
+    type: Fix
+  - message: Fixed unremovable items being incorrectly stored in stash
+    type: Fix
+  - message: PDA are no longer saved in loadouts
+    type: Tweak
+  - message: Added beta warning about potential item loss
+    type: Tweak
+  - message: Added help button to open loadout guidebook documentation
+    type: Add
+  id: 2
+  time: '2026-01-25T20:11:00.059464+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/345
+- author: teecoding
+  changes:
+  - message: Loadout system build error from incomplete merge
+    type: Fix
+  id: 3
+  time: '2026-01-25T21:31:08.870051+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/346
+- author: crocodilecarousel
+  changes:
+  - message: Fixes the glass shard anomaly hitbox
+    type: Fix
+  id: 4
+  time: '2026-01-26T01:56:32.527350+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/347
+Name: Stalker
+Order: -1

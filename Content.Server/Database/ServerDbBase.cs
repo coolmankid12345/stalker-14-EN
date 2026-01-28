@@ -1811,6 +1811,30 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return record?.Storage;
         }
 
+        public async Task<string?> GetLoadouts(string login)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.Stalkers.SingleOrDefaultAsync(s => s.Login == login);
+
+            return record?.Loadouts;
+        }
+
+        public async Task SetLoadouts(string login, string jsonLoadouts)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.Stalkers.SingleOrDefaultAsync(s => s.Login == login);
+            if (record is null)
+            {
+                // Should not happen, but create record if missing
+                db.DbContext.Stalkers.Add(record = new Stalker("{}", login, jsonLoadouts));
+            }
+
+            record.Loadouts = jsonLoadouts;
+            await db.DbContext.SaveChangesAsync();
+        }
+
         public async Task SetStalkerStatsAsync(string login, CharacteristicType characteristic, float value, DateTime? trainTime)
         {
             await using var db = await GetDb();

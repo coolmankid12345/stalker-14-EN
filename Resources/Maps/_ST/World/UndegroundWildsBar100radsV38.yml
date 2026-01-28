@@ -45,6 +45,8 @@ entities:
     - type: Roof
     - type: OccluderTree
     - type: StalkerSafeZone
+    - type: STMapKey
+      value: UndergroundWildsBar
     - type: NoPausing
     - type: MapGrid
       chunks:

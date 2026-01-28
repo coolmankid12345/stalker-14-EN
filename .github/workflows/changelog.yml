@@ -1,7 +1,7 @@
 name: Update Changelog
 
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
     branches: [master]
 
@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.base.ref }}
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -39,4 +41,4 @@ jobs:
         with:
           commit_message: "docs(changelog): update for PR #${{ github.event.pull_request.number }}"
           branch: ${{ github.event.pull_request.base.ref }}
-          file_pattern: Resources/Changelog/Changelog.yml
+          file_pattern: Resources/Changelog/Stalker.yml

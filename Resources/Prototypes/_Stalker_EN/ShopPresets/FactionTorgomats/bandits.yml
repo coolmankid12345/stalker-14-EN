@@ -274,6 +274,7 @@
           # Cloaks
         ClothingOuterCoatPahan: 140 # T1
         ClothingOuterCoatKolchyga: 550 # T1
+        ClothingOuterCoatBanditRedline: 3000 # T2 pvp
         ClothingOuterCoatLoyalist: 2500 # T2
           # Gasmasks
         ClothingMaskXoma: 100 # T1

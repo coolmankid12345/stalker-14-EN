@@ -67,6 +67,8 @@ entities:
     - type: Broadphase
     - type: Roof
     - type: OccluderTree
+    - type: STMapKey
+      value: TemnajDolina
     - type: MapGrid
       chunks:
         4,5:

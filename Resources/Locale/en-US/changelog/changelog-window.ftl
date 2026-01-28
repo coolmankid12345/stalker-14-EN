@@ -11,6 +11,7 @@ changelog-version-tag = { $fork }/{ $version }
 changelog-button = Changelog
 changelog-button-new-entries = Changelog (new!)
 
+changelog-tab-title-Stalker = S.T.A.L.K.E.R. 14
 changelog-tab-title-Changelog = Changelog
 changelog-tab-title-Admin = Admin
 changelog-tab-title-Maps = Maps

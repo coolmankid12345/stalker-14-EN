@@ -212,3 +212,5 @@ guide-entry-rules-ban-durations = Ban Durations
 
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
+
+guide-entry-loadout = Loadout System

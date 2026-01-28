@@ -24,6 +24,7 @@ namespace Content.Client.UserInterface.Controls
 
         public FancyWindow()
         {
+            IoCManager.InjectDependencies(this);
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
 

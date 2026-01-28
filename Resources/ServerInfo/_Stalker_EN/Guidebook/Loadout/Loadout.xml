@@ -1,0 +1,73 @@
+<Document>
+
+# Loadout System
+
+Save your gear setup and re-equip quickly after death or when switching roles.
+
+[color=#FFD700][bold]This feature is in beta. There is a small possibility of losing items.[/bold][/color]
+
+## Quick Save / Quick Load
+
+The fastest way to save and restore your equipment.
+
+[bullet] [bold]Quick Save[/bold] - Saves everything you're currently wearing
+
+[bullet] [bold]Quick Load[/bold] - Re-equips your quick-saved gear from your stash
+
+Perfect for getting back into the Zone fast after respawning. Update it whenever you upgrade your gear.
+
+## Named Loadouts
+
+Create multiple saved loadouts for different situations:
+
+[bullet] A combat loadout with heavy armor and weapons
+
+[bullet] A stealth loadout with light gear for artifact hunting
+
+[bullet] A trading loadout with extra carrying capacity
+
+Enter a name (up to 32 characters) and click [bold]Save New[/bold]. Your loadouts persist between sessions.
+
+## What Gets Saved
+
+[bullet] All equipped clothing and armor
+
+[bullet] Weapons and their attachments
+
+[bullet] Magazines with their current ammo count
+
+[bullet] Items in your backpack, vest, and pockets
+
+[bullet] Items inside containers (nested up to 5 levels deep)
+
+## What Does NOT Get Saved
+
+[bullet] Items held in your hands
+
+[bullet] Your ID card / PDA
+
+[bullet] Implants and organs
+
+## Preview
+
+Click any loadout to see a preview showing exactly what items will be equipped. You can rotate the preview to inspect your gear from all angles.
+
+## Missing Items
+
+If items from your loadout aren't available, they're marked as [color=#FF6B6B]missing[/color]. The preview panel shows which items you need to find.
+
+[bold]You can still load a partial loadout[/bold] - available items will be equipped and missing items will be skipped.
+
+## How Loading Works
+
+When you load a loadout:
+
+[bullet] Items you're wearing that match the loadout stay equipped
+
+[bullet] Items you're wearing that aren't in the loadout go to your stash
+
+[bullet] Loadout items are retrieved from your stash and equipped
+
+[italic]Good hunting, stalker.[/italic]
+
+</Document>
