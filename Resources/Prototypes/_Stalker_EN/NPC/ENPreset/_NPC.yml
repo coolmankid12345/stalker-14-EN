@@ -141,8 +141,10 @@
     state: buyer
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  # FIXME: Advertise component was replaced with DatasetVocalizer in upstream
+  - type: Vocalizer
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
