@@ -1,6 +1,7 @@
 {
   "license": "CC-BY-SA-3.0",
-  "copyright": "sprites by SciencePowerCM",
+  "version": 1,
+  "copyright": "sprites by carousel",
   "size":
   {
     "x": 32,
@@ -53,6 +54,5 @@
       "name": "inhand-right-fill-2",
       "directions": 4
     }
-  ],
-  "version": 1
+  ]
 }

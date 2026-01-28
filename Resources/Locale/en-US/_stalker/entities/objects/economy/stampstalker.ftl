@@ -1,8 +1,11 @@
 ent-RubberStampArmy = Military Stamp
+    .desc = An official military stamp for documents.
     .suffix = DO NOT MAP
 ent-RubberStampScience = Scientist's Seal
+    .desc = An official stamp of the Scientists faction.
     .suffix = { ent-RubberStampArmy.suffix }
 ent-RubberStampUN = UN Stamp
+    .desc = An official stamp of the UN faction.
     .suffix = { ent-RubberStampArmy.suffix }
 ent-RubberStampHeadMerc = Field Commander Seal
     .desc = Ares Group Field Commander Seal

@@ -1,10 +1,15 @@
 ent-STTrashT1CacheSpawner = trash trigger T1 (25%)
+    .desc = Spawner (trash T1)
     .suffix = ST, T1, Trigger, Cache
 ent-STTrashT2CacheSpawner = trash trigger T2 (25%)
+    .desc = Spawner (trash T2)
     .suffix = ST, T2, Trigger, Cache
 ent-STTrashT3CacheSpawner = trash trigger T3 (25%)
+    .desc = Spawner (trash T3)
     .suffix = ST, T3, Trigger, Cache
 ent-STTrashT4CacheSpawner = trash trigger T4 (25%)
+    .desc = Spawner (trash T4)
     .suffix = ST, T4, Trigger, Cache
 ent-STTrashT5CacheSpawner = trash trigger T5 (25%)
+    .desc = Spawner (trash T5)
     .suffix = ST, T5, Trigger, Cache

@@ -1,4 +1,5 @@
 ent-RandomTrashDetectorSpawner = random garbage spawner (metal detector)
+    .desc = Spawner for random metal detectors.
     .suffix = Stalker
 ent-TrashDetectorTier1 = Metal Detector "Prostofil"
     .desc = Made of shit and sticks, but if you rummage through it in large piles of garbage, you may find something.

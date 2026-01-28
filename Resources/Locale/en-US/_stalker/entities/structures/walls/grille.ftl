@@ -14,4 +14,5 @@ ent-STGrilleDiagonal = diagonal grille
     .desc = { ent-STGrilleBroken.desc }
     .suffix = { ent-STGrille.suffix }
 ent-STClockworkGrilleDiagonal = diagonal clockwork grille
+    .desc = { ent-STClockworkGrille.desc }
     .suffix = { ent-STGrille.suffix }

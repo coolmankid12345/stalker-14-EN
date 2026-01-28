@@ -36,6 +36,7 @@ public sealed class ClickableSystem : EntitySystem
     /// <param name="drawDepth">
     /// The draw depth for the sprite that captured the click.
     /// </param>
+    /// <param name="excludeFaded">If true, faded sprites are excluded from click detection.</param>
     /// <returns>True if the click worked, false otherwise.</returns>
     public bool CheckClick(Entity<ClickableComponent?, SpriteComponent, TransformComponent?, FadingSpriteComponent?> entity, Vector2 worldPos, IEye eye, bool excludeFaded, out int drawDepth, out uint renderOrder, out float bottom)
     {

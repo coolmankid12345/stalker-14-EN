@@ -2,7 +2,7 @@
 - type: craftRecipe
   id: recipeZaryaHunter
   resultProtos:
-    - ClothingOuterArmorZaryaStalker
+    - ClothingOuterArmorZaryaHunter
   craftTime: 10
   items:
     ClothingOuterArmorZaryaHunterBlueprint:

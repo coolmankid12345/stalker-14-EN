@@ -263,8 +263,8 @@ public abstract partial class STSharedScopeSystem : EntitySystem
         var targetOffset = GetScopeOffset(scope, direction);
         scoping.EyeOffset = targetOffset;
 
-        var msgUser = Loc.GetString("st-action-popup-scoping-user", ("scope", scope.Owner));
-        _popup.PopupEntity(msgUser, user);
+        //var msgUser = Loc.GetString("st-action-popup-scoping-user", ("scope", scope.Owner));
+        //_popup.PopupEntity(msgUser, user);
 
         _actionsSystem.SetToggled(scope.Comp.ScopingToggleActionEntity, true);
         _contentEye.SetZoom(user, Vector2.One * scope.Comp.Zoom, true);

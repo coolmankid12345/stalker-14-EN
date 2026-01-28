@@ -1,4 +1,5 @@
 using Content.Shared._Stalker.ZoneAnomaly.Components;
+using Content.Shared._Stalker_EN.ZoneAnomaly.Effects.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
@@ -35,6 +36,11 @@ public sealed class ZoneAnomalySystem : SharedZoneAnomalySystem
                     if (_timing.CurTime < anomaly.ActivationTime)
                         break;
 
+                    // Skip timer-based recharge for anomalies with gib effect
+                    // (GibSystem will handle state transition after all targets are resolved)
+                    if (HasComp<ZoneAnomalyEffectGibComponent>(uid))
+                        break;
+
                     Recharge((uid, anomaly));
                     break;
 
@@ -57,7 +63,8 @@ public sealed class ZoneAnomalySystem : SharedZoneAnomalySystem
 
     private void OnStartCollide(Entity<ZoneAnomalyComponent> anomaly, ref StartCollideEvent args)
     {
-        if(_whitelistSystem.IsWhitelistPass(anomaly.Comp.CollisionBlacklist, args.OtherEntity))
+        // FIXME: CollisionBlacklist is named as blacklist but used as whitelist - skip if entity matches
+        if (_whitelistSystem.IsWhitelistPass(anomaly.Comp.CollisionBlacklist, args.OtherEntity))
             return;
 
         TryAddEntity(anomaly, args.OtherEntity);

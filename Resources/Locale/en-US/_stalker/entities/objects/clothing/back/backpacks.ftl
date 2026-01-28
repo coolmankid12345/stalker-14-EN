@@ -51,6 +51,7 @@ ent-ClothingBackpackDuffelRareStalker = roomy backpack
     .desc = Roomy backpack, usually taken on hikes, but in the zone just right!
     .suffix = ST
 ent-ClothingBackpackDuffelHikingVSRFAnomaly = Abnormal Hiking Backpack
+    .desc = A spacious hiking backpack. Something seems off about this one...
     .suffix = ST, T5, Lord, ADMIN
 ent-ClothingBackpackTacticSera = Camouflage Tactical Backpack
     .desc = It's never colorful or bright, as one of the jobs of tactical backpacks is to disguise themselves as an environment. Such are used by the Seraphim group.

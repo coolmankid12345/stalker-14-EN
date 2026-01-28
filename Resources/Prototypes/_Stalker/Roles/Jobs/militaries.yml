@@ -85,7 +85,7 @@
 - type: job
   id: Military
   name: job-military
-  icon: voen1
+  icon: voen1EN
   description: job-military-desc
   playTimeTracker: JobMilitary
   whitelisted: true
@@ -108,7 +108,7 @@
           - Military
       - type: Bands
         band: Stalker
-        bandIcon: voen1
+        bandIcon: voen1EN
         bandProto: STMilitaryBand
         bandRankId: 1
       - type: BlockTackingHolyItems
@@ -125,7 +125,7 @@
 - type: job
   id: MilitaryHead
   name: job-military-head
-  icon: voen2
+  icon: voen2EN
   description: job-military-head-desc
   playTimeTracker: JobHeadMilitary
   whitelisted: true
@@ -148,7 +148,7 @@
             - MilitaryHead
         - type: Bands
           band: Stalker
-          bandIcon: voen2
+          bandIcon: voen2EN
           bandProto: STMilitaryBand
           bandRankId: 3
         - type: BlockTackingHolyItems
@@ -166,7 +166,7 @@
 - type: job
   id: MilitaryOfficer
   name: job-military-officer
-  icon: voen3
+  icon: voen3EN
   description: job-military-officer-desc
   playTimeTracker: JobOfficerMilitary
   whitelisted: true
@@ -189,7 +189,7 @@
             - MilitaryOfficer
         - type: Bands
           band: Stalker
-          bandIcon: voen3
+          bandIcon: voen3EN
           bandProto: STMilitaryBand
           bandRankId: 2
         - type: BlockTackingHolyItems

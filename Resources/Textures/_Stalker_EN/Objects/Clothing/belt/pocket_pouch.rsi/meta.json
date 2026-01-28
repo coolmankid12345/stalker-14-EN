@@ -1,14 +1,14 @@
-﻿{
-  "version": 1,
-  "license": "stalker14 license",
-  "copyright": "made by dude237",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "closed"
-    }
-  ]
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "sprite by carousel",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
 }

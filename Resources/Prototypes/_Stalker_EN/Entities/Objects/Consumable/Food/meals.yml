@@ -558,6 +558,9 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
+  - type: SliceableFood
+    slice: FoodSTCakePlainSlice
+    count: 1
   - type: Craftable # i think craftable isnt necessary on slices
 
 - type: entity
@@ -617,6 +620,9 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
+  - type: SliceableFood
+    slice: FoodSTCakeBerrySlice
+    count: 1
   - type: Craftable # i think craftable isnt necessary on slices
 
 - type: entity

@@ -1,0 +1,106 @@
+- type: entity
+  parent: ZoneAnomalyBaseGravity
+  id: ZoneAnomalyVortex
+  suffix: Stalker, Vortex, Anomaly
+  description: A deadly gravitational vortex. You'll hear it before you see it. Those caught inside are paralyzed and dragged to their doom.
+  components:
+    - type: ZoneAnomalyTriggerStartCollide
+    - type: ZoneAnomalyEffectDamage
+      damageUpdate: true
+      damageUpdateDelay: 1.0
+      damage:
+        types:
+          Compression: 3
+    - type: ZoneAnomalyEffectGravityWell
+      distance: 3.5
+      period: 1.0
+      radial: 50
+      tangential: 0.5
+      gradient: ReversedLinear
+    - type: ZoneAnomalyEffectGib
+      coreRadius: 0.5
+      gibDelay: 2.5
+      gibOrgans: true
+      throwOnGib: true
+      throwRange: 5
+      throwForce: 60
+      pendingDoomSound:
+        path: /Audio/_Stalker_EN/Anomalies/Vortex/blowout.ogg
+      whitelist:
+        components:
+          - MobState
+    - type: ZoneAnomalyEffectBlast
+      throwRange: 5
+      throwForce: 60
+      delay: 0.5
+    - type: Stealth
+    - type: ZoneAnomalyEffectStealth
+      idle: 0.2  
+      activated: 1
+      charging: 0  
+    - type: ZoneAnomaly
+      detectedLevel: 3
+      activationDelay: 3
+      preparingDelay: 0
+      chargeTime: 5
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Anomalies/vortex.rsi
+      scale: 2, 2
+      layers:
+        - state: idle
+          map: ["base"]
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.ZoneAnomalyVisuals.Layer:
+          base:
+            Activated: { state: active }
+            Charging: { state: charging }
+            Idle: { state: idle }
+        enum.Content.Shared._Stalker_EN.ZoneAnomaly.Effects.ZoneAnomalyGibVisuals.Doomed:
+          base:
+            True: { state: doomed }
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 3
+          density: 50
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+            - LowImpassable
+    - type: ZoneAnomalyStealthPulse
+      minVisibility: 0.2
+      maxVisibility: 0.6
+      pulseDuration: 2.0
+      updateInterval: 0.1
+    - type: ZoneAnomalyProximitySound
+      maxRange: 10
+      minVolume: 0.1
+      maxVolume: 1
+      updateCooldown: 0.25
+      sound:
+        path: /Audio/_Stalker_EN/Anomalies/Vortex/idle.ogg
+    - type: ZoneArtifactSpawner
+      artifacts:
+      - id: null
+        ratio: 290
+      # Tier 1
+      - id: ArtMedusa
+        tier: 1
+        ratio: 15
+      - id: ZoneArtifactPebble
+        tier: 1
+        ratio: 19
+      # Tier 2
+      - id: ZoneArtifactAmoeba
+        tier: 2
+        ratio: 18
+      # Tier 3
+      - id: ZoneArtifactStoneCube
+        tier: 3
+        ratio: 12
