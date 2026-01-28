@@ -7,6 +7,8 @@
   components:
   - type: Item
     size: Normal
+  - type: RepositoryItem
+    categoryName: repository-detectors-category
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/veles.rsi
     layers:
@@ -27,8 +29,9 @@
     displayRange: 17
   # Artifact target source
   - type: ArtifactRadarTargetSource
-    detectionRange: 17
+    detectionRange: 18
     level: 3
+    activationDistance: 2
   - type: ActivatableUI
     key: enum.RadarDisplayUiKey.Key
     inHandsOnly: true

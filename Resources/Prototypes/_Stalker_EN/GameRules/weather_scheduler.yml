@@ -1,0 +1,20 @@
+- type: entity
+  id: STWeatherScheduler
+  parent: BaseGameRule
+  components:
+  - type: WeatherSchedulerRule
+    weatherPool:
+      Rain: 3.0
+      Storm: 1.0
+      STFogLight: 2.5
+      STFogHeavy: 1.0
+      SnowfallLight: 1.5
+      SnowfallMedium: 1.0
+    clearWeatherWeight: 4.0
+    changeInterval:
+      min: 600
+      max: 1800
+    weatherDuration:
+      min: 300
+      max: 900
+    pauseDuringEmission: true

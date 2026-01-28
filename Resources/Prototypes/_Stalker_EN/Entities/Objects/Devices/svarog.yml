@@ -5,6 +5,8 @@
   description: An advanced detection device combining artifact radar with anomaly detection. The upgraded version of Veles.
   suffix: Stalker EN, Advanced Radar
   components:
+  - type: RepositoryItem
+    categoryName: repository-detectors-category
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/svarog.rsi
     layers:
@@ -15,8 +17,9 @@
         visible: false
   # Override artifact target source with higher level
   - type: ArtifactRadarTargetSource
-    detectionRange: 17
+    detectionRange: 18
     level: 4
+    activationDistance: 2
   # Anomaly target source for radar display
   - type: AnomalyRadarTargetSource
     detectionRange: 17
@@ -24,7 +27,7 @@
   # Anomaly detection (audio beeping) - kept for beeping functionality
   - type: ZoneAnomalyDetector
     level: 5
-    distance: 17
+    distance: 7
     maxBeepInterval: 1
     minBeepInterval: 0.01
     beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg

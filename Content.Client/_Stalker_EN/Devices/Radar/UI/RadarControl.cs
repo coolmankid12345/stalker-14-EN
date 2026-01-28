@@ -32,7 +32,7 @@ public sealed class RadarControl : Control
     private const float SweepHitThreshold = 0.15f; // Radians tolerance for sweep detection
 
     private float _lastSweepAngle;
-    private float _sweepStartTime;
+    private float _sweepStartTime = -1f;  // Sentinel for uninitialized
 
     // Struct to hold revealed blip state (position at time of reveal)
     private struct RevealedBlip
@@ -87,8 +87,8 @@ public sealed class RadarControl : Control
             return;
         }
 
-        // If scanner just turned on, reset sweep to start from top (0 radians)
-        if (!_scannerEnabled && scannerEnabled)
+        // If scanner just turned on OR sweep time uninitialized, reset sweep to start from top (0 radians)
+        if ((!_scannerEnabled && scannerEnabled) || _sweepStartTime < 0)
         {
             _sweepStartTime = (float)_timing.CurTime.TotalSeconds;
             _lastSweepAngle = 0f; // Start at top

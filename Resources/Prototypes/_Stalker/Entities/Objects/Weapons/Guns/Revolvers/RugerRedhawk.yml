@@ -17,7 +17,7 @@
       maxAngle: 35
       angleIncrease: 5
       angleDecay: 10
-      fireRate: 1
+      fireRate: 3
       selectedMode: SemiAuto
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/revolver3.ogg

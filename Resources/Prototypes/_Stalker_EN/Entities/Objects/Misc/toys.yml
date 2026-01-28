@@ -65,3 +65,12 @@
   - type: Sprite
     state: feltedcat3
     scale: 0.7,0.7
+
+- type: entity
+  parent: BaseFeltPlushie
+  id: STPlushieBunny
+  name: bunny doll
+  description: A plush rabbit made of soft material. You feel like you've seen it before...
+  components:
+  - type: Sprite
+    state: bunny

@@ -495,7 +495,7 @@
       access: [["Monolith"]]
     - type: VendingMachine
       ejectDelay: 0.1
-      pack: MonolithInventory
+      pack: MonolithInventoryEN #EN
       dispenseOnHitChance: 0.0
       dispenseOnHitThreshold: 2
       offState: off

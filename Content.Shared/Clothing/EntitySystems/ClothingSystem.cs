@@ -7,6 +7,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Strip.Components;
 using Robust.Shared.GameStates;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Clothing.EntitySystems;
 
@@ -15,6 +16,7 @@ public abstract class ClothingSystem : EntitySystem
     [Dependency] private readonly SharedItemSystem _itemSys = default!;
     [Dependency] private readonly InventorySystem _invSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -33,6 +35,9 @@ public abstract class ClothingSystem : EntitySystem
 
     private void OnUseInHand(Entity<ClothingComponent> ent, ref UseInHandEvent args)
     {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         if (args.Handled || !ent.Comp.QuickEquip)
             return;
 
@@ -50,33 +55,24 @@ public abstract class ClothingSystem : EntitySystem
         Entity<ClothingComponent> toEquipEnt,
         Entity<InventoryComponent, HandsComponent> userEnt)
     {
+        // First pass: Try to find an empty slot that fits
         foreach (var slotDef in userEnt.Comp1.Slots)
         {
             if (!_invSystem.CanEquip(userEnt, toEquipEnt, slotDef.Name, out _, slotDef, userEnt, toEquipEnt))
                 continue;
 
-            if (_invSystem.TryGetSlotEntity(userEnt, slotDef.Name, out var slotEntity, userEnt))
-            {
-                // Item in slot has to be quick equipable as well
-                if (TryComp(slotEntity, out ClothingComponent? item) && !item.QuickEquip)
-                    continue;
+            // Skip occupied slots in first pass
+            if (_invSystem.TryGetSlotEntity(userEnt, slotDef.Name, out _, userEnt))
+                continue;
 
-                if (!_invSystem.TryUnequip(userEnt, slotDef.Name, true, inventory: userEnt, checkDoafter: true))
-                    continue;
-
-                if (!_invSystem.TryEquip(userEnt, toEquipEnt, slotDef.Name, inventory: userEnt, clothing: toEquipEnt, checkDoafter: true, triggerHandContact: true))
-                    continue;
-
-                _handsSystem.PickupOrDrop(userEnt, slotEntity.Value, handsComp: userEnt);
-            }
-            else
-            {
-                if (!_invSystem.TryEquip(userEnt, toEquipEnt, slotDef.Name, inventory: userEnt, clothing: toEquipEnt, checkDoafter: true, triggerHandContact: true))
-                    continue;
-            }
-
-            break;
+            // Empty slot found - try to equip and ALWAYS return
+            // TryEquip returns false if it starts a DoAfter, but the DoAfter will complete the equip
+            _invSystem.TryEquip(userEnt, toEquipEnt, slotDef.Name, true, inventory: userEnt, clothing: toEquipEnt, checkDoafter: true);
+            return;
         }
+
+        // All compatible slots occupied - fail silently
+        // FIXME: Swap logic was removed from master - previously would unequip existing item and pick it up
     }
 
     protected virtual void OnGotEquipped(EntityUid uid, ClothingComponent component, GotEquippedEvent args)

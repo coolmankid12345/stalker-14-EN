@@ -1,5 +1,4 @@
 using System.Numerics;
-using Content.Shared.Light.Components;
 using Content.Shared.Weather;
 using Robust.Client.Audio;
 using Robust.Client.GameObjects;
@@ -19,6 +18,13 @@ public sealed class WeatherSystem : SharedWeatherSystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+
+    // Reused collections for flood-fill to avoid per-frame allocations
+    private readonly Queue<TileRef> _floodFrontier = new();
+    private readonly HashSet<Vector2i> _floodVisited = new();
+    private Vector2i? _lastPlayerTile;
+    private EntityUid? _lastGridUid;
+    private EntityCoordinates? _cachedNearestNode;
 
     public override void Initialize()
     {
@@ -58,54 +64,60 @@ public sealed class WeatherSystem : SharedWeatherSystem
         // Work out tiles nearby to determine volume.
         if (TryComp<MapGridComponent>(entXform.GridUid, out var grid))
         {
-            TryComp(entXform.GridUid, out RoofComponent? roofComp);
             var gridId = entXform.GridUid.Value;
             // FloodFill to the nearest tile and use that for audio.
             var seed = _mapSystem.GetTileRef(gridId, grid, entXform.Coordinates);
-            var frontier = new Queue<TileRef>();
-            frontier.Enqueue(seed);
-            // If we don't have a nearest node don't play any sound.
-            EntityCoordinates? nearestNode = null;
-            var visited = new HashSet<Vector2i>();
+            var currentTile = seed.GridIndices;
 
-            while (frontier.TryDequeue(out var node))
+            // Only recalculate when player moves to new tile or changes grid
+            if (_lastPlayerTile != currentTile || _lastGridUid != gridId)
             {
-                if (!visited.Add(node.GridIndices))
-                    continue;
+                _lastPlayerTile = currentTile;
+                _lastGridUid = gridId;
 
-                if (!CanWeatherAffect(entXform.GridUid.Value, grid, node, roofComp))
+                _floodFrontier.Clear();
+                _floodVisited.Clear();
+                _floodFrontier.Enqueue(seed);
+                _cachedNearestNode = null;
+
+                while (_floodFrontier.TryDequeue(out var node))
                 {
-                    // Add neighbors
-                    // TODO: Ideally we pick some deterministically random direction and use that
-                    // We can't just do that naively here because it will flicker between nearby tiles.
-                    for (var x = -1; x <= 1; x++)
-                    {
-                        for (var y = -1; y <= 1; y++)
-                        {
-                            if (Math.Abs(x) == 1 && Math.Abs(y) == 1 ||
-                                x == 0 && y == 0 ||
-                                (new Vector2(x, y) + node.GridIndices - seed.GridIndices).Length() > 3)
-                            {
-                                continue;
-                            }
+                    if (!_floodVisited.Add(node.GridIndices))
+                        continue;
 
-                            frontier.Enqueue(_mapSystem.GetTileRef(gridId, grid, new Vector2i(x, y) + node.GridIndices));
+                    if (!CanWeatherAffect(gridId, grid, node))
+                    {
+                        // Add neighbors
+                        // TODO: Ideally we pick some deterministically random direction and use that
+                        // We can't just do that naively here because it will flicker between nearby tiles.
+                        for (var x = -1; x <= 1; x++)
+                        {
+                            for (var y = -1; y <= 1; y++)
+                            {
+                                if (Math.Abs(x) == 1 && Math.Abs(y) == 1 ||
+                                    x == 0 && y == 0 ||
+                                    (new Vector2(x, y) + node.GridIndices - seed.GridIndices).Length() > 3)
+                                {
+                                    continue;
+                                }
+
+                                _floodFrontier.Enqueue(_mapSystem.GetTileRef(gridId, grid, new Vector2i(x, y) + node.GridIndices));
+                            }
                         }
+
+                        continue;
                     }
 
-                    continue;
+                    _cachedNearestNode = new EntityCoordinates(gridId, node.GridIndices + grid.TileSizeHalfVector);
+                    break;
                 }
-
-                nearestNode = new EntityCoordinates(entXform.GridUid.Value,
-                    node.GridIndices + grid.TileSizeHalfVector);
-                break;
             }
 
             // Get occlusion to the targeted node if it exists, otherwise set a default occlusion.
-            if (nearestNode != null)
+            if (_cachedNearestNode != null)
             {
                 var entPos = _transform.GetMapCoordinates(entXform);
-                var nodePosition = _transform.ToMapCoordinates(nearestNode.Value).Position;
+                var nodePosition = _transform.ToMapCoordinates(_cachedNearestNode.Value).Position;
                 var delta = nodePosition - entPos.Position;
                 var distance = delta.Length();
                 occlusion = _audio.GetOcclusion(entPos, delta, distance);

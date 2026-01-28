@@ -52,7 +52,7 @@ public sealed class FarGunshotSystem : EntitySystem
             component.Sound,
             farSoundFilter,
             recordReplay: true,
-            AudioParams.Default
+            component.Sound?.Params ?? AudioParams.Default
         );
     }
 

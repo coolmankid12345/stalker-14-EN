@@ -29,5 +29,9 @@ public sealed partial class FarGunshotComponent : Component
     [ViewVariables]
     public float? SilencerDecrease;
 
-    // TODO: silencer impl
+    /// <summary>
+    /// The base volume of the far gunshot sound before any modifications.
+    /// </summary>
+    [DataField]
+    public float BaseVolume;
 }

@@ -76,22 +76,17 @@ public sealed class STWeaponModuleSystem : STSharedWeaponModuleSystem
                 ? effect.FarshotSoundDecrease
                 : null;
 
-            var farAudioParams = farGunshotComponent.Sound.Params;
-
-            farAudioParams.Volume += effect.SoundGunshotVolumeAddition;
-            farGunshotComponent.Sound.Params = farAudioParams;
+            // Use WithVolume() to SET from base, not accumulate
+            farGunshotComponent.Sound.Params = farGunshotComponent.Sound.Params
+                .WithVolume(farGunshotComponent.BaseVolume + effect.SoundGunshotVolumeAddition);
         }
 
         if (args.SoundGunshot is null)
             return;
 
-        var audioParams = args.SoundGunshot?.Params ?? AudioParams.Default;
-
-        // Hotfix how to handle super silent silencers happening because volume additions
-        // pile up. We need to find something else, because a user in the future might have
-        // not only one volume reducing module
-        audioParams.Volume += effect.SoundGunshotVolumeAddition;
-        args.SoundGunshot!.Params = audioParams;
+        // Use WithVolume() to SET from AudioParams.Default.Volume (0), not accumulate
+        args.SoundGunshot.Params = args.SoundGunshot.Params
+            .WithVolume(AudioParams.Default.Volume + effect.SoundGunshotVolumeAddition);
     }
 
     private void UpdateContainerEffect(BaseContainer container)
