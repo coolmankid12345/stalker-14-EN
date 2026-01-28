@@ -1,0 +1,29 @@
+- type: entity
+  id: ActionSTRadioToggleMic
+  name: Toggle Radio Mic
+  description: Toggle your radio microphone on or off.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: _Stalker/Objects/Devices/radio.rsi
+      state: base
+    iconOn:
+      sprite: _Stalker/Objects/Devices/radio.rsi
+      state: broadcasting
+    event: !type:STRadioHeadsetToggleMicActionEvent
+    useDelay: 0.5
+
+- type: entity
+  id: ActionSTRadioToggleSpeaker
+  name: Toggle Radio Speaker
+  description: Toggle your radio speaker on or off.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: _Stalker/Objects/Devices/radio.rsi
+      state: base
+    iconOn:
+      sprite: _Stalker/Objects/Devices/radio.rsi
+      state: speaker
+    event: !type:STRadioHeadsetToggleSpeakerActionEvent
+    useDelay: 0.5

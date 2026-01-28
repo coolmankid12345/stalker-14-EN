@@ -1,0 +1,41 @@
+- type: entity
+  id: STRadioHeadset
+  parent: BaseItem
+  name: Radio Headset
+  suffix: Stalker EN, ST
+  description: A compact radio that fits in your ear. Provides action buttons for mic/speaker toggle.
+  components:
+  - type: RadioMicrophone
+    powerRequired: false
+    unobstructedRequired: false
+    listenRange: 1
+    toggleOnInteract: false
+    broadcastChannel: StalkerInternal
+  - type: RadioSpeaker
+    toggleOnInteract: false
+    channels: [StalkerInternal]
+  - type: RadioStalker
+    requiresPower: false
+  - type: Speech
+    speechVerb: Robotic
+  - type: Headset
+    requiredSlot: EARS
+  - type: Clothing
+    slots: [ears]
+    sprite: _Stalker/Objects/Clothing/Ears/code_project_garniture.rsi
+  - type: Item
+    size: Small
+  - type: STRadioHeadset
+  - type: ActivatableUI
+    key: enum.RadioStalkerUiKey.Key
+    singleUser: true
+    closeOnHandDeselect: false
+  - type: UserInterface
+    interfaces:
+      enum.RadioStalkerUiKey.Key:
+        type: RadioStalkerBoundUserInterface
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Ears/code_project_garniture.rsi
+    state: icon
+  - type: Clickable
+  - type: InteractionOutline
