@@ -1,5 +1,6 @@
-using Content.Server.Administration.Commands;
+using Content.Server._Stalker.ApproachTrigger;
 using Content.Server.NPC;
+using Content.Shared.Trigger;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Shared._Stalker.Pack;
@@ -15,6 +16,7 @@ namespace Content.Server._Stalker.Pack;
 
 public sealed class STPackSystem : EntitySystem
 {
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
@@ -25,10 +27,45 @@ public sealed class STPackSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<STPackSpawnerComponent, MapInitEvent>(OnSpawnerMapInit);
+SubscribeLocalEvent<STPackSpawnerComponent, MapInitEvent>(OnSpawnerMapInit);
+        SubscribeLocalEvent<STPackSpawnerComponent, TriggerEvent>(OnTrigger);
 
         SubscribeLocalEvent<STPackHeadComponent, MobStateChangedEvent>(OnHeadStateChanged);
-        SubscribeLocalEvent<STPackHeadComponent, DeleteComponent>(OnHeadDeleted);
+        SubscribeLocalEvent<STPackHeadComponent, EntityTerminatingEvent>(OnHeadDeleted);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<STPackSpawnerComponent>();
+        while (query.MoveNext(out var uid, out var spawner))
+        {
+            if (spawner.CooldownTime > _timing.CurTime)
+                continue;
+
+            if (TryComp<ApproachTriggerComponent>(uid, out var approach))
+                approach.Enabled = true;
+
+            spawner.Enabled = true;
+        }
+    }
+
+    private void OnTrigger(Entity<STPackSpawnerComponent> entity, ref TriggerEvent args)
+    {
+        if (!entity.Comp.Enabled)
+            return;
+
+        if (!_random.Prob(entity.Comp.Chance))
+            return;
+
+        CreatePack(entity.Comp.ProtoId, _transform.GetMapCoordinates(entity));
+
+        entity.Comp.CooldownTime = _timing.CurTime + TimeSpan.FromSeconds(entity.Comp.Cooldown);
+        entity.Comp.Enabled = false;
+
+        if (TryComp<ApproachTriggerComponent>(entity, out var approach))
+            approach.Enabled = false;
     }
 
     private void OnHeadStateChanged(Entity<STPackHeadComponent> entity, ref MobStateChangedEvent args)
@@ -39,12 +76,12 @@ public sealed class STPackSystem : EntitySystem
         SetRandomHead(entity);
     }
 
-    private void OnHeadDeleted(Entity<STPackHeadComponent> entity, ref DeleteComponent args)
+    private void OnHeadDeleted(Entity<STPackHeadComponent> entity, ref EntityTerminatingEvent args)
     {
         SetRandomHead(entity);
     }
 
-    private void OnSpawnerMapInit(Entity<STPackSpawnerComponent> entity, ref MapInitEvent args)
+private void OnSpawnerMapInit(Entity<STPackSpawnerComponent> entity, ref MapInitEvent args)
     {
         CreatePack(entity.Comp.ProtoId, _transform.GetMapCoordinates(entity));
     }

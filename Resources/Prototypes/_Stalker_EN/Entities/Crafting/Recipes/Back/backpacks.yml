@@ -1,0 +1,17 @@
+- type: craftRecipe
+  id: recipeClothingBackpackSmuggler
+  resultProtos:
+    - ClothingBackpackSmuggler
+  craftTime: 15
+  items:
+    ClothingBackpackSmugglerBlueprint:
+      amount: 1
+      catalyzer: true
+    ClothingBackpackMercStalker:
+      amount: 1
+    STCraftSturdyHideT3:
+      amount: 5
+    STCraftPolymerFabricT4:
+      amount: 2
+    STCraftIndustrialThreadStaplesKitT4:
+      amount: 1

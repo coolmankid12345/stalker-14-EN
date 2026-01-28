@@ -51,11 +51,13 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
     private void OnGotEquipped(Entity<TypingIndicatorClothingComponent> entity, ref ClothingGotEquippedEvent args)
     {
         entity.Comp.GotEquippedTime = _timing.CurTime;
+        Dirty(entity);
     }
 
     private void OnGotUnequipped(Entity<TypingIndicatorClothingComponent> entity, ref ClothingGotUnequippedEvent args)
     {
         entity.Comp.GotEquippedTime = null;
+        Dirty(entity);
     }
 
     private void BeforeShow(Entity<TypingIndicatorClothingComponent> entity, ref InventoryRelayedEvent<BeforeShowTypingIndicatorEvent> args)

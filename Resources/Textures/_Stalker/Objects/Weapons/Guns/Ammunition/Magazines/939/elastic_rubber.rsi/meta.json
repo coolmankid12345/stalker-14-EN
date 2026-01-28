@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "sprites by SciencePowerCM",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "red_10"
+    },
+    {
+      "name": "green_10"
+    },
+    {
+      "name": "blue_10"
+    },
+    {
+      "name": "red_20"
+    },
+    {
+      "name": "green_20"
+    },
+    {
+      "name": "blue_20"
+    },
+    {
+      "name": "red_30"
+    },
+    {
+      "name": "green_30"
+    },
+    {
+      "name": "blue_30"
+    },
+    {
+      "name": "red_45"
+    },
+    {
+      "name": "green_45"
+    },
+    {
+      "name": "blue_45"
+    }
+  ]
+}

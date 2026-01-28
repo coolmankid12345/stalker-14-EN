@@ -1,0 +1,28 @@
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackSmuggler
+  name: smuggler's backpack
+  description: A heavy backpack made for long trips through the wilderness and moving large varieties of goods.
+  suffix: ST, PvE, T4
+  components:
+  - type: Storage #56, space for 1 full size gun
+    grid:
+    - 3,0,6,0
+    - 3,2,6,2
+    - 2,3,7,3
+    - 0,4,1,5
+    - 3,4,3,4
+    - 6,4,6,4
+    - 8,4,9,5
+    - 4,5,5,5
+    - 2,6,7,7
+    - 0,7,0,8
+    - 9,7,9,8
+    - 1,9,8,10
+    quickInsert: true
+    areaInsert: true
+    blacklist:
+      tags:
+      - STArtifact
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/backpacks/smuggler_backpack.rsi

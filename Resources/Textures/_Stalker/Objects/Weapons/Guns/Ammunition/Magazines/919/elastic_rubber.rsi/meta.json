@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "sprites by SciencePowerCM",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "red_35mp5"
+    },
+    {
+      "name": "green_35mp5"
+    },
+    {
+      "name": "blue_35mp5"
+    },
+    {
+      "name": "red_bizon"
+    },
+    {
+      "name": "green_bizon"
+    },
+    {
+      "name": "blue_bizon"
+    },
+    {
+      "name": "red_glock_10"
+    },
+    {
+      "name": "green_glock_10"
+    },
+    {
+      "name": "blue_glock_10"
+    },
+    {
+      "name": "red_glock_17"
+    },
+    {
+      "name": "green_glock_17"
+    },
+    {
+      "name": "blue_glock_17"
+    },
+    {
+      "name": "red_glock_24"
+    },
+    {
+      "name": "green_glock_24"
+    },
+    {
+      "name": "blue_glock_24"
+    },
+    {
+      "name": "red_glock_33"
+    },
+    {
+      "name": "green_glock_33"
+    },
+    {
+      "name": "blue_glock_33"
+    },
+    {
+      "name": "red_gsh_10"
+    },
+    {
+      "name": "green_gsh_10"
+    },
+    {
+      "name": "blue_gsh_10"
+    },
+    {
+      "name": "red_gsh_18"
+    },
+    {
+      "name": "green_gsh_18"
+    },
+    {
+      "name": "blue_gsh_18"
+    },
+    {
+      "name": "red_luger_drum"
+    },
+    {
+      "name": "green_luger_drum"
+    },
+    {
+      "name": "blue_luger_drum"
+    },
+    {
+      "name": "red_p90"
+    },
+    {
+      "name": "green_p90"
+    },
+    {
+      "name": "blue_p90"
+    },
+    {
+      "name": "red_tec9"
+    },
+    {
+      "name": "green_tec9"
+    },
+    {
+      "name": "blue_tec9"
+    },
+    {
+      "name": "red_vityaz"
+    },
+    {
+      "name": "green_vityaz"
+    },
+    {
+      "name": "blue_vityaz"
+    },
+    {
+      "name": "red_vz61"
+    },
+    {
+      "name": "green_vz61"
+    },
+    {
+      "name": "blue_vz61"
+    }
+  ]
+}

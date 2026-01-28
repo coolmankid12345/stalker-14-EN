@@ -71,6 +71,6 @@
     cooldown: 6000
     chance: 1
     prototypes:
-    - STGuardRenegade
+    - MobRenegatGuard
     restricted:
-    - STGuardRenegade
+    - MobRenegatGuard

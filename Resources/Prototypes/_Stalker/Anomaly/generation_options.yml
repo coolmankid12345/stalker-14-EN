@@ -28,6 +28,9 @@
     # Psy
     - protoId: ZoneAnomalyLamp
       weight: 0.1
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
+      weight: 0.5
 
 # Garbage - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -50,6 +53,9 @@
       weight: 5
     # Psy
     - protoId: ZoneAnomalyLamp
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
+      weight: 0.5
 
 # Болота
 - type: stAnomalyGenerationOptions
@@ -85,6 +91,9 @@
       weight: 2
     # Psy
     - protoId: ZoneAnomalyBarabashka
+      weight: 0.5
+    #-PIVO-UPDATE-S
+    - protoId: ZoneAnomalyBeer
       weight: 0.5
 
 # Agroprom - Stalker EN
@@ -124,6 +133,9 @@
       weight: 0.5
     - protoId: ZoneAnomalyRift
       weight: 0.1
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
+      weight: 0.5
 
 # Dark Hollow - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -147,6 +159,9 @@
     # Electrical
     - protoId: ZoneAnomalyElectra
       weight: 2
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
+      weight: 0.5
 
 # Dark Valley - Stalker EN
 - type: stAnomalyGenerationOptions
@@ -177,6 +192,9 @@
     # Psy
     - protoId: ZoneAnomalyBarabashka
     - protoId: ZoneAnomalyRift
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
+      weight: 0.5
 
 # Топи
 - type: stAnomalyGenerationOptions
@@ -202,6 +220,9 @@
       weight: 2
     # Psy
     - protoId: ZoneAnomalyBarabashka
+      weight: 0.5
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
       weight: 0.5
 
 # Red Forest - Testing Stalker EN
@@ -232,6 +253,9 @@
     - protoId: ZoneAnomalySol
       weight: 0.5
     - protoId: ZoneAnomalyRift
+      weight: 0.5
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
       weight: 0.5
 
 # Rostok and The Wilds - Stalker EN
@@ -269,6 +293,9 @@
     # Psy
     - protoId: ZoneAnomalyBarabashka
       weight: 0.5
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
+      weight: 0.5
 
 # Оазис XXX
 - type: stAnomalyGenerationOptions
@@ -305,3 +332,6 @@
     - protoId: ZoneAnomalySteam
     - protoId: ZoneAnomalySol
     - protoId: ZoneAnomalyRift
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
+      weight: 0.5

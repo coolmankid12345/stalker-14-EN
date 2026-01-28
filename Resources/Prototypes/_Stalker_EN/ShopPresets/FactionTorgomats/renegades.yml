@@ -42,6 +42,7 @@
     ZoneArtifactBlood: 1200
     ZoneArtifactMeat: 2400
     ZoneArtifactKolobok: 3600
+    ZoneArtifactBeer: 450
     # Acidic group - 2
     ZoneArtifactPellicle: 400
     ZoneArtifactBaloon: 3600
@@ -270,6 +271,9 @@
       ClothingHeatBagStalker: 100
       CasseteTwentyDonateRadio: 500
       CasseteRenegade: 500
+      STElasticRubberRed: 50
+      STElasticRubberGreen: 50 
+      STElasticRubberBlue: 50
 
   - name: shop-category-modules
     priority: 11

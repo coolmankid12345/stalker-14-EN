@@ -44,3 +44,48 @@
     slots:
     - Hair
     - HeadTop
+
+- type: entity
+  parent: STClothingCapeT2Base
+  id: ClothingOuterCoatSmuggler
+  name: smuggler's coat
+  suffix: ST, T2
+  description: A durable leather coat used by smugglers of the zone, extra pockets have been added to help with carrying supplies. It lacks much protection.
+  components:
+  - type: STWeight
+    self: 5
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Blunt: 1
+        Slash: 0.95
+        Piercing: 1
+        Heat: 0.95
+        Cold: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
+  - type: Storage
+    maxItemsize: Large
+    grid:
+    - 2,0,2,0
+    - 4,0,4,0
+    - 6,0,6,0
+    - 1,1,1,1
+    - 3,1,3,1
+    - 5,1,5,1
+    - 7,1,7,1
+    - 0,3,1,4
+    - 3,3,5,4
+    - 7,3,8,4
+    quickInsert: true
+    areaInsert: true
+    blacklist:
+      tags:
+      - STArtifact
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/cloak/smuggler_coat.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/cloak/smuggler_coat.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCoatStalker

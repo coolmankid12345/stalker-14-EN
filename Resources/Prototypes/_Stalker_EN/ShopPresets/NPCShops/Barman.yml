@@ -35,6 +35,7 @@
     ZoneArtifactDistorter: 6480
     ZoneArtifactSoul: 4860
     # Acidic group - 1
+    ZoneArtifactBeer: 450
     ZoneArtifactBlood: 1600
     ZoneArtifactMeat: 3200
     ZoneArtifactKolobok: 4800
@@ -368,6 +369,9 @@
         Matchbox: 10
         STHeadLight: 350
         HatchetStalker: 150
+        STElasticRubberRed: 50
+        STElasticRubberGreen: 50 
+        STElasticRubberBlue: 50
 
     - name: shop-category-modules
       priority: 12

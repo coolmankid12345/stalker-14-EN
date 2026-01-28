@@ -101,6 +101,11 @@
   id: ZoneAnomalySmoke
   suffix: Stalker, Smoke, Anomaly
   components:
+    - type: PointLight
+      radius: 3
+      energy: 3
+      color: "Yellow"
+      castShadows: false
     - type: ZoneAnomalyUpdateTriggerCollide
       blacklist:
         components:
