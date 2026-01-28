@@ -87,7 +87,8 @@
         reagents:
         - ReagentId: AnomalyBeer
           Quantity: 100
-  - type: Drink
+  # FIXME: Drink component does not exist - functionality comes from parent DrinkWaterBottleFull via OpenableComponent + SolutionContainerManager
+  # - type: Drink
   - type: Sprite
     sprite: _Stalker_EN/Objects/artifacts.rsi/beer.rsi
     layers:
