@@ -1,8 +1,8 @@
 using Content.Server._Stalker_EN.Anomaly.Effects.Components;
 using Content.Shared._Stalker.Anomaly.Triggers.Events;
 using Content.Shared._Stalker.Weight;
-using Content.Shared.Damage;
-using Robust.Shared.Physics;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._Stalker_EN.Anomaly.Effects.Systems;
 
