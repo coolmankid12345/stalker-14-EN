@@ -11,31 +11,26 @@
     listenRange: 1
     toggleOnInteract: false
     broadcastChannel: StalkerInternal
-  - type: RadioSpeaker
-    toggleOnInteract: false
-    channels: [StalkerInternal]
   - type: RadioStalker
     requiresPower: false
   - type: Speech
     speechVerb: Robotic
-  - type: Headset
-    requiredSlot: EARS
   - type: Clothing
     slots: [ears]
-    sprite: _Stalker/Objects/Clothing/Ears/code_project_garniture.rsi
+    sprite: _Stalker_EN/Objects/Clothing/Ears/radio_headset.rsi
   - type: Item
     size: Small
   - type: STRadioHeadset
   - type: ActivatableUI
-    key: enum.RadioStalkerUiKey.Key
+    key: enum.STRadioHeadsetUiKey.Key
     singleUser: true
     closeOnHandDeselect: false
   - type: UserInterface
     interfaces:
-      enum.RadioStalkerUiKey.Key:
-        type: RadioStalkerBoundUserInterface
+      enum.STRadioHeadsetUiKey.Key:
+        type: STRadioHeadsetBoundUserInterface
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/Ears/code_project_garniture.rsi
+    sprite: _Stalker_EN/Objects/Clothing/Ears/radio_headset.rsi
     state: icon
   - type: Clickable
   - type: InteractionOutline

@@ -5,6 +5,7 @@ namespace Content.Shared._Stalker_EN.Radio;
 
 /// <summary>
 /// Shared system for stalker radio headsets that handles action spawning and granting.
+/// Speaker is always active when equipped (no toggle needed) - messages go directly to wearer.
 /// </summary>
 public abstract class SharedSTRadioHeadsetSystem : EntitySystem
 {
@@ -21,7 +22,6 @@ public abstract class SharedSTRadioHeadsetSystem : EntitySystem
     private void OnMapInit(Entity<STRadioHeadsetComponent> ent, ref MapInitEvent args)
     {
         _actionContainer.EnsureAction(ent, ref ent.Comp.ToggleMicActionEntity, ent.Comp.ToggleMicAction);
-        _actionContainer.EnsureAction(ent, ref ent.Comp.ToggleSpeakerActionEntity, ent.Comp.ToggleSpeakerAction);
         Dirty(ent);
     }
 
@@ -32,6 +32,5 @@ public abstract class SharedSTRadioHeadsetSystem : EntitySystem
             return;
 
         args.AddAction(ent.Comp.ToggleMicActionEntity);
-        args.AddAction(ent.Comp.ToggleSpeakerActionEntity);
     }
 }
