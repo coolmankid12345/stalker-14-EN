@@ -256,6 +256,13 @@ public sealed class StalkerRepositorySystem : EntitySystem
         if (msg.Actor == null || _currentlyProcessingEjects.Contains(msg.Actor))
             return;
 
+        // Block operations during loadout processing to prevent race conditions
+        if (component.LoadoutOperationInProgress)
+        {
+            _sawmill.Debug($"Blocked eject during loadout operation for {Name(msg.Actor)}");
+            return;
+        }
+
         _currentlyProcessingEjects.Add(msg.Actor);
 
         try
@@ -306,6 +313,14 @@ public sealed class StalkerRepositorySystem : EntitySystem
     {
         if (msg.Actor == null)
             return;
+
+        // Block operations during loadout processing to prevent race conditions
+        if (component.LoadoutOperationInProgress)
+        {
+            _sawmill.Debug($"Blocked inject during loadout operation for {Name(msg.Actor)}");
+            return;
+        }
+
         // Check for weight is valid
         var sum = component.CurrentWeight + msg.Item.Weight;
         if (Math.Round(sum, 2) > component.MaxWeight)
@@ -740,6 +755,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         {
             if (container.Key == "toggleable-clothing") // We don't need to add something from this container
                 continue;
+
             foreach (var item in container.Value.ContainedEntities)
             {
                 allowInsertRecursively = CheckForWhitelist(entity, GenerateItemInfo(item));
@@ -768,10 +784,11 @@ public sealed class StalkerRepositorySystem : EntitySystem
                 }
                 else
                 {
-                    allowInsert = CheckForWhitelist(entity, toInsertItem);
+                    var itemInfo = GenerateItemInfo(item);
+                    allowInsert = CheckForWhitelist(entity, itemInfo);
                     if (!allowInsert)
                         continue;
-                    InsertIntoRepository(entity, GenerateItemInfo(item), amount);
+                    InsertIntoRepository(entity, itemInfo, amount);
                 }
             }
         }

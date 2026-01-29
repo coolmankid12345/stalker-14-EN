@@ -39,5 +39,39 @@
   id: 4
   time: '2026-01-26T01:56:32.527350+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/347
+- author: teecoding
+  changes:
+  - message: Loadout system no longer removes unremovable items (faction chips, implants)
+    type: Fix
+  - message: Loadout switching no longer causes item duplication
+    type: Fix
+  - message: Items in boot slots are now properly saved and restored
+    type: Fix
+  - message: Partial cigarette packs and pill boxes now restore with correct contents
+    type: Fix
+  - message: Gun attachments (magazine, silencer, scope) now properly saved and restored
+    type: Fix
+  - message: Items in backpacks and vests now restore to their correct grid positions
+    type: Fix
+  - message: Items already in correct positions no longer cause unnecessary stash
+      pulls
+    type: Fix
+  id: 5
+  time: '2026-01-27T02:15:49.453679+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/348
+- author: teecoding
+  changes:
+  - message: 5-second cooldown to personal stash portal to prevent rapid teleportation
+    type: Add
+  id: 6
+  time: '2026-01-27T22:45:36.512994+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/351
+- author: crocodilecarousel
+  changes:
+  - message: Update to satchel of holding
+    type: Tweak
+  id: 7
+  time: '2026-01-28T23:47:51.702598+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/352
 Name: Stalker
 Order: -1
