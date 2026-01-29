@@ -247,6 +247,7 @@
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
+        STRadioHeadset: 150
         ClothingHeatBagStalker: 100
         STSkinsKitMercenary: 500
         STElasticRubberRed: 50
