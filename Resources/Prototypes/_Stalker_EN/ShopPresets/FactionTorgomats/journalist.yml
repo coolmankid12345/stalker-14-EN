@@ -58,6 +58,7 @@
       items:
         STCombatKnife: 50
         BaseRadio: 50
+        STRadioHeadset: 150
         STFlashlightSeclite: 50
         PowerCellHyper: 35
         HandheldGPSBasic: 35
