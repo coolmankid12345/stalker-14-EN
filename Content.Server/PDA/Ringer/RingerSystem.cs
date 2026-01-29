@@ -2,6 +2,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using Content.Server.Store.Components;
 using Content.Server.Store.Systems;
+using Content.Shared._Stalker_EN.PDA.Ringer;
 using Content.Shared.PDA;
 using Content.Shared.PDA.Ringer;
 using Content.Shared.Popups;
@@ -63,6 +64,11 @@ namespace Content.Server.PDA.Ringer
 
         private void RingerPlayRingtone(EntityUid uid, RingerComponent ringer, RingerPlayRingtoneMessage args)
         {
+            // stalker-changes-start: Skip ringtone entirely when silent mode is enabled
+            if (TryComp<STSilentModeComponent>(uid, out var silentMode) && silentMode.Enabled)
+                return;
+            // stalker-changes-end
+
             EnsureComp<ActiveRingerComponent>(uid);
 
             _popupSystem.PopupEntity(Loc.GetString("comp-ringer-vibration-popup"), uid, Filter.Pvs(uid, 0.05f), false, PopupType.Small);
@@ -74,6 +80,11 @@ namespace Content.Server.PDA.Ringer
         {
             if (!Resolve(ent, ref ent.Comp))
                 return;
+
+            // stalker-changes-start: Skip ringtone entirely when silent mode is enabled
+            if (TryComp<STSilentModeComponent>(ent, out var silentMode) && silentMode.Enabled)
+                return;
+            // stalker-changes-end
 
             EnsureComp<ActiveRingerComponent>(ent);
 
@@ -216,13 +227,18 @@ namespace Content.Server.PDA.Ringer
                 ringer.TimeElapsed -= NoteDelay;
                 var ringerXform = Transform(uid);
 
-                _audio.PlayEntity(
-                    GetSound(ringer.Ringtone[ringer.NoteCount]),
-                    Filter.Empty().AddInRange(_transform.GetMapCoordinates(uid, ringerXform), ringer.Range),
-                    uid,
-                    true,
-                    AudioParams.Default.WithMaxDistance(ringer.Range).WithVolume(ringer.Volume)
-                );
+                // stalker-changes-start: Skip audio playback when silent mode is enabled
+                if (!TryComp<STSilentModeComponent>(uid, out var silentMode) || !silentMode.Enabled)
+                {
+                    _audio.PlayEntity(
+                        GetSound(ringer.Ringtone[ringer.NoteCount]),
+                        Filter.Empty().AddInRange(_transform.GetMapCoordinates(uid, ringerXform), ringer.Range),
+                        uid,
+                        true,
+                        AudioParams.Default.WithMaxDistance(ringer.Range).WithVolume(ringer.Volume)
+                    );
+                }
+                // stalker-changes-end
 
                 ringer.NoteCount++;
 
