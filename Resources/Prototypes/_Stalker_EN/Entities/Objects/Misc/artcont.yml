@@ -1,0 +1,104 @@
+﻿- type: entity
+  name: black artifact container
+  parent: BoxArtcont
+  id: BoxArtcontBlack
+  description: A standard type artifact container with black paint.
+  components:
+  - type: PersonalDamageBlock
+  - type: RadiationBlockingContainer
+    resistance: 2
+  - type: SuppressArtifactContainer
+  - type: Sprite
+    layers:
+    - map: [ base ]
+      sprite: _Stalker_EN/Objects/Misc/ArtCont/black.rsi
+      state: icon
+      scale: 0.5, 0.5
+
+- type: entity
+  name: blue artifact container
+  parent: BoxArtcont
+  id: BoxArtcontBlue
+  description: A standard type artifact container with blue paint.
+  components:
+  - type: PersonalDamageBlock
+  - type: RadiationBlockingContainer
+    resistance: 2
+  - type: SuppressArtifactContainer
+  - type: Sprite
+    layers:
+    - map: [ base ]
+      sprite: _Stalker_EN/Objects/Misc/ArtCont/blue.rsi
+      state: icon
+      scale: 0.5, 0.5
+
+- type: entity
+  name: orange artifact container
+  parent: BoxArtcont
+  id: BoxArtcontOrange
+  description: A standard type artifact container with orange paint.
+  components:
+  - type: PersonalDamageBlock
+  - type: RadiationBlockingContainer
+    resistance: 2
+  - type: SuppressArtifactContainer
+  - type: Sprite
+    layers:
+    - map: [ base ]
+      sprite: _Stalker_EN/Objects/Misc/ArtCont/orange.rsi
+      state: icon
+      scale: 0.5, 0.5
+
+- type: entity
+  name: yellow artifact container
+  parent: BoxArtcont
+  id: BoxArtcontYellow
+  description: A standard type artifact container with yellow paint.
+  components:
+  - type: PersonalDamageBlock
+  - type: RadiationBlockingContainer
+    resistance: 2
+  - type: SuppressArtifactContainer
+  - type: Sprite
+    layers:
+    - map: [ base ]
+      sprite: _Stalker_EN/Objects/Misc/ArtCont/yellow.rsi
+      state: icon
+      scale: 0.5, 0.5
+
+- type: entity
+  name: damaged artifact container
+  parent: BoxArtcont
+  id: BoxArtcontDamaged
+  description: An old artifact container. It's seen better days and is coated in a thick layer of what might be rust but it'll last a little longer.
+  components:
+  - type: PersonalDamageBlock
+  - type: RadiationBlockingContainer
+    resistance: 0.3 # this component actually doesnt do anything i think
+  - type: SuppressArtifactContainer
+  - type: Sprite
+    layers:
+    - map: [ base ]
+      sprite: _Stalker_EN/Objects/Misc/ArtCont/damaged.rsi
+      state: icon
+      scale: 0.5, 0.5
+
+- type: entity
+  name: makeshift artifact container
+  parent: BoxArtcont
+  id: BoxArtcontMakeshift
+  description: An improvised vessel for artifacts, crafted from materials scavenged in the zone. Maybe not the safest or most efficient but at least it's free.
+  components:
+  - type: PersonalDamageBlock
+  - type: RadiationBlockingContainer
+    resistance: 0.5
+  - type: SuppressArtifactContainer
+  - type: Sprite
+    layers:
+    - map: [ base ]
+      sprite: _Stalker_EN/Objects/Misc/ArtCont/makeshift.rsi
+      state: icon
+      scale: 0.5, 0.5
+  - type: STWeight
+    self: 5
+

@@ -97,7 +97,7 @@
           prob: 0.03
         - id: HandheldGPSBasic
           prob: 0.03
-        - id: BoxArtcont
+        - id: BoxArtcontDamaged # EN
           prob: 0.02
         - id: STFlashlightSeclite
           prob: 0.03
@@ -141,6 +141,8 @@
         - id: STCookingBorscht
           prob: 0.05
         - id: ClothingOuterCoatSmugglerBlueprint
+          prob: 0.05
+        - id: MakeshiftArtContBlueprint
           prob: 0.05
 
 - type: entity
