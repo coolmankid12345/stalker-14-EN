@@ -1,4 +1,5 @@
 using Content.Server._Stalker.Mind;
+using Content.Server._Stalker_EN.RespawnConfirm;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
@@ -64,6 +65,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly GameTicker _gameTicker = default!;
         [Dependency] private readonly DamageableSystem _damageable = default!;
         [Dependency] private readonly IServerConsoleHost _consoleHost = default!;
+        [Dependency] private readonly STRespawnConfirmSystem _respawnConfirm = default!;
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -514,9 +516,11 @@ namespace Content.Server.Ghost
             if (!Resolve(mindId, ref mind))
                 return false;
             // stalker-changes-start
-            if (mind.Session != null)
+            // Show respawn confirm for players who move while dead (not via command)
+            // Ghost command is admin-only, so skip the confirm dialog for admins
+            if (!viaCommand && mind.Session != null)
             {
-                _gameTicker.Respawn(mind.Session);
+                _respawnConfirm.ShowRespawnConfirm(mind.Session);
                 return false;
             }
 
