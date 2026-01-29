@@ -1,0 +1,15 @@
+﻿- type: craftRecipe
+  id: recipeMakeshiftArtifactContainer
+  resultProtos:
+  - BoxArtcontMakeshift
+  craftTime: 5
+  items:
+    MakeshiftArtContBlueprint:
+      amount: 1
+      catalyzer: true
+    STCraftSheetIronT2:
+      amount: 2
+    STCraftGlassT1:
+      amount: 1
+    STCraftCoil:
+      amount: 1
