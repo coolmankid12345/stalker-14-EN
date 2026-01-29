@@ -17,6 +17,7 @@ using Content.Shared.Light.Components;
 using Content.Shared.Light.EntitySystems;
 using Content.Shared.PDA;
 using Content.Shared.Store.Components;
+using Content.Shared._Stalker_EN.PDA.Ringer; // stalker-changes
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
@@ -182,6 +183,11 @@ namespace Content.Server.PDA
 
             var programs = _cartridgeLoader.GetAvailablePrograms(uid, loader);
             var id = CompOrNull<IdCardComponent>(pda.ContainedId);
+
+            // stalker-changes-start
+            var silentModeEnabled = TryComp<STSilentModeComponent>(uid, out var silentMode) && silentMode.Enabled;
+            // stalker-changes-end
+
             var state = new PdaUpdateState(
                 programs,
                 GetNetEntity(loader.ActiveProgram),
@@ -199,7 +205,8 @@ namespace Content.Server.PDA
                 pda.StationName,
                 showUplink,
                 hasInstrument,
-                address);
+                address,
+                silentModeEnabled); // stalker-changes
 
             _ui.SetUiState(uid, PdaUiKey.Key, state);
         }

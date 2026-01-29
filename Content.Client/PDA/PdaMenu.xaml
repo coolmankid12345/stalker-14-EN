@@ -65,6 +65,10 @@
                                        Access="Public"
                                        Text="{Loc 'comp-pda-ui-ringtone-button'}"
                                        Description="{Loc 'comp-pda-ui-ringtone-button-description'}"/>
+                <pda:PdaSettingsButton Name="SilentModeButton"
+                                       Access="Public"
+                                       Text="{Loc 'comp-pda-ui-silent-mode-button-off'}"
+                                       Description="{Loc 'comp-pda-ui-silent-mode-button-description'}"/>
                 <pda:PdaSettingsButton Name="ActivateMusicButton"
                                        Access="Public"
                                        Visible="False"
