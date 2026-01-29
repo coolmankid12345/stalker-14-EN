@@ -30,6 +30,9 @@ public sealed class RDDeathScreenSystem : RDEntitySystem
         if (player is null)
             return;
 
-        RaiseNetworkEvent(new RDDeathScreenShowEvent("lost to the Zone", audioPath: "/Audio/_RD/DeathScreen/controller.ogg"), player.Channel);
+        // stalker-changes-start
+        // Don't show death screen automatically for players - they go through STRespawnConfirmSystem
+        // which shows the death screen after the player confirms they want to respawn
+        // stalker-changes-end
     }
 }
