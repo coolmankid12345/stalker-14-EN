@@ -8,10 +8,21 @@ namespace Content.Client._Stalker_EN.Radio;
 /// <summary>
 /// UI menu for the stalker radio headset.
 /// Shows mic toggle and frequency input - no speaker toggle (speaker always active when equipped).
+/// Frequency is split into two inputs: a 3-digit prefix and a 1-digit suffix (e.g., "120.0").
 /// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class STRadioHeadsetMenu : FancyWindow
 {
+    /// <summary>
+    /// Maximum length for the frequency prefix (3 digits: 000-999).
+    /// </summary>
+    private const int PrefixMaxLength = 3;
+
+    /// <summary>
+    /// Maximum length for the frequency suffix (1 digit: 0-9).
+    /// </summary>
+    private const int SuffixMaxLength = 1;
+
     public event Action<bool>? OnMicPressed;
     public event Action<string>? OnFrequencyEntered;
 
@@ -25,12 +36,90 @@ public sealed partial class STRadioHeadsetMenu : FancyWindow
             OnMicPressed?.Invoke(args.Button.Pressed);
         };
 
-        FrequencyInput.OnTextEntered += args => OnFrequencyEntered?.Invoke(args.Text);
+        // Set up frequency prefix input validation (3 digits only)
+        FrequencyPrefixInput.OnTextChanged += args =>
+        {
+            var filtered = FilterDigits(args.Text, PrefixMaxLength);
+            if (filtered != args.Text)
+                FrequencyPrefixInput.Text = filtered;
+        };
+
+        // Set up frequency suffix input validation (1 digit only)
+        FrequencySuffixInput.OnTextChanged += args =>
+        {
+            var filtered = FilterDigits(args.Text, SuffixMaxLength);
+            if (filtered != args.Text)
+                FrequencySuffixInput.Text = filtered;
+        };
+
+        // Send combined frequency when either input is submitted
+        FrequencyPrefixInput.OnTextEntered += _ => SendCombinedFrequency();
+        FrequencySuffixInput.OnTextEntered += _ => SendCombinedFrequency();
+
+        // Also send when focus is lost (user tabs/clicks away)
+        FrequencyPrefixInput.OnFocusExit += _ => SendCombinedFrequency();
+        FrequencySuffixInput.OnFocusExit += _ => SendCombinedFrequency();
     }
 
+    /// <summary>
+    /// Filters a string to contain only digits, limited to the specified max length.
+    /// </summary>
+    private static string FilterDigits(string text, int maxLength)
+    {
+        var filtered = new System.Text.StringBuilder(maxLength);
+        foreach (var c in text)
+        {
+            if (char.IsDigit(c) && filtered.Length < maxLength)
+                filtered.Append(c);
+        }
+        return filtered.ToString();
+    }
+
+    /// <summary>
+    /// Combines the prefix and suffix inputs and sends the frequency to the server.
+    /// </summary>
+    private void SendCombinedFrequency()
+    {
+        var prefix = FrequencyPrefixInput.Text;
+        var suffix = FrequencySuffixInput.Text;
+
+        // Only send if we have valid input
+        if (string.IsNullOrEmpty(prefix) && string.IsNullOrEmpty(suffix))
+            return;
+
+        // Pad prefix with leading zeros if needed (e.g., "12" -> "012")
+        prefix = prefix.PadLeft(PrefixMaxLength, '0');
+
+        // Default suffix to "0" if empty
+        if (string.IsNullOrEmpty(suffix))
+            suffix = "0";
+
+        var combinedFrequency = $"{prefix}.{suffix}";
+        OnFrequencyEntered?.Invoke(combinedFrequency);
+    }
+
+    /// <summary>
+    /// Updates the UI state from the server.
+    /// Parses the frequency string and splits it into prefix/suffix for display.
+    /// </summary>
     public void Update(STRadioHeadsetBoundUIState state)
     {
         MicButton.Pressed = state.MicEnabled;
-        FrequencyInput.Text = state.CurrentFrequency ?? string.Empty;
+
+        // Parse the frequency string (format: "000.0") and split into prefix/suffix
+        var frequency = state.CurrentFrequency ?? STRadioHeadsetComponent.DefaultFrequency;
+        var dotIndex = frequency.IndexOf('.');
+
+        if (dotIndex >= 0)
+        {
+            FrequencyPrefixInput.Text = frequency[..dotIndex];
+            FrequencySuffixInput.Text = dotIndex + 1 < frequency.Length ? frequency[(dotIndex + 1)..] : "0";
+        }
+        else
+        {
+            // No dot found - treat entire string as prefix
+            FrequencyPrefixInput.Text = frequency;
+            FrequencySuffixInput.Text = "0";
+        }
     }
 }

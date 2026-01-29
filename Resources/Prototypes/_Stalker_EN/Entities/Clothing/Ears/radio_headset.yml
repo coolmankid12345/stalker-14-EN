@@ -3,7 +3,7 @@
   parent: BaseItem
   name: Radio Headset
   suffix: Stalker EN, ST
-  description: A compact radio that fits in your ear. Provides action buttons for mic/speaker toggle.
+  description: A compact radio that fits in your ear. Speaker is always active when equipped; toggle the mic via the action button.
   components:
   - type: RadioMicrophone
     powerRequired: false

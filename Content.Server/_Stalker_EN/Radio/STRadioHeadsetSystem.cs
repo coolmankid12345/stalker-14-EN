@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Content.Server.Chat.Systems;
 using Content.Server.Radio;
 using Content.Server.Radio.Components;
@@ -8,6 +9,7 @@ using Content.Shared.Actions;
 using Content.Shared.Chat;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Radio;
 using Content.Shared.Speech;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
@@ -37,7 +39,18 @@ public sealed class STRadioHeadsetSystem : SharedSTRadioHeadsetSystem
     /// <summary>
     /// The radio channel that the stalker headset listens to.
     /// </summary>
-    private const string StalkerInternalChannel = "StalkerInternal";
+    private static readonly ProtoId<RadioChannelPrototype> StalkerInternalChannel = "StalkerInternal";
+
+    /// <summary>
+    /// Maximum allowed length for user-entered frequency strings.
+    /// Format: "000.0" = 5 characters (3 digits + dot + 1 digit)
+    /// </summary>
+    private const int MaxFrequencyLength = 5;
+
+    /// <summary>
+    /// Regex pattern for validating frequency format: exactly 3 digits, a dot, and 1 digit.
+    /// </summary>
+    private static readonly Regex FrequencyPattern = new(@"^\d{3}\.\d$", RegexOptions.Compiled);
 
     public override void Initialize()
     {
@@ -62,6 +75,29 @@ public sealed class STRadioHeadsetSystem : SharedSTRadioHeadsetSystem
         SubscribeLocalEvent<STRadioHeadsetComponent, BeforeActivatableUIOpenEvent>(OnBeforeUiOpen);
     }
 
+    /// <summary>
+    /// Initializes the default frequency on the RadioStalkerComponent when the headset is spawned.
+    /// Calls base to set up actions, then sets the default frequency.
+    /// </summary>
+    protected override void OnMapInit(Entity<STRadioHeadsetComponent> ent, ref MapInitEvent args)
+    {
+        base.OnMapInit(ent, ref args);
+
+        if (!TryComp<RadioStalkerComponent>(ent, out var stalkerComp))
+            return;
+
+        // Only set default if no frequency is configured
+        if (string.IsNullOrEmpty(stalkerComp.CurrentFrequency))
+        {
+            stalkerComp.CurrentFrequency = STRadioHeadsetComponent.DefaultFrequency;
+            Dirty(ent, stalkerComp);
+        }
+    }
+
+    /// <summary>
+    /// Activates the radio headset when equipped to the ears slot.
+    /// Adds ActiveRadioComponent to enable receiving radio messages on the stalker channel.
+    /// </summary>
     private void OnEquipped(Entity<STRadioHeadsetComponent> ent, ref GotEquippedEvent args)
     {
         // Only activate radio when equipped to ears slot
@@ -76,9 +112,15 @@ public sealed class STRadioHeadsetSystem : SharedSTRadioHeadsetSystem
         UpdateActionStates(ent);
     }
 
+    /// <summary>
+    /// Removes active radio component when the headset is unequipped from the ears slot.
+    /// </summary>
     private void OnUnequipped(Entity<STRadioHeadsetComponent> ent, ref GotUnequippedEvent args)
     {
-        // Remove ActiveRadioComponent when unequipped
+        // Only deactivate radio when unequipped from ears slot (matches OnEquipped logic)
+        if (!args.SlotFlags.HasFlag(SlotFlags.EARS))
+            return;
+
         RemComp<ActiveRadioComponent>(ent);
     }
 
@@ -111,9 +153,9 @@ public sealed class STRadioHeadsetSystem : SharedSTRadioHeadsetSystem
         // Escape message content for safe display
         var content = FormattedMessage.EscapeText(args.Message);
 
-        // Build the formatted radio message with the dynamic frequency
+        // Build the formatted radio message with the dynamic frequency and custom headset color
         var wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
-            ("color", args.Channel.Color),
+            ("color", ent.Comp.ChatColor),
             ("fontType", speech.FontId),
             ("fontSize", speech.FontSize),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
@@ -178,17 +220,35 @@ public sealed class STRadioHeadsetSystem : SharedSTRadioHeadsetSystem
 
     /// <summary>
     /// Called when the user enters a frequency in the UI.
-    /// Updates the RadioStalkerComponent's CurrentFrequency.
+    /// Validates the frequency format (must match "000.0" pattern) and updates the RadioStalkerComponent's CurrentFrequency.
+    /// Invalid frequencies are replaced with the default frequency.
     /// </summary>
     private void OnUiSelectFrequency(Entity<STRadioHeadsetComponent> ent, ref STRadioHeadsetSelectFrequencyMessage args)
     {
         if (!TryComp<RadioStalkerComponent>(ent, out var stalkerComp))
             return;
 
-        stalkerComp.CurrentFrequency = args.Frequency;
+        // Validate and sanitize the frequency input
+        var frequency = args.Frequency;
+
+        // Check if frequency is empty/whitespace or doesn't match the required pattern
+        if (string.IsNullOrWhiteSpace(frequency) || !FrequencyPattern.IsMatch(frequency))
+        {
+            frequency = STRadioHeadsetComponent.DefaultFrequency;
+        }
+        else if (frequency.Length > MaxFrequencyLength)
+        {
+            frequency = frequency[..MaxFrequencyLength];
+        }
+
+        stalkerComp.CurrentFrequency = frequency;
+        Dirty(ent, stalkerComp);
         UpdateRadioUi(ent);
     }
 
+    /// <summary>
+    /// Updates the toggle state of the action button to reflect current microphone status.
+    /// </summary>
     private void UpdateActionStates(Entity<STRadioHeadsetComponent> ent)
     {
         var micEnabled = TryComp<RadioMicrophoneComponent>(ent, out var mic) && mic.Enabled;

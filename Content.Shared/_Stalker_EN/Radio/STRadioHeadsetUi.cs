@@ -35,7 +35,7 @@ public sealed class STRadioHeadsetBoundUIState : BoundUserInterfaceState
 [Serializable, NetSerializable]
 public sealed class STRadioHeadsetToggleMicMessage : BoundUserInterfaceMessage
 {
-    public bool Enabled;
+    public readonly bool Enabled;
 
     public STRadioHeadsetToggleMicMessage(bool enabled)
     {
@@ -49,7 +49,7 @@ public sealed class STRadioHeadsetToggleMicMessage : BoundUserInterfaceMessage
 [Serializable, NetSerializable]
 public sealed class STRadioHeadsetSelectFrequencyMessage : BoundUserInterfaceMessage
 {
-    public string Frequency;
+    public readonly string Frequency;
 
     public STRadioHeadsetSelectFrequencyMessage(string frequency)
     {

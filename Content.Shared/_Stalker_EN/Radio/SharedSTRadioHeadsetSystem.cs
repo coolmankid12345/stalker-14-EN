@@ -19,7 +19,7 @@ public abstract class SharedSTRadioHeadsetSystem : EntitySystem
         SubscribeLocalEvent<STRadioHeadsetComponent, GetItemActionsEvent>(OnGetItemActions);
     }
 
-    private void OnMapInit(Entity<STRadioHeadsetComponent> ent, ref MapInitEvent args)
+    protected virtual void OnMapInit(Entity<STRadioHeadsetComponent> ent, ref MapInitEvent args)
     {
         _actionContainer.EnsureAction(ent, ref ent.Comp.ToggleMicActionEntity, ent.Comp.ToggleMicAction);
         Dirty(ent);
