@@ -73,5 +73,15 @@
   id: 7
   time: '2026-01-28T23:47:51.702598+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/352
+- author: teecoding
+  changes:
+  - message: You can now choose when to respawn after death, giving teammates time
+      to revive you
+    type: Add
+  - message: You can see the world while dead instead of a black screen
+    type: Tweak
+  id: 8
+  time: '2026-01-29T20:58:58.913420+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/358
 Name: Stalker
 Order: -1
