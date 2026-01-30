@@ -82,6 +82,8 @@ public sealed class DamageOverlay : Overlay
         // Death screen is shown via STRespawnConfirmSystem when player confirms respawn
         if (State == MobState.Dead)
         {
+            handle.UseShader(null);
+            handle.DrawRect(viewport, Color.Black);
             return;
         }
         // stalker-changes-end
