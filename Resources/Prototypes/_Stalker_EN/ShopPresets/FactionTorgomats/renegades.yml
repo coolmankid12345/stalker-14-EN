@@ -241,6 +241,10 @@
     items:
       STBoltBagFilled: 50
       BoxArtcont: 700 # T1
+      BoxArtcontBlack: 700
+      BoxArtcontBlue: 700
+      BoxArtcontYellow: 700
+      BoxArtcontOrange: 700
       ZoneAnomalyDetectorAD1: 450 # T1
       ZoneAnomalyDetectorAD2: 750 # T1
 
