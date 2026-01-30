@@ -1,4 +1,5 @@
 using Content.Server._Stalker.Mind; // Stalker-using
+using Content.Server._Stalker_EN.RespawnConfirm;
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Logs;
@@ -72,6 +73,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly TagSystem _tag = default!;
         [Dependency] private readonly NameModifierSystem _nameMod = default!;
         [Dependency] private readonly IServerConsoleHost _consoleHost = default!; // Stalker-Dependency
+        [Dependency] private readonly STRespawnConfirmSystem _respawnConfirm = default!;
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -544,9 +546,11 @@ namespace Content.Server.Ghost
             if (!Resolve(mindId, ref mind))
                 return false;
             // stalker-changes-start
-            if (_player.TryGetSessionById(mind.UserId, out var session))
+            // Show respawn confirm for players who move while dead (not via command)
+            // Ghost command is admin-only, so skip the confirm dialog for admins
+            if (!viaCommand && _player.TryGetSessionById(mind.UserId, out var session))
             {
-                _gameTicker.Respawn(session);
+                _respawnConfirm.ShowRespawnConfirm(session);
                 return false;
             }
 
@@ -570,10 +574,10 @@ namespace Content.Server.Ghost
 
             if (mind.PreventGhosting && !forced)
             {
-                // Stalker-modified : "_player.TryGetSessionById(mind.UserId, out var session)" is used above
-                if (session != null) // Logging is suppressed to prevent spam from ghost attempts caused by movement attempts
+                // Stalker-modified: get session for the ghosting prevented message
+                if (_player.TryGetSessionById(mind.UserId, out var preventedSession)) // Logging is suppressed to prevent spam from ghost attempts caused by movement attempts
                 {
-                    _chatManager.DispatchServerMessage(session, Loc.GetString("comp-mind-ghosting-prevented"),
+                    _chatManager.DispatchServerMessage(preventedSession, Loc.GetString("comp-mind-ghosting-prevented"),
                         true);
                 }
 

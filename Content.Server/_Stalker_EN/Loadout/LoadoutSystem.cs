@@ -823,7 +823,8 @@ public sealed class LoadoutSystem : EntitySystem
                 {
                     if (slotItem.NestedItems.Count > 0)
                     {
-                        ClearAutoFilledContents(currentEquipped.item);
+                        // Don't clear - item is already equipped with matching identifier.
+                        // RestoreNestedItems will find existing items via FindExistingCorrectItem.
                         RestoreNestedItems(currentEquipped.item, slotItem.NestedItems, repository, stashLookup, 0, player, consumedExistingItems);
                     }
                 }
@@ -841,7 +842,8 @@ public sealed class LoadoutSystem : EntitySystem
             {
                 if (slotItem.NestedItems.Count > 0)
                 {
-                    ClearAutoFilledContents(movedItem.Value);
+                    // Don't clear - item was moved, but contents should be preserved.
+                    // RestoreNestedItems will find existing items via FindExistingCorrectItem.
                     RestoreNestedItems(movedItem.Value, slotItem.NestedItems, repository, stashLookup, 0, player, consumedExistingItems);
                 }
                 continue;

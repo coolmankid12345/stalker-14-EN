@@ -51,10 +51,22 @@
   - type: RadiationBlockingContainer
     resistance: 2
   - type: SuppressArtifactContainer
+  # EN start
   - type: Sprite
-    sprite: _Stalker/Objects/Misc/artcontainers.rsi
-    state: old
-    scale: 0.5, 0.5
+    layers:
+      - map: [ base ]
+        sprite: _Stalker_EN/Objects/Misc/ArtCont/green.rsi
+        state: icon
+        scale: 0.5, 0.5
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Appearance
+  - type: Craftable
+  # EN end
   - type: STWeight
     self: 3
 
@@ -67,11 +79,11 @@
   - type: Item
     size: Large
     shape:
-    - 0,0,5,1
+    - 0,0,1,5
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,5,1
+    - 0,0,1,5
     whitelist:
       tags:
         - STArtifact
@@ -82,9 +94,12 @@
   - type: RadiationBlockingContainer
     resistance: 5
   - type: SuppressArtifactContainer
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/artcontainers.rsi
-    state: new
+  - type: Sprite # EN
+    layers:
+    - map: [ base ]
+      sprite: _Stalker_EN/Objects/Misc/ArtCont/advanced.rsi
+      state: icon
+      scale: 0.75, 0.75
   - type: STWeight
     self: 9
 

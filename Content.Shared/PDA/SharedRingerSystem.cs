@@ -3,6 +3,7 @@ using Content.Shared.PDA.Ringer;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
 using Content.Shared.Store;
+using Content.Shared._Stalker_EN.PDA.Ringer; // stalker-changes
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -59,7 +60,8 @@ public abstract class SharedRingerSystem : EntitySystem
             // We only do this on the server because otherwise the sound either dupes or blends into a mess
             // There's no easy way to figure out which player started it, so that we can exclude them from the list
             // and play it separately with PlayLocal, so that it's actually predicted
-            if (_net.IsServer)
+            // stalker-changes-start: Skip audio when silent mode enabled
+            if (_net.IsServer && (!TryComp<STSilentModeComponent>(uid, out var silentMode) || !silentMode.Enabled))
             {
                 _audio.PlayEntity(
                     GetSound(ringer.Ringtone[ringer.NoteCount]),
@@ -69,6 +71,7 @@ public abstract class SharedRingerSystem : EntitySystem
                     AudioParams.Default.WithMaxDistance(ringer.Range).WithVolume(ringer.Volume)
                 );
             }
+            // stalker-changes-end
 
             // Schedule next note
             ringer.NextNoteTime = curTime + TimeSpan.FromSeconds(NoteDelay);
@@ -198,6 +201,11 @@ public abstract class SharedRingerSystem : EntitySystem
     /// </summary>
     private void StartRingtone(Entity<RingerComponent> ent)
     {
+        // stalker-changes-start: Skip ringtone when silent mode enabled
+        if (TryComp<STSilentModeComponent>(ent, out var silentMode) && silentMode.Enabled)
+            return;
+        // stalker-changes-end
+
         // Already active? Don't start it again
         if (ent.Comp.Active)
             return;

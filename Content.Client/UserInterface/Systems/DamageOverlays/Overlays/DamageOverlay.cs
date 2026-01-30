@@ -80,7 +80,9 @@ public sealed class DamageOverlay : Overlay
         var time = (float) _timing.RealTime.TotalSeconds;
         var lastFrameTime = (float) _timing.FrameTime.TotalSeconds;
 
-        //stalker-changes-start
+        // stalker-changes-start
+        // Don't show any overlay when dead - player should see the world
+        // Death screen is shown via STRespawnConfirmSystem when player confirms respawn
         if (State == MobState.Dead)
         {
             handle.UseShader(null);

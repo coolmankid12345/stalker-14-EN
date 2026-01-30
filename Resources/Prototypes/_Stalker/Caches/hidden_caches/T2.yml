@@ -127,7 +127,7 @@
           prob: 0.04
         - id: HandheldGPSBasic
           prob: 0.04
-        - id: BoxArtcont
+        - id: BoxArtcontDamaged # EN
           prob: 0.03
         - id: STFlashlightSeclite
           prob: 0.04

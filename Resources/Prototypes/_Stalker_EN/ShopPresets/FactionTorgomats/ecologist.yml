@@ -176,6 +176,7 @@
         FlippoLighter: 200
         GeigerCounter: 50
         BaseRadio: 50
+        STRadioHeadset: 150
         STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
