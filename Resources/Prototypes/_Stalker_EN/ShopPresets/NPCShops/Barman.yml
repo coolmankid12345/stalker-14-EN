@@ -332,6 +332,10 @@
         STBoltBagOliveGrayFilled: 50
         # Artifact containers
         BoxArtcont: 500
+        BoxArtcontBlack: 500
+        BoxArtcontBlue: 500
+        BoxArtcontYellow: 500
+        BoxArtcontOrange: 500
         longrangemetaldetector: 3000
         # Anomaly detectors
         ZoneAnomalyDetectorAD1: 450
