@@ -91,6 +91,7 @@
     compatibleMarkingFlags: Cat
     requiredToolQuality: Slicing
     removalEmoteId: Scream
+    removedEntity: DismemberedMarkingEars
     removalDoAfterLength: 10
     removalDamage:
       types:

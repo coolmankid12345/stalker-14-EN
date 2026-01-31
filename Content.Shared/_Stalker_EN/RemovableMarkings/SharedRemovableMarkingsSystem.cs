@@ -1,6 +1,7 @@
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.IdentityManagement;
@@ -24,6 +25,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
@@ -105,7 +107,6 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
                 altVerb.Message = Loc.GetString("removable-markings-verb-info", ("type", Enum.GetName(entity.Comp.CompatibleMarkingFlags) ?? Loc.GetString("removable-markings-verb-type-unknown")));
         }
 
-        Log.Info($"verb added: ent: {entity.Owner}, user: {userUid}, tool: {toolUid}, disabled: {altVerb.Disabled}");
         args.Verbs.Add(altVerb);
     }
 
@@ -150,9 +151,6 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
         if (verb.Disabled)
             return;
 
-        if (!_gameTiming.IsFirstTimePredicted)
-            return;
-
         // i hate this
         var doAfterEventArgs = new DoAfterArgs(
             EntityManager,
@@ -173,8 +171,10 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             NeedHand = true,
         };
 
-        Log.Info($"doafter started: ent: {targetEntity.Owner}, user: {userUid}, tool: {toolUid}");
-        _doAfterSystem.TryStartDoAfter(doAfterEventArgs);
+        if (!_doAfterSystem.TryStartDoAfter(doAfterEventArgs) ||
+            !_gameTiming.IsFirstTimePredicted)
+            return;
+
         PopupUserOthersAndTarget(targetEntity, userUid, "removable-markings-removal-started");
     }
 
@@ -183,7 +183,6 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        Log.Info($"doafter finished: ent: {entity.Owner}, user: {args.User}, tool: {args.Used}");
         TryForcefullyRemoveValidMarkings(entity);
 
         _damageableSystem.TryChangeDamage(entity.Owner, entity.Comp.RemovalDamage, tool: args.Used);
@@ -196,6 +195,12 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
 
         if (TryComp<ToolComponent>(args.Used, out var toolComponent))
             _toolSystem.PlayToolSound(args.Used.Value, toolComponent, user: args.User);
+
+        if (entity.Comp.RemovedEntity is { } removedEntityId)
+        {
+            var removedUid = Spawn(removedEntityId);
+            _handsSystem.TryForcePickupAnyHand(args.User, removedUid);
+        }
 
         PopupUserOthersAndTarget(entity, args.User, "removable-markings-removal-finished");
     }

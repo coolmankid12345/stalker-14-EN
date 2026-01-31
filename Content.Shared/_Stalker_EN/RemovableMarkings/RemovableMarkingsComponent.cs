@@ -43,7 +43,7 @@ public sealed partial class RemovableMarkingsComponent : Component
     ///     Entity spawned on victim after successful
     /// </summary>
     [DataField, ViewVariables]
-    public EntProtoId? RemovalEntityId = null;
+    public EntProtoId? RemovedEntity = null;
 
     [DataField, ViewVariables]
     public TimeSpan RemovalDoAfterLength = TimeSpan.FromSeconds(10);
