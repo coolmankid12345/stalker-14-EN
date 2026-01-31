@@ -37,9 +37,6 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
-        - type: Loadout
-          prototypes: [ FreedomGear ]
-          roleLoadout: [ StalkerFreedom ]
 
 - type: job
   id: StalkerHeadFreedom
@@ -77,18 +74,11 @@
           bandProto: STFreedomBand
           bandRankId: 2
         - type: BlockTackingHolyItems
-        - type: Loadout
-          prototypes: [ FreedomGear ]
-          roleLoadout: [ StalkerHeadFreedom ]
 
 - type: startingGear
   id: FreedomGear
   equipment:
     id: FreedomPDA
-    legs: ClothingLegsJeansFreedomCamouflage
-    shoes: ClothingShoesBootsWork
-    torso: ClothingTorsoTurtlenecksFreedomCamouflage
-    back: ClothingBackpackDuffelGreenStalker
 - type: stBand
   id: STFreedomBand
   name: Freedom

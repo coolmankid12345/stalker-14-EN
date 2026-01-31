@@ -1,68 +1,7 @@
 - type: shopPreset
   id: KekeshaShopPreset
   itemsForSale:
-    # Thermal group - 1
-    ZoneArtifactFireball: 400
-    ZoneArtifactEye: 600
-    ZoneArtifactFlame: 1200
-    # Thermal group - 2
-    ZoneArtifactCristall: 2400
-    ZoneArtifactLithosphere: 4800
-    # Electrical group - 1
-    ZoneArtifactSparkler: 400
-    ZoneArtifactBattery: 600
-    ZoneArtifactFlash: 1200
-    ArtMoon: 2400
-    ZoneArtifactTesla: 3600
-    ZoneArtifactIce: 4800
-    # Gravity group - 1
-    ArtMedusa: 400
-    ZoneArtifactFlower: 600
-    ZoneArtifactNightStar: 2400
-    # Gravity group - 2
-    ZoneArtifactVyvert: 400
-    ZoneArtifactAmoeba: 600
-    ZoneArtifactFloodlight: 600
-    ZoneArtifactGravi: 1200
-    ZoneArtifactGoldfish: 4800
-    ZoneArtifactSpring: 3600
-    ZoneArtifactFocus: 3600
-    ZoneArtifactStuntman: 4800
-    ZoneArtifactDistorter: 4800
-    ZoneArtifactSoul: 3600
-    # Acidic group - 1
-    ZoneArtifactBlood: 1200
-    ZoneArtifactMeat: 2400
-    ZoneArtifactKolobok: 3600
-    # Acidic group - 2
-    ZoneArtifactPellicle: 400
-    ZoneArtifactBaloon: 3600
-
-    # Mutant parts
-
-    #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 200 # T1
-    MutantPartSeasonedBoarHoof: 290 # T2
-    MutantPartOldBoarHoof: 385 # T3
-
-    #T1 -------- Health * 1
-    MutantPartBlindDogTail: 65
-    MutantPartFleshEye: 140
-    FoodMeatSpiderLeg: 35
-
-    #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 385
-    MutantPartPseudodogTail: 210
-    MutantPartSnorkFoot: 350
-
-    #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 525
-    MutantPartOraculeEye: 1120
-    MutantPartPseudogiantHeart: 2800
-    MutantPartZombieHand: 420
-
     #Weapons and armour ---- min cost / 2
-
     #12x70
     STWeaponShotgunMP155T: 20
     STWeaponShotgunTOZ34: 100
@@ -97,7 +36,7 @@
     STWeaponSniperSKS: 850
 
     #7.62x51
-    STWeaponRifleFAL: 1750
+    STWeaponRifleFAL: 750
     STWeaponRifleGalatz: 2000
     STWeaponRifleSCARH: 2625
     STWeaponRifleM14: 2125
@@ -128,7 +67,7 @@
 
     #.45 acp
     STWeaponRevolverRugerRedhawk: 150
-    STWeaponRevolverSWPC325TR: 425
+    STWeaponRevolverSWPC325TR: 125
     STWeaponRevolverChiappaRhino60DS: 450
     STWeaponRevolverSWModel325: 500
     STWeaponRevolverSWModel625: 725

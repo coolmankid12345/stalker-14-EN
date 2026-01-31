@@ -1,8 +1,7 @@
-ent-STClothingTosroTurtlenecksCZ = Сzechoslovakia army turtlenecks
-ent-STClothingTosroTurtlenecksFr = France army turtlenecks
-ent-STClothingTosroTurtlenecksKz = Kazakhstan army turtlenecks
-ent-STClothingTosroTurtlenecksLit = Litva army turtlenecks
-ent-STClothingTosroTurtlenecksPol = Poland army turtlenecks
-ent-STClothingTosroTurtlenecksRu = Russian army turtlenecks
-ent-ClothingTorsoTankMilitary = military tank
-
+ent-STClothingTosroTurtlenecksCZ = водолазка чехословацкой армии
+ent-STClothingTosroTurtlenecksFr = водолазка французской армии
+ent-STClothingTosroTurtlenecksKz = водолазка казахстанской армии
+ent-STClothingTosroTurtlenecksLit = водолазка литовской армии
+ent-STClothingTosroTurtlenecksPol = водолазка польской армии
+ent-STClothingTosroTurtlenecksRu = водолазка российской армии
+ent-ClothingTorsoTankMilitary = военная майка

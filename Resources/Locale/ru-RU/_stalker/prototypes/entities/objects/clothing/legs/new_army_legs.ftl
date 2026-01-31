@@ -1,8 +1,8 @@
-ent-STClothingLegsJeansCz = Czechoslovakia army jeans
-ent-STClothingLegsJeansFr = France army jeans
-ent-STClothingLegsJeanskz = Kazakhstan army jeans
-ent-STClothingLegsJeansLit = Litva army jeans
-ent-STClothingLegsJeansPol = Poland army jeans
-ent-STClothingLegsJeansRus = Russian army jeans
-ent-ClothingLegsBoxersMilitary = military boxers
+ent-STClothingLegsJeansCz = штаны чехословацкой армии
+ent-STClothingLegsJeansFr = штаны французской армии
+ent-STClothingLegsJeanskz = штаны казахстанской армии
+ent-STClothingLegsJeansLit = штаны литовской армии
+ent-STClothingLegsJeansPol = штаны польской армии
+ent-STClothingLegsJeansRus = штаны российской армии
+ent-ClothingLegsBoxersMilitary = военные боксеры
 

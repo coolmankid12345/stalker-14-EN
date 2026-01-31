@@ -958,3 +958,75 @@
   components:
   - type: Sprite
     state: treelarge06
+
+# болотный куст
+
+- type: entity
+  parent: Bush01
+  id: Bigbush1
+  suffix: ST, Mapping
+  name: куст
+  description: Древовидное растение, разветвляющееся от самого основания.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Flora/flora_swampbush.rsi
+    state: bigbush1
+    drawdepth: Overdoors
+    offset: 0,0.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        layer:
+        - MidImpassable
+
+- type: entity
+  parent: Bush01
+  id: Bigbush2
+  suffix: ST, Mapping
+  name: куст
+  description: Древовидное растение, разветвляющееся от самого основания.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Flora/flora_swampbush.rsi
+    state: bigbush2
+    drawdepth: Overdoors
+    offset: 0,0.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        layer:
+        - MidImpassable
+  - type: Occluder
+
+- type: entity
+  parent: Bush01
+  id: Bigbush3
+  suffix: ST, Mapping
+  name: куст
+  description: Древовидное растение, разветвляющееся от самого основания.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Flora/flora_swampbush.rsi
+    state: bigbush3
+    drawdepth: Overdoors
+    offset: 0,0.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        layer:
+        - MidImpassable

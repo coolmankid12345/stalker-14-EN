@@ -33,9 +33,6 @@
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
-      - type: Loadout
-        prototypes: [ StalkerClearSkyGear ]
-        roleLoadout: [ StalkerClearSky ]
 
 - type: job
   id: StalkerClearSkyHead
@@ -72,21 +69,12 @@
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
-      - type: Loadout
-        prototypes: [ StalkerClearSkyGear ]
-        roleLoadout: [ StalkerClearSkyHead ]
 
 
 - type: startingGear
   id: StalkerClearSkyGear
   equipment:
     id: ClearSkyPDA
-    belt: ClothingBeltStorageWaistbag
-    torso: ClothingTorsoSweaterStalkerGreen
-    legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesBootsWork
-    outerClothing: ClothingOuterCoatBomber
-    back: ClothingBackpackDuffelBlackStalker
 - type: stBand
   id: STClearSkyBand
   name: Clear Sky

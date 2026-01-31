@@ -1,0 +1,705 @@
+#Сталкеры
+- type: loadout
+  id: STOuterClothingStalker
+  equipment:
+    outerClothing: ClothingOuterJacketStalker
+
+- type: loadout
+  id: ClothingMaskGasZaryaMono
+  equipment:
+    mask: ClothingMaskGasZaryaMono
+
+- type: loadout
+  id: ClothingMaskGasZarya
+  equipment:
+    mask: ClothingMaskGasZarya
+
+#Общее
+
+    #Штаны
+- type: loadout
+  id: STlegsClothingLegsJeansBlue
+  equipment:
+    legs: ClothingLegsJeansBlue
+
+- type: loadout
+  id: STlegsClothingLegsJeansStalker
+  equipment:
+    legs: ClothingLegsJeansStalker
+
+- type: loadout
+  id: STlegsClothingLegsJeansRussianPixel
+  equipment:
+    legs: ClothingLegsJeansRussianPixel
+
+- type: loadout
+  id: STlegsClothingLegsJeansBlackNew
+  equipment:
+    legs: ClothingLegsJeansBlackNew
+
+- type: loadout
+  id: STlegsClothingLegsJeansGorka
+  equipment:
+    legs: ClothingLegsJeansGorka
+
+- type: loadout
+  id: STlegsClothingLegsJeansGorka6
+  equipment:
+    legs: ClothingLegsJeansGorka6
+
+- type: loadout
+  id: STlegsClothingLegsJeansBereza
+  equipment:
+    legs: ClothingLegsJeansBereza
+
+- type: loadout
+  id: STlegsClothingLegsJeansGreenCargo
+  equipment:
+    legs: ClothingLegsJeansGreenCargo
+
+- type: loadout
+  id: STlegsClothingLegsJeansGreyCargo
+  equipment:
+    legs: ClothingLegsJeansGreyCargo
+
+- type: loadout
+  id: STlegsClothingLegsJeansBlackCargo
+  equipment:
+    legs: ClothingLegsJeansBlackCargo
+
+- type: loadout
+  id: STlegsClothingLegsJeansBrownCargo
+  equipment:
+    legs: ClothingLegsJeansBrownCargo
+
+- type: loadout
+  id: STlegsClothingLegsJeansPolice
+  equipment:
+    legs: ClothingLegsJeansPolice
+
+- type: loadout
+  id: STlegsClothingLegsJeansSandCargo
+  equipment:
+    legs: ClothingLegsJeansSandCargo
+
+- type: loadout
+  id: STlegsClothingLegsJeansFreedomCamouflage
+  equipment:
+    legs: ClothingLegsJeansFreedomCamouflage
+
+- type: loadout
+  id: STlegsClothingLegsJeansDolgCamouflage
+  equipment:
+    legs: ClothingLegsJeansDolgCamouflage
+
+- type: loadout
+  id: STlegsClothingLegsJeansDeserterCamouflage
+  equipment:
+    legs: ClothingLegsJeansDeserterCamouflage
+
+- type: loadout
+  id: STlegsClothingLegsJeansProjectPeshka
+  equipment:
+    legs: ClothingLegsJeansProjectPeshka
+
+- type: loadout
+  id: STlegsClothingLegsJeansProjectLeader
+  equipment:
+    legs: ClothingLegsJeansProjectLeader
+
+- type: loadout
+  id: STlegsClothingLegsJeansNeutral
+  equipment:
+    legs: ClothingLegsJeansNeutral
+
+- type: loadout
+  id: STlegsClothingLegsJeansClearSky
+  equipment:
+    legs: ClothingLegsJeansClearSky
+
+- type: loadout
+  id: STlegsClothingLegsJeansJaba
+  equipment:
+    legs: ClothingLegsJeansJaba
+
+- type: loadout
+  id: STlegsClothingLegsJeansUa
+  equipment:
+    legs: ClothingLegsJeansUa
+
+- type: loadout
+  id: STlegsClothingLegsJeansUa2
+  equipment:
+    legs: ClothingLegsJeansUa2
+
+- type: loadout
+  id: STlegsClothingLegsJeansGreh
+  equipment:
+    legs: ClothingLegsJeansGreh
+
+- type: loadout
+  id: STlegsSTClothingLegsPantsGray
+  equipment:
+    legs: STClothingLegsPantsGray
+
+- type: loadout
+  id: STlegsClothingLegsJeansMonolithCamouflage
+  equipment:
+    legs: ClothingLegsJeansMonolithCamouflage
+
+- type: loadout
+  id: STlegsClothingLegsBattlePantsBlack
+  equipment:
+    legs: ClothingLegsBattlePantsBlack
+
+- type: loadout
+  id: STlegsClothingLegsVeryBlueJenas
+  equipment:
+    legs: ClothingLegsVeryBlueJenas
+
+- type: loadout
+  id: STlegsClothingLegsCombatForest
+  equipment:
+    legs: ClothingLegsCombatForest
+
+- type: loadout
+  id: STlegsClothingLegsGorka5
+  equipment:
+    legs: ClothingLegsGorka5
+
+- type: loadout
+  id: STlegsClothingLegsGorka6b
+  equipment:
+    legs: ClothingLegsGorka6b
+
+- type: loadout
+  id: STlegsClothingLegsNavyPants
+  equipment:
+    legs: ClothingLegsNavyPants
+
+- type: loadout
+  id: STlegsClothingLegsRussianNumber
+  equipment:
+    legs: ClothingLegsRussianNumber
+
+    #обувь
+- type: loadout
+  id: ClothingShoesNovice
+  equipment:
+    shoes: ClothingShoesNovice
+
+- type: loadout
+  id: STClothingShoesBootsCombat
+  equipment:
+    shoes: STClothingShoesBootsCombat
+
+- type: loadout
+  id: ClothingShoesPVH
+  equipment:
+    shoes: ClothingShoesPVH
+
+- type: loadout
+  id: ClothingShoesBootsLeather
+  equipment:
+    shoes: ClothingShoesBootsLeather
+    #Торс
+- type: loadout
+  id: STTorsoClothingTorsoSweaterStalkerGreen
+  equipment:
+    torso: ClothingTorsoSweaterStalkerGreen
+
+- type: loadout
+  id: STTorsoClothingTorsoSweaterStalkerGreenGreh
+  equipment:
+    torso: ClothingTorsoSweaterStalkerGreenGreh
+
+- type: loadout
+  id: STTorsoClothingTorsoJacketAdidas
+  equipment:
+    torso: ClothingTorsoJacketAdidas
+
+- type: loadout
+  id: STTorsoClothingTorsoJacketAdidasBlue
+  equipment:
+    torso: ClothingTorsoJacketAdidasBlue
+
+- type: loadout
+  id: STTorsoClothingTorsoJacketAdidasRed
+  equipment:
+    torso: ClothingTorsoJacketAdidasRed
+
+- type: loadout
+  id: STTorsoClothingTorsoJacketPolice
+  equipment:
+    torso: ClothingTorsoJacketPolice
+
+- type: loadout
+  id: STTorsoSTClothingTorsoJacketGray
+  equipment:
+    torso: STClothingTorsoJacketGray
+
+- type: loadout
+  id: STTorsoClothingTorsoJacketProjectPeshka
+  equipment:
+    torso: ClothingTorsoJacketProjectPeshka
+
+- type: loadout
+  id: STTorsoClothingTorsoJacketProjectLeader
+  equipment:
+    torso: ClothingTorsoJacketProjectLeader
+
+- type: loadout
+  id: STTorsoClothingTorsoTShirtPivozavr
+  equipment:
+    torso: ClothingTorsoTShirtPivozavr
+
+- type: loadout
+  id: STTorsoClothingTorsoTShirtSailorSuit
+  equipment:
+    torso: ClothingTorsoTShirtSailorSuit
+
+- type: loadout
+  id: STTorsoClothingTorsoTShirtColorBlack
+  equipment:
+    torso: ClothingTorsoTShirtColorBlack
+
+- type: loadout
+  id: STTorsoClothingTorsoTShirtZavet
+  equipment:
+    torso: ClothingTorsoTShirtZavet
+
+- type: loadout
+  id: STTorsoClothingTorsoShirtRedPlaid
+  equipment:
+    torso: ClothingTorsoShirtRedPlaid
+
+- type: loadout
+  id: STTorsoClothingTorsoShirtWhiteScientific
+  equipment:
+    torso: ClothingTorsoShirtWhiteScientific
+
+- type: loadout
+  id: STTorsoClothingTorsoNeutral
+  equipment:
+    torso: ClothingTorsoNeutral
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksMercenary
+  equipment:
+    torso: ClothingTorsoTurtlenecksMercenary
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksBlack
+  equipment:
+    torso: ClothingTorsoTurtlenecksBlack
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksGorka
+  equipment:
+    torso: ClothingTorsoTurtlenecksGorka
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksGorka6
+  equipment:
+    torso: ClothingTorsoTurtlenecksGorka6
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksBereza
+  equipment:
+    torso: ClothingTorsoTurtlenecksBereza
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksGorkaRus
+  equipment:
+    torso: ClothingTorsoTurtlenecksGorkaRus
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksUN
+  equipment:
+    torso: ClothingTorsoTurtlenecksUN
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksFreedomCamouflage
+  equipment:
+    torso: ClothingTorsoTurtlenecksFreedomCamouflage
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksDolgCamouflage
+  equipment:
+    torso: ClothingTorsoTurtlenecksDolgCamouflage
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksRedDolgCamouflage
+  equipment:
+    torso: ClothingTorsoTurtlenecksRedDolgCamouflage
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksCovenant
+  equipment:
+    torso: ClothingTorsoTurtlenecksCovenant
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksCovenantHead
+  equipment:
+    torso: ClothingTorsoTurtlenecksCovenantHead
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksDeserterCamouflage
+  equipment:
+    torso: ClothingTorsoTurtlenecksDeserterCamouflage
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksUa
+  equipment:
+    torso: ClothingTorsoTurtlenecksUa
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksUa2
+  equipment:
+    torso: ClothingTorsoTurtlenecksUa2
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksClearSky
+  equipment:
+    torso: ClothingTorsoTurtlenecksClearSky
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksMilitary
+  equipment:
+    torso: ClothingTorsoTurtlenecksMilitary
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksMonolithCamouflage
+  equipment:
+    torso: ClothingTorsoTurtlenecksMonolithCamouflage
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  equipment:
+    torso: ClothingTorsoTurtlenecksBattleTurtleneckbBlack
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  equipment:
+    torso: ClothingTorsoTurtlenecksBlackTurtleneck
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksCombatForest
+  equipment:
+    torso: ClothingTorsoTurtlenecksCombatForest
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksGorka5
+  equipment:
+    torso: ClothingTorsoTurtlenecksGorka5
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksGorka6B
+  equipment:
+    torso: ClothingTorsoTurtlenecksGorka6B
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  equipment:
+    torso: ClothingTorsoTurtlenecksKhakiTurtleneck
+
+- type: loadout
+  id: STTorsoClothingTorsoTurtlenecksMatrosska
+  equipment:
+    torso: ClothingTorsoTurtlenecksMatrosska
+
+- type: loadout
+  id: STTorsoSTClothingTosroTurtlenecksCZ
+  equipment:
+    torso: STClothingTosroTurtlenecksCZ
+
+- type: loadout
+  id: STTorsoSTClothingTosroTurtlenecksFr
+  equipment:
+    torso: STClothingTosroTurtlenecksFr
+
+- type: loadout
+  id: STTorsoSTClothingTosroTurtlenecksKz
+  equipment:
+    torso: STClothingTosroTurtlenecksKz
+
+- type: loadout
+  id: STTorsoSTClothingTosroTurtlenecksLit
+  equipment:
+    torso: STClothingTosroTurtlenecksLit
+
+- type: loadout
+  id: STTorsoSTClothingTosroTurtlenecksPol
+  equipment:
+    torso: STClothingTosroTurtlenecksPol
+
+- type: loadout
+  id: STTorsoSTClothingTosroTurtlenecksRu
+  equipment:
+    torso: STClothingTosroTurtlenecksRu
+
+- type: loadout
+  id: STTorsoClothingTorsoTankMilitary
+  equipment:
+    torso: ClothingTorsoTankMilitary
+
+    #Безделушки в рюкзак
+- type: loadout
+  id: Suka
+  storage:
+    back:
+    - CigPackSuka
+
+- type: loadout
+  id: STLighter
+  storage:
+    back:
+    - Lighter
+
+- type: loadout
+  id: Blunt
+  storage:
+    back:
+    - Blunt
+
+    #Начальное снаряжение в рюкзаке
+- type: loadout
+  id: BaseGlockMag10
+  storage:
+    back:
+    - BaseGlockMag10
+
+- type: loadout
+  id: BasePMMag
+  storage:
+    back:
+    - BasePMMag
+
+- type: loadout
+  id: TTMag
+  storage:
+    back:
+    - TTMag
+
+- type: loadout
+  id: STOintment
+  storage:
+    back:
+    - STOintment
+
+- type: loadout
+  id: STGauze
+  storage:
+    back:
+    - STGauze
+
+- type: loadout
+  id: DrinkWaterBottleFull
+  storage:
+    back:
+    - DrinkWaterBottleFull
+
+- type: loadout
+  id: FoodTinPeaches
+  storage:
+    back:
+    - FoodTinPeaches
+    #Оружие
+- type: loadout
+  id: STSuitstorageSTWeaponShotgunMP155T
+  equipment:
+    suitstorage: STWeaponShotgunMP155T
+
+- type: loadout
+  id: STWeaponShotgunTOZ34
+  equipment:
+    suitstorage: STWeaponShotgunTOZ34
+
+- type: loadout
+  id: STWeaponRifleSaiga545
+  equipment:
+    suitstorage: STWeaponRifleSaiga545
+
+    #Патроны
+- type: loadout
+  id: 7mmBuckshotBox
+  storage:
+    back:
+    - 7mmBuckshotBox
+
+- type: loadout
+  id: 7mmBuckshotBoxTwo
+  storage:
+    back:
+    - 7mmBuckshotBox
+
+- type: loadout
+  id: 545HPBox
+  storage:
+    back:
+    - 545HPBox
+
+- type: loadout
+  id: 545FMJBox
+  storage:
+    back:
+    - 545FMJBox
+
+- type: loadout
+  id: 919RIPBox
+  storage:
+    back:
+    - 919RIPBox
+
+- type: loadout
+  id: 918SP7Box
+  storage:
+    back:
+    - 918SP7Box
+
+- type: loadout
+  id: 919PSOGJBox
+  storage:
+    back:
+    - 919PSOGJBox
+
+- type: loadout
+  id: 918PGJBox
+  storage:
+    back:
+    - 918PGJBox
+    #Карман 1
+- type: loadout
+  id: STBoltBagFilled
+  equipment:
+    pocket1: STBoltBagFilled
+
+- type: loadout
+  id: WeaponPistolStalkerTT
+  equipment:
+    pocket1: WeaponPistolStalkerTT
+
+- type: loadout
+  id: WeaponPistolStalkerPM
+  equipment:
+    pocket1: WeaponPistolStalkerPM
+
+- type: loadout
+  id: WeaponPistolStalkerGlock
+  equipment:
+    pocket1: WeaponPistolStalkerGlock
+    #Карман 2
+- type: loadout
+  id: STCombatKnife
+  equipment:
+    pocket2: STCombatKnife
+    #Рюкзаки
+- type: loadout
+  id: STBackpack
+  equipment:
+    back: ClothingBackpackDuffelGreenStalker
+
+- type: loadout
+  id: ClothingBackpackTownWhiteStalker
+  equipment:
+    back: ClothingBackpackTownWhiteStalker
+
+- type: loadout
+  id: ClothingBackpackTownBlackStalker
+  equipment:
+    back: ClothingBackpackTownBlackStalker
+    #Маски
+- type: loadout
+  id: STMaskStalker
+  equipment:
+    mask: ClothingMaskGasMarlya
+
+- type: loadout
+  id: ClothingMaskNeckBalaklava1
+  equipment:
+    mask: ClothingMaskNeckBalaklava1
+
+- type: loadout
+  id: ClothingMaskNeckBalaklava4
+  equipment:
+    mask: ClothingMaskNeckBalaklava4
+
+- type: loadout
+  id: ClothingMaskSkull
+  equipment:
+    mask: ClothingMaskSkull
+
+- type: loadout
+  id: ClothingMaskNeckBalaklava3
+  equipment:
+    mask: ClothingMaskNeckBalaklava3
+
+- type: loadout
+  id: ClothingMaskNeckFacemaskDS
+  equipment:
+    mask: ClothingMaskNeckFacemaskDS
+
+- type: loadout
+  id: ClothingMaskNeckFacemask
+  equipment:
+    mask: ClothingMaskNeckFacemask
+
+- type: loadout
+  id: ClothingMaskNeckBalaklava2
+  equipment:
+    mask: ClothingMaskNeckBalaklava2
+    #Пояса
+- type: loadout
+  id: STBeltStalker
+  equipment:
+    belt: ClothingBeltBandolierStalker
+    #Очки
+- type: loadout
+  id: ClothingEyesGlassesCheapSunglasses
+  equipment:
+    eyes: ClothingEyesGlassesCheapSunglasses
+
+- type: loadout
+  id: ClothingEyesSalesman
+  equipment:
+    eyes: ClothingEyesSalesman
+
+- type: loadout
+  id: ClothingEyesGlasses
+  equipment:
+    eyes: ClothingEyesGlasses
+# Бандиты
+- type: loadout
+  id: STOuterClothingStalkerBandit
+  equipment:
+    outerClothing: ClothingOuterJacketBandit
+
+# Долг
+- type: loadout
+  id: STOuterClothingStalkerDolg
+  equipment:
+    outerClothing: ClothingOuterJacketDolg
+
+# Свобода
+- type: loadout
+  id: STOuterClothingStalkerFreedom
+  equipment:
+    outerClothing: ClothingOuterJacketFreedom
+
+# Ученые
+- type: loadout
+  id: STOuterClothingStalkerSci
+  equipment:
+    outerClothing: ClothingOuterJacketSCI
+
+# Серафимы
+- type: loadout
+  id: STOuterClothingStalkerSeraphims
+  equipment:
+    outerClothing: ClothingOuterJacketSera
+
+# Чистое небо
+- type: loadout
+  id: STOuterClothingStalkerClearSky
+  equipment:
+    outerClothing: ClothingOuterJacketCN

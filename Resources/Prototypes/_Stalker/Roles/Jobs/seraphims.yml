@@ -41,9 +41,6 @@
           factions:
           - BandsUnion
           - Seraphims
-        - type: Loadout
-          prototypes: [ SeraphimGear ]
-          roleLoadout: [ Seraphim ]
 
 - type: startingGear
   id: SeraphimGear
@@ -108,9 +105,6 @@
           - BandsUnion
           - Seraphims
         - type: STAnomalyTipsViewing
-        - type: Loadout
-          prototypes: [ SeraphimHeadGear ]
-          roleLoadout: [ SeraphimHead ]
 
 - type: startingGear
   id: SeraphimHeadGear
@@ -185,9 +179,6 @@
           - BandsUnion
           - Seraphims
         - type: STAnomalyTipsViewing
-        - type: Loadout
-          prototypes: [ SeraphimCherubimGear ]
-          roleLoadout: [ SeraphimCherubim ]
 
 - type: startingGear
   id: SeraphimCherubimGear

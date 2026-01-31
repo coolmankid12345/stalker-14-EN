@@ -75,9 +75,6 @@
       - type: NpcFactionMember
         factions:
         - Sci
-      - type: Loadout
-        prototypes: [ SciGear ]
-        roleLoadout: [ sci ]
 
 - type: job
   id: sci_decan
@@ -117,9 +114,6 @@
       - type: NpcFactionMember
         factions:
         - Sci
-      - type: Loadout
-        prototypes: [ SciGear2 ]
-        roleLoadout: [ sci_decan ]
 
 - type: job
   id: sci_rector
@@ -143,7 +137,8 @@
     - !type:AddComponentSpecial
       components:
         - type: Access
-          tags:
+          groups:
+            - Sci
             - SciHead
         - type: Bands
           band: Stalker
@@ -159,19 +154,11 @@
         - type: NpcFactionMember
           factions:
           - Sci
-        - type: Loadout
-          prototypes: [ SciGear3 ]
-          roleLoadout: [ sci_rector ]
 
 - type: startingGear
   id: SciGear
   equipment:
     id: ScientistPDA
-    legs: ClothingLegsJeansSandCargo
-    shoes: STClothingShoesBootsCombatFilled
-    torso: ClothingTorsoShirtWhiteScientific
-    outerClothing: ClothingOuterJacketSCI
-    gloves: ClothingHandsGlovesNitrile
 
 - type: stBand
   id: STSciBand
