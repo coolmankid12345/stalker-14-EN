@@ -3,6 +3,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Human]
+  removabilityFlags: Cat # ST14-EN change
   coloring:
     default:
       type:
@@ -26,6 +27,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Human]
+  removabilityFlags: Cat # ST14-EN change
   coloring:
     default:
       type:
@@ -49,6 +51,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Human]
+  removabilityFlags: Cat # ST14-EN change
   coloring:
     default:
       type:
@@ -72,6 +75,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Human]
+  removabilityFlags: Cat # ST14-EN change
   coloring:
     default:
       type:

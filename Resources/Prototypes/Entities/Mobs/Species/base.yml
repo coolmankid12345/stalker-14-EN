@@ -87,6 +87,16 @@
     horizontalRotation: 90
   - type: HumanoidAppearance
     species: Human
+  - type: RemovableMarkings
+    compatibleMarkingFlags: Cat
+    requiredToolQuality: Cutting
+    removalEmoteId: Scream
+    removalDoAfterLength: 15
+    removalDamage:
+      types:
+        Slash: 40 # it will hurt
+        Psy: -40 # you become more sane
+    removalStunDuration: 5
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7 # stalker-changes
