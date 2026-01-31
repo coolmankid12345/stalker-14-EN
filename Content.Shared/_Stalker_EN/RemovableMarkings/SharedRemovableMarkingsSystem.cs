@@ -7,6 +7,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
+using Content.Shared.Tools.Components;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Robust.Shared.Collections;
@@ -82,10 +83,11 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             Priority = 2,
             IconEntity = GetNetEntity(toolUid),
             Text = Loc.GetString("removable-markings-verb-text"),
-            Act = () => OnRemoveVerbActed(entity, userUid, toolUid),
             Impact = LogImpact.Medium,
             CloseMenu = true
         };
+
+        altVerb.Act = () => OnRemoveVerbActed(entity, userUid, toolUid, altVerb);
 
         if (userUid == entity.Owner)
         {
@@ -108,7 +110,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Assumes the client is the target.
+    ///     Assumes that the user is the client.
     /// </summary>
     private void PopupUserOthersAndTarget(EntityUid targetUid, EntityUid userUid, string prefix)
     {
@@ -116,11 +118,10 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
         var targetValueTuple = ((string, object))("targetName", Identity.Name(targetUid, EntityManager));
 
         // User
-        _popupSystem.PopupEntity(
+        _popupSystem.PopupClient(
             Loc.GetString(prefix + "-user", targetValueTuple),
             userUid,
-            Filter.Empty().FromEntities(userUid),
-            false,
+            userUid,
             type: PopupType.SmallCaution
         );
 
@@ -134,15 +135,21 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
         );
 
         // Target
-        _popupSystem.PopupClient(
+        _popupSystem.PopupEntity(
             Loc.GetString(prefix + "-target", userValueTuple),
-            targetUid, // target gets the popup on themselves
+            targetUid, // only target gets the popup on themselves
+            Filter.Empty().FromEntities(targetUid), // because of doafter jank, thank you [REDACTED] very much
+            false,
             type: PopupType.LargeCaution
         );
     }
 
-    private void OnRemoveVerbActed(Entity<RemovableMarkingsComponent> targetEntity, EntityUid userUid, EntityUid toolUid)
+    private void OnRemoveVerbActed(Entity<RemovableMarkingsComponent> targetEntity, EntityUid userUid, EntityUid toolUid, AlternativeVerb verb)
     {
+        // !!HOLY SHIT!!; altverbs that are disabled get mispredicted if you activate them via alt-interact.
+        if (verb.Disabled)
+            return;
+
         if (!_gameTiming.IsFirstTimePredicted)
             return;
 
@@ -173,7 +180,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
 
     private void OnMarkingRemovalDoAfterFinished(Entity<RemovableMarkingsComponent> entity, ref MarkingRemovalDoAfterEvent args)
     {
-        if (!_gameTiming.IsFirstTimePredicted)
+        if (args.Cancelled)
             return;
 
         Log.Info($"doafter finished: ent: {entity.Owner}, user: {args.User}, tool: {args.Used}");
@@ -184,11 +191,11 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             _mobStateSystem.IsAlive(entity.Owner))
             DoRemovalEmote(entity);
 
-        if (entity.Comp.RemovalStunDuration is { } removalStunDuration)
-            _stunSystem.TryStun(entity.Owner, removalStunDuration, false);
+        if (entity.Comp.RemovalKnockdownDuration is { } removalKnockdownDuration)
+            _stunSystem.TryKnockdown(entity.Owner, removalKnockdownDuration, false);
 
-        if (entity.Comp.RemoveComponentAfterRemoval)
-            RemCompDeferred(entity, entity.Comp);
+        if (TryComp<ToolComponent>(args.Used, out var toolComponent))
+            _toolSystem.PlayToolSound(args.Used.Value, toolComponent, user: args.User);
 
         PopupUserOthersAndTarget(entity, args.User, "removable-markings-removal-finished");
     }

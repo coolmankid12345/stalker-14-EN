@@ -30,7 +30,7 @@ public sealed partial class RemovableMarkingsComponent : Component
     ///     Amount of time to stun this entity for, after marking removal.
     /// </summary>
     [DataField, ViewVariables]
-    public TimeSpan? RemovalStunDuration = null;
+    public TimeSpan? RemovalKnockdownDuration = null;
 
     /// <summary>
     ///     Emote forced on the victim (if their mobstate is <see cref="Mobs.MobState.Alive"/>)
@@ -39,20 +39,20 @@ public sealed partial class RemovableMarkingsComponent : Component
     [DataField, ViewVariables]
     public ProtoId<EmotePrototype>? RemovalEmoteId = null;
 
+    /// <summary>
+    ///     Entity spawned on victim after successful
+    /// </summary>
     [DataField, ViewVariables]
-    public TimeSpan RemovalDoAfterLength = TimeSpan.FromSeconds(15);
+    public EntProtoId? RemovalEntityId = null;
+
+    [DataField, ViewVariables]
+    public TimeSpan RemovalDoAfterLength = TimeSpan.FromSeconds(10);
 
     /// <summary>
     ///     Specifies what kinds of markings can be removed.
     /// </summary>
     [DataField, ViewVariables]
     public RemovableMarkingFlags CompatibleMarkingFlags = RemovableMarkingFlags.None;
-
-    /// <summary>
-    ///     Because i'm lazy. TODO: make this better
-    /// </summary>
-    [DataField, ViewVariables]
-    public bool RemoveComponentAfterRemoval = true;
 }
 
 [Serializable, NetSerializable]
