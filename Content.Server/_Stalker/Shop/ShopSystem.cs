@@ -282,10 +282,19 @@ public sealed partial class ShopSystem : SharedShopSystem
         {
             foreach (var entity in cont.ContainedEntities)
             {
-                if (GetItemProtoId(entity) != entityPrototypeId)
+                if (GetItemProtoId(entity) == entityPrototypeId)
+                {
+                    result.Add(entity);
+                    if (result.Count >= maxCount)
+                        return result;
+                }
+
+                // Recursively search nested containers
+                if (!HasComp<ContainerManagerComponent>(entity))
                     continue;
 
-                result.Add(entity);
+                var nestedItems = GetItemsFromContainer(entity, entityPrototypeId, maxCount - result.Count);
+                result.AddRange(nestedItems);
                 if (result.Count >= maxCount)
                     return result;
             }
