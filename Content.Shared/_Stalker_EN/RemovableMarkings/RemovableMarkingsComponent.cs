@@ -18,7 +18,7 @@ public sealed partial class RemovableMarkingsComponent : Component
     ///     Tool quality needed to remove marking.
     /// </summary>
     [DataField(required: true), ViewVariables]
-    public ProtoId<ToolQualityPrototype> RequiredToolQuality;
+    public ProtoId<ToolQualityPrototype> RequiredToolQuality; // doesn't work properly on weldingtool or whatever lol
 
     /// <summary>
     ///     Damage done to victim after finishing removal.

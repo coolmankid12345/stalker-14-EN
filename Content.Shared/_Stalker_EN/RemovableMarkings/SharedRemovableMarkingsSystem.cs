@@ -152,6 +152,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             return;
 
         // i hate this
+        // i could actually use SharedToolSystem.UseTool but fak you
         var doAfterEventArgs = new DoAfterArgs(
             EntityManager,
             userUid,
