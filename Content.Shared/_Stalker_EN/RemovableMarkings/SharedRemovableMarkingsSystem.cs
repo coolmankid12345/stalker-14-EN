@@ -30,9 +30,15 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
 
+    private EntityQuery<HumanoidAppearanceComponent> _humanoidAppearanceQuery;
+    private EntityQuery<ToolComponent> _toolQuery;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        _humanoidAppearanceQuery = GetEntityQuery<HumanoidAppearanceComponent>();
+        _toolQuery = GetEntityQuery<ToolComponent>();
 
         SubscribeLocalEvent<RemovableMarkingsComponent, GetVerbsEvent<AlternativeVerb>>(OnGetAltVerbs);
         SubscribeLocalEvent<RemovableMarkingsComponent, MarkingRemovalDoAfterEvent>(OnMarkingRemovalDoAfterFinished);
@@ -51,7 +57,8 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             args.Using is not { } toolUid)
             return;
 
-        if (!TryComp<HumanoidAppearanceComponent>(entity, out var humanoidAppearanceComponent))
+        if (!_humanoidAppearanceQuery.TryGetComponent(entity, out var humanoidAppearanceComponent) ||
+            !_toolQuery.TryGetComponent(toolUid, out var toolComponent))
             return;
 
         // i hate this approach, and so do you, but there is no other way
@@ -98,7 +105,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
         }
         else
         {
-            if (!_toolSystem.HasQuality(toolUid, entity.Comp.RequiredToolQuality))
+            if (!_toolSystem.HasQuality(toolUid, entity.Comp.RequiredToolQuality, tool: toolComponent))
             {
                 altVerb.Disabled = true;
                 altVerb.Message = Loc.GetString("removable-markings-verb-invalid-tool", ("quality", Loc.GetString(toolQualityPrototype.Name)));
@@ -152,7 +159,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             return;
 
         // i hate this
-        // i could actually use SharedToolSystem.UseTool but fak you
+        // i could actually use SharedToolSystem.UseTool but i REALLY can't be bothered and i can't understand if it works
         var doAfterEventArgs = new DoAfterArgs(
             EntityManager,
             userUid,
@@ -194,7 +201,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
         if (entity.Comp.RemovalKnockdownDuration is { } removalKnockdownDuration)
             _stunSystem.TryKnockdown(entity.Owner, removalKnockdownDuration, false);
 
-        if (TryComp<ToolComponent>(args.Used, out var toolComponent))
+        if (_toolQuery.TryGetComponent(args.Used, out var toolComponent))
             _toolSystem.PlayToolSound(args.Used.Value, toolComponent, user: args.User);
 
         if (entity.Comp.RemovedEntity is { } removedEntityId)
