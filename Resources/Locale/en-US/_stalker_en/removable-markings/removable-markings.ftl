@@ -5,11 +5,11 @@ removable-markings-verb-text = Remove markings
 
 ## Shown as tooltip of remove verb
 
-removable-markings-verb-info = Remove markings of [color=yellow]{$type}[/color] type.
+removable-markings-verb-info = Remove markings of {$type} type.
 
 removable-markings-verb-no-markings = You can't bring yourself to remove markings from yourself.
 removable-markings-verb-cant-target-yourself = You can't bring yourself to remove markings from yourself.
-removable-markings-verb-invalid-tool = A tool capable of [color=cyan]{$quality}[/color] is required to remove markings.
+removable-markings-verb-invalid-tool = A tool capable of {$quality} is required to remove markings.
 
 # When `type` of `removable-markings-verb-info` is unavailable, this is placeholder
 removable-markings-verb-type-unknown = an unknown

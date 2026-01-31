@@ -120,7 +120,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
     /// <summary>
     ///     Assumes that the user is the client.
     /// </summary>
-    private void PopupUserOthersAndTarget(EntityUid targetUid, EntityUid userUid, string prefix)
+    private void PopupUserOthersAndTarget(EntityUid targetUid, EntityUid userUid, string prefix, PopupType popupType)
     {
         var userValueTuple = ((string, object))("userName", Identity.Name(userUid, EntityManager));
         var targetValueTuple = ((string, object))("targetName", Identity.Name(targetUid, EntityManager));
@@ -130,7 +130,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             Loc.GetString(prefix + "-user", targetValueTuple),
             userUid,
             userUid,
-            type: PopupType.SmallCaution
+            type: popupType
         );
 
         // Others
@@ -139,7 +139,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             userUid,
             Filter.PvsExcept(userUid, entityManager: EntityManager).RemovePlayerByAttachedEntity(targetUid),
             true,
-            type: PopupType.MediumCaution
+            type: popupType
         );
 
         // Target
@@ -148,7 +148,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             targetUid, // only target gets the popup on themselves
             Filter.Empty().FromEntities(targetUid), // because of doafter jank, thank you [REDACTED] very much
             false,
-            type: PopupType.LargeCaution
+            type: popupType
         );
     }
 
@@ -183,7 +183,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
             !_gameTiming.IsFirstTimePredicted)
             return;
 
-        PopupUserOthersAndTarget(targetEntity, userUid, "removable-markings-removal-started");
+        PopupUserOthersAndTarget(targetEntity, userUid, "removable-markings-removal-started", PopupType.MediumCaution);
     }
 
     private void OnMarkingRemovalDoAfterFinished(Entity<RemovableMarkingsComponent> entity, ref MarkingRemovalDoAfterEvent args)
@@ -206,11 +206,12 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
 
         if (entity.Comp.RemovedEntity is { } removedEntityId)
         {
-            var removedUid = Spawn(removedEntityId);
-            _handsSystem.TryForcePickupAnyHand(args.User, removedUid);
+            // try pickup, default to dropping on floor
+            var removedUid = Spawn(removedEntityId, Transform(entity).Coordinates);
+            _handsSystem.TryPickupAnyHand(args.User, removedUid);
         }
 
-        PopupUserOthersAndTarget(entity, args.User, "removable-markings-removal-finished");
+        PopupUserOthersAndTarget(entity, args.User, "removable-markings-removal-finished", PopupType.LargeCaution);
     }
 
     /// <summary>
