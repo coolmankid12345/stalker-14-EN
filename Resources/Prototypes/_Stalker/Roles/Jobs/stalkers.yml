@@ -119,16 +119,6 @@
   id: StalkerGear
   equipment:
     id: StalkerPDA
-    belt: ClothingBeltBandolierStalker
-    torso: ClothingTorsoSweaterStalkerGreen
-    legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesNovice
-    back: ClothingBackpackDuffelGreenStalker
-    pocket1: Cartridge7mmBuckshot
-    pocket2: Cartridge7mmBuckshot
-    outerClothing: ClothingOuterJacketStalker
-    mask: ClothingMaskGasMarlya
-    suitstorage: STWeaponShotgunMP155T
 
 - type: stBand
   id: STStalkerBand

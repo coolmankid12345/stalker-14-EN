@@ -1,0 +1,247 @@
+#Сталкеры
+- type: loadoutGroup
+  id: STlegsGroup
+  name: Штаны
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STlegsClothingLegsJeansBlue
+  - STlegsClothingLegsJeansStalker
+  - STlegsClothingLegsJeansRussianPixel
+  - STlegsClothingLegsJeansBlackNew
+  - STlegsClothingLegsJeansGorka
+  - STlegsClothingLegsJeansGorka6
+  - STlegsClothingLegsJeansBereza
+  - STlegsClothingLegsJeansGreenCargo
+  - STlegsClothingLegsJeansGreyCargo
+  - STlegsClothingLegsJeansBlackCargo
+  - STlegsClothingLegsJeansBrownCargo
+  - STlegsClothingLegsJeansSandCargo
+  - STlegsClothingLegsJeansUa
+  - STlegsClothingLegsJeansUa2
+  - STlegsSTClothingLegsPantsGray
+  - STlegsClothingLegsBattlePantsBlack
+  - STlegsClothingLegsVeryBlueJenas
+  - STlegsClothingLegsCombatForest
+  - STlegsClothingLegsGorka5
+  - STlegsClothingLegsGorka6b
+  - STlegsClothingLegsNavyPants
+  - STlegsClothingLegsRussianNumber
+
+- type: loadoutGroup
+  id: STShoesGroup
+  name: Обувь
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesNovice
+  - STClothingShoesBootsCombat
+  - ClothingShoesPVH
+  - ClothingShoesBootsLeather
+
+- type: loadoutGroup
+  id: STTorsoGroup
+  name: Футболки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STTorsoClothingTorsoSweaterStalkerGreen
+  - STTorsoClothingTorsoTShirtPivozavr
+  - STTorsoClothingTorsoTShirtSailorSuit
+  - STTorsoClothingTorsoTShirtColorBlack
+  - STTorsoClothingTorsoShirtRedPlaid
+  - STTorsoClothingTorsoTurtlenecksBlack
+  - STTorsoClothingTorsoTurtlenecksGorka
+  - STTorsoClothingTorsoTurtlenecksGorka6
+  - STTorsoClothingTorsoTurtlenecksBereza
+  - STTorsoClothingTorsoTurtlenecksGorkaRus
+  - STTorsoClothingTorsoTurtlenecksUN
+  - STTorsoClothingTorsoTurtlenecksUa
+  - STTorsoClothingTorsoTurtlenecksUa2
+  - STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  - STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  - STTorsoClothingTorsoTurtlenecksCombatForest
+  - STTorsoClothingTorsoTurtlenecksGorka5
+  - STTorsoClothingTorsoTurtlenecksGorka6B
+  - STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  - STTorsoClothingTorsoTurtlenecksMatrosska
+  - STTorsoSTClothingTosroTurtlenecksCZ
+  - STTorsoSTClothingTosroTurtlenecksFr
+  - STTorsoSTClothingTosroTurtlenecksKz
+  - STTorsoSTClothingTosroTurtlenecksLit
+  - STTorsoSTClothingTosroTurtlenecksPol
+  - STTorsoSTClothingTosroTurtlenecksRu
+
+- type: loadoutGroup
+  id: STOuterClothingStalkerGroup
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STOuterClothingStalker
+
+- type: loadoutGroup
+  id: STMaskStalkerGroup
+  name: Маски
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingMaskGasZaryaMono
+  - ClothingMaskGasZarya
+  - STMaskStalker
+  - ClothingMaskNeckBalaklava1
+  - ClothingMaskNeckBalaklava4
+  - ClothingMaskSkull
+  - ClothingMaskNeckBalaklava3
+  - ClothingMaskNeckFacemaskDS
+  - ClothingMaskNeckFacemask
+  - ClothingMaskNeckBalaklava2
+#Общее
+- type: loadoutGroup
+  id: STSuitstorageGroup
+  name: Оружие
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STSuitstorageSTWeaponShotgunMP155T
+  - STWeaponRifleSaiga545
+  - STWeaponShotgunTOZ34
+
+- type: loadoutGroup
+  id: STStorageTrinkets
+  name: Безделушки
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - Suka
+  - STLighter
+  - Blunt
+
+- type: loadoutGroup
+  id: STStorage
+  name: Содержимое рюкзака
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - BaseGlockMag10
+  - BasePMMag
+  - TTMag
+  - STOintment
+  - STGauze
+  - DrinkWaterBottleFull
+  - FoodTinPeaches
+
+- type: loadoutGroup
+  id: STStorageAmmunition
+  name: Патроны
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - 7mmBuckshotBox
+  - 7mmBuckshotBoxTwo
+  - 545HPBox
+  - 545FMJBox
+  - 919RIPBox
+  - 918SP7Box
+  - 919PSOGJBox
+  - 918PGJBox
+
+- type: loadoutGroup
+  id: STBackpackGroup
+  name: Рюкзаки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STBackpack
+  - ClothingBackpackTownWhiteStalker
+  - ClothingBackpackTownBlackStalker
+
+- type: loadoutGroup
+  id: STTrinketsGroupOne
+  name: Карман 1
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STBoltBagFilled
+  - WeaponPistolStalkerTT
+  - WeaponPistolStalkerPM
+  - WeaponPistolStalkerGlock
+
+- type: loadoutGroup
+  id: STTrinketsGroupTwo
+  name: Карман 2
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STCombatKnife
+
+- type: loadoutGroup
+  id: STBeltStalkerGroup
+  name: Пояс
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STBeltStalker
+
+- type: loadoutGroup
+  id: STGlasses
+  name: Очки
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingEyesGlassesCheapSunglasses
+  - ClothingEyesSalesman
+  - ClothingEyesGlasses
+#Бандиты
+- type: loadoutGroup
+  id: STOuterClothingBandit
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STOuterClothingStalkerBandit
+
+#Долг
+- type: loadoutGroup
+  id: STOuterClothingDolg
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STOuterClothingStalkerDolg
+
+#Свобода
+- type: loadoutGroup
+  id: STOuterClothingFreedom
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STOuterClothingStalkerFreedom
+
+#Учёные
+- type: loadoutGroup
+  id: STOuterClothingSci
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STOuterClothingStalkerSci
+
+#Серафимы
+- type: loadoutGroup
+  id: STOuterClothingSeraphims
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STOuterClothingStalkerSeraphims
+
+#Чистое небо
+- type: loadoutGroup
+  id: STOuterClothingStalkerClearSky
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - STOuterClothingStalkerClearSky

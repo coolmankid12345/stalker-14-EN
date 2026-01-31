@@ -137,7 +137,8 @@
     - !type:AddComponentSpecial
       components:
         - type: Access
-          tags:
+          groups:
+            - Sci
             - SciHead
         - type: Bands
           band: Stalker
@@ -158,11 +159,6 @@
   id: SciGear
   equipment:
     id: ScientistPDA
-    legs: ClothingLegsJeansSandCargo
-    shoes: STClothingShoesBootsCombatFilled
-    torso: ClothingTorsoShirtWhiteScientific
-    outerClothing: ClothingOuterJacketSCI
-    gloves: ClothingHandsGlovesNitrile
 
 - type: stBand
   id: STSciBand

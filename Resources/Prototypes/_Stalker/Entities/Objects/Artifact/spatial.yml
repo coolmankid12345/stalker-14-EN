@@ -18,15 +18,25 @@
     - type: PersonalDamage
       damage:
         types:
-          Radiation: -10
+          Radiation: -5
           Asphyxiation: -2
       interval: 1
     - type: Armor
       hiddenExamine: true
       armorClass: 2
       modifiers:
+        flatReductions:
+          Radiation: 2
+          Caustic: 1
+          Heat: 1
+          Compression: 1
+          Shock: 1
+          Cold: 1
+          Psy: 3
         coefficients:
-          Psy: 0.5
+          Radiation: 0.5
+          Caustic: 0.5
+          Compression: 0.5
           Heat: 0.5
           Shock: 0.5
           Cold: 0.5
@@ -62,6 +72,11 @@
         types:
           Radiation: 0.1
       interval: 1
+    - type: Armor
+      hiddenExamine: true
+      modifiers:
+        flatReductions:
+          Psy: 2
 #
 - type: entity
   parent: BaseArtifactStorage
@@ -82,21 +97,20 @@
     - type: PersonalDamage
       damage:
         types:
-          Cellular: 0.05
+          Piercing: -0.3
+          Slash: -0.5
+          Blunt: -0.5
+          Heat: 0.3
       interval: 1
-    - type: Armor
-      hiddenExamine: true
-      modifiers:
-        coefficients:
-          Psy: 2
     - type: Storage
       grid:
         - 0,0,3,3
     - type: ClothingSpeedModifier
       walkModifier: 0.9
       sprintModifier: 0.9
-    - type: STWeight
-      self: 10
+    - type: Reflect
+      reflectProb: 0.9
+      spread: 340
 
 - type: entity
   parent: BaseArtifactStorage
@@ -118,13 +132,18 @@
       staminaDamage: -3
       damage:
         types:
-          Compression: 1
+          Radiation: 1
+          Psy: 1
       interval: 1
     - type: Armor
       hiddenExamine: true
       modifiers:
-        coefficients:
-          Psy: 2
+        flatReductions:
+          Piercing: 2
+          Slash: 2
+          Blunt: 2
     - type: Storage
       grid:
         - 0,0,8,8
+    - type: STWeight
+      self: -15

@@ -19,18 +19,20 @@
   - type: PersonalDamage
     damage:
       types:
-        Bloodloss: -0.4
-        Radiation: -0.4
-        Poison: -0.6
+        Bloodloss: -0.5
+        Radiation: -0.6
+        Caustic: -1
+
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
+      flatReductions:
+        Caustic: 1
       coefficients:
-        Poison: 0.95
-        Caustic: 0.8
-        Asphyxiation: 1.05
+        Compression: 1.1
+        Shock: 1.1
 
 
 - type: entity
@@ -54,24 +56,27 @@
   - type: PersonalDamage
     damage:
       types:
-        Bloodloss: -1
-        Radiation: -2
-        Poison: -2
-        Cellular: -1
-        Heat: -0.4
+        Compression: -0.4
+        Bloodloss: -0.7
+        Radiation: -0.5
+        Heat: -0.5
         Shock: -0.4
-        Cold: -0.4
-        Caustic: -0.4
+        Psy: -0.1
+        Cold: -0.3
+        Caustic: -0.7
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Cellular: 0.95
-        Poison: 0.85
-        Caustic: 0.75
-        Asphyxiation: 1.1
+        Piercing: 1.1
+        Slash: 1.2
+        Blunt: 1.2
+        Heat: 0.9
+        Compression: 0.85
+        Caustic: 0.9
+        Shock: 0.95
 
 
 - type: entity
@@ -95,24 +100,27 @@
   - type: PersonalDamage
     damage:
       types:
-        Bloodloss: -2
-        Radiation: -3
-        Poison: -3
-        Cellular: -2
-        Heat: -1
+        Compression: -1
+        Bloodloss: -1
+        Radiation: -1.5
+        Heat: -0.8
         Shock: -1
         Cold: -1
-        Caustic: -1
+        Psy: -1
+        Caustic: -0.5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
+      flatReductions:
+        Radiation: 1
+        Heat: 1
+        Compression: 1
+        Shock: 1
+        Cold: 1
       coefficients:
-        Cellular: 0.85
-        Poison: 0.75
-        Caustic: 0.65
-        Asphyxiation: 1.15
+        Radiation: 0.8
 
 - type: entity
   parent: BaseArtifact
@@ -135,23 +143,29 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: -3
-        Poison: -4
-        Cellular: -2
-        Heat: -1.5
-        Shock: -1.5
-        Cold: -1.5
-        Caustic: -1.5
+        Piercing: -1
+        Slash: -2
+        Blunt: -2
+        Radiation: -1
+        Compression: 0.7
+        Psy: -1.5
+        Bloodloss: -3
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
+      flatReductions:
+        Slash: 1
+        Blunt: 1
+        Caustic: 2
       coefficients:
-        Cellular: 0.75
-        Poison: 0.65
-        Caustic: 0.6
-        Asphyxiation: 1.2
+        Slash: 0.8
+        Blunt: 0.8
+        Radiation: 0.75
+        Caustic: 0.5
+        Heat: 0.8
+        Compression: 1.2
 
 - type: entity
   parent: BaseArtifact
@@ -173,21 +187,20 @@
   - type: PersonalDamage
     damage:
       types:
-        Bloodloss: -3
-        Radiation: -6
-        Poison: -4
-        Cellular: -3
-        Heat: -2
-        Shock: -2
-        Cold: -2
+        Piercing: -2.5
+        Blunt: -1
+        Bloodloss: -2
+        Radiation: -1.5
         Caustic: -2
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
-      coefficients:
-        Cellular: 0.6
-        Poison: 0.55
-        Caustic: 0.5
-        Asphyxiation: 1.25
+      flatReductions:
+        Radiation: 1
+        Compression: 2
+        Shock: 1
+        Caustic: 2
+        Cold: 1
+        Psy: 1

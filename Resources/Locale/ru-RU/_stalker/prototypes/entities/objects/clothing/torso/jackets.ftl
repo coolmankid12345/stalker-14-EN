@@ -1,7 +1,7 @@
-ent-ClothingTorsoJacketAdidas = adidas jacket
-ent-ClothingTorsoJacketAdidasBlue = blue adidas jacket
-ent-ClothingTorsoJacketAdidasRed = red adidas jacket
-ent-ClothingTorsoJacketProjectPeshka = project jacket
-ent-ClothingTorsoJacketProjectLeader = project leader jacket
-ent-ClothingTorsoJacketPolice = police jacket
-ent-STClothingTorsoJacketGray = gray jacket
+ent-ClothingTorsoJacketAdidas = куртка Adidas
+ent-ClothingTorsoJacketAdidasBlue = синяя куртка Adidas
+ent-ClothingTorsoJacketAdidasRed = красная куртка Adidas
+ent-ClothingTorsoJacketProjectPeshka = куртка проекта
+ent-ClothingTorsoJacketProjectLeader = куртка лидера проекта
+ent-ClothingTorsoJacketPolice = полицейская куртка
+ent-STClothingTorsoJacketGray = серая куртка

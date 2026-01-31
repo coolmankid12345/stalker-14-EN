@@ -23,6 +23,9 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      storagebase: !type:Container
+        ents: [ ]
+      item_slot: !type:ContainerSlot { }
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/Saiga/5.rsi
@@ -36,6 +39,32 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_5:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_5:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_5:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/Saiga/elastic_rubber.rsi
+
 - type: entity
   id: Saiga1270Mag10
   name: магазин Сайги 12х70 (10)
@@ -59,6 +88,22 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemMapper
+    mapLayers:
+      red_10:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_10:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_10:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/Saiga/elastic_rubber.rsi
+
 - type: entity
   id: Saiga1270Drum
   name: барабан Сайги 12х70 (20)
@@ -82,6 +127,21 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemMapper
+    mapLayers:
+      red_drum:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_drum:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_drum:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/Saiga/elastic_rubber.rsi
 
 - type: entity
   parent: BaseItem
@@ -180,6 +240,21 @@
     size: Normal
     shape:
     - 0,0,0,1
+  - type: ItemMapper
+    mapLayers:
+      red_9:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_9:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_9:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/aa12/elastic_rubber.rsi
 
 - type: entity
   parent: DrumAutoAssSmall
@@ -204,6 +279,21 @@
     size: Normal
     shape:
     - 0,0,1,1
+  - type: ItemMapper
+    mapLayers:
+      red_20:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_20:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_20:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/aa12/elastic_rubber.rsi
 
 - type: entity
   parent: DrumAutoAssSmall

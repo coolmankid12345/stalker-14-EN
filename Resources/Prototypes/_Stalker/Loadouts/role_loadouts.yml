@@ -1,0 +1,312 @@
+# Сталкеры
+- type: roleLoadout
+  id: JobStalker
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STOuterClothingStalkerGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+
+- type: roleLoadout
+  id: JobStalkerVeteran
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STOuterClothingStalkerGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+
+- type: roleLoadout
+  id: JobStalkerGuide
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STOuterClothingStalkerGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+
+# Бандиты
+- type: roleLoadout
+  id: JobStalkerBandit
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingBandit
+
+- type: roleLoadout
+  id: JobStalkerHeadBandit
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingBandit
+
+# Долг
+- type: roleLoadout
+  id: JobStalkerDolg
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingDolg
+
+- type: roleLoadout
+  id: JobStalkerHeadDolg
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingDolg
+
+# Свобода
+- type: roleLoadout
+  id: JobStalkerFreedom
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingFreedom
+
+- type: roleLoadout
+  id: JobStalkerHeadFreedom
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingFreedom
+
+# Ученые
+- type: roleLoadout
+  id: Jobsci
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingSci
+
+- type: roleLoadout
+  id: Jobsci_decan
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingSci
+
+- type: roleLoadout
+  id: Jobsci_rector
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingSci
+
+# Серафимы
+- type: roleLoadout
+  id: JobSeraphim
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingSeraphims
+
+- type: roleLoadout
+  id: JobSeraphimHead
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingSeraphims
+
+- type: roleLoadout
+  id: JobSeraphimCherubim
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingSeraphims
+
+# Чистое небо
+- type: roleLoadout
+  id: JobStalkerClearSky
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingStalkerClearSky
+
+- type: roleLoadout
+  id: JobStalkerClearSkyHead
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingStalkerClearSky

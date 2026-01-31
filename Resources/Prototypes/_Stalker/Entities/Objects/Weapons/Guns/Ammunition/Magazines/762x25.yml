@@ -30,6 +30,31 @@
       tags:
         - STCartridge725
     capacity: 8
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_mag:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_mag:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_mag:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/725/elastic_rubber.rsi
 
 - type: entity
   id: BasePPSHMag
@@ -64,11 +89,40 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      storagebase: !type:Container
+        ents: [ ]
+      item_slot: !type:ContainerSlot { }
   - type: MagazineVisuals
     magState: mag
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_magazine:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_magazine:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_magazine:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/725/elastic_rubber.rsi
+
 - type: entity
   id: PPSHDrum
   name: барабан ППШ (71)
@@ -96,3 +150,28 @@
       tags:
         - STCartridge725
     capacity: 71
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_drum:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_drum:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_drum:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/725/elastic_rubber.rsi
