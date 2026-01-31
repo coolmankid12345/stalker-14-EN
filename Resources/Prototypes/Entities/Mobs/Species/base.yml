@@ -87,7 +87,7 @@
     horizontalRotation: 90
   - type: HumanoidAppearance
     species: Human
-  - type: RemovableMarkings
+  - type: RemovableMarkings # ST14-EN: added RemovableMarkings here
     compatibleMarkingFlags: Cat
     requiredToolQuality: Slicing
     removalEmoteId: Scream
