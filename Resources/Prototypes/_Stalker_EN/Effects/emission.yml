@@ -22,3 +22,5 @@
     ignoreInsulation: true
     shockDamage: 40
     shockTime: 0.5
+  - type: TimedDespawn
+    lifetime: 1.5

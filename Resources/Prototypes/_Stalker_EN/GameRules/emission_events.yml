@@ -55,3 +55,17 @@
       lightningSpawnRadius: 30
       lightningIntervalRange: 4, 15
       lightningEffectProtoId: EmissionLightningEffect
+
+- type: entity
+  parent: STEmissionEvent
+  id: STEmissionEventDebug
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: EmissionEventRule
+      # Timing configuration (all values in seconds)
+      mainAmbientDelay: 4    # Main ambient track (emission.ogg)
+      stage2Delay: 8         # Stage 2 sound + announcement
+      redHueDelay: 15        # Red hue effect starts
+      damageStartDelay: 15   # Damage begins
+      redHueBeforeEndDelay: 30
+      damageEndDelay: 50     # Damage ends, stage 3 plays, red hue clears
