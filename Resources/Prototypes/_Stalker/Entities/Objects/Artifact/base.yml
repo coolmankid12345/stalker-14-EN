@@ -7,7 +7,7 @@
   components:
     - type: PsyonicsAbsorbable
     - type: STWeight
-      self: 5
+      self: 3
     - type: PointLightDisableOnEquip
     - type: ZoneArtifactDetectorTarget
       detectable: true
