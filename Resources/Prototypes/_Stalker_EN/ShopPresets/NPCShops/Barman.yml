@@ -1,6 +1,9 @@
 - type: shopPreset
   id: STNPCBarmanPresetEN # 1x Standard - Pending Economy Change
   itemsForSale:
+    # Exclusive -
+    DismemberedMarkingEars: 575
+
     # Thermal group - 1
     ZoneArtifactFireball: 540
     ZoneArtifactEye: 810
