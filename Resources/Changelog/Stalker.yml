@@ -91,5 +91,13 @@
   id: 9
   time: '2026-02-01T14:51:53.182867+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/362
+- author: LaCumbiaDelCoronavirus
+  changes:
+  - message: Light from flashlights and other things affected by player's rotation
+      will now rotate more smoothly in combat mode.
+    type: Tweak
+  id: 10
+  time: '2026-02-01T14:54:15.133593+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/363
 Name: Stalker
 Order: -1
