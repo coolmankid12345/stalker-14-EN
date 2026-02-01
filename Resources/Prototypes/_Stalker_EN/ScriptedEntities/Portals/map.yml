@@ -165,3 +165,17 @@
   components:
   - type: NewMapTeleport
     portalName: Duty-Bar
+
+# Merc
+- type: entity
+  parent: MapTeleportBase
+  id: MercBase-MercUnderground
+  name: Merc Base - Merc Underground
+  components:
+  - type: NewMapTeleport
+    portalName: MercBase-MercUnderground
+    allowAll: false
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+
