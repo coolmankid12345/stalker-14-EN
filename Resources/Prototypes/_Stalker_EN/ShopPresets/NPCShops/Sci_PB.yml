@@ -2,7 +2,7 @@
   id: NpcSciPBEN # 1.25x - Pending Economy Change
   itemsForSale:
     # Exclusive
-    DismemberedMarkingEars: 750 # realistically researchers would want this item
+    DismemberedMarkingEars: 725 # realistically researchers would want this item
 
     # Thermal group - 1
     ZoneArtifactFireball: 680
