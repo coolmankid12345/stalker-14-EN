@@ -21,11 +21,12 @@
       duration: 360  # Total event duration (must be >= damageEndDelay + buffer)
     - type: EmissionEventRule
       # Timing configuration (all values in seconds)
-      mainAmbientDelay: 30    # Main ambient track (emission.ogg)
-      stage2Delay: 60         # Stage 2 sound + announcement
-      redHueDelay: 100        # Red hue effect starts
-      damageStartDelay: 100   # Damage begins
-      damageEndDelay: 310     # Damage ends, stage 3 plays, red hue clears
+      mainAmbientDelay: 30      # Main ambient track (emission.ogg)
+      stage2Delay: 60           # Stage 2 sound + announcement
+      redHueDelay: 100          # Red hue effect starts
+      damageStartDelay: 100     # Damage begins
+      redHueBeforeEndDelay: 290 # Red hue effect begins getting weaker
+      damageEndDelay: 310       # Damage ends, stage 3 plays, red hue totally clears
       damageInterval: 3
 
       # Damage configuration
@@ -35,7 +36,8 @@
 
       # Visual effects
       shakeStrength: 50
-      emissionColor: "#FF0000FF"
+      primaryEmissionColor: "#FF0000FF"
+      secondaryEmissionColor: "#E05B26FF"
 
       # Announcements
       announcementSender: "S.T.A.L.K.E.R Network"
@@ -48,3 +50,22 @@
       rainDurationMin: 360    # 6-10 minutes random duration
       rainDurationMax: 600
       rainWeather: STStorm
+
+      # Lightning
+      lightningSpawnRadius: 30
+      lightningIntervalRange: 4, 15
+      lightningEffectProtoId: EmissionLightningEffect
+
+- type: entity
+  parent: STEmissionEvent
+  id: STEmissionEventDebug
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: EmissionEventRule
+      # Timing configuration (all values in seconds)
+      mainAmbientDelay: 4    # Main ambient track (emission.ogg)
+      stage2Delay: 8         # Stage 2 sound + announcement
+      redHueDelay: 15        # Red hue effect starts
+      damageStartDelay: 15   # Damage begins
+      redHueBeforeEndDelay: 30
+      damageEndDelay: 50     # Damage ends, stage 3 plays, red hue clears

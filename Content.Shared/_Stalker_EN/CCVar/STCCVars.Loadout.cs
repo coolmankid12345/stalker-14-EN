@@ -1,12 +1,9 @@
-using Robust.Shared;
 using Robust.Shared.Configuration;
 
 namespace Content.Shared._Stalker_EN.CCVar;
 
-/// <summary>
-/// CVars for the loadout system.
-/// </summary>
-[CVarDefs]
+// CVars for loadout system
+
 public sealed partial class STCCVars
 {
     /// <summary>

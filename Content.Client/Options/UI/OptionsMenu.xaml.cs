@@ -19,6 +19,9 @@ namespace Content.Client.Options.UI
             Tabs.SetTabTitle(3, Loc.GetString("ui-options-tab-audio"));
             Tabs.SetTabTitle(4, Loc.GetString("ui-options-tab-accessibility"));
 
+            // ST14-EN: added our tab here
+            Tabs.SetTabTitle(5, Loc.GetString("ui-options-tab-stalkeren"));
+
             UpdateTabs();
         }
 
@@ -28,6 +31,9 @@ namespace Content.Client.Options.UI
             MiscTab.Control.ReloadValues();
             AccessibilityTab.Control.ReloadValues();
             AudioTab.Control.ReloadValues();
+
+            // ST14-EN: added our tab here
+
         }
     }
 }

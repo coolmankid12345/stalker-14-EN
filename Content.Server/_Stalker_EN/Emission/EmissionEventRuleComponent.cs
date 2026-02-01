@@ -1,4 +1,4 @@
-using Content.Server._Stalker_EN.Emission;
+using System.Numerics;
 using Content.Shared.Damage;
 using Content.Shared.Weather;
 using Robust.Shared.Audio;
@@ -71,7 +71,16 @@ public sealed partial class EmissionEventRuleComponent : Component
     public TimeSpan DamageStartDelay = TimeSpan.FromSeconds(100);
 
     /// <summary>
+    /// Delay before the red hue effect starts fading out and getting weaker.
+    /// Effect will be totally gone after <see cref="DamageEndDelay"/>.
+    /// This must not be later than <see cref="DamageEndDelay"/>.
+    /// </summary>
+    [DataField]
+    public TimeSpan RedHueBeforeEndDelay = TimeSpan.FromSeconds(300);
+
+    /// <summary>
     /// Delay before damage ends and stage 3 plays.
+    /// This must not be sooner than <see cref="RedHueBeforeEndDelay"/>.
     /// </summary>
     [DataField]
     public TimeSpan DamageEndDelay = TimeSpan.FromSeconds(330);
@@ -86,7 +95,10 @@ public sealed partial class EmissionEventRuleComponent : Component
     public float ShakeStrength = 50f;
 
     [DataField]
-    public Color EmissionColor = Color.FromHex("#FF0000FF");
+    public Color PrimaryEmissionColor = Color.FromHex("#FF0000FF");
+
+    [DataField]
+    public Color SecondaryEmissionColor = Color.FromHex("#E05B26FF");
 
     /// <summary>
     /// How many seconds before damage ends to start rain.
@@ -124,4 +136,28 @@ public sealed partial class EmissionEventRuleComponent : Component
     public bool RainStarted;
 
     public bool AmbientLightSet;
+
+
+    #region Lightning
+
+    /// <summary>
+    ///     Maximum distance that lightning can spawn from a player.
+    /// </summary>
+    [DataField]
+    public float LightningSpawnRadius = 20f; // slightly smaller than PVS range which is 25
+
+    /// <summary>
+    ///     Minimum and maximum random interval (in seconds) between lightning spawned per player.
+    /// </summary>
+    [DataField]
+    public Vector2 LightningIntervalRange = new(5f, 10f);
+
+    /// <summary>
+    ///     Entity prototype of lightning to spawn.
+    ///         Keep null for no lightning.
+    /// </summary>
+    [DataField]
+    public EntProtoId? LightningEffectProtoId = null;
+
+    #endregion
 }

@@ -4,6 +4,7 @@ using Content.Server._Stalker.StationEvents.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.StationEvents.Events;
+using Content.Shared._Stalker_EN.Emission;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
 using Content.Shared.GameTicking.Components;
@@ -32,6 +33,7 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
+    [Dependency] private readonly EmissionLightningSystem _emissionLightningSystem = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     protected override void Added(EntityUid uid, EmissionEventRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
@@ -73,7 +75,7 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         // Set red hue (separate timing from main ambient)
         if (!component.AmbientLightSet && elapsed >= component.RedHueDelay)
         {
-            SetAmbientLightColor(component.EmissionColor);
+            SetAmbientLightColor(component);
             component.AmbientLightSet = true;
         }
 
@@ -91,6 +93,21 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         {
             component.InDamageWindow = true;
             component.NextDamageTick = _timing.CurTime;
+
+            if (component.LightningEffectProtoId is { } lightningEffectProtoId)
+            {
+                _emissionLightningSystem.Refresh();
+
+                // i dont care that new blowout target added during emission don't get this component added
+                var targetQuery = EntityQueryEnumerator<BlowoutTargetComponent>();
+                while (targetQuery.MoveNext(out var targetUid, out _))
+                {
+                    var lightningSpawnerComponent = EnsureComp<EmissionLightningSpawnerComponent>(targetUid);
+                    lightningSpawnerComponent.SpawnRadius = component.LightningSpawnRadius;
+                    lightningSpawnerComponent.LightningIntervalRange = component.LightningIntervalRange;
+                    lightningSpawnerComponent.LightningEffectProtoId = lightningEffectProtoId;
+                }
+            }
         }
 
         // Rain starts before stage 3
@@ -113,6 +130,10 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         if (component.InDamageWindow && elapsed >= component.DamageEndDelay)
         {
             component.InDamageWindow = false;
+            var targetQuery = EntityQueryEnumerator<EmissionLightningSpawnerComponent>();
+            while (targetQuery.MoveNext(out var targetUid, out var spawnerComponent))
+                RemCompDeferred(targetUid, spawnerComponent);
+
             ClearAmbientLightColor();
 
             if (!component.SoundsPlayed.HasFlag(EmissionSoundsPlayed.Stage3))
@@ -167,19 +188,31 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         _chatSystem.DispatchFilteredAnnouncement(filter, message, sender: sender, playSound: false, colorOverride: Color.Red);
     }
 
-    private void SetAmbientLightColor(Color color)
+    private void SetAmbientLightColor(EmissionEventRuleComponent emissionRuleComponent)
     {
         _mapDay.SetEnabled(false);
         var query = EntityQueryEnumerator<MapLightComponent>();
-        while (query.MoveNext(out var mapUid, out var light))
+        while (query.MoveNext(out var mapUid, out _))
         {
-            light.AmbientLightColor = color;
-            Dirty(mapUid, light);
+            var mapActiveEmissionComponent = EntityManager.ComponentFactory.GetComponent<MapActiveEmissionComponent>();
+            mapActiveEmissionComponent.PrimaryEmissionColor = emissionRuleComponent.PrimaryEmissionColor;
+            mapActiveEmissionComponent.SecondaryEmissionColor = emissionRuleComponent.SecondaryEmissionColor;
+
+            mapActiveEmissionComponent.TotalDeviationDecreaseStartTime = emissionRuleComponent.EventStartTime + emissionRuleComponent.RedHueBeforeEndDelay;
+            mapActiveEmissionComponent.TotalDeviationDecreaseRate =
+                mapActiveEmissionComponent.Deviation / (float)(emissionRuleComponent.DamageEndDelay - emissionRuleComponent.RedHueBeforeEndDelay).TotalSeconds;
+
+            AddComp(mapUid, mapActiveEmissionComponent);
+            Dirty(mapUid, mapActiveEmissionComponent);
         }
     }
 
     private void ClearAmbientLightColor()
     {
+        var query = EntityQueryEnumerator<MapActiveEmissionComponent>();
+        while (query.MoveNext(out var mapUid, out var activeEmissionComponent))
+            RemCompDeferred(mapUid, activeEmissionComponent);
+
         _mapDay.SetEnabled(true);
     }
 }
