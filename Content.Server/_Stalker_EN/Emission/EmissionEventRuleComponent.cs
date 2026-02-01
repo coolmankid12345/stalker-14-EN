@@ -16,6 +16,29 @@ public enum EmissionSoundsPlayed
     Stage3 = 1 << 3
 }
 
+/// <summary>
+///     Indicates whats going on.
+/// </summary>
+public enum EmissionStage : byte
+{
+    None = 0,
+
+    /// <summary>
+    ///     Buildup to the emission but nothing has happened yet.
+    /// </summary>
+    Stage1 = 1 << 0,
+
+    /// <summary>
+    ///     When players are taking damage to the emission.
+    /// </summary>
+    Stage2 = 1 << 1,
+
+    /// <summary>
+    ///     After the emission has finished.
+    /// </summary>
+    Stage3 = 1 << 2,
+}
+
 [RegisterComponent, Access(typeof(EmissionEventRuleSystem))]
 public sealed partial class EmissionEventRuleComponent : Component
 {
@@ -131,7 +154,7 @@ public sealed partial class EmissionEventRuleComponent : Component
 
     public EmissionSoundsPlayed SoundsPlayed = EmissionSoundsPlayed.None;
 
-    public bool InDamageWindow;
+    public EmissionStage Stage = EmissionStage.None;
 
     public bool RainStarted;
 

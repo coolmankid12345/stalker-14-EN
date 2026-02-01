@@ -42,7 +42,7 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
 
         component.EventStartTime = _timing.CurTime;
         component.SoundsPlayed = EmissionSoundsPlayed.None;
-        component.InDamageWindow = false;
+        component.Stage = EmissionStage.Stage1;
         component.RainStarted = false;
         component.AmbientLightSet = false;
 
@@ -88,10 +88,10 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             component.SoundsPlayed |= EmissionSoundsPlayed.Stage2;
         }
 
-        // Damage starts
-        if (!component.InDamageWindow && elapsed >= component.DamageStartDelay)
+        // Damage starts; this is stage2
+        if (component.Stage == EmissionStage.Stage1 && elapsed >= component.DamageStartDelay)
         {
-            component.InDamageWindow = true;
+            component.Stage = EmissionStage.Stage2;
             component.NextDamageTick = _timing.CurTime;
 
             if (component.LightningEffectProtoId is { } lightningEffectProtoId)
@@ -127,9 +127,10 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         }
 
         // Damage ends, play stage3 sound and announcement, clear ambient
-        if (component.InDamageWindow && elapsed >= component.DamageEndDelay)
+        if (component.Stage == EmissionStage.Stage2 && elapsed >= component.DamageEndDelay)
         {
-            component.InDamageWindow = false;
+            component.Stage = EmissionStage.Stage3;
+
             var targetQuery = EntityQueryEnumerator<EmissionLightningSpawnerComponent>();
             while (targetQuery.MoveNext(out var targetUid, out var spawnerComponent))
                 RemCompDeferred(targetUid, spawnerComponent);
@@ -145,7 +146,7 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         }
 
         // Apply damage during damage window
-        var doDamage = component.InDamageWindow && _timing.CurTime >= component.NextDamageTick;
+        var doDamage = component.Stage == EmissionStage.Stage2 && _timing.CurTime >= component.NextDamageTick;
         if (doDamage)
         {
             component.NextDamageTick = _timing.CurTime + component.DamageInterval;
@@ -169,7 +170,7 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             }
 
             // Apply camera shake during damage window
-            if (component.InDamageWindow)
+            if (component.Stage == EmissionStage.Stage2)
             {
                 var kick = new Vector2(_random.NextFloat(), _random.NextFloat()) * component.ShakeStrength;
                 _cameraRecoil.KickCamera(target, kick);
