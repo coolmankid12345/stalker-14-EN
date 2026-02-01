@@ -38,7 +38,7 @@ public sealed partial class EmissionLightningSpawnerComponent : Component
     ///     Range of lightning bolts.
     /// </summary>
     [DataField]
-    public float BoltRange = 5f;
+    public float BoltRange = 4.5f;
 
     /// <summary>
     ///     Bolts of lightning to shoot on every spawn.
