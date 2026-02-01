@@ -83,5 +83,13 @@
   id: 8
   time: '2026-01-29T20:58:58.913420+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/358
+- author: teecoding
+  changes:
+  - message: Possible fix for faction dogtags not showing correct chat bubbles when
+      spawning or reconnecting
+    type: Fix
+  id: 9
+  time: '2026-02-01T14:51:53.182867+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/362
 Name: Stalker
 Order: -1
