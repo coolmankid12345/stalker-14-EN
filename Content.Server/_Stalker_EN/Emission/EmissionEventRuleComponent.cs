@@ -167,7 +167,7 @@ public sealed partial class EmissionEventRuleComponent : Component
     ///     Maximum distance that lightning can spawn from a player.
     /// </summary>
     [DataField]
-    public float LightningSpawnRadius = 20f; // slightly smaller than PVS range which is 25
+    public float LightningSpawnRadius = 20f;
 
     /// <summary>
     ///     Minimum and maximum random interval (in seconds) between lightning spawned per player.

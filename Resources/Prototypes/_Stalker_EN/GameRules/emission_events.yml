@@ -52,7 +52,7 @@
       rainWeather: STStorm
 
       # Lightning
-      lightningSpawnRadius: 30
+      lightningSpawnRadius: 20 # slightly smaller than PVS range which is 25
       lightningIntervalRange: 4, 15
       lightningEffectProtoId: EmissionLightningEffect
 
