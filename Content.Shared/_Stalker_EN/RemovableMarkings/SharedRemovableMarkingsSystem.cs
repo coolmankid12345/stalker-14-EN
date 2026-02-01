@@ -12,6 +12,7 @@ using Content.Shared.Tools.Components;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Robust.Shared.Collections;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -20,6 +21,7 @@ namespace Content.Shared._Stalker_EN.RemovableMarkings;
 
 public abstract class SharedRemovableMarkingsSystem : EntitySystem
 {
+    [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
@@ -188,7 +190,8 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
 
     private void OnMarkingRemovalDoAfterFinished(Entity<RemovableMarkingsComponent> entity, ref MarkingRemovalDoAfterEvent args)
     {
-        if (args.Cancelled)
+        if (args.Cancelled ||
+            !_gameTiming.IsFirstTimePredicted)
             return;
 
         TryForcefullyRemoveValidMarkings(entity);
@@ -204,7 +207,8 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
         if (_toolQuery.TryGetComponent(args.Used, out var toolComponent))
             _toolSystem.PlayToolSound(args.Used.Value, toolComponent, user: args.User);
 
-        if (entity.Comp.RemovedEntity is { } removedEntityId)
+        if (entity.Comp.RemovedEntity is { } removedEntityId &&
+            _netManager.IsServer /* TODO LCDC: use PredictedSpawn when RT update */)
         {
             // try pickup, default to dropping on floor
             var removedUid = Spawn(removedEntityId, Transform(entity).Coordinates);

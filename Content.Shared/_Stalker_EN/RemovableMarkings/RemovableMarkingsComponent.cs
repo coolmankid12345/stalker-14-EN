@@ -42,16 +42,16 @@ public sealed partial class RemovableMarkingsComponent : Component
     /// <summary>
     ///     Entity spawned on victim after successful
     /// </summary>
-    [DataField, ViewVariables]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public EntProtoId? RemovedEntity = null;
 
-    [DataField, ViewVariables]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan RemovalDoAfterLength = TimeSpan.FromSeconds(10);
 
     /// <summary>
     ///     Specifies what kinds of markings can be removed.
     /// </summary>
-    [DataField, ViewVariables]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public RemovableMarkingFlags CompatibleMarkingFlags = RemovableMarkingFlags.None;
 }
 
@@ -67,7 +67,7 @@ public enum RemovableMarkingFlags : byte
     None = 0,
 
     /// <summary>
-    ///     Cat-ears/tails.
+    ///     Cat-ears/whatever similar to that.
     /// </summary>
     Cat = 1 << 0
 }
