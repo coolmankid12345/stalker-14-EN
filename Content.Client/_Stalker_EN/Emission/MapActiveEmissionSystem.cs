@@ -39,7 +39,6 @@ public sealed class MapActiveEmissionSystem : EntitySystem
                 _gameTiming.CurTime >= decreaseStartTime)
             {
                 activeEmissionComponent.Deviation -= activeEmissionComponent.TotalDeviationDecreaseRate * frameTime;
-                Log.Info($"Decreasing; rate {activeEmissionComponent.TotalDeviationDecreaseRate}, real {activeEmissionComponent.TotalDeviationDecreaseRate * frameTime}, now {_gameTiming.CurTime}, start {decreaseStartTime}, now {activeEmissionComponent.Deviation}");
             }
 
             mapLightComponent.AmbientLightColor = CalcEmissionColor(
@@ -47,37 +46,6 @@ public sealed class MapActiveEmissionSystem : EntitySystem
                 activeEmissionComponent.Deviation
             );
         }
-    }
-
-    // This is meant to be deterministic or whatever
-    private Color CalcEmissionColorFFF(
-        MapActiveEmissionComponent activeEmissionComponent,
-        float deviation // from 0-1; 0 means no deviation from primary color
-    )
-    {
-        // Yes these values are giga hardcoded but it doesn't really matter.
-
-        var t = (float)_gameTiming.CurTime.TotalSeconds * activeEmissionComponent.Strength; // makes it smaller so that emission is slower
-
-        var slow = MathF.Sin(t * 0.6f);
-        var fast = MathF.Sin(t * 7.0f + slow * 4f);
-        var folded = MathF.Abs(fast);
-
-        var chs = MathF.Pow(folded, 0.35f);
-
-        // Flicker
-        var envelope = MathF.Abs(MathF.Sin(t * 0.7f));
-        var flicker = MathF.Abs(MathF.Sin(t * 8f + fast * 3f));
-        flicker = MathF.Pow(flicker, 0.35f);
-        chs += 0.25f * flicker * envelope;
-
-        chs = Math.Clamp(chs, 0f, 1f) * Math.Clamp(deviation, 0f, 1f);
-
-        var surge = MathF.Abs(MathF.Sin(t * 0.8f + MathF.Sin(t * 3.7f)));
-        surge = MathF.Pow(surge, 6f);
-        chs = Math.Clamp(chs + surge * deviation * 0.5f, 0f, 1f);
-
-        return Color.InterpolateBetween(activeEmissionComponent.SecondaryEmissionColor, activeEmissionComponent.PrimaryEmissionColor, chs);
     }
 
     private Color CalcEmissionColor(
