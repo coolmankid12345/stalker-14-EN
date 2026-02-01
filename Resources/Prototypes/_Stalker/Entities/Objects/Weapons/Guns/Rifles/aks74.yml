@@ -184,6 +184,19 @@
 
 - type: entity
   parent: STBaseWeaponRifleAKS74
+  id: STWeaponRifleAKS74Winter
+  name: AKS-74 (Winter)
+  description: Variant with white winter camouflage finish. Ideal for operations in snow-covered areas of the Zone.
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/_Skins/aks74-winter.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/_Skins/aks74-winter.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/_Skins/aks74-winter.rsi
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74
   id: STWeaponRifleZastavaM92
   name: Zastava M92
   description: Yugoslav and Serbian assault rifle. Variant of the Zastava M85 assault rifle chambered for the 7.62 × 39 mm cartridge. It has a recoil capacitor, a PS-2 sight, and a handle.
