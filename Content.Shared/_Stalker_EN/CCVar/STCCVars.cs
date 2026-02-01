@@ -6,7 +6,4 @@ namespace Content.Shared._Stalker_EN.CCVar;
 /// CVars for Stalker14-EN.
 /// </summary>
 [CVarDefs]
-public sealed partial class STCCVars
-{
-
-}
+public sealed partial class STCCVars { }
