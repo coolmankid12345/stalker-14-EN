@@ -107,7 +107,7 @@
         Shock: -1
         Cold: -1
         Psy: -1
-        Caustic: -0.5
+        Caustic: 0.5
     interval: 1
   - type: Armor
     hiddenExamine: true

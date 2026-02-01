@@ -177,7 +177,7 @@
   - type: STWeight
     self: -15
   - type: Reflect
-    reflectProb: 0.9
+    reflectProb: 0.1
     spread: 340
 
 - type: entity
@@ -252,7 +252,7 @@
   - type: STWeight
     self: -80
   - type: Reflect
-    reflectProb: 0.95
+    reflectProb: 0.05
     spread: 340
 
 - type: entity
@@ -316,7 +316,7 @@
         Compression: 0.4
         Psy: 0.5
   - type: Reflect
-    reflectProb: 0.65
+    reflectProb: 0.25
     spread: 340
 
 - type: entity
@@ -358,7 +358,7 @@
         Shock: 5.5
         Radiation: 5.5
   - type: Reflect
-    reflectProb: 0.9
+    reflectProb: 0.1
     spread: 320
 
 - type: entity
@@ -388,5 +388,5 @@
         Caustic: 0.3
         Cold: 0.3
   - type: Reflect
-    reflectProb: 0.8
+    reflectProb: 0.2
     spread: 300

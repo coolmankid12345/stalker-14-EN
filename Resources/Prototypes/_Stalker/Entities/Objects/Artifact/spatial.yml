@@ -109,7 +109,7 @@
       walkModifier: 0.9
       sprintModifier: 0.9
     - type: Reflect
-      reflectProb: 0.9
+      reflectProb: 0.1
       spread: 340
 
 - type: entity
