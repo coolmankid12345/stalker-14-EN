@@ -34,11 +34,12 @@
         StalkerFoodKlukva: 5
         StalkerFoodMalina: 5
         StalkerFoodKlubnika: 5
+        BookOldJournal: 15
     - name: FAMINE
       priority: 2
       items:
-        DrinkIcedTeaCan: 5
-        ViolinInstrument: 20
-        ToyGygax: 20
-        ClothingNeckLGBTPin: 15
-        ClothingNeckStoleChaplain: 100
+        GL3Grenade: 5
+        STPlushieFeltCat3: 10
+        FlippoLighter: 10
+        ClothingNeckScarfBlack: 20
+        ClothingHandsGlovesColorRed: 85
