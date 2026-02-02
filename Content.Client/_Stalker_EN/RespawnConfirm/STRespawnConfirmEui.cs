@@ -9,22 +9,32 @@ namespace Content.Client._Stalker_EN.RespawnConfirm;
 public sealed class STRespawnConfirmEui : BaseEui
 {
     private readonly STRespawnConfirmWindow _window;
+    private bool _messageSent;
 
     public STRespawnConfirmEui()
     {
         _window = new STRespawnConfirmWindow();
+        _window.OnClose += OnWindowClosed;
 
         _window.DenyButton.OnPressed += _ =>
         {
+            _messageSent = true;
             SendMessage(new STRespawnConfirmMessage(STRespawnConfirmButton.Deny));
             _window.Close();
         };
 
         _window.AcceptButton.OnPressed += _ =>
         {
+            _messageSent = true;
             SendMessage(new STRespawnConfirmMessage(STRespawnConfirmButton.Accept));
             _window.Close();
         };
+    }
+
+    private void OnWindowClosed()
+    {
+        if (!_messageSent)
+            SendMessage(new STRespawnConfirmMessage(STRespawnConfirmButton.Deny));
     }
 
     public override void Opened()
