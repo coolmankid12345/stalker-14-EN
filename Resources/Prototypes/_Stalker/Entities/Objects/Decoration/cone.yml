@@ -21,4 +21,4 @@
         mask:
         - TableMask
         layer:
-        - TableLayer
+        - LowImpassable

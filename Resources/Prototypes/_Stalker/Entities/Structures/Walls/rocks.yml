@@ -21,7 +21,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -44,7 +43,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -76,7 +74,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -99,7 +96,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -122,7 +118,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -149,7 +144,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -172,7 +166,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -195,7 +188,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -218,7 +210,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -264,7 +255,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -291,7 +281,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -314,7 +303,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -337,7 +325,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -360,7 +347,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -383,7 +369,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -406,7 +391,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -429,7 +413,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -452,7 +435,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
 
@@ -475,6 +457,5 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable

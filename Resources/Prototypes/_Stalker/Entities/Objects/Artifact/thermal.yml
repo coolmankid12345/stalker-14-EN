@@ -136,18 +136,18 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: 0.4
+        Heat: 2.5
         Compression: -3
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       flatReductions:
-        Piercing: 3
-        Slash: 3
-        Compression: 3
+        Piercing: 2
+        Slash: 2
+        Compression: 2
       coefficients:
-        Piercing: 0.4
+        Piercing: 0.6
         Slash: 0.6
         Blunt: 1.3
         Compression: 0.4
