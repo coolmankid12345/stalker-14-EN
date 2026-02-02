@@ -28,6 +28,11 @@ public sealed partial class STRadioHeadsetComponent : Component
     [DataField]
     public EntProtoId ToggleMicAction = "ActionSTRadioToggleMic";
 
-    [DataField, AutoNetworkedField, ViewVariables]
+    /// <summary>
+    /// Entity UID for the spawned toggle mic action.
+    /// Not networked or serialized - actions are recreated on MapInit and the action system
+    /// handles its own networking. This prevents stale UID serialization errors.
+    /// </summary>
+    [ViewVariables]
     public EntityUid? ToggleMicActionEntity;
 }
