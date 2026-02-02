@@ -1,0 +1,26 @@
+# Farkle Dice Game Table
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: BaseSTFarkleDiceTable
+  name: farkle dice table
+  description: A table for playing Farkle, a dice game of luck and greed. Two players race to reach the target score by rolling dice and banking points.
+  components:
+  - type: Sprite
+    sprite: Structures/Furniture/Tables/fancy_table.rsi
+    state: fanicytable
+  - type: STFarkleDice
+    targetScore: 10000
+  - type: ActivatableUI
+    key: enum.STFarkleDiceUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.STFarkleDiceUiKey.Key:
+        type: STFarkleDiceBoundUserInterface
+  - type: UseDelay
+    delay: 0.5
+
+- type: entity
+  parent: BaseSTFarkleDiceTable
+  id: STFarkleDiceTable
+  suffix: ST
