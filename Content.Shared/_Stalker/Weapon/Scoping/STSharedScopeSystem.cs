@@ -6,6 +6,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
@@ -287,6 +288,17 @@ public abstract partial class STSharedScopeSystem : EntitySystem
         scoping.Scope = scope;
         scoping.AllowMovement = scope.Comp.AllowMovement;
         Dirty(user, scoping);
+
+        // MoveInputEvent only fires on input state change, so if the player begins
+        // holding movement keys near the end of the DoAfter, the event fires before
+        // ScopingComponent exists and the movement goes undetected.
+        if (!scoping.AllowMovement &&
+            TryComp<InputMoverComponent>(user, out var mover) &&
+            (mover.HeldMoveButtons & MoveButtons.AnyDirection) != MoveButtons.None)
+        {
+            UserStopScoping((user, scoping));
+            return;
+        }
 
         var targetOffset = GetScopeOffset(scope, direction);
         scoping.EyeOffset = targetOffset;
