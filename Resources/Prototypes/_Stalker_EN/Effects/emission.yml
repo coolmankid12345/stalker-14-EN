@@ -1,0 +1,26 @@
+- type: entity
+  id: EmissionLightningEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 1.5
+  - type: PointLight
+    netsync: false
+    enabled: true
+    radius: 7
+    energy: 12
+    color: "#87BFFF"
+  - type: LightFade
+    duration: 1.5
+
+- type: entity
+  parent: Lightning
+  id: EmissionLightningBolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Electrified
+    ignoreInsulation: true
+    shockDamage: 40
+    shockTime: 0.5
+  - type: TimedDespawn
+    lifetime: 1.5

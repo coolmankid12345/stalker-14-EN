@@ -1,0 +1,139 @@
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using Content.Server._Stalker.Anomaly.Generation.Components;
+using Content.Server.Lightning;
+using Content.Shared.GameTicking;
+using Robust.Server.GameObjects;
+using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
+
+namespace Content.Server._Stalker_EN.Emission;
+
+public sealed class EmissionLightningSystem : EntitySystem
+{
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly IRobustRandom _robustRandom = default!;
+    [Dependency] private readonly TransformSystem _transformSystem = default!;
+    [Dependency] private readonly LightningSystem _lightningSystem = default!;
+
+    private const int MaximumRetries = 6;
+
+    /// <summary>
+    ///     List of map-coordinates of lightning blockers
+    ///         and radius of area that they block lightning in,
+    ///         categorised by their map.
+    /// </summary>
+    private Dictionary<
+        MapId,
+        List<(Vector2, float)>
+    > _lightingBlockerMap = new();
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+    }
+
+    private void OnRoundRestartCleanup(RoundRestartCleanupEvent args)
+    {
+        _lightingBlockerMap.Clear();
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var spawnerQuery = EntityQueryEnumerator<EmissionLightningSpawnerComponent>();
+        while (spawnerQuery.MoveNext(out var spawnerUid, out var spawnerComponent))
+        {
+            if (_gameTiming.CurTime < spawnerComponent.NextLightning)
+                continue;
+
+            spawnerComponent.NextLightning = _gameTiming.CurTime + TimeSpan.FromSeconds(_robustRandom.NextFloat(spawnerComponent.LightningIntervalRange.X, spawnerComponent.LightningIntervalRange.Y));
+            TrySpawnLightningNearby(spawnerUid, spawnerComponent.SpawnRadius, spawnerComponent.LightningEffectProtoId, spawnerComponent.BoltRange, spawnerComponent.BoltCount);
+        }
+    }
+
+    /// <summary>
+    ///     Refreshes map of lightning blockers.
+    /// </summary>
+    public void Refresh()
+    {
+        Clear();
+
+        var query = EntityQueryEnumerator<STAnomalyGeneratorSpawnBlockerComponent, TransformComponent>();
+        while (query.MoveNext(out var blockerComponent, out var transformComponent))
+        {
+            var mapCoordinates = _transformSystem.GetMapCoordinates(transformComponent);
+            if (mapCoordinates.MapId == MapId.Nullspace)
+                continue;
+
+            if (!_lightingBlockerMap.ContainsKey(mapCoordinates.MapId))
+                _lightingBlockerMap.Add(mapCoordinates.MapId, new());
+
+            _lightingBlockerMap[mapCoordinates.MapId].Add((mapCoordinates.Position, blockerComponent.Size));
+        }
+    }
+
+    /// <summary>
+    ///     Frees some memory; clears map of lightning blockers.
+    /// </summary>
+    public void Clear()
+    {
+        _lightingBlockerMap.Clear();
+    }
+
+    // I dont care that there will naturally be more lightning spawning with more players in an area
+    public bool TryGetSpawnedLightningMapCoordinates(EntityUid targetUid, float maximumLightningRadius, [NotNullWhen(true)] out MapCoordinates? candidateMapCoordinates)
+    {
+        var targetTransform = Transform(targetUid);
+        var targetMapId = targetTransform.MapID;
+        var targetMapCoordinates = _transformSystem.GetMapCoordinates(targetTransform);
+
+        var hasLocalMap = _lightingBlockerMap.TryGetValue(targetMapId, out var localMap);
+
+        candidateMapCoordinates = new();
+        for (var i = 0; i < MaximumRetries; i++)
+        {
+            var lightningDistance = maximumLightningRadius * MathF.Sqrt(_robustRandom.NextFloat());
+            candidateMapCoordinates = targetMapCoordinates.Offset(_robustRandom.NextAngle().ToVec() * lightningDistance);
+
+            var valid = true;
+
+            if (hasLocalMap)
+            {
+                foreach (var (blockerWorldPosition, blockerRadius) in localMap!)
+                {
+                    // compare squared distance with squared blocker radius, no need to sqrt
+                    // we are checking if distance(sq) of blocker to candidate position is in blocker radius(sq)
+                    if (
+                        (candidateMapCoordinates.Value.Position - blockerWorldPosition).LengthSquared() <=
+                        blockerRadius * blockerRadius)
+                    {
+                        // candiate position is in a blocker, go to retry
+                        valid = false;
+                        break;
+                    }
+                }
+            }
+            else // No blockers on the target's map, so just use the first value and return
+                return true;
+
+            if (valid)
+                return true;
+        }
+
+        return false;
+    }
+
+    public void TrySpawnLightningNearby(EntityUid targetUid, float maximumLightningRadius, EntProtoId emissionLightningEntityId, float boltRange, int boltCount)
+    {
+        if (!TryGetSpawnedLightningMapCoordinates(targetUid, maximumLightningRadius, out var lightningMapCoordinates))
+            return;
+
+        var lightningEntityId = Spawn(emissionLightningEntityId, lightningMapCoordinates.Value);
+        _lightningSystem.ShootRandomLightnings(lightningEntityId, boltRange, boltCount, lightningPrototype: "EmissionLightningBolt", triggerLightningEvents: false);
+    }
+}
