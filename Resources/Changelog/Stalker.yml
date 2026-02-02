@@ -106,5 +106,12 @@
   id: 11
   time: '2026-02-02T02:14:43.757655+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/367
+- author: teecoding
+  changes:
+  - message: Prevent emission lightning from spawning near players in safe zones
+    type: Fix
+  id: 12
+  time: '2026-02-02T18:27:50.198569+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/371
 Name: Stalker
 Order: -1
