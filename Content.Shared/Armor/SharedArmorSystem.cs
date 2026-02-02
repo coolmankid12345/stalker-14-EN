@@ -7,6 +7,8 @@ using Content.Shared.Silicons.Borgs;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 using System.Linq;
+using Robust.Shared.Containers; // stalker-changes
+using Content.Shared.Tag; // stalker-changes
 
 namespace Content.Shared.Armor;
 
@@ -16,6 +18,9 @@ namespace Content.Shared.Armor;
 public abstract partial class SharedArmorSystem : EntitySystem
 {
     [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!; // stalker-changes
+    [Dependency] private readonly InventorySystem _inventory = default!; // stalker-changes
+    [Dependency] private readonly TagSystem _tag = default!; // stalker-changes
 
     /// <inheritdoc />
     public override void Initialize()
@@ -39,6 +44,10 @@ public abstract partial class SharedArmorSystem : EntitySystem
         if (TryComp<MaskComponent>(ent, out var mask) && mask.IsToggled)
             return;
 
+
+        if (!IsArtifactAllowed(ent.Owner)) // Stalker-changes
+            return;
+
         if (ent.Comp.Modifiers == null) // Stalker-changes
             return;
 
@@ -51,6 +60,10 @@ public abstract partial class SharedArmorSystem : EntitySystem
     private void OnDamageModify(EntityUid uid, ArmorComponent component, InventoryRelayedEvent<DamageModifyEvent> args)
     {
         if (TryComp<MaskComponent>(uid, out var mask) && mask.IsToggled)
+            return;
+
+
+        if (!IsArtifactAllowed(uid)) // Stalker-changes
             return;
 
         // stalker-changes-start
@@ -86,6 +99,10 @@ public abstract partial class SharedArmorSystem : EntitySystem
         ref BorgModuleRelayedEvent<DamageModifyEvent> args)
     {
         if (TryComp<MaskComponent>(uid, out var mask) && mask.IsToggled)
+            return;
+
+
+        if (!IsArtifactAllowed(uid)) // Stalker-changes
             return;
 
         // stalker-changes-start
@@ -164,4 +181,22 @@ public abstract partial class SharedArmorSystem : EntitySystem
 
         return msg;
     }
+  // stalker-changes-start
+    private bool IsArtifactAllowed(EntityUid uid)
+    {
+
+        if (!TryComp<TagComponent>(uid, out var tagComp) || !_tag.HasTag(tagComp, "STArtifact"))
+            return true;
+
+
+        if (!TryComp<TransformComponent>(uid, out var xform) || !TryComp<MetaDataComponent>(uid, out var meta))
+            return false;
+
+        if (!_inventory.TryGetContainingSlot((uid, xform, meta), out var slotDef) || slotDef == null)
+            return false;
+
+        var name = slotDef.Name;
+        return name == "artifact1" || name == "artifact2" || name == "artifact3" || name == "artifact4";
+    }
 }
+  // stalker-changes-end
