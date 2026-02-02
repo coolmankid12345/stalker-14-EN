@@ -72836,7 +72836,7 @@ entities:
           Blunt: 0.95
           Slash: 0.95
           Piercing: 1
-          Heat: 0.66
+          Heat: 0.64
           Radiation: 0.9
     - type: ContainerContainer
       containers:
@@ -128750,6 +128750,11 @@ entities:
     - type: Transform
       pos: 176.5,16.5
       parent: 1
+  - uid: 19078
+    components:
+    - type: Transform
+      pos: -73.5,-64.5
+      parent: 1
 - proto: STashtray
   entities:
   - uid: 6648
@@ -167483,7 +167488,7 @@ entities:
       pos: 71.5,68.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -77228.03
+      secondsUntilStateChange: -77302.55
       state: Opening
   - uid: 15607
     components:
