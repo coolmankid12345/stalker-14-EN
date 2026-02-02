@@ -46,7 +46,6 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         component.RainStarted = false;
         component.AmbientLightSet = false;
 
-        // Play stage1 sound and send announcement
         PlayGlobalSound(component.SoundStage1);
         SendAnnouncement(component.AnnouncementStage1, component.AnnouncementSender);
         component.SoundsPlayed |= EmissionSoundsPlayed.Stage1;
@@ -64,7 +63,6 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
 
         var elapsed = _timing.CurTime - component.EventStartTime;
 
-        // Play main ambient track
         if (!component.SoundsPlayed.HasFlag(EmissionSoundsPlayed.MainAmbient) &&
             elapsed >= component.MainAmbientDelay)
         {
@@ -72,14 +70,13 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             component.SoundsPlayed |= EmissionSoundsPlayed.MainAmbient;
         }
 
-        // Set red hue (separate timing from main ambient)
+        // Red hue timing is intentionally separate from main ambient audio
         if (!component.AmbientLightSet && elapsed >= component.RedHueDelay)
         {
             SetAmbientLightColor(component);
             component.AmbientLightSet = true;
         }
 
-        // Play stage2 sound and announcement
         if (!component.SoundsPlayed.HasFlag(EmissionSoundsPlayed.Stage2) &&
             elapsed >= component.Stage2Delay)
         {
@@ -88,7 +85,6 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             component.SoundsPlayed |= EmissionSoundsPlayed.Stage2;
         }
 
-        // Damage starts; this is stage2
         if (component.Stage == EmissionStage.Stage1 && elapsed >= component.DamageStartDelay)
         {
             component.Stage = EmissionStage.Stage2;
@@ -98,10 +94,14 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             {
                 _emissionLightningSystem.Refresh();
 
-                // i dont care that new blowout target added during emission don't get this component added
+                // Only targets present at stage start receive lightning spawners;
+                // late-joining entities are handled by EmissionSafeZoneSystem
                 var targetQuery = EntityQueryEnumerator<BlowoutTargetComponent>();
                 while (targetQuery.MoveNext(out var targetUid, out _))
                 {
+                    if (HasComp<StalkerSafeZoneComponent>(targetUid))
+                        continue;
+
                     var lightningSpawnerComponent = EnsureComp<EmissionLightningSpawnerComponent>(targetUid);
                     lightningSpawnerComponent.SpawnRadius = component.LightningSpawnRadius;
                     lightningSpawnerComponent.LightningIntervalRange = component.LightningIntervalRange;
@@ -110,7 +110,6 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             }
         }
 
-        // Rain starts before stage 3
         var rainStartTime = component.DamageEndDelay - component.RainStartBeforeEnd;
         if (!component.RainStarted && elapsed >= rainStartTime)
         {
@@ -118,7 +117,6 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             var duration = _random.Next(component.RainDurationMin, component.RainDurationMax);
             var weatherProto = _protoManager.Index(component.RainWeather);
 
-            // Set weather on all maps
             var weatherQuery = EntityQueryEnumerator<MapComponent>();
             while (weatherQuery.MoveNext(out _, out var mapComp))
             {
@@ -126,7 +124,6 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             }
         }
 
-        // Damage ends, play stage3 sound and announcement, clear ambient
         if (component.Stage == EmissionStage.Stage2 && elapsed >= component.DamageEndDelay)
         {
             component.Stage = EmissionStage.Stage3;
@@ -145,31 +142,26 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             }
         }
 
-        // Apply damage during damage window
         var doDamage = component.Stage == EmissionStage.Stage2 && _timing.CurTime >= component.NextDamageTick;
         if (doDamage)
         {
             component.NextDamageTick = _timing.CurTime + component.DamageInterval;
         }
 
-        // Process entities for damage and camera shake
         var query = EntityQueryEnumerator<BlowoutTargetComponent, TransformComponent, DamageableComponent>();
         while (query.MoveNext(out var target, out _, out var transform, out var damageable))
         {
-            // Skip entities in safe zones
             if (HasComp<StalkerSafeZoneComponent>(target))
                 continue;
 
             if (HasComp<StalkerSafeZoneComponent>(_mapManager.GetMapEntityId(transform.MapID)))
                 continue;
 
-            // Apply damage
             if (doDamage && component.Damage is not null)
             {
                 _damageableSystem.TryChangeDamage(target, component.Damage, interruptsDoAfters: false);
             }
 
-            // Apply camera shake during damage window
             if (component.Stage == EmissionStage.Stage2)
             {
                 var kick = new Vector2(_random.NextFloat(), _random.NextFloat()) * component.ShakeStrength;

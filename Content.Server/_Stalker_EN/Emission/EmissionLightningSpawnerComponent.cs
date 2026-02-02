@@ -6,7 +6,7 @@ namespace Content.Server._Stalker_EN.Emission;
 /// <summary>
 ///     Periodically spawns lightning around this.
 /// </summary>
-[RegisterComponent, Access([typeof(EmissionLightningSystem), typeof(EmissionEventRuleSystem)])]
+[RegisterComponent, Access([typeof(EmissionLightningSystem), typeof(EmissionEventRuleSystem), typeof(EmissionSafeZoneSystem)])]
 [AutoGenerateComponentPause]
 public sealed partial class EmissionLightningSpawnerComponent : Component
 {
