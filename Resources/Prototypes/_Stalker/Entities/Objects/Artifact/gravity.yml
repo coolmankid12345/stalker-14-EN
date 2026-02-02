@@ -63,12 +63,12 @@
     armorClass: 2
     modifiers:
       flatReductions:
-        Piercing: 2
+        Piercing: 1
       coefficients:
-        Piercing: 0.6
+        Piercing: 0.8
         Slash: 1.2
   - type: Reflect
-    reflectProb: 0.85
+    reflectProb: 0.15
     spread: 340
 
 - type: entity
