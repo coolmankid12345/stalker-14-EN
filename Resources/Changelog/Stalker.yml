@@ -99,5 +99,12 @@
   id: 10
   time: '2026-02-01T14:54:15.133593+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/363
+- author: crocodilecarousel
+  changes:
+  - message: Map changes
+    type: Tweak
+  id: 11
+  time: '2026-02-02T02:14:43.757655+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/367
 Name: Stalker
 Order: -1
