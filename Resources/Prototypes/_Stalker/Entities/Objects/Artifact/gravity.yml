@@ -200,18 +200,18 @@
   - type: PersonalDamage
     damage:
       types:
-        Psy: 1.5
+        Psy: 2.5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       flatReductions:
-        Piercing: 3
+        Piercing: 2
       coefficients:
-        Piercing: 0.5
-        Slash: 0.5
-        Blunt: 0.5
+        Piercing: 0.75
+        Slash: 0.7
+        Blunt: 0.7
         Compression: 0.5
   - type: STWeight
     self: -60

@@ -806,7 +806,7 @@
         mask:
         - TableMask
         layer:
-        - TableLayer
+        - LowImpassable
   - type: StaticPrice
     price: 15
   - type: Tag
