@@ -189,8 +189,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.SmartEquipBackpack);
             AddButton(ContentKeyFunctions.SmartEquipBelt);
             AddButton(ContentKeyFunctions.OpenBackpack);
-            AddButton(ContentKeyFunctions.SmartEquipOuterClothing); // Stalker-Changes-UI
-            AddButton(ContentKeyFunctions.Lay); // Stalker-Changes-UI
             AddButton(ContentKeyFunctions.OpenBelt);
             AddButton(ContentKeyFunctions.ThrowItemInHand);
             AddButton(ContentKeyFunctions.TryPullObject);
@@ -266,6 +264,13 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.ShowDebugMonitors);
             AddButton(EngineKeyFunctions.HideUI);
             AddButton(ContentKeyFunctions.InspectEntity);
+
+            // stalker-changes
+            AddHeader("ui-options-header-stalker");
+            AddButton(ContentKeyFunctions.SmartEquipOuterClothing);
+            AddButton(ContentKeyFunctions.Lay);
+            AddButton(ContentKeyFunctions.STQuickEquipBolt);
+            // stalker-changes-end
 
             foreach (var control in _keyControls.Values)
             {
