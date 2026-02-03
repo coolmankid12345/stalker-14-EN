@@ -54,7 +54,14 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
     protected override void Ended(EntityUid uid, EmissionEventRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
     {
         base.Ended(uid, component, gameRule, args);
-        // Ambient light is cleared at stage 3 (T+330), not at event end
+
+        // Clean up lightning spawners (handles mid-round admin cancel during Stage 2)
+        var lightningQuery = EntityQueryEnumerator<EmissionLightningSpawnerComponent>();
+        while (lightningQuery.MoveNext(out var targetUid, out var spawnerComponent))
+            RemCompDeferred(targetUid, spawnerComponent);
+
+        // Always restore day cycle - idempotent, safe even if stage 3 already cleaned up
+        ClearAmbientLightColor();
     }
 
     protected override void ActiveTick(EntityUid uid, EmissionEventRuleComponent component, GameRuleComponent gameRule, float frameTime)
