@@ -18,12 +18,11 @@ public enum DieVisualState : byte
     Normal,
     Selected,
     Kept,
-    CanScore,
 }
 
 /// <summary>
 /// Custom UI control that renders a single d6 die using sprites from dice.rsi,
-/// with a colored border to indicate selection/kept/scoring state and a rolling animation.
+/// with a colored border to indicate selection/kept state, a number overlay, and a rolling animation.
 /// </summary>
 public sealed class STFarkleDieControl : Control
 {
@@ -45,24 +44,23 @@ public sealed class STFarkleDieControl : Control
     /// </summary>
     private const float FinalInterval = 0.15f;
 
-    private static readonly Color NormalBorderColor = Color.FromHex("#555555");
-    private static readonly Color SelectedBorderColor = Color.LimeGreen;
-    private static readonly Color KeptBorderColor = Color.FromHex("#888888");
-    private static readonly Color CanScoreBorderColor = Color.FromHex("#CCCC66");
-    private static readonly Color UnknownModulate = new(0.4f, 0.4f, 0.4f);
+    private static readonly Color NormalBorderColor = Color.FromHex("#4A4A3A");
+    private static readonly Color SelectedBorderColor = Color.FromHex("#D4912A");
+    private static readonly Color KeptBorderColor = Color.FromHex("#6B6B55");
+    private static readonly Color UnknownModulate = new(0.3f, 0.3f, 0.25f);
     private static readonly Color NormalModulate = Color.White;
-    private static readonly Color KeptModulate = new(0.5f, 0.5f, 0.5f);
+    private static readonly Color KeptModulate = new(0.55f, 0.52f, 0.45f);
 
     private readonly IRobustRandom _random;
     private readonly Texture[] _faceTextures = new Texture[DiceFaces];
     private readonly PanelContainer _panel;
     private readonly TextureRect _textureRect;
+    private readonly Label _numberLabel;
 
     // Pre-allocated style boxes to avoid per-frame allocation
     private readonly StyleBoxFlat _normalStyle;
     private readonly StyleBoxFlat _selectedStyle;
     private readonly StyleBoxFlat _keptStyle;
-    private readonly StyleBoxFlat _canScoreStyle;
 
     private int _currentValue;
     private bool _disabled;
@@ -97,29 +95,23 @@ public sealed class STFarkleDieControl : Control
                 _faceTextures[i] = state.Frame0;
         }
 
-        var borderThickness = new Thickness(2);
+        var borderThickness = new Thickness(3);
         _normalStyle = new StyleBoxFlat
         {
-            BackgroundColor = Color.FromHex("#222222"),
+            BackgroundColor = Color.FromHex("#1A1A17"),
             BorderColor = NormalBorderColor,
             BorderThickness = borderThickness,
         };
         _selectedStyle = new StyleBoxFlat
         {
-            BackgroundColor = Color.FromHex("#1A3A1A"),
+            BackgroundColor = Color.FromHex("#2A2210"),
             BorderColor = SelectedBorderColor,
             BorderThickness = borderThickness,
         };
         _keptStyle = new StyleBoxFlat
         {
-            BackgroundColor = Color.FromHex("#2A2A2A"),
+            BackgroundColor = Color.FromHex("#1A1A1A"),
             BorderColor = KeptBorderColor,
-            BorderThickness = borderThickness,
-        };
-        _canScoreStyle = new StyleBoxFlat
-        {
-            BackgroundColor = Color.FromHex("#2A2A1A"),
-            BorderColor = CanScoreBorderColor,
             BorderThickness = borderThickness,
         };
 
@@ -130,15 +122,27 @@ public sealed class STFarkleDieControl : Control
 
         _textureRect = new TextureRect
         {
-            TextureScale = new Vector2(2, 2),
+            TextureScale = new Vector2(3, 3),
             Stretch = TextureRect.StretchMode.KeepCentered,
         };
 
+        _numberLabel = new Label
+        {
+            FontColorOverride = Color.White,
+            FontColorShadowOverride = Color.Black,
+            ShadowOffsetXOverride = 1,
+            ShadowOffsetYOverride = 1,
+            HorizontalAlignment = HAlignment.Right,
+            VerticalAlignment = VAlignment.Bottom,
+            Margin = new Thickness(0, 0, 4, 2),
+        };
+
         _panel.AddChild(_textureRect);
+        _panel.AddChild(_numberLabel);
         AddChild(_panel);
 
-        // 64px die (32 * 2 scale) + 4px border + 4px margin = 72px, use 68 for tight fit
-        MinSize = new Vector2(68, 68);
+        // 96px die (32 * 3 scale) + 6px border + 2px breathing room = 104px
+        MinSize = new Vector2(104, 104);
 
         MouseFilter = MouseFilterMode.Stop;
         OnKeyBindDown += OnKeyPressed;
@@ -182,7 +186,6 @@ public sealed class STFarkleDieControl : Control
         {
             DieVisualState.Selected => _selectedStyle,
             DieVisualState.Kept => _keptStyle,
-            DieVisualState.CanScore => _canScoreStyle,
             _ => _normalStyle,
         };
 
@@ -197,6 +200,7 @@ public sealed class STFarkleDieControl : Control
         _isAnimating = false;
         _textureRect.Texture = _faceTextures.Length > 0 ? _faceTextures[0] : null;
         _textureRect.Modulate = UnknownModulate;
+        _numberLabel.Text = "";
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -248,8 +252,14 @@ public sealed class STFarkleDieControl : Control
     {
         _currentValue = value;
         if (value >= 1 && value <= DiceFaces)
+        {
             _textureRect.Texture = _faceTextures[value - 1];
+            _numberLabel.Text = value.ToString();
+        }
         else
+        {
             _textureRect.Texture = null;
+            _numberLabel.Text = "";
+        }
     }
 }

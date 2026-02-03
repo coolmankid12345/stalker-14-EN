@@ -2,16 +2,23 @@
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Title="{Loc 'farkle-dice-window-title'}"
-    MinSize="480 400"
-    SetSize="480 400">
+    MinSize="700 480"
+    SetSize="700 480">
     <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="8">
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
             <Label Name="TargetScoreLabel" StyleClasses="LabelHeading" />
         </BoxContainer>
 
+        <BoxContainer Name="TargetScorePresets" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 4">
+            <Button Name="Score5000" Text="5,000" MinWidth="70" Margin="2" />
+            <Button Name="Score10000" Text="10,000" MinWidth="70" Margin="2" />
+            <Button Name="Score15000" Text="15,000" MinWidth="70" Margin="2" />
+            <Button Name="Score20000" Text="20,000" MinWidth="70" Margin="2" />
+        </BoxContainer>
+
         <PanelContainer Margin="0 0 0 8">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#333333" />
+                <gfx:StyleBoxFlat BackgroundColor="#1C1F17" />
             </PanelContainer.PanelOverride>
             <BoxContainer Orientation="Horizontal" Margin="8">
                 <BoxContainer Orientation="Vertical" HorizontalExpand="True">
@@ -33,12 +40,12 @@
 
         <PanelContainer Margin="0 0 0 8">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#444444" />
+                <gfx:StyleBoxFlat BackgroundColor="#2A2517" />
             </PanelContainer.PanelOverride>
             <Label Name="StatusLabel" HorizontalAlignment="Center" Margin="8" />
         </PanelContainer>
 
-        <BoxContainer Name="DiceContainer" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8" />
+        <BoxContainer Name="DiceContainer" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8" SeparationOverride="8" />
 
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
             <Label Text="{Loc 'farkle-selection-score'}" />

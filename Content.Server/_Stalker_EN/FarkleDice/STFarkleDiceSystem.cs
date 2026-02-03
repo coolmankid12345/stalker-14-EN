@@ -9,6 +9,9 @@ namespace Content.Server._Stalker_EN.FarkleDice;
 
 public sealed class STFarkleDiceSystem : EntitySystem
 {
+    private const int MinTargetScore = 1000;
+    private const int MaxTargetScore = 50000;
+
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
@@ -29,6 +32,7 @@ public sealed class STFarkleDiceSystem : EntitySystem
         SubscribeLocalEvent<STFarkleDiceComponent, STFarkleKeepAndContinueMessage>(OnKeepAndContinue);
         SubscribeLocalEvent<STFarkleDiceComponent, STFarkleBankMessage>(OnBank);
         SubscribeLocalEvent<STFarkleDiceComponent, STFarkleNewGameMessage>(OnNewGame);
+        SubscribeLocalEvent<STFarkleDiceComponent, STFarkleSetTargetScoreMessage>(OnSetTargetScore);
     }
 
     private void OnInit(EntityUid uid, STFarkleDiceComponent comp, ComponentInit args)
@@ -366,6 +370,26 @@ public sealed class STFarkleDiceSystem : EntitySystem
         if (comp.Player1 != null && comp.Player2 != null)
             StartGame(uid, comp);
 
+        Dirty(uid, comp);
+        UpdateAllUi(uid, comp);
+    }
+
+    private void OnSetTargetScore(EntityUid uid, STFarkleDiceComponent comp, STFarkleSetTargetScoreMessage args)
+    {
+        var player = args.Actor;
+
+        // Only the host (Player1) can change the target score
+        if (comp.Player1 != player)
+            return;
+
+        // Only allowed during the waiting phase
+        if (comp.Phase != STFarkleDicePhase.WaitingForPlayers)
+            return;
+
+        // Clamp to valid range
+        var targetScore = Math.Clamp(args.TargetScore, MinTargetScore, MaxTargetScore);
+
+        comp.TargetScore = targetScore;
         Dirty(uid, comp);
         UpdateAllUi(uid, comp);
     }

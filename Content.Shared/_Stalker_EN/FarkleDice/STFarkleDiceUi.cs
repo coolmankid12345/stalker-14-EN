@@ -39,6 +39,17 @@ public sealed class STFarkleBankMessage : BoundUserInterfaceMessage;
 [Serializable, NetSerializable]
 public sealed class STFarkleNewGameMessage : BoundUserInterfaceMessage;
 
+[Serializable, NetSerializable]
+public sealed class STFarkleSetTargetScoreMessage : BoundUserInterfaceMessage
+{
+    public readonly int TargetScore;
+
+    public STFarkleSetTargetScoreMessage(int targetScore)
+    {
+        TargetScore = targetScore;
+    }
+}
+
 #endregion
 
 /// <summary>

@@ -16,7 +16,17 @@ public sealed partial class STFarkleDiceWindow : DefaultWindow
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
 
+    /// <summary>
+    /// STALKER PDA amber color used to highlight the active player's name.
+    /// </summary>
+    private static readonly Color ActivePlayerColor = Color.FromHex("#D4912A");
+
     private static readonly SoundSpecifier DiceRollSound = new SoundCollectionSpecifier("Dice");
+
+    /// <summary>
+    /// Maps preset buttons to their target score values for easy iteration.
+    /// </summary>
+    private readonly (Robust.Client.UserInterface.Controls.Button Button, int Score)[] _presetButtons;
 
     private readonly STFarkleDieControl[] _diceControls = new STFarkleDieControl[6];
     private STFarkleDiceBoundUiState? _currentState;
@@ -35,6 +45,7 @@ public sealed partial class STFarkleDiceWindow : DefaultWindow
     public event Action? OnKeepAndContinuePressed;
     public event Action? OnBankPressed;
     public event Action? OnNewGamePressed;
+    public event Action<int>? OnSetTargetScore;
 
     public STFarkleDiceWindow()
     {
@@ -56,6 +67,20 @@ public sealed partial class STFarkleDiceWindow : DefaultWindow
         KeepButton.OnPressed += _ => OnKeepAndContinuePressed?.Invoke();
         BankButton.OnPressed += _ => OnBankPressed?.Invoke();
         NewGameButton.OnPressed += _ => OnNewGamePressed?.Invoke();
+
+        // Wire target score preset buttons
+        Score5000.OnPressed += _ => OnSetTargetScore?.Invoke(5000);
+        Score10000.OnPressed += _ => OnSetTargetScore?.Invoke(10000);
+        Score15000.OnPressed += _ => OnSetTargetScore?.Invoke(15000);
+        Score20000.OnPressed += _ => OnSetTargetScore?.Invoke(20000);
+
+        _presetButtons = new[]
+        {
+            (Score5000, 5000),
+            (Score10000, 10000),
+            (Score15000, 15000),
+            (Score20000, 20000),
+        };
     }
 
     public void UpdateState(STFarkleDiceBoundUiState state)
@@ -77,8 +102,8 @@ public sealed partial class STFarkleDiceWindow : DefaultWindow
         var player2Active = state.CurrentPlayer == 2
             && state.Phase != STFarkleDicePhase.WaitingForPlayers
             && state.Phase != STFarkleDicePhase.GameOver;
-        Player1Label.Modulate = player1Active ? Color.Yellow : Color.White;
-        Player2Label.Modulate = player2Active ? Color.Yellow : Color.White;
+        Player1Label.Modulate = player1Active ? ActivePlayerColor : Color.White;
+        Player2Label.Modulate = player2Active ? ActivePlayerColor : Color.White;
 
         TurnScoreLabel.Text = state.TurnScore.ToString();
 
@@ -99,7 +124,6 @@ public sealed partial class STFarkleDiceWindow : DefaultWindow
             var value = state.DiceValues[i];
             var isKept = state.KeptDice[i];
             var isSelected = state.SelectedDice[i];
-            var canScore = state.ScoringDice[i];
 
             if (!state.HasRolled && value == 0)
             {
@@ -116,8 +140,6 @@ public sealed partial class STFarkleDiceWindow : DefaultWindow
                     die.SetVisualState(DieVisualState.Kept);
                 else if (isSelected)
                     die.SetVisualState(DieVisualState.Selected);
-                else if (canScore && state.HasRolled)
-                    die.SetVisualState(DieVisualState.CanScore);
                 else
                     die.SetVisualState(DieVisualState.Normal);
 
@@ -133,7 +155,36 @@ public sealed partial class STFarkleDiceWindow : DefaultWindow
         _previousDiceValues = (int[]) state.DiceValues.Clone();
         _previousHasRolled = state.HasRolled;
 
+        UpdateTargetScorePresets(state);
         UpdateButtonStates(state, isYourTurn);
+    }
+
+    /// <summary>
+    /// Shows or hides the target score preset buttons and highlights the active one.
+    /// Only visible to the host (Player1) during the WaitingForPlayers phase.
+    /// </summary>
+    private void UpdateTargetScorePresets(STFarkleDiceBoundUiState state)
+    {
+        var localPlayer = _playerManager.LocalEntity;
+        var isHost = false;
+
+        if (localPlayer != null && state.Player1NetEntity != null)
+        {
+            var localNetEntity = _entManager.GetNetEntity(localPlayer.Value);
+            isHost = localNetEntity == state.Player1NetEntity;
+        }
+
+        var showPresets = state.Phase == STFarkleDicePhase.WaitingForPlayers && isHost;
+        TargetScorePresets.Visible = showPresets;
+
+        if (!showPresets)
+            return;
+
+        // Highlight the currently active preset by disabling it
+        foreach (var (button, score) in _presetButtons)
+        {
+            button.Disabled = state.TargetScore == score;
+        }
     }
 
     /// <summary>

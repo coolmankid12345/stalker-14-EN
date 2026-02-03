@@ -29,6 +29,7 @@ public sealed class STFarkleDiceBoundUserInterface : BoundUserInterface
         _window.OnKeepAndContinuePressed += () => SendMessage(new STFarkleKeepAndContinueMessage());
         _window.OnBankPressed += () => SendMessage(new STFarkleBankMessage());
         _window.OnNewGamePressed += () => SendMessage(new STFarkleNewGameMessage());
+        _window.OnSetTargetScore += score => SendMessage(new STFarkleSetTargetScoreMessage(score));
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
