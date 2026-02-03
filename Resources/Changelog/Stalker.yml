@@ -113,5 +113,14 @@
   id: 12
   time: '2026-02-02T18:27:50.198569+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/371
+- author: teecoding
+  changes:
+  - message: Press N to quickly pull a bolt from your bags into your hand
+    type: Add
+  - message: all Stalker keybinds are now grouped together and rebindable
+    type: Tweak
+  id: 13
+  time: '2026-02-03T21:28:20.224043+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/375
 Name: Stalker
 Order: -1
