@@ -2,15 +2,13 @@
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Title="{Loc 'farkle-dice-window-title'}"
-    MinSize="450 400"
-    SetSize="450 400">
+    MinSize="480 400"
+    SetSize="480 400">
     <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="8">
-        <!-- Header with target score -->
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
             <Label Name="TargetScoreLabel" StyleClasses="LabelHeading" />
         </BoxContainer>
 
-        <!-- Player scores -->
         <PanelContainer Margin="0 0 0 8">
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#333333" />
@@ -28,13 +26,11 @@
             </BoxContainer>
         </PanelContainer>
 
-        <!-- Turn score -->
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
             <Label Text="{Loc 'farkle-turn-score'}" />
             <Label Name="TurnScoreLabel" StyleClasses="LabelHeading" Margin="8 0 0 0" />
         </BoxContainer>
 
-        <!-- Status message -->
         <PanelContainer Margin="0 0 0 8">
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#444444" />
@@ -42,18 +38,13 @@
             <Label Name="StatusLabel" HorizontalAlignment="Center" Margin="8" />
         </PanelContainer>
 
-        <!-- Dice container -->
-        <BoxContainer Name="DiceContainer" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
-            <!-- Dice buttons added by code -->
-        </BoxContainer>
+        <BoxContainer Name="DiceContainer" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8" />
 
-        <!-- Selection score preview -->
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
             <Label Text="{Loc 'farkle-selection-score'}" />
             <Label Name="SelectionScoreLabel" Margin="8 0 0 0" />
         </BoxContainer>
 
-        <!-- Action buttons -->
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" VerticalExpand="True" VerticalAlignment="Bottom">
             <Button Name="JoinButton" Text="{Loc 'farkle-join-button'}" MinWidth="80" Margin="4" />
             <Button Name="LeaveButton" Text="{Loc 'farkle-leave-button'}" MinWidth="80" Margin="4" />
