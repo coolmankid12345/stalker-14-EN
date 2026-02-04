@@ -1,0 +1,10 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              Orientation="Horizontal"
+              HorizontalExpand="True"
+              Margin="4 2 4 2">
+    <Label Text="{Loc 'st-search-label'}" Margin="0 0 3 0"/>
+    <LineEdit Name="SearchLineEdit"
+              HorizontalExpand="True"
+              PlaceHolder="{Loc 'st-search-placeholder'}"/>
+    <Button Name="ClearButton" Text="{Loc 'st-search-clear'}"/>
+</BoxContainer>

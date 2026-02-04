@@ -52,6 +52,10 @@ public sealed partial class ShopMenu : DefaultWindow
     public string? CurrentCategory;
     private const string UserCategory = "UserItems";
 
+    // stalker-changes: cached data for search filtering
+    private List<CategoryInfo> _cachedCategories = new();
+    private HashSet<ListingData> _cachedUserItems = new();
+
     public ShopMenu()
     {
         RobustXamlLoader.Load(this);
@@ -60,6 +64,13 @@ public sealed partial class ShopMenu : DefaultWindow
         _gameTicker = _entitySystem.GetEntitySystem<ClientGameTicker>();
         _actions = _entityManager.System<ActionsSystem>(); // Need for implants lol
         RefreshButton.OnPressed += _ => OnRefreshButtonPressed?.Invoke();
+
+        // stalker-changes: search bar
+        SearchBar.OnSearchTextChanged += _ =>
+        {
+            ClearListings();
+            FilterAndDisplayListings();
+        };
     }
 
     #region Updates
@@ -82,30 +93,83 @@ public sealed partial class ShopMenu : DefaultWindow
 
     public void UpdateListing(List<CategoryInfo> categories, List<ListingData> userItems)
     {
+        // stalker-changes: cache for search filtering
+        _cachedCategories = categories;
+        _cachedUserItems = new HashSet<ListingData>(userItems);
+        FilterAndDisplayListings();
+    }
+
+    /// <summary>
+    /// Filters and displays listings based on the current search text and selected category.
+    /// When a search term is active, searches across all categories and user items.
+    /// When empty, shows only the selected category (original behavior).
+    /// </summary>
+    private void FilterAndDisplayListings()
+    {
+        var filter = SearchBar.SearchText;
+        var hasSearch = !string.IsNullOrWhiteSpace(filter);
         var listings = new List<ListingData>();
-        foreach (var el in categories)
-        {
-            if (el.Name != CurrentCategory)
-                continue;
 
-            listings.AddRange(el.ListingItems);
+        if (hasSearch)
+        {
+            foreach (var cat in _cachedCategories)
+                listings.AddRange(cat.ListingItems);
+
+            listings.AddRange(_cachedUserItems);
+        }
+        else
+        {
+            foreach (var el in _cachedCategories)
+            {
+                if (el.Name != CurrentCategory)
+                    continue;
+
+                listings.AddRange(el.ListingItems);
+            }
+
+            if (CurrentCategory == UserCategory)
+                listings.AddRange(_cachedUserItems);
         }
 
-        if (CurrentCategory == UserCategory)
-        {
-            listings.AddRange(userItems);
-        }
+        var sorted = listings
+            .Where(l => MatchesSearchFilter(l, filter))
+            .OrderBy(l => l.Priority)
+            .ThenBy(l => l.OriginalCost.Values.Sum());
 
-        // Linq, fuck...
-        var sorted = listings.OrderBy(l => l.Priority).ThenBy(l => l.OriginalCost.Values.Sum());
-
-        // TODO: should probably chunk these out instead. to-do if this clogs the internet tubes. maybe read clients prototypes instead?
         ClearListings();
 
         foreach (var item in sorted)
         {
-            AddListingGui(item, CurrentCategory == UserCategory);
+            var isSellItem = hasSearch
+                ? _cachedUserItems.Contains(item)
+                : CurrentCategory == UserCategory;
+
+            AddListingGui(item, isSellItem);
         }
+    }
+
+    /// <summary>
+    /// Checks whether the listing's resolved name or description matches the search filter.
+    /// </summary>
+    private bool MatchesSearchFilter(ListingData listing, string? filter)
+    {
+        if (string.IsNullOrWhiteSpace(filter))
+            return true;
+
+        var listingName = listing.Name != null ? Loc.GetString(listing.Name) : string.Empty;
+        var listingDesc = listing.Description != null ? Loc.GetString(listing.Description) : string.Empty;
+
+        if (listing.ProductEntity != null
+            && _prototypeManager.TryIndex<EntityPrototype>(listing.ProductEntity, out var proto))
+        {
+            if (string.IsNullOrEmpty(listingName))
+                listingName = proto.Name;
+
+            if (string.IsNullOrEmpty(listingDesc))
+                listingDesc = proto.Description;
+        }
+
+        return STSearchFilter.Matches(filter, listingName, listingDesc);
     }
 
     private void ClearListings()
