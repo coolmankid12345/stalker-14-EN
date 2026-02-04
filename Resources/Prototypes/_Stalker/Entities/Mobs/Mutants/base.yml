@@ -3,6 +3,8 @@
   - MobAnomalyTarget
   - MobWeight
   - MobStaminaDamageable
+  - MobLay
+  - MobFirePat # stalker-changes - fire patting
   id: BaseMobMutant
   save: false
   abstract: true
@@ -183,6 +185,8 @@
     - MobAnomalyTarget
     - MobWeight
     - MobStaminaDamageable
+    - MobLay
+    - MobFirePat # stalker-changes - fire patting
   id: STBaseMobMutant
   save: false
   abstract: true
