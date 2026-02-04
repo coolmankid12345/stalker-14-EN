@@ -226,6 +226,7 @@
   - MobRespirator
   - MobAtmosStandard
   - MobFlammable
+  - MobFirePat # stalker-changes - fire patting
   - BaseMobSpecies
   id: BaseMobSpeciesOrganic
   abstract: true
