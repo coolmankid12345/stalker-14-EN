@@ -7,7 +7,7 @@
   description: A table for playing Farkle, a dice game of luck and greed. Two players race to reach the target score by rolling dice and banking points.
   components:
   - type: Sprite
-    sprite: _Stalker/Structures/Furniture/Tables/old_table.rsi
+    sprite: _Stalker_EN/FarkleDice/farkle_table.rsi
     state: full
   - type: STFarkleDice
     targetScore: 10000
