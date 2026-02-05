@@ -60,7 +60,7 @@ public sealed partial class ShopSystem : SharedShopSystem
         SubscribeLocalEvent<StorageAfterInsertItemIntoLocationEvent>(OnAfterInsert);
 
         _sawmill = Logger.GetSawmill("shops");
-        
+
         InitializeSponsors();
     }
 
@@ -179,10 +179,10 @@ public sealed partial class ShopSystem : SharedShopSystem
         var categories = component.ShopCategories;
 
         #region Sponsors-Stuff
-        
+
         if (!TryComp<ActorComponent>(user, out var actor))
             return;
-        
+
         // TODO: GetSponsorCategories/GetContributorCategories/GetPersonalCategories results is not being cached like
         // component.ShopCategories, due this little shit, idk how fast it'd work. But im sure this should be rewrited. Im too lazy now...
         var sponsorCategory = GetSponsorCategories(actor.PlayerSession.UserId, component);
@@ -191,7 +191,7 @@ public sealed partial class ShopSystem : SharedShopSystem
         #endregion
 
         var userItems = GetContainerItemsWithoutMoney(user.Value, component);
-        var userListings = GetListingData(userItems, component, proto.SellingItems);
+        var userListings = GetListingData(userItems, component, proto.SellingItems, proto.MinSellPrice); //stalker-14-en change
 
         var money = sellBuyBalance ?? GetMoneyFromList(GetContainersElements(user.Value), component);
         component.CurrentBalance = money;
@@ -349,8 +349,8 @@ public sealed partial class ShopSystem : SharedShopSystem
 
         return result;
     }
-    
-    private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems)
+
+    private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems, int minSellPrice = 5)
     {
         var result = new List<ListingData>();
         foreach (var item in items)
@@ -390,6 +390,10 @@ public sealed partial class ShopSystem : SharedShopSystem
                 ProductEntity = meta.EntityPrototype?.ID,
                 Count = 1 // Initialize count to 1 for the first item
             };
+
+            // stalker-changes-en: skip items below minimum sell price
+            if (minSellPrice > 0 && listing.OriginalCost.Values.Sum() < minSellPrice)
+                continue;
 
             result.Add(listing);
         }
