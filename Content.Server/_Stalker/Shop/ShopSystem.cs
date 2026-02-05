@@ -62,6 +62,7 @@ public sealed partial class ShopSystem : SharedShopSystem
         _sawmill = Logger.GetSawmill("shops");
         
         InitializeSponsors();
+        InitializeBuyback(); // stalker-changes-en: initialize buyback subscriptions
     }
 
     #region UI updates
@@ -196,11 +197,18 @@ public sealed partial class ShopSystem : SharedShopSystem
         var money = sellBuyBalance ?? GetMoneyFromList(GetContainersElements(user.Value), component);
         component.CurrentBalance = money;
         _sawmill.Debug($"Sent balance to client: {component.CurrentBalance}");
+
+        // stalker-changes-en: inject buyback category into the categories sent to client
+        var allCategories = new List<CategoryInfo>(categories);
+        var buybackCategory = GetBuybackCategory(user.Value, component);
+        if (buybackCategory != null)
+            allCategories.Add(buybackCategory);
+
         var state = new ShopUpdateState(
             money,
             component.MoneyId,
             curProto.DisplayName,
-            categories,
+            allCategories,
             sponsorCategory, // sponsor shop categories for people who pays MONEY
             contribCategories, // contrib shop categories for less favorite than personals :(
             personalCategories, // personal stuff for Valdis' favourites ;)
@@ -495,6 +503,20 @@ public sealed partial class ShopSystem : SharedShopSystem
         if (!isSellSuccesfull)
             return;
         IncreaseBalance(seller, component, cost);
+
+        // stalker-changes-en: track sold items for buyback
+        if (listing.OriginalCost.TryGetValue(component.MoneyId, out var perItemPrice))
+        {
+            AddBuybackEntry(
+                uid,
+                seller,
+                component,
+                listing.ProductEntity,
+                listing.Name ?? "",
+                listing.Description ?? "",
+                perItemPrice.Int(),
+                msg.Count);
+        }
 
         balance += cost;
         component.CurrentBalance = balance;
