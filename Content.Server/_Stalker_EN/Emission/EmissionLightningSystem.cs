@@ -10,16 +10,17 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
 namespace Content.Server._Stalker_EN.Emission;
 
 public sealed class EmissionLightningSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly LightningSystem _lightningSystem = default!;
+
+    private EntityQuery<StalkerSafeZoneComponent> _safeZoneQuery;
+    private EntityQuery<BlowoutTargetComponent> _emissionTargetQuery;
 
     private const int MaximumRetries = 6;
 
@@ -44,28 +45,16 @@ public sealed class EmissionLightningSystem : EntitySystem
     {
         base.Initialize();
 
-        LightningBlacklist.Components = [nameof(StalkerSafeZoneComponent)];
+        _safeZoneQuery = GetEntityQuery<StalkerSafeZoneComponent>();
+        _emissionTargetQuery = GetEntityQuery<BlowoutTargetComponent>();
+
+        LightningTargetBlacklist.Components = [EntityManager.ComponentFactory.GetComponentName<StalkerSafeZoneComponent>()];
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent args)
     {
         _lightingBlockerMap.Clear();
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var spawnerQuery = EntityQueryEnumerator<EmissionLightningSpawnerComponent>();
-        while (spawnerQuery.MoveNext(out var spawnerUid, out var spawnerComponent))
-        {
-            if (_gameTiming.CurTime < spawnerComponent.NextLightning)
-                continue;
-
-            spawnerComponent.NextLightning = _gameTiming.CurTime + TimeSpan.FromSeconds(_robustRandom.NextFloat(spawnerComponent.LightningIntervalRange.X, spawnerComponent.LightningIntervalRange.Y));
-            TrySpawnLightningNearby(spawnerUid, spawnerComponent.SpawnRadius, spawnerComponent.LightningEffectProtoId, spawnerComponent.BoltRange, spawnerComponent.BoltCount);
-        }
     }
 
     /// <summary>
@@ -158,6 +147,9 @@ public sealed class EmissionLightningSystem : EntitySystem
         return false;
     }
 
+    // Lightning can only hit if target is: 1. not in safezone, 2. is an emission target
+    private bool LightningHitPredicate(in EntityUid uid) => !_safeZoneQuery.HasComponent(uid) && _emissionTargetQuery.HasComponent(uid);
+
     public void TrySpawnLightningNearby(EntityUid targetUid, float maximumLightningRadius, EntProtoId emissionLightningEntityId, float boltRange, int boltCount)
     {
         if (!TryGetSpawnedLightningMapCoordinates(targetUid, maximumLightningRadius, out var lightningMapCoordinates))
@@ -170,7 +162,7 @@ public sealed class EmissionLightningSystem : EntitySystem
             boltCount,
             lightningPrototype: "EmissionLightningBolt",
             triggerLightningEvents: false,
-            blacklist: LightningTargetBlacklist
+            predicate: LightningHitPredicate
         );
     }
 }

@@ -95,7 +95,7 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
                 _emissionLightningSystem.Refresh();
 
                 // Only targets present at stage start receive lightning spawners;
-                // late-joining entities are handled by EmissionSafeZoneSystem
+                // late-joining entities are handled by EmissionLightningSpawnerSystem
                 var targetQuery = EntityQueryEnumerator<BlowoutTargetComponent>();
                 while (targetQuery.MoveNext(out var targetUid, out _))
                 {
