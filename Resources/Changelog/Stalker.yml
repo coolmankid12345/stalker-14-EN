@@ -131,5 +131,14 @@
   id: 14
   time: '2026-02-05T00:38:11.863717+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/360
+- author: crocodilecarousel
+  changes:
+  - message: Yantar maps
+    type: Add
+  - message: Apparition mobs
+    type: Add
+  id: 15
+  time: '2026-02-05T01:30:48.842687+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/379
 Name: Stalker
 Order: -1
