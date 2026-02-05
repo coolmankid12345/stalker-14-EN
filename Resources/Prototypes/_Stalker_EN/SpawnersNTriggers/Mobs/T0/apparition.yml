@@ -1,0 +1,265 @@
+# apparition spawners
+
+- type: entity
+  name: apparition trigger (1) (25%)
+  id: STTriggerPsiSnork125
+  parent: STBaseTrigger125
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1) (25%) 30m
+  id: STTriggerPsiSnork112530
+  parent: STBaseTrigger112530
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1) (50%) 30m
+  id: STTriggerPsiSnork115030
+  parent: STBaseTrigger115030
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1) (75%) 30m
+  id: STTriggerPsiSnork117530
+  parent: STBaseTrigger117530
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1) (100%) 30m
+  id: STTriggerPsiSnork1110030
+  parent: STBaseTrigger1110030
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+# Multi-spawn variants (1-2)
+
+- type: entity
+  name: apparition trigger (1-2) (25%) 30m
+  id: STTriggerPsiSnork122530
+  parent: STBaseTrigger122530
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1-2) (50%) 30m
+  id: STTriggerPsiSnork125030
+  parent: STBaseTrigger125030
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1-2) (75%) 30m
+  id: STTriggerPsiSnork127530
+  parent: STBaseTrigger127530
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1-2) (100%) 30m
+  id: STTriggerPsiSnork1210030
+  parent: STBaseTrigger1210030
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+# Multi-spawn variants (1-4)
+
+- type: entity
+  name: apparition trigger (1-4) (20%) 30m
+  id: STTriggerPsiSnork142030
+  parent: STBaseTrigger142030
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1-4) (50%) 30m
+  id: STTriggerPsiSnork145030
+  parent: STBaseTrigger145030
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1-4) (75%) 30m
+  id: STTriggerPsiSnork147530
+  parent: STBaseTrigger147530
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+
+- type: entity
+  name: apparition trigger (1-4) (100%) 30m
+  id: STTriggerPsiSnork1410030
+  parent: STBaseTrigger1410030
+  suffix: ST, T0, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    restricted:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker

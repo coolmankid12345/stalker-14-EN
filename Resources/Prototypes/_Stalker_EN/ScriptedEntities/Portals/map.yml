@@ -166,6 +166,92 @@
   - type: NewMapTeleport
     portalName: Duty-Bar
 
+# Yantar
+
+- type: entity
+  parent: MapTeleportBase
+  id: Yantar1EN
+  name: Yantar Warp
+  components:
+  - type: NewMapTeleport
+    portalName: Yantar1EN
+    cooldownEnabled: true
+    cooldownTime: 30
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: YantarTunnel
+  name: Yantar Tunnel
+  components:
+  - type: NewMapTeleport
+    portalName: YantarTunnel
+    cooldownEnabled: true
+    cooldownTime: 15
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: YantarLabLadder
+  name: Yantar Lab Ladder
+  components:
+  - type: NewMapTeleport
+    portalName: YantarLabLadder
+    cooldownEnabled: true
+    cooldownTime: 15
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Yantar-Lab
+  name: Yantar-Lab
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: Yantar-Lab
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Yantar-LabUncollide
+  name: Yantar-LabUncollide
+  components:
+  - type: NewMapTeleport
+    portalName: Yantar-Lab
+
+- type: entity
+  parent: MapTeleportBase
+  id: Yantar-Lab2
+  name: Yantar-Lab 2
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: Yantar-Lab2
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Yantar-LabUncollide2
+  name: Yantar-LabUncollide 2
+  components:
+  - type: NewMapTeleport
+    portalName: Yantar-Lab2
+
+- type: entity
+  parent: MapTeleportBase
+  id: Yantar-Lab3
+  name: Yantar-Lab 3
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: Yantar-Lab3
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Yantar-LabUncollide3
+  name: Yantar-LabUncollide 3
+  components:
+  - type: NewMapTeleport
+    portalName: Yantar-Lab3
+
 # Merc
 - type: entity
   parent: MapTeleportBase
@@ -178,4 +264,3 @@
     cooldownEnabled: true
     cooldownTime: 5
     godmodeCooldown: 5
-
