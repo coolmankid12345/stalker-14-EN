@@ -127,7 +127,7 @@ public sealed class HealingSystem : EntitySystem
         var healingDict = healing.Damage.DamageDict;
         foreach (var type in healingDict)
         {
-            if (damageableDict[type.Key].Value > 0)
+            if (type.Value != FixedPoint2.Zero && damageableDict[type.Key].Value > 0) // stalker-changes
             {
                 return true;
             }
@@ -172,12 +172,25 @@ public sealed class HealingSystem : EntitySystem
         if (TryComp<StackComponent>(uid, out var stack) && stack.Count < 1)
             return false;
 
-        var anythingToDo =
-            HasDamage(targetDamage, component) ||
-            component.ModifyBloodLevel > 0 // Special case if healing item can restore lost blood...
-                && TryComp<BloodstreamComponent>(target, out var bloodstream)
-                && _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var bloodSolution)
-                && bloodSolution.Volume < bloodSolution.MaxVolume; // ...and there is lost blood to restore.
+        var anythingToDo = HasDamage(targetDamage, component);
+
+        // stalker-changes-start: allow use when target is bleeding and item stops bleeding
+        if (!anythingToDo && component.BloodlossModifier < 0
+            && TryComp<BloodstreamComponent>(target, out var bloodstream)
+            && bloodstream.BleedAmount > 0)
+        {
+            anythingToDo = true;
+        }
+        // stalker-changes-end
+
+        if (!anythingToDo && component.ModifyBloodLevel > 0
+            && TryComp<BloodstreamComponent>(target, out var bloodstreamRestore)
+            && _solutionContainerSystem.ResolveSolution(target, bloodstreamRestore.BloodSolutionName,
+                ref bloodstreamRestore.BloodSolution, out var bloodSolution)
+            && bloodSolution.Volume < bloodSolution.MaxVolume)
+        {
+            anythingToDo = true;
+        }
 
         if (!anythingToDo)
         {
