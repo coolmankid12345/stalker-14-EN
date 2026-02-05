@@ -63,6 +63,8 @@
   parent: BaseItem
   suffix: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: STWeight
     self: 0.3
   - type: Sprite
@@ -183,6 +185,8 @@
   parent: BaseItem
   tag: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: STWeight
     self: 0.3
   - type: Sprite
