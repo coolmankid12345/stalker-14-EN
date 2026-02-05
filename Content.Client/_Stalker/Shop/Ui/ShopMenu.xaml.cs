@@ -129,7 +129,7 @@ public sealed partial class ShopMenu : DefaultWindow
         var sorted = listings
             .Where(l => MatchesSearchFilter(l, filter))
             .OrderBy(l => l.Priority)
-            .ThenBy(l => l.OriginalCost.Values.Sum());
+            .ThenByDescending(l => l.OriginalCost.Values.Sum()); // stalker-changes-en: sort expensive first
 
         ClearListings();
 
