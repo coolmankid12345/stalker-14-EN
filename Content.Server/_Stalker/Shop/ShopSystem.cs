@@ -62,6 +62,7 @@ public sealed partial class ShopSystem : SharedShopSystem
         _sawmill = Logger.GetSawmill("shops");
 
         InitializeSponsors();
+        InitializeBulkBuy(); // stalker-14-en
     }
 
     #region UI updates
