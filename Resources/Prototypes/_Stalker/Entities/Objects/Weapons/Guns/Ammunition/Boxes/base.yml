@@ -5,6 +5,8 @@
   categories: [ HideSpawnMenu ]
   suffix: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: RepositoryItem
     categoryName: repository-cartridges-category
   - type: STWeight
@@ -40,6 +42,8 @@
   categories: [ HideSpawnMenu ]
   suffix: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 5
   - type: RepositoryItem
     categoryName: repository-cartridges-category
   - type: STWeight

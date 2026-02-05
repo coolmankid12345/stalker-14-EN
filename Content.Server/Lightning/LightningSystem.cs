@@ -69,20 +69,46 @@ public sealed class LightningSystem : SharedLightningSystem
     /// <param name="lightningPrototype">The prototype for the lightning to be created</param>
     /// <param name="arcDepth">how many times to recursively fire lightning bolts from the target points of the first shot.</param>
     /// <param name="triggerLightningEvents">if the lightnings being fired should trigger lightning events.</param>
-    public void ShootRandomLightnings(EntityUid user, float range, int boltCount, string lightningPrototype = "Lightning", int arcDepth = 0, bool triggerLightningEvents = true)
+    /// <param name="predicate">ST14-EN Addition: If not-null: lightning targets are filtered by this predicate, where returning false means an entity will not be targeted by lightning.</param>
+    public void ShootRandomLightnings(EntityUid user, float range, int boltCount, string lightningPrototype = "Lightning", int arcDepth = 0, bool triggerLightningEvents = true, RandomLightningTargetPredicate? predicate = null /* ST14-EN: Added predicate */)
     {
         //TODO: add support to different priority target tablem for different lightning types
         //TODO: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
         //TODO: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
 
-        var targets = _lookup.GetEntitiesInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), range).ToList();
-        _random.Shuffle(targets);
+        // ST14-EN: changed `targets` to `unfilteredTargets`, which gets filtered via predicate
+        var unfilteredTargets = _lookup.GetEntitiesInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), range).ToList();
+        _random.Shuffle(unfilteredTargets);
+
+        // ST14-EN start: Predicate
+        // I would want to make this ValueList but i dont think its worth it
+        List<Entity<LightningTargetComponent>> targets = null!;
+
+        if (predicate is not { }) // No predicate
+            targets = unfilteredTargets;
+        else // Use predicate
+        {
+            targets = new();
+            foreach (var targetEntity in unfilteredTargets)
+            {
+                if (!predicate(targetEntity)) // entity is invalid for target so skip
+                    continue;
+
+                targets.Add(targetEntity);
+            }
+        }
+
+        if (targets.Count == 0)
+            return;
+        // ST14-EN end
+
+        // ST14-EN: moved sort to after list logic
         targets.Sort((x, y) => y.Comp.Priority.CompareTo(x.Comp.Priority));
 
         int shootedCount = 0;
         int count = -1;
-        while(shootedCount < boltCount)
+        while (shootedCount < boltCount)
         {
             count++;
 
@@ -95,7 +121,7 @@ public sealed class LightningSystem : SharedLightningSystem
             ShootLightning(user, targets[count].Owner, lightningPrototype, triggerLightningEvents);
             if (arcDepth - targets[count].Comp.LightningResistance > 0)
             {
-                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].Comp.LightningResistance, triggerLightningEvents);
+                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].Comp.LightningResistance, triggerLightningEvents, predicate: predicate /* ST14-EN: Added predicate */);
             }
             shootedCount++;
         }
@@ -109,3 +135,6 @@ public sealed class LightningSystem : SharedLightningSystem
 /// <param name="Target">The entity that was struck by lightning.</param>
 [ByRefEvent]
 public readonly record struct HitByLightningEvent(EntityUid Source, EntityUid Target);
+
+// ST14-EN Addition
+public delegate bool RandomLightningTargetPredicate(in EntityUid ev);

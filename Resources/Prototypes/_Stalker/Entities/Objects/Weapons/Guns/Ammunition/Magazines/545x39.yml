@@ -5,6 +5,8 @@
   parent: BaseItem
   tag: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: STWeight
     self: 0.5
   - type: Tag

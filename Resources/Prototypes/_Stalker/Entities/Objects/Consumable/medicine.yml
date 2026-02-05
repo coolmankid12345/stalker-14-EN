@@ -5,6 +5,8 @@
   suffix: Stalker
   description: Наркотический препарат, блокирующий лавинообразные нервные импульсы. Интересен побочный эффект после приёма препарата наблюдается кратковременное исчезновение каких-либо эмоций.
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: Tag
     tags:
     - Brutepack
@@ -220,6 +222,8 @@
   description: Шприц с ампулой йодорадина, содержит оптимальный объём вещества.
   suffix: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: Sprite
     sprite: _Stalker/Objects/Medicine/steampack/antirad.rsi
     scale: 0.7, 0.7
@@ -1141,6 +1145,8 @@
   id: BaseHealingItemStalker
   abstract: true
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: Trash
     time: 900
   - type: RepositoryItem

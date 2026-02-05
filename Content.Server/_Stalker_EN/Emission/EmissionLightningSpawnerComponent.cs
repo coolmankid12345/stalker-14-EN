@@ -6,7 +6,7 @@ namespace Content.Server._Stalker_EN.Emission;
 /// <summary>
 ///     Periodically spawns lightning around this.
 /// </summary>
-[RegisterComponent, Access([typeof(EmissionLightningSystem), typeof(EmissionEventRuleSystem), typeof(EmissionSafeZoneSystem)])]
+[RegisterComponent, Access([typeof(EmissionLightningSystem), typeof(EmissionEventRuleSystem), typeof(EmissionLightningSpawnerSystem)])]
 [AutoGenerateComponentPause]
 public sealed partial class EmissionLightningSpawnerComponent : Component
 {
@@ -33,6 +33,15 @@ public sealed partial class EmissionLightningSpawnerComponent : Component
     /// </summary>
     [DataField]
     public float SpawnRadius = 30f;
+
+    /// <summary>
+    ///     When this spawner is on someone with <see cref="_Stalker.StationEvents.Components.StalkerSafeZoneComponent"/>,
+    ///         the *minimum* spawn radius will effectively be this multiplied by <see cref="SpawnRadius"/>.
+    ///
+    ///     Otherwise, there is no minimum.
+    /// </summary>
+    [DataField]
+    public float SafeMinimumSpawnRadiusMultiplier = 0.15f; // This used to be 65% but i lowered it because i added raycast checks
 
     /// <summary>
     ///     Range of lightning bolts.

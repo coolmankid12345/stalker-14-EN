@@ -1,0 +1,7 @@
+- type: soundCollection
+  id: STThunder
+  files:
+  - /Audio/_Stalker_EN/Effects/Thunder/strike_1.ogg
+  - /Audio/_Stalker_EN/Effects/Thunder/strike_2.ogg
+  - /Audio/_Stalker_EN/Effects/Thunder/strike_3.ogg
+  - /Audio/_Stalker_EN/Effects/Thunder/strike_4.ogg

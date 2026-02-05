@@ -1,8 +1,8 @@
-ent-STAnomalyGeneratorBlockerBase = Anomaly blocker
-    .desc = Makes it so that the anomaly generator does not generate anything within the specified radius
+ent-STAnomalyGeneratorBlockerBase = Anomaly/Lightning blocker
+    .desc = Makes it so that the anomaly generator and lightning spawners do not generate anything within the specified radius
     .suffix = ST
-ent-STAnomalyGeneratorBlocker5 = Anomaly blocker (5 tiles)
-ent-STAnomalyGeneratorBlocker10 = Anomaly blocker (10 tiles)
-ent-STAnomalyGeneratorBlocker20 = Anomaly blocker (20 tiles)
-ent-STAnomalyGeneratorBlocker50 = Anomaly blocker (50 tiles)
-ent-STAnomalyGeneratorBlocker100 = Anomaly blocker (100 tiles)
+ent-STAnomalyGeneratorBlocker5 = Anomaly/Lightning blocker (5 tiles)
+ent-STAnomalyGeneratorBlocker10 = Anomaly/Lightning blocker (10 tiles)
+ent-STAnomalyGeneratorBlocker20 = Anomaly/Lightning blocker (20 tiles)
+ent-STAnomalyGeneratorBlocker50 = Anomaly/Lightning blocker (50 tiles)
+ent-STAnomalyGeneratorBlocker100 = Anomaly/Lightning blocker (100 tiles)
