@@ -1,0 +1,32 @@
+﻿- type: entity
+  parent: BaseStructureStalkerDynamic
+  id: MiracleMachineOff
+  name: miracle machine
+  description: A massive tank with something floating inside. Shockwaves of psy energy ripple around it, making it difficult to stand nearby.
+  suffix: Mapping, Off
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker_EN/Structures/Machines/miraclemachine.rsi
+    state: off
+
+- type: entity
+  parent: MiracleMachineOff
+  id: MiracleMachineOn
+  description: A massive tank with something suspended inside it.
+  suffix: Mapping, On
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker_EN/Structures/Machines/miraclemachine.rsi
+    layers:
+    - state: base
+    - state: base_overlay
+      shader: unshaded
+      visible: true
+  - type: AmbientSound
+    volume: -5
+    range: 20
+    sound:
+      path: /Audio/_Stalker_EN/Effects/psi_voices.ogg

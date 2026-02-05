@@ -1,0 +1,35 @@
+﻿- type: craftRecipe
+  id: recipeClothingEarsPsyHelm
+  resultProtos:
+  - STPsyHelm1
+  craftTime: 10
+  items:
+    ClothingEarsPsyHelmBlueprint:
+      amount: 1
+      catalyzer: true
+    STCraftPlasticFittingT3:
+      amount: 2
+    STCraftStandardPCBT2:
+      amount: 2
+    STCraftGlueKitT3:
+      amount: 1
+    STCraftCoil:
+      amount: 2
+
+- type: craftRecipe
+  id: recipeClothingEarsPsyHelmT2
+  resultProtos:
+  - STPsyHelm2
+  craftTime: 10
+  items:
+    ClothingEarsPsyHelmT2Blueprint:
+      amount: 1
+      catalyzer: true
+    STCraftPlasticFittingT3:
+      amount: 2
+    STCraftHighPerformanceChipT4:
+      amount: 1
+    STCraftGlueKitT3:
+      amount: 1
+    STCraftCoil:
+      amount: 2

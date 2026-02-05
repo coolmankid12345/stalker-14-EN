@@ -38,3 +38,41 @@
     #-PIVO-UPDATE-
     - protoId: ZoneAnomalyBeer
       weight: 0.3
+
+# Yantar
+- type: stAnomalyGenerationOptions
+  id: STGreatSwampsGenerationOptions
+  options:
+    totalCount: 650
+    anomalyEntries:
+    # Electrical
+    - protoId: ZoneAnomalyGarland
+      weight: 1
+    - protoId: ZoneAnomalyEMP
+      weight: 2
+    # Chemical
+    - protoId: ZoneAnomalySmoke
+      weight: 0.5
+    - protoId: ZoneAnomalyGazirovka
+      weight: 2
+    - protoId: ZoneAnomalyKissel
+      weight: 1
+    # Gravity
+    - protoId: ZoneAnomalyGravi
+      weight: 1.5
+    - protoId: ZoneAnomalySpringboard
+      weight: 1
+    - protoId: ZoneAnomalyGrabber
+      weight: 1
+    - protoId: ZoneAnomalyGlassShards
+      weight: 3
+    # Thermal
+    - protoId: ZoneAnomalySteam
+      weight: 2
+    - protoId: ZoneAnomalyJarka
+      weight: 4
+    # Psy
+    - protoId: ZoneAnomalyLamp
+      weight: 0.5
+    - protoId: ZoneAnomalyBarabashka
+      weight: 0.5
