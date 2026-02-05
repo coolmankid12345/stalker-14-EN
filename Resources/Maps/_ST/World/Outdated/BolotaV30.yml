@@ -43641,6 +43641,7 @@ entities:
     - type: NavMap
     - type: ZoneArtifactSpawnerMapTier
       maxTier: 1
+    - type: MapEmissionLightningTarget
     - type: STMapKey
       value: Boloto
 - proto: Banner14

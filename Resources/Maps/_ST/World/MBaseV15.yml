@@ -22813,6 +22813,7 @@ entities:
       - '#E2D2B711'
     - type: ZoneArtifactSpawnerMapTier
       maxTier: 1
+    - type: MapEmissionLightningTarget
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 3

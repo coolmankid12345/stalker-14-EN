@@ -6,6 +6,7 @@
   components:
     - type: STAnomalyGeneratorSpawnBlocker
       size: 5
+    # ST14-EN: This intentionally doesn't have emission lightning blocker
     - type: Marker
     - type: Transform
       anchored: True
@@ -41,6 +42,7 @@
   components:
   - type: STAnomalyGeneratorSpawnBlocker
     size: 5
+  # ST14-EN: This intentionally doesn't have emission lightning blocker
   - type: Marker
   - type: Transform
     anchored: True
