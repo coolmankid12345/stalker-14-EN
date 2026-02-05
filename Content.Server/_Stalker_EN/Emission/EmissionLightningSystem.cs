@@ -1,29 +1,49 @@
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Server._Stalker.StationEvents.Components;
 using Content.Server.Lightning;
+using Content.Shared._Stalker_EN.CCVar;
 using Content.Shared.GameTicking;
-using Content.Shared.Whitelist;
+using Content.Shared.Physics;
 using Robust.Server.GameObjects;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Stalker_EN.Emission;
 
 public sealed class EmissionLightningSystem : EntitySystem
 {
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
+    [Dependency] private readonly PhysicsSystem _physicsSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly LightningSystem _lightningSystem = default!;
 
     private EntityQuery<StalkerSafeZoneComponent> _safeZoneQuery;
     private EntityQuery<BlowoutTargetComponent> _emissionTargetQuery;
 
-    private const int MaximumRetries = 6;
+    private bool _doRaycasts = false;
 
-    private static readonly EntityWhitelist LightningTargetBlacklist = new();
+    /// <summary>
+    ///     Unit vectors of directions to check when raycasting.
+    /// </summary>
+    private static readonly Vector2[] RaycastCheckedDirections = [
+        Direction.North.ToVec(),
+        Direction.West.ToVec(),
+        Direction.East.ToVec(),
+        Direction.South.ToVec()
+    ];
+
+    private const float RaycastCheckRange = 6.5f;
+
+    private const int MaximumRetries = 6;
 
     /// <summary>
     ///     List of map-coordinates of lightning blockers
@@ -47,7 +67,8 @@ public sealed class EmissionLightningSystem : EntitySystem
         _safeZoneQuery = GetEntityQuery<StalkerSafeZoneComponent>();
         _emissionTargetQuery = GetEntityQuery<BlowoutTargetComponent>();
 
-        LightningTargetBlacklist.Components = [EntityManager.ComponentFactory.GetComponentName<StalkerSafeZoneComponent>()];
+        _configurationManager.OnValueChanged(STCCVars.EmissionLightningRaycast, (x) => _doRaycasts = x, invokeImmediately: true);
+
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
     }
 
@@ -62,6 +83,7 @@ public sealed class EmissionLightningSystem : EntitySystem
     public void Refresh()
     {
         Clear();
+        var stopwatch = Stopwatch.StartNew();
 
         var otherQuery = EntityQueryEnumerator<MapEmissionLightningTargetComponent, MapComponent>();
         while (otherQuery.MoveNext(out var _, out var mapComponent))
@@ -80,10 +102,13 @@ public sealed class EmissionLightningSystem : EntitySystem
                 continue;
 
             if (!_lightingBlockerMap.ContainsKey(mapCoordinates.MapId))
-                _lightingBlockerMap.Add(mapCoordinates.MapId, new());
+                _lightingBlockerMap.Add(mapCoordinates.MapId, []);
 
             _lightingBlockerMap[mapCoordinates.MapId].Add((mapCoordinates.Position, blockerComponent.Radius * blockerComponent.Radius));
         }
+
+        stopwatch.Stop();
+        Log.Info($"Took {stopwatch.ElapsedMilliseconds}ms to rebuild emission lightning map.");
     }
 
     /// <summary>
@@ -129,7 +154,7 @@ public sealed class EmissionLightningSystem : EntitySystem
 
             var valid = true;
 
-            if (hasLocalMap)
+            if (hasLocalMap) // If this is false, then no blockers are on the target's map, so just use the first value and return. Otherwise do alltis
             {
                 foreach (var (blockerWorldPosition, blockerRadiusSq) in localMap!)
                 {
@@ -144,14 +169,44 @@ public sealed class EmissionLightningSystem : EntitySystem
                     }
                 }
             }
-            else // No blockers on the target's map, so just use the first value and return
-                return true;
 
             if (valid)
+            {
+                // if we are doing raycasts, and raycast check failed, then abort
+                if (_doRaycasts &&
+                    !DoRaycastCheck(candidateMapCoordinates.Value))
+                    continue;
+
                 return true;
+            }
         }
 
         return false;
+    }
+
+    /// <summary>
+    ///     Tries to estimate whether some mapcoordinates are
+    ///         probably indoors or not.
+    /// </summary>
+    /// <returns>Whether coords are estimated to be indoors.</returns>
+    private bool DoRaycastCheck(MapCoordinates candidateMapCoordinates)
+    {
+        foreach (var direction in RaycastCheckedDirections)
+        {
+            var ray = new CollisionRay(candidateMapCoordinates.Position, direction, (int)CollisionGroup.HighImpassable);
+            var rayResults = _physicsSystem.IntersectRay(candidateMapCoordinates.MapId, ray, RaycastCheckRange, returnOnFirstHit: true).FirstOrNull();
+
+            // fail upon first nothing-hitting-ray
+            if (rayResults is not { })
+            {
+                Log.Info($"Failed raycast check");
+                return false;
+            }
+        }
+
+        Log.Info($"Succeeded raycast check");
+        // every ray had hit something; succeed
+        return true;
     }
 
     // Lightning can only hit if target is: 1. not in safezone, 2. is an emission target
