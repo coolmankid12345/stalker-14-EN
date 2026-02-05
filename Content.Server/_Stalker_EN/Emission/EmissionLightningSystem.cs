@@ -152,7 +152,7 @@ public sealed class EmissionLightningSystem : EntitySystem
             // var lightningDistance = maximumSpawnRadius * MathF.Sqrt(_robustRandom.NextFloat());
             // candidateMapCoordinates = targetMapCoordinates.Offset(_robustRandom.NextAngle().ToVec() * lightningDistance);
 
-            var valid = true;
+            var areCoordinatesValid = true;
 
             if (hasLocalMap) // If this is false, then no blockers are on the target's map, so just use the first value and return. Otherwise do alltis
             {
@@ -164,17 +164,17 @@ public sealed class EmissionLightningSystem : EntitySystem
                         (candidateMapCoordinates.Value.Position - blockerWorldPosition).LengthSquared() <= blockerRadiusSq)
                     {
                         // candiate position is in a blocker, go to retry
-                        valid = false;
+                        areCoordinatesValid = false;
                         break;
                     }
                 }
             }
 
-            if (valid)
+            if (areCoordinatesValid)
             {
-                // if we are doing raycasts, and raycast check failed, then abort
+                // if we are doing raycasts, and raycast check said coords are indoors, then abort
                 if (_doRaycasts &&
-                    !DoRaycastCheck(candidateMapCoordinates.Value))
+                    AreCoordinatesMaybeIndoors(candidateMapCoordinates.Value))
                     continue;
 
                 return true;
@@ -189,7 +189,7 @@ public sealed class EmissionLightningSystem : EntitySystem
     ///         probably indoors or not.
     /// </summary>
     /// <returns>Whether coords are estimated to be indoors.</returns>
-    private bool DoRaycastCheck(MapCoordinates candidateMapCoordinates)
+    private bool AreCoordinatesMaybeIndoors(MapCoordinates candidateMapCoordinates)
     {
         foreach (var direction in RaycastCheckedDirections)
         {
@@ -198,13 +198,9 @@ public sealed class EmissionLightningSystem : EntitySystem
 
             // fail upon first nothing-hitting-ray
             if (rayResults is not { })
-            {
-                Log.Info($"Failed raycast check");
                 return false;
-            }
         }
 
-        Log.Info($"Succeeded raycast check");
         // every ray had hit something; succeed
         return true;
     }
