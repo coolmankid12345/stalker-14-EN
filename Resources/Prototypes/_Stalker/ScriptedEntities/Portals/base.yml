@@ -23,6 +23,7 @@
     - type: Clickable
     - type: STAnomalyGeneratorSpawnBlocker
       size: 5
+    # ST14-EN: This intentionally doesn't have emission lightning blocker
 
 - type: entity
   parent: STBaseTeleport
