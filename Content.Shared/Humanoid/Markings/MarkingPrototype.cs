@@ -1,3 +1,4 @@
+using Content.Shared._Stalker_EN.RemovableMarkings; // STALKER-EN/ST14-EN addition
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -34,6 +35,14 @@ namespace Content.Shared.Humanoid.Markings
 
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
+
+        // STALKER-EN/ST14-EN addition
+        /// <summary>
+        ///     If not null then this marking is forcefully removable, if the entity with it
+        ///         has <see cref="RemovableMarkingsComponent"/> with matching <see cref="RemovableMarkingFlags"/>.
+        /// </summary>
+        [DataField]
+        public RemovableMarkingFlags RemovabilityFlags { get; private set; } = RemovableMarkingFlags.None;
 
         public Marking AsMarking()
         {

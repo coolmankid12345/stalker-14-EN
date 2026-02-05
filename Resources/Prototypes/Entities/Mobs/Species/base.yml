@@ -87,6 +87,17 @@
     horizontalRotation: 90
   - type: HumanoidAppearance
     species: Human
+  - type: RemovableMarkings # ST14-EN: added RemovableMarkings here
+    compatibleMarkingFlags: Cat
+    requiredToolQuality: Slicing
+    removalEmoteId: Scream
+    removedEntity: DismemberedMarkingEars
+    removalDoAfterLength: 10
+    removalDamage:
+      types:
+        Slash: 40 # it will hurt
+        Psy: -40 # you become more sane
+    removalKnockdownDuration: 5
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7 # stalker-changes
