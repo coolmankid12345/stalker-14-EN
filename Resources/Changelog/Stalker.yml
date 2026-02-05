@@ -140,5 +140,19 @@
   id: 15
   time: '2026-02-05T01:30:48.842687+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/379
+- author: LaCumbiaDelCoronavirus
+  changes:
+  - message: Emission lightning will no longer spawn in areas estimated to be indoors.
+      However it may still hit you through walls if you are a valid target.
+    type: Tweak
+  - message: Emission lightning will not hurt you if you are in a safezone.
+    type: Tweak
+  - message: Emission lightning now emit sounds.
+    type: Add
+  - message: Agroprom now actually spawns emission lightning.
+    type: Fix
+  id: 16
+  time: '2026-02-05T21:31:59.434844+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/387
 Name: Stalker
 Order: -1
