@@ -148,7 +148,7 @@ public sealed class EmissionLightningSystem : EntitySystem
     }
 
     // Lightning can only hit if target is: 1. not in safezone, 2. is an emission target
-    private bool LightningHitPredicate(in EntityUid uid) => !_safeZoneQuery.HasComponent(uid) && _emissionTargetQuery.HasComponent(uid);
+    private bool LightningHitPredicate(in EntityUid uid) => _emissionTargetQuery.HasComponent(uid) && !_safeZoneQuery.HasComponent(uid);
 
     public void TrySpawnLightningNearby(EntityUid targetUid, float maximumLightningRadius, EntProtoId emissionLightningEntityId, float boltRange, int boltCount)
     {

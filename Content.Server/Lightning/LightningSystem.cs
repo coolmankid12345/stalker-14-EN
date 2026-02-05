@@ -90,12 +90,12 @@ public sealed class LightningSystem : SharedLightningSystem
         else // Use predicate
         {
             targets = new();
-            foreach (var targetUid in unfilteredTargets)
+            foreach (var targetEntity in unfilteredTargets)
             {
-                if (!predicate(targetUid)) // entity is invalid for target so skip
+                if (!predicate(targetEntity)) // entity is invalid for target so skip
                     continue;
 
-                targets.Add(targetUid);
+                targets.Add(targetEntity);
             }
         }
 
