@@ -3,6 +3,7 @@ using Content.Server.Beam;
 using Content.Server.Beam.Components;
 using Content.Server.Lightning.Components;
 using Content.Shared.Lightning;
+using Content.Shared.Whitelist; // ST14-EN addition
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 
@@ -22,6 +23,7 @@ public sealed class LightningSystem : SharedLightningSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly EntityWhitelistSystem _entityWhitelistSystem = default!; // ST14-EN addition
 
     public override void Initialize()
     {
@@ -69,20 +71,46 @@ public sealed class LightningSystem : SharedLightningSystem
     /// <param name="lightningPrototype">The prototype for the lightning to be created</param>
     /// <param name="arcDepth">how many times to recursively fire lightning bolts from the target points of the first shot.</param>
     /// <param name="triggerLightningEvents">if the lightnings being fired should trigger lightning events.</param>
-    public void ShootRandomLightnings(EntityUid user, float range, int boltCount, string lightningPrototype = "Lightning", int arcDepth = 0, bool triggerLightningEvents = true)
+    /// <param name="whitelist">ST14-EN Addition: Blacklist of entities that can be hit by the lightning.</param>
+    public void ShootRandomLightnings(EntityUid user, float range, int boltCount, string lightningPrototype = "Lightning", int arcDepth = 0, bool triggerLightningEvents = true, EntityWhitelist? blacklist = null /* ST14-EN: Added blacklist */)
     {
         //TODO: add support to different priority target tablem for different lightning types
         //TODO: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
         //TODO: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
 
-        var targets = _lookup.GetEntitiesInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), range).ToList();
-        _random.Shuffle(targets);
+        // ST14-EN: changed `targets` to `unfilteredTargets`, which gets filtered via blacklist
+        var unfilteredTargets = _lookup.GetEntitiesInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), range).ToList();
+        _random.Shuffle(unfilteredTargets);
+
+        // ST14-EN start: Blacklist
+        // I would want to make this ValueList but i dont think its worth it
+        List<Entity<LightningTargetComponent>> targets = null!;
+
+        if (blacklist is not { } bl) // No blacklist
+            targets = unfilteredTargets;
+        else // Use blacklist
+        {
+            targets = new();
+            foreach (var targetUid in unfilteredTargets)
+            {
+                if (!_entityWhitelistSystem.IsValid(blacklist, targetUid)) // entity is not in blacklist so skip
+                    continue;
+
+                targets.Add(targetUid);
+            }
+        }
+
+        if (targets.Count == 0)
+            return;
+        // ST14-EN end
+
+        // ST14-EN: moved sort to after list logic
         targets.Sort((x, y) => y.Comp.Priority.CompareTo(x.Comp.Priority));
 
         int shootedCount = 0;
         int count = -1;
-        while(shootedCount < boltCount)
+        while (shootedCount < boltCount)
         {
             count++;
 
@@ -95,7 +123,7 @@ public sealed class LightningSystem : SharedLightningSystem
             ShootLightning(user, targets[count].Owner, lightningPrototype, triggerLightningEvents);
             if (arcDepth - targets[count].Comp.LightningResistance > 0)
             {
-                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].Comp.LightningResistance, triggerLightningEvents);
+                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].Comp.LightningResistance, triggerLightningEvents, blacklist: blacklist /* ST14-EN: Added blacklist */);
             }
             shootedCount++;
         }

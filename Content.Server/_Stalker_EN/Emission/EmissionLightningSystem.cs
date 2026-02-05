@@ -1,10 +1,13 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Server._Stalker.Anomaly.Generation.Components;
+using Content.Server._Stalker.StationEvents.Components;
 using Content.Server.Lightning;
 using Content.Shared.GameTicking;
+using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -20,6 +23,8 @@ public sealed class EmissionLightningSystem : EntitySystem
 
     private const int MaximumRetries = 6;
 
+    private static readonly EntityWhitelist LightningTargetBlacklist = new();
+
     /// <summary>
     ///     List of map-coordinates of lightning blockers
     ///         and radius of area that they block lightning in,
@@ -30,9 +35,16 @@ public sealed class EmissionLightningSystem : EntitySystem
         List<(Vector2, float)>
     > _lightingBlockerMap = new();
 
+    /// <summary>
+    ///     Maps where lightning is blocked from spawning.
+    /// </summary>
+    private HashSet<MapId> _lightningTargetMaps = new();
+
     public override void Initialize()
     {
         base.Initialize();
+
+        LightningBlacklist.Components = [nameof(StalkerSafeZoneComponent)];
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
     }
 
@@ -63,11 +75,20 @@ public sealed class EmissionLightningSystem : EntitySystem
     {
         Clear();
 
+        var otherQuery = EntityQueryEnumerator<STAnomalyGeneratorTargetComponent, MapComponent>();
+        while (otherQuery.MoveNext(out var _, out var mapComponent))
+        {
+            if (mapComponent.MapId == MapId.Nullspace)
+                continue;
+
+            _lightningTargetMaps.Add(mapComponent.MapId);
+        }
+
         var query = EntityQueryEnumerator<STAnomalyGeneratorSpawnBlockerComponent, TransformComponent>();
         while (query.MoveNext(out var blockerComponent, out var transformComponent))
         {
             var mapCoordinates = _transformSystem.GetMapCoordinates(transformComponent);
-            if (mapCoordinates.MapId == MapId.Nullspace)
+            if (!_lightningTargetMaps.Contains(mapCoordinates.MapId))
                 continue;
 
             if (!_lightingBlockerMap.ContainsKey(mapCoordinates.MapId))
@@ -78,11 +99,12 @@ public sealed class EmissionLightningSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Frees some memory; clears map of lightning blockers.
+    ///     Frees some memory; clears map of lightning data.
     /// </summary>
     public void Clear()
     {
         _lightingBlockerMap.Clear();
+        _lightningTargetMaps.Clear();
     }
 
     // I dont care that there will naturally be more lightning spawning with more players in an area
@@ -90,6 +112,14 @@ public sealed class EmissionLightningSystem : EntitySystem
     {
         var targetTransform = Transform(targetUid);
         var targetMapId = targetTransform.MapID;
+
+        // Map of target is not allowed to have lightning
+        if (!_lightningTargetMaps.Contains(targetMapId))
+        {
+            candidateMapCoordinates = null;
+            return false;
+        }
+
         var targetMapCoordinates = _transformSystem.GetMapCoordinates(targetTransform);
 
         var hasLocalMap = _lightingBlockerMap.TryGetValue(targetMapId, out var localMap);
@@ -134,6 +164,13 @@ public sealed class EmissionLightningSystem : EntitySystem
             return;
 
         var lightningEntityId = Spawn(emissionLightningEntityId, lightningMapCoordinates.Value);
-        _lightningSystem.ShootRandomLightnings(lightningEntityId, boltRange, boltCount, lightningPrototype: "EmissionLightningBolt", triggerLightningEvents: false);
+        _lightningSystem.ShootRandomLightnings(
+            lightningEntityId,
+            boltRange,
+            boltCount,
+            lightningPrototype: "EmissionLightningBolt",
+            triggerLightningEvents: false,
+            blacklist: LightningTargetBlacklist
+        );
     }
 }
