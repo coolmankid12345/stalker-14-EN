@@ -12,6 +12,13 @@
                 HorizontalAlignment="Left"
                 Access="Public"
                 HorizontalExpand="True"/>
+            <!-- stalker-changes-en: reset suppressed sell confirmations -->
+            <Button
+                Name="ResetConfirmationsButton"
+                MinWidth="64"
+                HorizontalAlignment="Right"
+                Visible="False"
+                Text="{Loc 'st-shop-reset-sell-confirmations'}"/>
             <Button
                 Name="RefreshButton"
                 MinWidth="64"

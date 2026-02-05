@@ -79,6 +79,10 @@ public sealed partial class ShopMenu : DefaultWindow
                 _suppressedSellConfirmations.Add(id);
         }
 
+        // stalker-changes-en: reset sell confirmations button
+        ResetConfirmationsButton.Visible = _suppressedSellConfirmations.Count > 0;
+        ResetConfirmationsButton.OnPressed += _ => ResetSellConfirmations();
+
         // stalker-changes: search bar
         SearchBar.OnSearchTextChanged += _ =>
         {
@@ -300,6 +304,16 @@ public sealed partial class ShopMenu : DefaultWindow
         _cfg.SetCVar(STCCVars.ShopSuppressedSellConfirmations,
             string.Join(",", _suppressedSellConfirmations));
         _cfg.SaveToFile();
+        ResetConfirmationsButton.Visible = true;
+    }
+
+    // stalker-changes-en: clear all sell confirmation suppressions
+    private void ResetSellConfirmations()
+    {
+        _suppressedSellConfirmations.Clear();
+        _cfg.SetCVar(STCCVars.ShopSuppressedSellConfirmations, string.Empty);
+        _cfg.SaveToFile();
+        ResetConfirmationsButton.Visible = false;
     }
 
     private string GetListingPriceString(ListingData listing)
