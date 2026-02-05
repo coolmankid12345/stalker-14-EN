@@ -68,7 +68,7 @@
           prob: 0.35
         - id: STOintment
           prob: 0.35
-        - id: Tourniquet
+        - id: STTourniquet # stalker-14-en
           prob: 0.08
         - id: antiradpill
           prob: 0.08

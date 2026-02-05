@@ -698,7 +698,7 @@
         - id: MedkitAI2
         - id: MedkitAI2
         - id: Bloodpack
-        - id: Tourniquet
+        - id: STTourniquet # stalker-14-en
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -734,8 +734,8 @@
         - id: Bloodpack
         - id: Bloodpack
         - id: Bloodpack
-        - id: Tourniquet
-        - id: Tourniquet
+        - id: STTourniquet # stalker-14-en
+        - id: STTourniquet # stalker-14-en
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -1073,9 +1073,9 @@
         - id: MedkitMilitary
         - id: Gauze
         - id: Gauze
-        - id: Tourniquet
-        - id: Tourniquet
-        - id: Tourniquet
+        - id: STTourniquet # stalker-14-en
+        - id: STTourniquet # stalker-14-en
+        - id: STTourniquet # stalker-14-en
         - id: FlashlightSeclite
         - id: PowerCellHyper
         - id: PowerCellHyper
