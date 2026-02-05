@@ -9,15 +9,23 @@ namespace Content.Server._Stalker_EN.Emission;
 /// <summary>
 /// Manages lightning spawner components on entities during emissions.
 /// </summary>
+/// <remarks>
+///     Do you wonder why emission lightning can spawn even with people in safezones, but not target them?
+///         Because I want there to be visual effect of emission lightning even if you aren't targeted by it.
+/// </remarks>
 public sealed class EmissionLightningSpawnerSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly EmissionLightningSystem _emissionLightningSystem = default!;
 
+    private EntityQuery<StalkerSafeZoneComponent> _safeZoneQuery;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        _safeZoneQuery = GetEntityQuery<StalkerSafeZoneComponent>();
 
         SubscribeLocalEvent<BlowoutTargetComponent, ComponentStartup>(OnBlowoutTargetStartup);
         SubscribeLocalEvent<BlowoutTargetComponent, ComponentShutdown>(OnBlowoutTargetShutdown);
@@ -33,8 +41,10 @@ public sealed class EmissionLightningSpawnerSystem : EntitySystem
             if (_gameTiming.CurTime < spawnerComponent.NextLightning)
                 continue;
 
+            var minimumSpawnRadius = _safeZoneQuery.HasComponent(spawnerUid) ? spawnerComponent.SpawnRadius * spawnerComponent.SafeMinimumSpawnRadiusMultiplier : 0f;
+
             spawnerComponent.NextLightning = _gameTiming.CurTime + TimeSpan.FromSeconds(_robustRandom.NextFloat(spawnerComponent.LightningIntervalRange.X, spawnerComponent.LightningIntervalRange.Y));
-            _emissionLightningSystem.TrySpawnLightningNearby(spawnerUid, spawnerComponent.SpawnRadius, spawnerComponent.LightningEffectProtoId, spawnerComponent.BoltRange, spawnerComponent.BoltCount);
+            _emissionLightningSystem.TrySpawnLightningNearby(spawnerUid, spawnerComponent.SpawnRadius, spawnerComponent.LightningEffectProtoId, spawnerComponent.BoltRange, spawnerComponent.BoltCount, minimumSpawnRadius: minimumSpawnRadius);
         }
     }
 

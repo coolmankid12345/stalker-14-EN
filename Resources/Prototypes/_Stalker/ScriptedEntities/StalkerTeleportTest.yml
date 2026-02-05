@@ -6,6 +6,7 @@
   components:
     - type: STAnomalyGeneratorSpawnBlocker
       size: 20
+    # ST14-EN: This intentionally doesn't have emission lightning blocker
     - type: Transform
       anchored: True
     - type: InteractionOutline

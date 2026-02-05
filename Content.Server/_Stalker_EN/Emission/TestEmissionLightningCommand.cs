@@ -22,6 +22,6 @@ public sealed class TestEmissionLightningCommand : LocalizedCommands
         _entitySystemManager.Resolve(ref _emissionLightningSystem);
 
         _emissionLightningSystem.Refresh();
-        _emissionLightningSystem.TrySpawnLightningNearby(uid, 10f, "EmissionLightningEffect", 10f, 10);
+        _emissionLightningSystem.TrySpawnLightningNearby(uid, 0f, "EmissionLightningEffect", 10f, 10);
     }
 }

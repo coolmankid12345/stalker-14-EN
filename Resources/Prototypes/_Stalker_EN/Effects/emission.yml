@@ -17,7 +17,7 @@
     sound:
       collection: STThunder
       params:
-        volume: 3
+        volume: 6
 
 - type: entity
   parent: Lightning
