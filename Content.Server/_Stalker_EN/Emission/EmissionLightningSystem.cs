@@ -47,16 +47,16 @@ public sealed class EmissionLightningSystem : EntitySystem
     ];
 
     /// <summary>
-    ///     Minimum number of rays that didn't hit anything
+    ///     Minimum number of rays that hit something
     ///         in a raycast check, at which it will be deemed
     ///         that the coordinates being tested are indoors.
     ///
     ///     This is so that you cant so easily just have an open door
     ///         and let lightning in.
     /// </summary>
-    private const int RaycastMinimumUnintersectedRays = 2;
+    private const int RaycastMinimumIntersectedRays = 5; // out of 8
 
-    private const float RaycastCheckRange = 6.5f;
+    private const float RaycastCheckRange = 6.65f;
 
     private const int MaximumRetries = 6;
 
@@ -189,7 +189,7 @@ public sealed class EmissionLightningSystem : EntitySystem
             {
                 // if we are doing raycasts, and raycast check said coords are indoors, then abort
                 if (_doRaycasts &&
-                    AreCoordinatesMaybeIndoors(candidateMapCoordinates.Value))
+                    !AreCoordinatesMaybeIndoors(candidateMapCoordinates.Value))
                     continue;
 
                 return true;
@@ -201,27 +201,25 @@ public sealed class EmissionLightningSystem : EntitySystem
 
     /// <summary>
     ///     Tries to estimate whether some mapcoordinates are
-    ///         probably indoors or not.
+    ///         probably indoors/outdoors.
     /// </summary>
     /// <returns>Whether coords are estimated to be indoors.</returns>
     private bool AreCoordinatesMaybeIndoors(MapCoordinates candidateMapCoordinates)
     {
-        var unintersectedRays = 0;
+        var intersectedRays = 0;
         foreach (var direction in RaycastCheckedDirections)
         {
-            var ray = new CollisionRay(candidateMapCoordinates.Position, direction, (int)CollisionGroup.HighImpassable);
+            var ray = new CollisionRay(candidateMapCoordinates.Position, direction, (int)CollisionGroup.InteractImpassable);
             var rayResults = _physicsSystem.IntersectRay(candidateMapCoordinates.MapId, ray, RaycastCheckRange, returnOnFirstHit: true).FirstOrNull();
 
-            // fail upon nothing-hitting-ray
-            if (rayResults is not { })
+            if (rayResults is { })
             {
-                // too many rays failed so just fail, also increment number of failed rays
-                if (++unintersectedRays == RaycastMinimumUnintersectedRays) // >= isnt gonna do anything here
+                // increment number of failed rays, if too many rays failed then fail
+                if (++intersectedRays == RaycastMinimumIntersectedRays) // >= isnt gonna do anything here
                     return false;
             }
         }
 
-        // every ray had hit something; succeed
         return true;
     }
 
