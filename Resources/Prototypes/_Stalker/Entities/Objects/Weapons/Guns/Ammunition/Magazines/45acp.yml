@@ -8,6 +8,8 @@
   parent: BaseItem
   abstract: true
   components:
+    - type: STBulkBuyable # stalker-14-en
+      maxQuantity: 10
     - type: Tag
       tags:
         - STSpeedLoader45ACP
@@ -88,6 +90,8 @@
   parent: BaseItem
   tag: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: STWeight
     self: 0.6
   - type: Sprite
