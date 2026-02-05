@@ -154,5 +154,12 @@
   id: 16
   time: '2026-02-05T21:31:59.434844+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/387
+- author: teecoding
+  changes:
+  - message: ability to repurchase recently sold items
+    type: Add
+  id: 17
+  time: '2026-02-05T23:33:06.148114+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/382
 Name: Stalker
 Order: -1
