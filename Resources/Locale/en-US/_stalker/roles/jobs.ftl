@@ -14,6 +14,10 @@ job-clearsky = Clear Sky Fighter
 job-clearsky-desc = Explore the Zone and keep its secrets out of sight.
 job-clearsky-supervisor = your mysterious leader
 
+job-clearsky-commander = Clear Sky Commander
+job-clearsky-commander-desc = Discover the secrets of the Zone. Reach the center of the Zone no matter what.
+job-clearsky-commander-supervisor = I think you're in charge?
+
 job-covenant = Covenant
 job-covenant-desc = This is a small army of extremely dangerous fanatics.
 job-covenant-supervisor = Explore the Zone and keep its secrets safe from prying eyes
@@ -51,6 +55,8 @@ job-head-mercenary-supervisor = yourself and the wealthiest clients
 job-military-stalker = Military Stalker
 job-military-stalker-desc = Soldiers who have undergone special training after the experience of service in the Zone, or stalkers who have signed a contract with the army. You will endure and suffer, Victoria cruenta!
 job-military-stalker-supervisor = your superiors!
+job-military-stalker-commander = Military Stalker Commander
+job-military-stalker-commander-supervisor = you
 job-military = Military
 job-military-desc = Hold the Zone to prevent the looting of hazardous radioactive materials and to prevent unauthorized entry by any persons.
 job-military-head = Chief of the Garrison
@@ -62,6 +68,8 @@ job-military-supervisor = your superiors
 job-monolith = Monolith
 job-monolith-desc = Symbol of a quiet but intimidating presence.
 job-monolith-supervisor = His voice
+
+job-stalker-head-monolith-supervisor = follow the wishes of the glorious Monolith
 
 job-neutral-stalker = Neutral
 job-neutral-stalker-desc = Defenders of the weak
@@ -92,6 +100,10 @@ job-project-orchestrator-supervisor = You manage the entire "Project" Algorithm,
 job-renegade = Renegade
 job-renegade-desc = Worship the flesh and make those who don't understand pay in teeth.
 job-renegade-supervisor = "Flesh"
+
+job-head-renegade = Renegade Leader
+job-head-renegade-desc = Protect Flesh. Take Teeth.
+job-head-renegade-supervisor = you're the boss.
 
 job-scientist = Scientist
 job-scientist-desc = The main goal is to study all aspects of the Site, using scientific methods to further explain what the Site is and its purpose.
@@ -171,3 +183,14 @@ job-evolver-medium-supervisor = Study and protect the zone, obey your Archon and
 job-evolver-archon = Symbiote Archon
 job-evolver-archon-desc = Exert control over the psyfield and the Psions, you are the peak of psionic evolution.
 job-evolver-archon-supervisor = Protect the zone and preserve the psyfield
+
+
+
+# Other
+
+job-clown-supervisor = Смех продлевает жизнь. Буквально.
+job-doctor-supervisor = Вы подчиняетесь Главному Врачу.
+job-head-doctor-supervisor = Вы подчиняетесь мэру города "Чернобыль - 4".
+job-supervisor-mayor = Вы подчиняетесь мэру города "Чернобыль - 4".
+job-mayor-city-supervisor = Нет никого главнее вас. Все гражданские структуры подчиняются вам.
+

@@ -1,8 +1,14 @@
 department-Stalker = Stalker
+department-Stalker-description = TODO
 department-StalkerAdvanced = Allied Stalker
+department-StalkerAdvanced-description = TODO
 department-StalkerBrigands = Brigand
+department-StalkerBrigands-description = TODO
 department-StalkerOfficials = Government
+department-StalkerOfficials-description = TODO
 department-StalkerReligius = Zealot
+department-StalkerReligius-description = TODO
 department-Evolver = Evolved Mutant
 department-StalkerAnomalists = Anomalist
 department-StalkerUnitedNations = United Nations
+department-StalkerUnitedNations-description = TODO
