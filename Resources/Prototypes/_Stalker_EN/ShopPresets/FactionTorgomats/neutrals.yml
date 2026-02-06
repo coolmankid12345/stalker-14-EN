@@ -2,7 +2,7 @@
   id: NeutralsShopPresetZoneEN # Sidorovich Prices
   itemsForSale:
     # Exclusive -
-    DismemberedMarkingEars: 65 # these should sell low at easy-to-find traders like sid or bar
+    DismemberedMarkingEars: 45 # dementedly low price # these should sell low at easy-to-find traders like sid or bar
 
     # Thermal group - 1
     ZoneArtifactFireball: 405
