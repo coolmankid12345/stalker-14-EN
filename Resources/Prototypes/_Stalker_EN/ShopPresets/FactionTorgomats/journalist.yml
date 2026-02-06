@@ -1,5 +1,6 @@
 - type: shopPreset
   id: JournalistShopPreset # 0x
+  minSellPrice: 5
   categories:
     - name: shop-category-weapons
       priority: 1

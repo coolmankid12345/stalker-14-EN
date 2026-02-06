@@ -1,5 +1,6 @@
 - type: shopPreset
   id: NeutralsShopPresetZoneEN # Sidorovich Prices
+  minSellPrice: 5
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 405

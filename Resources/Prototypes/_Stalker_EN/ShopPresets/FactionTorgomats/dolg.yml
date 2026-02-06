@@ -1,5 +1,6 @@
 - type: shopPreset
   id: DolgShopPresetEN # Mutant parts 1.5x Barman - Pending Economy Change
+  minSellPrice: 5
   itemsForSale:
     #Boars -------- Health * T
     MutantPartBoarHoof: 275 # T1
