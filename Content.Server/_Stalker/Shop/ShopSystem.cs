@@ -359,7 +359,7 @@ public sealed partial class ShopSystem : SharedShopSystem
         return result;
     }
 
-    private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems, int minSellPrice = 5)
+    private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems, int minSellPrice = 0)
     {
         var result = new List<ListingData>();
         foreach (var item in items)

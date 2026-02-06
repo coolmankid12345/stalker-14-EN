@@ -1,5 +1,6 @@
 - type: shopPreset
   id: NpcJuryIzvorotinEN
+  minSellPrice: 5
   itemsForSale:
     STJewelrySilver: 400
     STJewelryGold: 600

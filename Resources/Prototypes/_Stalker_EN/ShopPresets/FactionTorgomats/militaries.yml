@@ -49,6 +49,7 @@
 
 - type: shopPreset
   id: VoenstalShopPresetEN # Voenstals
+  minSellPrice: 5
   itemsForSale:
     TradeBox: 1
   categories:
@@ -334,6 +335,7 @@
 
 - type: shopPreset
   id: OKSOPShopPresetEN # OKSOP REWORK IN-PROGRESS
+  minSellPrice: 5
   itemsForSale:
     FoodTinMRETrash: 0
     FoodTinPeachesTrash: 0
@@ -578,6 +580,7 @@
 
 - type: shopPreset
   id: OKSOPOfficerShopPresetEN
+  minSellPrice: 5
   itemsForSale:
     FoodTinMRETrash: 0
     FoodTinPeachesTrash: 0
@@ -602,6 +605,7 @@
 
 - type: shopPreset
   id: OKSOPClothingShopPresetEN
+  minSellPrice: 5
   itemsForSale:
     FoodTinMRETrash: 0
     FoodTinPeachesTrash: 0

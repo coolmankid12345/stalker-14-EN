@@ -1,5 +1,6 @@
 - type: shopPreset
   id: RenegadesShopPresetEN # Pending Economy Change
+  minSellPrice: 5
   itemsForSale:
     # Exclusive -
     DismemberedMarkingEars: 600

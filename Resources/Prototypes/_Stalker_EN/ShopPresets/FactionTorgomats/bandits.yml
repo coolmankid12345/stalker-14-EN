@@ -1,5 +1,6 @@
 - type: shopPreset
   id: BandsShopPresetEN # Pending Economy Change
+  minSellPrice: 5
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 310

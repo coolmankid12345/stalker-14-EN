@@ -1,5 +1,6 @@
 ﻿- type: shopPreset
   id: NpcVadikNarikEN
+  minSellPrice: 5
   itemsForSale:
     CannabisSeedsStalker: 1
     Blunt: 1

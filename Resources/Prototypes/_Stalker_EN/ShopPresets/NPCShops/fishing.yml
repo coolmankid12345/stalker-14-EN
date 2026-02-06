@@ -1,6 +1,7 @@
 # im not committed to these numbers in any way
 - type: shopPreset
   id: STFishShopPreset
+  minSellPrice: 5
   itemsForSale:
     # normal fish
     STFishBitterling: 20

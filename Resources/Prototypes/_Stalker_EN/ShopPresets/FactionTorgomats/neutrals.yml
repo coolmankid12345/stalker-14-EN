@@ -1,5 +1,6 @@
 - type: shopPreset
   id: NeutralsShopPresetZoneEN # Sidorovich Prices
+  minSellPrice: 5
   itemsForSale:
     # Exclusive -
     DismemberedMarkingEars: 375
