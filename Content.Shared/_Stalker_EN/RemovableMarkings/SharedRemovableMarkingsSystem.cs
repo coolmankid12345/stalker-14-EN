@@ -1,4 +1,5 @@
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
@@ -196,7 +197,7 @@ public abstract class SharedRemovableMarkingsSystem : EntitySystem
 
         TryForcefullyRemoveValidMarkings(entity);
 
-        _damageableSystem.TryChangeDamage(entity.Owner, entity.Comp.RemovalDamage, tool: args.Used);
+        _damageableSystem.TryChangeDamage(entity.Owner, entity.Comp.RemovalDamage);
         if (entity.Comp.RemovalEmoteId != null &&
             _mobStateSystem.IsAlive(entity.Owner))
             DoRemovalEmote(entity);
