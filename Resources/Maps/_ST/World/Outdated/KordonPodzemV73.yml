@@ -46250,6 +46250,7 @@ entities:
     - type: StalkerSafeZone
     - type: ZoneArtifactSpawnerMapTier
       maxTier: 0
+    - type: MapEmissionLightningTarget
     - type: NavMap
 - proto: AlwaysPoweredLightLED
   entities:

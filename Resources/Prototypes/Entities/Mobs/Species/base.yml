@@ -90,6 +90,17 @@
   - type: HumanoidAppearance
     species: Human
   - type: TypingIndicator
+  - type: RemovableMarkings # ST14-EN: added RemovableMarkings here
+    compatibleMarkingFlags: Cat
+    requiredToolQuality: Slicing
+    removalEmoteId: Scream
+    removedEntity: DismemberedMarkingEars
+    removalDoAfterLength: 10
+    removalDamage:
+      types:
+        Slash: 40 # it will hurt
+        Psy: -40 # you become more sane
+    removalKnockdownDuration: 5
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7 # stalker-changes
@@ -224,6 +235,7 @@
   - MobRespirator
   - MobAtmosStandard
   - MobFlammable
+  - MobFirePat # stalker-changes - fire patting
   - BaseMobSpecies
   id: BaseMobSpeciesOrganic
   abstract: true

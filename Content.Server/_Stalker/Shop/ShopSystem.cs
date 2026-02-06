@@ -65,6 +65,8 @@ public sealed partial class ShopSystem : SharedShopSystem
         _sawmill = Logger.GetSawmill("shops");
 
         InitializeSponsors();
+        InitializeBuyback(); // stalker-changes-en: initialize buyback subscriptions
+        InitializeBulkBuy(); // stalker-14-en
     }
 
     #region UI updates
@@ -202,18 +204,25 @@ public sealed partial class ShopSystem : SharedShopSystem
         #endregion
 
         var userItems = GetContainerItemsWithoutMoney(user.Value, component);
-        var userListings = GetListingData(userItems, component, proto.SellingItems);
+        var userListings = GetListingData(userItems, component, proto.SellingItems, proto.MinSellPrice); //stalker-14-en change
 
         var money = GetMoneyFromList(GetContainersElements(user.Value), component);
 
         component.CurrentBalance = money;
 
         _sawmill.Debug($"Sent balance to client: {component.CurrentBalance}");
+
+        // stalker-changes-en: inject buyback category into the categories sent to client
+        var allCategories = new List<CategoryInfo>(categories);
+        var buybackCategory = GetBuybackCategory(user.Value, component);
+        if (buybackCategory != null)
+            allCategories.Add(buybackCategory);
+
         var state = new ShopUpdateState(
             money,
             component.MoneyId,
             curProto.DisplayName,
-            categories,
+            allCategories,
             sponsorCategory, // sponsor shop categories for people who pays MONEY
             contribCategories, // contrib shop categories for less favorite than personals :(
             personalCategories, // personal stuff for Valdis' favourites ;)
@@ -424,7 +433,7 @@ public sealed partial class ShopSystem : SharedShopSystem
         return result;
     }
 
-    private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems)
+    private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems, int minSellPrice = 5)
     {
         var result = new List<ListingData>();
         foreach (var item in items)
@@ -464,6 +473,10 @@ public sealed partial class ShopSystem : SharedShopSystem
                 ProductEntity = meta.EntityPrototype?.ID,
                 Count = 1 // Initialize count to 1 for the first item
             };
+
+            // stalker-changes-en: skip items below minimum sell price
+            if (minSellPrice > 0 && listing.OriginalCost.Values.Sum() < minSellPrice)
+                continue;
 
             result.Add(listing);
         }
@@ -575,6 +588,21 @@ public sealed partial class ShopSystem : SharedShopSystem
             return;
 
         IncreaseBalance(seller, component, cost);
+
+        // stalker-changes-en: track sold items for buyback
+        if (listing.OriginalCost.TryGetValue(component.MoneyId, out var perItemPrice))
+        {
+            AddBuybackEntry(
+                uid,
+                seller,
+                component,
+                listing.ProductEntity,
+                listing.Name ?? "",
+                listing.Description ?? "",
+                perItemPrice.Int(),
+                msg.Count);
+        }
+
         UpdateShopUI(seller, uid, null, component);
     }
     #endregion

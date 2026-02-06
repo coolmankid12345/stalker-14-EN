@@ -187,6 +187,10 @@
       items:
         STBoltBagFilled: 50
         BoxArtcont: 750
+        BoxArtcontBlack: 750
+        BoxArtcontBlue: 750
+        BoxArtcontYellow: 750
+        BoxArtcontOrange: 750
         ZoneAnomalyDetectorAD1: 450 # T1
         ZoneAnomalyDetectorAD2: 1000 # T2
         STLeadPlate: 200 # PvE Anti-Rad if abused raise price
@@ -220,7 +224,7 @@
         HatchetStalker: 150
         CasseteDuty: 500
         STElasticRubberRed: 50
-        STElasticRubberGreen: 50 
+        STElasticRubberGreen: 50
         STElasticRubberBlue: 50
 
     - name: shop-category-modules

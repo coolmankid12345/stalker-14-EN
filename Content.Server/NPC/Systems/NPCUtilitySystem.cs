@@ -1,3 +1,5 @@
+using Content.Server._Stalker_EN.NPC.Queries.Considerations;
+using Content.Server.Atmos.Components;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Hands.Systems;
 using Content.Server.NPC.Queries;
@@ -9,6 +11,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Examine;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
@@ -336,6 +339,13 @@ public sealed class NPCUtilitySystem : EntitySystem
             case TargetIsAliveCon:
             {
                 return _mobState.IsAlive(targetUid) ? 1f : 0f;
+            }
+            // stalker-changes
+            case TargetHasMindCon:
+            {
+                if (!TryComp<MindContainerComponent>(targetUid, out var mind))
+                    return 0f;
+                return mind.HasMind ? 1f : 0f;
             }
             case TargetIsCritCon:
             {

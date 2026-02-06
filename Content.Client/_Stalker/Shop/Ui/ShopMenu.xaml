@@ -1,6 +1,7 @@
 ﻿<DefaultWindow
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:stalkerEn="clr-namespace:Content.Client._Stalker_EN.UI.Controls;assembly=Content.Client"
     Title="{Loc 'shop-ui-default-title'}"
     MinSize="847 622"
     SetSize="847 622">
@@ -17,6 +18,8 @@
                 HorizontalAlignment="Right"
                 Text="{Loc 'shop-refresh-button'}"/>
         </BoxContainer>
+        <!-- stalker-changes: search bar -->
+        <stalkerEn:STSearchBarControl Name="SearchBar"/>
         <PanelContainer VerticalExpand="True">
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#000000FF" />

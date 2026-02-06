@@ -4,6 +4,7 @@ using Content.Server._Stalker.StationEvents.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.StationEvents.Events;
+using Content.Shared._Stalker_EN.Emission;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -34,6 +35,7 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
+    [Dependency] private readonly EmissionLightningSystem _emissionLightningSystem = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     protected override void Added(EntityUid uid, EmissionEventRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
@@ -42,11 +44,10 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
 
         component.EventStartTime = _timing.CurTime;
         component.SoundsPlayed = EmissionSoundsPlayed.None;
-        component.InDamageWindow = false;
+        component.Stage = EmissionStage.Stage1;
         component.RainStarted = false;
         component.AmbientLightSet = false;
 
-        // Play stage1 sound and send announcement
         PlayGlobalSound(component.SoundStage1);
         SendAnnouncement(component.AnnouncementStage1, component.AnnouncementSender);
         component.SoundsPlayed |= EmissionSoundsPlayed.Stage1;
@@ -55,7 +56,14 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
     protected override void Ended(EntityUid uid, EmissionEventRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
     {
         base.Ended(uid, component, gameRule, args);
-        // Ambient light is cleared at stage 3 (T+330), not at event end
+
+        // Clean up lightning spawners (handles mid-round admin cancel during Stage 2)
+        var lightningQuery = EntityQueryEnumerator<EmissionLightningSpawnerComponent>();
+        while (lightningQuery.MoveNext(out var targetUid, out var spawnerComponent))
+            RemCompDeferred(targetUid, spawnerComponent);
+
+        // Always restore day cycle - idempotent, safe even if stage 3 already cleaned up
+        ClearAmbientLightColor();
     }
 
     protected override void ActiveTick(EntityUid uid, EmissionEventRuleComponent component, GameRuleComponent gameRule, float frameTime)
@@ -64,7 +72,6 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
 
         var elapsed = _timing.CurTime - component.EventStartTime;
 
-        // Play main ambient track
         if (!component.SoundsPlayed.HasFlag(EmissionSoundsPlayed.MainAmbient) &&
             elapsed >= component.MainAmbientDelay)
         {
@@ -72,14 +79,13 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             component.SoundsPlayed |= EmissionSoundsPlayed.MainAmbient;
         }
 
-        // Set red hue (separate timing from main ambient)
+        // Red hue timing is intentionally separate from main ambient audio
         if (!component.AmbientLightSet && elapsed >= component.RedHueDelay)
         {
-            SetAmbientLightColor(component.EmissionColor);
+            SetAmbientLightColor(component);
             component.AmbientLightSet = true;
         }
 
-        // Play stage2 sound and announcement
         if (!component.SoundsPlayed.HasFlag(EmissionSoundsPlayed.Stage2) &&
             elapsed >= component.Stage2Delay)
         {
@@ -88,14 +94,31 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             component.SoundsPlayed |= EmissionSoundsPlayed.Stage2;
         }
 
-        // Damage starts
-        if (!component.InDamageWindow && elapsed >= component.DamageStartDelay)
+        if (component.Stage == EmissionStage.Stage1 && elapsed >= component.DamageStartDelay)
         {
-            component.InDamageWindow = true;
+            component.Stage = EmissionStage.Stage2;
             component.NextDamageTick = _timing.CurTime;
+
+            if (component.LightningEffectProtoId is { } lightningEffectProtoId)
+            {
+                _emissionLightningSystem.Refresh();
+
+                // Only targets present at stage start receive lightning spawners;
+                // late-joining entities are handled by EmissionLightningSpawnerSystem
+                var targetQuery = EntityQueryEnumerator<BlowoutTargetComponent>();
+                while (targetQuery.MoveNext(out var targetUid, out _))
+                {
+                    if (HasComp<StalkerSafeZoneComponent>(targetUid))
+                        continue;
+
+                    var lightningSpawnerComponent = EnsureComp<EmissionLightningSpawnerComponent>(targetUid);
+                    lightningSpawnerComponent.SpawnRadius = component.LightningSpawnRadius;
+                    lightningSpawnerComponent.LightningIntervalRange = component.LightningIntervalRange;
+                    lightningSpawnerComponent.LightningEffectProtoId = lightningEffectProtoId;
+                }
+            }
         }
 
-        // Rain starts before stage 3
         var rainStartTime = component.DamageEndDelay - component.RainStartBeforeEnd;
         if (!component.RainStarted && elapsed >= rainStartTime)
         {
@@ -103,7 +126,6 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             var duration = _random.Next(component.RainDurationMin, component.RainDurationMax);
             var weatherProto = _protoManager.Index(component.RainWeather);
 
-            // Set weather on all maps
             var weatherQuery = EntityQueryEnumerator<MapComponent>();
             while (weatherQuery.MoveNext(out _, out var mapComp))
             {
@@ -111,10 +133,14 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             }
         }
 
-        // Damage ends, play stage3 sound and announcement, clear ambient
-        if (component.InDamageWindow && elapsed >= component.DamageEndDelay)
+        if (component.Stage == EmissionStage.Stage2 && elapsed >= component.DamageEndDelay)
         {
-            component.InDamageWindow = false;
+            component.Stage = EmissionStage.Stage3;
+
+            var targetQuery = EntityQueryEnumerator<EmissionLightningSpawnerComponent>();
+            while (targetQuery.MoveNext(out var targetUid, out var spawnerComponent))
+                RemCompDeferred(targetUid, spawnerComponent);
+
             ClearAmbientLightColor();
 
             if (!component.SoundsPlayed.HasFlag(EmissionSoundsPlayed.Stage3))
@@ -125,32 +151,27 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
             }
         }
 
-        // Apply damage during damage window
-        var doDamage = component.InDamageWindow && _timing.CurTime >= component.NextDamageTick;
+        var doDamage = component.Stage == EmissionStage.Stage2 && _timing.CurTime >= component.NextDamageTick;
         if (doDamage)
         {
             component.NextDamageTick = _timing.CurTime + component.DamageInterval;
         }
 
-        // Process entities for damage and camera shake
         var query = EntityQueryEnumerator<BlowoutTargetComponent, TransformComponent, DamageableComponent>();
         while (query.MoveNext(out var target, out _, out var transform, out var damageable))
         {
-            // Skip entities in safe zones
             if (HasComp<StalkerSafeZoneComponent>(target))
                 continue;
 
             if (HasComp<StalkerSafeZoneComponent>(_mapManager.GetMapEntityId(transform.MapID)))
                 continue;
 
-            // Apply damage
             if (doDamage && component.Damage is not null)
             {
                 _damageableSystem.TryChangeDamage(target, component.Damage, interruptsDoAfters: false);
             }
 
-            // Apply camera shake during damage window
-            if (component.InDamageWindow)
+            if (component.Stage == EmissionStage.Stage2)
             {
                 var kick = new Vector2(_random.NextFloat(), _random.NextFloat()) * component.ShakeStrength;
                 _cameraRecoil.KickCamera(target, kick);
@@ -169,19 +190,31 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         _chatSystem.DispatchFilteredAnnouncement(filter, message, sender: sender, playSound: false, colorOverride: Color.Red);
     }
 
-    private void SetAmbientLightColor(Color color)
+    private void SetAmbientLightColor(EmissionEventRuleComponent emissionRuleComponent)
     {
         _mapDay.SetEnabled(false);
         var query = EntityQueryEnumerator<MapLightComponent>();
-        while (query.MoveNext(out var mapUid, out var light))
+        while (query.MoveNext(out var mapUid, out _))
         {
-            light.AmbientLightColor = color;
-            Dirty(mapUid, light);
+            var mapActiveEmissionComponent = EntityManager.ComponentFactory.GetComponent<MapActiveEmissionComponent>();
+            mapActiveEmissionComponent.PrimaryEmissionColor = emissionRuleComponent.PrimaryEmissionColor;
+            mapActiveEmissionComponent.SecondaryEmissionColor = emissionRuleComponent.SecondaryEmissionColor;
+
+            mapActiveEmissionComponent.TotalDeviationDecreaseStartTime = emissionRuleComponent.EventStartTime + emissionRuleComponent.RedHueBeforeEndDelay;
+            mapActiveEmissionComponent.TotalDeviationDecreaseRate =
+                mapActiveEmissionComponent.Deviation / (float)(emissionRuleComponent.DamageEndDelay - emissionRuleComponent.RedHueBeforeEndDelay).TotalSeconds;
+
+            AddComp(mapUid, mapActiveEmissionComponent);
+            Dirty(mapUid, mapActiveEmissionComponent);
         }
     }
 
     private void ClearAmbientLightColor()
     {
+        var query = EntityQueryEnumerator<MapActiveEmissionComponent>();
+        while (query.MoveNext(out var mapUid, out var activeEmissionComponent))
+            RemCompDeferred(mapUid, activeEmissionComponent);
+
         _mapDay.SetEnabled(true);
     }
 }

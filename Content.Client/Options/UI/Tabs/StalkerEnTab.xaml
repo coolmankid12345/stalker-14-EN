@@ -1,0 +1,16 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:ui="clr-namespace:Content.Client.Options.UI">
+    <BoxContainer Orientation="Vertical">
+        <ScrollContainer VerticalExpand="True"
+                         HScrollEnabled="False">
+            <BoxContainer Orientation="Vertical"
+                          Margin="8">
+                <CheckBox Name="EmissionSimpleVisualsCheckbox"
+                          Text="{Loc 'ui-options-simple-emission'}"/>
+            </BoxContainer>
+        </ScrollContainer>
+        <ui:OptionsTabControlRow Name="Control"
+                                 Access="Public"/>
+    </BoxContainer>
+</Control>

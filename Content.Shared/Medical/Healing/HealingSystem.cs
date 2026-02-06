@@ -130,7 +130,7 @@ public sealed class HealingSystem : EntitySystem
         var healingDict = healing.Comp.Damage.DamageDict;
         foreach (var type in healingDict)
         {
-            if (damageableDict[type.Key].Value > 0)
+            if (type.Value != FixedPoint2.Zero && damageableDict[type.Key].Value > 0) // stalker-changes
             {
                 return true;
             }

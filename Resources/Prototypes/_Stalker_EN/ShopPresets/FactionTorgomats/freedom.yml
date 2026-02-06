@@ -219,6 +219,10 @@
       items:
         STBoltBagFilled: 50
         BoxArtcont: 250 # T1
+        BoxArtcontBlack: 250
+        BoxArtcontBlue: 250
+        BoxArtcontYellow: 250
+        BoxArtcontOrange: 250
         ZoneAnomalyDetectorAD1: 250 # T1
         ZoneAnomalyDetectorAD2: 650 # T2
           # Detectors
@@ -255,7 +259,7 @@
         Matchbox: 10
         HatchetStalker: 150
         STElasticRubberRed: 50
-        STElasticRubberGreen: 50 
+        STElasticRubberGreen: 50
         STElasticRubberBlue: 50
 
     - name: shop-category-modules

@@ -68627,6 +68627,7 @@ entities:
         ratio: 0.75
     - type: ZoneArtifactSpawnerMapTier
       maxTier: 2
+    - type: MapEmissionLightningTarget
     - type: STAnomalyGeneratorTarget
       optionsId: STTemnajDolinaGenerationOptions
 - proto: AcousticGuitarInstrument

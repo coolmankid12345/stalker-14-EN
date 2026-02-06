@@ -656,4 +656,7 @@ binds:
   type: State
   key: R
   mod1: Shift
+- function: STQuickEquipBolt
+  type: State
+  key: N
   # stalker-changes-ends
