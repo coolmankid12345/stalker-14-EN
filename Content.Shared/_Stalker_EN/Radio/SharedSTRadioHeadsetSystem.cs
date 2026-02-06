@@ -9,28 +9,65 @@ namespace Content.Shared._Stalker_EN.Radio;
 /// </summary>
 public abstract class SharedSTRadioHeadsetSystem : EntitySystem
 {
-    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
+    [Dependency] protected readonly ActionContainerSystem _actionContainer = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<STRadioHeadsetComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<STRadioHeadsetComponent, ComponentRemove>(OnComponentRemove);
         SubscribeLocalEvent<STRadioHeadsetComponent, GetItemActionsEvent>(OnGetItemActions);
     }
 
     protected virtual void OnMapInit(Entity<STRadioHeadsetComponent> ent, ref MapInitEvent args)
     {
+        if (IsActionInvalid(ent.Comp.ToggleMicActionEntity))
+            ent.Comp.ToggleMicActionEntity = null;
+
         _actionContainer.EnsureAction(ent, ref ent.Comp.ToggleMicActionEntity, ent.Comp.ToggleMicAction);
         Dirty(ent);
     }
 
+    private void OnComponentRemove(Entity<STRadioHeadsetComponent> ent, ref ComponentRemove args)
+    {
+        if (ent.Comp.ToggleMicActionEntity is { } actionEntity && Exists(actionEntity))
+            Del(actionEntity);
+
+        ent.Comp.ToggleMicActionEntity = null;
+    }
+
     private void OnGetItemActions(Entity<STRadioHeadsetComponent> ent, ref GetItemActionsEvent args)
     {
-        // Only grant actions when equipped to ears slot (SlotFlags is null when in hands)
         if (args.SlotFlags is not { } flags || !flags.HasFlag(SlotFlags.EARS))
             return;
 
-        args.AddAction(ent.Comp.ToggleMicActionEntity);
+        // During loadout restore, DeleteChildren() queues the action for deletion before
+        // GetItemActionsEvent fires. Must check IsQueuedForDeletion in addition to TerminatingOrDeleted.
+        if (IsActionInvalid(ent.Comp.ToggleMicActionEntity))
+        {
+            ent.Comp.ToggleMicActionEntity = null;
+            Dirty(ent);
+        }
+
+        args.AddAction(ref ent.Comp.ToggleMicActionEntity, ent.Comp.ToggleMicAction);
+    }
+
+    /// <summary>
+    /// Checks if the action entity is invalid (null, deleted, terminating, or queued for deletion).
+    /// Must check IsQueuedForDeletion because QueueDeleteEntity doesn't change LifeStage immediately.
+    /// </summary>
+    private bool IsActionInvalid(EntityUid? actionId)
+    {
+        if (actionId is not { } id)
+            return true;
+
+        if (TerminatingOrDeleted(id))
+            return true;
+
+        if (EntityManager.IsQueuedForDeletion(id))
+            return true;
+
+        return false;
     }
 }
