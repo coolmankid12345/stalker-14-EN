@@ -1,0 +1,64 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    Title="{Loc 'farkle-dice-window-title'}"
+    MinSize="700 480"
+    SetSize="700 480">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="8">
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
+            <Label Name="TargetScoreLabel" StyleClasses="LabelHeading" />
+        </BoxContainer>
+
+        <BoxContainer Name="TargetScorePresets" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 4">
+            <Button Name="Score5000" Text="5,000" MinWidth="70" Margin="2" />
+            <Button Name="Score10000" Text="10,000" MinWidth="70" Margin="2" />
+            <Button Name="Score15000" Text="15,000" MinWidth="70" Margin="2" />
+            <Button Name="Score20000" Text="20,000" MinWidth="70" Margin="2" />
+        </BoxContainer>
+
+        <PanelContainer Margin="0 0 0 8">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1C1F17" />
+            </PanelContainer.PanelOverride>
+            <BoxContainer Orientation="Horizontal" Margin="8">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                    <Label Name="Player1Label" HorizontalAlignment="Center" StyleClasses="LabelSubText" />
+                    <Label Name="Player1ScoreLabel" HorizontalAlignment="Center" StyleClasses="LabelHeading" />
+                </BoxContainer>
+                <Control MinWidth="20" />
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                    <Label Name="Player2Label" HorizontalAlignment="Center" StyleClasses="LabelSubText" />
+                    <Label Name="Player2ScoreLabel" HorizontalAlignment="Center" StyleClasses="LabelHeading" />
+                </BoxContainer>
+            </BoxContainer>
+        </PanelContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
+            <Label Text="{Loc 'farkle-turn-score'}" />
+            <Label Name="TurnScoreLabel" StyleClasses="LabelHeading" Margin="8 0 0 0" />
+        </BoxContainer>
+
+        <PanelContainer Margin="0 0 0 8">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#2A2517" />
+            </PanelContainer.PanelOverride>
+            <Label Name="StatusLabel" HorizontalAlignment="Center" Margin="8" />
+        </PanelContainer>
+
+        <BoxContainer Name="DiceContainer" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8" SeparationOverride="8" />
+
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
+            <Label Text="{Loc 'farkle-selection-score'}" />
+            <Label Name="SelectionScoreLabel" Margin="8 0 0 0" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" VerticalExpand="True" VerticalAlignment="Bottom">
+            <Button Name="JoinButton" Text="{Loc 'farkle-join-button'}" MinWidth="80" Margin="4" />
+            <Button Name="LeaveButton" Text="{Loc 'farkle-leave-button'}" MinWidth="80" Margin="4" />
+            <Button Name="RollButton" Text="{Loc 'farkle-roll-button'}" MinWidth="80" Margin="4" />
+            <Button Name="KeepButton" Text="{Loc 'farkle-keep-button'}" MinWidth="100" Margin="4" />
+            <Button Name="BankButton" Text="{Loc 'farkle-bank-button'}" MinWidth="80" Margin="4" />
+            <Button Name="NewGameButton" Text="{Loc 'farkle-new-game-button'}" MinWidth="100" Margin="4" />
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>
