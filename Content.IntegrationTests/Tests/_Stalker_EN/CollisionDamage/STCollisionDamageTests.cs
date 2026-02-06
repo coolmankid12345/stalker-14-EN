@@ -1,6 +1,7 @@
 using Content.Server._Stalker_EN.CollisionDamage;
 using Content.Shared._Stalker_EN.CollisionDamage;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Mind.Components;
 using Robust.Shared.GameObjects;
 
