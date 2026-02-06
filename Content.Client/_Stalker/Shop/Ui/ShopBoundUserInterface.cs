@@ -1,5 +1,7 @@
-﻿using Content.Shared._Stalker.Shop;
+using Content.Shared._Stalker.Shop;
 using Content.Shared._Stalker.Shop.Prototypes;
+using Content.Shared._Stalker_EN.Shop;
+using Content.Shared._Stalker_EN.Shop.Buyback; // stalker-changes-en: buyback system
 using JetBrains.Annotations;
 
 namespace Content.Client._Stalker.Shop.Ui;
@@ -39,10 +41,22 @@ public sealed class ShopBoundUserInterface : BoundUserInterface
 
         _menu.OnListingButtonPressed += (_, listing, sell, balance, count) =>
         {
+            // stalker-changes-en: route buyback purchases to the dedicated message
+            if (!sell && listing.ID != null && listing.ID.StartsWith("st-buyback-"))
+            {
+                var buybackId = listing.ID.Substring("st-buyback-".Length);
+                SendMessage(new STBuybackPurchaseMessage(buybackId, balance));
+                return;
+            }
+
             switch (sell)
             {
                 case false:
-                    SendMessage(new ShopRequestBuyMessage(listing, balance));
+                    // stalker-14-en: bulk buy sends a separate message with quantity
+                    if (count != null && count > 1)
+                        SendMessage(new STShopBulkBuyMessage(listing, balance, count.Value));
+                    else
+                        SendMessage(new ShopRequestBuyMessage(listing, balance));
                     break;
 
                 default:

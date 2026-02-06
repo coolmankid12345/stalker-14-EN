@@ -83,5 +83,91 @@
   id: 8
   time: '2026-01-29T20:58:58.913420+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/358
+- author: teecoding
+  changes:
+  - message: Possible fix for faction dogtags not showing correct chat bubbles when
+      spawning or reconnecting
+    type: Fix
+  id: 9
+  time: '2026-02-01T14:51:53.182867+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/362
+- author: LaCumbiaDelCoronavirus
+  changes:
+  - message: Light from flashlights and other things affected by player's rotation
+      will now rotate more smoothly in combat mode.
+    type: Tweak
+  id: 10
+  time: '2026-02-01T14:54:15.133593+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/363
+- author: crocodilecarousel
+  changes:
+  - message: Map changes
+    type: Tweak
+  id: 11
+  time: '2026-02-02T02:14:43.757655+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/367
+- author: teecoding
+  changes:
+  - message: Prevent emission lightning from spawning near players in safe zones
+    type: Fix
+  id: 12
+  time: '2026-02-02T18:27:50.198569+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/371
+- author: teecoding
+  changes:
+  - message: Press N to quickly pull a bolt from your bags into your hand
+    type: Add
+  - message: all Stalker keybinds are now grouped together and rebindable
+    type: Tweak
+  id: 13
+  time: '2026-02-03T21:28:20.224043+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/375
+- author: LaCumbiaDelCoronavirus
+  changes:
+  - message: You can now use knifes and other cutting tools to remove cat ears from
+      people. Context menu has a verb for it, or alt-interact on a target to start
+      the process.
+    type: Add
+  id: 14
+  time: '2026-02-05T00:38:11.863717+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/360
+- author: crocodilecarousel
+  changes:
+  - message: Yantar maps
+    type: Add
+  - message: Apparition mobs
+    type: Add
+  id: 15
+  time: '2026-02-05T01:30:48.842687+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/379
+- author: LaCumbiaDelCoronavirus
+  changes:
+  - message: Emission lightning will no longer spawn in areas estimated to be indoors.
+      However it may still hit you through walls if you are a valid target.
+    type: Tweak
+  - message: Emission lightning will not hurt you if you are in a safezone.
+    type: Tweak
+  - message: Emission lightning now emit sounds.
+    type: Add
+  - message: Agroprom now actually spawns emission lightning.
+    type: Fix
+  id: 16
+  time: '2026-02-05T21:31:59.434844+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/387
+- author: teecoding
+  changes:
+  - message: ability to repurchase recently sold items
+    type: Add
+  id: 17
+  time: '2026-02-05T23:33:06.148114+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/382
+- author: teecoding
+  changes:
+  - message: Non-rouble shops (military premium, meatman) no longer hide low-priced
+      items from the sell tab
+    type: Fix
+  id: 18
+  time: '2026-02-06T20:01:07.110967+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/391
 Name: Stalker
 Order: -1

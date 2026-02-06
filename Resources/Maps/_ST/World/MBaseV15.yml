@@ -22817,6 +22817,7 @@ entities:
         ratio: 0.75
     - type: ZoneArtifactSpawnerMapTier
       maxTier: 1
+    - type: MapEmissionLightningTarget
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 3

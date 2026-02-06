@@ -1,5 +1,6 @@
 - type: shopPreset
   id: BandsShopPresetEN # Pending Economy Change
+  minSellPrice: 5
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 310
@@ -286,6 +287,10 @@
       items:
         STBoltBagFilled: 50
         BoxArtcont: 500 # T1
+        BoxArtcontBlack: 500
+        BoxArtcontBlue: 500
+        BoxArtcontYellow: 500
+        BoxArtcontOrange: 500
         ZoneAnomalyDetectorAD1: 450 # T1
         TrashDetectorTier1: 200
         TrashDetectorTier2: 400

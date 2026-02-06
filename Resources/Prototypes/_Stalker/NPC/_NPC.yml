@@ -1393,6 +1393,8 @@
     - NPCHidenTrader
   - type: STAnomalyGeneratorSpawnBlocker
     size: 5
+  - type: EmissionLightningSpawnBlocker # ST14-EN: added emission lightning blocker
+    radius: 5
 
 - type: entity
   parent: NPCDoll
@@ -1432,4 +1434,3 @@
     channels:
     - Binary
     - Common
-

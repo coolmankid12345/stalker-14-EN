@@ -33,6 +33,8 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/barrier.rsi
     scale: 0.8, 0.8
+  - type: Physics
+    bodyType: Static
   - type: Fixtures
     fixtures:
       closed:

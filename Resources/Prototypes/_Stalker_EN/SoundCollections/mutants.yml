@@ -52,3 +52,11 @@
   - /Audio/Effects/RingtoneNotes/fsharp.ogg
   - /Audio/Effects/RingtoneNotes/g.ogg
   - /Audio/Effects/RingtoneNotes/gsharp.ogg
+
+- type: soundCollection
+  id: PsiVoice
+  files:
+  - /Audio/_Stalker_EN/Effects/psivoice1.ogg
+  - /Audio/_Stalker_EN/Effects/psivoice2.ogg
+  - /Audio/_Stalker_EN/Effects/psivoice3.ogg
+

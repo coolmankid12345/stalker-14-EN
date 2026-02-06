@@ -5,6 +5,8 @@
   parent: BaseItem
   suffix: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: STWeight
     self: 0.2
   - type: Tag
@@ -597,9 +599,6 @@
     size: Small
     shape:
       - 0,0,0,1
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/pp-91.rsi

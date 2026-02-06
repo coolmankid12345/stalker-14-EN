@@ -15,4 +15,7 @@ public sealed partial class STWeaponModuleContainerComponent : Component
 
     [ViewVariables]
     public bool IntegratedScopeEffect;
+
+    [ViewVariables]
+    public float BaseSoundGunshotVolume;
 }

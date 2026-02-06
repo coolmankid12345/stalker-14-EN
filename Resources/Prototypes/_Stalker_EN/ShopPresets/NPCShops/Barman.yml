@@ -1,6 +1,10 @@
 - type: shopPreset
   id: STNPCBarmanPresetEN # 1x Standard - Pending Economy Change
+  minSellPrice: 5
   itemsForSale:
+    # Exclusive -
+    DismemberedMarkingEars: 575
+
     # Thermal group - 1
     ZoneArtifactFireball: 540
     ZoneArtifactEye: 810
@@ -332,6 +336,10 @@
         STBoltBagOliveGrayFilled: 50
         # Artifact containers
         BoxArtcont: 500
+        BoxArtcontBlack: 500
+        BoxArtcontBlue: 500
+        BoxArtcontYellow: 500
+        BoxArtcontOrange: 500
         longrangemetaldetector: 3000
         # Anomaly detectors
         ZoneAnomalyDetectorAD1: 450

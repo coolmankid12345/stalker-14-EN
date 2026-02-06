@@ -5,6 +5,8 @@
   parent: BaseItem
   suffix: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: Trash
     time: 900
   - type: STWeight
@@ -25,6 +27,7 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      item_slot: !type:ContainerSlot {}
   - type: Appearance
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi
@@ -72,6 +75,8 @@
   parent: BaseItem
   suffix: Stalker
   components:
+    - type: STBulkBuyable # stalker-14-en
+      maxQuantity: 10
     - type: STWeight
       self: 0.15
     - type: Tag
@@ -90,6 +95,7 @@
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
+        item_slot: !type:ContainerSlot {}
     - type: Sprite
       sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_high_capacity_mag.rsi
       layers:
@@ -153,9 +159,6 @@
     size: Normal
     shape:
       - 0,0,1,1
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/bizon.rsi
@@ -196,9 +199,6 @@
     size: Small
     shape:
       - 0,0,0,0
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/vz61.rsi

@@ -18,6 +18,7 @@
 
 - type: shopPreset
   id: SantaPreset
+  minSellPrice: 5
   itemsForSale:
     PresentTrash: 10
   categories:

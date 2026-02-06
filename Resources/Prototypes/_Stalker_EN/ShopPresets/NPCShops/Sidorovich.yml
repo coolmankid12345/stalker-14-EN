@@ -1,5 +1,6 @@
 - type: shopPreset
   id: NpcSidorEN # 0.75x Barman - Pending Economy Change
+  minSellPrice: 5
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 405
@@ -295,6 +296,10 @@
       items:
         STBoltBagFilled: 50
         BoxArtcont: 400 # T1
+        BoxArtcontBlack: 400
+        BoxArtcontBlue: 400
+        BoxArtcontYellow: 400
+        BoxArtcontOrange: 400
         ZoneAnomalyDetectorAD1: 50 # T1
           # Detectors
         ZoneArtifactDetectorPulse: 100 # T1

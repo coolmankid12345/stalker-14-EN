@@ -1,5 +1,6 @@
 - type: shopPreset
   id: KekeshaShopPresetEN # i miss my boy
+  minSellPrice: 5
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 400
@@ -253,6 +254,10 @@
       items:
         STBoltBagFilled: 50
         BoxArtcont: 1000 # T1
+        BoxArtcontBlack: 1000
+        BoxArtcontBlue: 1000
+        BoxArtcontYellow: 1000
+        BoxArtcontOrange: 1000
         ZoneAnomalyDetectorAD1: 500 # T1
         ZoneAnomalyDetectorUpgradeAD2: 3000
         TrashDetectorTier1: 200

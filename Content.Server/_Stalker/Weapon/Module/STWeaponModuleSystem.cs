@@ -49,6 +49,9 @@ public sealed class STWeaponModuleSystem : STSharedWeaponModuleSystem
         entity.Comp.CachedScopeEffect = null;
         entity.Comp.IntegratedScopeEffect = HasComp<ScopeComponent>(entity);
 
+        if (TryComp<GunComponent>(entity, out var gun) && gun.SoundGunshot != null)
+            entity.Comp.BaseSoundGunshotVolume = gun.SoundGunshot.Params.Volume;
+
         if (!_containerMangerQuery.TryGetComponent(entity, out var containerComponent))
             return;
 
@@ -84,9 +87,9 @@ public sealed class STWeaponModuleSystem : STSharedWeaponModuleSystem
         if (args.SoundGunshot is null)
             return;
 
-        // Use WithVolume() to SET from AudioParams.Default.Volume (0), not accumulate
+        // Use WithVolume() to SET from stored base volume, not accumulate
         args.SoundGunshot.Params = args.SoundGunshot.Params
-            .WithVolume(AudioParams.Default.Volume + effect.SoundGunshotVolumeAddition);
+            .WithVolume(entity.Comp.BaseSoundGunshotVolume + effect.SoundGunshotVolumeAddition);
     }
 
     private void UpdateContainerEffect(BaseContainer container)

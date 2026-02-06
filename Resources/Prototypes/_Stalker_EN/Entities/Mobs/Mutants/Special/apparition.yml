@@ -1,0 +1,155 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantApparitionBase
+  name: apparition
+  suffix: ST, T0
+  description: A mysterious something.
+  components:
+  - type: HTN
+    rootTask:
+      task: STPsiHostileCompound
+    blackboard:
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        15
+  - type: Damageable
+    damageModifierSet: STMutantT2DamageModifierSet
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Stalker_EN/Mobs/Mutants/apparition.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: stalker2
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: stalker
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: PsiVoice
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Bloodstream
+    bloodReagent: Blood
+    bloodMaxVolume: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.8
+        density: 800
+        hard: false  # Required for collision events with KinematicController mobs
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.8
+    baseSprintSpeed: 4.4
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/_Stalker/Effects/hush.ogg
+      params:
+        volume: -10
+  - type: STCollisionDamage
+    damage:
+      types:
+        Psy: 12
+    onlyMindedEntities: true
+    deleteOnHit: true
+    fixtureId: fix1
+    hitSound:
+      collection: PsiVoice
+  - type: STWeight
+    self: 0
+  - type: MeleeWeapon
+    attackRate: 1
+    heavyWindupModifier: 1
+    heavyDamageModifier: 1.25
+    angle: 30
+    range: 0
+    animation: WeaponArcClaw
+    wideAnimation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 0
+
+- type: entity
+  parent: MobMutantApparitionBase
+  id: MobMutantApparitionDog
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Stalker_EN/Mobs/Mutants/apparition.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: dog
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: dog
+
+- type: entity
+  parent: MobMutantApparitionBase
+  id: MobMutantApparitionBoar
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Stalker_EN/Mobs/Mutants/apparition.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: boar
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: boar
+
+- type: entity
+  parent: MobMutantApparitionBase
+  id: MobMutantApparitionSnork
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: snork
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/apparition.rsi
+      scale: 1.2, 1.2
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: snork_running
+    noMovementLayers:
+      movement:
+        state: snork
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: snork
+
+- type: entity
+  parent: MobMutantApparitionBase
+  id: MobMutantApparitionSucker
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Stalker_EN/Mobs/Mutants/apparition_sucker.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: sucker
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: sucker

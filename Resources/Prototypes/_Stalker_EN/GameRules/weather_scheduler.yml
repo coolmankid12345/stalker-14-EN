@@ -61,7 +61,7 @@
       # Topi (Marshes) - Swampy area, lots of rain and fog
       Topi:
         weatherPool:
-          Rain: 4.0
+          STRain: 4.0
           STFogLight: 3.0
           STFogHeavy: 1.0
           STStorm: 1.0

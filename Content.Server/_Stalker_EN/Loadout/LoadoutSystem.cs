@@ -29,6 +29,7 @@ using Content.Shared.Whitelist;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Actions.Components;
+using Content.Shared.Item;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
@@ -53,6 +54,7 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly TagSystem _tags = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
+    [Dependency] private readonly SharedItemSystem _itemSystem = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -1011,7 +1013,12 @@ public sealed class LoadoutSystem : EntitySystem
         // Check for ItemSlotsComponent (used by guns for magazine/chamber slots)
         TryComp<ItemSlotsComponent>(parent, out var itemSlotsComp);
 
-        foreach (var nestedItem in nestedItems)
+        // Sort by grid size (largest first) to reduce fragmentation in grid-based storage
+        var sortedNestedItems = nestedItems
+            .OrderByDescending(item => GetItemGridSize(item.PrototypeId))
+            .ToList();
+
+        foreach (var nestedItem in sortedNestedItems)
         {
             // Check if correct item already exists at target location
             // This prevents unnecessary stash pulls when items are already in place
@@ -1125,8 +1132,10 @@ public sealed class LoadoutSystem : EntitySystem
                 _stalkerStorage.SpawnedItem(spawned, iss);
             }
 
-            // NOTE: Don't clear auto-fill here - StorageFill may trigger during insertion
-            // We clear AFTER successful insertion, before recursive restore
+            // Clear auto-filled contents BEFORE inserting into parent storage to prevent
+            // StorageFill contents from leaking into parent's StoredItems dictionary
+            if (nestedItem.NestedItems.Count > 0)
+                ClearAutoFilledContents(spawned);
 
             // Insert into container - use ItemSlots validation if available
             bool inserted;
@@ -1244,7 +1253,6 @@ public sealed class LoadoutSystem : EntitySystem
             // Entity may have been deleted by ContainerInsertAttemptEvent or admin intervention
             if (nestedItem.NestedItems.Count > 0 && Exists(spawned))
             {
-                ClearAutoFilledContents(spawned);
                 RestoreNestedItems(spawned, nestedItem.NestedItems, repository, stashLookup, depth + 1, player, consumedExistingItems);
             }
         }
@@ -1295,6 +1303,21 @@ public sealed class LoadoutSystem : EntitySystem
 
         // Fallback to auto-placement
         return _storage.Insert(storage, item, out _, storageComp: storageComp, playSound: false);
+    }
+
+    /// <summary>
+    /// Gets the grid footprint (cell count) for an item prototype.
+    /// </summary>
+    private int GetItemGridSize(string prototypeId)
+    {
+        if (!_prototypeManager.TryIndex<EntityPrototype>(prototypeId, out var proto))
+            return 1;
+
+        if (!proto.TryGetComponent<ItemComponent>(out var itemComp, EntityManager.ComponentFactory))
+            return 1;
+
+        var shape = _itemSystem.GetItemShape(itemComp);
+        return shape.GetArea();
     }
 
     #endregion

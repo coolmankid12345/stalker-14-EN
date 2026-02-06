@@ -1,4 +1,4 @@
-using Content.Server._Stalker_EN.Emission;
+using System.Numerics;
 using Content.Shared.Damage;
 using Content.Shared.Weather;
 using Robust.Shared.Audio;
@@ -14,6 +14,29 @@ public enum EmissionSoundsPlayed
     MainAmbient = 1 << 1,
     Stage2 = 1 << 2,
     Stage3 = 1 << 3
+}
+
+/// <summary>
+///     Indicates whats going on.
+/// </summary>
+public enum EmissionStage : byte
+{
+    None = 0,
+
+    /// <summary>
+    ///     Buildup to the emission but nothing has happened yet.
+    /// </summary>
+    Stage1 = 1 << 0,
+
+    /// <summary>
+    ///     When players are taking damage to the emission.
+    /// </summary>
+    Stage2 = 1 << 1,
+
+    /// <summary>
+    ///     After the emission has finished.
+    /// </summary>
+    Stage3 = 1 << 2,
 }
 
 [RegisterComponent, Access(typeof(EmissionEventRuleSystem))]
@@ -71,7 +94,16 @@ public sealed partial class EmissionEventRuleComponent : Component
     public TimeSpan DamageStartDelay = TimeSpan.FromSeconds(100);
 
     /// <summary>
+    /// Delay before the red hue effect starts fading out and getting weaker.
+    /// Effect will be totally gone after <see cref="DamageEndDelay"/>.
+    /// This must not be later than <see cref="DamageEndDelay"/>.
+    /// </summary>
+    [DataField]
+    public TimeSpan RedHueBeforeEndDelay = TimeSpan.FromSeconds(300);
+
+    /// <summary>
     /// Delay before damage ends and stage 3 plays.
+    /// This must not be sooner than <see cref="RedHueBeforeEndDelay"/>.
     /// </summary>
     [DataField]
     public TimeSpan DamageEndDelay = TimeSpan.FromSeconds(330);
@@ -86,7 +118,10 @@ public sealed partial class EmissionEventRuleComponent : Component
     public float ShakeStrength = 50f;
 
     [DataField]
-    public Color EmissionColor = Color.FromHex("#FF0000FF");
+    public Color PrimaryEmissionColor = Color.FromHex("#FF0000FF");
+
+    [DataField]
+    public Color SecondaryEmissionColor = Color.FromHex("#E05B26FF");
 
     /// <summary>
     /// How many seconds before damage ends to start rain.
@@ -119,9 +154,33 @@ public sealed partial class EmissionEventRuleComponent : Component
 
     public EmissionSoundsPlayed SoundsPlayed = EmissionSoundsPlayed.None;
 
-    public bool InDamageWindow;
+    public EmissionStage Stage = EmissionStage.None;
 
     public bool RainStarted;
 
     public bool AmbientLightSet;
+
+
+    #region Lightning
+
+    /// <summary>
+    ///     Maximum distance that lightning can spawn from a player.
+    /// </summary>
+    [DataField]
+    public float LightningSpawnRadius = 20f;
+
+    /// <summary>
+    ///     Minimum and maximum random interval (in seconds) between lightning spawned per player.
+    /// </summary>
+    [DataField]
+    public Vector2 LightningIntervalRange = new(5f, 10f);
+
+    /// <summary>
+    ///     Entity prototype of lightning to spawn.
+    ///         Keep null for no lightning.
+    /// </summary>
+    [DataField]
+    public EntProtoId? LightningEffectProtoId = null;
+
+    #endregion
 }

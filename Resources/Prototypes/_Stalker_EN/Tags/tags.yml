@@ -1,6 +1,9 @@
 # alphabetical please
 
 - type: Tag
+  id: HidesNose
+
+- type: Tag
   id: Hryvnias
 
 - type: Tag

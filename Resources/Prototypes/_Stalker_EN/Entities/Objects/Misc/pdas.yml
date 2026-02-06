@@ -1,5 +1,31 @@
 - type: entity
+  abstract: true
   parent: BaseStalkerPDA
+  id: BaseStalkerPDAEN
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "mpda_on"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: _Stalker_EN/Objects/Devices/pda.rsi
+    state: mpda_off
+  - type: Item
+    sprite: _Stalker_EN/Objects/Devices/pda.rsi
+    storedRotation: -90
+    size: Small
+
+- type: entity
+  parent: BaseStalkerPDAEN
   id: MercPDA
   name: Mercenary's PDA
   description: It's connected to the common network to allow communication; it also has a built in cassette player.
@@ -11,20 +37,6 @@
        merc_on
   - type: PdaBorderColor
     borderColor: "#12213a"
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: merc_off
-    layers:
-    - map: [ "enum.PdaVisualLayers.Base" ]
-      state: "merc_on"
-    - state: "light_overlay"
-      map: [ "enum.PdaVisualLayers.Flashlight" ]
-      shader: "unshaded"
-      visible: false
-    - state: "id_overlay"
-      map: [ "enum.PdaVisualLayers.IdLight" ]
-      shader: "unshaded"
-      visible: false
   - type: Icon
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: merc_off
@@ -49,7 +61,7 @@
 # Militaries
 
 - type: entity
-  parent: BaseStalkerPDA
+  parent: BaseStalkerPDAEN
   id: STVoenPdaEN
   name: Military PDA
   suffix: Voenstals
@@ -63,23 +75,6 @@
   - type: Unremoveable
   - type: PdaBorderColor
     borderColor: "#285714"
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_off
-    layers:
-    - map: [ "enum.PdaVisualLayers.Base" ]
-      state: "mpda_on"
-    - state: "light_overlay"
-      map: [ "enum.PdaVisualLayers.Flashlight" ]
-      shader: "unshaded"
-      visible: false
-    - state: "id_overlay"
-      map: [ "enum.PdaVisualLayers.IdLight" ]
-      shader: "unshaded"
-      visible: false
-  - type: Icon
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_on
   - type: ItemSlots
     slots:
       cell_slot:
@@ -99,7 +94,7 @@
         Psy: 2
 
 - type: entity
-  parent: BaseStalkerPDA
+  parent: BaseStalkerPDAEN
   id: STOKSOPPdaEN
   name: Military PDA
   suffix: ST, OKSOP
@@ -112,23 +107,6 @@
        mpda_on
   - type: PdaBorderColor
     borderColor: "#285714"
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_off
-    layers:
-    - map: [ "enum.PdaVisualLayers.Base" ]
-      state: "mpda_on"
-    - state: "light_overlay"
-      map: [ "enum.PdaVisualLayers.Flashlight" ]
-      shader: "unshaded"
-      visible: false
-    - state: "id_overlay"
-      map: [ "enum.PdaVisualLayers.IdLight" ]
-      shader: "unshaded"
-      visible: false
-  - type: Icon
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_on
   - type: ItemSlots
     slots:
       cell_slot:

@@ -21,11 +21,11 @@ public sealed class STSilentModeSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RingerComponent, ComponentInit>(OnRingerInit);
+        SubscribeLocalEvent<PdaComponent, MapInitEvent>(OnPdaMapInit);
         SubscribeLocalEvent<PdaComponent, STPdaToggleSilentModeMessage>(OnToggleSilentMode);
     }
 
-    private void OnRingerInit(EntityUid uid, RingerComponent component, ComponentInit args)
+    private void OnPdaMapInit(EntityUid uid, PdaComponent component, ref MapInitEvent args)
     {
         EnsureComp<STSilentModeComponent>(uid);
     }

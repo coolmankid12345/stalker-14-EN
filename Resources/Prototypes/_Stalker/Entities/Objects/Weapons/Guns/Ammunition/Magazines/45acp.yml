@@ -8,6 +8,8 @@
   parent: BaseItem
   abstract: true
   components:
+    - type: STBulkBuyable # stalker-14-en
+      maxQuantity: 10
     - type: Tag
       tags:
         - STSpeedLoader45ACP
@@ -22,6 +24,7 @@
       containers:
         ballistic-ammo: !type:Container
           ents: []
+        item_slot: !type:ContainerSlot {}
     - type: RepositoryItem
       categoryName: repository-magazines-category
     - type: ItemSlots
@@ -88,6 +91,8 @@
   parent: BaseItem
   suffix: Stalker
   components:
+  - type: STBulkBuyable # stalker-14-en
+    maxQuantity: 10
   - type: STWeight
     self: 0.6
   - type: Sprite

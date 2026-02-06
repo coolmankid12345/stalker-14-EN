@@ -1,5 +1,6 @@
 - type: shopPreset
   id: ClearSkyShopPresetEN # Pending Economy Change
+  minSellPrice: 5
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 540
@@ -276,6 +277,10 @@
     items:
       STBoltBagFilled: 50
       BoxArtcont: 400 # T1
+      BoxArtcontBlack: 400
+      BoxArtcontBlue: 400
+      BoxArtcontYellow: 400
+      BoxArtcontOrange: 400
       ZoneAnomalyDetectorAD1: 250 # T1
       ZoneAnomalyDetectorAD2: 650 # T2
       ZoneAnomalyDetectorAD3: 1000 # T2
