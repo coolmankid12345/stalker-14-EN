@@ -1,9 +1,6 @@
 - type: shopPreset
   id: NpcSciPBEN # 1.25x - Pending Economy Change
   itemsForSale:
-    # Exclusive
-    DismemberedMarkingEars: 725 # realistically researchers would want this item
-
     # Thermal group - 1
     ZoneArtifactFireball: 680
     ZoneArtifactEye: 1020
