@@ -2,7 +2,7 @@
   id: RenegadesShopPresetEN # Pending Economy Change
   itemsForSale:
     # Exclusive -
-    DismemberedMarkingEars: 600
+    DismemberedMarkingEars: 625
     ToothStalker: 450
     TradeBox: 2000
 

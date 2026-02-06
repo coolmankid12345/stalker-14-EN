@@ -2,7 +2,7 @@
   parent: BaseItem
   id: DismemberedMarkingEars
   name: dismembered animal ears
-  description: "A trophy taken off of some sort of mutant. Researchers and merchants value this for its insight of the effects the Zone's radiation has on lifeforms."
+  description: "A trophy taken off of some sort of mutant. Researchers value this for its insight of the effects the Zone's radiation has on lifeforms. Some sketchy merchants buy these at good prices for unknown reasons."
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/catears.rsi

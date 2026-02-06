@@ -1,6 +1,9 @@
 - type: shopPreset
   id: KekeshaShopPresetEN # i miss my boy
   itemsForSale:
+    # Exclusive -
+    DismemberedMarkingEars: 400 # implied that traders like these resell to researchers for great profit
+
     # Thermal group - 1
     ZoneArtifactFireball: 400
     ZoneArtifactEye: 600

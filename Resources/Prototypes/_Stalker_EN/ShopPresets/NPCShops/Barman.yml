@@ -2,7 +2,7 @@
   id: STNPCBarmanPresetEN # 1x Standard - Pending Economy Change
   itemsForSale:
     # Exclusive -
-    DismemberedMarkingEars: 575
+    DismemberedMarkingEars: 165 # these should sell low at easy-to-find traders like sid or bar (sells higher at bar because its bar)
 
     # Thermal group - 1
     ZoneArtifactFireball: 540
