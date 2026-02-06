@@ -1,14 +1,37 @@
 - type: entity
+  abstract: true
   parent: BaseStalkerPDA
+  id: BaseStalkerPDAEN
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "mpda_on"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: _Stalker_EN/Objects/Devices/pda.rsi
+    state: mpda_off
+  - type: Item
+    sprite: _Stalker_EN/Objects/Devices/pda.rsi
+    storedRotation: -90
+    size: Small
+
+- type: entity
+  parent: BaseStalkerPDAEN
   id: MercPDA
   name: Mercenary's PDA
   description: It's connected to the common network to allow communication; it also has a built in cassette player.
   components:
   - type: PdaBorderColor
     borderColor: "#12213a"
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: merc_off
   - type: Icon
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: merc_off
@@ -70,6 +93,8 @@
       PDA-pai: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
+      dogtag_slot: !type:ContainerSlot {}
+      cassette_slot: !type:ContainerSlot {}
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
@@ -77,13 +102,17 @@
     radius: 3
     netsync: false
   - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        merc_on
   - type: StealTarget
     stealGroup: LAMP
 
 # Militaries
 
 - type: entity
-  parent: BaseStalkerPDA
+  parent: BaseStalkerPDAEN
   id: STVoenPdaEN
   name: Military PDA
   suffix: Voenstals
@@ -92,12 +121,6 @@
   - type: Unremoveable
   - type: PdaBorderColor
     borderColor: "#285714"
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_off
-  - type: Icon
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_on
   - type: Pda
     state: mpda_on
   - type: ItemSlots
@@ -150,12 +173,18 @@
       PDA-pai: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
+      dogtag_slot: !type:ContainerSlot {}
+      cassette_slot: !type:ContainerSlot {}
   - type: PointLight
     enabled: false
     radius: 5
     energy: 2.5
     netsync: false
   - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        mpda_on
   - type: StealTarget
     stealGroup: LAMP
   - type: Armor
@@ -166,7 +195,7 @@
         Psy: 2
 
 - type: entity
-  parent: BaseStalkerPDA
+  parent: BaseStalkerPDAEN
   id: STOKSOPPdaEN
   name: Military PDA
   suffix: ST, OKSOP
@@ -174,12 +203,6 @@
   components:
   - type: PdaBorderColor
     borderColor: "#285714"
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_off
-  - type: Icon
-    sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_on
   - type: Pda
     state: mpda_on
   - type: ItemSlots
@@ -232,11 +255,17 @@
       PDA-pai: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
+      dogtag_slot: !type:ContainerSlot {}
+      cassette_slot: !type:ContainerSlot {}
   - type: PointLight
     enabled: false
     radius: 5
     energy: 2.5
     netsync: false
   - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        mpda_on
   - type: StealTarget
     stealGroup: LAMP

@@ -35,7 +35,7 @@
     scale: 0.8, 0.8
   - type: InteractionOutline
   - type: Physics
-    bodyType: Dynamic
+    bodyType: Static
   - type: Fixtures
     fixtures:
       closed:

@@ -22,6 +22,7 @@
       containers:
         ballistic-ammo: !type:Container
           ents: []
+        item_slot: !type:ContainerSlot {}
     - type: RepositoryItem
       categoryName: repository-magazines-category
     - type: ItemSlots

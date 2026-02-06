@@ -270,7 +270,8 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
         var xform = Transform(uid);
         TryComp<PhysicsComponent>(uid, out var physics);
-        _physics.SetBodyType(uid, BodyType.Dynamic, body: physics, xform: xform);
+        if (physics != null)
+            _physics.SetBodyType(uid, BodyType.Dynamic, body: physics, xform: xform);
         _transform.AttachToGridOrMap(uid, xform);
         component.EmbeddedIntoUid = null;
         Dirty(uid, component);
@@ -278,7 +279,8 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         // Land it just coz uhhh yeah
         var landEv = new LandEvent(null, true);
         RaiseLocalEvent(uid, ref landEv);
-        _physics.WakeBody(uid, body: physics);
+        if (physics != null)
+            _physics.WakeBody(uid, body: physics);
     }
     #endregion
 
