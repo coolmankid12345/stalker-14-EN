@@ -7,7 +7,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - BandsUnion
+    #- BandsUnion # Stalker-EN-TODO: This faction does not exist!
     - Freedom
   - type: Sprite
     sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi

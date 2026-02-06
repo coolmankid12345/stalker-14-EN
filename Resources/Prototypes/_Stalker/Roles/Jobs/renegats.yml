@@ -34,9 +34,9 @@
 
 - type: job
   id: StalkerHeadRene
-  name: Renegade Leader
+  name: job-head-renegade
   icon: rene
-  description: Protect Flesh. Take Teeth.
+  description: job-head-renegade-desc
   playTimeTracker: JobHeadRenegat
   whitelisted: true
   requirements:
@@ -48,7 +48,7 @@
     - Human
     - Dwarf
   startingGear: ReneGearHead # EN
-  supervisors: you're the boss.
+  supervisors: job-head-renegade-supervisor
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
@@ -92,7 +92,7 @@
 - type: stBand
   id: STRenegatsBand
   name: Renegades
-  factionId: Renegades
+  factionId: Stalker #Renegades # Stalker-EN-TODO: Faction "Renegades" does not exist! Replaced with "Stalker"
   maxMembers: 6
   managingRankId: 2
   hierarchy:

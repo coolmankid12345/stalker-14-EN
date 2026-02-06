@@ -8,8 +8,8 @@
   markingLimits: MobVulpkaninMarkingLimits
   dollPrototype: MobVulpkaninDummy
   skinColoration: Hues
-  maleFirstNames: NamesVulpFirstMale
-  femaleFirstNames: NamesVulpFirstFemale
+  maleFirstNames: names_vulpkanin_male
+  femaleFirstNames: names_vulpkanin_female
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites

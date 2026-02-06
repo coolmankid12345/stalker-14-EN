@@ -64,7 +64,7 @@
     species:
     - Human
   startingGear: MonolithGear
-  supervisors: follow the wishes of the glorious Monolith
+  supervisors: job-stalker-head-monolith-supervisor
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

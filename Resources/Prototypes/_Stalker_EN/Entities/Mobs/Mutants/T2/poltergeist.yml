@@ -157,9 +157,9 @@
     - id: ZoneArtifactPellicle
       amount: 1
       prob: 0.03
-    - id: ZoneArtifactArtMedusa
-      amount: 1
-      prob: 0.03
+    # - id: ZoneArtifactArtMedusa # Stalker-EN-TODO: This prototype does not exist!
+      # amount: 1
+      # prob: 0.03
   - type: BasicEntityAmmoProvider
     proto: STBulletRave
     capacity: 2

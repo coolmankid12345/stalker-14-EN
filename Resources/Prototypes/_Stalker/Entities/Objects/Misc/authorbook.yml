@@ -16,7 +16,7 @@
   suffix: ST
   components:
     - type: Paper
-      content: ent-STArtGuide.content
+      #content: ent-STArtGuide.content # Stalker-EN-TODO: "ent-STArtGuide.content" does not exist!
       stampState: paper_stamp-trader
       stampedBy:
       - stampedName: Студентка

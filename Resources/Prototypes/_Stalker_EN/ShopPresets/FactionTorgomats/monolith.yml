@@ -31,6 +31,7 @@
   id: MonolithInventoryRestockEN
   name: пополнительный ящик «Монолита»
   description: Класть на склад.
+  categories: [ StSkipRestockTest ]
   components:
   - type: VendingMachineRestock
     canRestock:

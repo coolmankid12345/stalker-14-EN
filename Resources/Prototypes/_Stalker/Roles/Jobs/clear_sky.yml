@@ -41,9 +41,9 @@
 
 - type: job
   id: StalkerHeadClearSky
-  name: Clear Sky Commander
+  name: job-clearsky-commander
   icon: cn
-  description: Discover the secrets of the Zone. Reach the center of the Zone no matter what.
+  description: job-clearsky-commander-desc
   playTimeTracker: JobHeadClearSky
   whitelisted: true
   requirements:
@@ -55,7 +55,7 @@
     - Human
     - Dwarf
   startingGear: StalkerClearSkyGearHead # EN
-  supervisors: I think you're in charge?
+  supervisors: job-clearsky-commander-supervisor
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

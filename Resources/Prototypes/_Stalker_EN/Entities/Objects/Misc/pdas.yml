@@ -4,16 +4,30 @@
   name: Mercenary's PDA
   description: It's connected to the common network to allow communication; it also has a built in cassette player.
   components:
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       merc_on
   - type: PdaBorderColor
     borderColor: "#12213a"
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: merc_off
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "merc_on"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
   - type: Icon
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: merc_off
-  - type: Pda
-    state: merc_on
   - type: Boombox
   - type: ItemSlots
     slots:
@@ -30,55 +44,7 @@
 #        startingItem: ClothingNeckDogtagBrigand
         whitelist:
           tags:
-          - ClothingNeckDogtagBrigand
-  - type: HandheldLight
-    addPrefix: false
-    blinkingBehaviourId: blinking
-    radiatingBehaviourId: radiating
-  - type: LightBehaviour
-    behaviours:
-    - !type:FadeBehaviour
-      id: radiating
-      maxDuration: 2.0
-      startValue: 3.0
-      endValue: 2.0
-      isLooped: true
-      reverseWhenFinished: true
-    - !type:PulseBehaviour
-      id: blinking
-      interpolate: Nearest
-      maxDuration: 1.0
-      minValue: 0.1
-      maxValue: 2.0
-      isLooped: true
-  - type: ToggleableLightVisuals
-    spriteLayer: light
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        shader: unshaded
-      right:
-      - state: inhand-right
-        shader: unshaded
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
-  - type: PointLight
-    enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    radius: 3
-    netsync: false
-  - type: Appearance
-  - type: StealTarget
-    stealGroup: LAMP
+          - Dogtag
 
 # Militaries
 
@@ -89,16 +55,30 @@
   suffix: Voenstals
   description: A secure, encrypted device designed for field communication, mission management, and data collection. Built with reinforced casing to withstand radiation, rumored to withstand a nuclear blast.
   components:
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       mpda_on
   - type: Unremoveable
   - type: PdaBorderColor
     borderColor: "#285714"
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: mpda_off
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "mpda_on"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
   - type: Icon
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_on
-  - type: Pda
     state: mpda_on
   - type: ItemSlots
     slots:
@@ -110,54 +90,7 @@
         startingItem: ClothingNeckDogtagOfficial
         whitelist:
           tags:
-          - ClothingNeckDogtagOfficial
-  - type: HandheldLight
-    addPrefix: false
-    blinkingBehaviourId: blinking
-    radiatingBehaviourId: radiating
-  - type: LightBehaviour
-    behaviours:
-    - !type:FadeBehaviour
-      id: radiating
-      maxDuration: 2.0
-      startValue: 3.0
-      endValue: 2.0
-      isLooped: true
-      reverseWhenFinished: true
-    - !type:PulseBehaviour
-      id: blinking
-      interpolate: Nearest
-      maxDuration: 1.0
-      minValue: 0.1
-      maxValue: 2.0
-      isLooped: true
-  - type: ToggleableLightVisuals
-    spriteLayer: light
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        shader: unshaded
-      right:
-      - state: inhand-right
-        shader: unshaded
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
-  - type: PointLight
-    enabled: false
-    radius: 5
-    energy: 2.5
-    netsync: false
-  - type: Appearance
-  - type: StealTarget
-    stealGroup: LAMP
+          - Dogtag
   - type: Armor
     armorClass: 0
     modifiers:
@@ -172,15 +105,29 @@
   suffix: ST, OKSOP
   description: A secure, encrypted device designed for field communication, mission management, and data collection. Rumored to withstand a nuclear blast.
   components:
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       mpda_on
   - type: PdaBorderColor
     borderColor: "#285714"
   - type: Sprite
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: mpda_off
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "mpda_on"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
   - type: Icon
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
-    state: mpda_on
-  - type: Pda
     state: mpda_on
   - type: ItemSlots
     slots:
@@ -192,51 +139,4 @@
 #        startingItem: ClothingNeckDogtagOfficial
         whitelist:
           tags:
-          - ClothingNeckDogtagOfficial
-  - type: HandheldLight
-    addPrefix: false
-    blinkingBehaviourId: blinking
-    radiatingBehaviourId: radiating
-  - type: LightBehaviour
-    behaviours:
-    - !type:FadeBehaviour
-      id: radiating
-      maxDuration: 2.0
-      startValue: 3.0
-      endValue: 2.0
-      isLooped: true
-      reverseWhenFinished: true
-    - !type:PulseBehaviour
-      id: blinking
-      interpolate: Nearest
-      maxDuration: 1.0
-      minValue: 0.1
-      maxValue: 2.0
-      isLooped: true
-  - type: ToggleableLightVisuals
-    spriteLayer: light
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        shader: unshaded
-      right:
-      - state: inhand-right
-        shader: unshaded
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
-  - type: PointLight
-    enabled: false
-    radius: 5
-    energy: 2.5
-    netsync: false
-  - type: Appearance
-  - type: StealTarget
-    stealGroup: LAMP
+          - Dogtag

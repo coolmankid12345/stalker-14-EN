@@ -173,7 +173,7 @@
           - STSeraBombImplant
         - type: NpcFactionMember
           factions:
-          - BandsUnion
+          #- BandsUnion # Stalker-EN-TODO: This faction does not exist!
           - Seraphims
         - type: STAnomalyTipsViewing
 

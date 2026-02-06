@@ -242,15 +242,15 @@
     - 0,0,0,1
   - type: ItemMapper
     mapLayers:
-      red_9:
+      red_10:
         whitelist:
           tags:
             - STElasticRubberRed
-      green_9:
+      green_10:
         whitelist:
           tags:
             - STElasticRubberGreen
-      blue_9:
+      blue_10:
         whitelist:
           tags:
             - STElasticRubberBlue

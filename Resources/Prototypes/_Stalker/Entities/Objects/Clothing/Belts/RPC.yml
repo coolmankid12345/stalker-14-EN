@@ -102,15 +102,15 @@
       whitelist:
         tags:
           - Knife
-    - type: ItemMapper
-      mapLayers:
-        knife:
-          whitelist:
-            tags:
-              - Knife
-      sprite: _Stalker/Objects/Clothing/Belts/knife_belt_overlay.rsi
-      spriteLayers:
-      - knife
+    # - type: ItemMapper # Stalker-EN-TODO: Layer "knife" does not exist in the rsi!
+      # mapLayers:
+        # knife:
+          # whitelist:
+            # tags:
+              # - Knife
+      # sprite: _Stalker/Objects/Clothing/Belts/knife_belt_overlay.rsi
+      # spriteLayers:
+      # - knife
     - type: Appearance
 
 - type: entity

@@ -33,9 +33,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/barrier.rsi
     scale: 0.8, 0.8
-  - type: InteractionOutline
-  - type: Physics
-    bodyType: Dynamic
   - type: Fixtures
     fixtures:
       closed:

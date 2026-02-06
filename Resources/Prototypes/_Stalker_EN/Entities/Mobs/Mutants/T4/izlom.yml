@@ -10,27 +10,27 @@
   - type: Sprite
     sprite: /Textures/_Stalker_EN/Mobs/Mutants/izlom.rsi
     layers:
-    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
-      state: alive-1
-  - type: SpriteMovement
-    movementLayers:
-      movement:
-        state: alive-3
-    noMovementLayers:
-      movement:
-        state: alive-1
+    #- map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+    - state: alive
+  # - type: SpriteMovement
+    # movementLayers:
+      # movement:
+        # state: alive-3
+    # noMovementLayers:
+      # movement:
+        # state: alive-1
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: alive-1
+        Base: alive
+      Dead:
+        Base: dead
   # - type: Vocalizer # Stalker-TODO: Uncomment once "NPCStalkerIzlomAds" dataset exists!
     # minVocalizeInterval: 1m
     # maxVocalizeInterval: 2m
     # hideChat: true
   # - type: DatasetVocalizer
     # dataset: NPCStalkerIzlomAds
-      Dead:
-        Base: dead
   - type: MobThresholds
     thresholds:
       0: Alive

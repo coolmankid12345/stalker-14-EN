@@ -16,8 +16,6 @@
     fireRate: 6.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/scar.ogg
-      params:
-        volume: -2
     minAngle: 50
     maxAngle: 110
     angleIncrease: 1.2

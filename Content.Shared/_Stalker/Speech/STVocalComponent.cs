@@ -14,9 +14,9 @@ public sealed partial class STVocalComponent : Component
     [DataField, AutoNetworkedField]
     public Dictionary<Sex, ProtoId<EmoteSoundsPrototype>> Sounds = new()
     {
-        { Sex.Male, "STMaleHuman" },
-        { Sex.Female, "STFemaleHuman" },
-        { Sex.Unsexed, "STMaleHuman" },
+        { Sex.Male, "MaleHuman" },
+        { Sex.Female, "FemaleHuman" },
+        { Sex.Unsexed, "MaleHuman" },
     };
 
     [ViewVariables, AutoNetworkedField]

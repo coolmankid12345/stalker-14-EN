@@ -782,7 +782,8 @@
 - type: vendingMachineInventory
   id: FreedomComplect
   startingInventory:
-    FreedomCrate: 8
+    #FreedomCrate: 8 # Stalker-EN-TODO: This prototype does not exist! Temporary replaced with placeholder "Pen"
+    Pen: 8
 
 #ЗАВЕТ
 
@@ -932,7 +933,8 @@
 - type: vendingMachineInventory
   id: DolgComplect
   startingInventory:
-    DutyCrate: 8
+    #DutyCrate: 8 # Stalker-EN-TODO: This prototype does not exist! Temporary replaced with placeholder "Pen"
+    Pen: 8
 
 - type: entity
   parent: VendingMachine
