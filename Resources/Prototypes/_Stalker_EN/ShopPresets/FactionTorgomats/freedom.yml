@@ -1,5 +1,6 @@
 - type: shopPreset
   id: FreedomShopPresetEN # Artifacts 1.5x Barman - Pending Economy Change
+  minSellPrice: 5
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 810
