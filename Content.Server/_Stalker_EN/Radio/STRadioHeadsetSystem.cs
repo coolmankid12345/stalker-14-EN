@@ -87,7 +87,7 @@ public sealed class STRadioHeadsetSystem : SharedSTRadioHeadsetSystem
 
         // Recreate action if invalid - handles stash retrieval/loadout where DeleteChildren
         // queues the action for deletion before equip completes.
-        if (!_actions.TryGetActionData(ent.Comp.ToggleMicActionEntity, out _, logError: false))
+        if (ent.Comp.ToggleMicActionEntity is not { } actionId || TerminatingOrDeleted(actionId) || EntityManager.IsQueuedForDeletion(actionId))
         {
             ent.Comp.ToggleMicActionEntity = null;
             _actionContainer.EnsureAction(ent, ref ent.Comp.ToggleMicActionEntity, ent.Comp.ToggleMicAction);

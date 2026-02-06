@@ -548,9 +548,9 @@ namespace Content.Server.Ghost
             // stalker-changes-start
             // Show respawn confirm for players who move while dead (not via command)
             // Ghost command is admin-only, so skip the confirm dialog for admins
-            if (!viaCommand && mind.Session != null)
+            if (!viaCommand && _player.TryGetSessionById(mind.UserId, out var confirmSession))
             {
-                _respawnConfirm.ShowRespawnConfirm(mind.Session);
+                _respawnConfirm.ShowRespawnConfirm(confirmSession);
                 return false;
             }
 
