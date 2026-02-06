@@ -66,6 +66,7 @@ public sealed partial class ShopSystem : SharedShopSystem
 
         InitializeSponsors();
         InitializeBuyback(); // stalker-changes-en: initialize buyback subscriptions
+        InitializeBulkBuy(); // stalker-14-en
     }
 
     #region UI updates
