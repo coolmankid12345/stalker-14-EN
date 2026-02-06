@@ -1,5 +1,6 @@
 - type: shopPreset
   id: STFoodBotanicPreset
+  minSellPrice: 5
   itemsForSale:
     FoodSTTomato: 30
     FoodSTPotato: 25

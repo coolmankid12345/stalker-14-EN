@@ -1,5 +1,6 @@
 - type: shopPreset
   id: NpcRadioPlayerEN #Will fix this dude later.... Too lazy - Texas Peach
+  minSellPrice: 5
   itemsForSale:
     CasseteOneRadio: 340
     CasseteTwoRadio: 340

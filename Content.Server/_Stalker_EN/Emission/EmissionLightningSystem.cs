@@ -6,7 +6,6 @@ using Content.Server.Lightning;
 using Content.Shared._Stalker_EN.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Physics;
-using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
@@ -61,8 +60,6 @@ public sealed class EmissionLightningSystem : EntitySystem
 
     private const int MaximumRetries = 6;
 
-    private static readonly EntityWhitelist LightningTargetBlacklist = new();
-
     /// <summary>
     ///     List of map-coordinates of lightning blockers
     ///         and the SQUARED radius of area that they block lightning in,
@@ -86,8 +83,6 @@ public sealed class EmissionLightningSystem : EntitySystem
         _emissionTargetQuery = GetEntityQuery<BlowoutTargetComponent>();
 
         _configurationManager.OnValueChanged(STCCVars.EmissionLightningRaycast, (x) => _doRaycasts = x, invokeImmediately: true);
-
-        LightningTargetBlacklist.Components = [nameof(StalkerSafeZoneComponent)];
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
     }
@@ -228,6 +223,9 @@ public sealed class EmissionLightningSystem : EntitySystem
         return true;
     }
 
+    // Lightning can only hit if target is: 1. not in safezone, 2. is an emission target
+    private bool LightningHitPredicate(in EntityUid uid) => _emissionTargetQuery.HasComponent(uid) && !_safeZoneQuery.HasComponent(uid);
+
     public void TrySpawnLightningNearby(EntityUid targetUid, float maximumSpawnRadius, EntProtoId emissionLightningEntityId, float boltRange, int boltCount, float minimumSpawnRadius = 0f)
     {
         if (!TryGetSpawnedLightningMapCoordinates(targetUid, maximumSpawnRadius, out var lightningMapCoordinates, minimumSpawnRadius: minimumSpawnRadius))
@@ -240,7 +238,7 @@ public sealed class EmissionLightningSystem : EntitySystem
             boltCount,
             lightningPrototype: "EmissionLightningBolt",
             triggerLightningEvents: false,
-            blacklist: LightningTargetBlacklist
+            predicate: LightningHitPredicate
         );
     }
 }

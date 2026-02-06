@@ -3,7 +3,6 @@ using Content.Server.Beam;
 using Content.Server.Beam.Components;
 using Content.Server.Lightning.Components;
 using Content.Shared.Lightning;
-using Content.Shared.Whitelist; // ST14-EN addition
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 
@@ -23,7 +22,6 @@ public sealed class LightningSystem : SharedLightningSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly EntityWhitelistSystem _entityWhitelistSystem = default!; // ST14-EN addition
 
     public override void Initialize()
     {
@@ -71,33 +69,33 @@ public sealed class LightningSystem : SharedLightningSystem
     /// <param name="lightningPrototype">The prototype for the lightning to be created</param>
     /// <param name="arcDepth">how many times to recursively fire lightning bolts from the target points of the first shot.</param>
     /// <param name="triggerLightningEvents">if the lightnings being fired should trigger lightning events.</param>
-    /// <param name="whitelist">ST14-EN Addition: Blacklist of entities that can be hit by the lightning.</param>
-    public void ShootRandomLightnings(EntityUid user, float range, int boltCount, string lightningPrototype = "Lightning", int arcDepth = 0, bool triggerLightningEvents = true, EntityWhitelist? blacklist = null /* ST14-EN: Added blacklist */)
+    /// <param name="predicate">ST14-EN Addition: If not-null: lightning targets are filtered by this predicate, where returning false means an entity will not be targeted by lightning.</param>
+    public void ShootRandomLightnings(EntityUid user, float range, int boltCount, string lightningPrototype = "Lightning", int arcDepth = 0, bool triggerLightningEvents = true, RandomLightningTargetPredicate? predicate = null /* ST14-EN: Added predicate */)
     {
         //TODO: add support to different priority target tablem for different lightning types
         //TODO: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
         //TODO: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
 
-        // ST14-EN: changed `targets` to `unfilteredTargets`, which gets filtered via blacklist
+        // ST14-EN: changed `targets` to `unfilteredTargets`, which gets filtered via predicate
         var unfilteredTargets = _lookup.GetEntitiesInRange<LightningTargetComponent>(_transform.GetMapCoordinates(user), range).ToList();
         _random.Shuffle(unfilteredTargets);
 
-        // ST14-EN start: Blacklist
+        // ST14-EN start: Predicate
         // I would want to make this ValueList but i dont think its worth it
         List<Entity<LightningTargetComponent>> targets = null!;
 
-        if (blacklist is not { } bl) // No blacklist
+        if (predicate is not { }) // No predicate
             targets = unfilteredTargets;
-        else // Use blacklist
+        else // Use predicate
         {
             targets = new();
-            foreach (var targetUid in unfilteredTargets)
+            foreach (var targetEntity in unfilteredTargets)
             {
-                if (!_entityWhitelistSystem.IsValid(blacklist, targetUid)) // entity is not in blacklist so skip
+                if (!predicate(targetEntity)) // entity is invalid for target so skip
                     continue;
 
-                targets.Add(targetUid);
+                targets.Add(targetEntity);
             }
         }
 
@@ -123,7 +121,7 @@ public sealed class LightningSystem : SharedLightningSystem
             ShootLightning(user, targets[count].Owner, lightningPrototype, triggerLightningEvents);
             if (arcDepth - targets[count].Comp.LightningResistance > 0)
             {
-                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].Comp.LightningResistance, triggerLightningEvents, blacklist: blacklist /* ST14-EN: Added blacklist */);
+                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].Comp.LightningResistance, triggerLightningEvents, predicate: predicate /* ST14-EN: Added predicate */);
             }
             shootedCount++;
         }
@@ -137,3 +135,6 @@ public sealed class LightningSystem : SharedLightningSystem
 /// <param name="Target">The entity that was struck by lightning.</param>
 [ByRefEvent]
 public readonly record struct HitByLightningEvent(EntityUid Source, EntityUid Target);
+
+// ST14-EN Addition
+public delegate bool RandomLightningTargetPredicate(in EntityUid ev);
