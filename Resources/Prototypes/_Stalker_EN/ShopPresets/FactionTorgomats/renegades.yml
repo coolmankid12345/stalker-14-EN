@@ -2,6 +2,7 @@
   id: RenegadesShopPresetEN # Pending Economy Change
   itemsForSale:
     # Exclusive -
+    DismemberedMarkingEars: 700
     ToothStalker: 450
     TradeBox: 2000
 
@@ -273,7 +274,7 @@
       CasseteTwentyDonateRadio: 500
       CasseteRenegade: 500
       STElasticRubberRed: 50
-      STElasticRubberGreen: 50 
+      STElasticRubberGreen: 50
       STElasticRubberBlue: 50
 
   - name: shop-category-modules
@@ -355,4 +356,3 @@
       ClothingTorsoTurtlenecksKhakiTurtleneck: 50
       ClothingTorsoTurtlenecksMatrosska: 50
       ClothingNeckScarfRenegade: 100
-

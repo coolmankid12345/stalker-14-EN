@@ -1,6 +1,9 @@
 - type: shopPreset
   id: NeutralsShopPresetZoneEN # Sidorovich Prices
   itemsForSale:
+    # Exclusive -
+    DismemberedMarkingEars: 650
+
     # Thermal group - 1
     ZoneArtifactFireball: 405
     ZoneArtifactEye: 610
@@ -284,7 +287,7 @@
       Matchbox: 10
       HatchetStalker: 150
       STElasticRubberRed: 50
-      STElasticRubberGreen: 50 
+      STElasticRubberGreen: 50
       STElasticRubberBlue: 50
 
   - name: shop-category-paperwork
