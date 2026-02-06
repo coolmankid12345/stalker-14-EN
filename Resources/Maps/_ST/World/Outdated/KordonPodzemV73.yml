@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/20/2025 14:51:23
+  time: 02/06/2026 17:18:09
   entityCount: 16759
 maps:
 - 1
@@ -86,6 +86,7 @@ entities:
       name: Подземка Кордона
     - type: Transform
     - type: Roof
+      data: {}
     - type: Map
       mapPaused: True
     - type: GridTree
@@ -48138,9 +48139,9 @@ entities:
     - UserInterface
     - ExplosionResistance
     - Craftable
-    - Tag
     - StaticPrice
     - Item
+    - Tag
     - FlavorProfile
     - MovedByPressure
     - EmitSoundOnCollide
@@ -62118,6 +62119,7 @@ entities:
     missingComponents:
     - Tag
     - Item
+    - Fixtures
     - Sharp
     - Execution
     - Utensil
@@ -62129,7 +62131,6 @@ entities:
     - DamageOnHighSpeedImpact
     - CollisionWake
     - Physics
-    - Fixtures
     - Pullable
     - DamageExaminable
     - Currency
@@ -63607,7 +63608,6 @@ entities:
       parent: 1
     missingComponents:
     - Destructible
-    - Climbable
   - uid: 2844
     components:
     - type: Transform
@@ -63763,7 +63763,6 @@ entities:
       parent: 1
     missingComponents:
     - Destructible
-    - Climbable
   - uid: 2872
     components:
     - type: Transform
@@ -64315,7 +64314,6 @@ entities:
       parent: 1
     missingComponents:
     - Destructible
-    - Climbable
   - uid: 2939
     components:
     - type: Transform
@@ -64324,7 +64322,6 @@ entities:
     missingComponents:
     - Damageable
     - Destructible
-    - Climbable
   - uid: 2940
     components:
     - type: Transform
@@ -71321,13 +71318,13 @@ entities:
     missingComponents:
     - Clothing
     - ToggleableClothing
-    - Storage
     - Craftable
     - STWeight
     - Armor
-    - Tag
     - ContainerContainer
+    - Tag
     - RepositoryItem
+    - Storage
     - UserInterface
     - Dumpable
     - Contraband

@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/20/2025 14:51:19
-  entityCount: 1004
+  time: 02/06/2026 17:17:41
+  entityCount: 1005
 maps:
 - 1
 grids:
@@ -34,6 +34,7 @@ entities:
       name: Пространство пузыря
     - type: Transform
     - type: Map
+      mapPaused: True
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree

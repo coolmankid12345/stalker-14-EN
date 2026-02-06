@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/20/2025 14:51:21
+  time: 02/06/2026 17:18:06
   entityCount: 678
 maps:
 - 1
@@ -38,6 +38,7 @@ entities:
       mapPaused: True
     - type: GridTree
     - type: Roof
+      data: {}
     - type: Broadphase
     - type: OccluderTree
     - type: MapGrid

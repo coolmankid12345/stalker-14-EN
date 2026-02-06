@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/20/2025 14:51:47
+  time: 02/06/2026 17:18:16
   entityCount: 5702
 maps:
 - 1
@@ -62,6 +62,7 @@ entities:
       mapPaused: True
     - type: GridTree
     - type: Roof
+      data: {}
     - type: Broadphase
     - type: OccluderTree
     - type: MapGrid
@@ -44659,10 +44660,10 @@ entities:
     - type: NavMap
     - type: StalkerSafeZone
     - type: LightCycle
-      duration: 90m
-      initialOffset: false
-      offset: 20m
       minLightLevel: 0.35
+      initialOffset: False
+      offset: 1200
+      duration: 5400
     - type: SunShadow
     - type: SunShadowCycle
       directions:
@@ -60459,112 +60460,84 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -23.5,-35.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2424
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -24.5,-35.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2425
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -29.5,-35.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2426
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -28.5,-35.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2427
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -23.5,-26.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2428
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -29.5,-26.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2429
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -24.5,-26.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2430
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -28.5,-26.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2431
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -34.5,-34.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2432
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -34.5,-35.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2433
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -34.5,-36.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2434
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -34.5,-25.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2435
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -34.5,-26.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2436
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -34.5,-27.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2437
     components:
     - type: Transform
@@ -60667,16 +60640,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 31.5,-0.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2454
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 32.5,-0.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 2455
     components:
     - type: Transform
@@ -61256,7 +61225,6 @@ entities:
       parent: 1
     missingComponents:
     - Destructible
-    - Climbable
   - uid: 2467
     components:
     - type: Transform
@@ -61264,7 +61232,6 @@ entities:
       parent: 1
     missingComponents:
     - Destructible
-    - Climbable
   - uid: 2468
     components:
     - type: Transform
@@ -61272,7 +61239,6 @@ entities:
       parent: 1
     missingComponents:
     - Destructible
-    - Climbable
   - uid: 2469
     components:
     - type: Transform
@@ -61285,7 +61251,6 @@ entities:
       parent: 1
     missingComponents:
     - Destructible
-    - Climbable
   - uid: 2471
     components:
     - type: Transform
@@ -61293,7 +61258,6 @@ entities:
       parent: 1
     missingComponents:
     - Destructible
-    - Climbable
   - uid: 2472
     components:
     - type: Transform

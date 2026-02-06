@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/20/2025 14:51:21
+  time: 02/06/2026 17:18:07
   entityCount: 9436
 maps:
 - 1
@@ -63,6 +63,7 @@ entities:
       name: болота
     - type: Transform
     - type: Roof
+      data: {}
     - type: Map
       mapPaused: True
     - type: GridTree
@@ -43624,10 +43625,10 @@ entities:
     - type: STAnomalyGeneratorTarget
       optionsId: STBolotaGenerationOptions
     - type: LightCycle
-      duration: 90m
-      initialOffset: false
-      offset: 20m
       minLightLevel: 0.35
+      initialOffset: False
+      offset: 1200
+      duration: 5400
     - type: SunShadow
     - type: SunShadowCycle
       directions:
@@ -64090,20 +64091,6 @@ entities:
     - type: Transform
       pos: 2.501105,-18.42985
       parent: 1
-- proto: FoodKebabSkewer
-  entities:
-  - uid: 4036
-    components:
-    - type: MetaData
-      name: Удочка
-    - type: Transform
-      pos: -124.276924,-112.36068
-      parent: 1
-    missingComponents:
-    - Item
-    - Fixtures
-    - Physics
-    - Pullable
 - proto: GasStoveS3
   entities:
   - uid: 4037

@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/20/2025 14:51:28
+  time: 02/06/2026 17:18:12
   entityCount: 1901
 maps:
 - 1
@@ -48,6 +48,7 @@ entities:
       name: Подземка лощины
     - type: Transform
     - type: Roof
+      data: {}
     - type: Map
       mapPaused: True
     - type: GridTree

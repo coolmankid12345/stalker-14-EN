@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/20/2025 14:51:19
+  time: 02/06/2026 17:17:42
   entityCount: 1357
 maps:
 - 962
@@ -1058,6 +1058,16 @@ entities:
     - type: Transform
       pos: 1.5883913,-3.5178382
       parent: 179
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        item_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: BizonMag919
   entities:
   - uid: 1267
@@ -3164,21 +3174,25 @@ entities:
     - type: Transform
       pos: -15.5,2.5
       parent: 179
+    - type: STSilentMode
   - uid: 762
     components:
     - type: Transform
       pos: -14.5,1.5
       parent: 179
+    - type: STSilentMode
   - uid: 864
     components:
     - type: Transform
       pos: -14.5,2.5
       parent: 179
+    - type: STSilentMode
   - uid: 912
     components:
     - type: Transform
       pos: -15.5,1.5
       parent: 179
+    - type: STSilentMode
 - proto: CombatKnife
   entities:
   - uid: 963
@@ -7892,11 +7906,31 @@ entities:
     - type: Transform
       pos: 0.4633912,-3.337283
       parent: 179
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        item_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
   - uid: 1262
     components:
     - type: Transform
       pos: 0.74116987,-3.434505
       parent: 179
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        item_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: Protolathe
   entities:
   - uid: 12
@@ -8356,6 +8390,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: STSilentMode
 - proto: StalkerTrashPile1
   entities:
   - uid: 1327
@@ -11053,6 +11088,8 @@ entities:
     - type: Transform
       pos: -0.12717059,-2.8087902
       parent: 179
+    - type: STWeaponAccuracy
+      modifiedAccuracyMultiplier: 1.2
 - proto: WeaponPistolStalkerTT
   entities:
   - uid: 1272
@@ -11060,6 +11097,8 @@ entities:
     - type: Transform
       pos: -0.43152046,-2.7018497
       parent: 179
+    - type: STWeaponAccuracy
+      modifiedAccuracyMultiplier: 1.2
 - proto: WeaponRifleAk
   entities:
   - uid: 437
