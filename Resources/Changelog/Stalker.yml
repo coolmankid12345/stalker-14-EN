@@ -161,5 +161,13 @@
   id: 17
   time: '2026-02-05T23:33:06.148114+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/382
+- author: teecoding
+  changes:
+  - message: Non-rouble shops (military premium, meatman) no longer hide low-priced
+      items from the sell tab
+    type: Fix
+  id: 18
+  time: '2026-02-06T20:01:07.110967+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/391
 Name: Stalker
 Order: -1
