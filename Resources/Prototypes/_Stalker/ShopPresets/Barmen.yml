@@ -214,20 +214,20 @@
     - name: shop-category-medicine
       priority: 7
       items:
-      STPillboxAntirad: 350
-      STGauze: 65
-      STOintment: 75
-      STBrutepack: 65
-      Bloodpack: 550
-      MedkitAI2: 135
-      Defibrillator: 1000
-      AntiRadMedipen: 300
-      STPillboxProbud: 500
-      MedkitMilitary: 400
-      MedkitScience: 450
-      MedkitElite: 1500
-      MedkitLAR: 3200
-      STPillboxShiza: 10000
+       STPillboxAntirad: 350
+       STGauze: 65
+       STOintment: 75
+       STBrutepack: 65
+       Bloodpack: 550
+       MedkitAI2: 135
+       Defibrillator: 1000
+       AntiRadMedipen: 300
+       STPillboxProbud: 500
+       MedkitMilitary: 400
+       MedkitScience: 450
+       MedkitElite: 1500
+       MedkitLAR: 3200
+       STPillboxShiza: 10000
     - name: shop-category-customization
       priority: 8
       items:
