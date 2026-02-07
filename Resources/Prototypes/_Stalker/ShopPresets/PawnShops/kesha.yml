@@ -95,6 +95,7 @@
     ClothingNeckBling: 1000
     TreasureCoinAdamantine: 500
     TradeBox: 3000
+    STJoint: 300
 
   categories:
   - name: shop-category-weapons

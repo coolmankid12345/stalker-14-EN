@@ -65,6 +65,17 @@
     MutantPartOraculeEye: 2340
     MutantPartPseudogiantHeart: 11484
     MutantPartZombieHand: 990
+
+    # Mutant parts EN
+
+    MutantPartCatGland: 150
+    MutantPartBearClaw: 450
+    MutantPartBearPaw: 864
+    MutantPartBearEye: 1425
+    MutantPartFrogLeg: 720
+    MutantPartIzlomArm: 4500
+    MutantPartChimeraTooth: 3600
+
   categories:
   - name: shop-category-weapons
     priority: 1
@@ -89,6 +100,8 @@
       STWeaponSniperMosin: 1000
       STWeaponSniperSKS: 1200
       STWeaponRifleAKM: 5000
+      DG05SmokeGrenade: 200
+      RGD5Grenade: 300
   - name: shop-category-magazines
     priority: 2
     items:
@@ -113,9 +126,9 @@
   - name: shop-category-ammunition
     priority: 3
     items:
-      6mmBuckshotBox: 100
-      7mmBuckshotBox: 40
-      8mmBuckshotBox: 170
+      6mmBuckshotBox: 40
+      7mmBuckshotBox: 120
+      8mmBuckshotBox: 320
       # 7.25
       725PBox: 90
       725LRNPCBox: 50
@@ -131,10 +144,10 @@
       918PBMBox: 500
       918SP7Box: 200
       # 5.45
-      545FMJBox: 500
+      545FMJBox: 200
       545HPBox: 100
-      545PCBox: 1500
-      545BPBox: 2200
+      545PCBox: 1100
+      545BPBox: 1700
       # 7.39
       739FMJBox: 1540
       739HPBox: 400
@@ -171,6 +184,9 @@
       # Belts
       ClothingBeltBandolierStalker: 20 # T1 - PVE
       ClothingBeltWebbingHolsterDolgPS5M: 700 # t3 belt
+      ClothingBackpackDuffelOliveTacticStalker: 1200
+      ClothingBackpackDuffelSuperStalkerGray: 1600
+      ClothingBackpackDuffelSuperStalker: 1600
   - name: shop-category-raincoats-and-gasmasks
     priority: 6
     items:
@@ -231,17 +247,18 @@
     items:
       STPillboxAntirad: 350
       STGauze: 65
-      STOintment: 85
-      STBrutepack: 55
-      Bloodpack: 450
-      MedkitAI2: 200
-      Defibrillator: 700
-      AntiRadMedipen: 200
-      STPillboxProbud: 300
-      MedkitMilitary: 250
+      STOintment: 75
+      STBrutepack: 65
+      Bloodpack: 550
+      MedkitAI2: 135
+      Defibrillator: 1000
+      AntiRadMedipen: 300
+      STPillboxProbud: 500
+      MedkitMilitary: 400
       MedkitScience: 450
-      MedkitElite: 750
-      MedkitLAR: 700
+      MedkitElite: 1500
+      MedkitLAR: 3200
+      STPillboxShiza: 10000
   - name: shop-category-modules
     priority: 11
     items:

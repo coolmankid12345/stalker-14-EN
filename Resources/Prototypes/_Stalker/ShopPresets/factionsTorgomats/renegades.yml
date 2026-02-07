@@ -3,160 +3,64 @@
   itemsForSale:
     # Thermal group - 1
     ToothStalker: 1200
-    ZoneArtifactFireball: 2
-    ZoneArtifactEye: 2
-    ZoneArtifactFlame: 2
+    ZoneArtifactFireball: 100
+    ZoneArtifactEye: 100
+    ZoneArtifactFlame: 100
     # Thermal group - 2
-    ZoneArtifactCristall: 2
-    ZoneArtifactLithosphere: 2
+    ZoneArtifactCristall: 100
+    ZoneArtifactLithosphere: 100
     # Electrical group - 1
-    ZoneArtifactSparkler: 2
-    ZoneArtifactBattery: 2
-    ZoneArtifactFlash: 2
-    ArtMoon: 2
-    ZoneArtifactTesla: 2
-    ZoneArtifactIce: 2
+    ZoneArtifactSparkler: 100
+    ZoneArtifactBattery: 100
+    ZoneArtifactFlash: 100
+    ArtMoon: 100
+    ZoneArtifactTesla: 100
+    ZoneArtifactIce: 100
     # Gravity group - 1
-    ArtMedusa: 2
-    ZoneArtifactFlower: 2
-    ZoneArtifactNightStar: 2
+    ArtMedusa: 100
+    ZoneArtifactFlower: 100
+    ZoneArtifactNightStar: 100
     # Gravity group - 2
-    ZoneArtifactVyvert: 2
-    ZoneArtifactAmoeba: 2
-    ZoneArtifactFloodlight: 2
-    ZoneArtifactGravi: 2
-    ZoneArtifactGoldfish: 2
-    ZoneArtifactSpring: 2
-    ZoneArtifactFocus: 2
-    ZoneArtifactStuntman: 2
-    ZoneArtifactDistorter: 2
-    ZoneArtifactSoul: 2
+    ZoneArtifactVyvert: 100
+    ZoneArtifactAmoeba: 100
+    ZoneArtifactFloodlight: 100
+    ZoneArtifactGravi: 100
+    ZoneArtifactGoldfish: 100
+    ZoneArtifactSpring: 100
+    ZoneArtifactFocus: 100
+    ZoneArtifactStuntman: 100
+    ZoneArtifactDistorter: 100
+    ZoneArtifactSoul: 100
     # Acidic group - 1
-    ZoneArtifactBlood: 2
-    ZoneArtifactMeat: 2
-    ZoneArtifactKolobok: 2
+    ZoneArtifactBlood: 100
+    ZoneArtifactMeat: 100
+    ZoneArtifactKolobok: 100
     # Acidic group - 2
-    ZoneArtifactPellicle: 2
-    ZoneArtifactBaloon: 2
+    ZoneArtifactPellicle: 100
+    ZoneArtifactBaloon: 100
 
      # Mutant parts
 
   #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 2 # T1
-    MutantPartSeasonedBoarHoof: 2 # T2
-    MutantPartOldBoarHoof: 2 # T3
+    MutantPartBoarHoof: 100 # T1
+    MutantPartSeasonedBoarHoof: 100 # T2
+    MutantPartOldBoarHoof: 100 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 2
-    MutantPartFleshEye: 2
-    FoodMeatSpiderLeg: 2
+    MutantPartBlindDogTail: 100
+    MutantPartFleshEye: 100
+    FoodMeatSpiderLeg: 100
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 2
-    MutantPartPseudodogTail: 2
-    MutantPartSnorkFoot: 2
+    MutantPartLeshiyRoot: 100
+    MutantPartPseudodogTail: 100
+    MutantPartSnorkFoot: 100
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 2
-    MutantPartOraculeEye: 2
-    MutantPartPseudogiantHeart: 2
-    MutantPartZombieHand: 2
-
-     #Weapons and armour ---- min cost / 2
-
-    #12x70
-    STWeaponShotgunTOZ34: 2
-    STWeaponShotgunMP133: 2
-    STWeaponShotgunMP153: 2
-    STWeaponShotgunBenelliM4Super90: 2
-    STWeaponShotgunMossbergM88: 2
-    STWeaponShotgunSPAS: 2
-    STWeaponShotgunProtecta: 2
-    STWeaponShotgunSaiga12: 2
-
-    #5.45x39
-    STWeaponRifleSaiga545: 2
-    STWeaponRifleAKS74U: 2
-    STWeaponRifleAKS74: 2
-    STWeaponRifleAK74M: 2
-    STWeaponRifleStalkerAK12: 2
-
-    #5.56x39
-    STWeaponRifleL85: 2
-    STWeaponRifleM16: 2
-    STWeaponRifleSIG550: 2
-    STWeaponRifleM4: 2
-    STWeaponRifleGalil: 2
-    STWeaponRifleG36: 2
-
-    #7.62x39
-    STWeaponRifleAKM: 2
-    STWeaponRifleAK103: 2
-    STWeaponRifleStalkerAK104: 2
-    STWeaponMachineGunRPD: 2
-    STWeaponSniperSKS: 2
-
-    #7.62x51
-    STWeaponRifleFAL: 2
-    STWeaponRifleGalatz: 2
-    STWeaponRifleSCARH: 2
-    STWeaponRifleM14: 2
-
-    #7.62x54
-    STWeaponSniperMosin: 2
-    STWeaponSniperSVDS: 2
-    STWeaponSniperSVU: 2
-    STWeaponSniperVepr: 2
-
-    #9x18
-    WeaponPistolStalkerGlock: 2
-    WeaponStalkerPistolTec9: 2
-    STWeaponSMGMP40: 2
-    STWeaponSMGMP5: 2
-    STWeaponSMGPP91: 2
-    STWeaponSMGThompson: 2
-    STWeaponSMGStalkerCP2Veresk: 2
-    STWeaponSMGPP1901: 2
-
-    #7.62x25
-    WeaponPistolStalkerTT: 2
-    STWeaponSMGPPSh41: 2
-
-    #9x39
-    STWeaponRifleASVAL: 2
-    STWeaponSniperVSS: 2
-
-    #.45 acp
-    STWeaponRevolverRugerRedhawk: 2
-    STWeaponRevolverSWPC325TR: 2
-    STWeaponRevolverChiappaRhino60DS: 2
-    STWeaponRevolverSWModel325: 2
-    STWeaponRevolverSWModel625: 2
-
-    #values
-    ClothingNeckBronzeheart: 2
-    ClothingNeckCargomedal: 2
-    ClothingNeckEngineermedal: 2
-    Wristwatch: 2
-    SilverRing: 2
-    GoldRing: 2
-    TreasureCoinIron: 2
-    TreasureCoinGold: 2
-    TreasureCoinSilver: 2
-    ClothingStalkerNeckToken: 2
-    SilverRingDiamond: 2
-    GoldRingDiamond: 2
-    ClothingNeckGoldAutismPin: 2
-    MaterialDiamond1: 2
-    DrinkGoldenCup: 2
-    SilverRingGem: 2
-    GoldRingGem: 2
-    ClothingNeckGoldmedal: 2
-    IngotSilver1: 2
-    IngotGold1: 2
-    WristwatchGold: 2
-    ClothingNeckBling: 2
-    TreasureCoinAdamantine: 2
+    MutantPartBloodsuckerTentacles: 100
+    MutantPartOraculeEye: 100
+    MutantPartPseudogiantHeart: 100
+    MutantPartZombieHand: 100
 
   categories:
     - name: shop-category-weapons
@@ -167,11 +71,9 @@
          WeaponPistolStalkerAPS: 500
          STWeaponRevolverSWPC325TR: 1000
          STWeaponSMGPPSh41: 2200
-         STWeaponSMGPP19: 3600
-         STWeaponRifleSaiga545: 1550
-         STWeaponRifleAKS74U: 2000
-         STWeaponSniperSKS: 1500
-         STWeaponSniperMosin: 1200
+         STWeaponRifleSaiga545: 1150
+         STWeaponRifleAKS74U: 1600
+         STWeaponSniperMosin: 1600
     - name: shop-category-magazines
       priority: 2
       items:
@@ -188,19 +90,18 @@
       items:
         7mmBuckshotBox: 50
         6mmBuckshotBox: 150
-        8mmBuckshotBox: 450
         45ACPRIPBox: 450
         45ACPLFMJBox: 250
-        45ACPAPBox: 1200
+        45ACPAPBox: 1400
         725PBox: 100
         725LRNPCBox: 50
-        725PTBox: 465
+        725PTBox: 665
         918PGJBox: 80
         918SP7Box: 200
-        918PBMBox: 1000
+        918PBMBox: 1200
         919PSOGJBox: 100
         919RIPBox: 400
-        919PBMBox: 1000
+        919PBMBox: 1200
         545FMJBox: 500
         545PCBox: 1800
         754HPBox: 500

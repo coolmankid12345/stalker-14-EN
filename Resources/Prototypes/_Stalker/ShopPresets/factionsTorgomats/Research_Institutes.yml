@@ -1,5 +1,76 @@
 - type: shopPreset
   id: NpcResearchInstitut # 0x
+  itemsForSale:
+    # Thermal group - 1
+    ZoneArtifactFireball: 1008
+    ZoneArtifactEye: 1344
+    ZoneArtifactFlame: 2016
+    # Thermal group - 2
+    ZoneArtifactCristall: 4032
+    ZoneArtifactLithosphere: 8064
+    # Electrical group - 1
+    ZoneArtifactSparkler: 840
+    ZoneArtifactBattery: 1176
+    ZoneArtifactFlash: 2016
+    ArtMoon: 4032
+    ZoneArtifactTesla: 6048
+    ZoneArtifactIce: 8064
+    # Gravity group - 1
+    ArtMedusa: 924
+    ZoneArtifactFlower: 1260
+    ZoneArtifactNightStar: 4032
+    # Gravity group - 2
+    ZoneArtifactVyvert: 1092
+    ZoneArtifactAmoeba: 1428
+    ZoneArtifactFloodlight: 972
+    ZoneArtifactGravi: 2016
+    ZoneArtifactGoldfish: 8064
+    ZoneArtifactSpring: 6048
+    ZoneArtifactFocus: 6048
+    ZoneArtifactStuntman: 8064
+    ZoneArtifactDistorter: 8064
+    ZoneArtifactSoul: 6048
+
+    # Acidic group - 1
+    ZoneArtifactBlood: 2016
+    ZoneArtifactMeat: 4032
+    ZoneArtifactKolobok: 6048
+    # Acidic group - 2
+    ZoneArtifactPellicle: 924
+    ZoneArtifactBaloon: 6048
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 264 # T1
+    MutantPartSeasonedBoarHoof: 528 # T2
+    MutantPartOldBoarHoof: 780 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 108
+    MutantPartFleshEye: 198
+    FoodMeatSpiderLeg: 72
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 840
+    MutantPartPseudodogTail: 360
+    MutantPartSnorkFoot: 540
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 1800
+    MutantPartOraculeEye: 2340
+    MutantPartPseudogiantHeart: 14040
+    MutantPartZombieHand: 660
+
+    # Mutant parts EN
+
+    MutantPartCatGland: 100
+    MutantPartBearClaw: 300
+    MutantPartBearPaw: 576
+    MutantPartBearEye: 1710
+    MutantPartFrogLeg: 480
+    MutantPartIzlomArm: 3780
+    MutantPartChimeraTooth: 5400
   categories:
   - name: shop-category-weapons
     priority: 1
@@ -151,30 +222,24 @@
       FoodTinMRE: 120
       DrinkLemonadehBottleFull: 50
       STFoodMeatSalami: 350
-  - name: shop-category-medicine # 70% скидка от сталкеров
+  - name: shop-category-medicine # 50% скидка от сталкеров
     priority: 10
     items:
       # Cheap
-      PillDexalin: 10
-      PillDexalinPlusStalker: 25
-      STOintment: 10
-      STGauze: 15
-      STBrutepack: 10
-      # Expensive
-      antiradpill: 50
-      radioprotectpill: 70
-      Bloodpack: 90
-      psyblock: 200
-      MedkitAI2: 20
-      MedkitScience: 150
-      MedkitMilitary: 75
-      Defibrillator: 700
-      MedkitElite: 400
-      MedkitLAR: 450
-      # Crates
-      SanitarCrate: 800
-      SaviorCrate: 1500
-      PolevoyVrachCrate: 1740
+      STPillboxAntirad: 125
+      STGauze: 35
+      STOintment: 35
+      STBrutepack: 35
+      Bloodpack: 225
+      MedkitAI2: 67
+      Defibrillator: 500
+      AntiRadMedipen: 150
+      STPillboxProbud: 250
+      MedkitMilitary: 200
+      MedkitScience: 225
+      MedkitElite: 750
+      MedkitLAR: 1600
+      STPillboxShiza: 5000
   - name: shop-category-customization
     priority: 11
     items:

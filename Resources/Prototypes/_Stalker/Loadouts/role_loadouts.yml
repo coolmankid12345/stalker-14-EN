@@ -25,11 +25,11 @@
   - STBackpackGroup
   - STStorageTrinkets
   - STShoesGroup
-  - STOuterClothingStalkerGroup
+  - ClothingOuterJacketNeytral
   - STMaskStalkerGroup
   - STBeltStalkerGroup
-  - STlegsGroup
-  - STTorsoGroup
+  - STlegsGroupVeteran
+  - STTorsoGroupVeteran
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -65,7 +65,7 @@
   - STMaskStalkerGroup
   - STBeltStalkerGroup
   - STlegsGroup
-  - STTorsoGroup
+  - STTorsoGroupBandit
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -83,7 +83,7 @@
   - STMaskStalkerGroup
   - STBeltStalkerGroup
   - STlegsGroup
-  - STTorsoGroup
+  - STTorsoGroupBandit
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -102,7 +102,7 @@
   - STMaskStalkerGroup
   - STBeltStalkerGroup
   - STlegsGroup
-  - STTorsoGroup
+  - STTorsoGroupDolg
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -120,7 +120,7 @@
   - STMaskStalkerGroup
   - STBeltStalkerGroup
   - STlegsGroup
-  - STTorsoGroup
+  - STTorsoGroupDolg
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -138,8 +138,8 @@
   - STShoesGroup
   - STMaskStalkerGroup
   - STBeltStalkerGroup
-  - STlegsGroup
-  - STTorsoGroup
+  - STlegsGroupFreedom
+  - STTorsoGroupFreedom
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -156,8 +156,8 @@
   - STShoesGroup
   - STMaskStalkerGroup
   - STBeltStalkerGroup
-  - STlegsGroup
-  - STTorsoGroup
+  - STlegsGroupFreedom
+  - STTorsoGroupFreedom
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -176,7 +176,7 @@
   - STMaskStalkerGroup
   - STBeltStalkerGroup
   - STlegsGroup
-  - STTorsoGroup
+  - STTorsoGroupSci
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -194,7 +194,7 @@
   - STMaskStalkerGroup
   - STBeltStalkerGroup
   - STlegsGroup
-  - STTorsoGroup
+  - STTorsoGroupSci
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -212,7 +212,7 @@
   - STMaskStalkerGroup
   - STBeltStalkerGroup
   - STlegsGroup
-  - STTorsoGroup
+  - STTorsoGroupSci
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -227,10 +227,10 @@
   - STTrinketsGroupTwo
   - STBackpackGroup
   - STStorageTrinkets
-  - STShoesGroup
+  - STShoesGroupSera
   - STMaskStalkerGroup
   - STBeltStalkerGroup
-  - STlegsGroup
+  - STlegsGroupSera
   - STTorsoGroup
   - STSuitstorageGroup
   - STStorage
@@ -245,10 +245,10 @@
   - STTrinketsGroupTwo
   - STBackpackGroup
   - STStorageTrinkets
-  - STShoesGroup
+  - STShoesGroupSera
   - STMaskStalkerGroup
   - STBeltStalkerGroup
-  - STlegsGroup
+  - STlegsGroupSera
   - STTorsoGroup
   - STSuitstorageGroup
   - STStorage
@@ -263,11 +263,11 @@
   - STTrinketsGroupTwo
   - STBackpackGroup
   - STStorageTrinkets
-  - STShoesGroup
+  - STShoesGroupSera
   - STMaskStalkerGroup
   - STBeltStalkerGroup
-  - STlegsGroup
-  - STTorsoGroup
+  - STlegsGroupSeraCher
+  - STTorsoGroupSeraphimsCher
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -285,8 +285,8 @@
   - STShoesGroup
   - STMaskStalkerGroup
   - STBeltStalkerGroup
-  - STlegsGroup
-  - STTorsoGroup
+  - STlegsGroupClear
+  - STTorsoGroupClear
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
@@ -303,10 +303,30 @@
   - STShoesGroup
   - STMaskStalkerGroup
   - STBeltStalkerGroup
-  - STlegsGroup
-  - STTorsoGroup
+  - STlegsGroupClear
+  - STTorsoGroupClear
   - STSuitstorageGroup
   - STStorage
   - STStorageAmmunition
   - STGlasses
   - STOuterClothingStalkerClearSky
+
+# Ренегаты
+
+- type: roleLoadout
+  id: JobStalkerRene
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroupRene
+  - STTorsoGroupRene
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingStalkerRene

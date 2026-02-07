@@ -36,11 +36,7 @@
   id: ReneGear
   equipment:
     id: BandPDA
-    head: ClothingHeadHatGreyFlatcap
-    torso: ClothingTorsoTShirtColorBlack
-    legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesBootsWork
-    back: ClothingBackpackDuffelBlackStalker
+    
 - type: stBand
   id: STRenegatsBand
   name: Renegats

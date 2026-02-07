@@ -14,9 +14,24 @@
   equipment:
     mask: ClothingMaskGasZarya
 
+- type: loadout
+  id: ClothingOuterJacketNeytral
+  equipment:
+    outerClothing: ClothingOuterJacketNeytral
+
 #Общее
 
     #Штаны
+- type: loadout
+  id: STlegsSTClothingLegsSerafimPants
+  equipment:
+    legs: STClothingLegsSerafimPants
+
+- type: loadout
+  id: STlegsSTClothingLegsSerafimCherubimPants
+  equipment:
+    legs: STSTClothingLegsSerafimCherubimPants
+
 - type: loadout
   id: STlegsClothingLegsJeansBlue
   equipment:
@@ -184,6 +199,11 @@
 
     #обувь
 - type: loadout
+  id: STClothingShoesBootsSeraFilled
+  equipment:
+    shoes: STClothingShoesBootsSeraFilled
+
+- type: loadout
   id: ClothingShoesNovice
   equipment:
     shoes: ClothingShoesNovice
@@ -203,6 +223,11 @@
   equipment:
     shoes: ClothingShoesBootsLeather
     #Торс
+- type: loadout
+  id: STTorsoSTClothingTorsoSerafimCherubimFullReady
+  equipment:
+    torso: STClothingTorsoSerafimCherubimFullReady
+
 - type: loadout
   id: STTorsoClothingTorsoSweaterStalkerGreen
   equipment:
@@ -703,3 +728,10 @@
   id: STOuterClothingStalkerClearSky
   equipment:
     outerClothing: ClothingOuterJacketCN
+
+# Ренегаты
+
+- type: loadout
+  id: ClothingJaketRealHuman
+  equipment:
+    outerClothing: ClothingJaketRealHuman
