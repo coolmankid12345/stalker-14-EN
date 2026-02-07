@@ -1,5 +1,5 @@
 - type: shopPreset
-  id: NpcSidor # 0.7x
+  id: NpcJab # 0.7x
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 720

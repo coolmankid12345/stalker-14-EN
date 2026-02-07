@@ -40,7 +40,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandFreedomRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Freedom-Repository
   description: Band-Freedom-Repository-desc
   components:
@@ -48,7 +48,7 @@
       access: [["Freedom"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandFreedomRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 
 # Repository for Serafim - Start
@@ -56,7 +56,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandSerafimRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Serafim-Repository
   description: Подвал охотников... Пфф, ничего интересного...
   components:
@@ -64,7 +64,7 @@
       access: [["Seraphims"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandSerafimRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for Serafim - End
 
@@ -73,7 +73,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandDebtRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Debt-Repository
   description: Band-Debt-Repository-desc
   components:
@@ -81,7 +81,7 @@
       access: [["Dolg"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandDebtRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for DebtBand - End
 
@@ -90,7 +90,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandRenegadesRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Renegades-Repository
   description: Band-Renegades-Repository-desc
   components:
@@ -98,7 +98,7 @@
       access: [["Renegat"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandRenegadesRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 
 # Repository for RenegadesBand - End
@@ -108,7 +108,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandMilitaryRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Military-Repository
   description: Band-Military-Repository-desc
   components:
@@ -116,7 +116,7 @@
       access: [["Military"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandMilitaryRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for Military - End
 
@@ -125,7 +125,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandJabaRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Jaba-Repository
   description: Подвал гениев крафтов... Не может быть! Там-...
   components:
@@ -133,7 +133,7 @@
       access: [["Jaba"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandJabaRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for Jabs - End
 
@@ -143,13 +143,13 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandsRepository
-  suffix: 1000
+  suffix: 200
   name: Band-s-Repository
   description: Band-s-Repository-desc
   components:
     - type: StalkerBandTeleport
       portalName: _PortalBandsRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for s - End
 
@@ -166,12 +166,12 @@
       access: [["SciBase"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandResearchInstitutesRepository-Kordon
-      repositoryWeight: 500
+      repositoryWeight: 200
 
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandResearchInstitutesRepository
-  suffix: 500
+  suffix: 200
   name: Band-ResearchInstitutes-Repository
   description: Band-ResearchInstitutes-Repository-desc
   components:
@@ -179,7 +179,7 @@
       access: [["SciBase"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandResearchInstitutesRepository
-      repositoryWeight: 500
+      repositoryWeight: 200
 
 # Repository for Research Institutes - End
 
@@ -188,7 +188,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandCovenantRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Covenant-Repository
   description: Band-Covenant-Repository-desc
   components:
@@ -196,7 +196,7 @@
       access: [["Covenant"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandCovenantRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for Covenant - End
 
@@ -205,7 +205,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandBanditsRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Bandits-Repository
   description: Band-Bandits-Repository-desc
   components:
@@ -213,7 +213,7 @@
       access: [["Bandit"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandBanditsRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for Bandits - End
 
@@ -222,7 +222,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandSinRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Sin-Repository
   description: Band-Sin-Repository-desc
   components:
@@ -230,7 +230,7 @@
       access: [["Greh"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandSinRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for Sin - End
 
@@ -239,7 +239,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandClearskyRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Clearsky-Repository
   description: Band-Clearsky-Repository-desc
   components:
@@ -247,7 +247,7 @@
       access: [["CN"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandClearskyRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for Clearsky - End
 
@@ -256,7 +256,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandMercenariesRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Mercenaries-Repository
   description: Band-Mercenaries-Repository-desc
   components:
@@ -264,7 +264,7 @@
       access: [["Merc"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandMercenariesRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for Mercenaries - End
 
@@ -273,7 +273,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandUNRepository
-  suffix: 1000
+  suffix: 200
   name: Band-UN-Repository
   description: Band-UN-Repository-desc
   components:
@@ -281,7 +281,7 @@
       access: [["Military"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandUNRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for UN - End
 
@@ -290,7 +290,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandAnomalistRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Anomalist-Repository
   description: Band-Anomalist-Repository-desc
   components:
@@ -298,7 +298,7 @@
       access: [["Anomalist"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandAnomalistRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for Anomalist - End
 
@@ -307,7 +307,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandMilitaryStalkerRepository
-  suffix: 1000
+  suffix: 200
   name: Band-MilitaryStalker-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
@@ -315,7 +315,7 @@
       access: [["MilitaryStalker"]]
     - type: StalkerBandTeleport
       portalName: _PortalBandMilitaryStalkerRepository
-      repositoryWeight: 1000
+      repositoryWeight: 200
 
 # Repository for MilitaryStalker - End
 
@@ -323,7 +323,7 @@
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandNeutralsRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Neutrals-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
@@ -331,14 +331,14 @@
     access: [["Neutral"]]
   - type: StalkerBandTeleport
     portalName: _PortalBandNeutralsRepository
-    repositoryWeight: 1000
+    repositoryWeight: 200
 # Repository for Neutrals - End
 
 # Repository for Poisk - Start
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandPoiskRepository
-  suffix: 1000
+  suffix: 200
   name: Band-Poisk-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
@@ -346,14 +346,14 @@
     access: [["Poisk"]]
   - type: StalkerBandTeleport
     portalName: _PortalBandPoiskRepository
-    repositoryWeight: 1000
+    repositoryWeight: 200
 # Repository for Poisk - End
 
 # Repository for Monolith - Start
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandMonolithRepository
-  suffix: 150
+  suffix: 200
   name: Band-Monolith-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
@@ -361,20 +361,20 @@
     access: [["Monolith"]]
   - type: StalkerBandTeleport
     portalName: _PortalBandMonolithRepository
-    repositoryWeight: 500
+    repositoryWeight: 200
 # Repository for Monolith - End
 
 # Repository for Project - Start
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandProjectRepository
-  suffix: 2000
+  suffix: 200
   name: Band-Project-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
   - type: StalkerBandTeleport
     portalName: _PortalBandProjectRepository
-    repositoryWeight: 2000
+    repositoryWeight: 200
 # Repository for Project - End
 
 # BandPrototype

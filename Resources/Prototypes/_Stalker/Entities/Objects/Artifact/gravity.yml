@@ -57,6 +57,7 @@
     damage:
       types:
         Radiation: 1
+        Caustic: 0.6
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -101,6 +102,7 @@
     modifiers:
       coefficients:
         Shock: 1.4
+        Piercing: 0.65
   - type: STWeight
     self: -40
   - type: Reflect
@@ -130,7 +132,7 @@
     damage:
       types:
         Piercing: -0.3
-        Compression: 0.2
+        Caustic: 0.2
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -200,7 +202,7 @@
   - type: PersonalDamage
     damage:
       types:
-        Psy: 2.5
+        Psy: 1.5
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -238,13 +240,13 @@
       types:
         Radiation: -1.5
         Bloodloss: -3
+        Cold: 0.5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       flatReductions:
-        Piercing: 1
         Slash: 1
       coefficients:
         Slash: 0.6
@@ -314,10 +316,17 @@
         Radiation: 1.5
         Caustic: 0.3
         Compression: 0.4
-        Psy: 0.5
   - type: Reflect
     reflectProb: 0.25
     spread: 340
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Piercing: 1
+      coefficients:
+        Piercing: 0.7
 
 - type: entity
   parent: BaseArtifact
@@ -356,7 +365,7 @@
         Cold: 5.5
         Heat: 5.5
         Shock: 5.5
-        Radiation: 5.5
+        Radiation: 1.5
   - type: Reflect
     reflectProb: 0.1
     spread: 320
@@ -385,7 +394,6 @@
         Slash: -5
         Piercing: -5
         Radiation: 5
-        Caustic: 0.3
         Cold: 0.3
   - type: Reflect
     reflectProb: 0.2

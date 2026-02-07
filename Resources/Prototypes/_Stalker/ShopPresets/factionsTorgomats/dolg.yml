@@ -2,69 +2,69 @@
   id: DolgShopPreset
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 510
-    ZoneArtifactEye: 680
-    ZoneArtifactFlame: 1020
+    ZoneArtifactFireball: 612
+    ZoneArtifactEye: 816
+    ZoneArtifactFlame: 1224
     # Thermal group - 2
-    ZoneArtifactCristall: 2040
-    ZoneArtifactLithosphere: 4080
+    ZoneArtifactCristall: 2448
+    ZoneArtifactLithosphere: 4896
     # Electrical group - 1
-    ZoneArtifactSparkler: 425
-    ZoneArtifactBattery: 595
-    ZoneArtifactFlash: 1020
-    ArtMoon: 2040
-    ZoneArtifactTesla: 3060
-    ZoneArtifactIce: 4080
+    ZoneArtifactSparkler: 510
+    ZoneArtifactBattery: 715
+    ZoneArtifactFlash: 1224
+    ArtMoon: 2448
+    ZoneArtifactTesla: 3672
+    ZoneArtifactIce: 4896
     # Gravity group - 1
-    ArtMedusa: 468
-    ZoneArtifactFlower: 638
-    ZoneArtifactNightStar: 2040
+    ArtMedusa: 562
+    ZoneArtifactFlower: 766
+    ZoneArtifactNightStar: 2448
     # Gravity group - 2
-    ZoneArtifactVyvert: 553
-    ZoneArtifactAmoeba: 723
-    ZoneArtifactFloodlight: 810
-    ZoneArtifactGravi: 1020
-    ZoneArtifactGoldfish: 4080
-    ZoneArtifactSpring: 3060
-    ZoneArtifactFocus: 300
-    ZoneArtifactStuntman: 4080
-    ZoneArtifactDistorter: 4080
-    ZoneArtifactSoul: 3060
+    ZoneArtifactVyvert: 664
+    ZoneArtifactAmoeba: 868
+    ZoneArtifactFloodlight: 972
+    ZoneArtifactGravi: 1224
+    ZoneArtifactGoldfish: 4896
+    ZoneArtifactSpring: 3672
+    ZoneArtifactFocus: 360
+    ZoneArtifactStuntman: 4896
+    ZoneArtifactDistorter: 4896
+    ZoneArtifactSoul: 3672
     # Food
-    FoodMeatDogCooked: 70
-    STFoodMeatSpiderCooked: 35
-    FoodMeatBoarCooked: 110
+    FoodMeatDogCooked: 84
+    STFoodMeatSpiderCooked: 42
+    FoodMeatBoarCooked: 132
 
     # Acidic group - 1
-    ZoneArtifactBlood: 1020
-    ZoneArtifactMeat: 2040
-    ZoneArtifactKolobok: 3060
+    ZoneArtifactBlood: 1224
+    ZoneArtifactMeat: 2448
+    ZoneArtifactKolobok: 3672
     # Acidic group - 2
-    ZoneArtifactPellicle: 468
-    ZoneArtifactBaloon: 3060
+    ZoneArtifactPellicle: 562
+    ZoneArtifactBaloon: 3672
 
     # Mutant parts
 
     #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 30 # T1
-    MutantPartSeasonedBoarHoof: 660 # T2
-    MutantPartOldBoarHoof: 975 # T3
+    MutantPartBoarHoof: 36 # T1
+    MutantPartSeasonedBoarHoof: 792 # T2
+    MutantPartOldBoarHoof: 1170 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 135
-    MutantPartFleshEye: 250
-    FoodMeatSpiderLeg: 60
+    MutantPartBlindDogTail: 162
+    MutantPartFleshEye: 300
+    FoodMeatSpiderLeg: 72
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 1050
-    MutantPartPseudodogTail: 450
-    MutantPartSnorkFoot: 675
+    MutantPartLeshiyRoot: 1260
+    MutantPartPseudodogTail: 540
+    MutantPartSnorkFoot: 810
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 1500
-    MutantPartOraculeEye: 1950
-    MutantPartPseudogiantHeart: 9570
-    MutantPartZombieHand: 825
+    MutantPartBloodsuckerTentacles: 1800
+    MutantPartOraculeEye: 2340
+    MutantPartPseudogiantHeart: 11484
+    MutantPartZombieHand: 990
   categories:
   - name: shop-category-weapons
     priority: 1
