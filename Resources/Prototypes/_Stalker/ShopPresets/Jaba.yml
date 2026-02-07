@@ -66,6 +66,16 @@
     MutantPartPseudogiantHeart: 9360
     MutantPartZombieHand: 660
 
+    # Mutant parts EN
+
+    MutantPartCatGland: 100
+    MutantPartBearClaw: 300
+    MutantPartBearPaw: 576
+    MutantPartBearEye: 1140
+    MutantPartFrogLeg: 480
+    MutantPartIzlomArm: 2520
+    MutantPartChimeraTooth: 3600
+
     # Values
     Dollar: 60
     Goldcoins: 5670
@@ -136,7 +146,7 @@
   - name: shop-category-ammunition
     priority: 3
     items:
-      7mmBuckshotBox: 50
+      7mmBuckshotBox: 40
       6mmBuckshotBox: 150
       # 5.56
       556FMJBox: 500

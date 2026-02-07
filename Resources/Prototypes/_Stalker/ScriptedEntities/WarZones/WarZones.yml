@@ -2,7 +2,7 @@
 - type: stWarZone
   id: KordonVillage # Идентификатор зоны. Сохраняется в БД, поэтому не меняйте его.
   rewardPointsPerPeriod: 1 # Сколько очков будет начисляться за период
-  rewardPeriod: 30 # Период начисления очков в секундах
+  rewardPeriod: 1230 # Период начисления очков в секундах
   captureCooldownHours: 2 # Время перезарядки захвата зоны в часах
   captureTime: 10 # Время захвата зоны в секундах. 30 минут.
   requirements:
@@ -11,8 +11,8 @@
 
 - type: stWarZone
   id: SvalkaDepo
-  rewardPointsPerPeriod: 0.1
-  rewardPeriod: 30 # Период начисления очков в секундах
+  rewardPointsPerPeriod: 1
+  rewardPeriod: 1230 # Период начисления очков в секундах
   captureCooldownHours: 8
   shouldAwardWhenDefenderPresent: true
   captureTime: 450 # Время захвата зоны в секундах.
@@ -84,8 +84,8 @@
 
 - type: stWarZone
   id: SvalkaСemetery
-  rewardPointsPerPeriod: 0.1
-  rewardPeriod: 30 # Период начисления очков в секундах
+  rewardPointsPerPeriod: 1
+  rewardPeriod: 1230 # Период начисления очков в секундах
   captureCooldownHours: 8
   shouldAwardWhenDefenderPresent: true
   captureTime: 300 # Время захвата зоны в секундах.
@@ -127,8 +127,8 @@
 
 - type: stWarZone
   id: LimanskLenin
-  rewardPointsPerPeriod: 0.1
-  rewardPeriod: 30 # Период начисления очков в секундах
+  rewardPointsPerPeriod: 1
+  rewardPeriod: 1230 # Период начисления очков в секундах
   captureCooldownHours: 8
   shouldAwardWhenDefenderPresent: true
   captureTime: 350 # Время захвата зоны в секундах.
@@ -170,8 +170,8 @@
 
 - type: stWarZone
   id: KordonFerma
-  rewardPointsPerPeriod: 0.1
-  rewardPeriod: 30 # Период начисления очков в секундах
+  rewardPointsPerPeriod: 1
+  rewardPeriod: 1230 # Период начисления очков в секундах
   captureCooldownHours: 8
   shouldAwardWhenDefenderPresent: true
   captureTime: 175 # Время захвата зоны в секундах.

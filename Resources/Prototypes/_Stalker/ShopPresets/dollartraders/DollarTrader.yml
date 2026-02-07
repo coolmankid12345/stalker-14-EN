@@ -2,20 +2,27 @@
 - type: shopPreset
   id: HidenZoneTrader
   itemsForSale:
-    # ---GRAVITY---
-    #Т2
-    ZoneArtifactFireball: 0
+    MutantPartBloodsuckerTentacles: 15
+    MutantPartOraculeEye: 10
+    MutantPartPseudogiantHeart: 60
+    MutantPartZombieHand: 5
+    ZoneArtifactGoldfish: 20
+    ZoneArtifactSpring: 15
+    ZoneArtifactFocus: 15
+    ZoneArtifactStuntman: 20
+    ZoneArtifactDistorter: 20
+    ZoneArtifactSoul: 15
+    ZoneArtifactTesla: 15
+    ZoneArtifactIce: 20
+    ZoneArtifactLithosphere: 20
+    ZoneArtifactKolobok: 15
   categories:
   - name: shop-category-weapons
     priority: 1
     items:
-      STWeaponShotgunProtecta: 25
-      STWeaponSMGThompson: 400
-      STWeaponRifleM14: 125
-      STWeaponRifleStalkerAK12: 200
+      STWeaponRifleFALo: 300
+      STWeaponRifleAK103: 300
       STWeaponSniperSVDS: 250
-      STWeaponSniperVepr: 150
-      STWeaponShotgunSaiga12: 25
       STWeaponSniperVSS: 600
       STWeaponMachineGunRPD: 2000
   - name: shop-category-magazines
@@ -51,18 +58,9 @@
     items:
       ClothingHeadHelmetBerill5MMilitary: 20
       ClothingHeadHelmetUlach: 75
-      ClothingOuterArmorAborigineStalker: 75
       ClothingOuterArmorStalkerCombat: 200
       STClothingOuterArmorVeryHeavy: 350
       ClothingOuterArmorHazmatRf: 500
-  - name: shop-category-storage-and-containers
-    priority: 5
-    items:
-      ClothingBackpackDuffelBlackTacticStalker: 20
-      ClothingBackpackDuffelOliveTacticStalker: 20
-      ClothingBackpackDuffelSuperStalker: 50
-      ClothingBackpackDuffelSuperStalkerGray: 50
-      ClothingBeltWebbingDoubleStalkerZaryaSmall: 5
   - name: shop-category-research-equipment
     priority: 7
     items:

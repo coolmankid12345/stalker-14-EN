@@ -3,22 +3,22 @@
   id: STFishShopPreset
   itemsForSale:
     # normal fish
-    STFishBitterling: 100
-    STFishBleak: 100
-    STFishBream: 180
-    STFishCarp: 180
+    STFishBitterling: 150
+    STFishBleak: 150
+    STFishBream: 230
+    STFishCarp: 230
     STFishEel: 310
-    STFishPerch: 100
-    STFishPike: 350
-    STFishSturgeon: 400
-    STFishSunbleak: 100
-    STFishTench: 300
-    STFishTrout: 400
+    STFishPerch: 150
+    STFishPike: 450
+    STFishSturgeon: 450
+    STFishSunbleak: 150
+    STFishTench: 350
+    STFishTrout: 450
     # anom fish
     STFishGoldfish: 1000
-    STFishLuminantGudgeon: 400
-    STFishSwiftLurker: 350
-    STFishDenseTench: 350
+    STFishLuminantGudgeon: 450
+    STFishSwiftLurker: 450
+    STFishDenseTench: 450
     STFishCatfish: 2200
     # misc
     Blunt: 35

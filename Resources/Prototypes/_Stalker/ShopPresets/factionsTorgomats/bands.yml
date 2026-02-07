@@ -66,6 +66,16 @@
     MutantPartPseudogiantHeart: 7800
     MutantPartZombieHand: 550
 
+    # Mutant parts EN
+
+    MutantPartCatGland: 100
+    MutantPartBearClaw: 300
+    MutantPartBearPaw: 576
+    MutantPartBearEye: 1140
+    MutantPartFrogLeg: 480
+    MutantPartIzlomArm: 2520
+    MutantPartChimeraTooth: 3600
+
     #Weapons and armour ---- min cost / 2
 
     #12x70
@@ -73,7 +83,7 @@
     STWeaponShotgunMP133: 230
     STWeaponShotgunMP153: 540
     STWeaponShotgunBenelliM4Super90: 740
-    STWeaponShotgunMossbergM88: 380
+    STWeaponShotgunMossbergM88: 180
     STWeaponShotgunSPAS: 785
     STWeaponShotgunProtecta: 1760
     STWeaponShotgunSaiga12: 190
@@ -101,7 +111,7 @@
     STWeaponSniperSKS: 1150
 
     #7.62x51
-    STWeaponRifleFAL: 2360
+    STWeaponRifleFAL: 760
     STWeaponRifleGalatz: 2000 # Stalker-TODO-Economics: Previously had value 2700
     STWeaponRifleSCARH: 3545
     STWeaponRifleM14: 2870
@@ -227,6 +237,7 @@
       STSpeedLoader45ACPEmpty: 150
       BaseAPSMag: 100
       Base751Mag10: 200
+      SR2MMag30: 300
       751Mag30: 500
   - name: shop-category-ammunition
     priority: 3
@@ -239,6 +250,12 @@
       725LRNPCBox: 50
       725PTBox: 200
       725PSTBox: 800
+
+      # 9.21 #ADDED(ALL 9. 21)
+      921PEGJBox: 250
+      921PGJBox: 350
+      921BTGJBox: 1000
+
       # 9.19
       919PSOGJBox: 80
       919PSTBox: 250
@@ -371,35 +388,35 @@
       DrinkLemonadehBottleFull: 50
       STFoodMeatSalami: 350
       CigPackSuka: 100
-  - name: shop-category-medicine # 50% скидка от сталкеров
+  - name: shop-category-medicine
     priority: 10
     items:
-      STPillboxAntirad: 150
-      STGauze: 15
-      STOintment: 95
-      STBrutepack: 30
-      Bloodpack: 400
-      MedkitAI2: 175
+      STPillboxAntirad: 350
+      STGauze: 65
+      STOintment: 75
+      STBrutepack: 65
+      Bloodpack: 550
+      MedkitAI2: 135
       Defibrillator: 1000
-      AntiRadMedipen: 250
-      STPillboxProbud: 250
-      MedkitMilitary: 310
-      MedkitScience: 350
-      MedkitElite: 400
-      MedkitLAR: 450
-      STPillboxShiza: 15000
+      AntiRadMedipen: 300
+      STPillboxProbud: 500
+      MedkitMilitary: 400
+      MedkitScience: 450
+      MedkitElite: 1500
+      MedkitLAR: 3200
+      STPillboxShiza: 10000
   - name: shop-category-modules
     priority: 11
     items:
-      STModuleScopeRiflesT1Ru: 600
-      STModuleScopeRiflesT1Nato: 600
-      STModuleSilencerRiflesT1Ru: 400
-      STModuleSilencerRiflesT1Nato: 400
-      STModuleShotgunChokeT1: 200
-      STModuleSMGGripT1: 600
-      STModuleSilencerSMGT1: 600
-      STModuleSniperSightT1: 600
-      STModuleSilencerSniperT1: 400
+      STModuleScopeRiflesT1Ru: 300
+      STModuleScopeRiflesT1Nato: 300
+      STModuleSilencerRiflesT1Ru: 200
+      STModuleSilencerRiflesT1Nato: 200
+      STModuleShotgunChokeT1: 100
+      STModuleSMGGripT1: 300
+      STModuleSilencerSMGT1: 300
+      STModuleSniperSightT1: 300
+      STModuleSilencerSniperT1: 200
   - name: shop-category-customization
     priority: 13
     items:

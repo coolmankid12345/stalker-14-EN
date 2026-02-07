@@ -29,6 +29,36 @@
   - STlegsClothingLegsRussianNumber
 
 - type: loadoutGroup
+  id: STlegsGroupVeteran
+  name: Штаны
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STlegsClothingLegsJeansNeutral
+  - STlegsClothingLegsJeansBlue
+  - STlegsClothingLegsJeansStalker
+  - STlegsClothingLegsJeansRussianPixel
+  - STlegsClothingLegsJeansBlackNew
+  - STlegsClothingLegsJeansGorka
+  - STlegsClothingLegsJeansGorka6
+  - STlegsClothingLegsJeansBereza
+  - STlegsClothingLegsJeansGreenCargo
+  - STlegsClothingLegsJeansGreyCargo
+  - STlegsClothingLegsJeansBlackCargo
+  - STlegsClothingLegsJeansBrownCargo
+  - STlegsClothingLegsJeansSandCargo
+  - STlegsClothingLegsJeansUa
+  - STlegsClothingLegsJeansUa2
+  - STlegsSTClothingLegsPantsGray
+  - STlegsClothingLegsBattlePantsBlack
+  - STlegsClothingLegsVeryBlueJenas
+  - STlegsClothingLegsCombatForest
+  - STlegsClothingLegsGorka5
+  - STlegsClothingLegsGorka6b
+  - STlegsClothingLegsNavyPants
+  - STlegsClothingLegsRussianNumber
+
+- type: loadoutGroup
   id: STShoesGroup
   name: Обувь
   minLimit: 1
@@ -38,6 +68,40 @@
   - STClothingShoesBootsCombat
   - ClothingShoesPVH
   - ClothingShoesBootsLeather
+
+- type: loadoutGroup
+  id: STTorsoGroupVeteran
+  name: Футболки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STTorsoClothingTorsoNeutral
+  - STTorsoClothingTorsoSweaterStalkerGreen
+  - STTorsoClothingTorsoTShirtPivozavr
+  - STTorsoClothingTorsoTShirtSailorSuit
+  - STTorsoClothingTorsoTShirtColorBlack
+  - STTorsoClothingTorsoShirtRedPlaid
+  - STTorsoClothingTorsoTurtlenecksBlack
+  - STTorsoClothingTorsoTurtlenecksGorka
+  - STTorsoClothingTorsoTurtlenecksGorka6
+  - STTorsoClothingTorsoTurtlenecksBereza
+  - STTorsoClothingTorsoTurtlenecksGorkaRus
+  - STTorsoClothingTorsoTurtlenecksUN
+  - STTorsoClothingTorsoTurtlenecksUa
+  - STTorsoClothingTorsoTurtlenecksUa2
+  - STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  - STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  - STTorsoClothingTorsoTurtlenecksCombatForest
+  - STTorsoClothingTorsoTurtlenecksGorka5
+  - STTorsoClothingTorsoTurtlenecksGorka6B
+  - STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  - STTorsoClothingTorsoTurtlenecksMatrosska
+  - STTorsoSTClothingTosroTurtlenecksCZ
+  - STTorsoSTClothingTosroTurtlenecksFr
+  - STTorsoSTClothingTosroTurtlenecksKz
+  - STTorsoSTClothingTosroTurtlenecksLit
+  - STTorsoSTClothingTosroTurtlenecksPol
+  - STTorsoSTClothingTosroTurtlenecksRu
 
 - type: loadoutGroup
   id: STTorsoGroup
@@ -192,6 +256,17 @@
   - ClothingEyesGlassesCheapSunglasses
   - ClothingEyesSalesman
   - ClothingEyesGlasses
+
+#Ветераны
+
+- type: loadoutGroup
+  id: STOuterClothingVeteran
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingOuterJacketNeytral
+
 #Бандиты
 - type: loadoutGroup
   id: STOuterClothingBandit
@@ -200,6 +275,42 @@
   maxLimit: 1
   loadouts:
   - STOuterClothingStalkerBandit
+
+- type: loadoutGroup
+  id: STTorsoGroupBandit
+  name: Футболки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STTorsoClothingTorsoJacketAdidas
+  - STTorsoClothingTorsoJacketAdidasBlue
+  - STTorsoClothingTorsoJacketAdidasRed
+  - STTorsoClothingTorsoSweaterStalkerGreen
+  - STTorsoClothingTorsoTShirtPivozavr
+  - STTorsoClothingTorsoTShirtSailorSuit
+  - STTorsoClothingTorsoTShirtColorBlack
+  - STTorsoClothingTorsoShirtRedPlaid
+  - STTorsoClothingTorsoTurtlenecksBlack
+  - STTorsoClothingTorsoTurtlenecksGorka
+  - STTorsoClothingTorsoTurtlenecksGorka6
+  - STTorsoClothingTorsoTurtlenecksBereza
+  - STTorsoClothingTorsoTurtlenecksGorkaRus
+  - STTorsoClothingTorsoTurtlenecksUN
+  - STTorsoClothingTorsoTurtlenecksUa
+  - STTorsoClothingTorsoTurtlenecksUa2
+  - STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  - STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  - STTorsoClothingTorsoTurtlenecksCombatForest
+  - STTorsoClothingTorsoTurtlenecksGorka5
+  - STTorsoClothingTorsoTurtlenecksGorka6B
+  - STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  - STTorsoClothingTorsoTurtlenecksMatrosska
+  - STTorsoSTClothingTosroTurtlenecksCZ
+  - STTorsoSTClothingTosroTurtlenecksFr
+  - STTorsoSTClothingTosroTurtlenecksKz
+  - STTorsoSTClothingTosroTurtlenecksLit
+  - STTorsoSTClothingTosroTurtlenecksPol
+  - STTorsoSTClothingTosroTurtlenecksRu
 
 #Долг
 - type: loadoutGroup
@@ -210,6 +321,41 @@
   loadouts:
   - STOuterClothingStalkerDolg
 
+- type: loadoutGroup
+  id: STTorsoGroupDolg
+  name: Футболки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STTorsoClothingTorsoTurtlenecksDolgCamouflage
+  - STTorsoClothingTorsoTurtlenecksRedDolgCamouflage
+  - STTorsoClothingTorsoSweaterStalkerGreen
+  - STTorsoClothingTorsoTShirtPivozavr
+  - STTorsoClothingTorsoTShirtSailorSuit
+  - STTorsoClothingTorsoTShirtColorBlack
+  - STTorsoClothingTorsoShirtRedPlaid
+  - STTorsoClothingTorsoTurtlenecksBlack
+  - STTorsoClothingTorsoTurtlenecksGorka
+  - STTorsoClothingTorsoTurtlenecksGorka6
+  - STTorsoClothingTorsoTurtlenecksBereza
+  - STTorsoClothingTorsoTurtlenecksGorkaRus
+  - STTorsoClothingTorsoTurtlenecksUN
+  - STTorsoClothingTorsoTurtlenecksUa
+  - STTorsoClothingTorsoTurtlenecksUa2
+  - STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  - STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  - STTorsoClothingTorsoTurtlenecksCombatForest
+  - STTorsoClothingTorsoTurtlenecksGorka5
+  - STTorsoClothingTorsoTurtlenecksGorka6B
+  - STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  - STTorsoClothingTorsoTurtlenecksMatrosska
+  - STTorsoSTClothingTosroTurtlenecksCZ
+  - STTorsoSTClothingTosroTurtlenecksFr
+  - STTorsoSTClothingTosroTurtlenecksKz
+  - STTorsoSTClothingTosroTurtlenecksLit
+  - STTorsoSTClothingTosroTurtlenecksPol
+  - STTorsoSTClothingTosroTurtlenecksRu
+
 #Свобода
 - type: loadoutGroup
   id: STOuterClothingFreedom
@@ -218,6 +364,70 @@
   maxLimit: 1
   loadouts:
   - STOuterClothingStalkerFreedom
+
+- type: loadoutGroup
+  id: STTorsoGroupFreedom
+  name: Футболки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STTorsoClothingTorsoTurtlenecksFreedomCamouflage
+  - STTorsoClothingTorsoSweaterStalkerGreen
+  - STTorsoClothingTorsoTShirtPivozavr
+  - STTorsoClothingTorsoTShirtSailorSuit
+  - STTorsoClothingTorsoTShirtColorBlack
+  - STTorsoClothingTorsoShirtRedPlaid
+  - STTorsoClothingTorsoTurtlenecksBlack
+  - STTorsoClothingTorsoTurtlenecksGorka
+  - STTorsoClothingTorsoTurtlenecksGorka6
+  - STTorsoClothingTorsoTurtlenecksBereza
+  - STTorsoClothingTorsoTurtlenecksGorkaRus
+  - STTorsoClothingTorsoTurtlenecksUN
+  - STTorsoClothingTorsoTurtlenecksUa
+  - STTorsoClothingTorsoTurtlenecksUa2
+  - STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  - STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  - STTorsoClothingTorsoTurtlenecksCombatForest
+  - STTorsoClothingTorsoTurtlenecksGorka5
+  - STTorsoClothingTorsoTurtlenecksGorka6B
+  - STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  - STTorsoClothingTorsoTurtlenecksMatrosska
+  - STTorsoSTClothingTosroTurtlenecksCZ
+  - STTorsoSTClothingTosroTurtlenecksFr
+  - STTorsoSTClothingTosroTurtlenecksKz
+  - STTorsoSTClothingTosroTurtlenecksLit
+  - STTorsoSTClothingTosroTurtlenecksPol
+  - STTorsoSTClothingTosroTurtlenecksRu
+
+- type: loadoutGroup
+  id: STlegsGroupFreedom
+  name: Штаны
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STlegsClothingLegsJeansFreedomCamouflage
+  - STlegsClothingLegsJeansBlue
+  - STlegsClothingLegsJeansStalker
+  - STlegsClothingLegsJeansRussianPixel
+  - STlegsClothingLegsJeansBlackNew
+  - STlegsClothingLegsJeansGorka
+  - STlegsClothingLegsJeansGorka6
+  - STlegsClothingLegsJeansBereza
+  - STlegsClothingLegsJeansGreenCargo
+  - STlegsClothingLegsJeansGreyCargo
+  - STlegsClothingLegsJeansBlackCargo
+  - STlegsClothingLegsJeansBrownCargo
+  - STlegsClothingLegsJeansSandCargo
+  - STlegsClothingLegsJeansUa
+  - STlegsClothingLegsJeansUa2
+  - STlegsSTClothingLegsPantsGray
+  - STlegsClothingLegsBattlePantsBlack
+  - STlegsClothingLegsVeryBlueJenas
+  - STlegsClothingLegsCombatForest
+  - STlegsClothingLegsGorka5
+  - STlegsClothingLegsGorka6b
+  - STlegsClothingLegsNavyPants
+  - STlegsClothingLegsRussianNumber
 
 #Учёные
 - type: loadoutGroup
@@ -228,6 +438,40 @@
   loadouts:
   - STOuterClothingStalkerSci
 
+- type: loadoutGroup
+  id: STTorsoGroupSci
+  name: Футболки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STTorsoClothingTorsoShirtWhiteScientific
+  - STTorsoClothingTorsoSweaterStalkerGreen
+  - STTorsoClothingTorsoTShirtPivozavr
+  - STTorsoClothingTorsoTShirtSailorSuit
+  - STTorsoClothingTorsoTShirtColorBlack
+  - STTorsoClothingTorsoShirtRedPlaid
+  - STTorsoClothingTorsoTurtlenecksBlack
+  - STTorsoClothingTorsoTurtlenecksGorka
+  - STTorsoClothingTorsoTurtlenecksGorka6
+  - STTorsoClothingTorsoTurtlenecksBereza
+  - STTorsoClothingTorsoTurtlenecksGorkaRus
+  - STTorsoClothingTorsoTurtlenecksUN
+  - STTorsoClothingTorsoTurtlenecksUa
+  - STTorsoClothingTorsoTurtlenecksUa2
+  - STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  - STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  - STTorsoClothingTorsoTurtlenecksCombatForest
+  - STTorsoClothingTorsoTurtlenecksGorka5
+  - STTorsoClothingTorsoTurtlenecksGorka6B
+  - STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  - STTorsoClothingTorsoTurtlenecksMatrosska
+  - STTorsoSTClothingTosroTurtlenecksCZ
+  - STTorsoSTClothingTosroTurtlenecksFr
+  - STTorsoSTClothingTosroTurtlenecksKz
+  - STTorsoSTClothingTosroTurtlenecksLit
+  - STTorsoSTClothingTosroTurtlenecksPol
+  - STTorsoSTClothingTosroTurtlenecksRu
+
 #Серафимы
 - type: loadoutGroup
   id: STOuterClothingSeraphims
@@ -237,6 +481,114 @@
   loadouts:
   - STOuterClothingStalkerSeraphims
 
+- type: loadoutGroup
+  id: STShoesGroupSera
+  name: Обувь
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STClothingShoesBootsSeraFilled
+  - ClothingShoesNovice
+  - STClothingShoesBootsCombat
+  - ClothingShoesPVH
+  - ClothingShoesBootsLeather
+
+
+- type: loadoutGroup
+  id: STTorsoGroupSeraphimsCher
+  name: Футболки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STTorsoSTClothingTorsoSerafimCherubimFullReady
+  - STTorsoClothingTorsoSweaterStalkerGreen
+  - STTorsoClothingTorsoTShirtPivozavr
+  - STTorsoClothingTorsoTShirtSailorSuit
+  - STTorsoClothingTorsoTShirtColorBlack
+  - STTorsoClothingTorsoShirtRedPlaid
+  - STTorsoClothingTorsoTurtlenecksBlack
+  - STTorsoClothingTorsoTurtlenecksGorka
+  - STTorsoClothingTorsoTurtlenecksGorka6
+  - STTorsoClothingTorsoTurtlenecksBereza
+  - STTorsoClothingTorsoTurtlenecksGorkaRus
+  - STTorsoClothingTorsoTurtlenecksUN
+  - STTorsoClothingTorsoTurtlenecksUa
+  - STTorsoClothingTorsoTurtlenecksUa2
+  - STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  - STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  - STTorsoClothingTorsoTurtlenecksCombatForest
+  - STTorsoClothingTorsoTurtlenecksGorka5
+  - STTorsoClothingTorsoTurtlenecksGorka6B
+  - STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  - STTorsoClothingTorsoTurtlenecksMatrosska
+  - STTorsoSTClothingTosroTurtlenecksCZ
+  - STTorsoSTClothingTosroTurtlenecksFr
+  - STTorsoSTClothingTosroTurtlenecksKz
+  - STTorsoSTClothingTosroTurtlenecksLit
+  - STTorsoSTClothingTosroTurtlenecksPol
+  - STTorsoSTClothingTosroTurtlenecksRu
+
+- type: loadoutGroup
+  id: STlegsGroupSera
+  name: Штаны
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STlegsSTClothingLegsSerafimPants
+  - STlegsClothingLegsJeansBlue
+  - STlegsClothingLegsJeansStalker
+  - STlegsClothingLegsJeansRussianPixel
+  - STlegsClothingLegsJeansBlackNew
+  - STlegsClothingLegsJeansGorka
+  - STlegsClothingLegsJeansGorka6
+  - STlegsClothingLegsJeansBereza
+  - STlegsClothingLegsJeansGreenCargo
+  - STlegsClothingLegsJeansGreyCargo
+  - STlegsClothingLegsJeansBlackCargo
+  - STlegsClothingLegsJeansBrownCargo
+  - STlegsClothingLegsJeansSandCargo
+  - STlegsClothingLegsJeansUa
+  - STlegsClothingLegsJeansUa2
+  - STlegsSTClothingLegsPantsGray
+  - STlegsClothingLegsBattlePantsBlack
+  - STlegsClothingLegsVeryBlueJenas
+  - STlegsClothingLegsCombatForest
+  - STlegsClothingLegsGorka5
+  - STlegsClothingLegsGorka6b
+  - STlegsClothingLegsNavyPants
+  - STlegsClothingLegsRussianNumber
+
+- type: loadoutGroup
+  id: STlegsGroupSeraCher
+  name: Штаны
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STlegsSTClothingLegsSerafimCherubimPants
+  - STlegsSTClothingLegsSerafimPants
+  - STlegsClothingLegsJeansBlue
+  - STlegsClothingLegsJeansStalker
+  - STlegsClothingLegsJeansRussianPixel
+  - STlegsClothingLegsJeansBlackNew
+  - STlegsClothingLegsJeansGorka
+  - STlegsClothingLegsJeansGorka6
+  - STlegsClothingLegsJeansBereza
+  - STlegsClothingLegsJeansGreenCargo
+  - STlegsClothingLegsJeansGreyCargo
+  - STlegsClothingLegsJeansBlackCargo
+  - STlegsClothingLegsJeansBrownCargo
+  - STlegsClothingLegsJeansSandCargo
+  - STlegsClothingLegsJeansUa
+  - STlegsClothingLegsJeansUa2
+  - STlegsSTClothingLegsPantsGray
+  - STlegsClothingLegsBattlePantsBlack
+  - STlegsClothingLegsVeryBlueJenas
+  - STlegsClothingLegsCombatForest
+  - STlegsClothingLegsGorka5
+  - STlegsClothingLegsGorka6b
+  - STlegsClothingLegsNavyPants
+  - STlegsClothingLegsRussianNumber
+
 #Чистое небо
 - type: loadoutGroup
   id: STOuterClothingStalkerClearSky
@@ -245,3 +597,140 @@
   maxLimit: 1
   loadouts:
   - STOuterClothingStalkerClearSky
+
+- type: loadoutGroup
+  id: STlegsGroupClear
+  name: Штаны
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STlegsClothingLegsJeansClearSky
+  - STlegsClothingLegsJeansBlue
+  - STlegsClothingLegsJeansStalker
+  - STlegsClothingLegsJeansRussianPixel
+  - STlegsClothingLegsJeansBlackNew
+  - STlegsClothingLegsJeansGorka
+  - STlegsClothingLegsJeansGorka6
+  - STlegsClothingLegsJeansBereza
+  - STlegsClothingLegsJeansGreenCargo
+  - STlegsClothingLegsJeansGreyCargo
+  - STlegsClothingLegsJeansBlackCargo
+  - STlegsClothingLegsJeansBrownCargo
+  - STlegsClothingLegsJeansSandCargo
+  - STlegsClothingLegsJeansUa
+  - STlegsClothingLegsJeansUa2
+  - STlegsSTClothingLegsPantsGray
+  - STlegsClothingLegsBattlePantsBlack
+  - STlegsClothingLegsVeryBlueJenas
+  - STlegsClothingLegsCombatForest
+  - STlegsClothingLegsGorka5
+  - STlegsClothingLegsGorka6b
+  - STlegsClothingLegsNavyPants
+  - STlegsClothingLegsRussianNumber
+
+- type: loadoutGroup
+  id: STTorsoGroupClear
+  name: Футболки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STTorsoClothingTorsoTurtlenecksClearSky
+  - STTorsoClothingTorsoSweaterStalkerGreen
+  - STTorsoClothingTorsoTShirtPivozavr
+  - STTorsoClothingTorsoTShirtSailorSuit
+  - STTorsoClothingTorsoTShirtColorBlack
+  - STTorsoClothingTorsoShirtRedPlaid
+  - STTorsoClothingTorsoTurtlenecksBlack
+  - STTorsoClothingTorsoTurtlenecksGorka
+  - STTorsoClothingTorsoTurtlenecksGorka6
+  - STTorsoClothingTorsoTurtlenecksBereza
+  - STTorsoClothingTorsoTurtlenecksGorkaRus
+  - STTorsoClothingTorsoTurtlenecksUN
+  - STTorsoClothingTorsoTurtlenecksUa
+  - STTorsoClothingTorsoTurtlenecksUa2
+  - STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  - STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  - STTorsoClothingTorsoTurtlenecksCombatForest
+  - STTorsoClothingTorsoTurtlenecksGorka5
+  - STTorsoClothingTorsoTurtlenecksGorka6B
+  - STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  - STTorsoClothingTorsoTurtlenecksMatrosska
+  - STTorsoSTClothingTosroTurtlenecksCZ
+  - STTorsoSTClothingTosroTurtlenecksFr
+  - STTorsoSTClothingTosroTurtlenecksKz
+  - STTorsoSTClothingTosroTurtlenecksLit
+  - STTorsoSTClothingTosroTurtlenecksPol
+  - STTorsoSTClothingTosroTurtlenecksRu
+
+
+#Ренегаты
+
+- type: loadoutGroup
+  id: STOuterClothingStalkerRene
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingJaketRealHuman
+
+- type: loadoutGroup
+  id: STTorsoGroupRene
+  name: Футболки
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STTorsoClothingTorsoTShirtColorBlack
+  - STTorsoClothingTorsoSweaterStalkerGreen
+  - STTorsoClothingTorsoTShirtPivozavr
+  - STTorsoClothingTorsoTShirtSailorSuit
+  - STTorsoClothingTorsoShirtRedPlaid
+  - STTorsoClothingTorsoTurtlenecksBlack
+  - STTorsoClothingTorsoTurtlenecksGorka
+  - STTorsoClothingTorsoTurtlenecksGorka6
+  - STTorsoClothingTorsoTurtlenecksBereza
+  - STTorsoClothingTorsoTurtlenecksGorkaRus
+  - STTorsoClothingTorsoTurtlenecksUN
+  - STTorsoClothingTorsoTurtlenecksUa
+  - STTorsoClothingTorsoTurtlenecksUa2
+  - STTorsoClothingTorsoTurtlenecksBattleTurtleneckbBlack
+  - STTorsoClothingTorsoTurtlenecksBlackTurtleneck
+  - STTorsoClothingTorsoTurtlenecksCombatForest
+  - STTorsoClothingTorsoTurtlenecksGorka5
+  - STTorsoClothingTorsoTurtlenecksGorka6B
+  - STTorsoClothingTorsoTurtlenecksKhakiTurtleneck
+  - STTorsoClothingTorsoTurtlenecksMatrosska
+  - STTorsoSTClothingTosroTurtlenecksCZ
+  - STTorsoSTClothingTosroTurtlenecksFr
+  - STTorsoSTClothingTosroTurtlenecksKz
+  - STTorsoSTClothingTosroTurtlenecksLit
+  - STTorsoSTClothingTosroTurtlenecksPol
+  - STTorsoSTClothingTosroTurtlenecksRu
+
+- type: loadoutGroup
+  id: STlegsGroupRene
+  name: Штаны
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - STlegsClothingLegsJeansSandCargo
+  - STlegsClothingLegsJeansBlue
+  - STlegsClothingLegsJeansStalker
+  - STlegsClothingLegsJeansRussianPixel
+  - STlegsClothingLegsJeansBlackNew
+  - STlegsClothingLegsJeansGorka
+  - STlegsClothingLegsJeansGorka6
+  - STlegsClothingLegsJeansBereza
+  - STlegsClothingLegsJeansGreenCargo
+  - STlegsClothingLegsJeansGreyCargo
+  - STlegsClothingLegsJeansBlackCargo
+  - STlegsClothingLegsJeansBrownCargo
+  - STlegsClothingLegsJeansUa
+  - STlegsClothingLegsJeansUa2
+  - STlegsSTClothingLegsPantsGray
+  - STlegsClothingLegsBattlePantsBlack
+  - STlegsClothingLegsVeryBlueJenas
+  - STlegsClothingLegsCombatForest
+  - STlegsClothingLegsGorka5
+  - STlegsClothingLegsGorka6b
+  - STlegsClothingLegsNavyPants
+  - STlegsClothingLegsRussianNumber

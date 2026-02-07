@@ -65,6 +65,16 @@
     MutantPartOraculeEye: 1794
     MutantPartPseudogiantHeart: 9360
     MutantPartZombieHand: 760
+
+        # Mutant parts EN
+
+    MutantPartCatGland: 115
+    MutantPartBearClaw: 345
+    MutantPartBearPaw: 663
+    MutantPartBearEye: 1140
+    MutantPartFrogLeg: 552
+    MutantPartIzlomArm: 2520
+    MutantPartChimeraTooth: 3600
   categories:
   - name: shop-category-weapons
     priority: 1
@@ -115,10 +125,10 @@
       918PBMBox: 800
       918SP7Box: 200
       # 5.56
-      556FMJBox: 500
-      556WarmagBox: 250
-      556M855Box: 1500
-      556M856Box: 2100
+      556FMJBox: 200
+      556WarmagBox: 150
+      556M855Box: 1100
+      556M856Box: 1800
       # 7.51
       751M80Box: 1500
       751UNBox: 500
@@ -173,6 +183,7 @@
     items:
       STBoltBagFilled: 50
       BoxArtcont: 250 # T1
+      BoxArtcont1: 700
       ZoneAnomalyDetectorAD1: 250 # T1
       ZoneAnomalyDetectorAD2: 650 # T2
       # Detectors
@@ -180,7 +191,7 @@
       ZoneArtifactDetectorResponseCvoboda: 100 # T2
       STPsyHelm1: 2500
       ZoneArtifactDetectorResponse: 1000 # T2
-      ZoneArtifactDetectorSpruce: 3500
+      ZoneArtifactDetectorSpruce: 4500
       Blunt: 100
   - name: shop-category-utilities
     priority: 8
@@ -227,20 +238,20 @@
   - name: shop-category-medicine
     priority: 10
     items:
-      STPillboxAntirad: 150
-      STGauze: 95
-      STOintment: 85
-      STOintmentGood: 200
-      STBrutepack: 95
-      Bloodpack: 750
-      MedkitAI2: 175
-      Defibrillator: 900
-      AntiRadMedipen: 150
+      STPillboxAntirad: 350
+      STGauze: 65
+      STOintment: 75
+      STBrutepack: 65
+      Bloodpack: 550
+      MedkitAI2: 135
+      Defibrillator: 1000
+      AntiRadMedipen: 300
       STPillboxProbud: 500
-      MedkitMilitary: 450
-      MedkitScience: 400
-      MedkitElite: 550
-      MedkitLAR: 600
+      MedkitMilitary: 400
+      MedkitScience: 450
+      MedkitElite: 1500
+      MedkitLAR: 3200
+      STPillboxShiza: 10000
       MedkitCMSStalker: 150 # T1
       MedkitGrizzlyStalker: 850 # T2
   - name: shop-category-modules

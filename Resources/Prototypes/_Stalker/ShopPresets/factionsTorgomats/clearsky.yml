@@ -66,30 +66,36 @@
     MutantPartPseudogiantHeart: 5400
     MutantPartZombieHand: 810
 
+    # Mutant parts EN
+
+    MutantPartCatGland: 125
+    MutantPartBearClaw: 375
+    MutantPartBearPaw: 720
+    MutantPartBearEye: 1425
+    MutantPartFrogLeg: 600
+    MutantPartIzlomArm: 4500
+    MutantPartChimeraTooth: 3600
+
   categories:
     - name: shop-category-weapons
       priority: 1
       items:
             # Guns
           # 12mm
-        STWeaponShotgunTOZ34: 225 # T2
-        STWeaponShotgunMossbergM88: 500 # T2
+        STWeaponShotgunTOZ34: 125 # T2
+        STWeaponShotgunSPAS: 1350
           # Nato
-        STWeaponRifleAKS74U: 1200 #CHANGED
-        STWeaponSniperSKS: 1650 #CHANGED
-        STWeaponRifleL85: 2000 #CHANGED
-        STWeaponRifleM16: 2350 #ADDED
-        STWeaponRifleSIG550: 4500 #ADDED
-        STWeaponRifleSIG550Black: 4500 #ADDED
-        STWeaponRifleM14: 3750 #ADDED
-        STWeaponSniperVepr: 6800 #ADDED
+        STWeaponRifleAKS74U: 1300 #CHANGED
+        STWeaponRifleL85: 1500 #CHANGED
+        STWeaponRifleM16: 2400 #ADDED
+        STWeaponRifleSIG550: 4000 #ADDED
+        STWeaponRifleSIG550Black: 4000 #ADDED
+        STWeaponRifleM14: 3500 #ADDED
+        STWeaponSniperVepr: 5500 #ADDED
           # Smg
-        STWeaponSMGMP5: 1800
-        STWeaponSMGStalkerCP2Veresk921: 4400 #ADDED
+        STWeaponSMGMP5: 2300
+        STWeaponSMGStalkerCP2Veresk921: 4000 #ADDED
           # Other
-        STThrowingknifeYellow: 300 #ADDED
-        DG05SmokeGrenade: 350 #ADDED
-        STWeaponRevolverRugerRedhawk: 400
         WeaponPistolStalkerGlock: 400
         STWeaponRevolverSWPC325TR: 850
     - name: shop-category-magazines
@@ -127,9 +133,9 @@
         918PBMBox: 500
         918SP7Box: 200
         # 9.21 #ADDED(ALL 9. 21)
-        921PEGJBox: 250
-        921PGJBox: 350
-        921BTGJBox: 1000
+        921PEGJBox: 450
+        921PGJBox: 650
+        921BTGJBox: 1600
         # 5.56
         556FMJBox: 500
         556WarmagBox: 250
@@ -196,7 +202,8 @@
           # Detectors
         ZoneArtifactDetectorPulse: 50 # T1
         ZoneArtifactDetectorResponse: 1000 # T2
-        ZoneArtifactDetectorSpruce: 2200
+        ZoneArtifactDetectorSpruce: 4200
+        STZoneArtifactDetectorBarracudaBlueprint: 3000
     - name: shop-category-utilities
       priority: 8
       items:
