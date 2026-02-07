@@ -1,7 +1,7 @@
 # Разлом (Rift)
 - type: entity
   id: SpawnerZoneAnomalyRiftChance1
-  name: спавнер аномалии разлом (1% шанс появления)
+  name: спавнер аномалии разлом (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -16,12 +16,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyRift
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyRiftChance5
-  name: спавнер аномалии разлом (5% шанс появления)
+  name: спавнер аномалии разлом (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -36,12 +36,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyRift
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyRiftChance10
-  name: спавнер аномалии разлом (10% шанс появления)
+  name: спавнер аномалии разлом (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -56,12 +56,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyRift
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyRiftChance25
-  name: спавнер аномалии разлом (25% шанс появления)
+  name: спавнер аномалии разлом (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -76,7 +76,7 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyRift
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity
@@ -122,7 +122,7 @@
 # Барабашка (Barabashka)
 - type: entity
   id: SpawnerZoneAnomalyBarabashkaChance1
-  name: спавнер аномалии барабашка (1% шанс появления)
+  name: спавнер аномалии барабашка (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -137,12 +137,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyBarabashka
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyBarabashkaChance5
-  name: спавнер аномалии барабашка (5% шанс появления)
+  name: спавнер аномалии барабашка (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -157,12 +157,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyBarabashka
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyBarabashkaChance10
-  name: спавнер аномалии барабашка (10% шанс появления)
+  name: спавнер аномалии барабашка (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -177,12 +177,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyBarabashka
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyBarabashkaChance25
-  name: спавнер аномалии барабашка (25% шанс появления)
+  name: спавнер аномалии барабашка (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -197,7 +197,7 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyBarabashka
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity

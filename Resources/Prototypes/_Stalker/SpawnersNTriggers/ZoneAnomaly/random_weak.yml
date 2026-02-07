@@ -1,7 +1,7 @@
 # Разлом (Rift)
 - type: entity
   id: SpawnerZoneAnomalyRandomWeakChance1
-  name: спавнер аномалии случайная слабая (1% шанс появления)
+  name: спавнер аномалии случайная слабая (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -21,12 +21,12 @@
       - ZoneAnomalyJarka
       - ZoneAnomalyElectra
       - ZoneAnomalyBurden
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyRandomWeakChance5
-  name: спавнер аномалии случайная слабая (5% шанс появления)
+  name: спавнер аномалии случайная слабая (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -46,12 +46,12 @@
       - ZoneAnomalyJarka
       - ZoneAnomalyElectra
       - ZoneAnomalyBurden
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyRandomWeakChance10
-  name: спавнер аномалии случайная слабая (10% шанс появления)
+  name: спавнер аномалии случайная слабая (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -71,12 +71,12 @@
       - ZoneAnomalyJarka
       - ZoneAnomalyElectra
       - ZoneAnomalyBurden
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyRandomWeakChance25
-  name: спавнер аномалии случайная слабая (25% шанс появления)
+  name: спавнер аномалии случайная слабая (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   categories: [ Spawner, StSkipSpawnTest ]
@@ -96,7 +96,7 @@
       - ZoneAnomalyJarka
       - ZoneAnomalyElectra
       - ZoneAnomalyBurden
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity

@@ -1433,3 +1433,41 @@
     - Binary
     - Common
 
+- type: entity
+  parent: NPCDoll
+  id: NPCJa
+  name: Жаба [→ ? ←]
+  description: Главный торгаш на этой старой лодочной станции. Лучше с ним дружить.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Jaba.rsi
+    state: jaba
+  - type: Physics
+    bodyType: Static
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop  #Commented, shop-preset wiped
+    moneyId: Roubles
+    shopPresetId: NpcJab  #If you uncomment it - CHANGE SHOP PRESET
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common

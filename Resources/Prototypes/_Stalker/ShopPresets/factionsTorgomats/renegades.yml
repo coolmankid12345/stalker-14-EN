@@ -2,161 +2,161 @@
   id: renegades
   itemsForSale:
     # Thermal group - 1
-    ToothStalker: 1000
-    ZoneArtifactFireball: 1
-    ZoneArtifactEye: 1
-    ZoneArtifactFlame: 1
+    ToothStalker: 1200
+    ZoneArtifactFireball: 2
+    ZoneArtifactEye: 2
+    ZoneArtifactFlame: 2
     # Thermal group - 2
-    ZoneArtifactCristall: 1
-    ZoneArtifactLithosphere: 1
+    ZoneArtifactCristall: 2
+    ZoneArtifactLithosphere: 2
     # Electrical group - 1
-    ZoneArtifactSparkler: 1
-    ZoneArtifactBattery: 1
-    ZoneArtifactFlash: 1
-    ArtMoon: 1
-    ZoneArtifactTesla: 1
-    ZoneArtifactIce: 1
+    ZoneArtifactSparkler: 2
+    ZoneArtifactBattery: 2
+    ZoneArtifactFlash: 2
+    ArtMoon: 2
+    ZoneArtifactTesla: 2
+    ZoneArtifactIce: 2
     # Gravity group - 1
-    ArtMedusa: 1
-    ZoneArtifactFlower: 1
-    ZoneArtifactNightStar: 1
+    ArtMedusa: 2
+    ZoneArtifactFlower: 2
+    ZoneArtifactNightStar: 2
     # Gravity group - 2
-    ZoneArtifactVyvert: 1
-    ZoneArtifactAmoeba: 1
-    ZoneArtifactFloodlight: 1
-    ZoneArtifactGravi: 1
-    ZoneArtifactGoldfish: 1
-    ZoneArtifactSpring: 1
-    ZoneArtifactFocus: 1
-    ZoneArtifactStuntman: 1
-    ZoneArtifactDistorter: 1
-    ZoneArtifactSoul: 1
+    ZoneArtifactVyvert: 2
+    ZoneArtifactAmoeba: 2
+    ZoneArtifactFloodlight: 2
+    ZoneArtifactGravi: 2
+    ZoneArtifactGoldfish: 2
+    ZoneArtifactSpring: 2
+    ZoneArtifactFocus: 2
+    ZoneArtifactStuntman: 2
+    ZoneArtifactDistorter: 2
+    ZoneArtifactSoul: 2
     # Acidic group - 1
-    ZoneArtifactBlood: 1
-    ZoneArtifactMeat: 1
-    ZoneArtifactKolobok: 1
+    ZoneArtifactBlood: 2
+    ZoneArtifactMeat: 2
+    ZoneArtifactKolobok: 2
     # Acidic group - 2
-    ZoneArtifactPellicle: 1
-    ZoneArtifactBaloon: 1
+    ZoneArtifactPellicle: 2
+    ZoneArtifactBaloon: 2
 
      # Mutant parts
 
   #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 1 # T1
-    MutantPartSeasonedBoarHoof: 1 # T2
-    MutantPartOldBoarHoof: 1 # T3
+    MutantPartBoarHoof: 2 # T1
+    MutantPartSeasonedBoarHoof: 2 # T2
+    MutantPartOldBoarHoof: 2 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 1
-    MutantPartFleshEye: 1
-    FoodMeatSpiderLeg: 1
+    MutantPartBlindDogTail: 2
+    MutantPartFleshEye: 2
+    FoodMeatSpiderLeg: 2
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 1
-    MutantPartPseudodogTail: 1
-    MutantPartSnorkFoot: 1
+    MutantPartLeshiyRoot: 2
+    MutantPartPseudodogTail: 2
+    MutantPartSnorkFoot: 2
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 1
-    MutantPartOraculeEye: 1
-    MutantPartPseudogiantHeart: 1
-    MutantPartZombieHand: 1
+    MutantPartBloodsuckerTentacles: 2
+    MutantPartOraculeEye: 2
+    MutantPartPseudogiantHeart: 2
+    MutantPartZombieHand: 2
 
      #Weapons and armour ---- min cost / 2
 
     #12x70
-    STWeaponShotgunTOZ34: 1
-    STWeaponShotgunMP133: 1
-    STWeaponShotgunMP153: 1
-    STWeaponShotgunBenelliM4Super90: 1
-    STWeaponShotgunMossbergM88: 1
-    STWeaponShotgunSPAS: 1
-    STWeaponShotgunProtecta: 1
-    STWeaponShotgunSaiga12: 1
+    STWeaponShotgunTOZ34: 2
+    STWeaponShotgunMP133: 2
+    STWeaponShotgunMP153: 2
+    STWeaponShotgunBenelliM4Super90: 2
+    STWeaponShotgunMossbergM88: 2
+    STWeaponShotgunSPAS: 2
+    STWeaponShotgunProtecta: 2
+    STWeaponShotgunSaiga12: 2
 
     #5.45x39
-    STWeaponRifleSaiga545: 1
-    STWeaponRifleAKS74U: 1
-    STWeaponRifleAKS74: 1
-    STWeaponRifleAK74M: 1
-    STWeaponRifleStalkerAK12: 1
+    STWeaponRifleSaiga545: 2
+    STWeaponRifleAKS74U: 2
+    STWeaponRifleAKS74: 2
+    STWeaponRifleAK74M: 2
+    STWeaponRifleStalkerAK12: 2
 
     #5.56x39
-    STWeaponRifleL85: 1
-    STWeaponRifleM16: 1
-    STWeaponRifleSIG550: 1
-    STWeaponRifleM4: 1
-    STWeaponRifleGalil: 1
-    STWeaponRifleG36: 1
+    STWeaponRifleL85: 2
+    STWeaponRifleM16: 2
+    STWeaponRifleSIG550: 2
+    STWeaponRifleM4: 2
+    STWeaponRifleGalil: 2
+    STWeaponRifleG36: 2
 
     #7.62x39
-    STWeaponRifleAKM: 1
-    STWeaponRifleAK103: 1
-    STWeaponRifleStalkerAK104: 1
-    STWeaponMachineGunRPD: 1
-    STWeaponSniperSKS: 1
+    STWeaponRifleAKM: 2
+    STWeaponRifleAK103: 2
+    STWeaponRifleStalkerAK104: 2
+    STWeaponMachineGunRPD: 2
+    STWeaponSniperSKS: 2
 
     #7.62x51
-    STWeaponRifleFAL: 1
-    STWeaponRifleGalatz: 1
-    STWeaponRifleSCARH: 1
-    STWeaponRifleM14: 1
+    STWeaponRifleFAL: 2
+    STWeaponRifleGalatz: 2
+    STWeaponRifleSCARH: 2
+    STWeaponRifleM14: 2
 
     #7.62x54
-    STWeaponSniperMosin: 1
-    STWeaponSniperSVDS: 1
-    STWeaponSniperSVU: 1
-    STWeaponSniperVepr: 1
+    STWeaponSniperMosin: 2
+    STWeaponSniperSVDS: 2
+    STWeaponSniperSVU: 2
+    STWeaponSniperVepr: 2
 
     #9x18
-    WeaponPistolStalkerGlock: 1
-    WeaponStalkerPistolTec9: 1
-    STWeaponSMGMP40: 1
-    STWeaponSMGMP5: 1
-    STWeaponSMGPP91: 1
-    STWeaponSMGThompson: 1
-    STWeaponSMGStalkerCP2Veresk: 1
-    STWeaponSMGPP1901: 1
+    WeaponPistolStalkerGlock: 2
+    WeaponStalkerPistolTec9: 2
+    STWeaponSMGMP40: 2
+    STWeaponSMGMP5: 2
+    STWeaponSMGPP91: 2
+    STWeaponSMGThompson: 2
+    STWeaponSMGStalkerCP2Veresk: 2
+    STWeaponSMGPP1901: 2
 
     #7.62x25
-    WeaponPistolStalkerTT: 1
-    STWeaponSMGPPSh41: 1
+    WeaponPistolStalkerTT: 2
+    STWeaponSMGPPSh41: 2
 
     #9x39
-    STWeaponRifleASVAL: 1
-    STWeaponSniperVSS: 1
+    STWeaponRifleASVAL: 2
+    STWeaponSniperVSS: 2
 
     #.45 acp
-    STWeaponRevolverRugerRedhawk: 1
-    STWeaponRevolverSWPC325TR: 1
-    STWeaponRevolverChiappaRhino60DS: 1
-    STWeaponRevolverSWModel325: 1
-    STWeaponRevolverSWModel625: 1
+    STWeaponRevolverRugerRedhawk: 2
+    STWeaponRevolverSWPC325TR: 2
+    STWeaponRevolverChiappaRhino60DS: 2
+    STWeaponRevolverSWModel325: 2
+    STWeaponRevolverSWModel625: 2
 
     #values
-    ClothingNeckBronzeheart: 1
-    ClothingNeckCargomedal: 1
-    ClothingNeckEngineermedal: 1
-    Wristwatch: 1
-    SilverRing: 1
-    GoldRing: 1
-    TreasureCoinIron: 1
-    TreasureCoinGold: 1
-    TreasureCoinSilver: 1
-    ClothingStalkerNeckToken: 1
-    SilverRingDiamond: 1
-    GoldRingDiamond: 1
-    ClothingNeckGoldAutismPin: 1
-    MaterialDiamond1: 1
-    DrinkGoldenCup: 1
-    SilverRingGem: 1
-    GoldRingGem: 1
-    ClothingNeckGoldmedal: 1
-    IngotSilver1: 1
-    IngotGold1: 1
-    WristwatchGold: 1
-    ClothingNeckBling: 1
-    TreasureCoinAdamantine: 1
+    ClothingNeckBronzeheart: 2
+    ClothingNeckCargomedal: 2
+    ClothingNeckEngineermedal: 2
+    Wristwatch: 2
+    SilverRing: 2
+    GoldRing: 2
+    TreasureCoinIron: 2
+    TreasureCoinGold: 2
+    TreasureCoinSilver: 2
+    ClothingStalkerNeckToken: 2
+    SilverRingDiamond: 2
+    GoldRingDiamond: 2
+    ClothingNeckGoldAutismPin: 2
+    MaterialDiamond1: 2
+    DrinkGoldenCup: 2
+    SilverRingGem: 2
+    GoldRingGem: 2
+    ClothingNeckGoldmedal: 2
+    IngotSilver1: 2
+    IngotGold1: 2
+    WristwatchGold: 2
+    ClothingNeckBling: 2
+    TreasureCoinAdamantine: 2
 
   categories:
     - name: shop-category-weapons
