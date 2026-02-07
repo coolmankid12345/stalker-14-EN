@@ -145,6 +145,14 @@
   - STOuterClothingStalker
 
 - type: loadoutGroup
+  id: STOuterClothingStalkerGroupVeteran
+  name: Верхняя одежда
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingOuterJacketNeytral
+
+- type: loadoutGroup
   id: STMaskStalkerGroup
   name: Маски
   minLimit: 0
