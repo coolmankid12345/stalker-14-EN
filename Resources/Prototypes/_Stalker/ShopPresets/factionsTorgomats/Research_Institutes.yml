@@ -99,6 +99,9 @@
       545Mag30: 220 #T3
       545Mag45: 300
       VityazMag: 300
+      BizonMag: 400
+      BizonMag919: 400
+      BasePMMag: 40
       556Mag30: 330
   - name: shop-category-ammunition
     priority: 3
@@ -134,6 +137,7 @@
       ClothingOuterArmorSSP24Sapfire: 4225
       ClothingOuterArmorSevaSciWhite: 4000
       ClothingOuterArmorSSP99: 4100
+      ClothingOuterArmorUzk5: 5500
       STClothingNeckExoskeletonSci: 8000
 
   - name: shop-category-storage-and-containers
@@ -169,8 +173,8 @@
       ZoneArtifactDetectorPulse: 50 # T1
       ZoneArtifactDetectorHunter: 100 # T2
       ZoneArtifactDetectorResponse: 700 # T2
-      ZoneArtifactDetectorSpruce: 2200 # T2
-      ZoneArtifactDetectorBarracuda: 3500 # T3
+      ZoneArtifactDetectorSpruce: 3200 # T2
+      ZoneArtifactDetectorBarracuda: 5500 # T3
       #RP Shit
       BaseMachineAnomalyDestructorFolded: 500
       BaseMachineAnomalyDestructorFolded1: 500

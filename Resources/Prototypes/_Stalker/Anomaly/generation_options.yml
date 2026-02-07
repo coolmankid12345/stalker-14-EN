@@ -56,7 +56,7 @@
 - type: stAnomalyGenerationOptions
   id: STBolotaGenerationOptions
   options:
-    totalCount: 200
+    totalCount: 10
     anomalyEntries:
     # Chemical
     - protoId: ZoneAnomalySmoke
