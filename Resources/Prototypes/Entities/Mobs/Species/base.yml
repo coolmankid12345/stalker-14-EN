@@ -314,6 +314,7 @@
   - type: BlowoutTarget
   - type: STEvasion
     evasion: 0.01
+  - type: STCPR
     # stalker-changes-end
 
 - type: entity
