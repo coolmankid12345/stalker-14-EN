@@ -3,6 +3,10 @@
   suffix: Stalker, Т5, немощный, NPC
   parent: MobStalkerBaseGuard
   id: MobStalkerMilitaryGuard
+  components:
+   - type: NpcFactionMember
+     factions:
+     - Sci
 
 - type: entity
   name: Вова Вист
