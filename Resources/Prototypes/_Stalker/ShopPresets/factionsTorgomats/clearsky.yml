@@ -88,6 +88,7 @@
         STWeaponRifleAKS74U: 1300 #CHANGED
         STWeaponRifleL85: 1500 #CHANGED
         STWeaponRifleM16: 2400 #ADDED
+        STWeaponRifleStalkerAK105SwampThing: 4400
         STWeaponRifleSIG550: 4000 #ADDED
         STWeaponRifleSIG550Black: 4000 #ADDED
         STWeaponRifleM14: 3500 #ADDED
@@ -102,6 +103,7 @@
       priority: 2
       items:
           # 7,62x51 and 56
+        Base754Mag5: 80
         Base556Mag10: 80
         556Mag20: 220
         556Mag30: 400
@@ -142,7 +144,7 @@
         545FMJBox: 500
         545HPBox: 150
         # 7.51
-        751UNBox: 500 #ADDED
+        751UNBox: 800 #ADDED
         751M80Box: 1300 #CHANGED
         # 7.54
         754FMJBox: 1200
@@ -158,16 +160,16 @@
           # Helmets #
         STClothingHeadTinfoil: 220
         ClothingHeadHelmetInfantry: 600 # T2 - PVP
-        ClothingHeadHelmetVityaz1C: 2250 # T2 - PVE
+        ClothingHeadHelmetCN3a: 2250 # T2 - PVE
           # OuterClothing #
-        ClothingOuterJacketCN: 60 # T1 - PVE
-        STClothingOuterArmorLightPlateVestBaseClearSky: 1000 # T2 - PvP
-        ClothingOuterArmorRCBZCN: 1700 # T2 - ENV
+        ClothingOuterJacketCN: 70 # T1 - PVE
+        STClothingOuterArmorLightPlateVestBaseClearSky: 900 # T2 - PvP
+        ClothingOuterArmorRCBZCN: 1350 # T2 - ENV
         ClothingOuterArmorCN1: 2000
-        ClothingOuterArmorCN3a: 5000
-        STClothingOuterArmorLightPlateVestBaseANABlue: 3270
-        ClothingOuterArmorSevaCN: 6500
-        ClothingOuterArmorStalkerCombatCN: 9000
+        ClothingOuterArmorCN3a: 4500
+        STClothingOuterArmorCN-4a: 5000
+        STClothingOuterArmorCN-4aResearcher: 9000
+        ClothingOuterArmorCN3b: 9000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -184,6 +186,8 @@
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
+        ClothingOuterCoatAugustM: 1100
+        ClothingOuterCoatAugust: 1100
         ClothingOuterCoatDoshdevik: 600
         ClothingOuterCoatLoyalistLight: 1200
         ClothingOuterCoatLoyalist: 1550
@@ -273,6 +277,7 @@
     - name: shop-category-customization
       priority: 12
       items:
+        ClothingHeadBeretCN: 5
         ClothingTorsoTurtlenecksClearSky: 5 #ADDED
         ClothingLegsJeansClearSky: 5 #ADDED
         ClothingBandageStalkerBlue: 25 #CHANGED
