@@ -79,7 +79,7 @@
     #Weapons and armour ---- min cost / 2
 
     #12x70
-    STWeaponShotgunTOZ34: 90
+    STWeaponShotgunTOZ34: 1
     STWeaponShotgunMP133: 230
     STWeaponShotgunMP153: 540
     STWeaponShotgunBenelliM4Super90: 740
@@ -89,7 +89,7 @@
     STWeaponShotgunSaiga12: 190
 
     #5.45x39
-    STWeaponRifleSaiga545: 540
+    STWeaponRifleSaiga545: 1
     STWeaponRifleAKS74U: 1005
     STWeaponRifleAKS74: 2025
     STWeaponRifleAK74M: 2935
