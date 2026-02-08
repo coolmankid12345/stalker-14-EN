@@ -12,13 +12,11 @@
 - type: stAnomalyGenerationOptions
   id: STKordonGenerationOptions
   options:
-    totalCount: 150
+    totalCount: 100
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalyElectra
     # Gravity
-    - protoId: ZoneAnomalyBurden
-      weight: 0.95
     - protoId: STAnomalyBubbleExit
     - protoId: ZoneAnomalyGravi
       weight: 4
@@ -209,7 +207,7 @@
 - type: stAnomalyGenerationOptions
   id: STRedForestGenerationOptions
   options:
-    totalCount: 350
+    totalCount: 450
     anomalyEntries:
     - protoId: ZoneAnomalyKissel
       weight: 1.5
@@ -279,7 +277,7 @@
 - type: stAnomalyGenerationOptions
   id: STLimaGenerationOptions
   options:
-    totalCount: 250
+    totalCount: 300
     anomalyEntries:
     - protoId: ZoneAnomalyKissel
     - protoId: ZoneAnomalyNoGravity

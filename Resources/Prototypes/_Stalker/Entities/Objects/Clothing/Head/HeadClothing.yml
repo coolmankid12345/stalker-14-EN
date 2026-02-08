@@ -11,6 +11,7 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - HeadTop
 
 - type: entity
   parent: STClothingHeadBase
@@ -37,6 +38,18 @@
       sprite: _Stalker/Objects/Clothing/hats/un_beret.rsi
 
 - type: entity
+  parent: STClothingHeadBase
+  id: ClothingHeadBeretCN
+  name: берет Чистого Неба
+  description: Берет группировки Чистое Небо. Выполнен в характерном синем цвете, плавно переходящем в голубой.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/cn_beret.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/cn_beret.rsi
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatSovietUshankaStalker
   name: советская ушанка
@@ -52,6 +65,7 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - HeadTop
 
 - type: entity
   parent: [ClothingHeadBase, BaseFoldable]
@@ -95,6 +109,7 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - HeadTop
 
 - type: entity
   parent: STClothingHeadBase

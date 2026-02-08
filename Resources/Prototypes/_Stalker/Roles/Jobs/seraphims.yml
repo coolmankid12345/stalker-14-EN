@@ -172,9 +172,3 @@
   equipment:
     id: STSeraphimPDA
     neck: ClothingStalkerNeckKulonSeraphim
-    shoes: STClothingShoesBootsSeraFilled
-    legs: STClothingLegsSerafimCherubimPants
-    torso: STClothingTorsoSerafimCherubimFullReady
-    gloves: STClothingHandsGlovesSera
-    pocket1: STBoltBagFilled
-    pocket2: GeigerCounter

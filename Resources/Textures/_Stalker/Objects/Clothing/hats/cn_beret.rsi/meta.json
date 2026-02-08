@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "copyright": "beybasigma & HLoRka_202",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-HELMET",
+      "directions": 4
+    }
+  ]
+}
