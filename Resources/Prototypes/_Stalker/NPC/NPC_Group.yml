@@ -188,7 +188,7 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
-    shopPresetId: ClearSkyShopPreset
+    shopPresetId: CSShopPreset
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS

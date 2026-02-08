@@ -62,6 +62,16 @@
     MutantPartPseudogiantHeart: 100
     MutantPartZombieHand: 100
 
+    # Mutant parts EN
+
+    MutantPartCatGland: 100
+    MutantPartBearClaw: 100
+    MutantPartBearPaw: 100
+    MutantPartBearEye: 100
+    MutantPartFrogLeg: 100
+    MutantPartIzlomArm: 100
+    MutantPartChimeraTooth: 100
+
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -152,6 +162,7 @@
     - name: shop-category-utilities
       priority: 8
       items:
+        PliersStalker: 300
         STCombatKnife: 25
         BoxZiptie: 50
         BoxSafebox: 300

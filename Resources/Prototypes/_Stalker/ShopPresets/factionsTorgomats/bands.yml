@@ -304,7 +304,7 @@
       STClothingOuterArmorLightPlateVestBaseBand: 900 # T2 - PvP
       STClothingOuterArmorBandits: 1400
       ClothingOuterArmorBandits: 3500
-      ClothingOuterArmorHeavyJaba: 8000
+      STClothingOuterArmorLightPlateVestBaseHeavyBandit: 8000
   - name: shop-category-storage-and-containers
     priority: 5
     items:
