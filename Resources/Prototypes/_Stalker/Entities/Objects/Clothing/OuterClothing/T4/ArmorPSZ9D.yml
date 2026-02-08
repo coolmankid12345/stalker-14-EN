@@ -1,7 +1,7 @@
 - type: entity
   parent: STClothingOuterArmorVeryHeavy
   id: ClothingOuterArmorPSZ9D
-  name: ПСЗ-9Д
+  name: ПСЗ-9Д Долга
   description: Костюм Специального Назначения.
   suffix: ST, T4, PvE
   components:

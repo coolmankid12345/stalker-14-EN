@@ -100,6 +100,7 @@
     priority: 2
     items:
       # 7,62x51 and 56
+      BaseTEC9Mag: 90
       Base556Mag10: 80
       556Mag20: 220
       556Mag30: 400

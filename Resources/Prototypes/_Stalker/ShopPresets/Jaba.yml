@@ -131,6 +131,7 @@
       545Mag20: 250
       545Mag30: 500
       # Other
+      BaseTEC9Mag: 90
       BasePMMag: 12
       BasePPSHMag: 350
       TTMag: 15

@@ -123,7 +123,7 @@
     Caustic: 0.2
     Compression: 5
     Psy: 0
-    Mutant: 1
+    Mutant: 70
   flatReductions:
     Blunt: 5
     Slash: 5

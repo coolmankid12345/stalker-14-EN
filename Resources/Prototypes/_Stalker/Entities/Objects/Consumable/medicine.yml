@@ -224,9 +224,6 @@
     layers:
     - state: antiradpen
       map: ["enum.SolutionContainerLayers.Fill"]
-  - type: Item
-    sprite: _Stalker/Objects/Medicine/steampack/antirad.rsi
-    size: Normal
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     changeColor: false

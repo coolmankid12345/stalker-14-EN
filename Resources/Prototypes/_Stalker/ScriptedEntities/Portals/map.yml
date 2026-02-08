@@ -1344,3 +1344,39 @@
   components:
   - type: NewMapTeleport
     portalName: Freedom_basement
+
+### Агропром - кордон
+
+- type: entity
+  parent: MapTeleportBase
+  id: Agro-Kordon
+  name: Agro-Kordon
+  components:
+    - type: NewMapTeleport
+      portalName: Agro-Kordon
+
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Agro
+  name: Kordon-Agro
+  components:
+    - type: NewMapTeleport
+      portalName: Agro-Kordon
+
+### Долина - кордон
+
+- type: entity
+  parent: MapTeleportBase
+  id: Dolina-Kordon
+  name: Dolina-Kordon
+  components:
+    - type: NewMapTeleport
+      portalName: Dolina-Kordon
+
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Dolina
+  name: Kordon-Dolina
+  components:
+    - type: NewMapTeleport
+      portalName: Dolina-Kordon
