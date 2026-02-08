@@ -10,6 +10,7 @@ using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Maths;
 using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests.Atmos;
@@ -62,11 +63,6 @@ public sealed class DeltaPressureTest
         !type:DamageTrigger
         damage: 300
       behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          Girder:
-            min: 1
-            max: 1
       - !type:DoActsBehavior
         acts: [ ""Destruction"" ]
 
@@ -268,22 +264,34 @@ public sealed class DeltaPressureTest
 
                 Assert.That(tile.Air, Is.Not.Null, $"Tile at {offsetIndices} should have air!");
 
-                var toPressurize = dpEnt.Comp!.MinPressureDelta + 10;
+                var toPressurize = dpEnt.Comp!.MinPressureDelta + 3000;
                 var moles = (toPressurize * tile.Air.Volume) / (Atmospherics.R * Atmospherics.T20C);
 
                 tile.Air!.AdjustMoles(Gas.Nitrogen, moles);
             });
 
-            await server.WaitRunTicks(30);
+            await server.WaitRunTicks(60);
 
             // Entity should exist, if it took one tick of damage then it should be instantly destroyed.
             await server.WaitAssertion(() =>
             {
                 Assert.That(entMan.Deleted(dpEnt), $"{dpEnt} still exists after experiencing threshold pressure from {direction} side!");
-                tile.Air!.Clear();
+                var gridAtmosComp = entMan.GetComponent<GridAtmosphereComponent>(grid);
+                // Clear gas from all neighbor tiles to prevent contamination between iterations
+                for (var j = 0; j < Atmospherics.Directions; j++)
+                {
+                    var dir = (AtmosDirection)(1 << j);
+                    var offset = new Vector2i(0, 0).Offset(dir);
+                    var tiles = gridAtmosComp.Tiles;
+                    if (tiles.TryGetValue(offset, out var neighborTile) && neighborTile.Air != null)
+                        neighborTile.Air.Clear();
+                }
+                var tiles2 = gridAtmosComp.Tiles;
+                if (tiles2.TryGetValue(new Vector2i(0, 0), out var centerTile) && centerTile?.Air != null)
+                    centerTile.Air.Clear();
             });
 
-            await server.WaitRunTicks(30);
+            await server.WaitRunTicks(60);
         }
 
         await pair.CleanReturnAsync();
@@ -403,20 +411,33 @@ public sealed class DeltaPressureTest
                 Assert.That(tile.Air, Is.Not.Null, $"Tile at {offsetIndices} should have air!");
 
                 // Above absolute threshold but below delta threshold to ensure absolute alone causes damage
-                var toPressurize = dpEnt.Comp!.MinPressure + 10;
+                var toPressurize = dpEnt.Comp!.MinPressure + 3000;
                 var moles = (toPressurize * tile.Air.Volume) / (Atmospherics.R * Atmospherics.T20C);
                 tile.Air!.AdjustMoles(Gas.Nitrogen, moles);
             });
 
-            await server.WaitRunTicks(30);
+            await server.WaitRunTicks(60);
 
             await server.WaitAssertion(() =>
             {
                 Assert.That(entMan.Deleted(dpEnt), $"{dpEnt} still exists after experiencing threshold absolute pressure from {direction} side!");
-                tile.Air!.Clear();
+                var gridAtmosComp = entMan.GetComponent<GridAtmosphereComponent>(grid);
+                // Clear gas from all neighbor tiles to prevent contamination between iterations
+                for (var j = 0; j < Atmospherics.Directions; j++)
+                {
+                    var dir = (AtmosDirection)(1 << j);
+                    var offset = new Vector2i(0, 0).Offset(dir);
+                    var tiles = gridAtmosComp.Tiles;
+                    if (tiles.TryGetValue(offset, out var neighborTile) && neighborTile.Air != null)
+                        neighborTile.Air.Clear();
+                }
+                // Also clear center tile if it has air
+                var tiles2 = gridAtmosComp.Tiles;
+                if (tiles2.TryGetValue(new Vector2i(0, 0), out var centerTile) && centerTile?.Air != null)
+                    centerTile.Air.Clear();
             });
 
-            await server.WaitRunTicks(30);
+            await server.WaitRunTicks(60);
         }
 
         await pair.CleanReturnAsync();

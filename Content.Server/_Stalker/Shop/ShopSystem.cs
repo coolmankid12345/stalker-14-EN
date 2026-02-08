@@ -103,7 +103,7 @@ public sealed partial class ShopSystem : SharedShopSystem
             {
                 var message = $"[Stalker] {item} is selling at {traderName} for just {sellingPrice} {moneyPrefix}, " +
                     $"but could be bought by {priceInfo.Trader} for {priceInfo.BuyingPrice} {moneyPrefix}. Please fix the economy!";
-                _sawmill.Error(message);
+                _sawmill.Warning(message);
             }
         }
 

@@ -1,5 +1,5 @@
 ﻿- type: entity
-  parent: STBaseStructureDynamic
+  parent: STBaseStructure
   id: MiracleMachineOff
   name: miracle machine
   description: A massive tank with something floating inside. Shockwaves of psy energy ripple around it, making it difficult to stand nearby.

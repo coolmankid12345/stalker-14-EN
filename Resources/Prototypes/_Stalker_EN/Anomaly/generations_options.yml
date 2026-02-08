@@ -41,7 +41,7 @@
 
 # Yantar
 - type: stAnomalyGenerationOptions
-  id: STGreatSwampsGenerationOptions
+  id: STYantarGenerationOptions
   options:
     totalCount: 650
     anomalyEntries:
