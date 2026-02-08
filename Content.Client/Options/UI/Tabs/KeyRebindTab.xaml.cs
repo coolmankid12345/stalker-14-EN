@@ -323,13 +323,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.STQuickEquipBolt);
             // stalker-changes-end
 
-            // stalker-changes
-            AddHeader("ui-options-header-stalker");
-            AddButton(ContentKeyFunctions.SmartEquipOuterClothing);
-            AddButton(ContentKeyFunctions.Lay);
-            AddButton(ContentKeyFunctions.STQuickEquipBolt);
-            // stalker-changes-end
-
             foreach (var control in _keyControls.Values)
             {
                 UpdateKeyControl(control);

@@ -113,4 +113,10 @@
     fillBaseName: icon-
     inHandsMaxFillLevels: 2
     inHandsFillBaseName: -fill-
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "icon_open"}
+          False: {state: "icon"}
   - type: Sealable

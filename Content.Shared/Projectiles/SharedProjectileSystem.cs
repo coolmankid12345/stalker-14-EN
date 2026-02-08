@@ -262,6 +262,15 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
+        if (component.EmbeddedIntoUid != null &&
+            TryComp<EmbeddedContainerComponent>(component.EmbeddedIntoUid.Value, out var embeddedContainer))
+        {
+            embeddedContainer.EmbeddedObjects.Remove(uid);
+            Dirty(component.EmbeddedIntoUid.Value, embeddedContainer);
+            if (embeddedContainer.EmbeddedObjects.Count == 0)
+                RemCompDeferred<EmbeddedContainerComponent>(component.EmbeddedIntoUid.Value);
+        }
+
         if (component.DeleteOnRemove)
         {
             PredictedQueueDel(uid);
@@ -269,6 +278,9 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         }
 
         var xform = Transform(uid);
+        if (TerminatingOrDeleted(xform.GridUid) && TerminatingOrDeleted(xform.MapUid))
+            return;
+
         TryComp<PhysicsComponent>(uid, out var physics);
         if (physics != null)
             _physics.SetBodyType(uid, BodyType.Dynamic, body: physics, xform: xform);
