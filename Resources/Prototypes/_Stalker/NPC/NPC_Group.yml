@@ -439,7 +439,7 @@
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
   - type: Shop
-    moneyId: Dollar
+    moneyId: Roubles
     shopPresetId: SerafimShopPresetCustom
   - type: TypingIndicator
     proto: robot

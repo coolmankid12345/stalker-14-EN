@@ -22,7 +22,7 @@ rules_file = "STRuleset"
 time = 10.0
 
 [whitelist]
-enabled = false
+enabled = true
 
 [shuttle]
 auto_call_time = 0
