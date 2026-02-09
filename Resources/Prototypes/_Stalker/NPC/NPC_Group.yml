@@ -439,8 +439,8 @@
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
   - type: Shop
-    moneyId: Dollar
-    shopPresetId: SerDollarShopPreset
+    moneyId: Roubles
+    shopPresetId: SerafimShopPresetCustom
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
