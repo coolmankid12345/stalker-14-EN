@@ -23,6 +23,7 @@ time = 10.0
 
 [whitelist]
 enabled = true
+prototype_list = "basicWhitelist"
 
 [shuttle]
 auto_call_time = 0
