@@ -30,6 +30,7 @@ limit = 25
 
 [whitelist]
 enabled = true
+prototype_list = "basicWhitelist"
 
 [explosion]
 can_create_vacuum = false
