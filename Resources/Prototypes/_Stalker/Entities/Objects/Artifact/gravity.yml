@@ -106,7 +106,7 @@
   - type: STWeight
     self: -40
   - type: Reflect
-    reflectProb: 0.8
+    reflectProb: 0.2
     spread: 340
 
 # Пораждаемая эпицентром, каруселью

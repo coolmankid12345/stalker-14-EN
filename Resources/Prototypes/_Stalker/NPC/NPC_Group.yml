@@ -440,7 +440,7 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Dollar
-    shopPresetId: SerDollarShopPreset
+    shopPresetId: SerafimShopPresetCustom
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
