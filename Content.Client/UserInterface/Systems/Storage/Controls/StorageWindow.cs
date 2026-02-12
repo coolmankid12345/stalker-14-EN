@@ -75,32 +75,129 @@ public sealed class StorageWindow : BaseWindow
     private Texture? _sidebarFatTexture;
 
     // Stalker-Changes-Start
-    private readonly Dictionary<ConnectionState, Texture?> _textureMapping;
-    private record ConnectionState(bool Top, bool Bottom, bool Left, bool Right);
+
     public event Action? OnCraftButtonPressed;
     public event Action? OnDisassembleButtonPressed;
-    private readonly string _addTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/tile_empty_add";
-    private Texture? _addEmptyTexture;
-    private readonly string _bottomLeftTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/tile_empty_bottom_left";
-    private Texture? _bottomLeftEmptyTexture;
-    private readonly string _topLeftTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/tile_empty_top_left";
-    private Texture? _topLeftEmptyTexture;
-    private readonly string _bottomRightTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/tile_empty_bottom_right";
-    private Texture? _bottomRightEmptyTexture;
-    private readonly string _topRightTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/tile_empty_top_right";
-    private Texture? _topRightEmptyTexture;
-    private readonly string _leftBoundaryTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/tile_empty_boundary_left";
-    private Texture? _leftBoundaryEmptyTexture;
-    private readonly string _rightBoundaryTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/tile_empty_boundary_right";
-    private Texture? _rightBoundaryEmptyTexture;
-    private readonly string _bottomBoundaryTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/tile_empty_boundary_bottom";
-    private Texture? _bottomBoundaryEmptyTexture;
-    private readonly string _topBoundaryTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/tile_empty_boundary_top";
-    private Texture? _topBoundaryEmptyTexture;
-    private readonly string _craftTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/craft";
+
+    private const string StalkerStoragePath = "/Textures/_Stalker/Interface/STDefault/Storage/";
+
+    private readonly string _craftTexturePath = StalkerStoragePath + "craft";
     private Texture? _craftTexture;
-    private readonly string _disassebleTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/disasseble";
+    private readonly string _disassebleTexturePath = StalkerStoragePath + "disasseble"; // typo matches filename on disk
     private Texture? _disassembleTexture;
+
+    private readonly string _addTexturePath = StalkerStoragePath + "tile_empty_add";
+    private Texture? _addEmptyTexture;
+
+    private readonly string _baseInteriorTexturePath = StalkerStoragePath + "tile_empty_";
+    private Texture? _baseInteriorTexture;
+
+    // Corner variants: "corner" = clean (diagonal present), "curved" = has inner notch (diagonal missing)
+    private readonly string _cornerTopLeftPath = StalkerStoragePath + "tile_empty_corner_top_left";
+    private Texture? _cornerTopLeftTexture;
+    private readonly string _cornerTopRightPath = StalkerStoragePath + "tile_empty_corner_top_right";
+    private Texture? _cornerTopRightTexture;
+    private readonly string _cornerBottomLeftPath = StalkerStoragePath + "tile_empty_corner_bottom_left";
+    private Texture? _cornerBottomLeftTexture;
+    private readonly string _cornerBottomRightPath = StalkerStoragePath + "tile_empty_corner_bottom_right";
+    private Texture? _cornerBottomRightTexture;
+
+    private readonly string _curvedTopLeftPath = StalkerStoragePath + "tile_empty_curved_top_left";
+    private Texture? _curvedTopLeftTexture;
+    private readonly string _curvedTopRightPath = StalkerStoragePath + "tile_empty_curved_top_right";
+    private Texture? _curvedTopRightTexture;
+    private readonly string _curvedBottomLeftPath = StalkerStoragePath + "tile_empty_curved_bottom_left";
+    private Texture? _curvedBottomLeftTexture;
+    private readonly string _curvedBottomRightPath = StalkerStoragePath + "tile_empty_curved_bottom_right";
+    private Texture? _curvedBottomRightTexture;
+
+    // Edge variants: "edge" = clean, "T-shape" = both diag notches, "F-shape" = one diag notch
+    private readonly string _edgeTopPath = StalkerStoragePath + "tile_empty_edge_top";
+    private Texture? _edgeTopTexture;
+    private readonly string _edgeBottomPath = StalkerStoragePath + "tile_empty_edge_bottom";
+    private Texture? _edgeBottomTexture;
+    private readonly string _edgeLeftPath = StalkerStoragePath + "tile_empty_edge_left";
+    private Texture? _edgeLeftTexture;
+    private readonly string _edgeRightPath = StalkerStoragePath + "tile_empty_edge_right";
+    private Texture? _edgeRightTexture;
+
+    private readonly string _tShapeTopPath = StalkerStoragePath + "tile_empty_T-shape_top";
+    private Texture? _tShapeTopTexture;
+    private readonly string _tShapeBottomPath = StalkerStoragePath + "tile_empty_T-shape_bottom";
+    private Texture? _tShapeBottomTexture;
+    private readonly string _tShapeLeftPath = StalkerStoragePath + "tile_empty_T-shape_left";
+    private Texture? _tShapeLeftTexture;
+    private readonly string _tShapeRightPath = StalkerStoragePath + "tile_empty_T-shape_right";
+    private Texture? _tShapeRightTexture;
+
+    private readonly string _fShapeTopPath = StalkerStoragePath + "tile_empty_F-shape_top";
+    private Texture? _fShapeTopTexture;
+    private readonly string _fShapeTopInvertedPath = StalkerStoragePath + "tile_empty_F-shape_top_inverted";
+    private Texture? _fShapeTopInvertedTexture;
+    private readonly string _fShapeBottomPath = StalkerStoragePath + "tile_empty_F-shape_bottom";
+    private Texture? _fShapeBottomTexture;
+    private readonly string _fShapeBottomInvertedPath = StalkerStoragePath + "tile_empty_F-shape_bottom_inverted";
+    private Texture? _fShapeBottomInvertedTexture;
+    private readonly string _fShapeLeftPath = StalkerStoragePath + "tile_empty_F-shape_left";
+    private Texture? _fShapeLeftTexture;
+    private readonly string _fShapeLeftInvertedPath = StalkerStoragePath + "tile_empty_F-shape_left_inverted";
+    private Texture? _fShapeLeftInvertedTexture;
+    private readonly string _fShapeRightPath = StalkerStoragePath + "tile_empty_F-shape_right";
+    private Texture? _fShapeRightTexture;
+    private readonly string _fShapeRightInvertedPath = StalkerStoragePath + "tile_empty_F-shape_right_inverted";
+    private Texture? _fShapeRightInvertedTexture;
+
+    private readonly string _corridorHorizontalPath = StalkerStoragePath + "tile_empty_corridor_horizontal";
+    private Texture? _corridorHorizontalTexture;
+    private readonly string _corridorVerticalPath = StalkerStoragePath + "tile_empty_corridor_vertical";
+    private Texture? _corridorVerticalTexture;
+
+    private readonly string _uShapeTopPath = StalkerStoragePath + "tile_empty_U-shape_top";
+    private Texture? _uShapeTopTexture;
+    private readonly string _uShapeBottomPath = StalkerStoragePath + "tile_empty_U-shape_bottom";
+    private Texture? _uShapeBottomTexture;
+    private readonly string _uShapeLeftPath = StalkerStoragePath + "tile_empty_U-shape_left";
+    private Texture? _uShapeLeftTexture;
+    private readonly string _uShapeRightPath = StalkerStoragePath + "tile_empty_U-shape_right";
+    private Texture? _uShapeRightTexture;
+
+    private readonly string _isolatedPath = StalkerStoragePath + "tile_empty_isolated";
+    private Texture? _isolatedTexture;
+
+    private readonly string _plusShapePath = StalkerStoragePath + "tile_empty_plus-shape";
+    private Texture? _plusShapeTexture;
+
+    private readonly string _innerTopLeftPath = StalkerStoragePath + "tile_empty_inner_top_left";
+    private Texture? _innerTopLeftTexture;
+    private readonly string _innerTopRightPath = StalkerStoragePath + "tile_empty_inner_top_right";
+    private Texture? _innerTopRightTexture;
+    private readonly string _innerBottomLeftPath = StalkerStoragePath + "tile_empty_inner_bottom_left";
+    private Texture? _innerBottomLeftTexture;
+    private readonly string _innerBottomRightPath = StalkerStoragePath + "tile_empty_inner_bottom_right";
+    private Texture? _innerBottomRightTexture;
+
+    private readonly string _innerDoubleTopPath = StalkerStoragePath + "tile_empty_inner_double_top";
+    private Texture? _innerDoubleTopTexture;
+    private readonly string _innerDoubleBottomPath = StalkerStoragePath + "tile_empty_inner_double_bottom";
+    private Texture? _innerDoubleBottomTexture;
+    private readonly string _innerDoubleLeftPath = StalkerStoragePath + "tile_empty_inner_double_left";
+    private Texture? _innerDoubleLeftTexture;
+    private readonly string _innerDoubleRightPath = StalkerStoragePath + "tile_empty_inner_double_right";
+    private Texture? _innerDoubleRightTexture;
+    private readonly string _innerDoubleDiagonalPath = StalkerStoragePath + "tile_empty_inner_double_diagonal";
+    private Texture? _innerDoubleDiagonalTexture;
+    private readonly string _innerDoubleDiagonalReversePath = StalkerStoragePath + "tile_empty_inner_double_diagonal_reverse";
+    private Texture? _innerDoubleDiagonalReverseTexture;
+
+    // Inner triples: named by the sole SURVIVING diagonal
+    private readonly string _innerTripleTopLeftPath = StalkerStoragePath + "tile_empty_inner_triple_top_left";
+    private Texture? _innerTripleTopLeftTexture;
+    private readonly string _innerTripleTopRightPath = StalkerStoragePath + "tile_empty_inner_triple_top_right";
+    private Texture? _innerTripleTopRightTexture;
+    private readonly string _innerTripleBottomLeftPath = StalkerStoragePath + "tile_empty_inner_triple_bottom_left";
+    private Texture? _innerTripleBottomLeftTexture;
+    private readonly string _innerTripleBottomRightPath = StalkerStoragePath + "tile_empty_inner_triple_bottom_right";
+    private Texture? _innerTripleBottomRightTexture;
     // Stalker-Changes-End
 
     public StorageWindow()
@@ -186,21 +283,6 @@ public sealed class StorageWindow : BaseWindow
         };
 
         AddChild(container);
-
-        // Stalker-Changes-Start
-        _textureMapping = new Dictionary<ConnectionState, Texture?>
-        {
-            { new ConnectionState(true, true, true, true), _emptyTexture },
-            { new ConnectionState(true, false, false, true), _bottomRightEmptyTexture },
-            { new ConnectionState(true, false, true, false), _bottomLeftEmptyTexture },
-            { new ConnectionState(false, true, false, true), _topRightEmptyTexture },
-            { new ConnectionState(false, true, true, false), _topLeftEmptyTexture },
-            { new ConnectionState(false, true, true, true), _topBoundaryEmptyTexture },
-            { new ConnectionState(true, true, false, true), _rightBoundaryEmptyTexture },
-            { new ConnectionState(true, true, true, false), _leftBoundaryEmptyTexture },
-            { new ConnectionState(true, false, true, true), _bottomBoundaryEmptyTexture }
-        };
-        // Stalker-Changes-End
     }
 
     protected override void OnThemeUpdated()
@@ -208,17 +290,68 @@ public sealed class StorageWindow : BaseWindow
         base.OnThemeUpdated();
 
         // Stalker-Changes-Start
-        _addEmptyTexture = Theme.ResolveTextureOrNull(_addTexturePath)?.Texture;
-        _bottomLeftEmptyTexture = Theme.ResolveTextureOrNull(_bottomLeftTexturePath)?.Texture;
-        _topLeftEmptyTexture = Theme.ResolveTextureOrNull(_topLeftTexturePath)?.Texture;
-        _bottomRightEmptyTexture = Theme.ResolveTextureOrNull(_bottomRightTexturePath)?.Texture;
-        _topRightEmptyTexture = Theme.ResolveTextureOrNull(_topRightTexturePath)?.Texture;
-        _leftBoundaryEmptyTexture = Theme.ResolveTextureOrNull(_leftBoundaryTexturePath)?.Texture;
-        _rightBoundaryEmptyTexture = Theme.ResolveTextureOrNull(_rightBoundaryTexturePath)?.Texture;
-        _bottomBoundaryEmptyTexture = Theme.ResolveTextureOrNull(_bottomBoundaryTexturePath)?.Texture;
-        _topBoundaryEmptyTexture = Theme.ResolveTextureOrNull(_topBoundaryTexturePath)?.Texture;
         _craftTexture = Theme.ResolveTextureOrNull(_craftTexturePath)?.Texture;
         _disassembleTexture = Theme.ResolveTextureOrNull(_disassebleTexturePath)?.Texture;
+        _addEmptyTexture = Theme.ResolveTextureOrNull(_addTexturePath)?.Texture;
+
+        _baseInteriorTexture = Theme.ResolveTextureOrNull(_baseInteriorTexturePath)?.Texture;
+
+        _cornerTopLeftTexture = Theme.ResolveTextureOrNull(_cornerTopLeftPath)?.Texture;
+        _cornerTopRightTexture = Theme.ResolveTextureOrNull(_cornerTopRightPath)?.Texture;
+        _cornerBottomLeftTexture = Theme.ResolveTextureOrNull(_cornerBottomLeftPath)?.Texture;
+        _cornerBottomRightTexture = Theme.ResolveTextureOrNull(_cornerBottomRightPath)?.Texture;
+
+        _curvedTopLeftTexture = Theme.ResolveTextureOrNull(_curvedTopLeftPath)?.Texture;
+        _curvedTopRightTexture = Theme.ResolveTextureOrNull(_curvedTopRightPath)?.Texture;
+        _curvedBottomLeftTexture = Theme.ResolveTextureOrNull(_curvedBottomLeftPath)?.Texture;
+        _curvedBottomRightTexture = Theme.ResolveTextureOrNull(_curvedBottomRightPath)?.Texture;
+
+        _edgeTopTexture = Theme.ResolveTextureOrNull(_edgeTopPath)?.Texture;
+        _edgeBottomTexture = Theme.ResolveTextureOrNull(_edgeBottomPath)?.Texture;
+        _edgeLeftTexture = Theme.ResolveTextureOrNull(_edgeLeftPath)?.Texture;
+        _edgeRightTexture = Theme.ResolveTextureOrNull(_edgeRightPath)?.Texture;
+
+        _tShapeTopTexture = Theme.ResolveTextureOrNull(_tShapeTopPath)?.Texture;
+        _tShapeBottomTexture = Theme.ResolveTextureOrNull(_tShapeBottomPath)?.Texture;
+        _tShapeLeftTexture = Theme.ResolveTextureOrNull(_tShapeLeftPath)?.Texture;
+        _tShapeRightTexture = Theme.ResolveTextureOrNull(_tShapeRightPath)?.Texture;
+
+        _fShapeTopTexture = Theme.ResolveTextureOrNull(_fShapeTopPath)?.Texture;
+        _fShapeTopInvertedTexture = Theme.ResolveTextureOrNull(_fShapeTopInvertedPath)?.Texture;
+        _fShapeBottomTexture = Theme.ResolveTextureOrNull(_fShapeBottomPath)?.Texture;
+        _fShapeBottomInvertedTexture = Theme.ResolveTextureOrNull(_fShapeBottomInvertedPath)?.Texture;
+        _fShapeLeftTexture = Theme.ResolveTextureOrNull(_fShapeLeftPath)?.Texture;
+        _fShapeLeftInvertedTexture = Theme.ResolveTextureOrNull(_fShapeLeftInvertedPath)?.Texture;
+        _fShapeRightTexture = Theme.ResolveTextureOrNull(_fShapeRightPath)?.Texture;
+        _fShapeRightInvertedTexture = Theme.ResolveTextureOrNull(_fShapeRightInvertedPath)?.Texture;
+
+        _corridorHorizontalTexture = Theme.ResolveTextureOrNull(_corridorHorizontalPath)?.Texture;
+        _corridorVerticalTexture = Theme.ResolveTextureOrNull(_corridorVerticalPath)?.Texture;
+
+        _uShapeTopTexture = Theme.ResolveTextureOrNull(_uShapeTopPath)?.Texture;
+        _uShapeBottomTexture = Theme.ResolveTextureOrNull(_uShapeBottomPath)?.Texture;
+        _uShapeLeftTexture = Theme.ResolveTextureOrNull(_uShapeLeftPath)?.Texture;
+        _uShapeRightTexture = Theme.ResolveTextureOrNull(_uShapeRightPath)?.Texture;
+
+        _isolatedTexture = Theme.ResolveTextureOrNull(_isolatedPath)?.Texture;
+        _plusShapeTexture = Theme.ResolveTextureOrNull(_plusShapePath)?.Texture;
+
+        _innerTopLeftTexture = Theme.ResolveTextureOrNull(_innerTopLeftPath)?.Texture;
+        _innerTopRightTexture = Theme.ResolveTextureOrNull(_innerTopRightPath)?.Texture;
+        _innerBottomLeftTexture = Theme.ResolveTextureOrNull(_innerBottomLeftPath)?.Texture;
+        _innerBottomRightTexture = Theme.ResolveTextureOrNull(_innerBottomRightPath)?.Texture;
+
+        _innerDoubleTopTexture = Theme.ResolveTextureOrNull(_innerDoubleTopPath)?.Texture;
+        _innerDoubleBottomTexture = Theme.ResolveTextureOrNull(_innerDoubleBottomPath)?.Texture;
+        _innerDoubleLeftTexture = Theme.ResolveTextureOrNull(_innerDoubleLeftPath)?.Texture;
+        _innerDoubleRightTexture = Theme.ResolveTextureOrNull(_innerDoubleRightPath)?.Texture;
+        _innerDoubleDiagonalTexture = Theme.ResolveTextureOrNull(_innerDoubleDiagonalPath)?.Texture;
+        _innerDoubleDiagonalReverseTexture = Theme.ResolveTextureOrNull(_innerDoubleDiagonalReversePath)?.Texture;
+
+        _innerTripleTopLeftTexture = Theme.ResolveTextureOrNull(_innerTripleTopLeftPath)?.Texture;
+        _innerTripleTopRightTexture = Theme.ResolveTextureOrNull(_innerTripleTopRightPath)?.Texture;
+        _innerTripleBottomLeftTexture = Theme.ResolveTextureOrNull(_innerTripleBottomLeftPath)?.Texture;
+        _innerTripleBottomRightTexture = Theme.ResolveTextureOrNull(_innerTripleBottomRightPath)?.Texture;
         // Stalker-Changes-End
         _emptyTexture = Theme.ResolveTextureOrNull(_emptyTexturePath)?.Texture;
         _blockedTexture = Theme.ResolveTextureOrNull(_blockedTexturePath)?.Texture;
@@ -452,12 +585,13 @@ public sealed class StorageWindow : BaseWindow
 
         var boundingGrid = comp.Grid.GetBoundingBox();
 
-        var emptyTexture = _storageController.OpaqueStorageWindow
-            ? _emptyOpaqueTexture
-            : _emptyTexture;
         var blockedTexture = _storageController.OpaqueStorageWindow
             ? _blockedOpaqueTexture
             : _blockedTexture;
+
+        // Stalker-Changes-Start
+        var gridPoints = new HashSet<Vector2i>(comp.Grid.SelectMany(BoxExtensions.GetAllPoints));
+        // Stalker-Changes-End
 
         _backgroundGrid.Children.Clear();
         _backgroundGrid.Rows = boundingGrid.Height + 1;
@@ -466,8 +600,9 @@ public sealed class StorageWindow : BaseWindow
         {
             for (var x = boundingGrid.Left; x <= boundingGrid.Right; x++)
             {
-                var texture = comp.Grid.Contains(x, y)
-                    ? GetAppropriateTexture(comp.Grid, new Vector2i(x, y)) // Stalker-Changes
+                var pos = new Vector2i(x, y);
+                var texture = gridPoints.Contains(pos)
+                    ? GetAppropriateTexture(gridPoints, pos) // Stalker-Changes
                     : blockedTexture;
 
                 _backgroundGrid.AddChild(new TextureRect
@@ -838,20 +973,145 @@ public sealed class StorageWindow : BaseWindow
         }
     }
 
-    // Stalker-Changes-starts
+    // Stalker-Changes-Start
 
-    private Texture? GetAppropriateTexture(List<Box2i> grid, Vector2i position)
+    /// <remarks>
+    /// GridContainer renders y=Bottom at visual top of screen, so n=y-1, s=y+1 in screen-space.
+    /// Texture names describe where the border IS (opposite of where the neighbors are).
+    /// </remarks>
+    private Texture? GetAppropriateTexture(HashSet<Vector2i> gridPoints, Vector2i position)
     {
-        var hashSet = new HashSet<Vector2i>(grid.SelectMany(BoxExtensions.GetAllPoints));
+        var n = gridPoints.Contains(new Vector2i(position.X, position.Y - 1));
+        var s = gridPoints.Contains(new Vector2i(position.X, position.Y + 1));
+        var w = gridPoints.Contains(new Vector2i(position.X - 1, position.Y));
+        var e = gridPoints.Contains(new Vector2i(position.X + 1, position.Y));
 
-        var top = hashSet.Contains(position - Vector2i.Up);
-        var bottom = hashSet.Contains(position - Vector2i.Down);
-        var left = hashSet.Contains(position - Vector2i.Left);
-        var right = hashSet.Contains(position - Vector2i.Right);
+        var cardinals = (n ? 1 : 0) + (s ? 1 : 0) + (w ? 1 : 0) + (e ? 1 : 0);
 
-        ConnectionState key = new(top, bottom, left, right);
+        switch (cardinals)
+        {
+            case 0:
+                return _isolatedTexture ?? _addEmptyTexture;
 
-        return _textureMapping.GetValueOrDefault(key, _addEmptyTexture);
+            case 1:
+                if (n) return _uShapeBottomTexture ?? _addEmptyTexture;
+                if (s) return _uShapeTopTexture ?? _addEmptyTexture;
+                if (w) return _uShapeRightTexture ?? _addEmptyTexture;
+                return _uShapeLeftTexture ?? _addEmptyTexture;
+
+            case 2:
+            {
+                if (n && s) return _corridorHorizontalTexture ?? _addEmptyTexture;
+                if (w && e) return _corridorVerticalTexture ?? _addEmptyTexture;
+
+                // Diagonal present → clean corner, diagonal missing → curved (has inner notch)
+                if (s && e)
+                {
+                    var seD = gridPoints.Contains(new Vector2i(position.X + 1, position.Y + 1));
+                    return seD
+                        ? _cornerTopLeftTexture ?? _curvedTopLeftTexture ?? _addEmptyTexture
+                        : _curvedTopLeftTexture ?? _addEmptyTexture;
+                }
+                if (s && w)
+                {
+                    var swD = gridPoints.Contains(new Vector2i(position.X - 1, position.Y + 1));
+                    return swD
+                        ? _cornerTopRightTexture ?? _curvedTopRightTexture ?? _addEmptyTexture
+                        : _curvedTopRightTexture ?? _addEmptyTexture;
+                }
+                if (n && e)
+                {
+                    var neD = gridPoints.Contains(new Vector2i(position.X + 1, position.Y - 1));
+                    return neD
+                        ? _cornerBottomLeftTexture ?? _curvedBottomLeftTexture ?? _addEmptyTexture
+                        : _curvedBottomLeftTexture ?? _addEmptyTexture;
+                }
+                {
+                    var nwD = gridPoints.Contains(new Vector2i(position.X - 1, position.Y - 1));
+                    return nwD
+                        ? _cornerBottomRightTexture ?? _curvedBottomRightTexture ?? _addEmptyTexture
+                        : _curvedBottomRightTexture ?? _addEmptyTexture;
+                }
+            }
+
+            case 3:
+            {
+                // Both diags present → clean edge, one missing → F-shape, both missing → T-shape
+                var nw = n && w && gridPoints.Contains(new Vector2i(position.X - 1, position.Y - 1));
+                var ne = n && e && gridPoints.Contains(new Vector2i(position.X + 1, position.Y - 1));
+                var sw = s && w && gridPoints.Contains(new Vector2i(position.X - 1, position.Y + 1));
+                var se = s && e && gridPoints.Contains(new Vector2i(position.X + 1, position.Y + 1));
+
+                if (!n)
+                {
+                    if (sw && se) return _edgeTopTexture ?? _tShapeTopTexture ?? _addEmptyTexture;
+                    if (!sw && se) return _fShapeTopTexture ?? _tShapeTopTexture ?? _addEmptyTexture;
+                    if (sw && !se) return _fShapeTopInvertedTexture ?? _tShapeTopTexture ?? _addEmptyTexture;
+                    return _tShapeTopTexture ?? _addEmptyTexture;
+                }
+
+                if (!s)
+                {
+                    if (nw && ne) return _edgeBottomTexture ?? _tShapeBottomTexture ?? _addEmptyTexture;
+                    if (!nw && ne) return _fShapeBottomInvertedTexture ?? _tShapeBottomTexture ?? _addEmptyTexture;
+                    if (nw && !ne) return _fShapeBottomTexture ?? _tShapeBottomTexture ?? _addEmptyTexture;
+                    return _tShapeBottomTexture ?? _addEmptyTexture;
+                }
+
+                if (!w)
+                {
+                    if (ne && se) return _edgeLeftTexture ?? _tShapeLeftTexture ?? _addEmptyTexture;
+                    if (!ne && se) return _fShapeLeftInvertedTexture ?? _tShapeLeftTexture ?? _addEmptyTexture;
+                    if (ne && !se) return _fShapeLeftTexture ?? _tShapeLeftTexture ?? _addEmptyTexture;
+                    return _tShapeLeftTexture ?? _addEmptyTexture;
+                }
+
+                if (nw && sw) return _edgeRightTexture ?? _tShapeRightTexture ?? _addEmptyTexture;
+                if (!nw && sw) return _fShapeRightTexture ?? _tShapeRightTexture ?? _addEmptyTexture;
+                if (nw && !sw) return _fShapeRightInvertedTexture ?? _tShapeRightTexture ?? _addEmptyTexture;
+                return _tShapeRightTexture ?? _addEmptyTexture;
+            }
+
+            case 4:
+            {
+                var nwD = gridPoints.Contains(new Vector2i(position.X - 1, position.Y - 1));
+                var neD = gridPoints.Contains(new Vector2i(position.X + 1, position.Y - 1));
+                var swD = gridPoints.Contains(new Vector2i(position.X - 1, position.Y + 1));
+                var seD = gridPoints.Contains(new Vector2i(position.X + 1, position.Y + 1));
+
+                var missing = (!nwD ? 1 : 0) + (!neD ? 1 : 0) + (!swD ? 1 : 0) + (!seD ? 1 : 0);
+
+                switch (missing)
+                {
+                    case 0:
+                        return _baseInteriorTexture ?? _emptyTexture;
+                    case 1:
+                        if (!nwD) return _innerTopLeftTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        if (!neD) return _innerTopRightTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        if (!swD) return _innerBottomLeftTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        return _innerBottomRightTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                    case 2:
+                        if (!nwD && !neD) return _innerDoubleTopTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        if (!swD && !seD) return _innerDoubleBottomTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        if (!nwD && !swD) return _innerDoubleLeftTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        if (!neD && !seD) return _innerDoubleRightTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        if (!nwD && !seD) return _innerDoubleDiagonalTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        return _innerDoubleDiagonalReverseTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                    case 3:
+                        // Named by the sole surviving diagonal
+                        if (nwD) return _innerTripleTopLeftTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        if (neD) return _innerTripleTopRightTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        if (swD) return _innerTripleBottomLeftTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                        return _innerTripleBottomRightTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                    default:
+                        return _plusShapeTexture ?? _baseInteriorTexture ?? _emptyTexture;
+                }
+            }
+
+            default:
+                return _addEmptyTexture;
+        }
     }
-// Stalker-Changes-Ends
+
+    // Stalker-Changes-End
 }
