@@ -112,10 +112,11 @@
   components:
   - type: Sprite
     sprite: Objects/Fun/pondering_orb.rsi
-    state: icon
     drawdepth: Items
     noRot: false
-    shader: unshaded
+    layers:
+    - state: icon
+      shader: unshaded
   - type: PointLight
     radius: 2
     color: "#00CCFF"

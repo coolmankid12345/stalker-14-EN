@@ -85,10 +85,6 @@
       sprite: _Stalker/Objects/Specific/Medical/Other.rsi
       state: esmarch
       scale: 0.6, 0.6
-    - type: Item
-      sprite: _Stalker/Objects/Specific/Medical/Other.rsi
-      state: esmarch
-      scale: 0.6, 0.6
     - type: RepositoryItem
       categoryName: repository-medicine-category
     - type: Healing
@@ -329,7 +325,7 @@
         Airloss: -25
       types:
         Compression: -10
-    ModifyBloodLevel: 15
+    modifyBloodLevel: 15
     bloodlossModifier: -3
   - type: Stack
     stackType: MedkitAI2
@@ -400,7 +396,7 @@
         Airloss: -30
       types:
         Compression: -55
-    ModifyBloodLevel: 25
+    modifyBloodLevel: 25
     bloodlossModifier: -4
   - type: Stack
     stackType: MedkitMilitary
@@ -446,7 +442,7 @@
       types:
         Compression: -100
         Psy: -80
-    ModifyBloodLevel: 35
+    modifyBloodLevel: 35
     bloodlossModifier: -8
   - type: Stack
     stackType: MedkitScience
@@ -499,7 +495,7 @@
       types:
         Compression: -300
         Psy: -200
-    ModifyBloodLevel: 30
+    modifyBloodLevel: 30
     bloodlossModifier: -20
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
@@ -553,7 +549,7 @@
         Burn: -800
         Airloss: -300
         Toxin: 5
-    ModifyBloodLevel: 50
+    modifyBloodLevel: 50
     bloodlossModifier: -50
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"

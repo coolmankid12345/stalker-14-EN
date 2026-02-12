@@ -64,7 +64,7 @@ public abstract partial class SharedMoverController : VirtualController
     protected EntityQuery<PullableComponent> PullableQuery;
     protected EntityQuery<TransformComponent> XformQuery;
     // ES START
-    private static readonly EntProtoId ESFootstepViewconeEffect = "ESViewconeEffectFootstep";
+    //private static readonly EntProtoId ESFootstepViewconeEffect = "ESViewconeEffectFootstep";
     // ES END
 
     private static readonly ProtoId<TagPrototype> FootstepSoundTag = "FootstepSound";

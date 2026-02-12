@@ -73,7 +73,7 @@
     heavyDamageMultiplier: 2.0
   - type: MeleeThrowOnHit # im not sold on this, willing to kill it if its annoying
     speed: 5
-    lifetime: 0.3
+    distance: 2
   - type: StaminaDamageOnHit
     damage: 15
   - type: MovementSpeedModifier

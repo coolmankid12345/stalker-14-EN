@@ -58,7 +58,7 @@
   id: ClothingHeadHelmetKevlarMilitia
   name: Militia Kevlar Hood
   description: Sadly too small to fit over your helmet.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/hats/coat_hat_militia.rsi

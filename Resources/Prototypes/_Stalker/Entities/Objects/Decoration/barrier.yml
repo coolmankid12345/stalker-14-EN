@@ -46,7 +46,6 @@
         layer: [MidImpassable]
       open:
         hard: false
-        enabled: false
         shape:
           !type:PhysShapeAabb
           bounds: "-1.2,-0.3,1.2,0.3"

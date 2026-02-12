@@ -55,7 +55,6 @@
   name: stack-hryvnias
   icon: { sprite: /Textures/_Stalker_EN/Objects/Economy/hryvnia.rsi, state: cash }
   spawn: Hryvnias
-  itemSize: 1
   splitAmounts: [1, 5, 10, 25, 50, 100, 500]
 
 - type: entity

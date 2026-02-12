@@ -28,7 +28,7 @@
       detectedLevel: 0
       preparingDelay: 0
       activationDelay: 0.3
-      chargingDelay: 2
+      chargeTime: 2
     - type: Sprite
       sprite: _Stalker/Objects/Anomalies/electra.rsi
       layers:
@@ -81,7 +81,7 @@
       detectedLevel: 0
       preparingDelay: 1
       activationDelay: 0.75
-      chargingDelay: 5
+      chargeTime: 5
     - type: Sprite
       sprite: _Stalker/Objects/Anomalies/emp.rsi
       layers:
@@ -158,7 +158,7 @@
       detectedLevel: 3
       preparingDelay: 0
       activationDelay: 1
-      chargingDelay: 6
+      chargeTime: 6
     - type: Fixtures
       fixtures:
         fix1:
@@ -215,7 +215,7 @@
       detectedLevel: 1
       preparingDelay: 0
       activationDelay: 3
-      chargingDelay: 5
+      chargeTime: 5
     - type: Fixtures
       fixtures:
         fix1:

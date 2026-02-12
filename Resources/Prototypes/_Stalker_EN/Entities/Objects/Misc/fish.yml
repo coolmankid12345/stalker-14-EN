@@ -99,7 +99,7 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
-      Amount: 1
+      amount: 1
   - type: Trash
     time: 900
 
@@ -211,7 +211,7 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
-      Amount: 1
+      amount: 1
   - type: Trash
     time: 900
 
@@ -293,7 +293,7 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
-      Amount: 1
+      amount: 1
   - type: Trash
     time: 900
 
@@ -351,18 +351,18 @@
   - type: Butcherable
     spawned:
     - id: STJewelryGold
-      Amount: 1
+      amount: 1
       prob: 0.35
     - id: STWristwatchGold
-      Amount: 1
+      amount: 1
       prob: 0.2
     - id: ZoneArtifactGoldfish
       prob: 0.01
     - id: WristwatchGold
-      Amount: 1
+      amount: 1
       prob: 0.1
     - id: ZoneArtifactAmoeba
-      Amount: 1
+      amount: 1
       prob: 0.1
   - type: Trash
     time: 1800
@@ -569,7 +569,7 @@
   - type: Butcherable
     spawned:
     - id: STFishJellyfishActive
-      Amount: 1
+      amount: 1
   - type: Trash
     time: 1800
 
@@ -675,5 +675,5 @@
     - id: FoodMeatSTFishSteakRaw
       maxAmount: 5
     - id: CorpseStalkerFishDrop
-      Amount: 1
+      amount: 1
       prob: 0.25

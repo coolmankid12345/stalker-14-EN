@@ -68,7 +68,7 @@
         Blunt: 22
   - type: MeleeThrowOnHit # im not sold on this, willing to kill it if its annoying
     speed: 3
-    lifetime: 0.4
+    distance: 2.5
   - type: BonusMeleeDamage
     heavyDamageMultiplier: 1.8
   - type: StaminaDamageOnHit

@@ -85,5 +85,8 @@
     - type: STWeight
       self: 25
     - type: Bloodstream
-      bloodReagent: Water
+      bloodReagents:
+        reagents:
+        - ReagentId: Water
+          Quantity: 1
       bloodMaxVolume: 250

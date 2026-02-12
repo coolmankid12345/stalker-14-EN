@@ -76,7 +76,7 @@
       portalName: _PortalBandFreedomRepositoryPortal
       cooldownEnabled: false
       cooldownTime: 0
-      godmodeCooldown: 0
+      #godmodeCooldown: 0 # Stalker-TODO: This field does not exist!
 
 # Repository for FreedomBand - End
 
@@ -138,7 +138,7 @@
       portalName: _PortalBandDolgRepositoryPortal
       cooldownEnabled: false
       cooldownTime: 0
-      godmodeCooldown: 0
+      #godmodeCooldown: 0 # Stalker-TODO: This field does not exist!
 
 # Repository for DebtBand - End
 
@@ -183,7 +183,7 @@
       portalName: _PortalBandRenegatRepositoryPortal
       cooldownEnabled: false
       cooldownTime: 0
-      godmodeCooldown: 0
+      #godmodeCooldown: 0 # Stalker-TODO: This field does not exist!
 
 # Repository for RenegadesBand - End
 
@@ -332,7 +332,7 @@
       portalName: _PortalBandCovenantRepositoryPortal
       cooldownEnabled: false
       cooldownTime: 0
-      godmodeCooldown: 0
+      #godmodeCooldown: 0 # Stalker-TODO: This field does not exist!
 
 # Repository for Covenant - End
 
@@ -377,7 +377,7 @@
       portalName: _PortalBandBanditsRepositoryPortal
       cooldownEnabled: false
       cooldownTime: 0
-      godmodeCooldown: 0
+      #godmodeCooldown: 0 # Stalker-TODO: This field does not exist!
 
 # Repository for Bandits - End
 
@@ -452,7 +452,7 @@
       portalName: _PortalBandClearskyRepositoryPortal
       cooldownEnabled: false
       cooldownTime: 0
-      godmodeCooldown: 0
+      #godmodeCooldown: 0 # Stalker-TODO: This field does not exist!
 
 # Repository for Clearsky - End
 
@@ -497,7 +497,7 @@
       portalName: _PortalBandMercRepositoryPortal
       cooldownEnabled: false
       cooldownTime: 0
-      godmodeCooldown: 0
+      #godmodeCooldown: 0 # Stalker-TODO: This field does not exist!
 
 # Repository for Mercenaries - End
 
@@ -572,7 +572,7 @@
       portalName: _PortalBandAnomalistRepositoryPortal
       cooldownEnabled: false
       cooldownTime: 0
-      godmodeCooldown: 0
+      #godmodeCooldown: 0 # Stalker-TODO: This field does not exist!
 
 # Repository for Anomalist - End
 

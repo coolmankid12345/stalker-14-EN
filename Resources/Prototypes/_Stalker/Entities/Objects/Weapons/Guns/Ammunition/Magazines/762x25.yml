@@ -183,7 +183,7 @@
   name: магазин ППС (35)
   description: Магазин для ППС-43. Вместимость пуль 35. Продают пустым.
   parent: BaseItem
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STBulkBuyable # stalker-14-en
     maxQuantity: 10

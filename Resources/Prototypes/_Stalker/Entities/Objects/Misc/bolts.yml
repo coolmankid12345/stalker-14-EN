@@ -42,7 +42,6 @@
       stackType: STBolt
       throwIndividually: true
       count: 1
-      maxCount: 3
     - type: Trash
       time: 21600
 

@@ -9,7 +9,7 @@
     detectedLevel: 0
     preparingDelay: 0
     activationDelay: 60
-    chargingDelay: 5
+    chargeTime: 5
   - type: Sprite
     sprite: _Stalker/Objects/Anomalies/lamp.rsi
     layers:
@@ -70,7 +70,7 @@
     detectedLevel: 4
     preparingDelay: 0
     activationDelay: 1
-    chargingDelay: 1
+    chargeTime: 1
   - type: Stealth
   - type: Sprite
     sprite: _Stalker/Objects/Other/Anomalys/rift.rsi

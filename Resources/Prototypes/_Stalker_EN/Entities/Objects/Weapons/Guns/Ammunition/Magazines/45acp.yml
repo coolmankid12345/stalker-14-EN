@@ -4,7 +4,7 @@
   name: Desert Eagle Magazine
   description: A magazine for .45ACP, fitted for use with desert eagle handguns. They sell empty.
   parent: BaseItem
-  tag: Stalker
+  suffix: Stalker
   categories: [ HideSpawnMenu ]
   components:
   - type: STWeight
@@ -38,7 +38,7 @@
   id: DEMag8
   name: Desert Eagle Magazine (8)
   parent: BaseDEMag
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: BallisticAmmoProvider
     proto:
@@ -59,7 +59,7 @@
   id: DEMag15
   name: Desert Eagle Magazine (15)
   parent: BaseDEMag
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: BallisticAmmoProvider
     proto:

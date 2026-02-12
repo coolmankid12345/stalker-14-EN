@@ -37,7 +37,7 @@
       detectedLevel: 0
       preparingDelay: 0
       activationDelay: 0
-      chargingDelay: 0.05
+      chargeTime: 0.05
     - type: Sprite
       sprite: _Stalker/Objects/Other/Anomalys/kissel.rsi
       layers:

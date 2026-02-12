@@ -17,8 +17,6 @@
       stampedColor: "#3681bb"
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
-    closeOnHandDeselect: true
-    requireHands: true
   - type: UserInterface
     interfaces:
       enum.PaperUiKey.Key:
