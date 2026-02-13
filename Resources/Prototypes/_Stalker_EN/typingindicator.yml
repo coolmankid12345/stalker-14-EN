@@ -77,3 +77,9 @@
   typingState: sci0
   idleState: sci1
   offset: -0.055, 0
+
+- type: typingIndicator
+  id: rookie
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: sprout0
+  idleState: sprout1
