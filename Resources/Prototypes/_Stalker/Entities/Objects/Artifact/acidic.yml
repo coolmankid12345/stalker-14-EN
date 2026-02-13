@@ -187,7 +187,7 @@
   - type: PersonalDamage
     damage:
       types:
-        Piercing: -1.5
+        Piercing: -0.7
         Blunt: -1
         Bloodloss: -2
         Radiation: -1.5
