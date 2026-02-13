@@ -187,5 +187,21 @@
   id: 20
   time: '2026-02-13T18:36:36.042530+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/395
+- author: teecoding
+  changes:
+  - message: Stash portals no longer crash the server when the arena map fails to
+      load
+    type: Fix
+  - message: Band portals now use a proper cooldown instead of permanently blocking
+      re-entry
+    type: Fix
+  - message: Access level names on portals and ID cards now display in English instead
+      of raw locale keys
+    type: Fix
+  - message: Guide access level no longer shows hardcoded Russian text
+    type: Fix
+  id: 21
+  time: '2026-02-13T18:39:03.850461+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/396
 Name: Stalker
 Order: -1
