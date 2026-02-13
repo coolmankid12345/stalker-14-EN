@@ -2,6 +2,8 @@
 
 # Welcome to S.T.A.L.K.E.R. SS14 EN!
 
+<Box>[bold]New players start as Rookies![/bold] Play for 10 hours to unlock the full Loner role.</Box>
+
 <Box>Don't forget to follow the rules.[/bold] They can be found here:</Box>
 <Box>[color=blue]https://discord.gg/SnUSV76zR3[/color]</Box>
 You can ask a question or write about a violation of the rules to [color=#EB2D3A][bold]administration[/bold][/color] using [bold]AHelp[/bold]. ([italic] opens when you press [/italic][color=yellow][bold][keybind="OpenAHelp"/][/bold][/color])
@@ -27,7 +29,11 @@ When creating a character - be careful and attentive, since the server does not 
   </Box>
 
 [bold]First steps[/bold]:
-The first place you appear on the server is Purgatory. The initial spawn hub, from where you and the rest of the players will have to choose your spawn location. The most beginner-friendly option is the village. This is a safe area with a merchant, a personal stash, and a fire. If you go down to the basement of the village, you can find a descent to the stash (called the Lair), in which your belongings are stored. Click on the blue machine to open the stash interface. At the start, everyone has a starting capital of [color=yellow] 2 thousand rubles[/color]. When you click the "take" button, don't forget to pick up your money as it appears next to the storage machine. After taking it, find the basement of Sidorovich, the local NPC trader. There you can buy basic equipment.
+The first place you appear on the server is Purgatory. The initial spawn hub, from where you and the rest of the players will have to choose your spawn location.
+
+[bold][color=yellow]New players start as Rookies[/color][/bold] with a distinct hand-stitched patch instead of a full Loner dogtag. As a Rookie, you should head to [bold]Rookie Village[/bold] — not Bar. The teleporter to Bar is locked until you have [bold]10 hours[/bold] of playtime. Once you reach 10 hours, the full [bold]Loner[/bold] role unlocks in the job menu.
+
+The most beginner-friendly option is the village. This is a safe area with a merchant, a personal stash, and a fire. If you go down to the basement of the village, you can find a descent to the stash (called the Lair), in which your belongings are stored. Click on the blue machine to open the stash interface. At the start, everyone has a starting capital of [color=yellow] 2 thousand rubles[/color]. When you click the "take" button, don't forget to pick up your money as it appears next to the storage machine. After taking it, find the basement of Sidorovich, the local NPC trader. There you can buy basic equipment.
 
   <Box>
     <GuideEntityEmbed Entity="Roubles" Caption=""/>

@@ -210,5 +210,29 @@
   id: 22
   time: '2026-02-13T18:44:15.985435+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/398
+- author: teecoding
+  changes:
+  - message: Rookie role for new players with under 10 hours of playtime
+    type: Add
+  - message: Rookies are restricted to Cordon stash only until they reach 10 hours
+      of playtime
+    type: Add
+  - message: Loner role now requires 10 hours of overall playtime to unlock
+    type: Tweak
+  - message: updated new player guide to mention Rookie role and progression
+    type: Tweak
+  - message: updated faction rules (C11) to mention Rookie role
+    type: Tweak
+  id: 23
+  time: '2026-02-13T22:10:15.969686+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/399
+- author: teecoding
+  changes:
+  - message: Fixed a bug where reconnecting after dying in your stash could put you
+      into an observer object
+    type: Fix
+  id: 24
+  time: '2026-02-13T22:13:31.279337+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/400
 Name: Stalker
 Order: -1

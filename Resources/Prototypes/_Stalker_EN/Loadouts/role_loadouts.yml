@@ -5,3 +5,11 @@
   - StalkerJeans
   - StalkerShirt
   - StalkerBag
+
+- type: roleLoadout
+  id: JobStalkerRookie
+  groups:
+  - StalkerJacket
+  - StalkerJeans
+  - StalkerShirt
+  - StalkerBag
