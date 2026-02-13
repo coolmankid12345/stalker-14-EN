@@ -321,10 +321,7 @@
   - type: StaminaDecayModifier
   - type: StaminaCritThresholdModifier
   - type: RespawnOnDeath
-  - type: ApproachEmitter
-    range: 30
-    minRange: 20
-    useMinRange: true
+  - type: ApproachEmitter # ST14-EN: removed params
   - type: BlowoutTarget
   - type: STEvasion
     evasion: 0.01
