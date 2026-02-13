@@ -4,4 +4,4 @@ job-stalker-rookie-supervisor = Sidorovich and anyone willing to help
 
 id-card-access-level-rookie = Rookie
 
-rookie-stash-denied = As a Rookie, you can only access your stash in Cordon. Explore the Zone to unlock other stashes.
+rookie-stash-denied = As a Rookie, you can only access your stash in Cordon. Gain more experience in the Zone to unlock other stashes.
