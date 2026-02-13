@@ -94,7 +94,7 @@
     damage:
       types:
         Radiation: 1.5
-        Shock: 0.5
+        Shock: 1.5
     interval: 1
   - type: Armor
     hiddenExamine: true

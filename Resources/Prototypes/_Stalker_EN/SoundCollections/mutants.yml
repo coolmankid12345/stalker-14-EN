@@ -33,3 +33,10 @@
   - /Audio/Voice/Human/malescream_3.ogg
   - /Audio/Voice/Human/malescream_4.ogg
   - /Audio/Voice/Human/malescream_5.ogg
+
+- type: soundCollection
+  id: PsiVoice
+  files:
+  - /Audio/_Stalker_EN/Effects/psivoice1.ogg
+  - /Audio/_Stalker_EN/Effects/psivoice2.ogg
+  - /Audio/_Stalker_EN/Effects/psivoice3.ogg

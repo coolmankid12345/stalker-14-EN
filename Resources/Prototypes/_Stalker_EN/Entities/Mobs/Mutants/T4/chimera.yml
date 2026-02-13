@@ -10,6 +10,17 @@
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: alive
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damage:
+      types:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Psy: -100
+        Radiation: -100  
   - type: DamageStateVisuals
     states:
       Alive:

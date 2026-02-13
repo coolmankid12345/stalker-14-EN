@@ -239,6 +239,7 @@
   - name: shop-category-utilities
     priority: 8
     items:
+      STRadioHeadset: 150
       STScrewdriver: 200
       STCraftFurniture: 400
       longrangemetaldetector: 1500

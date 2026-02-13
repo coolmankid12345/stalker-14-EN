@@ -159,6 +159,7 @@
   id: SciGear
   equipment:
     id: ScientistPDA
+    neck: ClothingNeckDogtagEco # EN
 
 - type: stBand
   id: STSciBand
@@ -195,12 +196,9 @@
   id: SciGear3
   equipment:
     id: ScientistPDA
-    legs: ClothingLegsJeansSandCargo
-    shoes: STClothingShoesBootsCombatFilled
-    torso: ClothingTorsoShirtWhiteScientific
+    neck: ClothingNeckDogtagEcoLeader # EN
     outerClothing: ClothingOuterCoatRD
     head: ClothingHeadBeretUN
-    eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesNitrile
 
 # - type: stBand # Stalker-TODO: Why not combine them all under "STSciBand" band prototype? Also, factionId "ScientistsRector" does not exist!

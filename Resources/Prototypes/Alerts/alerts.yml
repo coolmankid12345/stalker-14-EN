@@ -139,8 +139,7 @@
 
 - type: alert
   id: Stun
-  icons:
-  - sprite: [ /Textures/_Stalker/Interface/Alerts/stun.png ]
+  icons: [ /Textures/_Stalker/Interface/Alerts/Stun/stun.png ]
   name: alerts-stunned-name
   description: alerts-stunned-desc
 

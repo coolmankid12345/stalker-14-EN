@@ -205,6 +205,7 @@
   - name: shop-category-utilities
     priority: 8
     items:
+      STRadioHeadset: 150
       STSkinsKitDolg: 500
       STCombatKnife: 25
       LgbtKnife: 30

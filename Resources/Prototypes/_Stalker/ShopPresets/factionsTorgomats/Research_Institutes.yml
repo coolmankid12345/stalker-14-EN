@@ -114,6 +114,7 @@
       45ACPMFMJBox: 250
       6mmBuckshotBox: 115
       7mmBuckshotBox: 45
+      8mmBuckshotBox: 420
       545HPBox: 200
       545FMJBox: 170
       545PCBox: 2000
@@ -137,9 +138,10 @@
       ClothingOuterArmorSSP24Sapfire: 4225
       ClothingOuterArmorSevaSciWhite: 4000
       ClothingOuterArmorSSP99: 4100
+      ClothingOuterArmorSSP24Ruby: 4100
       ClothingOuterArmorUzk5: 5500
       STClothingNeckExoskeletonSci: 8000
-
+      STClothingOuterArmorVeryHeavySci: 8000
   - name: shop-category-storage-and-containers
     priority: 5
     items:
@@ -184,6 +186,7 @@
   - name: shop-category-utilities
     priority: 8
     items:
+      STRadioHeadset: 150
       ToolkitTearTwo: 5000
       STCombatKnife: 25
       BoxZiptie: 50

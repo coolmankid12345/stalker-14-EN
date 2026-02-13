@@ -54,7 +54,7 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: 0.3
+        Heat: 1.2
         Compression: -1
         Cold: -1.5
         Bloodloss: -1
@@ -177,10 +177,10 @@
   - type: PersonalDamage
     damage:
       types:
-        Caustic: 0.4
+        Caustic: 1.4
         Heat: -1
         Bloodloss: -5
-        Shock: 0.7
+        Shock: 1.7
     interval: 1
   - type: Armor
     hiddenExamine: true
