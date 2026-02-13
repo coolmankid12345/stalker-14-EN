@@ -234,5 +234,14 @@
   id: 24
   time: '2026-02-13T22:13:31.279337+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/400
+- author: teecoding
+  changes:
+  - message: Thief anomaly now throws your items instead of destroying them
+    type: Tweak
+  - message: Weak and strong thief anomaly variants
+    type: Add
+  id: 25
+  time: '2026-02-13T22:25:48.261361+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/401
 Name: Stalker
 Order: -1
