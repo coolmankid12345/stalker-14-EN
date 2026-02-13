@@ -13,6 +13,7 @@
   metamorphicChangeColor: false
   recognizable: true
   standsout: true
+  evaporationSpeed: 0.15 # stalker EN
   physicalDesc: reagent-physical-desc-ferrous
   metabolisms:
     Drink:
