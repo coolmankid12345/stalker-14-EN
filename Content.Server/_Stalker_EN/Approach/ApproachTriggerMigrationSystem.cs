@@ -1,6 +1,7 @@
 using Content.Server._Stalker.ApproachEmitter;
 using Content.Server._Stalker.ApproachTrigger;
-using Content.Server.Explosion.Components;
+using Content.Shared.Trigger.Components.Triggers;
+using Content.Shared.Trigger.Systems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Utility;
