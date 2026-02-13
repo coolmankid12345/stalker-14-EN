@@ -4,6 +4,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Utility;
 using Robust.Shared.Timing;
+using Content.Server._Stalker_EN.Approach; // ST14-EN/ST14 addition
 
 namespace Content.Server.Explosion.EntitySystems;
 
@@ -68,6 +69,19 @@ public sealed partial class TriggerSystem
     {
         if (args.OurFixtureId != TriggerOnProximityComponent.FixtureID)
             return;
+
+        // ST14-EN/ST14 change start
+        // raise ev both on us and collider
+        // Events Keep Winning
+        var attemptEv = new AttemptTriggerOnProximityStartColliding(uid, args.OtherEntity, true);
+        RaiseLocalEvent(uid, ref attemptEv);
+        if (!attemptEv.Allowed)
+            return;
+
+        RaiseLocalEvent(args.OtherEntity, ref attemptEv);
+        if (!attemptEv.Allowed)
+            return;
+        // ST14-EN/ST14 change end
 
         component.Colliding[args.OtherEntity] = args.OtherBody;
     }

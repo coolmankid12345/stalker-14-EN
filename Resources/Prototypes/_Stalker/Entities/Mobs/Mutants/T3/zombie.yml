@@ -65,9 +65,8 @@
           25
         AggroVisionRadius: !type:Single
           20
-    - type: ApproachEmitter
-      range: 0
-      useMinRange: false
+    - type: ApproachEmitter # ST14-EN: changed zeroing to be `enabled: false`
+      enabled: false
     - type: STWeight
       self: 90
     - type: Tag

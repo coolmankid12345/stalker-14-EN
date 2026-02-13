@@ -23,9 +23,8 @@
         - type: Access
           tags:
             - Greh
-        - type: ApproachEmitter
-          range: 0
-          useMinRange: false
+        - type: ApproachEmitter # ST14-EN: changed zeroing to be `enabled: false`
+          enabled: false
         - type: Bands
           band: Stalker
           bandIcon: greh
@@ -73,4 +72,3 @@
   managingRankId: 3
   hierarchy:
     1: StalkerGreh
-

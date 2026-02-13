@@ -1,11 +1,23 @@
-﻿using Content.Server._Stalker.ApproachTrigger;
+﻿/*
+    ST14-EN:
+        This entitysystem has been changed to do nothing as it is no longer needed,
+            because ApproachTriggerMigrationSystem makes this use TriggerOnProximityComponent.
+            However, it is kept around to make sure nothing breaks and merge conflicts
+            are less painful.
+*/
+
+/*
+using Content.Server._Stalker.ApproachTrigger;
 using Content.Server.Explosion.EntitySystems;
 using Robust.Shared.Timing;
+*/
 
 namespace Content.Server._Stalker.ApproachEmitter;
 
+[Obsolete] // ST14-EN addition; this is replaced by TriggerOnProximityComponent
 public sealed class ApproachEmitterSystem : EntitySystem
 {
+    /*
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly TriggerSystem _trigger = default!;
@@ -56,4 +68,5 @@ public sealed class ApproachEmitterSystem : EntitySystem
 
         return maxRange;
     }
+    */
 }
