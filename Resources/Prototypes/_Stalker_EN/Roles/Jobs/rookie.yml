@@ -1,0 +1,52 @@
+- type: startingGear
+  id: StalkerRookieGear
+  equipment:
+    id: StalkerPDA
+    neck: ClothingNeckDogtagRookie
+    belt: ClothingBeltBandolierStalker
+    shoes: ClothingShoesNovice
+    pocket1: STShiv
+    pocket2: 7mmBuckshotBox
+    mask: ClothingMaskGasMarlya
+    suitstorage: STWeaponShotgunMP155T
+
+- type: job
+  id: StalkerRookie
+  name: job-stalker-rookie
+  icon: rookie
+  description: job-stalker-rookie-desc
+  playTimeTracker: JobStalkerRookie
+  whitelisted: false
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+      - Gingerbread
+      - HumanFat
+    - !type:OverallPlaytimeRequirement
+      time: 10h
+      inverted: true
+  startingGear: StalkerRookieGear
+  supervisors: job-stalker-rookie-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: NpcFactionMember
+        factions:
+        - Stalker
+      - type: Access
+        tags:
+          - Rookie
+      - type: Bands
+        band: Stalker
+        bandIcon: rookie
+        bandProto: STStalkerBand
+        bandRankId: 1
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3

@@ -125,14 +125,28 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
     }
     private void OnStartCollide(EntityUid uid, NewMapTeleportComponent component, ref StartCollideEvent args)
     {
+        if (component.IsCollisionDisabled)
+            return;
+        var subject = args.OtherEntity;
+
+        // stalker-changes: Check NoobDenyer before access so Rookies get a helpful message instead of silent denial
+        if (HasComp<NoobDenyerComponent>(uid) && TryComp<ActorComponent>(subject, out var actorComponent))
+        {
+            var session = actorComponent.PlayerSession;
+            var playtime = _playTimeTrackingManager.GetOverallPlaytime(session).TotalHours;
+
+            if (playtime < 10)
+            {
+                _popup.PopupEntity("As a Rookie, you cannot teleport to Bar yet. Follow the arrows on the floor to Rookie Village.", subject);
+                return;
+            }
+        }
+
         if (!component.AllowAll)
         {
             if (!_accessReaderSystem.IsAllowed(args.OtherEntity, args.OurEntity))
                 return;
         }
-        if (component.IsCollisionDisabled)
-            return;
-        var subject = args.OtherEntity;
 
         // If there is a timeout on a person we just return out of a function not to teleport that entity back.
         if (TryComp<PortalTimeoutComponent>(subject, out var timeoutComponent) && component.CooldownEnabled && timeoutComponent.Cooldown != null)
@@ -145,18 +159,6 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
 
         if (_pulling.IsPulling(subject) || _pulling.IsPulled(subject))
             return;
-
-        if (HasComp<NoobDenyerComponent>(uid) && TryComp<ActorComponent>(subject, out var actorComponent))
-        {
-            var session = actorComponent.PlayerSession;
-            var playtime = _playTimeTrackingManager.GetOverallPlaytime(session).TotalHours;
-
-            if (playtime < 2)
-            {
-                _popup.PopupEntity("You need at least 2 hours of playtime to go to Bar. Follow the arrows on the floor to Rookie Village.", subject);
-                return;
-            }
-        }
 
         // If there are no linked entity - link one
         if (!TryComp<LinkedEntityComponent>(uid, out var link))

@@ -297,3 +297,18 @@
   - type: Currency
     price:
       PremiumSupplyTalons: 2
+
+- type: entity
+  parent: ClothingNeckDogtagBase
+  id: ClothingNeckDogtagRookie
+  name: rookie dogtag
+  description: A scratched, unmarked dogtag given to newcomers in the Zone. Sidorovich won't engrave a real Loner tag until you've proven you can survive.
+  suffix: ST, Stalkers, Rookie
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/rookie.rsi
+  - type: TypingIndicatorClothing
+    proto: rookie
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 0

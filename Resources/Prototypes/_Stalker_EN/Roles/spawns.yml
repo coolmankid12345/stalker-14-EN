@@ -1,0 +1,12 @@
+- type: entity
+  id: SpawnPointStalkerRookie
+  parent: SpawnPointJobBase
+  name: Rookie Job Spawn
+  suffix: Stalker, Rookie
+  components:
+    - type: SpawnPoint
+      job_id: StalkerRookie
+    - type: Sprite
+      layers:
+        - state: green
+        - state: security_officer
