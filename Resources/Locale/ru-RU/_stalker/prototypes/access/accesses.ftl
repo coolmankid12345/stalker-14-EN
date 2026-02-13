@@ -42,6 +42,7 @@ id-card-access-level-journalist = База журналистов
 id-card-access-level-stalker = Одиночка
 id-card-access-level-neutral = Нейтралы
 id-card-access-level-veteran = Ветераны
+id-card-access-level-guide = Проводник
 
 id-card-access-level-mercenary = База Наёмников
 id-card-access-level-head-of-mercenary = Глава Наёмников
