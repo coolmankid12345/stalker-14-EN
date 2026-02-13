@@ -169,5 +169,16 @@
   id: 18
   time: '2026-02-06T20:01:07.110967+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/391
+- author: teecoding
+  changes:
+  - message: Emission red overlay is now visible again during blowout events
+    type: Fix
+  - message: Day/night cycle restored on Svalka, Red Forest, Yantar, and Rostok maps
+    type: Fix
+  - message: Sun shadows on Svalka, Red Forest, and Yantar maps
+    type: Add
+  id: 19
+  time: '2026-02-13T18:28:04.942869+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/394
 Name: Stalker
 Order: -1
