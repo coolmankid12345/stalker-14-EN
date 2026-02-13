@@ -77,13 +77,6 @@
     needsHands: false
   - type: NPCRetaliation
     attackMemoryLength: 30 # 30 what?
-  - type: PassiveDamage
-    allowedStates:
-    - Alive
-    damageCap: 700
-    damage:
-      types:
-        Bloodloss: -0.75
   - type: NpcFactionMember
     factions:
     - Izlom
