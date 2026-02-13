@@ -504,6 +504,7 @@ namespace Content.Server.Ghost
             {
                 if (adminObserve != true)
                 {
+                    QueueDel(ghost); // clean up orphaned MobObserver to prevent entity leak
                     if (session != null)
                         _gameTicker.Respawn(session);
                     return null;
