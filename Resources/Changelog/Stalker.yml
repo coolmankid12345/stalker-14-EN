@@ -180,5 +180,12 @@
   id: 19
   time: '2026-02-13T18:28:04.942869+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/394
+- author: teecoding
+  changes:
+  - message: PDA flashlight no longer toggles when pressing E to open the PDA
+    type: Fix
+  id: 20
+  time: '2026-02-13T18:36:36.042530+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/395
 Name: Stalker
 Order: -1
