@@ -243,5 +243,13 @@
   id: 25
   time: '2026-02-13T22:25:48.261361+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/401
+- author: teecoding
+  changes:
+  - message: Admin observe no longer respawns you as a new character instead of making
+      you an observer
+    type: Fix
+  id: 26
+  time: '2026-02-13T22:28:48.051243+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/402
 Name: Stalker
 Order: -1
