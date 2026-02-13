@@ -4,8 +4,8 @@
   name: Desert Eagle Magazine (.44 Magnum)
   description: You're gonna kill someone with this.
   parent: BaseItem
-  tag: Stalker
-  suffix: DO NOT MAP
+  suffix: Stalker
+  categories: [ DoNotMap ]
   components:
   - type: STWeight
     self: 0.5

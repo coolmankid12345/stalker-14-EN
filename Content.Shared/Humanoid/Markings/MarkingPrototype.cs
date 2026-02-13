@@ -1,9 +1,10 @@
+using Content.Shared._Stalker_EN.RemovableMarkings; // STALKER-EN/ST14-EN addition
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid.Markings
 {
-    [Prototype("marking")]
+    [Prototype]
     public sealed partial class MarkingPrototype : IPrototype
     {
         [IdDataField]
@@ -32,8 +33,23 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("coloring")]
         public MarkingColors Coloring { get; private set; } = new();
 
+        /// <summary>
+        /// Do we need to apply any displacement maps to this marking? Set to false if your marking is incompatible
+        /// with a standard human doll, and is used for some special races with unusual shapes
+        /// </summary>
+        [DataField]
+        public bool CanBeDisplaced { get; private set; } = true;
+
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
+
+        // STALKER-EN/ST14-EN addition
+        /// <summary>
+        ///     If not null then this marking is forcefully removable, if the entity with it
+        ///         has <see cref="RemovableMarkingsComponent"/> with matching <see cref="RemovableMarkingFlags"/>.
+        /// </summary>
+        [DataField]
+        public RemovableMarkingFlags RemovabilityFlags { get; private set; } = RemovableMarkingFlags.None;
 
         public Marking AsMarking()
         {

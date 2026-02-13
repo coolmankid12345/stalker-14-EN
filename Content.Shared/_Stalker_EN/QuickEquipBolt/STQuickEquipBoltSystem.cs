@@ -61,13 +61,13 @@ public sealed class STQuickEquipBoltSystem : EntitySystem
         if (session?.AttachedEntity is not { Valid: true } uid || !Exists(uid))
             return;
 
-        if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHand == null)
+        if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHandId == null)
             return;
 
         if (!_actionBlocker.CanInteract(uid, null))
             return;
 
-        if (!_hands.TryGetEmptyHand(uid, out _, hands))
+        if (!_hands.TryGetEmptyHand((uid, hands), out _))
         {
             _popup.PopupClient(Loc.GetString("st-quick-equip-bolt-hands-full"), uid, uid);
             return;

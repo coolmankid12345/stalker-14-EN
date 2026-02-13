@@ -141,12 +141,48 @@
   components:
     - type: Access
       tags:
-        - Sci
+        - SciBase
     - type: Bands
       band: Stalker
       bandIcon: sci
     - type: Loadout
       prototypes: [ SciGear ]
+    - type: NpcFactionMember
+      factions:
+      - Scientists
+
+- type: entity
+  name: кукла декан (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSci_decan
+  components:
+    - type: Access
+      tags:
+        - SciBase # Stalker-TODO: It was "Sci" before, but it does not exist!
+    - type: Bands
+      band: Stalker
+      bandIcon: sci_decan
+    - type: Loadout
+      prototypes: [ SciGear2 ]
+    - type: NpcFactionMember
+      factions:
+      - Sci
+
+- type: entity
+  name: кукла ректор (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSci_rector
+  components:
+    - type: Access
+      groups:
+        - Sci
+    - type: Bands
+      band: Stalker
+      bandIcon: sci_rector
+    - type: Loadout
+      prototypes: [ SciGear3 ]
     - type: NpcFactionMember
       factions:
       - Sci
@@ -246,7 +282,7 @@
   - type: Access
     tags:
     - Project
-    - ProjectPawn
+    #- ProjectPawn # Stalker-TODO: This access does not exist
     - Stalker
   - type: Bands
     band: Stalker

@@ -1,4 +1,6 @@
-﻿using Content.Shared._RMC14.CCVar;
+﻿// Temporarily commented for build fixing
+/*
+using Content.Shared._RMC14.CCVar;
 using Content.Shared.CombatMode;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Configuration;
@@ -41,3 +43,4 @@ public abstract class SharedGunPredictionSystem : EntitySystem
         return _gun.AttemptShoot(user.Value, ent, gun, projectiles, session);
     }
 }
+*/

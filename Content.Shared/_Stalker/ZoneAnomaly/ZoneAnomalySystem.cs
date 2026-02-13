@@ -63,7 +63,8 @@ public sealed class ZoneAnomalySystem : SharedZoneAnomalySystem
 
     private void OnStartCollide(Entity<ZoneAnomalyComponent> anomaly, ref StartCollideEvent args)
     {
-        if (_whitelistSystem.IsBlacklistPass(anomaly.Comp.CollisionBlacklist, args.OtherEntity))
+        // FIXME: CollisionBlacklist is named as blacklist but used as whitelist - skip if entity matches
+        if (_whitelistSystem.IsWhitelistPass(anomaly.Comp.CollisionBlacklist, args.OtherEntity))
             return;
 
         TryAddEntity(anomaly, args.OtherEntity);

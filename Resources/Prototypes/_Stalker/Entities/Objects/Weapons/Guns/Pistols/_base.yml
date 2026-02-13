@@ -72,3 +72,4 @@
     falloffMultiplier: 0.6
   - type: STWeaponAccuracy
     accuracyMultiplierUnwielded: 1.2
+    modifiedAccuracyMultiplier: 1.2

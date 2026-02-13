@@ -25,12 +25,8 @@
     factions:
     - Mutated
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: alive
-      sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/AKS-74/Armed/marlya.rsi
-  - type: BatterySelfRecharger
-    autoRecharge: true
+    sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/AKS-74/Armed/marlya.rsi
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
   - type: Gun
     minAngle: 1
@@ -76,7 +72,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
       sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/AKS-74/Armed/marlya.rsi
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 3.3
   - type: Gun
@@ -102,7 +98,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
       sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/L85/Armed/gas1.rsi
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet556M855
     fireCost: 3.3
   - type: Gun
@@ -128,7 +124,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
       sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/LR-300/Armed/balaklava.rsi
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet556M855
     fireCost: 3.3
   - type: Gun
@@ -162,7 +158,7 @@
       0: Alive
       20: Critical
       21: Dead
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 3.3
   - type: Gun

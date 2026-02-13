@@ -1,4 +1,4 @@
-using Content.Server.Atmos.Components;
+using Content.Shared.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared._Stalker_EN.FirePat;
 using Content.Shared.IdentityManagement;
@@ -34,7 +34,7 @@ public sealed class STFirePatSystem : SharedSTFirePatSystem
         if (curTime < patter.LastPatTime + patter.Cooldown)
             return;
 
-        if (_whitelist.IsBlacklistPass(patter.Blacklist, target))
+        if (_whitelist.IsWhitelistPass(patter.Blacklist, target))
             return;
 
         patter.LastPatTime = curTime;

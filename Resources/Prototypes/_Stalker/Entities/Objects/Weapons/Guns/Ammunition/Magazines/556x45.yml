@@ -3,13 +3,12 @@
   name: магазин 5,56 (10)
   description: Магазин 5,56 для штурмовых винтовок. Вместимость пуль 10. Продают пустым.
   parent: Base545Mag10
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: Tag
     tags:
       - Magazine556
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -67,7 +66,7 @@
   name: магазин 5,56 (20)
   description: Магазин 5,56 для штурмовых винтовок. Вместимость пуль 20. Продают пустым.
   parent: Base556Mag10
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.25
@@ -116,7 +115,7 @@
   name: магазин 5,56 (30)
   description: Магазин 5,56 для штурмовых винтовок. Вместимость пуль 30. Продают пустым.
   parent: Base556Mag10
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.3
@@ -165,7 +164,7 @@
   name: магазин 5,56 (45)
   description: Магазин 5,56 для штурмовых винтовок. Вместимость пуль 45. Продают пустым.
   parent: Base556Mag10
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.35
@@ -214,7 +213,7 @@
   name: магазин 5,56 (60)
   description: Магазин 5,56 для штурмовых винтовок. Вместимость пуль 60. Продают пустым.
   parent: Base556Mag10
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.5
@@ -271,7 +270,6 @@
         - Box556
         - Magazine556
     - type: BallisticAmmoProvider
-      proto:
       capacity: 100
       whitelist:
         tags:

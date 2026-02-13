@@ -4,7 +4,7 @@
   parent: STBaseItem
   id: STJewelrySilver
   name: Jewelry silver
-  desciption: Silver jewelry, which you can make not bad money on!
+  description: Silver jewelry, which you can make not bad money on!
   suffix: ST, Jewelry
   components:
     - type: Sprite
@@ -18,7 +18,7 @@
   parent: STBaseItem
   id: STJewelryGold
   name: Jewelry gold
-  desciption: Gold jewelry, which you can make good money on!
+  description: Gold jewelry, which you can make good money on!
   suffix: ST, Jewelry
   components:
     - type: Sprite

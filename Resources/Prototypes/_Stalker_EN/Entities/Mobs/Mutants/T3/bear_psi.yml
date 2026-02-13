@@ -51,7 +51,7 @@
     - id: FoodMeatSTBear
       maxAmount: 1
     - id: MutantPartBearEye
-      Amount: 1
+      amount: 1
     - id: STJunkTag
       maxAmount: 1
       prob: 0.01
@@ -80,7 +80,7 @@
         Blunt: 8
   - type: MeleeThrowOnHit # psionic ability
     speed: 6
-    lifetime: 0.3
+    distance: 2
   - type: StaminaDamageOnHit
     damage: 15
   - type: NPCUseAction

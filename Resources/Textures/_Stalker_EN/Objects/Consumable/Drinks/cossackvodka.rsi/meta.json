@@ -5,7 +5,7 @@
         "y": 32
     },
     "license": "shrug",
-    "copyright": "Peter Poley, i guess",
+    "copyright": "Stalker14 CLA, author: Peter Poley, i guess",
     "states": [
         {
             "name": "icon"
@@ -37,6 +37,30 @@
         },
         {
             "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left-fill-1",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left-fill-2",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left-fill-3",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right-fill-1",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right-fill-2",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right-fill-3",
             "directions": 4
         }
     ]

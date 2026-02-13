@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterArmorHeavyJaba
+  parent: STClothingOuterArmorVeryHeavy
   id: ClothingOuterArmorPSZ9D
   name: ПСЗ-9Д
   description: Костюм Специального Назначения.
@@ -11,6 +11,18 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/psz9d.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/psz9d.rsi
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 8
+        Piercing: 8
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.5
+        Piercing: 0.7
+        Compression: 0.9
 
 - type: entity
   parent: ClothingOuterArmorPSZ9D
@@ -48,26 +60,42 @@
         Slash: 0.80
         Piercing: 0.55
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
-      - 0,2,0,3
-      - 0,-2,0,0
-      - 2,2,2,3
-      - 2,-1,3,-0
-      - 4,2,4,3
-      - 5,-1,6,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 8,-2,8,0
+      - 0,4,0,5
+      - 0,0,0,2
+      - 2,4,2,5
+      - 2,1,3,2
+      - 4,4,4,5
+      - 5,1,6,2
+      - 6,4,6,5
+      - 8,4,8,5
+      - 8,0,8,2
 
 - type: entity
   parent: STClothingOuterArmorSeraphimStrash
   id: STClothingOuterArmorLimaSeraphimStrash
   name: бронекостюм «Страж»
-  suffix: ST, T3, PvP
+  suffix: ST, T4, PvP
   description: Старый, видавший многое булат из арсенала «Монолита», покрытый следами времени и ожесточённых сражений. Несмотря на свой возраст, он всё ещё остаётся надёжным щитом, защищающим своего владельца от опасностей Зоны. Камуфляж Серафимов придаёт ему уникальный облик, а многочисленные молитвенные знаки и священные обереги, нанесённые заботливой рукой, делают его не просто бронёй, а истинным талисманом веры и силы... Теперь серый!
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/_Sera/strash_limaphim.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/_Sera/strash_limaphim.rsi
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 4
+        Slash: 6
+        Piercing: 7
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+        Radiation: 0.85
+        Caustic: 0.85
+        Shock: 0.8
+        Compression: 0.7

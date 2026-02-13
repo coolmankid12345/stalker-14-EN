@@ -25,7 +25,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Electrified
-    ignoreInsulation: true
+    #ignoreInsulation: true # This field does not exist!
     shockDamage: 40
     shockTime: 0.5
   - type: TimedDespawn

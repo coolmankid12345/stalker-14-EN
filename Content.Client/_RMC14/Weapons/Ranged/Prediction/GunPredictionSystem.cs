@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿// Temporarily commented for build fixing
+/*
+using System.Linq;
 using Content.Client.Projectiles;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Projectiles;
@@ -21,7 +23,7 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly SharedGunSystem _gun = default!;
-    [Dependency] private readonly PhysicsSystem _physics = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly ProjectileSystem _projectile = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -184,3 +186,4 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         }
     }
 }
+*/

@@ -1,7 +1,7 @@
 using Content.Shared._Stalker.Shop;
 using Content.Shared._Stalker.Shop.Prototypes;
-using Content.Shared._Stalker_EN.Shop.Buyback; // stalker-changes-en: buyback system
 using Content.Shared._Stalker_EN.Shop;
+using Content.Shared._Stalker_EN.Shop.Buyback; // stalker-changes-en: buyback system
 using JetBrains.Annotations;
 
 namespace Content.Client._Stalker.Shop.Ui;
@@ -21,6 +21,8 @@ public sealed class ShopBoundUserInterface : BoundUserInterface
 
     protected override void Open()
     {
+        base.Open();
+
         _menu = new ShopMenu();
         _menu.OpenCentered();
 

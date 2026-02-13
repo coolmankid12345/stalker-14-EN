@@ -135,7 +135,7 @@
       allowAll: false
       cooldownEnabled: true
       cooldownTime: 30
-      godmodeCooldown: 5
+      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
     - type: AccessReader
       access: [["SciBase"]]
 
@@ -160,7 +160,7 @@
       allowAll: false
       cooldownEnabled: true
       cooldownTime: 0
-      godmodeCooldown: 5
+      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
     - type: AccessReader
       access: [["SciBase"]]
 
@@ -484,7 +484,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Lobby-Jaba
-  noSpawn: false
   name: Lobby-Jaba
   components:
     - type: NewMapTeleport
@@ -496,7 +495,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Lobby-JabaUncollide
-  noSpawn: false
   name: Lobby-JabaUncollide
   components:
     - type: NewMapTeleport
@@ -510,7 +508,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Lobby-Clear-Sky
-  noSpawn: false
   name: Lobby-Clear-Sky
   components:
     - type: NewMapTeleport
@@ -522,7 +519,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Lobby-Clear-SkyUncollide
-  noSpawn: false
   name: Lobby-Clear-SkyUncollide
   components:
     - type: NewMapTeleport

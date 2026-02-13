@@ -42,7 +42,7 @@
 
 - type: job
   id: HeadMilitaryStalker
-  name: Military Stalker Commander
+  name: job-military-stalker-commander
   icon: voen
   description: job-military-stalker-desc
   playTimeTracker: JobHeadMilitaryStalker
@@ -56,7 +56,7 @@
     - Human
     - Dwarf
   startingGear: MilitarySpecGear
-  supervisors: you
+  supervisors: job-military-stalker-commander-supervisor
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
@@ -241,7 +241,7 @@
   id: OksopSpecOps
   equipment:
     id: MilitaryPDA
-    belt: ClothingBeltMercWebbingStalker
+    belt: ClothingBeltMercWebbing
     mask: ClothingMaskNeckBalaklava3
     back: ClothingBackpackDuffelCommonStalker
     legs: ClothingLegsJeansGreenCargo

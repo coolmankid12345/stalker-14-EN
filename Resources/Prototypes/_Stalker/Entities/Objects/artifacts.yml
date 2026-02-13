@@ -57,7 +57,7 @@
       - map: [ base ]
         sprite: _Stalker_EN/Objects/Misc/ArtCont/green.rsi
         state: icon
-        scale: 0.8, 0.8
+        scale: 0.5, 0.5
   - type: GenericVisualizer
     visuals:
       enum.StorageVisuals.Open:
@@ -99,7 +99,7 @@
     - map: [ base ]
       sprite: _Stalker_EN/Objects/Misc/ArtCont/advanced.rsi
       state: icon
-      scale: 0.8, 0.8
+      scale: 0.75, 0.75
   - type: STWeight
     self: 9
 

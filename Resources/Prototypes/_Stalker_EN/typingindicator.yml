@@ -1,66 +1,79 @@
+# FIXME: idleState added as required field in upstream - using state 1 as static idle frame
 - type: typingIndicator
   id: stalker
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: stalker0
+  idleState: stalker1
 
 - type: typingIndicator
   id: neutral
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: ne0
+  idleState: ne1
 
 - type: typingIndicator
   id: bandit
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: band0
+  idleState: band1
 
 - type: typingIndicator
   id: cs
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: cs0
+  idleState: cs1
   offset: -0.055, 0.025
 
 - type: typingIndicator
   id: duty
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: duty0
+  idleState: duty1
   offset: -0.055, 0
 
 - type: typingIndicator
   id: freedom
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: free0
+  idleState: free1
   offset: -0.075, 0.125
 
 - type: typingIndicator
   id: journalist
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: journo0
+  idleState: journo1
 
 - type: typingIndicator
   id: mercenary
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: merc0
+  idleState: merc1
   offset: -0.055, 0
 
 - type: typingIndicator
   id: military
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: mili0
+  idleState: mili1
   offset: 0, 0.125
 
 - type: typingIndicator
   id: monolith
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: mono0
+  idleState: mono1
   offset: -0.055, 0
 
 - type: typingIndicator
   id: renegade
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: rene0
+  idleState: rene1
 
 - type: typingIndicator
   id: ecologist
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: sci0
+  idleState: sci1
   offset: -0.055, 0

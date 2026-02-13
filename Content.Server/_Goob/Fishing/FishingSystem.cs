@@ -37,6 +37,7 @@ public sealed class FishingSystem : SharedFishingSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
     [Dependency] private readonly SharedFishingSystem _fishingSystem = default!;
+    [Dependency] private readonly EntityTableSystem _entityTable =  default!;
 
     public override void Initialize()
     {
@@ -109,7 +110,7 @@ public sealed class FishingSystem : SharedFishingSystem
         Anchor(ent, attachedEnt);
 
         // Currently we don't support multiple loots from this
-        var fish = spotComp.FishList.GetSpawns(_random.GetRandom(), EntityManager, _proto).First();
+        var fish = _entityTable.GetSpawns(spotComp.FishList).First();
 
         // Get fish difficulty
         _proto.Index(fish).TryGetComponent(out FishComponent? fishComp, _compFactory);
@@ -182,7 +183,7 @@ public sealed class FishingSystem : SharedFishingSystem
         visuals.Sprite = component.RopeSprite;
         visuals.OffsetA = component.RopeLureOffset;
         visuals.OffsetB = component.RopeUserOffset;
-        visuals.Target = GetNetEntity(uid);
+        visuals.Target = uid;
     }
 
     protected override void ThrowFishReward(EntProtoId fishId, EntityUid fishSpot, EntityUid target)

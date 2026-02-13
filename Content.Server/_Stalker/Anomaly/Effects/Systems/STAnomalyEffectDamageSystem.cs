@@ -1,6 +1,6 @@
 ﻿using Content.Shared._Stalker.Anomaly.Triggers.Events;
-using Content.Shared.Damage;
-using Robust.Shared.Physics;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._Stalker.Anomaly.Effects.Systems;
 
@@ -28,7 +28,7 @@ public sealed class STAnomalyEffectDamageSystem : EntitySystem
 
             foreach (var entity in entities)
             {
-                _damageable.TryChangeDamage(entity, options.Damage, damageable: entity.Comp);
+                _damageable.TryChangeDamage(entity.AsNullable(), options.Damage);
             }
         }
     }

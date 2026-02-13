@@ -84,8 +84,6 @@
   - Military
   - MilitaryOfficer
   - MilitaryHead
-  - StalkerScientist
-  - StalkerHeadScientist
 
 - type: department
   id: StalkerUnitedNations

@@ -108,7 +108,8 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
 
                             // Paralyze to prevent escape
                             var stunDuration = TimeSpan.FromSeconds(2);
-                            _stun.TryParalyze(entityUid, stunDuration, true);
+                            // FIXME: TryParalyze doesn't exist - using TryUpdateParalyzeDuration instead
+                            _stun.TryUpdateParalyzeDuration(entityUid, stunDuration);
                         }
                         // else: still waiting, keep pulling them
                     }

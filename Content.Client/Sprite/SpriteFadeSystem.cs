@@ -26,6 +26,7 @@ public sealed class SpriteFadeSystem : EntitySystem
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
     [Dependency] private readonly IInputManager _inputManager = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     private List<(MapCoordinates Point, bool ExcludeBoundingBox)> _points = new();
 
@@ -56,7 +57,7 @@ public sealed class SpriteFadeSystem : EntitySystem
         if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating || !TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        sprite.Color = sprite.Color.WithAlpha(component.OriginalAlpha);
+        _sprite.SetColor((uid, sprite), sprite.Color.WithAlpha(component.OriginalAlpha));
     }
 
     /// <summary>
@@ -130,7 +131,7 @@ public sealed class SpriteFadeSystem : EntitySystem
 
                     if (!sprite.Color.A.Equals(newColor))
                     {
-                        sprite.Color = sprite.Color.WithAlpha(newColor);
+                        _sprite.SetColor((ent, sprite), sprite.Color.WithAlpha(newColor));
                     }
                 }
             }
@@ -155,7 +156,7 @@ public sealed class SpriteFadeSystem : EntitySystem
 
             if (!newColor.Equals(sprite.Color.A))
             {
-                sprite.Color = sprite.Color.WithAlpha(newColor);
+                _sprite.SetColor((uid, sprite), sprite.Color.WithAlpha(newColor));
             }
             else
             {

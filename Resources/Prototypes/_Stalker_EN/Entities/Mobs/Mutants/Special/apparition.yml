@@ -37,7 +37,6 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Bloodstream
-    bloodReagent: Blood
     bloodMaxVolume: 0
   - type: Fixtures
     fixtures:
@@ -77,8 +76,6 @@
     self: 0
   - type: MeleeWeapon
     attackRate: 1
-    heavyWindupModifier: 1
-    heavyDamageModifier: 1.25
     angle: 30
     range: 0
     animation: WeaponArcClaw
@@ -86,6 +83,8 @@
     damage:
       types:
         Slash: 0
+  - type: BonusMeleeDamage
+    heavyDamageMultiplier: 1.25
 
 - type: entity
   parent: MobMutantApparitionBase

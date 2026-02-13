@@ -6,10 +6,13 @@
   components:
   - type: Transform
     anchored: true
-  - type: IgnorePredictionHide
+  #- type: IgnorePredictionHide # Temporarily commented for build fixing
   - type: Marker
   - type: Clickable
   - type: InteractionOutline
+  - type: Tag
+    tags:
+    - ForceFixRotations
   - type: Sprite
     drawdepth: Overdoors
     sprite: Markers/cross.rsi

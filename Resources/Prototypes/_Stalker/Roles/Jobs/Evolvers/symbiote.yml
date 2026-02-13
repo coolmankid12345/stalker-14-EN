@@ -36,9 +36,9 @@
 
 - type: job
   id: EvolverSymbioteArchon
-  name: job-evolver-archon
+  name: job-evolver-symbiote-archon
   icon: symbiote
-  description: job-evolver-archon-desc
+  description: job-evolver-symbiote-archon-desc
   playTimeTracker: JobEvolverSymbioteArchon
   whitelisted: true
   requirements:

@@ -46,8 +46,6 @@
         amount: 1
     - type: MeleeWeapon
       attackRate: 0.6
-      heavyWindupModifier: 1
-      heavyDamageModifier: 1.8
       angle: 30
       range: 1.2
       soundHit:
@@ -66,7 +64,9 @@
           Blunt: 11
     - type: MeleeThrowOnHit # im not sold on this, willing to kill it if its annoying
       speed: 3
-      lifetime: 0.4
+      distance: 2.5
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.8
     - type: StaminaDamageOnHit
       damage: 10
     - type: MovementSpeedModifier

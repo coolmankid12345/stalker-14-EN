@@ -13,7 +13,7 @@
     - map: [ base ]
       sprite: _Stalker_EN/Objects/Misc/ArtCont/black.rsi
       state: icon
-      scale: 0.8, 0.8
+      scale: 0.5, 0.5
 
 - type: entity
   name: blue artifact container
@@ -30,7 +30,7 @@
     - map: [ base ]
       sprite: _Stalker_EN/Objects/Misc/ArtCont/blue.rsi
       state: icon
-      scale: 0.8, 0.8
+      scale: 0.5, 0.5
 
 - type: entity
   name: orange artifact container
@@ -47,7 +47,7 @@
     - map: [ base ]
       sprite: _Stalker_EN/Objects/Misc/ArtCont/orange.rsi
       state: icon
-      scale: 0.8, 0.8
+      scale: 0.5, 0.5
 
 - type: entity
   name: yellow artifact container
@@ -64,7 +64,7 @@
     - map: [ base ]
       sprite: _Stalker_EN/Objects/Misc/ArtCont/yellow.rsi
       state: icon
-      scale: 0.8, 0.8
+      scale: 0.5, 0.5
 
 - type: entity
   name: damaged artifact container
@@ -81,7 +81,7 @@
     - map: [ base ]
       sprite: _Stalker_EN/Objects/Misc/ArtCont/damaged.rsi
       state: icon
-      scale: 0.8, 0.8
+      scale: 0.5, 0.5
 
 - type: entity
   name: makeshift artifact container
@@ -98,7 +98,7 @@
     - map: [ base ]
       sprite: _Stalker_EN/Objects/Misc/ArtCont/makeshift.rsi
       state: icon
-      scale: 0.8, 0.8
+      scale: 0.5, 0.5
   - type: STWeight
     self: 5
 

@@ -9,7 +9,7 @@
     portalName: GreatSwamps-Cordon1
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -20,7 +20,7 @@
     portalName: GreatSwamps-Cordon2
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -31,7 +31,7 @@
     portalName: GreatSwamps-Agroprom
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -42,7 +42,7 @@
     portalName: Agroprom-Rostok
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -53,7 +53,7 @@
     portalName: RedForest-Oasis
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 # Military
 
@@ -67,7 +67,7 @@
     portalName: MilitaryBase-RedForest
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
   - type: AccessReader
     access: [["MilitaryStalker"]]
 
@@ -109,7 +109,7 @@
     portalName: RedForest-Limansk
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -120,7 +120,7 @@
     portalName: RedForest-Limansk2
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -131,7 +131,7 @@
     portalName: RedForest-Limansk3
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -143,7 +143,7 @@
     allowAll: false
     cooldownEnabled: true
     cooldownTime: 5
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 # Duty
 
@@ -177,7 +177,7 @@
     portalName: Yantar1EN
     cooldownEnabled: true
     cooldownTime: 30
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -188,7 +188,7 @@
     portalName: YantarTunnel
     cooldownEnabled: true
     cooldownTime: 15
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -199,7 +199,7 @@
     portalName: YantarLabLadder
     cooldownEnabled: true
     cooldownTime: 15
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
 
 - type: entity
   parent: MapTeleportBase
@@ -263,4 +263,4 @@
     allowAll: false
     cooldownEnabled: true
     cooldownTime: 5
-    godmodeCooldown: 5
+    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!

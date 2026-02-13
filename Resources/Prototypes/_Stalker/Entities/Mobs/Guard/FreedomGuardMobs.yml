@@ -7,14 +7,11 @@
   components:
   - type: NpcFactionMember
     factions:
-    - BandsUnion
+    #- BandsUnion # Stalker-EN-TODO: This faction does not exist!
     - Freedom
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
-  - type: ProjectileBatteryAmmoProvider
+    sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
+  - type: BatteryAmmoProvider
     proto: Bullet556FMJ
     fireCost: 5
   - type: Gun
@@ -46,16 +43,12 @@
     factions:
     - Freedom
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
   - type: Bands
     bandIcon: freedom
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun
@@ -98,16 +91,12 @@
     factions:
     - Freedom
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Top.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Top.rsi
   - type: Bands
     bandIcon: freedom
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun
