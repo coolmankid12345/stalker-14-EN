@@ -109,6 +109,7 @@
     - Flashlight
   - type: HandheldLight
     addPrefix: false
+    toggleOnInteract: false # stalker-14-en: prevent E from toggling flashlight, only open PDA UI
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
