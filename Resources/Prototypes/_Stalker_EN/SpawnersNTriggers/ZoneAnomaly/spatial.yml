@@ -1,0 +1,229 @@
+# Thief Weak
+- type: entity
+  id: SpawnerZoneAnomalyThiefWeakChance1
+  name: thief weak anomaly spawner (1% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 1
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefWeak
+    chance: 0.01
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefWeakChance5
+  name: thief weak anomaly spawner (5% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 5
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefWeak
+    chance: 0.05
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefWeakChance10
+  name: thief weak anomaly spawner (10% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 10
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefWeak
+    chance: 0.1
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefWeakChance25
+  name: thief weak anomaly spawner (25% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 25
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefWeak
+    chance: 0.25
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefWeakChance50
+  name: thief weak anomaly spawner (50% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 50
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefWeak
+    chance: 0.5
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefWeakChance100
+  name: thief weak anomaly spawner (100% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 100
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefWeak
+    chance: 1.0
+    offset: 0.0
+
+# Thief Strong
+- type: entity
+  id: SpawnerZoneAnomalyThiefStrongChance1
+  name: thief strong anomaly spawner (1% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 1
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefStrong
+    chance: 0.01
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefStrongChance5
+  name: thief strong anomaly spawner (5% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 5
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefStrong
+    chance: 0.05
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefStrongChance10
+  name: thief strong anomaly spawner (10% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 10
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefStrong
+    chance: 0.1
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefStrongChance25
+  name: thief strong anomaly spawner (25% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 25
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefStrong
+    chance: 0.25
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefStrongChance50
+  name: thief strong anomaly spawner (50% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 50
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefStrong
+    chance: 0.5
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyThiefStrongChance100
+  name: thief strong anomaly spawner (100% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+        state: active
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 100
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyThiefStrong
+    chance: 1.0
+    offset: 0.0

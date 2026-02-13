@@ -1,0 +1,29 @@
+- type: entity
+  parent: ZoneAnomalyBarabashka
+  id: ZoneAnomalyThiefWeak
+  suffix: Stalker, Thief Weak, Anomaly
+  components:
+  - type: ZoneAnomalyEffectThrowItem
+    count: 1
+    distance: 2
+    force: 5
+  - type: ZoneAnomaly
+    detectedLevel: 4
+    preparingDelay: 0
+    activationDelay: 1
+    chargeTime: 6
+
+- type: entity
+  parent: ZoneAnomalyBarabashka
+  id: ZoneAnomalyThiefStrong
+  suffix: Stalker, Thief Strong, Anomaly
+  components:
+  - type: ZoneAnomalyEffectThrowItem
+    count: 2
+    distance: 8
+    force: 15
+  - type: ZoneAnomaly
+    detectedLevel: 4
+    preparingDelay: 0
+    activationDelay: 1
+    chargeTime: 3
