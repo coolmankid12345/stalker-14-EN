@@ -82,10 +82,3 @@ public sealed class ApproachTriggerMigrationSystem : EntitySystem
             args.Allowed = false;
     }
 }
-
-/// <summary>
-///     Raised on something starting collision with TriggerOnProximityComponent and the collider
-///         to determine if it should be counted as valid collision or not.
-/// </summary>
-[ByRefEvent]
-public record struct AttemptTriggerOnProximityStartColliding(EntityUid TriggerUid, EntityUid CollidingUid, bool Allowed = true);

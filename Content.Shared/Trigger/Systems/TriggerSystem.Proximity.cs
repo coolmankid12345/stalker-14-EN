@@ -59,6 +59,19 @@ public sealed partial class TriggerSystem
         if (args.OurFixtureId != TriggerOnProximityComponent.FixtureID)
             return;
 
+        // ST14-EN/ST14 change start
+        // raise ev both on us and collider
+        // Events Keep Winning
+        var attemptEv = new AttemptTriggerOnProximityStartColliding(uid, args.OtherEntity, true);
+        RaiseLocalEvent(uid, ref attemptEv);
+        if (!attemptEv.Allowed)
+            return;
+
+        RaiseLocalEvent(args.OtherEntity, ref attemptEv);
+        if (!attemptEv.Allowed)
+            return;
+        // ST14-EN/ST14 change end
+
         component.Colliding[args.OtherEntity] = args.OtherBody;
     }
 
@@ -136,3 +149,11 @@ public sealed partial class TriggerSystem
         }
     }
 }
+
+// ST14-EN Addition
+/// <summary>
+///     Raised on something starting collision with TriggerOnProximityComponent and the collider
+///         to determine if it should be counted as valid collision or not.
+/// </summary>
+[ByRefEvent]
+public record struct AttemptTriggerOnProximityStartColliding(EntityUid TriggerUid, EntityUid CollidingUid, bool Allowed = true);
