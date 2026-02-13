@@ -207,7 +207,7 @@
 - type: stAnomalyGenerationOptions
   id: STRedForestGenerationOptions
   options:
-    totalCount: 450
+    totalCount: 650
     anomalyEntries:
     - protoId: ZoneAnomalyKissel
       weight: 1.5

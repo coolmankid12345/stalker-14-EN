@@ -84,16 +84,12 @@
   id: BandGear
   equipment:
     id: BandPDA
-
+    neck: ClothingNeckDogtagBandit
 - type: startingGear
   id: BandHeadGear
   equipment:
     id: BandPDA
-    shoes: ClothingShoesBootsCombat
-    legs: ClothingLegsJeansBlue
-    torso: ClothingTorsoJacketAdidas
-    pocket1: RadioBandPlayer
-    outerClothing: ClothingOuterCoatBanditBlack
+    neck: ClothingNeckDogtagBanditPahan # EN
 
 - type: stBand
   id: STBanditsBand

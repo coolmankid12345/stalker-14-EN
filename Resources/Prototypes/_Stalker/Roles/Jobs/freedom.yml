@@ -53,7 +53,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: FreedomGear
+  startingGear: FreedomGearHead
   supervisors: job-head-freedom-supervisor
   canBeAntag: false
   special:
@@ -79,6 +79,14 @@
   id: FreedomGear
   equipment:
     id: FreedomPDA
+    neck: ClothingNeckDogtagFreedom # EN
+
+- type: startingGear
+  id: FreedomGearHead
+  equipment:
+    id: FreedomPDA
+    neck: ClothingNeckDogtagFreedomAtaman # EN
+
 - type: stBand
   id: STFreedomBand
   name: Freedom

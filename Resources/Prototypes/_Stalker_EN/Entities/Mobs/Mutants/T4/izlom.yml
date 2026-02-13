@@ -87,3 +87,14 @@
   - type: NpcFactionMember
     factions:
     - Izlom
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damage:
+      types:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Psy: -100
+        Radiation: -100

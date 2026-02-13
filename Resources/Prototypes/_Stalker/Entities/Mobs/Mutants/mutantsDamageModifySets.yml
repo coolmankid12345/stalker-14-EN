@@ -127,7 +127,8 @@
   flatReductions:
     Blunt: 5
     Slash: 5
-
+    Mutant: 4
+    
 - type: damageModifierSet
   id: STNPCGuardModifierSet
   class: 3

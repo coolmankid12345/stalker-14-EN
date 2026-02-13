@@ -7,7 +7,7 @@
     - Piercing
     - Compression # stalker-changes
     - Psy # stalker-changes
-
+    
 - type: damageGroup
   id: Burn
   name: damage-group-burn

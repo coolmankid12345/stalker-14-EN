@@ -43,8 +43,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Critical
-      61: Dead
+      150: Critical
+      161: Dead
   - type: PassiveDamage
     allowedStates:
     - Alive
@@ -90,7 +90,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.9
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1
+    accuracyMultiplier: 2
 
 - type: entity
   name: Неизвестный монолитовец
@@ -116,7 +116,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.9
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1
+    accuracyMultiplier: 2
 
 - type: entity
   name: Неизвестный монолитовец
@@ -145,7 +145,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.9
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.1
+    accuracyMultiplier: 2
 
 - type: entity
   name: Неизвестный монолитовец
@@ -179,4 +179,4 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.2
+    accuracyMultiplier: 2

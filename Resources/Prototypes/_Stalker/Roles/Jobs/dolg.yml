@@ -52,7 +52,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: DolgGear
+  startingGear: DolgGearHead
   supervisors: job-head-dolg-supervisor
   canBeAntag: false
   special:
@@ -82,6 +82,13 @@
   id: DolgGear
   equipment:
     id: DolgPDA
+    neck: ClothingNeckDogtagDuty
+
+- type: startingGear
+  id: DolgGearHead
+  equipment:
+    id: DolgPDA
+    neck: ClothingNeckDogtagDutyCommander
 
 - type: stBand
   id: STDolgBand

@@ -119,7 +119,8 @@
   id: StalkerGear
   equipment:
     id: StalkerPDA
-
+    neck: ClothingNeckDogtagLoner # EN
+    
 - type: stBand
   id: STStalkerBand
   name: Stalker
