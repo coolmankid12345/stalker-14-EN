@@ -13,7 +13,7 @@
     whitelist:
       tags:
         - STBolt
-  - type: ZoneAnomalyEffectRemoveItem
+  - type: ZoneAnomalyEffectThrowItem # stalker-changes: throw items instead of deleting them
     count: 1
   - type: ZoneAnomaly
     detectedLevel: 4
