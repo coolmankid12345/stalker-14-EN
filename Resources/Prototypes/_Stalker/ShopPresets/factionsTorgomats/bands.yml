@@ -350,6 +350,9 @@
   - name: shop-category-utilities
     priority: 8
     items:
+      STElasticRubberRed: 15
+      STElasticRubberGreen: 15
+      STElasticRubberBlue: 15
       STRadioHeadset: 150
       ToolkitTearOne: 5000
       CraftSaw: 1000

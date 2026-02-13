@@ -205,6 +205,9 @@
   - name: shop-category-utilities
     priority: 8
     items:
+      STElasticRubberRed: 15
+      STElasticRubberGreen: 15
+      STElasticRubberBlue: 15
       STRadioHeadset: 150
       STSkinsKitDolg: 500
       STCombatKnife: 25

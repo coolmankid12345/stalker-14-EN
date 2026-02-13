@@ -1,8 +1,8 @@
 - type: entity
   parent: STBaseItem
   id: STElasticRubberRed
-  name: elastic rubber
-  description: "For some reason, looking at them, the ONLY idea that comes to mind is to tie around your magazine."
+  name: элластичная резинка
+  description: По какой-то причине, глядя на них, единственная идея, которая приходит на ум, - это натянуть их на свой магазин.
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Misc/elastic_rubber.rsi
@@ -16,8 +16,8 @@
 - type: entity
   parent: STBaseItem
   id: STElasticRubberGreen
-  name: elastic rubber
-  description: "For some reason, looking at them, the ONLY idea that comes to mind is to tie around your magazine."
+  name: элластичная резинка
+  description: По какой-то причине, глядя на них, единственная идея, которая приходит на ум, - это натянуть их на свой магазин.
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Misc/elastic_rubber.rsi
@@ -31,8 +31,8 @@
 - type: entity
   parent: STBaseItem
   id: STElasticRubberBlue
-  name: elastic rubber
-  description: "For some reason, looking at them, the ONLY idea that comes to mind is to tie around your magazine."
+  name: элластичная резинка
+  description: По какой-то причине, глядя на них, единственная идея, которая приходит на ум, - это натянуть их на свой магазин.
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Misc/elastic_rubber.rsi
