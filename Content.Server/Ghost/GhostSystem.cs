@@ -469,7 +469,7 @@ namespace Content.Server.Ghost
             var userId = mind.Comp?.UserId;
             ICommonSession? session = null;
 
-            if (_player.TryGetSessionById(userId, out var newSession) && !HasComp<RespawnOnDeathComponent>(mind))
+            if (_player.TryGetSessionById(userId, out var newSession) && !HasComp<RespawnOnDeathComponent>(mind) && adminObserve != true)
             {
                 session = newSession;
                 _gameTicker.Respawn(session);
@@ -504,6 +504,7 @@ namespace Content.Server.Ghost
             {
                 if (adminObserve != true)
                 {
+                    QueueDel(ghost);
                     if (session != null)
                         _gameTicker.Respawn(session);
                     return null;
