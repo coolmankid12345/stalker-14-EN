@@ -59,6 +59,11 @@
         teethCount: 3
         initialTeeth: 3
 
+- type: chameleonOutfit
+  id: StalkerChameleonOutfit
+  job: Stalker
+  startingGear: StalkerGear
+
 - type: job
   id: StalkerVeteran
   name: job-stalker-veteran

@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: LocalTeleportBase
   id: LocalTeleportEcoBunker
-  tag: Ecologist
+  suffix: Ecologist
   name: Elevator Teleport
   components:
   - type: LocalTeleport

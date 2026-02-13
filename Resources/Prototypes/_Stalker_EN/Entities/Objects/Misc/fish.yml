@@ -9,7 +9,7 @@
     sprite: _Stalker_EN/Objects/Misc/fish.rsi
   - type: RandomMetadata
     descriptionSegments: [ STFishSize ]
-  - type: Food
+  - type: Edible
   - type: FlavorProfile
     flavors:
     - fishy
@@ -99,7 +99,7 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
-      Amount: 1
+      amount: 1
   - type: Trash
     time: 900
 
@@ -153,7 +153,7 @@
           Quantity: 2
   - type: Butcherable
     spawned:
-    - id: FoodMeatSTEelRaw
+    - id: FoodMeatSTFishEelRaw
       maxAmount: 3
       prob: 0.8
   - type: Trash
@@ -211,7 +211,7 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
-      Amount: 1
+      amount: 1
   - type: Trash
     time: 900
 
@@ -293,7 +293,7 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
-      Amount: 1
+      amount: 1
   - type: Trash
     time: 900
 
@@ -351,19 +351,18 @@
   - type: Butcherable
     spawned:
     - id: STJewelryGold
-      Amount: 1
+      amount: 1
       prob: 0.35
     - id: STWristwatchGold
-      Amount: 1
+      amount: 1
       prob: 0.2
     - id: ZoneArtifactGoldfish
-      Amount: 1
       prob: 0.01
     - id: WristwatchGold
-      Amount: 1
+      amount: 1
       prob: 0.1
     - id: ZoneArtifactAmoeba
-      Amount: 1
+      amount: 1
       prob: 0.1
   - type: Trash
     time: 1800
@@ -392,7 +391,6 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
-      Amount: 1
   - type: PointLight
     radius: 1.5
     energy: 1.5
@@ -424,7 +422,6 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishSteakRaw
-      Amount: 1
     - id: ZoneArtifactVyvert
       maxAmount: 1
       prob: 0.25
@@ -572,7 +569,7 @@
   - type: Butcherable
     spawned:
     - id: STFishJellyfishActive
-      Amount: 1
+      amount: 1
   - type: Trash
     time: 1800
 
@@ -662,7 +659,7 @@
     shape:
     - 0,0,4,3
   - type: MultiHandedItem
-  - type: Food
+  - type: Edible
   - type: SolutionContainerManager
     solutions:
       food:
@@ -678,5 +675,5 @@
     - id: FoodMeatSTFishSteakRaw
       maxAmount: 5
     - id: CorpseStalkerFishDrop
-      Amount: 1
+      amount: 1
       prob: 0.25

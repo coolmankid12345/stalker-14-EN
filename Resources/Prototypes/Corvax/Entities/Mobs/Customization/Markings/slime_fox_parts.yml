@@ -3,6 +3,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [SlimePerson]
+  removabilityFlags: Cat # ST14-EN change
   sprites:
   - sprite: Corvax/Mobs/Customization/slime_fox_parts.rsi
     state: ears_slime_fox_outer

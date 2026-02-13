@@ -2,6 +2,7 @@ using Content.Server.PDA;
 using Content.Server.PDA.Ringer;
 using Content.Shared._Stalker_EN.PDA.Ringer;
 using Content.Shared.PDA;
+using Content.Shared.PDA.Ringer;
 using Content.Shared.Popups;
 
 namespace Content.Server._Stalker_EN.PDA.Ringer;
@@ -20,11 +21,11 @@ public sealed class STSilentModeSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RingerComponent, ComponentInit>(OnRingerInit);
+        SubscribeLocalEvent<PdaComponent, MapInitEvent>(OnPdaMapInit);
         SubscribeLocalEvent<PdaComponent, STPdaToggleSilentModeMessage>(OnToggleSilentMode);
     }
 
-    private void OnRingerInit(EntityUid uid, RingerComponent component, ComponentInit args)
+    private void OnPdaMapInit(EntityUid uid, PdaComponent component, ref MapInitEvent args)
     {
         EnsureComp<STSilentModeComponent>(uid);
     }

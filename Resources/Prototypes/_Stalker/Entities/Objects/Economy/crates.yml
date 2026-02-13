@@ -889,10 +889,10 @@
       - 0,0,2,2
     - type: Sprite
       sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/red.rsi
-      state: closed
+      state: icon
     - type: Icon
       sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/red.rsi
-      state: closed
+      state: icon
 
 - type: entity
   parent: BaseItem
@@ -1319,7 +1319,7 @@
         - id: STGauze
         - id: STGauze
         - id: STClothingShoesBootsCombatFilled
-        - id: ClothingOuterArmorIssgSpark
+        # - id: ClothingOuterArmorIssgSpark # Stalker-TODO: This prototype does not exist
         - id: BaseMP5Mag
         - id: BaseMP5Mag
         - id: BaseMP5Mag

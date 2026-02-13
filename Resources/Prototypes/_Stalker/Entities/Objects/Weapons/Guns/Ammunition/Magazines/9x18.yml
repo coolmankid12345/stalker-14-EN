@@ -3,7 +3,7 @@
   name: магазин ПМм 9x18 (10)
   description: Магазин 9x18 мм для ПМм. Вместимость пуль 10. Продают пустым.
   parent: BaseItem
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STBulkBuyable # stalker-14-en
     maxQuantity: 10
@@ -15,7 +15,6 @@
     tags:
       - MagazinePM
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -28,6 +27,7 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      item_slot: !type:ContainerSlot {}
   - type: Appearance
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi
@@ -73,7 +73,7 @@
   name: магазин АПС 9x18 (20)
   description: Магазин 9x18 Для пистолетов АПС. Вместимость пуль 20. Продают пустым.
   parent: BaseItem
-  tag: Stalker
+  suffix: Stalker
   components:
     - type: STBulkBuyable # stalker-14-en
       maxQuantity: 10
@@ -83,7 +83,6 @@
       tags:
         - MagazineAPS
     - type: BallisticAmmoProvider
-      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -96,6 +95,7 @@
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
+        item_slot: !type:ContainerSlot {}
     - type: Sprite
       sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_high_capacity_mag.rsi
       layers:
@@ -142,7 +142,7 @@
   name: шнековый магазин "Бизон" (64)
   description: Шнековый магазин на Бизон под 9х18. Вместимость пуль 64. Продают пустым.
   parent: VityazMag
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.35
@@ -150,7 +150,6 @@
     tags:
       - MagazineBizon
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -160,9 +159,6 @@
     size: Normal
     shape:
       - 0,0,1,1
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/bizon.rsi
@@ -186,7 +182,7 @@
   name: магазин vz. 61 "Скорпион" (20)
   description: Магазин на компактного ПП "Скорпион". Вместимость пуль 20. Продают пустым.
   parent: BizonMag
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.2
@@ -194,7 +190,6 @@
     tags:
       - MagazineVz61
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -204,9 +199,6 @@
     size: Small
     shape:
       - 0,0,0,0
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/vz61.rsi

@@ -59,7 +59,7 @@
     count: 10
   - type: Item
     sprite: _Stalker/Objects/medicine.rsi
-    state: brutepack
+    heldPrefix: brutepack
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: brutepack
@@ -68,7 +68,7 @@
 
 - type: stack
   id: STBrutepack
-  name: набор от ушибов
+  name: stack-brutepack
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: brutepack
@@ -82,10 +82,6 @@
   description: Сильно давит на конечность, перекрывая кровоток, если накладывать неумеючи может содрать кожу и оставить синяки.
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Specific/Medical/Other.rsi
-      state: esmarch
-      scale: 0.6, 0.6
-    - type: Item
       sprite: _Stalker/Objects/Specific/Medical/Other.rsi
       state: esmarch
       scale: 0.6, 0.6
@@ -120,15 +116,14 @@
   - type: RepositoryItem
     categoryName: repository-medicine-category
   - type: Item
-    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
-    state: icon
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi # Stalker-TODO: Need an inhand sprite for this item
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
     state: icon
 
 - type: stack
   id: STBrutepackSera
-  name: баночка с мазью
+  name: stack-st-brutepack-sera
   icon:
     sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
     state: icon
@@ -158,14 +153,14 @@
     categoryName: repository-medicine-category
   - type: Item
     sprite: _Stalker/Objects/medicine.rsi
-    state: ointment
+    heldPrefix: ointment
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: ointment
 
 - type: stack
   id: STOintment
-  name: мазь
+  name: stack-ointment
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: ointment
@@ -200,7 +195,7 @@
 
 - type: stack
   id: STOintmentGood
-  name: мазь с антибиотиком
+  name: stack-st-ointment-good
   icon:
     sprite: _Stalker/Objects/Medicine/GoodOinment.rsi
     state: ointment
@@ -221,14 +216,13 @@
     categoryName: repository-medicine-category
   - type: Item
     sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
-    state: icon
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
 
 - type: stack
   id: STOintmentSera
-  name: горькая мазь
+  name: stack-st-ointment-sera
   icon:
     sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
@@ -263,15 +257,14 @@
   - type: RepositoryItem
     categoryName: repository-medicine-category
   - type: Item
-    sprite: _Stalker/Objects/medicine.rsi
-    state: gauze
+    sprite: _Stalker/Objects/medicine.rsi # Stalker-TODO: Need an inhand sprite for this item
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
 
 - type: stack
   id: STGauze
-  name: бинт
+  name: stack-gauze
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
@@ -291,15 +284,14 @@
   - type: RepositoryItem
     categoryName: repository-medicine-category
   - type: Item
-    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
-    state: icon
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi # Stalker-TODO: Need an inhand sprite for this item
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
     state: icon
 
 - type: stack
   id: STGauzeSera
-  name: кусок тряпки
+  name: stack-st-gauze-sera
   icon:
     sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
@@ -333,7 +325,7 @@
         Airloss: -25
       types:
         Compression: -10
-    ModifyBloodLevel: 15
+    modifyBloodLevel: 15
     bloodlossModifier: -3
   - type: Stack
     stackType: MedkitAI2
@@ -341,7 +333,7 @@
 
 - type: stack
   id: MedkitAI2
-  name: Аптечка АИ-2
+  name: stack-medkit-ai-2
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai1.rsi"
     state: medkit-1
@@ -361,15 +353,14 @@
   - type: RepositoryItem
     categoryName: repository-medicine-category
   - type: Item
-    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
-    state: icon
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi # Stalker-TODO: Need an inhand sprite for this item
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
     state: icon
 
 - type: stack
   id: MedkitAI2Sera
-  name: набор лечебных трав
+  name: stack-medkit-ai-2-sera
   icon:
     sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
     state: icon
@@ -405,7 +396,7 @@
         Airloss: -30
       types:
         Compression: -55
-    ModifyBloodLevel: 25
+    modifyBloodLevel: 25
     bloodlossModifier: -4
   - type: Stack
     stackType: MedkitMilitary
@@ -413,7 +404,7 @@
 
 - type: stack
   id: MedkitMilitary
-  name: Армейская Аптечка
+  name: stack-medkit-military
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai2.rsi"
     state: medkit-2
@@ -451,7 +442,7 @@
       types:
         Compression: -100
         Psy: -80
-    ModifyBloodLevel: 35
+    modifyBloodLevel: 35
     bloodlossModifier: -8
   - type: Stack
     stackType: MedkitScience
@@ -459,7 +450,7 @@
 
 - type: stack
   id: MedkitScience
-  name: Научная Аптечка
+  name: stack-medkit-science
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai3.rsi"
     state: medkit-3
@@ -504,7 +495,7 @@
       types:
         Compression: -300
         Psy: -200
-    ModifyBloodLevel: 30
+    modifyBloodLevel: 30
     bloodlossModifier: -20
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
@@ -516,7 +507,7 @@
 
 - type: stack
   id: MedkitElite
-  name: Продвинутая Аптечка
+  name: stack-medkit-elite
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai4.rsi"
     state: medkit-4
@@ -558,7 +549,7 @@
         Burn: -800
         Airloss: -300
         Toxin: 5
-    ModifyBloodLevel: 50
+    modifyBloodLevel: 50
     bloodlossModifier: -50
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
@@ -570,7 +561,7 @@
 
 - type: stack
   id: MedkitLAR
-  name: Аптечка «LAR»
+  name: stack-medkit-lar
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai5.rsi"
     state: medkit-5
@@ -667,7 +658,6 @@
   - type: RepositoryItem
     categoryName: repository-medicine-category
   - type: Sprite
-    sprite: _Stalker/Objects/Medicine/pillboxes/shizabox.rsi
-    state: icon
+    sprite: _Stalker/Objects/Medicine/pillboxes/shizabox.rsi # Stalker-TODO: Need an inhand sprite for this item
   - type: Item
     sprite: _Stalker/Objects/Medicine/pillboxes/shizabox.rsi

@@ -9,6 +9,7 @@
 /*
 using Content.Server._Stalker.ApproachTrigger;
 using Content.Server.Explosion.EntitySystems;
+using Content.Shared.Trigger.Systems;
 using Robust.Shared.Timing;
 */
 

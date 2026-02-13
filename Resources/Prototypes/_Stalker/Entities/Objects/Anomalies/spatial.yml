@@ -19,7 +19,7 @@
     detectedLevel: 4
     preparingDelay: 0
     activationDelay: 1
-    chargingDelay: 4
+    chargeTime: 4
   - type: Sprite
     sprite: _Stalker/Objects/Anomalies/barabashka.rsi
     layers:
@@ -53,7 +53,7 @@
     detectedLevel: 4
     preparingDelay: 0
     activationDelay: 0
-    chargingDelay: 5
+    chargeTime: 5
   - type: STAnomalyTips
     icon:
       sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi

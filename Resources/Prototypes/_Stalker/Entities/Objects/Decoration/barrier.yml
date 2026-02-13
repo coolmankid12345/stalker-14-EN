@@ -33,11 +33,8 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/barrier.rsi
     scale: 0.8, 0.8
-    state: closed
-    map: ["enum.DoorVisualLayers.base"]
-  - type: InteractionOutline
   - type: Physics
-    bodyType: Dynamic
+    bodyType: Static
   - type: Fixtures
     fixtures:
       closed:
@@ -49,7 +46,6 @@
         layer: [MidImpassable]
       open:
         hard: false
-        enabled: false
         shape:
           !type:PhysShapeAabb
           bounds: "-1.2,-0.3,1.2,0.3"
@@ -66,5 +62,3 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
-  - type: IconSmooth
-    enabled: false

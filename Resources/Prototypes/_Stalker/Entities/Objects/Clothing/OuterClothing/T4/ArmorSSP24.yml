@@ -55,11 +55,15 @@
     sprintModifier: 0.95
   - type: Tag
     tags:
-    - BlockCloak
     - BlockBack
     - BlockBelt
   - type: Item
     size: Ginormous
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 - type: entity
   parent: ClothingHeadHardsuitBase

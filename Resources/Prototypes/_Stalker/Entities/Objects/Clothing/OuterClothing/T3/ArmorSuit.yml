@@ -35,16 +35,21 @@
         Slash: 0.60
         Piercing: 0.7
         Compression: 0.85
-        Radiation: 0.60
-        Heat: 0.55
-        Caustic: 0.70
-        Shock: 0.65
+        Radiation: 0.90
+        Heat: 0.75
+        Caustic: 0.80
+        Shock: 0.75
   - type: ExplosionResistance
     damageCoefficient: 0.8
   - type: Craftable
   - type: Tag
     tags:
     - BlockGloves
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 # stalker
 - type: entity
@@ -67,13 +72,13 @@
       tags:
       - STArtifact
     grid:
-      - 0,2,0,3
-      - 2,2,2,3
-      - 4,2,4,3
-      - 6,-1,8,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 10,2,10,3
+      - 0,3,0,4
+      - 2,3,2,4
+      - 4,3,4,4
+      - 6,0,8,1
+      - 6,3,6,4
+      - 8,3,8,4
+      - 10,3,10,4
 
 - type: entity
   parent: STClothingOuterArmorBase
@@ -117,13 +122,29 @@
       tags:
       - STArtifact
     grid:
-      - 0,2,0,3
-      - 2,2,2,3
-      - 4,2,4,3
-      - 6,-1,8,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 10,2,10,3
+      - 0,3,0,4
+      - 2,3,2,4
+      - 4,3,4,4
+      - 6,0,8,1
+      - 6,3,6,4
+      - 8,3,8,4
+      - 10,3,10,4
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 2
+        Slash: 2
+        Piercing: 7
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.7
+        Compression: 0.95
+        Radiation: 0.95
+        Heat: 0.95
+        Caustic: 0.85
+        Shock: 0.95
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -167,13 +188,13 @@
       tags:
       - STArtifact
     grid:
-      - 0,2,0,3
-      - 2,2,2,3
-      - 4,2,4,3
-      - 6,-1,8,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 10,2,10,3
+      - 0,3,0,4
+      - 2,3,2,4
+      - 4,3,4,4
+      - 6,0,8,1
+      - 6,3,6,4
+      - 8,3,8,4
+      - 10,3,10,4
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -202,13 +223,13 @@
       tags:
       - STArtifact
     grid:
-      - 0,2,0,3
-      - 2,2,2,3
-      - 4,2,4,3
-      - 6,-1,8,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 10,2,10,3
+      - 0,3,0,4
+      - 2,3,2,4
+      - 4,3,4,4
+      - 6,0,8,1
+      - 6,3,6,4
+      - 8,3,8,4
+      - 10,3,10,4
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodMerc2
     slot: head
@@ -237,6 +258,19 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetDolgPS5M
     slot: head
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 6
+        Piercing: 6
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.55
+        Piercing: 0.65
+        Radiation: 0.95
+        Heat: 0.85
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -263,6 +297,23 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetFreedomDefender
     slot: head
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 6
+        Piercing: 5
+        Radiation: 1
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.65
+        Piercing: 0.7
+        Compression: 0.65
+        Radiation: 0.80
+        Heat: 0.65
+        Caustic: 0.70
+        Shock: 0.65
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -295,14 +346,35 @@
       tags:
       - STArtifact
     grid:
-      - 4,-0,5,-0
-      - 1,-0,2,-0
+      - 4,0,5,0
+      - 1,0,2,0
       - 0,3,0,4
       - 2,2,2,4
       - 4,2,4,4
       - 6,3,6,4
   - type: Armor
     armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 6
+        Piercing: 2
+        Radiation: 1
+        Heat: 1
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.65
+        Radiation: 0.8
+        Compression: 0.65
+        Piercing: 0.9
+        Heat: 0.7
+        Caustic: 0.75
+        Shock: 0.8
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -333,18 +405,38 @@
       tags:
       - STArtifact
     grid:
-      - -3,2,-2,3
-      - 0,2,0,3
-      - 0,-2,0,0
-      - 2,2,2,3
-      - 2,-1,3,-0
-      - 4,2,4,3
-      - 5,-1,6,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 8,-2,8,0
-      - 10,2,11,3
-      - -2,2,-2,3
+      - 0,4,1,5
+      - 3,4,3,5
+      - 3,0,3,2
+      - 5,4,5,5
+      - 5,1,6,2
+      - 7,4,7,5
+      - 8,1,9,2
+      - 9,4,9,5
+      - 11,4,11,5
+      - 11,0,11,2
+      - 13,4,14,5
+      - 1,4,1,5
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 6.5
+        Piercing: 4
+        Radiation: 2
+        Heat: 1
+        Caustic: 1
+        Shock: 1
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.55
+        Piercing: 0.85
+        Compression: 0.65
+        Radiation: 0.75
+        Heat: 0.75
+        Caustic: 0.70
+        Shock: 0.75
 
 - type: entity
   parent: STClothingOuterArmorBase
@@ -362,8 +454,8 @@
       tags:
       - STArtifact
     grid:
-      - 4,-0,5,-0
-      - 1,-0,2,-0
+      - 4,0,5,0
+      - 1,0,2,0
       - 0,2,0,3
       - 2,2,2,3
       - 4,2,4,3
@@ -403,8 +495,8 @@
       tags:
       - STArtifact
     grid:
-      - 4,-0,5,-0
-      - 1,-0,2,-0
+      - 4,0,5,0
+      - 1,0,2,0
       - 0,3,0,4
       - 2,2,2,4
       - 4,2,4,4
@@ -475,8 +567,8 @@
       tags:
       - STArtifact
     grid:
-      - 4,-0,5,-0
-      - 1,-0,2,-0
+      - 4,0,5,0
+      - 1,0,2,0
       - 0,3,0,4
       - 2,2,2,4
       - 4,2,4,4

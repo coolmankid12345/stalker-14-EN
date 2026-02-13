@@ -1,5 +1,7 @@
 - files: ["hiss.ogg"]
-  copyright: "https://soundtrackloops.com/, sample modified by carousel in compliance with EULA terms"
+  license: ""
+  copyright: "sample modified by carousel in compliance with EULA terms"
+  source: https://soundtrackloops.com/
 
 - files: ["cat1.ogg"]
   license: "Attribution NonCommercial 4.0"
@@ -19,19 +21,24 @@
 - files: ["pbear_hit.ogg"]
   license: "Attribution NonCommercial 4.0"
   copyright: "mixed by carousel for stalker14"
+  source: ""
 
 - files: ["pbear_miss.ogg"]
   license: "Attribution NonCommercial 4.0"
   copyright: "mixed by carousel for stalker14"
+  source: ""
 
 - files: ["izlom_death.ogg"]
   license: "Attribution NonCommercial 4.0"
   copyright: "mixed by carousel for stalker14"
+  source: ""
 
 - files: ["izlom_hit.ogg"]
   license: "Attribution NonCommercial 4.0"
   copyright: "mixed by carousel for stalker14"
+  source: ""
 
 - files: ["izlom_miss.ogg"]
   license: "Attribution NonCommercial 4.0"
   copyright: "mixed by carousel for stalker14"
+  source: ""

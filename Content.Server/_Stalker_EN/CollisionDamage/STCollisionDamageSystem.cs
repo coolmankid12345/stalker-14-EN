@@ -3,6 +3,7 @@ using Content.Server.Administration.Logs;
 using Content.Shared._Stalker_EN.CollisionDamage;
 using Content.Shared.Database;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mind.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Physics.Events;

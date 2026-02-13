@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 using Content.Server.Chat.Systems;
 using Content.Server.Radio;
-using Content.Server.Radio.Components;
+using Content.Shared.Radio.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared._Stalker.RadioStalker.Components;
 using Content.Shared._Stalker_EN.Radio;
@@ -87,7 +87,7 @@ public sealed class STRadioHeadsetSystem : SharedSTRadioHeadsetSystem
 
         // Recreate action if invalid - handles stash retrieval/loadout where DeleteChildren
         // queues the action for deletion before equip completes.
-        if (!_actions.TryGetActionData(ent.Comp.ToggleMicActionEntity, out _, logError: false))
+        if (ent.Comp.ToggleMicActionEntity is not { } actionId || TerminatingOrDeleted(actionId) || EntityManager.IsQueuedForDeletion(actionId))
         {
             ent.Comp.ToggleMicActionEntity = null;
             _actionContainer.EnsureAction(ent, ref ent.Comp.ToggleMicActionEntity, ent.Comp.ToggleMicAction);

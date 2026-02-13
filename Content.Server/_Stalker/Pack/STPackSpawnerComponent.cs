@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.Pack;
 
-[RegisterComponent, AutoGenerateComponentPause]
+[RegisterComponent, AutoGenerateComponentPause, EntityCategory("Spawner")]
 [Access(typeof(STPackSystem))]
 public sealed partial class STPackSpawnerComponent : Component
 {

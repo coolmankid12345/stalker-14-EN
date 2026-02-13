@@ -76,3 +76,17 @@
   id: OnMapGrid
   rules:
     - !type:OnMapGridRule
+
+## Fallback if nothing else found
+- type: ambientMusic
+  id: StalkerFallbackMusicAmbient
+  sound:
+    params:
+      volume: 3
+    collection: StalkerMusicSound
+  rules: AlwaysTrue
+
+- type: rules
+  id: AlwaysTrue
+  rules:
+    - !type:AlwaysTrueRule

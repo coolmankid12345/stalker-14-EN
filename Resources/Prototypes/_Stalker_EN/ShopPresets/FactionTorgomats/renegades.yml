@@ -3,6 +3,7 @@
   minSellPrice: 5
   itemsForSale:
     # Exclusive -
+    DismemberedMarkingEars: 600
     ToothStalker: 450
     TradeBox: 2000
 
@@ -360,4 +361,3 @@
       ClothingTorsoTurtlenecksKhakiTurtleneck: 50
       ClothingTorsoTurtlenecksMatrosska: 50
       ClothingNeckScarfRenegade: 100
-

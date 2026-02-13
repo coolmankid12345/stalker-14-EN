@@ -34,10 +34,10 @@ public sealed partial class STFarkleDiceComponent : Component
     public int TurnScore;
 
     [DataField, AutoNetworkedField]
-    public int[] DiceValues = new int[6];
+    public int[] DiceValues = [1, 1, 1, 1, 1, 1];
 
     [DataField, AutoNetworkedField]
-    public bool[] SelectedDice = new bool[6];
+    public bool[] SelectedDice = [false, false, false, false, false, false];
 
     /// <summary>
     /// Dice kept this turn cannot be rerolled until banked or Farkled.

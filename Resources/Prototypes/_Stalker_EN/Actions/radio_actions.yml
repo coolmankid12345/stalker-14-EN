@@ -1,14 +1,16 @@
 - type: entity
+  parent: BaseAction
   id: ActionSTRadioToggleMic
   name: Toggle Radio Mic
   description: Toggle your radio microphone on or off.
   components:
-  - type: InstantAction
+  - type: Action
     icon:
       sprite: _Stalker/Objects/Devices/radio.rsi
       state: base
     iconOn:
       sprite: _Stalker/Objects/Devices/radio.rsi
       state: broadcasting
-    event: !type:STRadioHeadsetToggleMicActionEvent
     useDelay: 0.5
+  - type: InstantAction
+    event: !type:STRadioHeadsetToggleMicActionEvent

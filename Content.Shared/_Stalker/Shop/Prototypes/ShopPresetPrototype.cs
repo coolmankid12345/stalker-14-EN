@@ -34,7 +34,7 @@ public sealed class ShopPresetPrototype : IPrototype
     /// Minimum sell price to show an item in the sell tab. Items below this threshold are hidden.
     /// </summary>
     [DataField]
-    public int MinSellPrice; // stalker-changes-en
+    public int MinSellPrice = 5; // stalker-changes-en
 }
 [DataDefinition, Serializable, NetSerializable]
 public sealed partial class CategoryInfo

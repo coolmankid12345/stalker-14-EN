@@ -15,12 +15,11 @@
     scale: 0.8, 0.8
     layers:
     - state: permit1
-    size: Small
   - type: Paper
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
-    closeOnHandDeselect: false
-    requireHands: false
+    requireActiveHand: false
+    requiresComplex: false
   - type: Tag
     tags:
     - Document

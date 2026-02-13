@@ -12,7 +12,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galatz.rsi
   - type: Gun
-    fireRate: 3
+    fireRate: 5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

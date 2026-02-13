@@ -46,7 +46,7 @@
 
 - type: radioChannel
   id: Military
-  name: "Military"
+  name: stalker-chat-radio-military
   keycode: 'm'
   frequency: 19841
   color: "#2cdb2c"
@@ -54,7 +54,7 @@
 
 - type: radioChannel
   id: Fireteam1
-  name: "Fireteam 1"
+  name: stalker-chat-radio-fireteam-1
   keycode: '1'
   frequency: 19842
   color: "#ff4242"
@@ -62,7 +62,7 @@
 
 - type: radioChannel
   id: Fireteam2
-  name: "Fireteam 2"
+  name: stalker-chat-radio-fireteam-2
   keycode: '2'
   frequency: 19843
   color: "#57b8f0"
@@ -70,7 +70,7 @@
 
 - type: radioChannel
   id: Command
-  name: "Command"
+  name: stalker-chat-radio-command
   keycode: 'c'
   frequency: 19844
   color: "#fcdf03"
@@ -122,7 +122,7 @@
 
 - type: radioChannel
   id: NATO
-  name: "NATO"
+  name: stalker-chat-radio-NATO
   keycode: 'n'
   frequency: 19845
   color: "#2ed2fd"
@@ -130,7 +130,7 @@
 
 - type: radioChannel
   id: Sunray
-  name: "Sunray"
+  name: stalker-chat-radio-sunray
   keycode: 's'
   frequency: 19846
   color: "#f6ce64"
@@ -154,7 +154,7 @@
 
 - type: radioChannel
   id: Monolith
-  name: "Telepathic"
+  name: stalker-chat-radio-monolith
   keycode: 't'
   frequency: 19846
   color: "#cd7ccd"

@@ -3,6 +3,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Human]
+  removabilityFlags: Cat # ST14-EN change
   sprites:
   - sprite: Corvax/Mobs/Customization/fox_parts.rsi
     state: ears_fox_outer

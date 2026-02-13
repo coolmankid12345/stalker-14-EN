@@ -37,7 +37,7 @@
       detectedLevel: 0
       preparingDelay: 0
       activationDelay: 0
-      chargingDelay: 0.05
+      chargeTime: 0.05
     - type: Sprite
       sprite: _Stalker/Objects/Other/Anomalys/kissel.rsi
       layers:
@@ -81,7 +81,7 @@
       detectedLevel: 3
       activationDelay: 0
       preparingDelay: 0
-      chargeTime: 3
+      chargingTime: 3
     - type: ZoneArtifactSpawner
       artifacts:
         - id: null
@@ -119,7 +119,7 @@
       detectedLevel: 3
       activationDelay: 0
       preparingDelay: 0
-      chargeTime: 10
+      chargingTime: 10
     - type: ZoneArtifactSpawner
       artifacts:
         - id: null

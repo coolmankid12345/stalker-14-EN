@@ -111,11 +111,12 @@
   description: An incandescent orb of light that floats through the air. What does it want?
   components:
   - type: Sprite
-    sprite: Objects/Fun/toys.rsi
-    state: orb
+    sprite: Objects/Fun/pondering_orb.rsi
     drawdepth: Items
     noRot: false
-    shader: unshaded
+    layers:
+    - state: icon
+      shader: unshaded
   - type: PointLight
     radius: 2
     color: "#00CCFF"

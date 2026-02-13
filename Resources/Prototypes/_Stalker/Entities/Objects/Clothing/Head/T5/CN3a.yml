@@ -15,7 +15,6 @@
     - type: Tag
       tags:
         - BlockMask
-        - HidesNose
     - type: Armor
       armorClass: 4
       modifiers:
@@ -37,3 +36,4 @@
       slots:
       - Hair
       - HeadTop
+      - Snout

@@ -1,15 +1,15 @@
 using System.Numerics;
-using Content.Server._Stalker.MapLightSimulation;
 using Content.Server._Stalker.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared.Camera;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Light.Components;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -24,7 +24,6 @@ public sealed class AnomalyExplosionRule : StationEventSystem<AnomalyExplosionRu
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly MapDaySystem _mapDay = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
     protected override void Added(EntityUid uid, AnomalyExplosionRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
@@ -39,7 +38,7 @@ public sealed class AnomalyExplosionRule : StationEventSystem<AnomalyExplosionRu
 
     protected override void Ended(EntityUid uid, AnomalyExplosionRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
     {
-        ClearAmbientLightColor();
+        SetAmbientLightColor();
         _audio.PlayGlobal(component.SoundEnd, Filter.Empty().AddAllPlayers(_playersManager), true, AudioParams.Default.WithVolume(-8f));
     }
 
@@ -71,20 +70,24 @@ public sealed class AnomalyExplosionRule : StationEventSystem<AnomalyExplosionRu
         }
     }
 
-    private void SetAmbientLightColor(Color color)
+    private void SetAmbientLightColor(Color? colorToSet = null)
     {
-        _mapDay.SetEnabled(false);
-        var query = EntityQueryEnumerator<MapLightComponent>();
+        var query = EntityQueryEnumerator<LightCycleComponent>();
         while (query.MoveNext(out var uid, out var light))
         {
-            light.AmbientLightColor = color;
+            if (colorToSet != null)
+            {
+                light.OriginalColor = colorToSet.Value;
+                light.MinLevel = new Color(0.6f, 0.3f, 0.3f);
+            }
+            else
+            {
+                light.OriginalColor = light.UnchangedOriginalColor;
+                light.MinLevel = light.OriginalMinLevel;
+            }
+
             Dirty(uid, light);
         }
-    }
-
-    private void ClearAmbientLightColor()
-    {
-        _mapDay.SetEnabled(true);
     }
 }
 

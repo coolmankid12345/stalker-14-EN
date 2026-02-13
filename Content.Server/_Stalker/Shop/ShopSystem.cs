@@ -1,12 +1,11 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Server._Stalker.Sponsors;
 using Content.Server.Actions;
 using Content.Server.Cargo.Systems;
 using Content.Server.Mind;
 using Content.Server.Store.Components;
 using Content.Shared._Stalker.Shop;
 using Content.Shared._Stalker.Shop.Prototypes;
-using Content.Shared._Stalker.Sponsors;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -22,6 +21,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared._Stalker.Storage;
+using Content.Shared.Hands.Components;
+using Content.Shared.Weapons.Ranged.Components;
 
 namespace Content.Server._Stalker.Shop;
 
@@ -39,6 +40,8 @@ public sealed partial class ShopSystem : SharedShopSystem
     [Dependency] private readonly PricingSystem _pricing = default!;
     [Dependency] private readonly EntityManager _entity = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
     private ISawmill _sawmill = default!;
     private PriceCache _priceCache = new();
 
@@ -69,14 +72,14 @@ public sealed partial class ShopSystem : SharedShopSystem
     #region UI updates
     private void OnAfterInsert(StorageAfterInsertItemIntoLocationEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out _))
             return;
 
         UpdateUis(args.User);
     }
     private void OnAfterRemove(StorageAfterRemoveItemEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out _))
             return;
 
         UpdateUis(args.User);
@@ -100,7 +103,7 @@ public sealed partial class ShopSystem : SharedShopSystem
             {
                 var message = $"[Stalker] {item} is selling at {traderName} for just {sellingPrice} {moneyPrefix}, " +
                     $"but could be bought by {priceInfo.Trader} for {priceInfo.BuyingPrice} {moneyPrefix}. Please fix the economy!";
-                _sawmill.Error(message);
+                _sawmill.Warning(message);
             }
         }
 
@@ -108,10 +111,23 @@ public sealed partial class ShopSystem : SharedShopSystem
     }
     private void OnSelected(EntityUid uid, CurrencyComponent component, HandSelectedEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!_player.TryGetSessionByEntity(args.User, out _))
             return;
 
         UpdateUis(args.User);
+    }
+
+    private bool TryGetSession(EntityUid uid, [NotNullWhen(true)] out ICommonSession? session)
+    {
+        if (!_mind.TryGetMind(uid, out _, out var mindComp) || !_player.TryGetSessionById(mindComp.UserId, out var currentSession))
+        {
+            session = null;
+            return false;
+        }
+
+        session = currentSession;
+
+        return true;
     }
 
     private void UpdateUis(EntityUid user)
@@ -128,7 +144,7 @@ public sealed partial class ShopSystem : SharedShopSystem
 
     private void OnDeselected(EntityUid uid, CurrencyComponent comp, HandDeselectedEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out _))
             return;
 
         UpdateUis(args.User);
@@ -169,11 +185,6 @@ public sealed partial class ShopSystem : SharedShopSystem
         if (!_ui.TryOpenUi(shop, ShopUiKey.Key, user.Value))
             return;
 
-        if (user == null)
-            return;
-        if (component == null)
-            return;
-
         // God help me
         // No -God
         var curProto = _proto.Index<CurrencyPrototype>(component.MoneyId);
@@ -195,8 +206,10 @@ public sealed partial class ShopSystem : SharedShopSystem
         var userItems = GetContainerItemsWithoutMoney(user.Value, component);
         var userListings = GetListingData(userItems, component, proto.SellingItems, proto.MinSellPrice); //stalker-14-en change
 
-        var money = sellBuyBalance ?? GetMoneyFromList(GetContainersElements(user.Value), component);
+        var money = GetMoneyFromList(GetContainersElements(user.Value), component);
+
         component.CurrentBalance = money;
+
         _sawmill.Debug($"Sent balance to client: {component.CurrentBalance}");
 
         // stalker-changes-en: inject buyback category into the categories sent to client
@@ -219,6 +232,77 @@ public sealed partial class ShopSystem : SharedShopSystem
     }
     #endregion
     #region Containers logic
+
+    private List<EntityUid> GetItemInHandsOrInventory(EntityUid seller, string entityPrototypeId, int count)
+    {
+        var result = new List<EntityUid>();
+
+        if (TryComp<HandsComponent>(seller, out var hands))
+        {
+            foreach (var hand in hands.Hands.Keys)
+            {
+                if (!_hands.TryGetHeldItem(seller, hand, out var heldEntity))
+                    continue;
+
+                if (GetItemProtoId(heldEntity.Value) != entityPrototypeId)
+                    continue;
+
+                result.Add(heldEntity.Value);
+                if (result.Count >= count)
+                    return result;
+            }
+        }
+
+        if (!TryComp<ContainerManagerComponent>(seller, out var containerManager))
+            return result;
+
+        foreach (var container in containerManager.Containers.Values)
+        {
+            foreach (var entity in container.ContainedEntities)
+            {
+                if (GetItemProtoId(entity) == entityPrototypeId)
+                {
+                    result.Add(entity);
+                    if (result.Count >= count)
+                        return result;
+                }
+
+                if (!HasComp<ContainerManagerComponent>(entity))
+                    continue;
+
+                var nestedItems = GetItemsFromContainer(entity, entityPrototypeId, count - result.Count);
+                result.AddRange(nestedItems);
+                if (result.Count >= count)
+                    return result;
+            }
+        }
+
+        return result;
+    }
+
+    private List<EntityUid> GetItemsFromContainer(EntityUid container, string entityPrototypeId, int maxCount)
+    {
+        var result = new List<EntityUid>();
+
+        if (!TryComp<ContainerManagerComponent>(container, out var containerManager))
+            return result;
+
+        foreach (var cont in containerManager.Containers.Values)
+        {
+            foreach (var entity in cont.ContainedEntities)
+            {
+                if (GetItemProtoId(entity) != entityPrototypeId)
+                    continue;
+
+                result.Add(entity);
+                if (result.Count >= maxCount)
+                    return result;
+            }
+        }
+
+        return result;
+    }
+
     private string GetItemProtoId(EntityUid uid)
     {
         if (!TryComp(uid, out MetaDataComponent? mets))
@@ -297,29 +381,19 @@ public sealed partial class ShopSystem : SharedShopSystem
         return result;
     }
 
-    private bool DeleteEntityFromContainer(EntityUid uid, ShopComponent component, string toDelete, int amount, ContainerManagerComponent? managerComponent = null)
+    private bool DeleteSpecificItems(List<EntityUid> itemsToSell)
     {
-        if (!Resolve(uid, ref managerComponent))
-            return false;
-
-        var elements = GetContainerItemsWithoutMoney(uid, component, managerComponent);
-        elements.Reverse(); // Reverse this list of elements to delete entites from containers first
-        if (elements.All(p => GetItemProtoId(p) != toDelete))
+        foreach (var item in itemsToSell)
         {
-            return false;
-        }
-        foreach (var element in elements)
-        {
-            if (GetItemProtoId(element) != toDelete)
-                continue;
+            if (_container.TryGetContainingContainer(item, out var container))
+            {
+                _container.Remove(item, container, reparent: false);
+            }
 
-            Del(element);
-            amount--;
-
-            if (amount == 0)
-                return true;
+            QueueDel(item);
         }
-        return false;
+
+        return true;
     }
     #endregion
 
@@ -359,7 +433,7 @@ public sealed partial class ShopSystem : SharedShopSystem
         return result;
     }
 
-    private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems, int minSellPrice = 0)
+    private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems, int minSellPrice = 5)
     {
         var result = new List<ListingData>();
         foreach (var item in items)
@@ -476,7 +550,6 @@ public sealed partial class ShopSystem : SharedShopSystem
     private void OnSellListing(EntityUid uid, ShopComponent component, ShopRequestSellMessage msg)
     {
         var listing = msg.ListingToSell;
-        var balance = component.CurrentBalance;
         if (msg.Actor is not { Valid: true } seller)
             return;
 
@@ -494,19 +567,26 @@ public sealed partial class ShopSystem : SharedShopSystem
             }
             return;
         }
-        // Delete sold entity
-        var cost = 0;
-        var amount = msg.Count;
-        while (amount != 0)
-        {
-            cost += GetRecursiveCost(seller, component, listing.ProductEntity, listing);
-            amount--;
-        }
-        bool isSellSuccesfull = DeleteEntityFromContainer(seller, component, listing.ProductEntity, msg.Count);
 
-        // Increase player's balance
-        if (!isSellSuccesfull)
+        var itemsToSell = GetItemInHandsOrInventory(seller, listing.ProductEntity, msg.Count);
+        if (itemsToSell.Count == 0)
+        {
+            _popup.PopupEntity(Loc.GetString("st-shop-item-not-found"), uid, seller);
             return;
+        }
+
+        var cost = 0;
+        foreach (var item in itemsToSell)
+        {
+            cost += GetCost(item, component, listing);
+        }
+
+        // Delete sold entity
+        var isSellSuccessful = DeleteSpecificItems(itemsToSell);
+
+        if (!isSellSuccessful)
+            return;
+
         IncreaseBalance(seller, component, cost);
 
         // stalker-changes-en: track sold items for buyback
@@ -523,76 +603,151 @@ public sealed partial class ShopSystem : SharedShopSystem
                 msg.Count);
         }
 
-        balance += cost;
-        component.CurrentBalance = balance;
-        UpdateShopUI(seller, uid, component.CurrentBalance, component);
+        UpdateShopUI(seller, uid, null, component);
     }
     #endregion
 
     #region BalanceOperations
 
-    private int GetRecursiveCost(EntityUid seller, ShopComponent component, string entity, ListingData listing)
+    private int GetCost(EntityUid uid, ShopComponent component, ListingData listing)
     {
-        var elements = GetContainerItemsWithoutMoney(seller, component);
-        var cost = 0;
-        foreach (var element in elements)
-        {
-            if (GetItemProtoId(element) != entity)
-                continue;
+        _sawmill.Debug($"Calculating cost for: {GetItemProtoId(uid)}");
 
-            if (!listing.OriginalCost.TryGetValue(component.MoneyId, out var money))
-                continue;
+        var shopPrototype = _proto.Index<ShopPresetPrototype>(component.ShopPresetPrototype);
+        var cost = CalculateTotalCostRecursive(uid, component, shopPrototype, listing);
 
-            cost += money.Int();
-
-            if (!TryComp<ContainerManagerComponent>(element, out _))
-                return cost;
-
-            cost += GetCost(element, component);
-            return cost;
-        }
-
+        _sawmill.Debug($"Total cost for {GetItemProtoId(uid)}: {cost}");
         return cost;
     }
 
-    public int GetCost(EntityUid uid, ShopComponent component, ContainerManagerComponent? container = null)
+    private int CalculateTotalCostRecursive(
+        EntityUid item,
+        ShopComponent component,
+        ShopPresetPrototype shopPrototype,
+        ListingData? listing = null)
     {
-        var elements = GetContainerItemsWithoutMoney(uid, component, container);
-        var cost = 0;
-        foreach (var element in elements)
+        var totalCost = 0;
+
+        totalCost += GetBaseItemCost(item, component, shopPrototype, listing);
+
+        totalCost += GetVirtualContentsCost(item, component, shopPrototype);
+
+        if (TryComp<ContainerManagerComponent>(item, out var containerManager))
         {
-            if (!TryComp<CurrencyComponent>(element, out var currencyComponent))
-                continue;
-
-            if (TryComp<ContainerManagerComponent>(element, out _))
-                cost += GetCost(element, component, container);
-
-            if (!currencyComponent.Price.TryGetValue(component.MoneyId, out var money))
-                continue;
-
-            cost += money.Int();
+            totalCost += GetContainerItemsCost(containerManager, component, shopPrototype);
         }
 
-        return cost;
+        return totalCost;
     }
+
+    private int GetBaseItemCost(
+        EntityUid item,
+        ShopComponent component,
+        ShopPresetPrototype shopPrototype,
+        ListingData? listing = null)
+    {
+        var itemProtoId = GetItemProtoId(item);
+
+        if (shopPrototype.SellingItems.TryGetValue(itemProtoId, out var price))
+            return price;
+
+        if (listing != null && listing.OriginalCost.TryGetValue(component.MoneyId, out var originalCost))
+            return originalCost.Int();
+
+        if (TryComp<CurrencyComponent>(item, out var currency) &&
+            currency.Price.TryGetValue(component.MoneyId, out var money))
+            return money.Int();
+
+        _sawmill.Debug($"Item {itemProtoId} has no selling price in shop {component.ShopPresetPrototype}");
+        return 0;
+    }
+
+    private int GetVirtualContentsCost(EntityUid item, ShopComponent component, ShopPresetPrototype shopPrototype)
+    {
+        var virtualCost = 0;
+
+        if (TryComp<StackComponent>(item, out var stack))
+        {
+            var baseCost = GetBaseItemCost(item, component, shopPrototype);
+            virtualCost += baseCost * (stack.Count - 1); // -1 because it's already counted by GetBaseItemCost
+        }
+
+        if (!TryComp<BallisticAmmoProviderComponent>(item, out var ballistic))
+            return virtualCost;
+
+        if (ballistic is not { UnspawnedCount: > 0, Proto: not null })
+            return virtualCost;
+
+        var ammoPrice = GetAmmoPrice(ballistic.Proto, shopPrototype);
+        virtualCost += ammoPrice * ballistic.UnspawnedCount;
+
+        return virtualCost;
+    }
+
+    private int GetAmmoPrice(string? ammoProtoId, ShopPresetPrototype shopPrototype)
+    {
+        if (string.IsNullOrEmpty(ammoProtoId))
+            return 0;
+
+        return shopPrototype.SellingItems.TryGetValue(ammoProtoId, out var price) ? price : 1;
+    }
+
+    private int GetContainerItemsCost(
+        ContainerManagerComponent containerManager,
+        ShopComponent component,
+        ShopPresetPrototype shopPrototype)
+    {
+        var containerCost = 0;
+
+        foreach (var cont in containerManager.Containers.Values)
+        {
+            foreach (var containedItem in cont.ContainedEntities)
+            {
+                _sawmill.Debug($"Processing item in container: {GetItemProtoId(containedItem)}");
+
+                containerCost += CalculateTotalCostRecursive(containedItem, component, shopPrototype);
+            }
+        }
+
+        return containerCost;
+    }
+
     private void IncreaseBalance(EntityUid uid, ShopComponent component, int change)
     {
         if (!TryComp<TransformComponent>(uid, out var xform))
             return;
 
+        var maxCount = _stack.GetMaxCount(new EntProtoId(component.MoneyId));
+
         var elements = GetContainersElements(uid); // Necessary due to money adding below.
+        var remainingChange = change;
+
         foreach (var element in elements)
         {
             if (!TryComp<StackComponent>(element, out var stack) || stack.StackTypeId != component.MoneyId)
                 continue;
 
-            _stack.SetCount(element, stack.Count + change);
-            return;
+            var availableSpace = maxCount - stack.Count;
+            if (availableSpace <= 0)
+                continue;
+
+            var toAdd = Math.Min(availableSpace, remainingChange);
+            _stack.SetCount(element, stack.Count + toAdd);
+            remainingChange -= toAdd;
+
+            if (remainingChange <= 0)
+                return;
         }
 
-        var money = Spawn(component.MoneyId, xform.Coordinates);
-        _stack.SetCount(money, change);
-        _hands.PickupOrDrop(uid, money);
+        while (remainingChange > 0)
+        {
+            var toSpawn = Math.Min(maxCount, remainingChange);
+            var money = Spawn(component.MoneyId, xform.Coordinates);
+            _stack.SetCount(money, toSpawn);
+            _hands.PickupOrDrop(uid, money);
+
+            remainingChange -= toSpawn;
+        }
     }
 
     private void SubtractBalance(EntityUid uid, ShopComponent component, int change)

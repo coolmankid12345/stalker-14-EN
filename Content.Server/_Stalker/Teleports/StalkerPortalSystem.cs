@@ -18,11 +18,12 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Server._Stalker.Trash;
-using Content.Server.Advertise.Components;
+using Content.Server.Vocalization.Components;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
+using Robust.Shared.EntitySerialization.Systems;
 using SponsorSystem = Content.Server._Stalker.Sponsors.System.SponsorSystem;
 
 
@@ -145,7 +146,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
             while (enumerator.MoveNext(out var ent))
             {
-                if (TryComp<MindContainerComponent>(ent, out var mind) && !TryComp<GhostComponent>(ent, out var ghost) && !TryComp<AdvertiseComponent>(ent, out var ad))
+                if (TryComp<MindContainerComponent>(ent, out var mind) && !TryComp<GhostComponent>(ent, out var ghost) && !TryComp<DatasetVocalizerComponent>(ent, out var ad))
                 {
                     hasMind = true;
                     break;

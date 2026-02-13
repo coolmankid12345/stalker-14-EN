@@ -8,18 +8,18 @@
   - type: STWeight
     self: 8.5
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     blacklist:
       tags:
       - STArtifact
     grid:
-      - 0,2,0,4
-      - 2,2,2,3
-      - 2,-1,3,-0
-      - 4,2,4,3
-      - 5,-1,6,-0
-      - 6,2,6,3
-      - 8,2,8,4
+      - 0,3,0,5
+      - 2,3,2,4
+      - 2,0,3,1
+      - 4,3,4,4
+      - 5,0,6,1
+      - 6,3,6,4
+      - 8,3,8,5
   - type: Tag
     tags:
       - BlockBelt
@@ -140,9 +140,14 @@
     slot: head
     requiredSlot: NECK
     clothingPrototype: ClothingHeadCassock
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 - type: entity
-  parent: STClothingOuterArmorBase
+  parent: STClothingOuterArmorLightPlateVestBaseANAgreen # God dont change this anymore, i dont want to spend my time to replace it again.
   id: STClothingOuterArmorLightPlateVestSera
   name: Бронеразгрузка «Заступник»
   description: Надёжный бронеразгруз 3 класса брони, полный аналог «Степи-4», единственное различие - наличие напашника.

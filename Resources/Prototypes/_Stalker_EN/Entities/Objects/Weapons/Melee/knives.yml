@@ -35,7 +35,7 @@
 
 - type: entity
   name: hunting knife
-  parent: [BaseKnife, BaseRestrictedContraband]
+  parent: BaseKnife
   id: HuntingKnife
   description: A tool for chopping up dead animals. It butchers 30% faster than other knives but deals less damage.
   suffix: ST

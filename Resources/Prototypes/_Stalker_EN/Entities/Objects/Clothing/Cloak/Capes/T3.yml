@@ -16,6 +16,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container {}
 
 - type: entity
   parent: ClothingHeadHelmetLoyalistCoat
@@ -50,13 +51,14 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container {}
 
 - type: entity
   parent: ClothingHeadHelmetLoyalistCoat
   id: ClothingHeadHelmetKevlarMilitia
   name: Militia Kevlar Hood
   description: Sadly too small to fit over your helmet.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/hats/coat_hat_militia.rsi
@@ -84,6 +86,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container {}
 
 - type: entity
   parent: ClothingHeadHelmetLoyalistCoat

@@ -1,6 +1,6 @@
 - type: loadoutGroup
   id: StalkerJacket
-  name: Jacket
+  name: loadout-group-stalker-jacket
   maxLimit: 1
   loadouts:
   - StalkerJacket
@@ -8,7 +8,7 @@
 
 - type: loadoutGroup
   id: StalkerJeans
-  name: Jeans
+  name: loadout-group-stalker-jeans
   maxLimit: 1
   loadouts:
   - StalkerJeans
@@ -22,7 +22,7 @@
 
 - type: loadoutGroup
   id: StalkerBag
-  name: Bag
+  name: loadout-group-stalker-bag
   maxLimit: 1
   loadouts:
   - StalkerGreenBag
@@ -30,7 +30,7 @@
 
 - type: loadoutGroup
   id: StalkerShirt
-  name: Shirt
+  name: loadout-group-stalker-shirt
   maxLimit: 1
   loadouts:
   - StalkerGreenShirt

@@ -10,8 +10,8 @@
     state: radioplayer
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -50,8 +50,8 @@
     state: vadiknarik
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerAlkashAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerAlkashAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -90,8 +90,8 @@
     state: maks
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -141,8 +141,10 @@
     state: buyer
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  # FIXME: Advertise component was replaced with DatasetVocalizer in upstream
+  - type: Vocalizer
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -183,8 +185,8 @@
     state: daniil
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true

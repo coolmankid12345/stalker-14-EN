@@ -1,6 +1,6 @@
 using Content.Server._Stalker.ApproachTrigger;
-using Content.Server.Explosion.EntitySystems;
 using Content.Server.NPC;
+using Content.Shared.Trigger;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Shared._Stalker.Pack;
@@ -27,6 +27,7 @@ public sealed class STPackSystem : EntitySystem
     {
         base.Initialize();
 
+SubscribeLocalEvent<STPackSpawnerComponent, MapInitEvent>(OnSpawnerMapInit);
         SubscribeLocalEvent<STPackSpawnerComponent, TriggerEvent>(OnTrigger);
 
         SubscribeLocalEvent<STPackHeadComponent, MobStateChangedEvent>(OnHeadStateChanged);
@@ -78,6 +79,11 @@ public sealed class STPackSystem : EntitySystem
     private void OnHeadDeleted(Entity<STPackHeadComponent> entity, ref EntityTerminatingEvent args)
     {
         SetRandomHead(entity);
+    }
+
+private void OnSpawnerMapInit(Entity<STPackSpawnerComponent> entity, ref MapInitEvent args)
+    {
+        CreatePack(entity.Comp.ProtoId, _transform.GetMapCoordinates(entity));
     }
 
     public void CreatePack(ProtoId<STPackPrototype> prototypeId, MapCoordinates coordinates)

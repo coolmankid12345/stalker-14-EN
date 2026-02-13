@@ -26,6 +26,8 @@ public sealed class MapUnpauseOnPlayerEnterSystem : EntitySystem
                 var mapId = xform.MapID;
                 if (_mapMan.IsMapPaused(mapId))
                 {
+                    if (!_mapMan.IsMapInitialized(mapId))
+                        break;
                     _mapMan.SetMapPaused(mapId, false);
                 }
                 break;
