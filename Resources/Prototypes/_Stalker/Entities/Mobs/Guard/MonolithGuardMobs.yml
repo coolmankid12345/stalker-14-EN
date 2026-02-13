@@ -90,7 +90,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.9
   - type: STWeaponAccuracy
-    accuracyMultiplier: 2
+    accuracyMultiplier: 5
 
 - type: entity
   name: Неизвестный монолитовец
@@ -116,7 +116,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.9
   - type: STWeaponAccuracy
-    accuracyMultiplier: 2
+    accuracyMultiplier: 5
 
 - type: entity
   name: Неизвестный монолитовец
@@ -145,7 +145,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.9
   - type: STWeaponAccuracy
-    accuracyMultiplier: 2
+    accuracyMultiplier: 5
 
 - type: entity
   name: Неизвестный монолитовец
@@ -179,4 +179,4 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 2
+    accuracyMultiplier: 5

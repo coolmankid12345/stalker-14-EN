@@ -145,27 +145,18 @@
     totalCount: 200
     anomalyEntries:
     # Electrical
-    - protoId: ZoneAnomalySource
-      weight: 0.75
     - protoId: ZoneAnomalyElectra
     - protoId: ZoneAnomalyGarland
-      weight: 0.55
     # Gravity
     - protoId: ZoneAnomalyNoGravity
-      weight: 0.55
     - protoId: ZoneAnomalyBurden
-      weight: 0.35
     - protoId: ZoneAnomalyGravi
-      weight: 0.7
     - protoId: ZoneAnomalySpringboard
-    - protoId: ZoneAnomalyGrabber
-      weight: 0.35
     # Thermal
     - protoId: ZoneAnomalyJarkaStrong
     - protoId: ZoneAnomalyJarka
     # Psy
     - protoId: ZoneAnomalyBarabashka
-    - protoId: ZoneAnomalyRift
 
 # Топи
 - type: stAnomalyGenerationOptions
@@ -207,7 +198,7 @@
 - type: stAnomalyGenerationOptions
   id: STRedForestGenerationOptions
   options:
-    totalCount: 650
+    totalCount: 700
     anomalyEntries:
     - protoId: ZoneAnomalyKissel
       weight: 1.5

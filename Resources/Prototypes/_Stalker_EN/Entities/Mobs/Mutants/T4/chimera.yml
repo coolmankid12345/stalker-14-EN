@@ -45,11 +45,11 @@
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Animals/space_dragon_roar.ogg # TO DO
-  # - type: Butcherable
-    # spawned:
-    # - id: ClothingMaskChimera # Stalker-TODO: Prototype "ClothingMaskChimera" does not exist!
-      # maxAmount: 1
-      # prob: 0.3
+  - type: Butcherable
+    spawned:
+    - id: MutantPartChimeraTooth
+      maxAmount: 1
+      prob: 0.3
   - type: TeethPull
     teethProto: MutantPartChimeraTooth
     pullingItemTag: PliersStalker
