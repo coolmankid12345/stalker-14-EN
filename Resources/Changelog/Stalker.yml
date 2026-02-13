@@ -203,5 +203,12 @@
   id: 21
   time: '2026-02-13T18:39:03.850461+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/396
+- author: teecoding
+  changes:
+  - message: Late-join arrival announcements no longer broadcast to the station
+    type: Remove
+  id: 22
+  time: '2026-02-13T18:44:15.985435+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/398
 Name: Stalker
 Order: -1
