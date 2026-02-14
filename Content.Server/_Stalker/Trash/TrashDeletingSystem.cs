@@ -151,6 +151,4 @@ public sealed class TrashDeletingSystem : EntitySystem
             }
         }
     }
-
-
 }
