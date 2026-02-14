@@ -269,5 +269,13 @@
   id: 28
   time: '2026-02-14T13:19:47.687885+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/404
+- author: teecoding
+  changes:
+  - message: Fixed stash portals not teleporting players in when their stash contained
+      items from removed prototypes
+    type: Fix
+  id: 29
+  time: '2026-02-14T16:06:07.944476+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/406
 Name: Stalker
 Order: -1
