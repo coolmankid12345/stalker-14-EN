@@ -145,6 +145,10 @@ public sealed class TrashDeletingSystem : EntitySystem
             {
                 _mapMan.SetMapPaused(map, true);
             }
+            else if (hasPlayer && _mapMan.IsMapPaused(map))
+            {
+                _mapMan.SetMapPaused(map, false);
+            }
         }
     }
 
