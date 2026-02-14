@@ -277,5 +277,12 @@
   id: 29
   time: '2026-02-14T16:06:07.944476+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/406
+- author: crocodilecarousel
+  changes:
+  - message: roofs on buildings
+    type: Add
+  id: 30
+  time: '2026-02-14T16:08:21.113795+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/407
 Name: Stalker
 Order: -1
