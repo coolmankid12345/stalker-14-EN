@@ -259,5 +259,15 @@
   id: 27
   time: '2026-02-14T13:16:16.125488+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/403
+- author: teecoding
+  changes:
+  - message: Gun prediction - projectiles now appear instantly when you fire instead
+      of waiting for server response
+    type: Add
+  - message: Shooting feels more responsive at higher ping
+    type: Tweak
+  id: 28
+  time: '2026-02-14T13:19:47.687885+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/404
 Name: Stalker
 Order: -1
