@@ -34,44 +34,30 @@ public abstract partial class SharedGunSystem
 
     private void OnBatteryDamageExamine(Entity<BatteryAmmoProviderComponent> ent, ref DamageExamineEvent args)
     {
-        // stalker-changes-start: support HitscanBatteryAmmoProviderComponent for prototype-based hitscan
-        if (TryComp<HitscanBatteryAmmoProviderComponent>(ent, out var hitscanBattery))
-        {
-            var hitscanProto = ProtoManager.Index(hitscanBattery.Proto);
-            if (hitscanProto.Damage != null && !hitscanProto.Damage.Empty)
-            {
-                var damageType = Loc.GetString("damage-hitscan");
-                var damageSpec = hitscanProto.Damage * Damageable.UniversalHitscanDamageModifier;
-                _damageExamine.AddDamageExamine(args.Message, Damageable.ApplyUniversalAllModifiers(damageSpec), damageType);
-            }
-            return;
-        }
-        // stalker-changes-end
-
         var proto = ProtoManager.Index<EntityPrototype>(ent.Comp.Prototype);
-        DamageSpecifier? damageSpec2 = null;
-        var damageType2 = string.Empty;
+        DamageSpecifier? damageSpec = null;
+        var damageType = string.Empty;
 
         if (proto.TryGetComponent<ProjectileComponent>(out var projectileComp, Factory))
         {
             if (!projectileComp.Damage.Empty)
             {
-                damageType2 = Loc.GetString("damage-projectile");
-                damageSpec2 = projectileComp.Damage * Damageable.UniversalProjectileDamageModifier;
+                damageType = Loc.GetString("damage-projectile");
+                damageSpec = projectileComp.Damage * Damageable.UniversalProjectileDamageModifier;
             }
         }
         else if (proto.TryGetComponent<HitscanBasicDamageComponent>(out var hitscanComp, Factory))
         {
             if (!hitscanComp.Damage.Empty)
             {
-                damageType2 = Loc.GetString("damage-hitscan");
-                damageSpec2 = hitscanComp.Damage * Damageable.UniversalHitscanDamageModifier;
+                damageType = Loc.GetString("damage-hitscan");
+                damageSpec = hitscanComp.Damage * Damageable.UniversalHitscanDamageModifier;
             }
         }
-        if (damageSpec2 == null)
+        if (damageSpec == null)
             return;
 
-        _damageExamine.AddDamageExamine(args.Message, Damageable.ApplyUniversalAllModifiers(damageSpec2), damageType2);
+        _damageExamine.AddDamageExamine(args.Message, Damageable.ApplyUniversalAllModifiers(damageSpec), damageType);
     }
 
     private void OnBatteryTakeAmmo(Entity<BatteryAmmoProviderComponent> ent, ref TakeAmmoEvent args)
@@ -106,14 +92,10 @@ public abstract partial class SharedGunSystem
         // UpdateShots is already called by the resulting PredictedBatteryChargeChangedEvent or ChargeChangedEvent
     }
 
-    private (EntityUid? Entity, IShootable) GetShootable(Entity<BatteryAmmoProviderComponent> battery, EntityCoordinates coordinates)
+    private (EntityUid? Entity, IShootable) GetShootable(BatteryAmmoProviderComponent component, EntityCoordinates coordinates)
     {
-        // stalker-changes-start: support HitscanBatteryAmmoProviderComponent for prototype-based hitscan
-        if (TryComp<HitscanBatteryAmmoProviderComponent>(battery, out var hitscanBattery))
-            return (null, ProtoManager.Index(hitscanBattery.Proto));
-        // stalker-changes-end
 
-        var ent = Spawn(battery.Comp.Prototype, coordinates);
+        var ent = Spawn(component.Prototype, coordinates);
         return (ent, EnsureShootable(ent));
     }
 

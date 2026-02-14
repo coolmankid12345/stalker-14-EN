@@ -1,3 +1,5 @@
+﻿// Temporarily commented for build fixing
+/*
 using Content.Shared.Projectiles;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
@@ -14,3 +16,4 @@ public sealed partial class PredictedProjectileHitComponent : Component
     [DataField, AutoNetworkedField]
     public float Distance;
 }
+*/
