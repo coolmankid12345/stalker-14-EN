@@ -1,4 +1,5 @@
 using Content.Client.CartridgeLoader;
+using Content.Shared._Stalker_EN.PDA.Ringer;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.PDA;
@@ -61,7 +62,10 @@ namespace Content.Client.PDA
             {
                 SendMessage(new PdaShowRingtoneMessage());
             };
-
+            _menu.SilentModeButton.OnPressed += _ =>
+            {
+                SendMessage(new STPdaToggleSilentModeMessage());
+            };
             _menu.ShowUplinkButton.OnPressed += _ =>
             {
                 SendMessage(new PdaShowUplinkMessage());

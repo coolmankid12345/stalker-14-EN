@@ -83,6 +83,7 @@
     - name: shop-category-weapons
       priority: 0
       items:
+        HuntingKnife: 250
         STWeaponShotgunMP153: 500
         STWeaponShotgunSPAS: 1200
         STWeaponRifleAKS74: 3000

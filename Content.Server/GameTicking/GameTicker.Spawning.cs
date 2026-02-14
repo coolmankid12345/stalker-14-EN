@@ -5,6 +5,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking.Events;
 using Content.Server.Ghost;
+using Content.Shared._Stalker_EN.CCVar;
 using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
 using Content.Server.Station.Components;
@@ -256,7 +257,9 @@ namespace Content.Server.GameTicking
 
             DoSpawn(player, character, station, jobId, silent, out var mob, out var jobPrototype, out var jobName);
 
-            if (lateJoin && !silent)
+            // stalker-changes-start
+            if (lateJoin && !silent && !_cfg.GetCVar(STCCVars.DisableLateJoinAnnouncement))
+            // stalker-changes-end
             {
                 if (jobPrototype.JoinNotifyCrew)
                 {

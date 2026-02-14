@@ -127,8 +127,17 @@
   flatReductions:
     Blunt: 5
     Slash: 5
-    Mutant: 4
-    
+    Piercing: 8
+    Mutant: 10
+    Heat: 9
+    Cold: 9
+    Poison: 9
+    Cellular: 40
+    Radiation: 30
+    Caustic: 30
+    Compression: 20
+    Psy: 50
+
 - type: damageModifierSet
   id: STNPCGuardModifierSet
   class: 3

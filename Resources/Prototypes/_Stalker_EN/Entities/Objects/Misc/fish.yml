@@ -448,3 +448,187 @@
       maxAmount: 5
     - id: Corpse4Stalker
       prob: 0.25
+
+- type: entity
+  parent: STBaseFish
+  id: STFishSneakyTench
+  components:
+  - type: Sprite
+    state: tench
+  - type: Stealth
+  - type: StealthOnMove
+    passiveVisibilityRate: -0.8
+    movementVisibilityRate: 0.8
+  - type: STWeight
+    self: 2.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      maxAmount: 3
+  - type: Trash
+    time: 1800
+
+- type: entity
+  parent: STBaseFish
+  id: STFishFlish
+  components:
+  - type: Sprite
+    state: special_flish
+  - type: STWeight
+    self: 0.5
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishSteakRaw
+      maxAmount: 1
+      prob: 0.9
+    - id: MutantPartFleshEye
+      maxAmount: 1
+      prob: 0.1
+  - type: Trash
+    time: 1800
+
+- type: entity
+  parent: STBaseFish
+  id: STFishDoubleEel
+  components:
+  - type: Sprite
+    state: special_eel
+  - type: STWeight
+    self: 4.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    - 0,1,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTEelRaw
+      maxAmount: 6
+      prob: 0.8
+  - type: Trash
+    time: 1800
+
+- type: entity
+  parent: STBaseFish
+  id: STFishJellyfish
+  components:
+  - type: Sprite
+    state: special_jellyfish
+  - type: STWeight
+    self: 5.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: GastroToxin
+          Quantity: 5
+  - type: Butcherable
+    spawned:
+    - id: STFishJellyfishActive
+      Amount: 1
+  - type: Trash
+    time: 1800
+
+- type: entity
+  parent: STBaseFish
+  id: STFishJellyfishActive
+  components:
+  - type: Sprite
+    state: special_jellyfish
+  - type: STWeight
+    self: 10.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 10
+  - type: PointLight
+    enabled: true
+    radius: 4
+    energy: 3.0
+    color: "#8B0000"
+    castShadows: true
+  - type: TimedDespawn
+    lifetime: 15
+  - type: RangedDamage
+    activateOnSpawn: true
+    damage:
+      groups:
+        Brute: -5
+        Burn: -5
+        Airloss: -5
+        Toxin: -5
+    range: 3
+
+- type: entity
+  parent: STBaseFish
+  id: STFishPallidSturgeon
+  components:
+  - type: Sprite
+    state: special_sturgeon
+  - type: STWeight
+    self: 6.5
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: PersonalDamage
+    damage:
+      types:
+        Psy: 0.5
+    interval: 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Psiconium
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      maxAmount: 3

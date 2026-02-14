@@ -27,7 +27,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      2700: Dead
+      3700: Dead
   - type: Damageable
     damageModifierSet: STMutantT4DamageModifierSet
   - type: SlowOnDamage
@@ -37,7 +37,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 2700
+        damage: 3700
       behaviors:
       - !type:PlaySoundBehavior
         sound:

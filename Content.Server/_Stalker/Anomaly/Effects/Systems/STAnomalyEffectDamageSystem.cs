@@ -24,7 +24,7 @@ public sealed class STAnomalyEffectDamageSystem : EntitySystem
                 continue;
 
             var entities =
-                _entityLookup.GetEntitiesInRange<DamageableComponent>(Transform(effect).Coordinates, options.Range);
+                _entityLookup.GetEntitiesInRange<DamageableComponent>(Transform(effect).Coordinates, options.Range, LookupFlags.Uncontained);
 
             foreach (var entity in entities)
             {

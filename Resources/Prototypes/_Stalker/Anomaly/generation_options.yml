@@ -228,7 +228,8 @@
     - protoId: ZoneAnomalyRift
       weight: 0.5
     - protoId: STAnomalyBubbleLimaExit
-
+    - protoId: ZoneAnomalyGlassShards
+      weight: 0.8
 - type: stAnomalyGenerationOptions
   id: STRostokAndWildsGenerationOptions
   options:
@@ -294,3 +295,5 @@
     - protoId: STAnomalyHush
       weight: 0.09
     - protoId: ZoneAnomalyRift
+    - protoId: ZoneAnomalyGlassShards
+      weight: 0.8

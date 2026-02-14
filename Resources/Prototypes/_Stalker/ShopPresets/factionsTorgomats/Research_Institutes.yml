@@ -77,6 +77,7 @@
     items:
       # Melee
       STCombatKnife: 10
+      HuntingKnife: 150
       # Guns
       WeaponPistolStalkerGlock: 200
       STWeaponShotgunTOZ34: 150
@@ -176,7 +177,9 @@
       ZoneArtifactDetectorHunter: 100 # T2
       ZoneArtifactDetectorResponse: 700 # T2
       ZoneArtifactDetectorSpruce: 3200 # T2
+      Veles: 6200 # T3
       ZoneArtifactDetectorBarracuda: 5500 # T3
+      DetectorSvarogBlueprint: 5500
       #RP Shit
       BaseMachineAnomalyDestructorFolded: 500
       BaseMachineAnomalyDestructorFolded1: 500

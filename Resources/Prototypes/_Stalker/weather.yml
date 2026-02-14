@@ -1,13 +1,13 @@
 - type: weather
   id: STRain
   sprite:
-    sprite: /Textures/_Stalker/Effects/weather.rsi
+    sprite: /Textures/_Stalker_EN/Effects/weather.rsi # EN
     state: rain
 
 - type: weather
   id: STStorm
   sprite:
-    sprite: /Textures/_Stalker/Effects/weather.rsi
+    sprite: /Textures/_Stalker_EN/Effects/weather.rsi # EN
     state: storm
 
 - type: entity

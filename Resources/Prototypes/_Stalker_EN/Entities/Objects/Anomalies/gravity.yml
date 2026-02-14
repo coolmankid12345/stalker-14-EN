@@ -1,0 +1,113 @@
+- type: entity
+  parent: ZoneAnomalyBase
+  id: ZoneAnomalyGlassShards
+  name: glass shards
+  suffix: Stalker, GlassShards, Anomaly
+  description: A field of nearly invisible glass shards that cut through anyone running carelessly.
+  components:
+  - type: STAnomalyTriggerGroupsStateTransition
+  - type: STAnomalyTriggerStartCollide
+    blacklist:
+      components:
+      - Projectile
+  - type: STAnomalyTriggerStartCollideSprinting
+    sprintingTriggerGroup: Sprinting
+  - type: STAnomalyTriggerStartCollideBoots
+    noBootsSprintingGroup: NoBootsSprinting
+    noBootsWalkingGroup: NoBootsWalking
+    slotName: shoes
+  - type: STAnomalyTriggerTimeDelay
+    options:
+      ActiveBase:
+        group: TimeDelayActive
+        delay: 2
+      ActiveDouble:
+        group: TimeDelayActive
+        delay: 2
+  - type: STAnomaly
+    state: Idle
+    states:
+      Idle:
+      - group: NoBootsSprinting
+        state: ActiveDouble
+      - group: NoBootsWalking
+        state: ActiveBase
+      - group: Sprinting
+        state: ActiveBase
+      ActiveBase:
+      - group: TimeDelayActive
+        state: Idle
+      ActiveDouble:
+      - group: TimeDelayActive
+        state: Idle
+  - type: STAnomalyVisualState
+  - type: STAnomalyEffectDamage
+    options:
+      StateActiveBase:
+        range: 0.8
+        damage:
+          types:
+            Slash: 12
+      StateActiveDouble:
+        range: 0.5
+        damage:
+          types:
+            Slash: 24
+  - type: STAnomalyEffectDamageWeightBonus
+    weightThreshold: 100
+    weightCap: 190
+    bonusPerTenKg: 0.1
+    maxBonus: 1.0
+    options:
+      StateActiveBase:
+        range: 0.8
+        damage:
+          types:
+            Slash: 12
+      StateActiveDouble:
+        range: 0.8
+        damage:
+          types:
+            Slash: 24
+  - type: STAnomalyEffectDamageSoundConditional
+    passthroughSound: /Audio/_Stalker_EN/Effects/glass_shards_passthrough.ogg
+    weightThreshold: 100
+    baseDamageSound: /Audio/_Stalker_EN/Effects/glass_hit_01.ogg
+    doubleDamageSound: /Audio/_Stalker_EN/Effects/glass_hit_02.ogg
+    weightBonusSound: /Audio/_Stalker_EN/Effects/glass_hit_03.ogg
+    doubleDamageGroup: StateActiveDouble
+    range: 0.8
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
+    drawdepth: Effects
+    layers:
+    - state: idle
+      map: ["base"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.8
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneAnomalyVisuals.Layer:
+        base:
+          Idle: { state: idle }
+          ActiveBase: { state: active }
+          ActiveDouble: { state: active }
+  - type: ZoneAnomaly
+    detectedLevel: 1
+    activationDelay: 0
+    preparingDelay: 0
+    chargeTime: 2
+  - type: STAnomalyTips
+    icon:
+      sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
+      state: gravity
