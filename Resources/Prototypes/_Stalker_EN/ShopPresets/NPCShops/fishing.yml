@@ -14,6 +14,11 @@
     STFishSunbleak: 150
     STFishTench: 350
     STFishTrout: 450
+    STFishSneakyTench: 450
+    STFishFlish: 400
+    STFishDoubleEel: 700
+    STFishJellyfish: 950
+    STFishPallidSturgeon: 1500
     # anom fish
     STFishGoldfish: 1000
     STFishLuminantGudgeon: 450

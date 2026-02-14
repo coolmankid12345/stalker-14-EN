@@ -15,7 +15,7 @@
   rewardPeriod: 1230 # Период начисления очков в секундах
   captureCooldownHours: 96
   shouldAwardWhenDefenderPresent: true
-  captureTime: 450 # Время захвата зоны в секундах.
+  captureTime: 850 # Время захвата зоны в секундах.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
@@ -88,7 +88,7 @@
   rewardPeriod: 1230 # Период начисления очков в секундах
   captureCooldownHours: 96
   shouldAwardWhenDefenderPresent: true
-  captureTime: 300 # Время захвата зоны в секундах.
+  captureTime: 800 # Время захвата зоны в секундах.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
@@ -131,7 +131,7 @@
   rewardPeriod: 1230 # Период начисления очков в секундах
   captureCooldownHours: 96
   shouldAwardWhenDefenderPresent: true
-  captureTime: 350 # Время захвата зоны в секундах.
+  captureTime: 850 # Время захвата зоны в секундах.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
@@ -174,7 +174,7 @@
   rewardPeriod: 1230 # Период начисления очков в секундах
   captureCooldownHours: 96
   shouldAwardWhenDefenderPresent: true
-  captureTime: 175 # Время захвата зоны в секундах.
+  captureTime: 875 # Время захвата зоны в секундах.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
@@ -210,6 +210,50 @@
     radius: 15
     color: Cyan
     energy: 1
+
+- type: stWarZone
+  id: KordonATP
+  rewardPointsPerPeriod: 1
+  rewardPeriod: 1230 # Период начисления очков в секундах
+  captureCooldownHours: 96
+  shouldAwardWhenDefenderPresent: true
+  captureTime: 875 # Время захвата зоны в секундах.
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:TimeWindowRequirenment
+    startHourUtc: 13 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 14   # End hour in UTC (e.g., 18:00 UTC = 18)
+
+- type: entity
+  id: WarZoneEntity_Kordon_ATP
+  parent: MarkerBase
+  name: KordonATP War Zone
+  description: A physical marker for the Depo War Zone.
+  components:
+  - type: WarZone
+    proto: KordonFerma
+    portalName: Ferma
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      trigger:
+        shape:
+          !type:PhysShapeCircle
+          radius: 8
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MidImpassable
+  - type: PointLight
+    enabled: true
+    radius: 15
+    color: Cyan
+    energy: 1
+
 
 - type: stBandShopListings
   id: STBandShopListings

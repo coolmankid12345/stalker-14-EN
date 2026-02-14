@@ -89,6 +89,8 @@
       Pacified: true
     - type: STAnomalyGeneratorSpawnBlocker
       size: 10
+    - type: EmissionLightningSpawnBlocker # ST14-EN: added emission lightning blocker
+      radius: 5
 - type: entity
   id: StalkerPaciTriggerOut
   name: Выключение пацифизма

@@ -1,0 +1,114 @@
+# Glass Shards anomaly spawners
+- type: entity
+  id: SpawnerZoneAnomalyGlassShardsChance1
+  name: glass shards anomaly spawner (1% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
+        state: idle
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 1
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyGlassShards
+    chance: 0.01
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyGlassShardsChance5
+  name: glass shards anomaly spawner (5% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
+        state: idle
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 5
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyGlassShards
+    chance: 0.05
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyGlassShardsChance10
+  name: glass shards anomaly spawner (10% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
+        state: idle
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 10
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyGlassShards
+    chance: 0.1
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyGlassShardsChance25
+  name: glass shards anomaly spawner (25% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
+        state: idle
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 25
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyGlassShards
+    chance: 0.25
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyGlassShardsChance50
+  name: glass shards anomaly spawner (50% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
+        state: idle
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 50
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyGlassShards
+    chance: 0.5
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyGlassShardsChance100
+  name: glass shards anomaly spawner (100% chance)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Stalker_EN/Objects/Anomalies/glass_shards.rsi
+        state: idle
+      - sprite: _Stalker/Markers/numbers.rsi
+        state: 100
+  - type: RandomSpawner
+    prototypes:
+      - ZoneAnomalyGlassShards
+    chance: 1.0
+    offset: 0.0

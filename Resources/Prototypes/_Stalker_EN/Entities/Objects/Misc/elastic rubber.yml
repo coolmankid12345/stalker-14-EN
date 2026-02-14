@@ -1,7 +1,7 @@
 - type: entity
   parent: STBaseItem
   id: STElasticRubberRed
-  name: элластичная резинка
+  name: красная элластичная резинка
   description: По какой-то причине, глядя на них, единственная идея, которая приходит на ум, - это натянуть их на свой магазин.
   components:
   - type: Sprite
@@ -16,7 +16,7 @@
 - type: entity
   parent: STBaseItem
   id: STElasticRubberGreen
-  name: элластичная резинка
+  name: зелёная элластичная резинка
   description: По какой-то причине, глядя на них, единственная идея, которая приходит на ум, - это натянуть их на свой магазин.
   components:
   - type: Sprite
@@ -31,7 +31,7 @@
 - type: entity
   parent: STBaseItem
   id: STElasticRubberBlue
-  name: элластичная резинка
+  name: синяя элластичная резинка
   description: По какой-то причине, глядя на них, единственная идея, которая приходит на ум, - это натянуть их на свой магазин.
   components:
   - type: Sprite

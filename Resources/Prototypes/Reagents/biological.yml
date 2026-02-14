@@ -12,6 +12,7 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   recognizable: true
+  evaporationSpeed: 0.3 # Stalker-Changed
   standsout: true
   physicalDesc: reagent-physical-desc-ferrous
   metabolisms:

@@ -24,7 +24,7 @@ public sealed class LightCycleSystem : SharedLightCycleSystem
         var mapQuery = AllEntityQuery<LightCycleComponent, MapLightComponent>();
         while (mapQuery.MoveNext(out var uid,  out var cycle, out var map))
         {
-            if (!cycle.Running)
+            if (!cycle.Running || !cycle.Enabled) // stalker-changes: skip during emission overlay
                 continue;
 
             // We still iterate paused entities as we still want to override the lighting color and not have

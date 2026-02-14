@@ -1,0 +1,35 @@
+- type: entity
+  parent: Veles
+  id: Svarog
+  name: сварог
+  description: Усовершенствованный детектор, сочетающий в себе и обнаружения артефактов и обнаружение аномалий. Обновленная версия велеса.
+  suffix: Stalker EN, Advanced Radar
+  components:
+  - type: RepositoryItem
+    categoryName: repository-detectors-category
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Devices/svarog.rsi
+    layers:
+      - state: base
+      - state: screen_on
+        map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
+        shader: unshaded
+        visible: false
+  # Override artifact target source with higher level
+  - type: ArtifactRadarTargetSource
+    detectionRange: 18
+    level: 4
+    activationDistance: 2
+  # Anomaly target source for radar display
+  - type: AnomalyRadarTargetSource
+    detectionRange: 17
+    level: 5
+  # Anomaly detection (audio beeping) - kept for beeping functionality
+  - type: ZoneAnomalyDetector
+    level: 5
+    distance: 7
+    maxBeepInterval: 1
+    minBeepInterval: 0.01
+    beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
+  - type: STWeight
+    self: 1.8
