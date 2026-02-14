@@ -63,9 +63,9 @@
           - Sci
       - type: Bands
         band: Stalker
-        bandIcon: ecologists
+        bandIcon: sci
         bandProto: STSciBand
-        bandRankId: 2
+        bandRankId: 1
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -79,7 +79,7 @@
 - type: job
   id: sci_decan
   name: job-sci_decan
-  icon: sci
+  icon: sci_decan
   description: job-sci_decan-desc
   playTimeTracker: Jobsci_decan
   whitelisted: true
@@ -118,7 +118,7 @@
 - type: job
   id: sci_rector
   name: job-sci_rector
-  icon: sci
+  icon: sci_rector
   description: job-sci_rector-desc
   playTimeTracker: JobSci_rector
   whitelisted: true
@@ -130,7 +130,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: SciGear3
+  startingGear: SciGearHead
   supervisors: job-scientist-supervisor
   canBeAntag: false
   special:
@@ -174,6 +174,10 @@
     legs: ClothingLegsJeansSandCargo
     shoes: STClothingShoesBootsCombatFilled
     torso: ClothingTorsoShirtWhiteScientific
+    outerClothing: ClothingOuterCoatRD
+    head: ClothingHeadBeretUN
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesNitrile
 
 - type: stBand
   id: STSciBand
@@ -182,8 +186,9 @@
   maxMembers: 6
   managingRankId: 3
   hierarchy:
-    1: StalkerScientist
-
+    1: sci
+    2: sci_decan
+    3: sci_rector
 
 - type: startingGear
   id: SciGear2
