@@ -42,10 +42,35 @@
     groups:
     - AllAccess
     - Silicon
+    - AnomalistGuardian
+    - BanditHead
+    - Circus
+    - MayorCity
+    - CN
+    - Covenant
+    - Deserter
+    - DolgHead
+    - EvolverPack
+    - FreedomHead
+    - Greh
+    - Jaba
+    - Journalist
+    - Stalker
+    - MercHead
+    - Sci_rector
+    - MilitaryHead
+    - MilitaryStalker
+    - MilitiaAccess
+    - Monolith
+    - ProjectOrchestrator
+    - SeraphimsHead
     tags:
     - NuclearOperative
     - SyndicateAgent
     - CentralCommand
+    - Pilgrim
+    - Poisk
+    - Renegat
   - type: UserInterface
     interfaces:
       enum.SolarControlConsoleUiKey.Key:

@@ -85,6 +85,9 @@
   - Military
   - MilitaryOfficer
   - MilitaryHead
+  - sci
+  - sci_decan
+  - sci_rector
 
 - type: department
   id: StalkerUnitedNations
