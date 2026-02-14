@@ -251,5 +251,13 @@
   id: 26
   time: '2026-02-13T22:28:48.051243+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/402
+- author: teecoding
+  changes:
+  - message: Players no longer freeze after teleporting to maps that were paused by
+      trash cleanup
+    type: Fix
+  id: 27
+  time: '2026-02-14T13:16:16.125488+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/403
 Name: Stalker
 Order: -1
