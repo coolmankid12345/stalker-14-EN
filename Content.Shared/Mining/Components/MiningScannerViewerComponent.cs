@@ -16,8 +16,10 @@ public sealed partial class MiningScannerViewerComponent : Component
     [DataField, AutoNetworkedField]
     public TimeSpan PingDelay = TimeSpan.FromSeconds(5);
 
+    // stalker-changes: Use MaxValue/2 instead of MaxValue to prevent TimeSpan overflow
+    // in auto-generated [AutoPausedField] handler when unpausing long-paused maps.
     [DataField, AutoNetworkedField, AutoPausedField]
-    public TimeSpan NextPingTime = TimeSpan.MaxValue;
+    public TimeSpan NextPingTime = TimeSpan.MaxValue / 2;
 
     [DataField]
     public EntityCoordinates? LastPingLocation;

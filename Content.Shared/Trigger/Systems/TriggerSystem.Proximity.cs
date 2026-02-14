@@ -121,7 +121,9 @@ public sealed partial class TriggerSystem
             if (curTime >= trigger.NextVisualUpdate)
             {
                 // Update the visual state once the animation is done.
-                trigger.NextVisualUpdate = TimeSpan.MaxValue;
+                // stalker-changes: Use MaxValue/2 instead of MaxValue to prevent TimeSpan overflow
+                // in auto-generated [AutoPausedField] handler when unpausing long-paused maps.
+                trigger.NextVisualUpdate = TimeSpan.MaxValue / 2;
                 Dirty(uid, trigger);
                 SetProximityAppearance((uid, trigger));
             }
