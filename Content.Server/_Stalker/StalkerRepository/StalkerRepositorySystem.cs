@@ -426,7 +426,10 @@ public sealed class StalkerRepositorySystem : EntitySystem
             return new RepositoryItemInfo();
 
         // Conversion for database type
-        var newSStorageData = _stalkerStorageSystem.ConvertToIItemStalkerStorage(item)[0];
+        var convertedList = _stalkerStorageSystem.ConvertToIItemStalkerStorage(item);
+        if (convertedList.Count == 0)
+            return new RepositoryItemInfo();
+        var newSStorageData = convertedList[0];
         // Identifier for items that had to be unique, items with the same identifier can be stacked.
         var newIdentifier = "";
 
@@ -497,7 +500,10 @@ public sealed class StalkerRepositorySystem : EntitySystem
         foreach (var element in items)
         {
             // generates stalker storage data
-            var ident = _stalkerStorageSystem.ConvertToIItemStalkerStorage(item)[0];
+            var convertedList = _stalkerStorageSystem.ConvertToIItemStalkerStorage(item);
+            if (convertedList.Count == 0)
+                continue;
+            var ident = convertedList[0];
             var identifier = string.Empty;
 
             // gets identifier to determine duplicates
@@ -1039,7 +1045,10 @@ public sealed class StalkerRepositorySystem : EntitySystem
     /// <returns>Identifier in string</returns>
     private string GenerateIdentifier(EntityUid item)
     {
-        var newSStorageData = _stalkerStorageSystem.ConvertToIItemStalkerStorage(item)[0];
+        var convertedList = _stalkerStorageSystem.ConvertToIItemStalkerStorage(item);
+        if (convertedList.Count == 0)
+            return string.Empty;
+        var newSStorageData = convertedList[0];
         if (newSStorageData is IItemStalkerStorage iss)
         {
             return iss.Identifier();
