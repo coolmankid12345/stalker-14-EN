@@ -1,5 +1,6 @@
 - type: shopPreset
   id: STMeatShopPreset
+  minSellPrice: 0
   itemsForSale:
     # cooked meat
     FoodMeatDogCooked: 1
