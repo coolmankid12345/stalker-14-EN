@@ -15,3 +15,4 @@ shop-currency-name = Roubles
 shop-selling-price = Selling value: { $amount }
 
 st-shop-requires-permit = This shop requires a license { $permit }
+st-shop-item-not-found = The item wasn't found.
