@@ -449,13 +449,15 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                                 if (!TryComp<SolutionComponent>(element, out var solution))
                                     continue;
                                 solution.Solution.Contents.Clear();
+                                solution.Solution.Volume = FixedPoint2.Zero;
                                 if (!options.Contents.TryGetValue(split[1], out var contents))
                                     continue;
                                 foreach (var quan in contents)
                                 {
+                                    if (quan.Quantity <= FixedPoint2.Zero)
+                                        continue;
                                     solution.Solution.AddReagent(quan);
                                 }
-                                solution.Solution.Volume = options.Volume;
                                 Dirty(element, solution);
                             }
                         }
