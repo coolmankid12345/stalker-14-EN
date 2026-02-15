@@ -18,6 +18,7 @@
     - type: Lightning
       canArc: true
       lightningPrototype: SourceLightning
+      maxTotalArc: 6 #StalkerEN
     - type: PointLight
       enabled: true
       color: "#f2fdff"
@@ -46,6 +47,7 @@
     - type: Lightning
       canArc: false
       lightningPrototype: GarlandLightning
+      maxTotalArc: 3 #StalkerEN
     - type: PointLight
       enabled: true
       color: "#f2fdff"
