@@ -82,6 +82,8 @@ public sealed class GeigerSystem : SharedGeigerSystem
         {
             if (receiver?.CurrentDamage != null && receiver.CurrentDamage.TryGetValue("Radiation", out var rads)) // stalker-changes
                 SetCurrentRadiation(uid, geiger, rads); // stalker-changes
+            else // stalker-changes
+                SetCurrentRadiation(uid, geiger, 0f); // stalker-changes
         }
     }
 
