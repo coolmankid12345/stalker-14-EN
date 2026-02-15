@@ -284,5 +284,14 @@
   id: 30
   time: '2026-02-14T16:08:21.113795+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/407
+- author: teecoding
+  changes:
+  - message: Cape storage UI correctly shows items inside
+    type: Fix
+  - message: Paper items now correctly save and restore in personal stash
+    type: Fix
+  id: 31
+  time: '2026-02-15T15:21:39.135129+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/417
 Name: Stalker
 Order: -1
