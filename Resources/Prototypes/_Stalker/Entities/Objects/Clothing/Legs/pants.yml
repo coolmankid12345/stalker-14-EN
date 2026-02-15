@@ -260,6 +260,7 @@
       sprite: _Stalker/Objects/Clothing/Legs/Jeans/Camouflage/monolith.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/Legs/Jeans/Camouflage/monolith.rsi
+    - type: Unremoveable
 
 - type: entity
   parent: BaseClothingLegs

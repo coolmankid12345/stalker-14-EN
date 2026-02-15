@@ -93,7 +93,7 @@
       cell_slot: !type:ContainerSlot
 
 - type: entity
-  parent: STClothingHeadHelmetEnvironmentT3Base
+  parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadHelmetBerill5MMonolith
   name: шлем «Сфера-08» монолита
   description: Шлем тех самых фанатиков, разработанный для защиты от колющих атак. Является шлемом от «Берилл-5М». Класс брони - 3.
@@ -102,6 +102,10 @@
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_monolith.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_monolith.rsi
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 18.01
 
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT3Base
