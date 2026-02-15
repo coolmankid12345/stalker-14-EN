@@ -293,5 +293,12 @@
   id: 31
   time: '2026-02-15T15:21:39.135129+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/417
+- author: teecoding
+  changes:
+  - message: Shift+Left Click no longer blocks shooting in combat mode
+    type: Fix
+  id: 32
+  time: '2026-02-15T16:59:19.667908+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/421
 Name: Stalker
 Order: -1
