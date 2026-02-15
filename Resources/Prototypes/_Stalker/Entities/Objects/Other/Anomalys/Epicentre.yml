@@ -55,6 +55,8 @@
             params:
               volume: 15
         - type: TwoStageTrigger
+          keysIn:
+            - stageTwo
           triggerDelay: 1
           components:
             - type: TimedDespawn
