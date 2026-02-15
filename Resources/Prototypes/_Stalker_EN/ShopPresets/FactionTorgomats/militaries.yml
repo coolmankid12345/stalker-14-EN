@@ -542,6 +542,7 @@
       HatchetStalker: 150
       STSkinsKitMilitary: 500
       AccordionInstrument: 500
+      FoldedFlagMili: 250
 
   - name: shop-category-modules
     priority: 11

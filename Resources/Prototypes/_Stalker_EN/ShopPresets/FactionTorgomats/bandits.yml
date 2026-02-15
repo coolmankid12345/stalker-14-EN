@@ -324,6 +324,7 @@
         STElasticRubberRed: 50
         STElasticRubberGreen: 50
         STElasticRubberBlue: 50
+        FoldedFlagBand: 250
 
     - name: shop-category-modules
       priority: 11
