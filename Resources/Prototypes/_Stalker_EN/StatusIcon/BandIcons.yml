@@ -21,6 +21,26 @@
 
 
 - type: jobIcon
+  id: dolg1EN
+  locationPreference: Right
+  isShaded: true
+  icon:
+    sprite: /Textures/_Stalker_EN/Icons/Patches/band.rsi
+    hideOnStealth: true
+    state: dolg_patch_v2
+
+
+- type: jobIcon
+  id: dolg2EN
+  locationPreference: Right
+  isShaded: true
+  icon:
+    sprite: /Textures/_Stalker_EN/Icons/Patches/band.rsi
+    hideOnStealth: true
+    state: dolg_patch_commanderv2
+
+
+- type: jobIcon
   id: voen1EN
   locationPreference: Right
   isShaded: true
