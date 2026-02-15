@@ -26,7 +26,7 @@
         band: Stalker
         bandIcon: sci
         bandProto: STSciBand
-        bandRankId: 2
+        bandRankId: 1
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -138,7 +138,7 @@
       components:
         - type: Access
           tags:
-            - SciHead
+            - Sci_rector
         - type: Bands
           band: Stalker
           bandIcon: sci_rector
@@ -175,7 +175,7 @@
     shoes: STClothingShoesBootsCombatFilled
     torso: ClothingTorsoShirtWhiteScientific
     outerClothing: ClothingOuterCoatRD
-    head: ClothingHeadBeretUN
+    head: ClothingHeadHatBeretRND
     eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesNitrile
 
@@ -184,11 +184,10 @@
   name: Scientists
   factionId: Scientists
   maxMembers: 6
-  managingRankId: 3
+  managingRankId: 2
   hierarchy:
     1: sci
     2: sci_decan
-    3: sci_rector
 
 - type: startingGear
   id: SciGear2

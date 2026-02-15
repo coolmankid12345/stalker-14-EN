@@ -118,3 +118,8 @@
         whitelist:
           tags:
           - Dogtag
+  - type: PointLight
+    enabled: false
+    radius: 5
+    energy: 2.5
+    netsync: false
