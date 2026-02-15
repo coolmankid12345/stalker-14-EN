@@ -2,8 +2,6 @@
   id: NeutralsShopPresetZoneEN # Sidorovich Prices
   minSellPrice: 5
   itemsForSale:
-    # Exclusive -
-    DismemberedMarkingEars: 375
 
     # Thermal group - 1
     ZoneArtifactFireball: 405
