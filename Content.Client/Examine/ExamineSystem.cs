@@ -7,6 +7,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Input;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
+using Content.Shared.CombatMode;
 using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
@@ -120,6 +121,10 @@ namespace Content.Client.Examine
             {
                 return false;
             }
+
+            // stalker-changes: Don't consume examine input in combat mode so weapons can fire
+            if (TryComp<CombatModeComponent>(player, out var combat) && combat.IsInCombatMode)
+                return false;
 
             DoExamine(entity);
             return true;
