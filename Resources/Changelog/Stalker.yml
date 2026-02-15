@@ -300,5 +300,14 @@
   id: 32
   time: '2026-02-15T16:59:19.667908+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/421
+- author: crocodilecarousel
+  changes:
+  - message: Ability to construct faction flags
+    type: Add
+  - message: Ability to burn faction flags
+    type: Add
+  id: 33
+  time: '2026-02-15T17:23:40.842485+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/422
 Name: Stalker
 Order: -1
