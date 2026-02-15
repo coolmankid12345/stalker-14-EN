@@ -11,7 +11,7 @@
     state: anomalist
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner1
   suffix: ST, Mapping
   name: флаг бандитов
@@ -19,9 +19,12 @@
   - type: Sprite
     sprite: _Stalker/Structures/Wallmounts/banners.rsi
     state: banner1
+  - type: Construction # EN
+    graph: FlagBandCraft
+    node: flagbandend
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner2
   name: флаг долга
   suffix: ST, Mapping
@@ -29,9 +32,12 @@
   - type: Sprite
     sprite: _Stalker/Structures/Wallmounts/banners.rsi
     state: banner2
+  - type: Construction # EN
+    graph: FlagDutyCraft
+    node: flagdutyend
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner3
   name: флаг свободы
   suffix: ST, Mapping
@@ -39,9 +45,12 @@
   - type: Sprite
     sprite: _Stalker/Structures/Wallmounts/banners.rsi
     state: banner3
+  - type: Construction # EN
+    graph: FlagFreeCraft
+    node: flagfreeend
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner4
   name: флаг наёмников
   suffix: ST, Mapping
@@ -49,9 +58,12 @@
   - type: Sprite
     sprite: _Stalker/Structures/Wallmounts/banners.rsi
     state: banner4
+  - type: Construction # EN
+    graph: FlagMercCraft
+    node: flagmercend
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner5
   name: флаг завета
   suffix: ST, Mapping
@@ -61,7 +73,7 @@
     state: banner5
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner6
   name: флаг конфедератов
   suffix: ST, Mapping
@@ -71,7 +83,7 @@
     state: banner6
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner7
   name: флаг добра и позитива
   suffix: ST, Mapping
@@ -79,9 +91,12 @@
   - type: Sprite
     sprite: _Stalker/Structures/Wallmounts/banners.rsi
     state: banner7
+  - type: Construction # EN
+    graph: FlagHelperCraft
+    node: flaghelperend
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner8
   name: флаг ренегатов
   suffix: ST, Mapping
@@ -89,9 +104,12 @@
   - type: Sprite
     sprite: _Stalker/Structures/Wallmounts/banners.rsi
     state: banner8
+  - type: Construction # EN
+    graph: FlagReneCraft
+    node: flagreneend
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner9
   name: флаг русичей
   suffix: ST, Mapping
@@ -101,7 +119,7 @@
     state: banner9
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner10
   name: флаг империи
   suffix: ST, Mapping
@@ -111,7 +129,7 @@
     state: banner10
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner11
   name: флаг ООН
   suffix: ST, Mapping
@@ -121,7 +139,7 @@
     state: banner11
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner12
   name: флаг серафимов
   suffix: ST, Mapping
@@ -131,7 +149,7 @@
     state: banner12
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner13
   name: флаг греха
   suffix: ST, Mapping
@@ -141,7 +159,7 @@
     state: banner13
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner14
   name: флаг чистого неба
   suffix: ST, Mapping
@@ -149,9 +167,12 @@
   - type: Sprite
     sprite: _Stalker/Structures/Wallmounts/banners.rsi
     state: banner14
+  - type: Construction # EN
+    graph: FlagCSCraft
+    node: flagcsend
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner15
   name: флаг отступников
   suffix: ST, Mapping
@@ -161,7 +182,7 @@
     state: banner15
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner16
   name: знамя ордена паломников
   suffix: ST, Mapping, Баннер
@@ -171,7 +192,7 @@
     state: banner16
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner17
   name: флаг украины
   suffix: ST, Mapping, Баннер
@@ -181,7 +202,7 @@
     state: banner17
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner18
   name: флаг украины c гербом
   suffix: ST, Mapping, Баннер
@@ -189,9 +210,12 @@
   - type: Sprite
     sprite: _Stalker/Structures/Wallmounts/banners.rsi
     state: banner18
+  - type: Construction # EN
+    graph: FlagMiliCraft
+    node: flagmiliend
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner19
   name: флаг сил охраны периметра
   suffix: ST, Mapping, Баннер
@@ -201,7 +225,7 @@
     state: banner19
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner20
   name: флаг проекта
   suffix: ST, Mapping, Баннер
@@ -211,7 +235,7 @@
     state: banner20
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner21
   name: флаг СССР
   suffix: ST, Mapping, Баннер
@@ -221,7 +245,7 @@
     state: banner21
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner22
   name: флаг России
   suffix: ST, Mapping, Баннер
@@ -231,7 +255,7 @@
     state: banner22
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner23
   name: флаг ДНР
   suffix: ST, Mapping, Баннер
@@ -241,7 +265,7 @@
     state: banner23
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner24
   name: флаг Австрии
   suffix: ST, Mapping, Баннер
@@ -251,7 +275,7 @@
     state: banner24
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner25
   name: флаг Польши
   suffix: ST, Mapping, Баннер
@@ -261,7 +285,7 @@
     state: banner25
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner26
   name: флаг Сербской республики
   suffix: ST, Mapping, Баннер
@@ -271,7 +295,7 @@
     state: banner26
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner27
   name: флаг БЧБ
   suffix: ST, Mapping, Баннер
@@ -281,7 +305,7 @@
     state: banner27
 
 - type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN # EN
   id: Banner28
   name: флаг Финских островов
   suffix: ST, Mapping, Баннер

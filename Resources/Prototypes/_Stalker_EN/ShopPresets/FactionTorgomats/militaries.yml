@@ -224,7 +224,7 @@
       CraftBag: 10
       CasseteArstotzka1984: 500
       STElasticRubberRed: 50
-      STElasticRubberGreen: 50 
+      STElasticRubberGreen: 50
       STElasticRubberBlue: 50
 
   - name: shop-category-provisions
@@ -541,6 +541,7 @@
       HatchetStalker: 150
       STSkinsKitMilitary: 500
       AccordionInstrument: 500
+      FoldedFlagMili: 250
 
   - name: shop-category-modules
     priority: 11

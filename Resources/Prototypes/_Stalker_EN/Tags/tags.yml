@@ -1,6 +1,33 @@
 # alphabetical please
 
 - type: Tag
+  id: FoldedFlagBand
+
+- type: Tag
+  id: FoldedFlagCS
+
+- type: Tag
+  id: FoldedFlagDuty
+
+- type: Tag
+  id: FoldedFlagFree
+
+- type: Tag
+  id: FoldedFlagHelper
+
+- type: Tag
+  id: FoldedFlagMerc
+
+- type: Tag
+  id: FoldedFlagMili
+
+- type: Tag
+  id: FoldedFlagMono
+
+- type: Tag
+  id: FoldedFlagRene
+
+- type: Tag
   id: Hryvnias
 
 - type: Tag
@@ -23,4 +50,3 @@
 
 - type: Tag
   id: STElasticRubberBlue
-  

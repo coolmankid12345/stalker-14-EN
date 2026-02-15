@@ -26,6 +26,7 @@
     ClothingNeckScarfWhite: 10
     MonolithInventoryRestockEN: 1
     Screwdriver: 1
+    FoldedFlagMono: 20
 
 - type: entity
   parent: BaseItem
