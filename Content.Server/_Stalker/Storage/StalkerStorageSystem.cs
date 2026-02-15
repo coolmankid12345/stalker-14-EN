@@ -88,6 +88,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         _convertersItemStalker.Add("MS", ConverterStackItemStalker);
 
         _convertersItemStalker.Add("MP", ConverterPaperItemStalker);
+        _convertersItemStalker.Add("MSP", ConverterPaperItemStalker); // Paper also has StackComponent (Corvax-Printer)
         _convertersItemStalker.Add("ML", ConverterBatteryItemStalker);
         _convertersItemStalker.Add("ME", ConverterSolutionItemStalker); // Solutions
         _convertersItemStalker.Add("MC", ConverterCartridgeItemStalker);
