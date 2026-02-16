@@ -12,11 +12,11 @@ public sealed partial class STCCVars
     public static readonly CVarDef<bool> EmissionSimpleVisuals =
         CVarDef.Create("stalkeren.emission.simplevisuals", false, CVar.CLIENTONLY);
 
-    // TODO get rid of this when roofs get added
     /// <summary>
     ///     Should emission lightning do raycast checks to estimate what places
-    ///         are indoors? This may be slightly expensive for performance.
+    ///         are indoors (true), or forget that and instead determine whether tiles
+    ///         are eligible for lightning by checking if they have a roof (false).
     /// </summary>
     public static readonly CVarDef<bool> EmissionLightningRaycast =
-        CVarDef.Create("stalkeren.emission.lightning_raycasting", true, CVar.SERVERONLY);
+        CVarDef.Create("stalkeren.emission.lightning_raycasting", false, CVar.SERVERONLY);
 }
