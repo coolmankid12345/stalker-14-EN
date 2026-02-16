@@ -317,5 +317,13 @@
   id: 34
   time: '2026-02-16T16:56:48.909521+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/428
+- author: teecoding
+  changes:
+  - message: Fixed storage grid display glitches on PZS Waist Bag, PZS Officer, Berill-5M
+      and Deserter belts
+    type: Fix
+  id: 35
+  time: '2026-02-16T17:01:34.024095+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/429
 Name: Stalker
 Order: -1
