@@ -229,7 +229,6 @@ public sealed class EmissionLightningSystem : EntitySystem
                     if (!AreCoordinatesMaybeIndoors(candidateMapCoordinates.Value))
                         continue;
                 }
-
                 else
                 {
                     // This check is only necessary if there is a roof
