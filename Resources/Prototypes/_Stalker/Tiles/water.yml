@@ -8,7 +8,7 @@
     snap:
     - Wall
   components:
-  #- type: IgnorePredictionHide # Temporarily commented for build fixing
+  - type: IgnorePredictionHit
   - type: FloorOccluder
   - type: Transform
     anchored: true
