@@ -126,9 +126,7 @@
       maxItemSize: Large
       grid:
         - 2,0,7,3
-        - 0,4,0,2
-        - 1,0,0,2
-        - 0,0,0,0
+        - 0,0,1,0
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/belt/belt_green.rsi
       state: icon
@@ -148,10 +146,8 @@
       maxItemSize: Large
       grid:
         - 4,0,9,3
-        - 0,1,0,1
         - 0,0,1,0
-        - 0,4,0,2
-        - 1,0,0,2
+        - 0,1,0,1
         - 2,2,2,2
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/belt/belt_officer.rsi
@@ -213,10 +209,8 @@
       maxItemSize: Large
       grid:
         - 4,0,9,3
-        - 0,1,0,1
         - 0,0,1,0
-        - 0,4,0,2
-        - 1,0,0,2
+        - 0,1,0,1
         - 2,2,2,2
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/belt/belt_berill.rsi
@@ -420,10 +414,8 @@
       maxItemSize: Large
       grid:
         - 4,0,9,3
-        - 0,1,0,1
         - 0,0,1,0
-        - 0,4,0,2
-        - 1,0,0,2
+        - 0,1,0,1
         - 2,2,2,2
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/belt/belt_deserter_holster.rsi
