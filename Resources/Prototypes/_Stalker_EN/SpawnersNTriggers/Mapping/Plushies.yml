@@ -1,0 +1,92 @@
+# Gacha-style random plushie spawner for mappers.
+# Plushies are weighted by rarity: common (3x), uncommon (2x), rare (1x), ultra-rare (rarePrototypes).
+- type: entity
+  name: Random Plushie Spawner
+  id: STPlushieSpawner
+  suffix: ST, Gacha
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Fun/Plushies/bee.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - PlushieGhost
+        - PlushieRGBee
+        - PlushieRainbowCarp
+        - PlushieRainbowLizard
+        - PlushieThrongler
+        - PlushieMagicarp
+        - PlushieHolocarp
+      rareChance: 0.05
+      prototypes:
+        # Common (3x weight) - everyday finds
+        - STPlushieFeltCat1
+        - STPlushieFeltCat1
+        - STPlushieFeltCat1
+        - STPlushieFeltCat2
+        - STPlushieFeltCat2
+        - STPlushieFeltCat2
+        - STPlushieFeltCat3
+        - STPlushieFeltCat3
+        - STPlushieFeltCat3
+        - ToyMouse
+        - ToyMouse
+        - ToyMouse
+        - PlushieSlime
+        - PlushieSlime
+        - PlushieSlime
+        - PlushieSnake
+        - PlushieSnake
+        - PlushieSnake
+        # Uncommon (2x weight) - nice finds
+        - STPlushieFeltFlesh
+        - STPlushieFeltFlesh
+        - STPlushieBunny
+        - STPlushieBunny
+        - PlushieBee
+        - PlushieBee
+        - PlushieLizard
+        - PlushieLizard
+        - PlushieCarp
+        - PlushieCarp
+        - PlushieAtmosian
+        - PlushieAtmosian
+        - PlushieNuke
+        - PlushieNuke
+        - PlushieVox
+        - PlushieVox
+        - PlushieDiona
+        - PlushieDiona
+        - PlushieArachind
+        - PlushieArachind
+        - PlushieHampter
+        - PlushieHampter
+        - PlushieSharkBlue
+        - PlushieSharkBlue
+        - PlushieSharkPink
+        - PlushieSharkPink
+        - PlushieSharkGrey
+        - PlushieSharkGrey
+        - PlushieMoth
+        - PlushieMoth
+        - PlushieVulp
+        - PlushieVulp
+        - PlushiePenguin
+        - PlushiePenguin
+        - PlushieHuman
+        - PlushieHuman
+        - PlushieExperiment
+        - PlushieExperiment
+        # Rare (1x weight) - lucky finds
+        - PlushieOldStalker
+        - PlushieSpaceLizard
+        - PlushieRouny
+        - PlushieLamp
+        - PlushieNar
+        - PlushieRatvar
+        - PlushieXeno
+      chance: 1.0
+      offset: 0.2
