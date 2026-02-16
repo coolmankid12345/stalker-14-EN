@@ -206,6 +206,7 @@
         STElasticRubberRed: 50
         STElasticRubberGreen: 50
         STElasticRubberBlue: 50
+        FoldedFlagMili: 250
 
     - name: shop-category-customization
       priority: 11

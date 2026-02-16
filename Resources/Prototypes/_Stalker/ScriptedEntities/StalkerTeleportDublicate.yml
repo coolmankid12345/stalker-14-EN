@@ -88,6 +88,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, OrangeForest
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: RedForest
     maxWeight: 200
@@ -106,6 +107,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Military
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Military
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -120,6 +122,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Sci
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Sci
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -134,6 +137,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Bandit
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Bandit
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -148,6 +152,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Seraphims
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Seraphims
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -162,6 +167,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Dolg
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Dolg
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -176,6 +182,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Freedom
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Freedom
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -190,6 +197,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Renegat
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Renegat
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -204,6 +212,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Covenant
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Covenant
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -218,6 +227,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Anomalist
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Anomalist
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -232,6 +242,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Mercenary
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Kordon
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -246,6 +257,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Greh
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Greh
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -260,6 +272,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Clear Sky
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: CN
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -274,6 +287,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Poisk
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Poisk
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -288,6 +302,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Neutral
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Neutral
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -302,6 +317,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Deserter
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Deserter
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -314,6 +330,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Jaba
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Jaba
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -328,6 +345,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Mechanic
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Mechanic
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -340,6 +358,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Project
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Project
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
@@ -352,6 +371,7 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Bar
   components:
+  - type: NoobDenyer # stalker-changes
   - type: DuplicateTeleport
     prefix: Bar
     maxWeight: 150

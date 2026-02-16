@@ -25,7 +25,7 @@
     wideAnimationRotation: 90
     damage:
       types:
-        Blunt: 19
+        Blunt: 5
     soundHit:
       collection: MetalThud
   - type: Item

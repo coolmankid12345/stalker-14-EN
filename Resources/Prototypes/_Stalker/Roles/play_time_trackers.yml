@@ -196,3 +196,5 @@
   id: JobHeadClearSky
 - type: playTimeTracker
   id: JobHeadMilitaryStalker
+- type: playTimeTracker
+  id: JobStalkerRookie

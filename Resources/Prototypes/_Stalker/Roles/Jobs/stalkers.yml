@@ -12,6 +12,8 @@
       - Dwarf
       - Gingerbread
       - HumanFat
+    - !type:OverallPlaytimeRequirement # stalker-changes: Rookies must play 10h before unlocking Loner
+      time: 10h
     # Обнулил требования, так как люди не могут зайти за сталкера когда их турнули
     # c ГП. И по сути не могут играть вообще. Я хз как это сделать лучше, но то что есть сейчас
     # не даёт людям вообще играть.

@@ -107,6 +107,12 @@ job-head-renegade-supervisor = you're the boss.
 
 job-scientist = Scientist
 job-scientist-desc = The main goal is to study all aspects of the Site, using scientific methods to further explain what the Site is and its purpose.
+job-sci = Scientist
+job-sci-desc = The main goal is to study all aspects of the Zone, using scientific methods to further explain what the Zone is and its purpose.
+job-sci_decan = Research Institute Dean
+job-sci_decan-desc = The main goal is to study all aspects of the Zone, using scientific methods to further explain what the Zone is and its purpose.
+job-sci_rector = Research Institute Rector
+job-sci_rector-desc = The main goal is to study all aspects of the Zone, using scientific methods to further explain what the Zone is and its purpose.
 job-issg = SSGI Operative
 job-issg-desc = Following the orders of the institute is your everything.
 job-head-scientist = Lead Scientist

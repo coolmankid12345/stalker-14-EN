@@ -1,0 +1,61 @@
+#Adds all the missing access groups so I can add them for admins
+
+- type: accessGroup
+  id: BanditHead
+  tags:
+    - Bandit
+    - BanditHead
+
+- type: accessGroup
+  id: MayorCity
+  tags:
+    - MayorCity
+    - Prokuror
+    - Magistrate
+    - Priest
+    - Barthender
+    - Doctor
+    - HeadDoctor
+
+- type: accessGroup
+  id: Deserter
+  tags:
+    - Deserter
+
+- type: accessGroup
+  id: Deserter
+  tags:
+    - Deserter
+
+- type: accessGroup
+  id: EvolverPack
+  tags:
+    - EvolverPack
+    - Evolver
+
+- type: accessGroup
+  id: Stalker
+  tags:
+    - Stalker
+    - Neutral
+    - Veteran
+    - Guide
+    - Rookie
+
+- type: accessGroup
+  id: MilitiaAccess
+  tags:
+    - MilitiaAccess
+
+- type: accessGroup
+  id: ProjectOrchestrator
+  tags:
+    - ProjectOrchestrator
+    - Project
+    - ProjectPawn
+
+- type: accessGroup
+  id: SeraphimsHead
+  tags:
+    - SeraphimsHead
+    - Seraphims

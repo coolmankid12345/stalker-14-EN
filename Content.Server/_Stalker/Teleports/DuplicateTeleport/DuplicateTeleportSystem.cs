@@ -5,9 +5,12 @@ using Content.Server._Stalker.StalkerDB;
 using Content.Server._Stalker.StalkerRepository;
 using Content.Server._Stalker.Storage;
 using Content.Server._Stalker.Teleports.StalkerBandPortal;
+using Content.Server._Stalker_EN.NoobDenyer; // stalker-changes
+using Content.Server.Players.PlayTimeTracking; // stalker-changes
 using Content.Shared._Stalker.StalkerRepository;
 using Content.Shared._Stalker.Teleport;
 using Content.Shared.Access.Systems;
+using Content.Shared.Popups; // stalker-changes
 using Content.Shared.Teleportation.Components;
 using Microsoft.Extensions.Logging;
 using Robust.Server.GameObjects;
@@ -36,9 +39,11 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
     [Dependency] private readonly StalkerRepositorySystem _repositorySystem = default!;
     [Dependency] private readonly SponsorSystem _sponsorSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly PlayTimeTrackingManager _playTimeTrackingManager = default!; // stalker-changes
+    [Dependency] private readonly SharedPopupSystem _popup = default!; // stalker-changes
 
     private const string MoneyId = "Roubles";
-    private const float StashPortalCooldownTime = 5f;
+    private static readonly TimeSpan StashPortalCooldownTime = TimeSpan.FromSeconds(5);
     private ISawmill _sawmill = default!;
     private Dictionary<string, EntityUid> ArenaMap { get; } = new();
     private Dictionary<string, EntityUid?> ArenaGrid { get; } = new();
@@ -54,29 +59,39 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
         var subject = args.OtherEntity;
         var portalEnt = args.OurEntity;
 
-        // Check cooldown - block if still in cooldown period
         if (TryComp<PortalTimeoutComponent>(subject, out var existingTimeout))
         {
             if (existingTimeout.Cooldown != null && existingTimeout.Cooldown > _timing.CurTime)
-                return;
-
-            // Existing back-teleport prevention (if component exists but we passed cooldown check)
-            if (existingTimeout.EnteredPortal != portalEnt)
                 return;
         }
 
         if (!TryComp<ActorComponent>(subject, out var actor))
             return;
 
+        // stalker-changes: Block Rookies (<10h playtime) from using non-Cordon stash portals
+        if (HasComp<NoobDenyerComponent>(entity))
+        {
+            var session = actor.PlayerSession;
+            var playtime = _playTimeTrackingManager.GetOverallPlaytime(session).TotalHours;
+
+            if (playtime < 10)
+            {
+                _popup.PopupEntity(Loc.GetString("rookie-stash-denied"), subject);
+                return;
+            }
+        }
+
         if (!_accessReaderSystem.IsAllowed(subject, portalEnt))
             return;
 
         var timeout = EnsureComp<PortalTimeoutComponent>(subject);
         timeout.EnteredPortal = portalEnt;
-        timeout.Cooldown = _timing.CurTime + TimeSpan.FromSeconds(StashPortalCooldownTime);
+        timeout.Cooldown = _timing.CurTime + StashPortalCooldownTime;
         Dirty(subject, timeout);
 
         var (mapUid, gridUid) = StalkerAssertArenaLoaded(actor.PlayerSession.Name, actor.PlayerSession.UserId, entity.Comp, entity);
+        if (!mapUid.IsValid())
+            return;
         TeleportEntity(subject, new EntityCoordinates(gridUid ?? mapUid, Vector2.One));
     }
 
@@ -109,7 +124,7 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
         if (grids is null || !isLoaded || map is null)
         {
             _sawmill.Error($"Couldn't load a map {component.ArenaMapPath} for {concatenated}");
-            return (ArenaMap[concatenated], null);
+            return (EntityUid.Invalid, null);
         }
 
         ArenaMap[concatenated] = map.Value.Owner;

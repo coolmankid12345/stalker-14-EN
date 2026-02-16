@@ -13,6 +13,7 @@
   metamorphicChangeColor: false
   recognizable: true
   standsout: true
+  evaporationSpeed: 0.15 # stalker EN
   physicalDesc: reagent-physical-desc-ferrous
   metabolisms:
     Drink:
@@ -218,6 +219,7 @@
   flavor: terrible
   color: "#87ab08"
   physicalDesc: reagent-physical-desc-pungent
+  evaporationSpeed: 0.15 # stalker EN
   slipData:
     requiredSlipSpeed: 4.0 #It's not as slippery as water
   friction: 0.4

@@ -28,3 +28,4 @@
     - HideContextMenu
   - type: STAnomalyTips
   - type: ESViewconeOccludable
+  - type: IgnorePredictionHit

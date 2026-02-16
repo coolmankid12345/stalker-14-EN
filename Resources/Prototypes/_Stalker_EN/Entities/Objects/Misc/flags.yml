@@ -1,0 +1,379 @@
+﻿- type: entity
+  name: folded flag
+  parent: BaseItem
+  id: FoldedFlagBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+  - type: Craftable
+
+- type: entity
+  name: folded bandit flag
+  parent: BaseItem
+  id: FoldedFlagBand
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+    state: band
+  - type: Craftable
+  - type: Tag
+    tags:
+    - FoldedFlagBand
+
+- type: entity
+  name: folded clear sky flag
+  parent: BaseItem
+  id: FoldedFlagCS
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+    state: cs
+  - type: Craftable
+  - type: Tag
+    tags:
+    - FoldedFlagCS
+
+- type: entity
+  name: folded duty flag
+  parent: BaseItem
+  id: FoldedFlagDuty
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+    state: duty
+  - type: Craftable
+  - type: Tag
+    tags:
+    - FoldedFlagDuty
+
+- type: entity
+  name: folded freedom flag
+  parent: BaseItem
+  id: FoldedFlagFree
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+    state: free
+  - type: Craftable
+  - type: Tag
+    tags:
+    - FoldedFlagFree
+
+- type: entity
+  name: folded kindness flag
+  parent: BaseItem
+  id: FoldedFlagHelper
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+    state: helper
+  - type: Craftable
+  - type: Tag
+    tags:
+    - FoldedFlagHelper
+
+- type: entity
+  name: folded mercenary flag
+  parent: BaseItem
+  id: FoldedFlagMerc
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+    state: merc
+  - type: Craftable
+  - type: Tag
+    tags:
+    - FoldedFlagMerc
+
+- type: entity
+  name: folded military flag
+  parent: BaseItem
+  id: FoldedFlagMili
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+    state: military
+  - type: Craftable
+  - type: Tag
+    tags:
+    - FoldedFlagMili
+
+- type: entity
+  name: folded monolith flag
+  parent: BaseItem
+  id: FoldedFlagMono
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+    state: mono
+  - type: Craftable
+  - type: Tag
+    tags:
+    - FoldedFlagMono
+
+- type: entity
+  name: folded renegade flag
+  parent: BaseItem
+  id: FoldedFlagRene
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+    state: rene
+  - type: Craftable
+  - type: Tag
+    tags:
+    - FoldedFlagRene
+
+# i fucking hate construction graphs
+#BAND
+- type: construction
+  id: FlagBandCraft
+  graph: FlagBandCraft
+  startNode: start
+  targetNode: flagbandend
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: constructionGraph
+  id: FlagBandCraft
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: flagbandend
+          steps:
+            - tag: FoldedFlagBand
+              name: folded bandit flag
+              icon:
+                sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+                state: band
+              doAfter: 7
+    - node: flagbandend
+      entity: Banner1
+
+#DUTY
+- type: construction
+  id: FlagDutyCraft
+  graph: FlagDutyCraft
+  startNode: start
+  targetNode: flagdutyend
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: constructionGraph
+  id: FlagDutyCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: flagdutyend
+      steps:
+      - tag: FoldedFlagDuty
+        name: folded duty flag
+        icon:
+          sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+          state: duty
+        doAfter: 7
+  - node: flagdutyend
+    entity: Banner2
+
+# FREEDOM
+- type: construction
+  id: FlagFreeCraft
+  graph: FlagFreeCraft
+  startNode: start
+  targetNode: flagfreeend
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: constructionGraph
+  id: FlagFreeCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: flagfreeend
+      steps:
+      - tag: FoldedFlagFree
+        name: folded freedom flag
+        icon:
+          sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+          state: free
+        doAfter: 7
+  - node: flagfreeend
+    entity: Banner3
+
+# MERC
+- type: construction
+  id: FlagMercCraft
+  graph: FlagMercCraft
+  startNode: start
+  targetNode: flagmercend
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: constructionGraph
+  id: FlagMercCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: flagmercend
+      steps:
+      - tag: FoldedFlagMerc
+        name: folded mercenary flag
+        icon:
+          sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+          state: merc
+        doAfter: 7
+  - node: flagmercend
+    entity: Banner4
+
+# HELPER
+- type: construction
+  id: FlagHelperCraft
+  graph: FlagHelperCraft
+  startNode: start
+  targetNode: flaghelperend
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: constructionGraph
+  id: FlagHelperCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: flaghelperend
+      steps:
+      - tag: FoldedFlagHelper
+        name: folded kindness flag
+        icon:
+          sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+          state: helper
+        doAfter: 7
+  - node: flaghelperend
+    entity: Banner7
+
+# RENEGADE
+- type: construction
+  id: FlagReneCraft
+  graph: FlagReneCraft
+  startNode: start
+  targetNode: flagreneend
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: constructionGraph
+  id: FlagReneCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: flagreneend
+      steps:
+      - tag: FoldedFlagRene
+        name: folded renegade flag
+        icon:
+          sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+          state: rene
+        doAfter: 7
+  - node: flagreneend
+    entity: Banner8
+
+# CS
+- type: construction
+  id: FlagCSCraft
+  graph: FlagCSCraft
+  startNode: start
+  targetNode: flagcsend
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: constructionGraph
+  id: FlagCSCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: flagcsend
+      steps:
+      - tag: FoldedFlagCS
+        name: folded clear sky flag
+        icon:
+          sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+          state: cs
+        doAfter: 7
+  - node: flagcsend
+    entity: Banner14
+
+# MILITARY
+- type: construction
+  id: FlagMiliCraft
+  graph: FlagMiliCraft
+  startNode: start
+  targetNode: flagmiliend
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: constructionGraph
+  id: FlagMiliCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: flagmiliend
+      steps:
+      - tag: FoldedFlagMili
+        name: folded ukrainian flag
+        icon:
+          sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+          state: military
+        doAfter: 7
+  - node: flagmiliend
+    entity: Banner18
+
+# MONOLITH
+- type: construction
+  id: FlagMonoCraft
+  graph: FlagMonoCraft
+  startNode: start
+  targetNode: flagmonoend
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: constructionGraph
+  id: FlagMonoCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: flagmonoend
+      steps:
+      - tag: FoldedFlagMono
+        name: folded monolith flag
+        icon:
+          sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
+          state: mono
+        doAfter: 7
+  - node: flagmonoend
+    entity: FactionFlagMonolith

@@ -252,8 +252,9 @@
         ClothingHeatBagStalker: 100
         STSkinsKitMercenary: 500
         STElasticRubberRed: 50
-        STElasticRubberGreen: 50 
+        STElasticRubberGreen: 50
         STElasticRubberBlue: 50
+        FoldedFlagMerc: 250
 
     - name: shop-category-modules
       priority: 11

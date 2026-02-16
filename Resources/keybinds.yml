@@ -207,6 +207,7 @@ binds:
   key: MouseLeft
   canFocus: true
   mod1: Shift
+  allowSubCombs: true # stalker-changes: let Use fire alongside ExamineEntity so weapons work with Shift held
 - function: ActivateItemInWorld
   type: State
   key: E

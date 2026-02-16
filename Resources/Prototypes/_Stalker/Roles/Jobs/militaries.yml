@@ -256,7 +256,7 @@
   id: STMilitaryBand
   name: Military
   factionId: Military
-  maxMembers: 11
+  maxMembers: 30
   managingRankId: 2
   hierarchy:
     1: Military

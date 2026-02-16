@@ -2,8 +2,6 @@
   id: NeutralsShopPresetZoneEN # Sidorovich Prices
   minSellPrice: 5
   itemsForSale:
-    # Exclusive -
-    DismemberedMarkingEars: 375
 
     # Thermal group - 1
     ZoneArtifactFireball: 405
@@ -294,6 +292,7 @@
       STElasticRubberRed: 50
       STElasticRubberGreen: 50
       STElasticRubberBlue: 50
+      FoldedFlagHelper: 250
 
   - name: shop-category-paperwork
     priority: 11

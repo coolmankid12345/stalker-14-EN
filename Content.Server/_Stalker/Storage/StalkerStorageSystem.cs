@@ -88,6 +88,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         _convertersItemStalker.Add("MS", ConverterStackItemStalker);
 
         _convertersItemStalker.Add("MP", ConverterPaperItemStalker);
+        _convertersItemStalker.Add("MSP", ConverterPaperItemStalker); // Paper also has StackComponent (Corvax-Printer)
         _convertersItemStalker.Add("ML", ConverterBatteryItemStalker);
         _convertersItemStalker.Add("ME", ConverterSolutionItemStalker); // Solutions
         _convertersItemStalker.Add("MC", ConverterCartridgeItemStalker);
@@ -338,10 +339,14 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
             if (item is not IItemStalkerStorage storageItem)
                 continue;
 
-            storageItem.PrototypeName = MapPrototype(storageItem.PrototypeName);
+            var mapped = MapPrototype(storageItem.PrototypeName);
+            if (mapped == null)
+                continue;
+
+            storageItem.PrototypeName = mapped.Value;
 
             if (item is AmmoContainerStalker ammoContainer)
-                ammoContainer.EntProtoIds = MapPrototype(ammoContainer.EntProtoIds);
+                ammoContainer.EntProtoIds = MapPrototypeList(ammoContainer.EntProtoIds);
 
             deserializedFromJson.Add(storageItem);
         }
@@ -353,22 +358,32 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
     }
 
     /// <summary>
-    /// Maps a list of prototype IDs through the prototype mapping table.
+    /// Maps a list of prototype IDs through the prototype mapping table, filtering out non-existent prototypes.
     /// Used to handle prototype ID changes between game versions.
     /// </summary>
-    private List<string> MapPrototype(in List<string> protoIds)
+    private List<string> MapPrototypeList(in List<string> protoIds)
     {
-        return protoIds.Select(id => (string)MapPrototype((EntProtoId)id)).ToList();
+        var result = new List<string>(protoIds.Count);
+        foreach (var id in protoIds)
+        {
+            var mapped = MapPrototype((EntProtoId) id);
+            if (mapped != null)
+                result.Add((string) mapped.Value);
+        }
+        return result;
     }
 
-    private EntProtoId MapPrototype(EntProtoId protoId)
+    private EntProtoId? MapPrototype(EntProtoId protoId)
     {
         var prototype = protoId;
         if (_mapping.TryGetValue(prototype, out var newPrototype))
             prototype = newPrototype;
 
         if (!_prototype.HasIndex(prototype))
-            Log.Error($"A non-existent prototype entity in the stash {prototype}");
+        {
+            Log.Error($"A non-existent prototype entity in the stash {prototype}, skipping");
+            return null;
+        }
 
         return prototype;
     }
@@ -434,13 +449,15 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                                 if (!TryComp<SolutionComponent>(element, out var solution))
                                     continue;
                                 solution.Solution.Contents.Clear();
+                                solution.Solution.Volume = FixedPoint2.Zero;
                                 if (!options.Contents.TryGetValue(split[1], out var contents))
                                     continue;
                                 foreach (var quan in contents)
                                 {
+                                    if (quan.Quantity <= FixedPoint2.Zero)
+                                        continue;
                                     solution.Solution.AddReagent(quan);
                                 }
-                                solution.Solution.Volume = options.Volume;
                                 Dirty(element, solution);
                             }
                         }

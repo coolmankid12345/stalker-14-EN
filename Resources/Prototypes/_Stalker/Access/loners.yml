@@ -17,7 +17,7 @@
 
 - type: accessLevel
   id: Guide
-  name: Проводник
+  name: id-card-access-level-guide
 
 - type: accessGroup
   id: Guide

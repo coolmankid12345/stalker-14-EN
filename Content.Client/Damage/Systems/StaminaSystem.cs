@@ -57,6 +57,8 @@ public sealed partial class StaminaSystem : SharedStaminaSystem
 
     private void TryStartAnimation(Entity<StaminaComponent> entity)
     {
+        return;
+
         if (!TryComp<SpriteComponent>(entity, out var sprite))
             return;
 

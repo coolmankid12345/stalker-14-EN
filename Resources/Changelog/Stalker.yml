@@ -169,5 +169,145 @@
   id: 18
   time: '2026-02-06T20:01:07.110967+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/391
+- author: teecoding
+  changes:
+  - message: Emission red overlay is now visible again during blowout events
+    type: Fix
+  - message: Day/night cycle restored on Svalka, Red Forest, Yantar, and Rostok maps
+    type: Fix
+  - message: Sun shadows on Svalka, Red Forest, and Yantar maps
+    type: Add
+  id: 19
+  time: '2026-02-13T18:28:04.942869+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/394
+- author: teecoding
+  changes:
+  - message: PDA flashlight no longer toggles when pressing E to open the PDA
+    type: Fix
+  id: 20
+  time: '2026-02-13T18:36:36.042530+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/395
+- author: teecoding
+  changes:
+  - message: Stash portals no longer crash the server when the arena map fails to
+      load
+    type: Fix
+  - message: Band portals now use a proper cooldown instead of permanently blocking
+      re-entry
+    type: Fix
+  - message: Access level names on portals and ID cards now display in English instead
+      of raw locale keys
+    type: Fix
+  - message: Guide access level no longer shows hardcoded Russian text
+    type: Fix
+  id: 21
+  time: '2026-02-13T18:39:03.850461+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/396
+- author: teecoding
+  changes:
+  - message: Late-join arrival announcements no longer broadcast to the station
+    type: Remove
+  id: 22
+  time: '2026-02-13T18:44:15.985435+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/398
+- author: teecoding
+  changes:
+  - message: Rookie role for new players with under 10 hours of playtime
+    type: Add
+  - message: Rookies are restricted to Cordon stash only until they reach 10 hours
+      of playtime
+    type: Add
+  - message: Loner role now requires 10 hours of overall playtime to unlock
+    type: Tweak
+  - message: updated new player guide to mention Rookie role and progression
+    type: Tweak
+  - message: updated faction rules (C11) to mention Rookie role
+    type: Tweak
+  id: 23
+  time: '2026-02-13T22:10:15.969686+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/399
+- author: teecoding
+  changes:
+  - message: Fixed a bug where reconnecting after dying in your stash could put you
+      into an observer object
+    type: Fix
+  id: 24
+  time: '2026-02-13T22:13:31.279337+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/400
+- author: teecoding
+  changes:
+  - message: Thief anomaly now throws your items instead of destroying them
+    type: Tweak
+  - message: Weak and strong thief anomaly variants
+    type: Add
+  id: 25
+  time: '2026-02-13T22:25:48.261361+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/401
+- author: teecoding
+  changes:
+  - message: Admin observe no longer respawns you as a new character instead of making
+      you an observer
+    type: Fix
+  id: 26
+  time: '2026-02-13T22:28:48.051243+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/402
+- author: teecoding
+  changes:
+  - message: Players no longer freeze after teleporting to maps that were paused by
+      trash cleanup
+    type: Fix
+  id: 27
+  time: '2026-02-14T13:16:16.125488+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/403
+- author: teecoding
+  changes:
+  - message: Gun prediction - projectiles now appear instantly when you fire instead
+      of waiting for server response
+    type: Add
+  - message: Shooting feels more responsive at higher ping
+    type: Tweak
+  id: 28
+  time: '2026-02-14T13:19:47.687885+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/404
+- author: teecoding
+  changes:
+  - message: Fixed stash portals not teleporting players in when their stash contained
+      items from removed prototypes
+    type: Fix
+  id: 29
+  time: '2026-02-14T16:06:07.944476+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/406
+- author: crocodilecarousel
+  changes:
+  - message: roofs on buildings
+    type: Add
+  id: 30
+  time: '2026-02-14T16:08:21.113795+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/407
+- author: teecoding
+  changes:
+  - message: Cape storage UI correctly shows items inside
+    type: Fix
+  - message: Paper items now correctly save and restore in personal stash
+    type: Fix
+  id: 31
+  time: '2026-02-15T15:21:39.135129+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/417
+- author: teecoding
+  changes:
+  - message: Shift+Left Click no longer blocks shooting in combat mode
+    type: Fix
+  id: 32
+  time: '2026-02-15T16:59:19.667908+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/421
+- author: crocodilecarousel
+  changes:
+  - message: Ability to construct faction flags
+    type: Add
+  - message: Ability to burn faction flags
+    type: Add
+  id: 33
+  time: '2026-02-15T17:23:40.842485+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/422
 Name: Stalker
 Order: -1

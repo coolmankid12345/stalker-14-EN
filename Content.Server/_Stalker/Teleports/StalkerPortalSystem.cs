@@ -146,7 +146,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
             while (enumerator.MoveNext(out var ent))
             {
-                if (TryComp<MindContainerComponent>(ent, out var mind) && !TryComp<GhostComponent>(ent, out var ghost) && !TryComp<DatasetVocalizerComponent>(ent, out var ad))
+                if (TryComp<MindContainerComponent>(ent, out var mind) && mind.HasMind && !TryComp<GhostComponent>(ent, out var ghost) && !TryComp<DatasetVocalizerComponent>(ent, out var ad))
                 {
                     hasMind = true;
                     break;

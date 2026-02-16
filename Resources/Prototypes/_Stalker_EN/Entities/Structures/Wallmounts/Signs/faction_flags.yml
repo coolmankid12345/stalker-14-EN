@@ -1,5 +1,5 @@
 ﻿- type: entity
-  parent: PosterBaseStalker
+  parent: FactionFlagBaseEN
   id: FactionFlagVoenstal
   name: Voenstal Flag
   description: A black flag with the Voenstal emblem proudly printed on the center. Is that shade of red the blood of their victims?
@@ -8,3 +8,57 @@
   - type: Sprite
     sprite: _Stalker_EN/Structures/Wallmounts/faction_flags.rsi
     state: voenflag
+
+- type: entity
+  parent: FactionFlagBaseEN
+  id: FactionFlagMonolith
+  name: Monolith Flag
+  description: An unsettling flag nailed up by the Monolith. What do they hope to accomplish?
+  suffix: ST, Mapping, Flags, Monolith
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Structures/Wallmounts/faction_flags.rsi
+    state: mono
+  - type: Construction
+    graph: FlagMonoCraft
+    node: flagmonoend
+
+- type: entity
+  parent: PosterBaseStalker
+  id: FactionFlagBaseEN
+  name: flag base
+  abstract: true
+  components:
+  - type: Appearance
+  - type: Flammable
+    fireSpread: false
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 1
+  - type: FireVisuals
+    sprite: /Textures/_Stalker_EN/Effects/fire.rsi
+    normalState: fire
+  - type: Damageable
+    damageModifierSet: Web
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Ash:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Craftable
+

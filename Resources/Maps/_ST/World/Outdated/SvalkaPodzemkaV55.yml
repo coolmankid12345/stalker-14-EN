@@ -47095,7 +47095,6 @@ entities:
     - type: StalkerSafeZone
     - type: ZoneArtifactSpawnerMapTier
       maxTier: 1
-    - type: MapEmissionLightningTarget
     - type: NavMap
 - proto: AlwaysPoweredlightPink
   entities:

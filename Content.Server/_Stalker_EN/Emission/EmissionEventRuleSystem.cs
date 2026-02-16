@@ -6,6 +6,7 @@ using Content.Server.GameTicking;
 using Content.Server.StationEvents.Events;
 using Content.Shared._Stalker_EN.Emission;
 using Content.Shared.Camera;
+using Content.Shared.Light.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -193,6 +194,14 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
     private void SetAmbientLightColor(EmissionEventRuleComponent emissionRuleComponent)
     {
         _mapDay.SetEnabled(false);
+
+        var cycleQuery = EntityQueryEnumerator<LightCycleComponent>();
+        while (cycleQuery.MoveNext(out var cycleUid, out var cycle))
+        {
+            cycle.Enabled = false;
+            Dirty(cycleUid, cycle);
+        }
+
         var query = EntityQueryEnumerator<MapLightComponent>();
         while (query.MoveNext(out var mapUid, out _))
         {
@@ -214,6 +223,13 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         var query = EntityQueryEnumerator<MapActiveEmissionComponent>();
         while (query.MoveNext(out var mapUid, out var activeEmissionComponent))
             RemCompDeferred(mapUid, activeEmissionComponent);
+
+        var cycleQuery = EntityQueryEnumerator<LightCycleComponent>();
+        while (cycleQuery.MoveNext(out var cycleUid, out var cycle))
+        {
+            cycle.Enabled = true;
+            Dirty(cycleUid, cycle);
+        }
 
         _mapDay.SetEnabled(true);
     }

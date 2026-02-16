@@ -1,0 +1,38 @@
+﻿{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "sprites by carousel",
+    "states": [
+        {
+            "name": "band"
+        },
+        {
+            "name": "cs"
+        },
+        {
+            "name": "duty"
+        },
+        {
+            "name": "free"
+        },
+        {
+            "name": "helper"
+        },
+        {
+            "name": "merc"
+        },
+        {
+            "name": "military"
+        },
+        {
+            "name": "mono"
+        },
+        {
+            "name": "rene"
+        }
+    ]
+}

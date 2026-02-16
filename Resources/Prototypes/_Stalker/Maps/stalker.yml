@@ -13,6 +13,7 @@
         - type: StationJobs
           availableJobs:
             Stalker: [ 0, -1 ]
+            StalkerRookie: [ 0, -1 ]
             StalkerRene: [ 0, -1 ]
             StalkerHeadRene: [ 0, -1 ]
             StalkerGreh: [ 0, -1 ]

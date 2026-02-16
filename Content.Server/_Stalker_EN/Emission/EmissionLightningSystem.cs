@@ -58,7 +58,7 @@ public sealed class EmissionLightningSystem : EntitySystem
 
     private const float RaycastCheckRange = 6.65f;
 
-    private const int MaximumRetries = 6;
+    private const int MaximumRetries = 8;
 
     /// <summary>
     ///     List of map-coordinates of lightning blockers
