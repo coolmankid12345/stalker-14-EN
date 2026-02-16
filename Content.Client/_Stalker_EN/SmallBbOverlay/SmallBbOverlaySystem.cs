@@ -40,8 +40,7 @@ public sealed class SmallBbOverlaySystem : EntitySystem
                 _inputManager,
                 _resourceCache,
                 _sharedPhysicsSystem,
-
-_debugPhysicsSystem
+                _debugPhysicsSystem
             ));
         }
         else
