@@ -325,5 +325,12 @@
   id: 35
   time: '2026-02-16T17:01:34.024095+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/429
+- author: teecoding
+  changes:
+  - message: Fixed Svarog radar UI not opening on left-click or Y key
+    type: Fix
+  id: 36
+  time: '2026-02-16T17:06:17.848829+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/433
 Name: Stalker
 Order: -1
