@@ -2,16 +2,17 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Server._Stalker.StationEvents.Components;
+using Content.Server.Light.EntitySystems;
 using Content.Server.Lightning;
 using Content.Shared._Stalker_EN.CCVar;
 using Content.Shared.GameTicking;
+using Content.Shared.Light.Components;
 using Content.Shared.Physics;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
-using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -24,12 +25,17 @@ public sealed class EmissionLightningSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly PhysicsSystem _physicsSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly LightningSystem _lightningSystem = default!;
+    [Dependency] private readonly RoofSystem _roofSystem = default!;
 
     private EntityQuery<StalkerSafeZoneComponent> _safeZoneQuery;
     private EntityQuery<BlowoutTargetComponent> _emissionTargetQuery;
+    private EntityQuery<MapGridComponent> _mapGridQuery;
+    private EntityQuery<RoofComponent> _roofQuery;
+    private EntityQuery<ImplicitRoofComponent> _implicitRoofQuery;
 
-    private bool _doRaycasts = false;
+    private bool _doRaycastsOrCheckRoof = false;
 
     /// <summary>
     ///     Unit vectors of directions to check when raycasting.
@@ -81,8 +87,11 @@ public sealed class EmissionLightningSystem : EntitySystem
 
         _safeZoneQuery = GetEntityQuery<StalkerSafeZoneComponent>();
         _emissionTargetQuery = GetEntityQuery<BlowoutTargetComponent>();
+        _mapGridQuery = GetEntityQuery<MapGridComponent>();
+        _roofQuery = GetEntityQuery<RoofComponent>();
+        _implicitRoofQuery = GetEntityQuery<ImplicitRoofComponent>();
 
-        _configurationManager.OnValueChanged(STCCVars.EmissionLightningRaycast, (x) => _doRaycasts = x, invokeImmediately: true);
+        _configurationManager.OnValueChanged(STCCVars.EmissionLightningRaycast, (x) => _doRaycastsOrCheckRoof = x, invokeImmediately: true);
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
     }
@@ -143,10 +152,37 @@ public sealed class EmissionLightningSystem : EntitySystem
 
         // Map of target is not allowed to have lightning
         if (!_lightningTargetMaps.Contains(targetMapId))
+            goto failure;
+
+        var targetGridOrParentUid = targetTransform.GridUid ?? targetTransform.ParentUid;
+        var noRoof = true;
+        MapGridComponent? mapGridComponent = null;
+        Entity<MapGridComponent, RoofComponent>? gridRoofEntity = null;
+
+        if (!_doRaycastsOrCheckRoof)
         {
-            candidateMapCoordinates = null;
-            return false;
+            // Top 10 string copypastas
+            // 1.
+            if (!_mapGridQuery.TryGetComponent(targetGridOrParentUid, out mapGridComponent))
+            {
+                Log.Error($"When trying to get coordinates for lightning to spawn on on grid/target-parent uid {ToPrettyString(targetGridOrParentUid)}, and with checking roofs enabled, the parent had no MapGridComponent! Target: {ToPrettyString(targetUid)}");
+                DebugTools.Assert($"When trying to get coordinates for lightning to spawn on on grid/target-parent uid {ToPrettyString(targetGridOrParentUid)}, and with checking roofs enabled, the parent had no MapGridComponent! Target: {ToPrettyString(targetUid)}");
+
+                goto failure;
+            }
+            // Thank you for watching please like and subscribe
+
+            // implicit-roof grids are fully rooved, so no point doing anything more
+            if (_implicitRoofQuery.HasComponent(targetGridOrParentUid))
+                goto failure;
+
+            if (_roofQuery.TryGetComponent(targetGridOrParentUid, out var roofComponent))
+            {
+                gridRoofEntity = (targetGridOrParentUid, mapGridComponent, roofComponent);
+                noRoof = false;
+            }
         }
+
 
         var targetMapCoordinates = _transformSystem.GetMapCoordinates(targetTransform);
 
@@ -187,15 +223,29 @@ public sealed class EmissionLightningSystem : EntitySystem
 
             if (areCoordinatesValid)
             {
-                // if we are doing raycasts, and raycast check said coords are indoors, then abort
-                if (_doRaycasts &&
-                    !AreCoordinatesMaybeIndoors(candidateMapCoordinates.Value))
-                    continue;
+                if (_doRaycastsOrCheckRoof)
+                {
+                    // if we are doing raycasts, and raycast check said coords are indoors, then abort
+                    if (!AreCoordinatesMaybeIndoors(candidateMapCoordinates.Value))
+                        continue;
+                }
+                else
+                {
+                    // This check is only necessary if there is a roof
+                    if (!noRoof &&
+                        // When doing roof-checking, the MapGridComponent and gridRoofEntity will never be null if a roof is present
+                        _roofSystem.IsRooved(gridRoofEntity!.Value, _mapSystem.CoordinatesToTile(targetGridOrParentUid, mapGridComponent!, candidateMapCoordinates.Value)))
+                        continue;
+                }
 
                 return true;
             }
         }
 
+        return false;
+
+    failure:
+        candidateMapCoordinates = null;
         return false;
     }
 

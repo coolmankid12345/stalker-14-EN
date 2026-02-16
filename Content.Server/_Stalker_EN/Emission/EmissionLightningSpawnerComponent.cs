@@ -41,7 +41,7 @@ public sealed partial class EmissionLightningSpawnerComponent : Component
     ///     Otherwise, there is no minimum.
     /// </summary>
     [DataField]
-    public float SafeMinimumSpawnRadiusMultiplier = 0.15f; // This used to be 65% but i lowered it because i added raycast checks
+    public float SafeMinimumSpawnRadiusMultiplier = 0.05f; // This used to be 65% but i lowered it because i added raycast and roof checks
 
     /// <summary>
     ///     Range of lightning bolts.
