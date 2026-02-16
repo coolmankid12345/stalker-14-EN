@@ -27,6 +27,7 @@ internal sealed class SmallBbOverlay : Overlay
     private readonly DebugPhysicsSystem _debugPhysicsSystem;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace | OverlaySpace.ScreenSpace;
+    public const float MaxFixtureSizeOrRadius = 15f; // max size/radius to be rendered
 
     private readonly Font _font;
 
@@ -154,6 +155,9 @@ internal sealed class SmallBbOverlay : Overlay
         {
             case ChainShape cShape:
                 {
+                    if (cShape.Radius > MaxFixtureSizeOrRadius)
+                        return;
+
                     var count = cShape.Count;
                     var vertices = cShape.Vertices;
 
@@ -167,25 +171,30 @@ internal sealed class SmallBbOverlay : Overlay
                 }
                 break;
             case PhysShapeCircle circle:
+                if (circle.Radius > MaxFixtureSizeOrRadius)
+                    return;
+
                 var center = Transform.Mul(xform, circle.Position);
                 worldHandle.DrawCircle(center, circle.Radius, color);
                 break;
-            case EdgeShape edge:
-                // Unsupported because Vertex1 and Vertex2 are :joy: inaccessible :joy: because :joy: theyre internal :joy:
-                // {
-                //     var v1 = Transform.Mul(xform, edge.Vertex1);
-                //     var v2 = Transform.Mul(xform, edge.Vertex2);
-                //     worldHandle.DrawLine(v1, v2, color);
+            // case EdgeShape edge:
+            // Unsupported because Vertex1 and Vertex2 are :joy: inaccessible :joy: because :joy: theyre internal :joy:
+            // {
+            //     var v1 = Transform.Mul(xform, edge.Vertex1);
+            //     var v2 = Transform.Mul(xform, edge.Vertex2);
+            //     worldHandle.DrawLine(v1, v2, color);
 
-                //     if (edge.OneSided)
-                //     {
-                //         worldHandle.DrawCircle(v1, 0.1f, color);
-                //         worldHandle.DrawCircle(v2, 0.1f, color);
-                //     }
-                // }
+            //     if (edge.OneSided)
+            //     {
+            //         worldHandle.DrawCircle(v1, 0.1f, color);
+            //         worldHandle.DrawCircle(v2, 0.1f, color);
+            //     }
+            // }
 
-                break;
+            // break;
             case PolygonShape poly:
+                if (poly.Radius > MaxFixtureSizeOrRadius)
+                    return;
 
                 // can't be stackalloc'd because we are on client and this isn't enginecode so it fails typechecker
                 var verts = new Vector2[poly.VertexCount];
