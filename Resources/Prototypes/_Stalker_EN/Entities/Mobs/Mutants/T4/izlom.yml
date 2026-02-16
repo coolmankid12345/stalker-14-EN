@@ -8,29 +8,29 @@
   description: A once-human mutant, they still seem aware of their surroundings. They often lurk near settlements and try to draw out stalkers in hopes of an easy meal.
   components:
   - type: Sprite
-    sprite: /Textures/_Stalker_EN/Mobs/Mutants/izlom.rsi
     layers:
-    #- map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
-    - state: alive
-  # - type: SpriteMovement
-    # movementLayers:
-      # movement:
-        # state: alive-3
-    # noMovementLayers:
-      # movement:
-        # state: alive-1
+      - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+        sprite: /Textures/_Stalker_EN/Mobs/Mutants/izlom.rsi
+        state: alive-1
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: alive-3
+    noMovementLayers:
+      movement:
+        state: alive-1
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: alive
+        Base: alive-1
       Dead:
         Base: dead
-  # - type: Vocalizer # Stalker-TODO: Uncomment once "NPCStalkerIzlomAds" dataset exists!
-    # minVocalizeInterval: 1m
-    # maxVocalizeInterval: 2m
-    # hideChat: true
-  # - type: DatasetVocalizer
-    # dataset: NPCStalkerIzlomAds
+  - type: Vocalizer
+    minVocalizeInterval: 1m
+    maxVocalizeInterval: 2m
+    hideChat: true
+  - type: DatasetVocalizer
+    dataset: NPCStalkerIzlomAds
   - type: MobThresholds
     thresholds:
       0: Alive
