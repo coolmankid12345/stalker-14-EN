@@ -27,6 +27,7 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
         base.Initialize();
 
         SubscribeLocalEvent<ZoneAnomalyDetectorComponent, UseInHandEvent>(OnUseInHand);
+        SubscribeLocalEvent<ZoneAnomalyDetectorComponent, GetVerbsEvent<AlternativeVerb>>(OnGetDetectorVerbs); // stalker-changes
         SubscribeLocalEvent<ZoneAnomalyDetectorActivatorComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
     }
 
@@ -48,12 +49,31 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
     }
 
 
+    // stalker-changes: check ToggleOnInteract to avoid consuming the event
+    // when an ActivatableUI also needs to handle it (e.g. Svarog radar)
     private void OnUseInHand(Entity<ZoneAnomalyDetectorComponent> detector, ref UseInHandEvent args)
     {
         if (args.Handled)
             return;
 
+        if (!detector.Comp.ToggleOnInteract)
+            return;
+
         args.Handled = TryToggle(detector, args.User);
+    }
+
+    // stalker-changes: alt-verb for toggling detectors that have ToggleOnInteract disabled
+    private void OnGetDetectorVerbs(Entity<ZoneAnomalyDetectorComponent> detector, ref GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (detector.Comp.ToggleOnInteract)
+            return;
+
+        var det = detector;
+        args.Verbs.Add(new AlternativeVerb
+        {
+            Text = Loc.GetString("artifact-radar-verb-toggle-anomaly-detector"),
+            Act = () => TryToggle(det),
+        });
     }
 
     private bool TryToggle(Entity<ZoneAnomalyDetectorComponent> detector, EntityUid? user = null)

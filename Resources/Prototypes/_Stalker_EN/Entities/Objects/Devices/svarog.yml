@@ -31,5 +31,6 @@
     maxBeepInterval: 1
     minBeepInterval: 0.01
     beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
+    toggleOnInteract: false
   - type: STWeight
     self: 1.8
