@@ -27,6 +27,14 @@ public sealed partial class ZoneAnomalyDetectorComponent : Component
 
     [DataField]
     public SoundSpecifier BeepSound = new SoundPathSpecifier("/Audio/Items/locator_beep.ogg");
+
+    /// <summary>
+    /// Whether the detector can be toggled on/off via standard interactions (use in hand, etc).
+    /// Set to false when the entity also has an ActivatableUI to prevent the toggle from
+    /// consuming the interaction event before the UI system can open.
+    /// </summary>
+    [DataField]
+    public bool ToggleOnInteract = true; // stalker-changes
 }
 
 [RegisterComponent]
