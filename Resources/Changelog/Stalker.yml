@@ -309,5 +309,13 @@
   id: 33
   time: '2026-02-15T17:23:40.842485+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/422
+- author: LaCumbiaDelCoronavirus
+  changes:
+  - message: Emission lightning will strike only areas without roofs, depending on
+      cvar.
+    type: Tweak
+  id: 34
+  time: '2026-02-16T16:56:48.909521+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/428
 Name: Stalker
 Order: -1
