@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using Content.Client._Stalker_EN.SmallBbOverlay; // ST14-EN Addition
 using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
 using Content.Client.Markers;
@@ -36,6 +37,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     [Dependency] private readonly IClientAdminManager _admin = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
 
+    [UISystemDependency] private readonly SmallBbOverlaySystem _smallBbOverlaySystem = default!; // ST14-EN Addition
     [UISystemDependency] private readonly DebugPhysicsSystem _debugPhysics = default!;
     [UISystemDependency] private readonly MarkerSystem _marker = default!;
     [UISystemDependency] private readonly SandboxSystem _sandbox = default!;
@@ -123,6 +125,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
         _window.ToggleShadowsButton.Pressed = !_light.DrawShadows;
         _window.ShowMarkersButton.Pressed = _marker.MarkersVisible;
         _window.ShowBbButton.Pressed = (_debugPhysics.Flags & PhysicsDebugFlags.Shapes) != 0x0;
+        _window.ShowSmallBbButton.Pressed = _smallBbOverlaySystem.Added; // ST14-EN addition
 
         _window.AiOverlayButton.OnPressed += args =>
         {
@@ -152,6 +155,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
         _window.ToggleSubfloorButton.OnPressed += _ => _sandbox.ToggleSubFloor();
         _window.ShowMarkersButton.OnPressed += _ => _sandbox.ShowMarkers();
         _window.ShowBbButton.OnPressed += _ => _sandbox.ShowBb();
+        _window.ShowSmallBbButton.OnPressed += _ => _sandbox.ShowSmallBb(); // ST14-EN Addition
     }
 
     private void CheckSandboxVisibility()

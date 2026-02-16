@@ -1,3 +1,4 @@
+using Content.Client._Stalker_EN.SmallBbOverlay; // ST14-EN Addition
 using Content.Client.Administration.Managers;
 using Content.Client.Movement.Systems;
 using Content.Shared.Sandbox;
@@ -18,6 +19,8 @@ namespace Content.Client.Sandbox
         [Dependency] private readonly ContentEyeSystem _contentEye = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+
+        [Dependency] private readonly SmallBbOverlaySystem _smallBbOverlaySystem = default!; // ST14-EN Addition
 
         private bool _sandboxEnabled;
         public bool SandboxAllowed { get; private set; }
@@ -156,6 +159,12 @@ namespace Content.Client.Sandbox
         public void ShowBb()
         {
             _consoleHost.ExecuteCommand("physics shapes");
+        }
+
+        // ST14-EN addition
+        public void ShowSmallBb()
+        {
+            _smallBbOverlaySystem.SetEnabled(!_smallBbOverlaySystem.Added);
         }
     }
 }
