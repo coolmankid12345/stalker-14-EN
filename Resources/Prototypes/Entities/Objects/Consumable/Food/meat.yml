@@ -25,7 +25,8 @@
           Quantity: 5
   - type: Item
     shape:
-    - 0,0,1,0
+    - 0,0,0,0 # stalker EN
+    size: Tiny # stalker EN
   - type: Fixtures
     fixtures:
       fix1:
