@@ -29,9 +29,11 @@ id-card-access-level-covenant = База завета
 
 id-card-access-level-dolg = База Долга
 id-card-access-level-dolg-head = Лидер Авангарда
+id-card-access-level-dolg-novice = Рядовой Долга
 
 id-card-access-level-freedom = База воли
 id-card-access-level-freedom-head = Глава воли
+id-card-access-level-freedom-novice = Рядовой Воли
 
 id-card-access-level-greh = База Греха
 

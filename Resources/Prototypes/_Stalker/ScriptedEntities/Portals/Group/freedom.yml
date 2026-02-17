@@ -7,7 +7,7 @@
       allowAll: false
       portalName: Cordon-Freedom
     - type: AccessReader
-      access: [["Freedom"]]
+      access: [["Freedom"] , ["FreedomNovice"]]
 
 - type: entity
   parent: MapTeleportBaseUncollide

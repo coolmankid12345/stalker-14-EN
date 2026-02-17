@@ -169,7 +169,7 @@
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
-    access: [["Dolg"]]
+    access: [["Dolg"] , ["DolgNovice"]]
 
 - type: entity
   id: StalkerDublicateFreedom
@@ -183,7 +183,7 @@
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
-    access: [["Freedom"]]
+    access: [["Freedom"] , ["FreedomNovice"]]
 
 - type: entity
   id: StalkerDublicateRenegats
