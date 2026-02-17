@@ -339,5 +339,12 @@
   id: 37
   time: '2026-02-17T02:11:56.055902+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/436
+- author: teecoding
+  changes:
+  - message: Eject magazine keybind (J) and toggle bolt keybind (L) for guns
+    type: Add
+  id: 38
+  time: '2026-02-17T21:21:44.406606+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/439
 Name: Stalker
 Order: -1
