@@ -37,6 +37,8 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction SmartEquipOuterClothing = "SmartEquipOuterClothing"; // Stalker-Changes-UI
         public static readonly BoundKeyFunction Lay = "Lay"; // Stalker-Changes-UI
         public static readonly BoundKeyFunction STQuickEquipBolt = "STQuickEquipBolt"; // Stalker-Changes-UI
+        public static readonly BoundKeyFunction STEjectMagazine = "STEjectMagazine"; // Stalker-Changes-UI
+        public static readonly BoundKeyFunction STToggleBolt = "STToggleBolt"; // Stalker-Changes-UI
         public static readonly BoundKeyFunction SmartEquipBelt = "SmartEquipBelt";
         public static readonly BoundKeyFunction SmartEquipPocket1 = "SmartEquipPocket1";
         public static readonly BoundKeyFunction SmartEquipPocket2 = "SmartEquipPocket2";

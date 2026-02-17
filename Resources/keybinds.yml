@@ -660,4 +660,10 @@ binds:
 - function: STQuickEquipBolt
   type: State
   key: N
+- function: STEjectMagazine
+  type: State
+  key: J
+- function: STToggleBolt
+  type: State
+  key: L
   # stalker-changes-ends
