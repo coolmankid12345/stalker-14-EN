@@ -1,13 +1,57 @@
 <Document>
-  # Core Rule 6 - Roleplay Standards
+  # Core Rule 6 - Zone Rulings
 
-  Stalker 14 is an MRP server. You are expected to be a regular human being that fits in the lore of Stalker. You are not allowed to go running around naked acting like you have no sense.
+  The Zone is divided into areas with different PvP and engagement rules. Make sure you know what zone you're in before starting any confrontation. For detailed PvP engagement and death rules, see [textlink="Rule 7 - PvP & Combat" link="RuleC7Stalker"].
 
-  This rule applies less for Renegades and Monolith due to how mentally unstable they are but don't push your luck.
+  ## Transition Rules
 
-  Character quirks must be approved via administration. You cannot claim things to make major alterations to RP experiences. All characters when created are to act like a player would in the Stalker games.
+  PvP should not be done near transitions (portals) to other regions. You should remain at least 0.5 to 1 screen away from transitions to maintain fair play. It can be hard to judge as some transitions are in tighter areas, so it's better to err on the side of caution. You may only PvP near a transition if someone has fled to the transition or has been sitting there for over 30 seconds.
 
-  When in Rookie Village roleplay is heavily enforced, as new players join the server and this is the first area they see. Having their immersion broken or too much silliness going on will result in administrative action.
+  You should be at least three screens away from a Green Zone to initiate PvP or robbing. *Camping a transition or Green Zone will be punished severely.*
 
-  Act your role. If you are a loner who just started your adventure, you are not allowed to talk about factions you haven't heard of or seen. More veteran players may share experiences they have had throughout the wipe. Roles like Ecologist, Military Stalkers, Clear Sky are able to have a better in-depth view on the zone, anomaly types, and artifacts. You should not go looking in the GitHub for the files and then going around in IC or LOOC talking about what does what or making some RP roles obsolete, not only kills RP but immersion for many.
+  ## [color=#008000]Green Zones[/color]
+
+  PvP is strictly prohibited in these areas. These areas serve as safe hubs for trading and are often visited by new or inexperienced players. No form of player combat is allowed within these zones. No robbing or looting should take place in a Green Zone, including against SSD players.
+
+  Locations:
+  - [color=#008000]Rookie Village[/color] in Cordon, including Sidorovich's bunker. *[textlink="Bandits" link="RuleF1"], [textlink="Renegades" link="RuleF2"], and [textlink="Monolith" link="RuleF4"] are NOT allowed in or around Rookie Village at any time.* [textlink="Militia" link="RuleF5"] protects this area and may remove hostile factions by force.
+  - [color=#008000]The 100 Rads Bar[/color] in Rostok. [textlink="Duty" link="RuleF8"] controls Rostok. Any hostile or associated factions may be denied entry or engaged on sight within Rostok or the Bar. Enter at your own risk.
+  - [color=#008000]Faction bases[/color]. Unless admin-approved for a raid.
+
+  ## [color=#808080]Gray Zone[/color]
+
+  PvP and robbing are allowed only after there is an RP exchange in the encounter, if allowed depending on faction rules and faction relations.
+
+  Locations:
+  - Cordon (except the Southern Border — [textlink="Military" link="RuleF3"] can open fire on stalkers approaching the Southern Checkpoint).
+
+  ## [color=#4169E1]Faction Bases[/color]
+
+  Faction base owners have the final say. They may use lethal force if the offender is violating their rules when appropriate or after escalation. You may also have to comply with reasonable requests — for example, while in government facilities, you may be detained or lose access for breaking the law.
+
+  - Attacking faction bases without raid approval is prohibited.
+  - Camping a faction base or its only access points is prohibited. Any faction that is hostile to the base-owning faction must remain at least 0.5 screens away.
+  - Ignoring or resisting orders from faction members while in their base is prohibited.
+
+  ## [color=#FFFF00]Yellow Zones[/color]
+
+  PvP and robbing are allowed depending on faction rules and faction relations. Factions at war are allowed to PvP on sight in a Yellow Zone.
+
+  Locations:
+  - Anything not specified in the other zones.
+
+  ## [color=#FF0000]Red Zones[/color]
+
+  On-sight PvP is allowed with neutral or hostile factions. Same faction members and allies of your faction should not be shot at.
+
+  Locations:
+  - Red Forest
+  - Capture Points
+
+  ## [color=#000000]Black Zones[/color]
+
+  On-sight PvP is allowed regardless of faction alignment. Same faction members should not be shot at.
+
+  Locations:
+  - Limansk
 </Document>
