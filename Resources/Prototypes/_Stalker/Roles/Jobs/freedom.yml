@@ -98,8 +98,8 @@
   playTimeTracker: JobNoviceFreedom
   whitelisted: false
   requirements:
-  - !type:RoleTimeRequirement
-    role: Stalker
+  - !type:DepartmentTimeRequirement
+    department: Stalker
     time: 15h
   - !type:SpeciesRequirement
     species:
