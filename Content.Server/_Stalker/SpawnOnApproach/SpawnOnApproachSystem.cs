@@ -68,14 +68,13 @@ public sealed class SpawnOnApproachSystem : EntitySystem
         for (var i = 0; i < amount; i++)
         {
             var initialCoords = xform.Coordinates;
-            var offsetCoords = RandomizeCoords(comp, initialCoords);
 
-            if (CheckBlocked(offsetCoords))
-                offsetCoords = !comp.SpawnInside ? RandomizeUntilCorrect(comp, initialCoords) : initialCoords;
+            // ST14-EN: Just made this call RandomizeUntilCorrect
+            initialCoords = RandomizeUntilCorrect(comp, initialCoords);
 
             // Randomizing entity
             var proto = _random.Pick(comp.EntProtoIds);
-            Spawn(proto, offsetCoords);
+            Spawn(proto, initialCoords);
         }
         if (TryComp<ApproachTriggerComponent>(entity, out var approach))
             approach.Enabled = false;
@@ -96,10 +95,11 @@ public sealed class SpawnOnApproachSystem : EntitySystem
     private EntityCoordinates RandomizeUntilCorrect(SpawnOnApproachComponent comp, EntityCoordinates initial)
     {
         var triesSoFar = 0; // ST14-EN Addition
-        var offset = new EntityCoordinates();
-        while (CheckBlocked(offset) && CheckEntities(offset, comp) && CheckPlayerNearby(offset, comp) /* ST14-EN Addition */)
+        var offset = initial;
+
+        // ST14-EN: Made this all `||` instead of `&&`, so you keep retrying if any of these return true
+        while (CheckBlocked(offset, comp /* ST14-EN Addition */) || CheckEntities(offset, comp) || CheckPlayerNearby(offset, comp) /* ST14-EN Addition */)
         {
-            // Is this really supposed to infinitely accumulate offsets
             offset = RandomizeCoords(comp, initial);
 
             // ST14-EN Addition: infinite-loop check:
@@ -131,21 +131,24 @@ public sealed class SpawnOnApproachSystem : EntitySystem
     private bool CheckPlayerNearby(in EntityCoordinates coords, SpawnOnApproachComponent comp)
     {
         if (comp.SpawnNearPlayers)
-            return true;
+            return false;
 
         var actorQuery = GetEntityQuery<ActorComponent>();
-        foreach (var uid in _lookupSystem.GetEntitiesInRange(coords, 10f, flags: LookupFlags.Approximate | LookupFlags.Dynamic))
+        foreach (var uid in _lookupSystem.GetEntitiesInRange(coords, comp.MinOffset * 0.65f, flags: LookupFlags.Approximate | LookupFlags.Dynamic))
         {
             if (actorQuery.HasComponent(uid))
-                return false;
+                return true;
         }
 
-        return true;
+        return false;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private bool CheckBlocked(EntityCoordinates coords)
+    private bool CheckBlocked(EntityCoordinates coords, SpawnOnApproachComponent comp /* ST14-EN Addition */)
     {
+        if (comp.SpawnInside)
+            return false;
+
         var tile = _turf.GetTileRef(coords);
 
         return tile != null && _turf.IsTileBlocked(tile.Value, CollisionGroup.Impassable);
