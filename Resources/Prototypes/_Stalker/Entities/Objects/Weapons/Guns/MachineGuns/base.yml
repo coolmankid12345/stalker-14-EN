@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: STBaseWeaponGun
+  parent: [ STBaseWeaponGun, BaseGunWieldable ] # ST14-EN: Made this also inherit from BaseGunWieldable
   id: STBaseWeaponMachineGun
   suffix: Weapon, Machine Gun
   components:
@@ -9,7 +9,7 @@
   - type: Item
     shape:
     - 0,0,8,1
-  - type: Wieldable
+ #ST14-EN: Removed Wieldable
   - type: GunRequiresWield
   - type: FarGunshot
     range: 300

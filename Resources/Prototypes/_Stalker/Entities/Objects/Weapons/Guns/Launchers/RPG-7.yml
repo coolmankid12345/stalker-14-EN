@@ -1,6 +1,6 @@
 - type: entity
   name: РПГ-7
-  parent: BaseWeaponLauncher
+  parent: [ BaseWeaponLauncher, BaseGunWieldable ] # ST14-EN: Made this also inherit from BaseGunWieldable
   suffix: ST
   id: STWeaponLauncherRocket
   description: Оружие возмездия СОПа
@@ -36,6 +36,5 @@
     pullTime: 2.0
   - type: RepositoryItem
     categoryName: repository-weapons-category
-  - type: Wieldable
+  #ST14-EN: Removed Wieldable
   - type: GunRequiresWield
-

@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: STBaseWeaponGun
+  parent: [ STBaseWeaponGun, BaseGunWieldable ] # ST14-EN: Made this also inherit from BaseGunWieldable
   id: STBaseWeaponShotgunAuto
   suffix: Weapon, Shotgun
   components:
@@ -12,7 +12,7 @@
     # No mug by default
     - state: icon
       map: [ "enum.GunVisualLayers.Base" ]
-  - type: Wieldable
+  #ST14-EN: Removed Wieldable
   - type: GunWieldBonus
     minAngle: -50
     maxAngle: -50
