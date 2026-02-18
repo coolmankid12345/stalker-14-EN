@@ -373,5 +373,12 @@
   id: 41
   time: '2026-02-18T21:49:16.060470+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/440
+- author: ':joy:'
+  changes:
+  - message: Mobs should no longer randomly spawn outrageously close to you.
+    type: Fix
+  id: 42
+  time: '2026-02-18T21:51:42.437559+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/442
 Name: Stalker
 Order: -1
