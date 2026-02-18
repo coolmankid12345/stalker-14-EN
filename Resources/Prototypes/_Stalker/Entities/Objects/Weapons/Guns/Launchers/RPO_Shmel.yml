@@ -1,11 +1,11 @@
 - type: entity
   name: РПО-А "Шмель"
   suffix: ST
-  parent: STWeaponLauncherRocket
+  parent: [ STWeaponLauncherRocket, BaseGunWieldable ] # ST14-EN: Made this also inherit from BaseGunWieldable
   id: STWeaponLauncherRocketShmel
   description: Советский одноразовый реактивный пехотный огнемёт, использующий термобарический боеприпас.
   components:
-  - type: Wieldable
+  #ST14-EN: Removed Wieldable
   - type: GunRequiresWield
   - type: BallisticAmmoProvider
     whitelist: Null

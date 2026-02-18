@@ -1,5 +1,5 @@
 - type: entity
-  parent: STBaseWeaponPistol
+  parent: [ STBaseWeaponPistol, BaseGunWieldable ] # ST14-EN: Made this also inherit from BaseGunWieldable
   id: WeaponPistolStalkerLP08
   name: Люгер
   suffix: ST
@@ -7,7 +7,7 @@
   components:
     - type: STWeight
       self: 1.1
-    - type: Wieldable
+    #ST14-EN: Removed Wieldable
     - type: Sprite
       scale: 0.6, 0.6
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/luger.rsi
@@ -67,4 +67,3 @@
       steps: 1
       zeroVisible: true
     - type: Craftable
-

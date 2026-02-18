@@ -2,7 +2,7 @@
 # Надо как-то это балансить. Отдачей там или ещё чем я хз.
 - type: entity
   abstract: true
-  parent: STBaseWeaponShotgunAuto
+  parent: [ STBaseWeaponShotgunAuto, BaseGunWieldable ] # ST14-EN: Made this also inherit from BaseGunWieldable
   id: STBaseWeaponShotgunUSAS
   components:
   - type: STWeight
@@ -20,7 +20,7 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Wieldable
+  #ST14-EN: Removed Wieldable
   - type: GunWieldBonus
     minAngle: -20
     maxAngle: -20
