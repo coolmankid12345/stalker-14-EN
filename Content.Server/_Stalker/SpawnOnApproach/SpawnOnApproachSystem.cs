@@ -7,6 +7,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
 using Content.Shared.Trigger;
 using Robust.Shared.Map;
+using Robust.Shared.Player; // ST14-EN: Addition
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -29,7 +30,7 @@ public sealed class SpawnOnApproachSystem : EntitySystem
 
     private void OnInit(Entity<SpawnOnApproachComponent> entity, ref ComponentInit args)
     {
-        if(_timing.CurTime < entity.Comp.MinStartAction)
+        if (_timing.CurTime < entity.Comp.MinStartAction)
             return;
         // Check components with instant spawn
         if (!entity.Comp.InstantSpawn)
@@ -42,7 +43,7 @@ public sealed class SpawnOnApproachSystem : EntitySystem
         if (!entity.Comp.Enabled)
             return;
 
-        if(_timing.CurTime < entity.Comp.MinStartAction)
+        if (_timing.CurTime < entity.Comp.MinStartAction)
             return;
 
         SpawnWithOffset(entity);
@@ -67,14 +68,13 @@ public sealed class SpawnOnApproachSystem : EntitySystem
         for (var i = 0; i < amount; i++)
         {
             var initialCoords = xform.Coordinates;
-            var offsetCoords = RandomizeCoords(comp, initialCoords);
 
-            if (CheckBlocked(offsetCoords))
-                offsetCoords = !comp.SpawnInside ? RandomizeUntilCorrect(comp, initialCoords) : initialCoords;
+            // ST14-EN: Just made this call RandomizeUntilCorrect
+            initialCoords = RandomizeUntilCorrect(comp, initialCoords);
 
             // Randomizing entity
             var proto = _random.Pick(comp.EntProtoIds);
-            Spawn(proto, offsetCoords);
+            Spawn(proto, initialCoords);
         }
         if (TryComp<ApproachTriggerComponent>(entity, out var approach))
             approach.Enabled = false;
@@ -94,10 +94,17 @@ public sealed class SpawnOnApproachSystem : EntitySystem
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private EntityCoordinates RandomizeUntilCorrect(SpawnOnApproachComponent comp, EntityCoordinates initial)
     {
-        var offset = new EntityCoordinates();
-        while (CheckBlocked(offset) && CheckEntities(offset, comp))
+        var triesSoFar = 0; // ST14-EN Addition
+        var offset = initial;
+
+        // ST14-EN: Made this all `||` instead of `&&`, so you keep retrying if any of these return true
+        while (CheckBlocked(offset, comp /* ST14-EN Addition */) || CheckEntities(offset, comp) || CheckPlayerNearby(offset, comp) /* ST14-EN Addition */)
         {
             offset = RandomizeCoords(comp, initial);
+
+            // ST14-EN Addition: infinite-loop check:
+            if (++triesSoFar == 15)
+                break;
         }
 
         return offset;
@@ -119,9 +126,29 @@ public sealed class SpawnOnApproachSystem : EntitySystem
         }
         return false;
     }
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private bool CheckBlocked(EntityCoordinates coords)
+
+    // ST14-EN: Addition
+    private bool CheckPlayerNearby(in EntityCoordinates coords, SpawnOnApproachComponent comp)
     {
+        if (comp.SpawnNearPlayers)
+            return false;
+
+        var actorQuery = GetEntityQuery<ActorComponent>();
+        foreach (var uid in _lookupSystem.GetEntitiesInRange(coords, comp.MinOffset * 0.67f, flags: LookupFlags.Approximate | LookupFlags.Dynamic))
+        {
+            if (actorQuery.HasComponent(uid))
+                return true;
+        }
+
+        return false;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private bool CheckBlocked(EntityCoordinates coords, SpawnOnApproachComponent comp /* ST14-EN Addition */)
+    {
+        if (comp.SpawnInside)
+            return false;
+
         var tile = _turf.GetTileRef(coords);
 
         return tile != null && _turf.IsTileBlocked(tile.Value, CollisionGroup.Impassable);
