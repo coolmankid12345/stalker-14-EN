@@ -7,6 +7,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
 using Content.Shared.Trigger;
 using Robust.Shared.Map;
+using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -29,7 +30,7 @@ public sealed class SpawnOnApproachSystem : EntitySystem
 
     private void OnInit(Entity<SpawnOnApproachComponent> entity, ref ComponentInit args)
     {
-        if(_timing.CurTime < entity.Comp.MinStartAction)
+        if (_timing.CurTime < entity.Comp.MinStartAction)
             return;
         // Check components with instant spawn
         if (!entity.Comp.InstantSpawn)
@@ -42,7 +43,7 @@ public sealed class SpawnOnApproachSystem : EntitySystem
         if (!entity.Comp.Enabled)
             return;
 
-        if(_timing.CurTime < entity.Comp.MinStartAction)
+        if (_timing.CurTime < entity.Comp.MinStartAction)
             return;
 
         SpawnWithOffset(entity);
@@ -94,10 +95,16 @@ public sealed class SpawnOnApproachSystem : EntitySystem
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private EntityCoordinates RandomizeUntilCorrect(SpawnOnApproachComponent comp, EntityCoordinates initial)
     {
+        var triesSoFar = 0; // ST14-EN Addition
         var offset = new EntityCoordinates();
-        while (CheckBlocked(offset) && CheckEntities(offset, comp))
+        while (CheckBlocked(offset) && CheckEntities(offset, comp) && CheckPlayerNearby(offset, comp) /* ST14-EN Addition */)
         {
+            // Is this really supposed to infinitely accumulate offsets
             offset = RandomizeCoords(comp, initial);
+
+            // ST14-EN Addition: infinite-loop check:
+            if (++triesSoFar == 15)
+                break;
         }
 
         return offset;
@@ -119,6 +126,23 @@ public sealed class SpawnOnApproachSystem : EntitySystem
         }
         return false;
     }
+
+    // ST14-EN: Addition
+    private bool CheckPlayerNearby(in EntityCoordinates coords, SpawnOnApproachComponent comp)
+    {
+        if (comp.SpawnNearPlayers)
+            return true;
+
+        var actorQuery = GetEntityQuery<ActorComponent>();
+        foreach (var uid in _lookupSystem.GetEntitiesInRange(coords, 10f, flags: LookupFlags.Approximate | LookupFlags.Dynamic))
+        {
+            if (actorQuery.HasComponent(uid))
+                return false;
+        }
+
+        return true;
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private bool CheckBlocked(EntityCoordinates coords)
     {

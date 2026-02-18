@@ -35,6 +35,10 @@ public sealed partial class SpawnOnApproachComponent : Component
     [DataField]
     public float Chance;
 
+    // ST14-EN Addition
+    [DataField]
+    public bool SpawnNearPlayers = false;
+
     /// <summary>
     /// If system should avoid spawning entities inside each other
     /// Useful when you need to spawn some static objects, like bushes
