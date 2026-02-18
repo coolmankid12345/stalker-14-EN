@@ -1,0 +1,18 @@
+- type: entity
+  id: STAlwaysPoweredLantern
+  name: lantern
+  description: Eternally powered.
+  suffix: Always Powered, Mapping, Decoration
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/lantern.rsi
+    drawdepth: Items
+    layers:
+    - state: lantern
+    - state: lantern-on
+      shader: unshaded
+  - type: PointLight
+    radius: 3
+    energy: 2.5
+    color: "#FFC458"
+    enabled: true
