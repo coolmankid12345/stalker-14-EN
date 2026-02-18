@@ -354,5 +354,14 @@
   id: 39
   time: '2026-02-17T21:23:10.303543+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/437
+- author: teecoding
+  changes:
+  - message: Bolts now reliably trigger anomalies when thrown at them
+    type: Fix
+  - message: Fixed a server crash when bolts triggered thermal anomalies
+    type: Fix
+  id: 40
+  time: '2026-02-18T21:46:25.353988+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/446
 Name: Stalker
 Order: -1
