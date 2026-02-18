@@ -111,15 +111,21 @@
           prob: 0.35
         - id: STWeaponRifleSIG550
           prob: 0.35
-        - id: STWeaponRifleLR300v1
+        - id: STWeaponRifleM4
           prob: 0.35
-        - id: STWeaponRifleLR300v1
+        - id: STWeaponRifleM4
           prob: 0.35
-        - id: STWeaponRifleLR300v1
+        - id: STWeaponRifleM4
           prob: 0.35
-        - id: STWeaponRifleLR300v1
+        - id: STWeaponRifleM4
           prob: 0.35
         - id: STWeaponRifleG36
+          prob: 0.25
+        - id: STWeaponRifleG36
+          prob: 0.25
+        - id: STWeaponRifleLR300v1
+          prob: 0.1
+        - id: STWeaponRifleLR300v1
           prob: 0.1
         # modules STModuleSMGGripT1
         - id: STModuleScopeRiflesT1Nato
