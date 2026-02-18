@@ -25,7 +25,7 @@
   - type: Transform
     anchored: true
   - type: Sprite
-    drawdepth: WallMountedItems
+    drawdepth: OverMobs # ST14-EN change
     sprite: _Stalker/Structures/Wallmounts/electronic_shield.rsi
     layers:
     - state: electric_brusher
@@ -152,9 +152,8 @@
   - type: Sprite
     sprite: _Stalker/Structures/Wallmounts/electronic_shield.rsi
     state: rusty-electric_brusher
+    drawdepth: OverMobs # ST14-EN change
   - type: Clickable
   - type: Physics
     bodyType: Static
     canCollide: false
-
-
