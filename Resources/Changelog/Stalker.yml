@@ -363,5 +363,15 @@
   id: 40
   time: '2026-02-18T21:46:25.353988+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/446
+- author: SANABI
+  changes:
+  - message: Wieldable guns can now be properly bolted/racked with in-hand-use keybind.
+      To unwield them you can swap hands.
+    type: Fix
+  - message: Removed keybind for toggling bolt on guns.
+    type: Remove
+  id: 41
+  time: '2026-02-18T21:49:16.060470+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/440
 Name: Stalker
 Order: -1
