@@ -25,8 +25,6 @@ public sealed class ZoneAnomalyEffectDestroySystem : EntitySystem
 
             var comp = EnsureComp<TimedDespawnComponent>(trigger);
             comp.Lifetime = effect.Comp.Lifetime;
-
-            Dirty(trigger, comp);
         }
     }
 }

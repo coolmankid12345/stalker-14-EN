@@ -23,11 +23,6 @@
     - Deserter
 
 - type: accessGroup
-  id: Deserter
-  tags:
-    - Deserter
-
-- type: accessGroup
   id: EvolverPack
   tags:
     - EvolverPack

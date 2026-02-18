@@ -21,6 +21,7 @@
         layer:
           - MobLayer
           - LowImpassable
+          - HighImpassable
   - type: ZoneArtifactDetectorTarget
   - type: ZoneArtifactSpawner
   - type: Tag

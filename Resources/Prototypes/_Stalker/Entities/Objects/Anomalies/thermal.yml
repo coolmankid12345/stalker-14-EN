@@ -293,6 +293,7 @@
         layer:
         - MobLayer
         - LowImpassable
+        - HighImpassable
   - type: ZoneArtifactSpawner
     artifacts:
       - id: null
@@ -343,6 +344,7 @@
         layer:
         - MobLayer
         - LowImpassable
+        - HighImpassable
   - type: ZoneArtifactSpawner
     artifacts:
       - id: null
