@@ -125,6 +125,7 @@
           layer:
             - MobLayer
             - LowImpassable
+            - HighImpassable
 
 - type: entity
   parent: ZoneAnomalyBaseElectrical
@@ -172,6 +173,7 @@
           layer:
             - MobLayer
             - LowImpassable
+            - HighImpassable
     - type: Sprite
       sprite: _Stalker/Objects/Other/Anomalys/garland.rsi
       layers:
@@ -229,6 +231,7 @@
           layer:
             - MobLayer
             - LowImpassable
+            - HighImpassable
     - type: Sprite
       sprite: _Stalker/Objects/Other/Anomalys/source.rsi
       layers:
