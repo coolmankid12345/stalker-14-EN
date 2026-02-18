@@ -17,6 +17,9 @@
     layerStates:
     - cash
     - cash_5
+    layerFunction: Threshold
+  - type: StackLayerThreshold
+    thresholds: [5]
   - type: Sprite
     sprite: _Stalker/Objects/Economy/coins.rsi
     state: cash
