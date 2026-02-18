@@ -22,6 +22,9 @@
     - cash_1000
     - cash_2000
     - cash_5000
+    layerFunction: Threshold
+  - type: StackLayerThreshold
+    thresholds: [10, 50, 100, 1000, 2000, 5000]
   - type: Sprite
     sprite: _Stalker/Objects/Economy/rubles.rsi
     state: cash

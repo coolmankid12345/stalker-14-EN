@@ -16,6 +16,9 @@
       - cash
       - cash_10
       - cash_100
+      layerFunction: Threshold
+    - type: StackLayerThreshold
+      thresholds: [10, 100]
     - type: Sprite
       sprite: _Stalker_EN/Objects/Economy/hryvnia.rsi
       state: cash
