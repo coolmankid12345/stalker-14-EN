@@ -380,5 +380,15 @@
   id: 42
   time: '2026-02-18T21:51:42.437559+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/442
+- author: teecoding
+  changes:
+  - message: Agroprom day/night cycle now works correctly again
+    type: Fix
+  - message: Ushanka hats now have a right-click verb to toggle the Russian accent
+      on or off
+    type: Add
+  id: 43
+  time: '2026-02-18T21:55:34.399606+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/444
 Name: Stalker
 Order: -1
