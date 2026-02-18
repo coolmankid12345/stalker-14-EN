@@ -50,6 +50,7 @@
     sprite: _Stalker/Objects/Clothing/hats/soviet_ushanka.rsi
   - type: AddAccentClothing
     accent: RussianAccent
+  - type: STToggleableAccentClothing # stalker-changes
   - type: HideLayerClothing
     slots:
     - Hair
