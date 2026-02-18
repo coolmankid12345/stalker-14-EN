@@ -390,5 +390,12 @@
   id: 43
   time: '2026-02-18T21:55:34.399606+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/444
+- author: teecoding
+  changes:
+  - message: Currency stacks now display the correct sprite for their amount
+    type: Fix
+  id: 44
+  time: '2026-02-18T21:57:17.818273+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/447
 Name: Stalker
 Order: -1
