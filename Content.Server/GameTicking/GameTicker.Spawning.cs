@@ -8,6 +8,7 @@ using Content.Server.Ghost;
 using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
 using Content.Server.Station.Components;
+using Content.Shared.Station.Components; // stalker-en: for StationMemberComponent filter
 using Content.Shared.CCVar;
 using Content.Shared._Stalker_EN.CCVar;
 using Content.Shared.Database;
@@ -459,9 +460,11 @@ namespace Content.Server.GameTicking
 
             var metaQuery = GetEntityQuery<MetaDataComponent>();
 
-            // Fallback to a random grid.
+            // stalker-en-start: filter to station grids to avoid spawning in personal arenas/stashes
+            // Fallback to a random station grid.
             if (_possiblePositions.Count == 0)
             {
+                var stationMemberQuery = GetEntityQuery<StationMemberComponent>();
                 var query = AllEntityQuery<MapGridComponent>();
                 while (query.MoveNext(out var uid, out var grid))
                 {
@@ -470,9 +473,13 @@ namespace Content.Server.GameTicking
                         continue;
                     }
 
+                    if (!stationMemberQuery.HasComponent(uid))
+                        continue;
+
                     _possiblePositions.Add(new EntityCoordinates(uid, Vector2.Zero));
                 }
             }
+            // stalker-en-end
 
             if (_possiblePositions.Count != 0)
             {
