@@ -35,6 +35,46 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Гроздь
+  id: ZoneArtifactBunch
+  suffix: Stalker, Гроздь
+  components:
+  - type: Sprite
+    state: bunch
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyJarka
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 3
+  - type: PointLight
+    radius: 0.5
+    energy: 4
+    color: "#ff0000"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Blunt: -0.3
+        Slash: -0.3
+        Heat: 0.3
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Radiation: 0.7
+        Caustic: 0.95
+        Compression: 0.6
+      flatReductions:
+        Piercing: 1
+        Slash: 2
+        Cold: 4
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  parent: BaseArtifact
   name: Глаз
   id: ZoneArtifactEye
   suffix: Stalker, Глаз
@@ -79,6 +119,41 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Скала
+  id: ZoneArtifactRock
+  suffix: Stalker, Скала
+  components:
+  - type: Sprite
+    state: rock
+    scale: 0.5, 0.5
+  - type: PointLight
+    radius: 0.5
+    energy: 4
+    color: "#ff0000"
+    castShadows: false
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyJarkaStrong
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 3
+  - type: PersonalDamage
+    damage:
+      types:
+        Blunt: -1
+        Slash: -1
+        Heat: 0.8
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Slash: 0.75
+        Blunt: 0.85
+      flatReductions:
+        Slash: 1
+
+- type: entity
+  parent: BaseArtifact
   name: Пламя
   id: ZoneArtifactFlame
   suffix: Stalker, Пламя
@@ -118,11 +193,111 @@
 
 - type: entity
   parent: BaseArtifact
+  name: Солнце
+  id: ZoneArtifactSun
+  suffix: Stalker, Солнце
+  components:
+  - type: Sprite
+    state: sun
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalySol
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 4
+  - type: PointLight
+    radius: 0.5
+    energy: 4
+    color: "#ecf96a"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Cold: -4
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Compression: 0.85
+        Heat: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+
+- type: entity
+  parent: BaseArtifact
+  name: Корень
+  id: ZoneArtifactRoot
+  suffix: Stalker, Корень
+  components:
+  - type: Sprite
+    state: root
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalySol
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 4
+  - type: PointLight
+    radius: 0.5
+    energy: 4
+    color: "#ff0000"
+    castShadows: false
+  - type: PersonalDamage
+    staminaDamage: 1
+    damage:
+      types:
+        Bloodloss: -3
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Piercing: 0.75
+
+- type: entity
+  parent: BaseArtifact
+  name: Пожарище
+  id: ZoneArtifactConflagration
+  suffix: Stalker, Пожарище
+  components:
+  - type: Sprite
+    state: conflagration
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalySol
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 2
+  - type: PointLight
+    radius: 0.5
+    energy: 4
+    color: "#ff0000"
+    castShadows: false
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 5
+    totalIntensity: 240
+    canCreateVacuum: false
+  - type: TriggerOnUse
+  - type: TimerTrigger
+    delay: 1.5
+  - type: TwoStageTrigger
+    keysIn:
+    - timer
+    triggerDelay: 0
+    components:
+      - type: ExplodeOnTrigger
+        keysIn:
+        - stageTwo
+
+- type: entity
+  parent: BaseArtifact
   id: ZoneArtifactCristall
   suffix: Stalker, Кристалл
   components:
   - type: Sprite
-    state: cristall
+    state: crystall
     scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalySol
