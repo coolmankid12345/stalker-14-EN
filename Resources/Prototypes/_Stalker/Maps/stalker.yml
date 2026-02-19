@@ -26,11 +26,15 @@
             sci_decan: [ 0, -1 ]
             sci_rector: [ 0, -1 ]
             # Duty
+            StalkerNoviceDolg: [ 0, -1 ]
             StalkerDolg: [ 0, -1 ]
             StalkerHeadDolg: [ 0, -1 ]
             # Brigades
             StalkerBandit: [ 0, -1 ]
             StalkerHeadBandit: [0, -1]
             #Freedom
+            StalkerNoviceFreedom: [ 0, -1 ]
             StalkerFreedom: [ 0, -1 ]
             StalkerHeadFreedom: [ 0, -1 ]
+            # Monolith
+            StalkerMonolith: [ 0, -1 ]

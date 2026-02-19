@@ -112,6 +112,10 @@
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHelmetTihiy
   - type: Craftable
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 18.01
 
 - type: entity
   parent: STClothingHeadHatBase

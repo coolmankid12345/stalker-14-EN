@@ -95,8 +95,50 @@
   name: Dolg
   factionId: Dolg
   maxMembers: 35
-  managingRankId: 2
+  managingRankId: 3
   hierarchy:
-    1: StalkerDolg
-    2: StalkerHeadDolg
+    1: StalkerNoviceDolg
+    2: StalkerDolg
+    3: StalkerHeadDolg
 
+# Рядовой
+
+- type: job
+  id: StalkerNoviceDolg
+  name: job-novice-dolg
+  icon: Dolg
+  description: job-dolg-desc
+  playTimeTracker: JobNoviceDolg
+  whitelisted: false
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Stalker
+    time: 15h
+  - !type:SpeciesRequirement
+    species:
+    - Human
+    - Dwarf
+  startingGear: DolgGear
+  supervisors: job-dolg-supervisor
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: NpcFactionMember
+      factions:
+      - Duty
+    - type: Access
+      tags:
+      - DolgNovice
+      - Stalker
+    - type: Bands
+      band: Stalker
+      bandIcon: Dolg
+      bandProto: STDolgBand
+      bandRankId: 2
+    - type: BlockTackingHolyItems
+    - type: TeethPull
+      teethProto: ToothStalker
+      pullingItemTag: PliersStalker
+      teethCount: 3
+      initialTeeth: 3

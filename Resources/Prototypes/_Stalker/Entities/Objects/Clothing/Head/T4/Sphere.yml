@@ -48,7 +48,7 @@
     sprite: _Stalker/Objects/Clothing/hats/bulat_helm_mercenary.rsi
 
 - type: entity
-  parent: STClothingHeadHelmetEnvironmentT4Base #Нужны спрайты под шлем с фонариком и без
+  parent: STClothingHeadHelmetCombatT3Base #Нужны спрайты под шлем с фонариком и без
   id: ClothingHeadHelmetBulatMonolith
   name: шлем «Сфера-12» монолита
   description: Является шлемом от Берилла.
@@ -59,6 +59,10 @@
     sprite: _Stalker/Objects/Clothing/hats/bulat_helm_monolit.rsi
   - type: IngestionBlocker
   - type: IdentityBlocker
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 18.01
 
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT4Base #Нужны спрайты под шлем с фонариком и без

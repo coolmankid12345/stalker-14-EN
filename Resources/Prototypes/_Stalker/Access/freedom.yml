@@ -6,7 +6,16 @@
   id: FreedomHead
   name: id-card-access-level-freedom-head
 
+- type: accessLevel
+  id: FreedomNovice
+  name: id-card-access-level-freedom-novice
+
 - type: accessGroup
   id: FreedomHead
   tags:
     - Freedom
+
+- type: accessGroup
+  id: FreedomNovice
+  tags:
+    - FreedomNovice

@@ -249,6 +249,10 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_monolit.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_monolit.rsi
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 18.01
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase

@@ -37,8 +37,10 @@
   color: "#9FED58"
   weight: 9
   roles:
+  - StalkerNoviceDolg
   - StalkerDolg
   - StalkerHeadDolg
+  - StalkerNoviceFreedom
   - StalkerFreedom
   - StalkerHeadFreedom
   #- StalkerClearSky # Stalker-TODO: Jobs cannot have multiple primary departments!

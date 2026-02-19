@@ -94,6 +94,42 @@
   maxMembers: 20
   managingRankId: 2
   hierarchy:
-    1: StalkerFreedom
-    2: StalkerHeadFreedom
+    1: StalkerNoviceFreedom
+    2: StalkerFreedom
+    3: StalkerHeadFreedom
 
+- type: job
+  id: StalkerNoviceFreedom
+  name: job-novice-freedom
+  icon: freedom
+  description: job-freedom-desc
+  playTimeTracker: JobNoviceFreedom
+  whitelisted: false
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Stalker
+    time: 15h
+  - !type:SpeciesRequirement
+    species:
+    - Human
+    - Dwarf
+  startingGear: FreedomGear
+  supervisors: job-freedom-supervisor
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: NpcFactionMember
+      factions:
+      - BandsUnion
+      - Freedom
+    - type: Access
+      tags:
+      - FreedomNovice
+      - Stalker
+    - type: Bands
+      band: Stalker
+      bandIcon: freedom
+      bandProto: STFreedomBand
+      bandRankId: 2
+    - type: BlockTackingHolyItems
