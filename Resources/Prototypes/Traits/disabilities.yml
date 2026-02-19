@@ -76,7 +76,7 @@
       maxTimeBetweenIncidents: 300
       maxSoundDistance: 7
       sounds:
-        collection: Paracusia
+        collection: STParacusia # stalker EN
 
 - type: trait
   id: PainNumbness

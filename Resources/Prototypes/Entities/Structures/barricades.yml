@@ -17,6 +17,8 @@
     drawdepth: BlastDoors
     noRot: true
   - type: Physics
+  - type: WallMount # stalker EN
+    arc: 360
   - type: Fixtures
     fixtures:
       fix1:

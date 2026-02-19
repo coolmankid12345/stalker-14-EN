@@ -48,7 +48,7 @@
   components:
   - type: Sprite
     sprite: _Stalker_EN/Mobs/Mutants/izlom.rsi
-    state: alive
+    state: alive-1
   - type: Physics
     bodyType: Static
   - type: DatasetVocalizer
