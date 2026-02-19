@@ -12,6 +12,8 @@ farkle-empty-seat = (Empty)
 farkle-your-turn = Your turn!
 farkle-opponent-turn = Opponent's turn
 farkle-waiting-for-players = Waiting for players...
+farkle-no-target-score = No target score set
+farkle-set-target-to-start = Set a target score to begin!
 farkle-game-started = Game started! Player { $player } goes first.
 
 # Game events
@@ -24,6 +26,13 @@ farkle-player-forfeit = Player { $winner } wins by forfeit!
 farkle-must-select-dice = You must select at least one scoring die.
 farkle-invalid-selection = Selected dice don't form a valid scoring combination.
 farkle-must-keep-first = Select and keep dice before rolling again.
+
+# Custom target score
+farkle-custom-target-placeholder = 1000-5000
+farkle-set-target-button = Set
+
+# Help
+farkle-help-button = ?
 
 # Buttons
 farkle-join-button = Join

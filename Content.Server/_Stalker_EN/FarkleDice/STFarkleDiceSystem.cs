@@ -10,7 +10,7 @@ namespace Content.Server._Stalker_EN.FarkleDice;
 public sealed class STFarkleDiceSystem : EntitySystem
 {
     private const int MinTargetScore = 1000;
-    private const int MaxTargetScore = 50000;
+    private const int MaxTargetScore = 5000;
 
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
@@ -110,8 +110,9 @@ public sealed class STFarkleDiceSystem : EntitySystem
         {
             comp.Player2 = player;
 
-            // Both players joined - start the game!
-            StartGame(uid, comp);
+            // Both players joined — start if target score is set
+            if (comp.TargetScore > 0)
+                StartGame(uid, comp);
         }
         else
         {
@@ -275,15 +276,16 @@ public sealed class STFarkleDiceSystem : EntitySystem
             return;
         }
 
-        // Validate selection scores
+        // Validate that all selected dice contribute to the score
         var selectedValues = GetSelectedDiceValues(comp);
-        var score = STFarkleDiceScoring.CalculateScore(selectedValues);
 
-        if (score == 0)
+        if (!STFarkleDiceScoring.AreAllDiceScoring(selectedValues))
         {
             _popup.PopupEntity(Loc.GetString("farkle-invalid-selection"), uid, player);
             return;
         }
+
+        var score = STFarkleDiceScoring.CalculateScore(selectedValues);
 
         // Add to turn score
         comp.TurnScore += score;
@@ -338,14 +340,14 @@ public sealed class STFarkleDiceSystem : EntitySystem
         if (hasSelection)
         {
             var selectedValues = GetSelectedDiceValues(comp);
-            var score = STFarkleDiceScoring.CalculateScore(selectedValues);
 
-            if (score == 0)
+            if (!STFarkleDiceScoring.AreAllDiceScoring(selectedValues))
             {
                 _popup.PopupEntity(Loc.GetString("farkle-invalid-selection"), uid, player);
                 return;
             }
 
+            var score = STFarkleDiceScoring.CalculateScore(selectedValues);
             comp.TurnScore += score;
         }
 
@@ -366,8 +368,8 @@ public sealed class STFarkleDiceSystem : EntitySystem
         // Reset but keep players
         ResetGame(comp);
 
-        // If both players present, start immediately
-        if (comp.Player1 != null && comp.Player2 != null)
+        // If both players present and target score set, start immediately
+        if (comp.Player1 != null && comp.Player2 != null && comp.TargetScore > 0)
             StartGame(uid, comp);
 
         Dirty(uid, comp);
@@ -390,6 +392,15 @@ public sealed class STFarkleDiceSystem : EntitySystem
         var targetScore = Math.Clamp(args.TargetScore, MinTargetScore, MaxTargetScore);
 
         comp.TargetScore = targetScore;
+
+        // Auto-start the game if both players are seated and waiting
+        if (comp.Phase == STFarkleDicePhase.WaitingForPlayers
+            && comp.Player1 != null
+            && comp.Player2 != null)
+        {
+            StartGame(uid, comp);
+        }
+
         Dirty(uid, comp);
         UpdateAllUi(uid, comp);
     }
@@ -522,7 +533,9 @@ public sealed class STFarkleDiceSystem : EntitySystem
     private void UpdateUi(EntityUid uid, STFarkleDiceComponent comp)
     {
         var selectedValues = GetSelectedDiceValues(comp);
-        var selectedScore = STFarkleDiceScoring.CalculateScore(selectedValues);
+        var selectedScore = STFarkleDiceScoring.AreAllDiceScoring(selectedValues)
+            ? STFarkleDiceScoring.CalculateScore(selectedValues)
+            : 0;
         var scoringDice = STFarkleDiceScoring.GetScoringDice(comp.DiceValues, comp.KeptDice);
 
         NetEntity? player1NetEntity = comp.Player1 != null ? GetNetEntity(comp.Player1.Value) : null;

@@ -50,10 +50,38 @@ public static class STFarkleDiceScoring
 
     public static bool IsValidSelection(int[] diceValues)
     {
+        return AreAllDiceScoring(diceValues);
+    }
+
+    /// <summary>
+    /// Returns true if every die in the selection contributes to the total score.
+    /// A selection like [1, 4, 4] returns false because the 4s do not contribute.
+    /// This prevents players from "hiding" non-scoring dice in a valid selection.
+    /// </summary>
+    public static bool AreAllDiceScoring(int[] diceValues)
+    {
         if (diceValues.Length == 0)
             return false;
 
-        return CalculateScore(diceValues) > 0;
+        var totalScore = CalculateScore(diceValues);
+        if (totalScore == 0)
+            return false;
+
+        for (var i = 0; i < diceValues.Length; i++)
+        {
+            var reduced = new int[diceValues.Length - 1];
+            var idx = 0;
+            for (var j = 0; j < diceValues.Length; j++)
+            {
+                if (j != i)
+                    reduced[idx++] = diceValues[j];
+            }
+
+            if (CalculateScore(reduced) == totalScore)
+                return false;
+        }
+
+        return true;
     }
 
     /// <summary>
