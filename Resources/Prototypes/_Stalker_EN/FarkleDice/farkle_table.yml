@@ -10,7 +10,6 @@
     sprite: _Stalker_EN/FarkleDice/farkle_table.rsi
     state: full
   - type: STFarkleDice
-    targetScore: 10000
   - type: ActivatableUI
     key: enum.STFarkleDiceUiKey.Key
   - type: UserInterface

@@ -12,6 +12,8 @@ farkle-empty-seat = (Empty)
 farkle-your-turn = Your turn!
 farkle-opponent-turn = Opponent's turn
 farkle-waiting-for-players = Waiting for players...
+farkle-no-target-score = No target score set
+farkle-set-target-to-start = Set a target score to begin!
 farkle-game-started = Game started! Player { $player } goes first.
 
 # Game events

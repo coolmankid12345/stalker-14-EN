@@ -110,8 +110,9 @@ public sealed class STFarkleDiceSystem : EntitySystem
         {
             comp.Player2 = player;
 
-            // Both players joined - start the game!
-            StartGame(uid, comp);
+            // Both players joined — start if target score is set
+            if (comp.TargetScore > 0)
+                StartGame(uid, comp);
         }
         else
         {
@@ -367,8 +368,8 @@ public sealed class STFarkleDiceSystem : EntitySystem
         // Reset but keep players
         ResetGame(comp);
 
-        // If both players present, start immediately
-        if (comp.Player1 != null && comp.Player2 != null)
+        // If both players present and target score set, start immediately
+        if (comp.Player1 != null && comp.Player2 != null && comp.TargetScore > 0)
             StartGame(uid, comp);
 
         Dirty(uid, comp);
@@ -391,6 +392,15 @@ public sealed class STFarkleDiceSystem : EntitySystem
         var targetScore = Math.Clamp(args.TargetScore, MinTargetScore, MaxTargetScore);
 
         comp.TargetScore = targetScore;
+
+        // Auto-start the game if both players are seated and waiting
+        if (comp.Phase == STFarkleDicePhase.WaitingForPlayers
+            && comp.Player1 != null
+            && comp.Player2 != null)
+        {
+            StartGame(uid, comp);
+        }
+
         Dirty(uid, comp);
         UpdateAllUi(uid, comp);
     }

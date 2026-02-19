@@ -49,7 +49,7 @@ public sealed partial class STFarkleDiceComponent : Component
     public bool HasRolled;
 
     [DataField]
-    public int TargetScore = 10000;
+    public int TargetScore;
 }
 
 [Serializable, NetSerializable]
