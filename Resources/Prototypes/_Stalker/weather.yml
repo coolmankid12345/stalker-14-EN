@@ -79,6 +79,7 @@
   parent: BaseWeatherAdmeme
   components:
   - type: Sprite
+    sprite: /Textures/_Stalker_EN/Effects/weather.rsi # EN
     state: rain
 
 - type: entity
@@ -133,4 +134,5 @@
   parent: BaseWeatherAdmeme
   components:
   - type: Sprite
+    sprite: /Textures/_Stalker_EN/Effects/weather.rsi # EN
     state: storm

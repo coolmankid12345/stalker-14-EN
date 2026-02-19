@@ -1,0 +1,21 @@
+- type: entity
+  parent: SmallLight
+  id: DimSmallLight
+  suffix: Dim, Always Powered
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 0.5
+    softness: 3
+    color: "#ba473f"
+
+- type: entity
+  parent: SmallLight
+  id: WarmSmallLight
+  suffix: Warm, Always Powered
+  components:
+  - type: PointLight
+    radius: 6
+    energy: 1
+    softness: 3
+    color: "#FF8A0C"

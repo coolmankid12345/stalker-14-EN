@@ -3321,6 +3321,7 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/radio.rsi
     state: base
+    drawdepth: Items # ST14-EN Addition
   - type: InteractionOutline
   - type: Physics
     bodyType: Static
@@ -3719,6 +3720,7 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/radio.rsi
     state: base
+    drawdepth: Items # ST14-EN Addition
   - type: InteractionOutline
   - type: Physics
     bodyType: Static
@@ -3744,4 +3746,3 @@
     interfaces:
       enum.JukeboxUiKey.Key:
         type: JukeboxBoundUserInterface
-
