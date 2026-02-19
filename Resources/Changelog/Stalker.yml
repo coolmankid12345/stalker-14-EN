@@ -459,5 +459,13 @@
   id: 52
   time: '2026-02-19T21:35:44.939764+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/457
+- author: teecoding
+  changes:
+  - message: Players in soft crit can now slowly crawl on the ground and whisper to
+      nearby players before going fully unconscious
+    type: Add
+  id: 53
+  time: '2026-02-19T21:39:37.953799+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/458
 Name: Stalker
 Order: -1
