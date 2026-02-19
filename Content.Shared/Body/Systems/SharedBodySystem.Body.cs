@@ -326,11 +326,17 @@ public partial class SharedBodySystem
         var bodyTransform = Transform(bodyId);
         if (TryComp<InventoryComponent>(bodyId, out var inventory))
         {
+            // stalker-en-changes-start: use proper container removal to fix PVS desync (#441)
+            var bodyCoords = bodyTransform.Coordinates;
             foreach (var item in _inventory.GetHandOrInventoryEntities(bodyId))
             {
-                SharedTransform.DropNextTo(item, (bodyId, bodyTransform));
+                if (Containers.TryGetContainingContainer(item, out var container))
+                    Containers.Remove(item, container, force: true, destination: bodyCoords);
+                else
+                    SharedTransform.DropNextTo(item, (bodyId, bodyTransform));
                 gibs.Add(item);
             }
+            // stalker-en-changes-end
         }
         _audioSystem.PlayPredicted(gibSoundOverride, bodyTransform.Coordinates, null);
         return gibs;
