@@ -422,5 +422,13 @@
   id: 47
   time: '2026-02-19T21:19:52.257314+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/448
+- author: teecoding
+  changes:
+  - message: Emission protection now correctly applies when dragging disconnected
+      players into or out of safe zone buildings
+    type: Fix
+  id: 48
+  time: '2026-02-19T21:22:09.735350+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/451
 Name: Stalker
 Order: -1
