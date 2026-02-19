@@ -45,23 +45,6 @@ public sealed class STCPRSystem : SharedSTCPRSystem
             return;
         }
 
-        // Check cooldown on the target
-        if (TryComp<STCPRReceivedComponent>(target, out var received))
-        {
-            if (_timing.CurTime < received.LastCPRTime + TimeSpan.FromSeconds(comp.CooldownSeconds))
-            {
-                _popup.PopupEntity(
-                    Loc.GetString("st-cpr-fail-rhythm", ("target", Identity.Entity(target, EntityManager))),
-                    target, user);
-                _popup.PopupEntity(
-                    Loc.GetString("st-cpr-fail-rhythm-others",
-                        ("performer", Identity.Entity(user, EntityManager)),
-                        ("target", Identity.Entity(target, EntityManager))),
-                    target, Filter.PvsExcept(user), true);
-                return;
-            }
-        }
-
         // Start popups
         _popup.PopupEntity(
             Loc.GetString("st-cpr-start-performer", ("target", Identity.Entity(target, EntityManager))),

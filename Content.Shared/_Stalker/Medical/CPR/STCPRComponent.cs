@@ -9,7 +9,7 @@ public sealed partial class STCPRComponent : Component
     public float DoAfterDuration = 4f;
 
     [DataField]
-    public float HealAmount = 10f;
+    public float HealAmount = 15f;
 
     [DataField]
     public float CooldownSeconds = 7f;
