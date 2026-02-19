@@ -467,5 +467,16 @@
   id: 53
   time: '2026-02-19T21:39:37.953799+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/458
+- author: teecoding
+  changes:
+  - message: Players can no longer keep non-scoring dice in Farkle selections
+    type: Fix
+  - message: Custom target score input for Farkle (1,000 to 5,000)
+    type: Add
+  - message: Help button in Farkle UI that opens a rules guidebook
+    type: Add
+  id: 54
+  time: '2026-02-19T21:42:55.524936+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/460
 Name: Stalker
 Order: -1
