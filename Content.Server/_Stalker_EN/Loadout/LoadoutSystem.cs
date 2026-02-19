@@ -1515,6 +1515,8 @@ public sealed class LoadoutSystem : EntitySystem
                HasComp<Content.Shared.Inventory.VirtualItem.VirtualItemComponent>(item) ||
                HasComp<Content.Shared.Mind.Components.MindContainerComponent>(item) ||
                HasComp<Content.Shared.Chemistry.Components.SolutionComponent>(item) ||
+               // Attached clothing (e.g., hardsuit helmets, hoods) - auto-spawned by ToggleableClothingSystem
+               HasComp<Content.Shared.Clothing.Components.AttachedClothingComponent>(item) ||
                // Unremovable components
                HasComp<Content.Shared.Interaction.Components.UnremoveableComponent>(item) ||
                HasComp<Content.Shared.Clothing.Components.SelfUnremovableClothingComponent>(item);
