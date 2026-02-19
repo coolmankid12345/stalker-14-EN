@@ -25,6 +25,13 @@ farkle-must-select-dice = You must select at least one scoring die.
 farkle-invalid-selection = Selected dice don't form a valid scoring combination.
 farkle-must-keep-first = Select and keep dice before rolling again.
 
+# Custom target score
+farkle-custom-target-placeholder = 1000-5000
+farkle-set-target-button = Set
+
+# Help
+farkle-help-button = ?
+
 # Buttons
 farkle-join-button = Join
 farkle-leave-button = Leave

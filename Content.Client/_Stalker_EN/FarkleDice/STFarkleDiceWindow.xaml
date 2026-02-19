@@ -5,15 +5,27 @@
     MinSize="700 480"
     SetSize="700 480">
     <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="8">
-        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 8">
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0 0 0 8">
+            <Control HorizontalExpand="True" />
             <Label Name="TargetScoreLabel" StyleClasses="LabelHeading" />
+            <Control HorizontalExpand="True" />
+            <Button Name="HelpButton" Text="{Loc 'farkle-help-button'}" MinWidth="30" MaxWidth="30" Margin="2" />
         </BoxContainer>
 
         <BoxContainer Name="TargetScorePresets" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 4">
-            <Button Name="Score5000" Text="5,000" MinWidth="70" Margin="2" />
-            <Button Name="Score10000" Text="10,000" MinWidth="70" Margin="2" />
-            <Button Name="Score15000" Text="15,000" MinWidth="70" Margin="2" />
-            <Button Name="Score20000" Text="20,000" MinWidth="70" Margin="2" />
+            <Button Name="Score2000" Text="2,000" MinWidth="70" Margin="2" />
+            <Button Name="Score3000" Text="3,000" MinWidth="70" Margin="2" />
+        </BoxContainer>
+
+        <BoxContainer Name="CustomTargetScoreRow" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 4">
+            <LineEdit Name="CustomTargetScoreInput"
+                      PlaceHolder="{Loc 'farkle-custom-target-placeholder'}"
+                      MinWidth="120"
+                      Margin="2" />
+            <Button Name="SetTargetScoreButton"
+                    Text="{Loc 'farkle-set-target-button'}"
+                    MinWidth="50"
+                    Margin="2" />
         </BoxContainer>
 
         <PanelContainer Margin="0 0 0 8">
