@@ -214,3 +214,4 @@ guide-entry-writing = Writing
 guide-entry-glossary = Glossary
 
 guide-entry-loadout = Loadout System
+guide-entry-farkle-dice = Farkle Dice Game

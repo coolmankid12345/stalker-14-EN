@@ -1,0 +1,54 @@
+<Document>
+
+# Farkle Dice Game
+
+<Box>
+  <GuideEntityEmbed Entity="STFarkleDiceTable" Caption="Farkle Table"/>
+</Box>
+
+Farkle is a dice game of risk and reward for two players. Race to reach the target score by rolling dice, selecting scoring combinations, and deciding when to bank or press your luck.
+
+## How to Play
+
+[bullet] [bold]Join[/bold] - Sit at the table. The game starts when both seats are filled.
+
+[bullet] [bold]Roll[/bold] - Roll all un-kept dice. If nothing scores, you Farkle and lose all turn points.
+
+[bullet] [bold]Select & Keep[/bold] - Click scoring dice to select them, then press Keep & Roll. Selected dice are locked in and their points added to your turn total. You must select only scoring dice — non-scoring dice cannot be included.
+
+[bullet] [bold]Bank[/bold] - End your turn and add your accumulated turn points to your permanent score.
+
+[bullet] [bold]Hot Dice[/bold] - If all 6 dice are kept, you get to roll all 6 again and keep building your turn score!
+
+## Scoring
+
+[color=#D4912A][bold]Single Dice:[/bold][/color]
+[bullet] Single 1: [bold]100[/bold] points
+[bullet] Single 5: [bold]50[/bold] points
+
+[color=#D4912A][bold]Three of a Kind:[/bold][/color]
+[bullet] Three 1s: [bold]1,000[/bold] points
+[bullet] Three 2s: [bold]200[/bold] | Three 3s: [bold]300[/bold] | Three 4s: [bold]400[/bold]
+[bullet] Three 5s: [bold]500[/bold] | Three 6s: [bold]600[/bold]
+
+[color=#D4912A][bold]Four+ of a Kind:[/bold][/color]
+[bullet] Each additional matching die [bold]doubles[/bold] the three-of-a-kind score
+[bullet] Four 2s = 400 | Five 2s = 800 | Six 2s = 1,600
+
+[color=#D4912A][bold]Straights:[/bold][/color]
+[bullet] Full straight (1-2-3-4-5-6): [bold]1,500[/bold] points
+[bullet] Low straight (1-2-3-4-5): [bold]500[/bold] points
+[bullet] High straight (2-3-4-5-6): [bold]750[/bold] points
+
+## Strategy Tips
+
+[bullet] [bold]Bank early[/bold] when you have a comfortable lead
+[bullet] [bold]Press your luck[/bold] when trailing — the comeback potential is huge
+[bullet] [bold]Watch for Hot Dice[/bold] — keeping all 6 dice lets you roll all of them again
+[bullet] [bold]Every selected die must score[/bold] — you cannot include non-scoring dice in your selection
+
+## Target Score
+
+The host (Player 1) can set the target score before the game starts using the preset buttons or by entering a custom value (1,000 to 5,000).
+
+</Document>

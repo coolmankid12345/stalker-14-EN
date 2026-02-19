@@ -1,0 +1,4 @@
+- type: guideEntry
+  id: STFarkleDice
+  name: guide-entry-farkle-dice
+  text: "/ServerInfo/_Stalker_EN/Guidebook/FarkleDice/Farkle.xml"
