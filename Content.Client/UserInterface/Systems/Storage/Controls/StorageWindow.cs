@@ -49,6 +49,7 @@ public sealed class StorageWindow : BaseWindow
     private TextureButton? _backButton;
 
     private bool _isDirty;
+    private bool _forceClose;
 
     public event Action<GUIBoundKeyEventArgs, ItemGridPiece>? OnPiecePressed;
     public event Action<GUIBoundKeyEventArgs, ItemGridPiece>? OnPieceUnpressed;
@@ -252,6 +253,27 @@ public sealed class StorageWindow : BaseWindow
         BuildGridRepresentation();
     }
 
+    public override void Close()
+    {
+        if (!_forceClose && StorageEntity != null && _entity.System<StorageSystem>().NestedStorage)
+        {
+            var containerSystem = _entity.System<SharedContainerSystem>();
+
+            if (containerSystem.TryGetContainingContainer(StorageEntity.Value, out var container) &&
+                _entity.TryGetComponent(container.Owner, out StorageComponent? storage) &&
+                storage.Container.Contains(StorageEntity.Value) &&
+                _entity.System<SharedUserInterfaceSystem>()
+                    .TryGetOpenUi<StorageBoundUserInterface>(container.Owner,
+                        StorageComponent.StorageUiKey.Key,
+                        out var parentBui))
+            {
+                parentBui.Show(Position);
+            }
+        }
+
+        base.Close();
+    }
+
     private void CloseParent()
     {
         if (StorageEntity == null)
@@ -344,6 +366,7 @@ public sealed class StorageWindow : BaseWindow
         exitButton.OnPressed += _ =>
         {
             // Close ourselves and all parent BUIs.
+            _forceClose = true;
             Close();
             CloseParent();
         };
@@ -352,6 +375,7 @@ public sealed class StorageWindow : BaseWindow
             // it just makes sense...
             if (!args.Handled && args.Function == ContentKeyFunctions.ActivateItemInWorld)
             {
+                _forceClose = true;
                 Close();
                 CloseParent();
                 args.Handle();
