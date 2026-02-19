@@ -114,6 +114,126 @@
 
 - type: entity
   parent: BaseArtifactStorage
+  id: ZoneArtifactCompass
+  suffix: Stalker, Компасс
+  components:
+    - type: Sprite
+      state: compass
+      scale: 0.5, 0.5
+    - type: ZoneArtifact
+      anomaly: AnomSEpicentre
+    - type: ZoneArtifactDetectorTarget
+      detectedLevel: 4
+    - type: PointLight
+      radius: 2
+      energy: 8
+      color: "#164981"
+    - type: PersonalDamage
+      damage:
+        types:
+          Radiation: -1
+          Cold: -2
+          Compression: -3
+          Heat: -3
+          Shock: -3
+          Caustic: -1
+          Asphyxiation: -1
+          Piercing: 0.7
+          Blunt: 0.5
+      interval: 1
+    - type: Storage
+      grid:
+        - 0,0,3,3
+    - type: STWeight
+      self: 30
+    - type: Reflect
+      reflectProb: 0.1
+      spread: 340
+
+- type: entity
+  name: Распятие
+  parent: BaseArtifact
+  id: ZoneArtifactCrucifix
+  suffix: Stalker, Распятие
+  components:
+  - type: Sprite
+    state: crucifix
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyNoGravity
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 5
+  - type: PointLight
+    radius: 1.5
+    energy: 5.5
+    color: "#f89b08"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Piercing: -3
+        Radiation: 1
+        Cold: 3.5
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Piercing: 0.7
+  - type: STWeight
+    self: -5
+
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactThorn
+  suffix: Stalker, Шип
+  components:
+  - type: Sprite
+    state: thorn
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyPulse
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 3
+  - type: PointLight
+    radius: 1.5
+    energy: 5.5
+    color: "#e5d0ff"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Piercing: -1
+        Heat: -3
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Piercing: 1
+      coefficients:
+        Slash: 1.2
+  - type: Reflect
+    reflectProb: 0.15
+    spread: 340
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 5
+        reagents:
+        - ReagentId: MilitarySteampackReagent
+          Quantity: 5
+  - type: Hypospray
+    onlyAffectsMobs: false
+    solutionName: pen
+    transferAmount: 5
+  - type: ExaminableSolution
+    solution: pen
+
+- type: entity
+  parent: BaseArtifactStorage
   id: ZoneArtifactAtom
   suffix: Stalker, Атом
   components:
@@ -147,3 +267,39 @@
         - 0,0,8,8
     - type: STWeight
       self: -30
+
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactArf
+  suffix: Stalker, Арфа
+  components:
+  - type: Sprite
+    state: arf
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: AnomSEpicentre
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 2
+  - type: PointLight
+    radius: 1.5
+    energy: 5.5
+    color: "#09efff"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Compression: 0.3
+    interval: 1
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Cold: 0.7
+        Radiation: 0.95
+  - type: Reflect
+    reflectProb: 0.1
+    spread: 340

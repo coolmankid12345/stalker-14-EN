@@ -67,6 +67,111 @@
 
 - type: entity
   parent: BaseArtifact
+  id: ZoneArtifactAccumulator
+  suffix: Stalker, Аккумулятор
+  components:
+  - type: Sprite
+    state: baccum
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyGarland
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 2
+  - type: PointLight
+    radius: 1.5
+    energy: 5.5
+    color: "#09efff"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Slash: -0.4
+        Blunt: -0.4
+        Shock: 0.5
+        Asphyxiation: -0.5
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Cold: 0.5
+
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactDiamond
+  suffix: Stalker, Алмаз
+  components:
+  - type: Sprite
+    state: diamond
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyGarland
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 4
+  - type: PointLight
+    radius: 1.5
+    energy: 5.5
+    color: "#09efff"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Cold: 2.3
+        Psy: -1.6
+        Piercing: 1.4
+        Blunt: 2
+    interval: 1
+  - type: ClothingSpeedModifier
+    walkModifier: 1.65
+    sprintModifier: 1.65
+  - type: STWeight
+    self: -1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Piercing: 0.8
+        Radiation: 0.3
+
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactCharger
+  suffix: Stalker, Заряд
+  components:
+  - type: Sprite
+    state: charger
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyGarland
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 4
+  - type: PointLight
+    radius: 1.5
+    energy: 5.5
+    color: "#09efff"
+    castShadows: false
+  - type: PersonalDamage
+    staminaDamage: -1.5
+    damage:
+      types:
+        Shock: 2
+        Radiation: 2
+        Cold: 2
+    interval: 1
+  - type: ClothingSpeedModifier
+    walkModifier: 1.35
+    sprintModifier: 1.35
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Compression: 0.75
+
+- type: entity
+  parent: BaseArtifact
   id: ZoneArtifactFlash
   suffix: Stalker, Вспышка
   components:

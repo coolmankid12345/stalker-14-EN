@@ -49,6 +49,7 @@
         13x108Mag10: 390
         13x108FMJBox: 2500
         13x108HPBox: 1200
+        13x108PCBox: 5000
 
 - type: personalShop
   id: PersonalQEWAEWA2Shop
