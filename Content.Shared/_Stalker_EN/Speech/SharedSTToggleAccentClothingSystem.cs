@@ -42,7 +42,7 @@ public abstract class SharedSTToggleAccentClothingSystem : EntitySystem
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/bubbles.svg.192dpi.png")),
             Text = text,
             EventTarget = uid,
-            ExecutionEventArgs = new STToggleAccentClothingEvent { Performer = args.User },
+            ExecutionEventArgs = new STToggleAccentClothingEvent { Performer = GetNetEntity(args.User) },
         };
 
         args.Verbs.Add(verb);

@@ -1,3 +1,4 @@
+using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Stalker_EN.Speech;
@@ -8,5 +9,5 @@ namespace Content.Shared._Stalker_EN.Speech;
 [Serializable, NetSerializable]
 public sealed class STToggleAccentClothingEvent : EntityEventArgs
 {
-    public EntityUid Performer;
+    public NetEntity Performer;
 }

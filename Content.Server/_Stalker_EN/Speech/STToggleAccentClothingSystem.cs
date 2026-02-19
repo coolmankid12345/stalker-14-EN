@@ -45,7 +45,7 @@ public sealed class STToggleAccentClothingSystem : SharedSTToggleAccentClothingS
             return;
 
         var wearer = Transform(uid).ParentUid;
-        if (args.Performer != wearer)
+        if (GetEntity(args.Performer) != wearer)
             return;
 
         var componentType = Factory.GetRegistration(accentClothing.Accent).Type;
