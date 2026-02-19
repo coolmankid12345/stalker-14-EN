@@ -397,5 +397,15 @@
   id: 44
   time: '2026-02-18T21:57:17.818273+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/447
+- author: teecoding
+  changes:
+  - message: Pressing Escape in nested storage (e.g. medkit inside backpack) now returns
+      to the parent storage instead of closing all windows
+    type: Fix
+  - message: Fixed a server crash related to accent clothing toggle
+    type: Fix
+  id: 45
+  time: '2026-02-19T09:48:01.152955+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/450
 Name: Stalker
 Order: -1
