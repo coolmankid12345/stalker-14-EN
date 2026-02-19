@@ -407,5 +407,13 @@
   id: 45
   time: '2026-02-19T09:48:01.152955+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/450
+- author: teecoding
+  changes:
+  - message: Server rules reorganized for clarity - PvP, zone, and faction rules are
+      now easier to find
+    type: Tweak
+  id: 46
+  time: '2026-02-19T20:57:33.373263+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/438
 Name: Stalker
 Order: -1
