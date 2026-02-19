@@ -415,5 +415,12 @@
   id: 46
   time: '2026-02-19T20:57:33.373263+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/438
+- author: LaCumbiaDelCoronavirus
+  changes:
+  - message: Remapped renegades underground base
+    type: Tweak
+  id: 47
+  time: '2026-02-19T21:19:52.257314+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/448
 Name: Stalker
 Order: -1
