@@ -445,5 +445,12 @@
   id: 50
   time: '2026-02-19T21:26:59.477163+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/453
+- author: crocodilecarousel
+  changes:
+  - message: Igor added to Monolith and Bandit bases
+    type: Add
+  id: 51
+  time: '2026-02-19T21:31:02.677939+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/456
 Name: Stalker
 Order: -1
