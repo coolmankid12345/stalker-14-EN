@@ -437,5 +437,13 @@
   id: 49
   time: '2026-02-19T21:25:06.589472+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/452
+- author: teecoding
+  changes:
+  - message: Items dropped from players who burn to ash or get gibbed are now visible
+      to nearby players without needing to reconnect
+    type: Fix
+  id: 50
+  time: '2026-02-19T21:26:59.477163+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/453
 Name: Stalker
 Order: -1
