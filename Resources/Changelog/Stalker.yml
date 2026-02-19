@@ -452,5 +452,12 @@
   id: 51
   time: '2026-02-19T21:31:02.677939+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/456
+- author: crocodilecarousel
+  changes:
+  - message: Updates paracusia trait to use Stalker sounds
+    type: Tweak
+  id: 52
+  time: '2026-02-19T21:35:44.939764+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/457
 Name: Stalker
 Order: -1
