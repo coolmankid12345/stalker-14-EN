@@ -2,7 +2,6 @@ using Content.Server._Stalker.AddCustomComponent;
 using Content.Server._Stalker.StationEvents.Components;
 using Content.Shared.Alert;
 using Robust.Shared.Physics.Events;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.AddOrDelOnCollideSafeZone;
@@ -24,27 +23,25 @@ public sealed class AddOrDelOnCollideSafeZoneSystem : EntitySystem
 
     private void OnCollide(EntityUid uid, AddOrDelOnCollideSafeZoneComponent component, ref StartCollideEvent args)
     {
-        if (!TryComp(args.OtherEntity, out ActorComponent? actor))
+        // stalker-en change start: use BlowoutTargetComponent instead of ActorComponent so disconnected players are still protected
+        if (!HasComp<BlowoutTargetComponent>(args.OtherEntity))
             return;
 
-        if (actor.PlayerSession.AttachedEntity != null)
+        _prototype.TryIndex<AlertPrototype>("StalkerSafeZone", out var stalkerSafeZoneAlert);
+        if (stalkerSafeZoneAlert == null)
+            return;
+        if (component.MustAdd == true)
         {
-            _prototype.TryIndex<AlertPrototype>("StalkerSafeZone", out var stalkerSafeZoneAlert);
-            if (stalkerSafeZoneAlert == null)
-                return;
-            if (component.MustAdd == true)
-            {
-                Logger.Debug("component.MustAdd==true");
-                EnsureComp<StalkerSafeZoneComponent>(actor.PlayerSession.AttachedEntity.Value);
-                _alertsSystem.ShowAlert(actor.PlayerSession.AttachedEntity.Value, stalkerSafeZoneAlert);
-            }
-            else
-            {
-                Logger.Debug("component.MustAdd==false");
-                RemComp<StalkerSafeZoneComponent>(actor.PlayerSession.AttachedEntity.Value);
-                _alertsSystem.ClearAlert(actor.PlayerSession.AttachedEntity.Value, stalkerSafeZoneAlert);
-            }
+            Logger.Debug("component.MustAdd==true");
+            EnsureComp<StalkerSafeZoneComponent>(args.OtherEntity);
+            _alertsSystem.ShowAlert(args.OtherEntity, stalkerSafeZoneAlert);
         }
-
+        else
+        {
+            Logger.Debug("component.MustAdd==false");
+            RemComp<StalkerSafeZoneComponent>(args.OtherEntity);
+            _alertsSystem.ClearAlert(args.OtherEntity, stalkerSafeZoneAlert);
+        }
+        // stalker-en change end
     }
 }
