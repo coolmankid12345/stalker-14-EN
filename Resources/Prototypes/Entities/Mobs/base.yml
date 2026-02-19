@@ -117,6 +117,9 @@
       0: Alive
       100: Critical
       200: Dead
+  - type: STSoftCritEnabled # stalker-en-changes
+    softCritFraction: 0.5
+    crawlSpeedModifier: 0.3
   - type: MobStateActions
     actions:
       Critical:

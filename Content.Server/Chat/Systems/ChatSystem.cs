@@ -23,6 +23,7 @@ using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
 using Content.Shared.Station.Components;
 using Content.Shared.Whitelist;
+using Content.Shared._Stalker_EN.SoftCrit;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -221,6 +222,15 @@ public new const int VoiceRange = 15; // how far voice goes in world units
                 SendEntityWhisper(source, modMessage, range, channel, nameOverride, hideLog, ignoreActionBlocker);
                 return;
             }
+        }
+
+        // stalker-en-changes: soft crit forces speech to whisper
+        var softCritEv = new STSoftCritSpeechEvent(source);
+        RaiseLocalEvent(source, ref softCritEv);
+        if (softCritEv.Override)
+        {
+            desiredType = InGameICChatType.Whisper;
+            ignoreActionBlocker = true;
         }
 
         // Otherwise, send whatever type.
