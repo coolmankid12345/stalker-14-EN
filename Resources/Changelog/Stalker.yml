@@ -430,5 +430,12 @@
   id: 48
   time: '2026-02-19T21:22:09.735350+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/451
+- author: teecoding
+  changes:
+  - message: Loadout no longer counts toggled helmets and hoods as separate items
+    type: Fix
+  id: 49
+  time: '2026-02-19T21:25:06.589472+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/452
 Name: Stalker
 Order: -1
