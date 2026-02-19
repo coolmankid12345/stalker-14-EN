@@ -90,10 +90,16 @@
   id: JobHeadDolg
 
 - type: playTimeTracker
+  id: JobNoviceDolg
+
+- type: playTimeTracker
   id: JobFreedom
 
 - type: playTimeTracker
   id: JobHeadFreedom
+
+- type: playTimeTracker
+  id: JobNoviceFreedom
 
 - type: playTimeTracker
   id: JobSBU

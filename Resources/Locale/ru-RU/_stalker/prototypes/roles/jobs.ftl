@@ -32,6 +32,7 @@ job-dolg-supervisor = Вы подчиняетесь старшим по зван
 job-head-dolg = Лидер Долга
 job-head-dolg-desc = Защитник человечества.
 job-head-dolg-supervisor = Вы командуете другими бойцами Долга.
+job-novice-dolg= Рядовой Долга
 
 job-freedom = Боец Свободы
 job-freedom-desc = Защитник зоны.
@@ -39,6 +40,7 @@ job-freedom-supervisor = Кури, защищай Зону и игнорируй
 job-head-freedom = Лидер Свободы
 job-head-freedom-desc = Защитник зоны.
 job-head-freedom-supervisor = Командиры? У анархистов?.
+job-novice-freedom = Рядовой Свободы
 
 job-journalist = Журналист
 job-journalist-desc = Вестники Зоны.
@@ -62,7 +64,7 @@ job-military-officer = Командир Военных
 job-military-officer-desc = Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
 job-military-supervisor = Старшим по званию
 
-job-monolith = Монолит
+job-monolith = Скиталец
 job-monolith-desc = Религиозная группировка зомбированных фанатиков, распологающаяся на севере Зоны и считающая своим долгом искоренить "неверных".
 job-monolith-supervisor = своему проповеднику и братьям старшим
 

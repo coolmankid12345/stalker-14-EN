@@ -303,6 +303,10 @@
       toggleable-clothing: !type:ContainerSlot {}
       storagebase: !type:Container
         ents: []
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 18.01
 
 - type: entity
   parent: ClothingHeadHelmetLoyalistCoat

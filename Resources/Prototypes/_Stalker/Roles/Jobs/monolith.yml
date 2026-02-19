@@ -45,17 +45,18 @@
 - type: startingGear
   id: MonolithGear
   equipment:
-    ears: STClothingChip
     id: MonolithPDA
-    torso: ClothingTorsoSweaterStalkerGreen
-    legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesNovice
+    ears: STClothingChip
+    torso: ClothingTorsoTurtlenecksMonolithCamouflage
+    legs: ClothingLegsJeansMonolithCamouflage
+    shoes: STClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesFingerless
 - type: stBand
   id: STMonolithBand
   name: Monolith
   factionId: Monolith
-  maxMembers: 15
-  managingRankId: 3
+  maxMembers: 11
+  managingRankId: 1
   hierarchy:
     1: StalkerMonolith
 

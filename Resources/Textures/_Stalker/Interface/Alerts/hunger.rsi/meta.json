@@ -4,8 +4,15 @@
     "copyright": "axolol_ for S.T.A.L.K.E.R.-14",
     "size": { "x": 32, "y": 32 },
     "states": [
-        { "name": "peckish", "directions": 1, "delays": [[1.0]] },
-        { "name": "starving", "directions": 1, "delays": [[1.0]] },
-        { "name": "overfed", "directions": 1, "delays": [[1.0]] }
+        {
+            "name": "peckish"
+        },
+        {
+            "name": "starving"
+        },
+        {
+            "name": "overfed" 
+        }
     ]
 }
+
