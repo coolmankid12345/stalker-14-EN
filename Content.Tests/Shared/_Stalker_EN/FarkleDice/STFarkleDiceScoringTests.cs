@@ -288,6 +288,72 @@ public sealed class STFarkleDiceScoringTests
 
     #endregion
 
+    #region AreAllDiceScoring Tests
+
+    [Test]
+    [TestCase(new[] { 1 }, ExpectedResult = true)]
+    [TestCase(new[] { 5 }, ExpectedResult = true)]
+    [TestCase(new[] { 1, 5 }, ExpectedResult = true)]
+    [TestCase(new[] { 1, 1 }, ExpectedResult = true)]
+    [TestCase(new[] { 5, 5 }, ExpectedResult = true)]
+    [TestCase(new[] { 1, 1, 1 }, ExpectedResult = true)]
+    [TestCase(new[] { 2, 2, 2 }, ExpectedResult = true)]
+    [TestCase(new[] { 3, 3, 3 }, ExpectedResult = true)]
+    [TestCase(new[] { 1, 1, 1, 5 }, ExpectedResult = true)]
+    [TestCase(new[] { 2, 2, 2, 1 }, ExpectedResult = true)]
+    [TestCase(new[] { 2, 2, 2, 5 }, ExpectedResult = true)]
+    [TestCase(new[] { 2, 2, 2, 1, 5 }, ExpectedResult = true)]
+    [TestCase(new[] { 1, 2, 3, 4, 5, 6 }, ExpectedResult = true)]
+    [TestCase(new[] { 1, 2, 3, 4, 5 }, ExpectedResult = true)]
+    [TestCase(new[] { 2, 3, 4, 5, 6 }, ExpectedResult = true)]
+    [TestCase(new[] { 2, 2, 2, 3, 3, 3 }, ExpectedResult = true)]
+    [TestCase(new[] { 1, 1, 1, 1 }, ExpectedResult = true)]
+    [TestCase(new[] { 5, 5, 5, 1, 1 }, ExpectedResult = true)]
+    public bool TestAreAllDiceScoring_Valid(int[] dice)
+    {
+        return STFarkleDiceScoring.AreAllDiceScoring(dice);
+    }
+
+    [Test]
+    [TestCase(new[] { 1, 4 }, ExpectedResult = false)]
+    [TestCase(new[] { 1, 4, 4 }, ExpectedResult = false)]
+    [TestCase(new[] { 5, 2 }, ExpectedResult = false)]
+    [TestCase(new[] { 5, 3 }, ExpectedResult = false)]
+    [TestCase(new[] { 5, 4 }, ExpectedResult = false)]
+    [TestCase(new[] { 5, 6 }, ExpectedResult = false)]
+    [TestCase(new[] { 1, 2 }, ExpectedResult = false)]
+    [TestCase(new[] { 1, 3 }, ExpectedResult = false)]
+    [TestCase(new[] { 1, 6 }, ExpectedResult = false)]
+    [TestCase(new[] { 1, 2, 3 }, ExpectedResult = false)]
+    [TestCase(new[] { 1, 1, 4 }, ExpectedResult = false)]
+    [TestCase(new[] { 5, 5, 2 }, ExpectedResult = false)]
+    [TestCase(new[] { 2, 2, 2, 4 }, ExpectedResult = false)]
+    [TestCase(new[] { 3, 3, 3, 4 }, ExpectedResult = false)]
+    [TestCase(new[] { 6, 6, 6, 2, 3 }, ExpectedResult = false)]
+    public bool TestAreAllDiceScoring_ContainsNonScoring(int[] dice)
+    {
+        return STFarkleDiceScoring.AreAllDiceScoring(dice);
+    }
+
+    [Test]
+    [TestCase(new[] { 2 }, ExpectedResult = false)]
+    [TestCase(new[] { 3 }, ExpectedResult = false)]
+    [TestCase(new[] { 4 }, ExpectedResult = false)]
+    [TestCase(new[] { 6 }, ExpectedResult = false)]
+    [TestCase(new[] { 2, 3, 4, 6 }, ExpectedResult = false)]
+    public bool TestAreAllDiceScoring_Farkle(int[] dice)
+    {
+        return STFarkleDiceScoring.AreAllDiceScoring(dice);
+    }
+
+    [Test]
+    public void TestAreAllDiceScoring_Empty()
+    {
+        Assert.That(STFarkleDiceScoring.AreAllDiceScoring(System.Array.Empty<int>()), Is.False);
+    }
+
+    #endregion
+
     #region GetScoringDice Tests
 
     [Test]
