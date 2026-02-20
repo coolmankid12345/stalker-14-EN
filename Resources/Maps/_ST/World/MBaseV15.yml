@@ -62,6 +62,8 @@ entities:
     - type: OccluderTree
     - type: STMapKey
       value: MBase
+    - type: STMapDefaultZone
+      zone: Green
     - type: Biome
       forcedMarkerLayers: []
       markerLayers: []

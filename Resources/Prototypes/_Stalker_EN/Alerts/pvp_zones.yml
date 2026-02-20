@@ -1,0 +1,53 @@
+- type: alert
+  id: STPvpZoneGreen
+  category: STPvpZone
+  icons:
+  - sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    state: green
+  name: alerts-st-pvpzone-green-name
+  description: alerts-st-pvpzone-green-desc
+
+- type: alert
+  id: STPvpZoneGray
+  category: STPvpZone
+  icons:
+  - sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    state: gray
+  name: alerts-st-pvpzone-gray-name
+  description: alerts-st-pvpzone-gray-desc
+
+- type: alert
+  id: STPvpZoneYellow
+  category: STPvpZone
+  icons:
+  - sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    state: yellow
+  name: alerts-st-pvpzone-yellow-name
+  description: alerts-st-pvpzone-yellow-desc
+
+- type: alert
+  id: STPvpZoneRed
+  category: STPvpZone
+  icons:
+  - sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    state: red
+  name: alerts-st-pvpzone-red-name
+  description: alerts-st-pvpzone-red-desc
+
+- type: alert
+  id: STPvpZoneBlack
+  category: STPvpZone
+  icons:
+  - sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    state: black
+  name: alerts-st-pvpzone-black-name
+  description: alerts-st-pvpzone-black-desc
+
+- type: alert
+  id: STPvpZoneFaction
+  category: STPvpZone
+  icons:
+  - sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    state: faction
+  name: alerts-st-pvpzone-faction-name
+  description: alerts-st-pvpzone-faction-desc
