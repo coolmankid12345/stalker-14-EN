@@ -146,7 +146,7 @@
   id: STClearSkyBand
   name: Clear Sky
   factionId: ClearSky
-  maxMembers: 6
+  maxMembers: 11
   managingRankId: 2
   hierarchy:
     1: StalkerClearSky

@@ -93,7 +93,7 @@
   id: STRenegatsBand
   name: Renegades
   factionId: Stalker #Renegades # Stalker-EN-TODO: Faction "Renegades" does not exist! Replaced with "Stalker"
-  maxMembers: 6
+  maxMembers: 11
   managingRankId: 2
   hierarchy:
     1: StalkerRene
