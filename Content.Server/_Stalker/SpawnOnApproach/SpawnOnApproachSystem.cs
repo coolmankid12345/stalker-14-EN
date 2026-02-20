@@ -85,10 +85,15 @@ public sealed class SpawnOnApproachSystem : EntitySystem
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private EntityCoordinates RandomizeCoords(SpawnOnApproachComponent comp, EntityCoordinates initial)
     {
-        var offset = _random.NextFloat(comp.MinOffset, comp.MaxOffset);
-        var xOffset = _random.NextFloat(-offset, offset);
-        var yOffset = _random.NextFloat(-offset, offset);
-        return initial.Offset(new Vector2(xOffset, yOffset));
+        // ST14-EN: commented out
+        // var offset = _random.NextFloat(comp.MinOffset, comp.MaxOffset);
+        // var xOffset = _random.NextFloat(-offset, offset);
+        // var yOffset = _random.NextFloat(-offset, offset);
+        // return initial.Offset(new Vector2(xOffset, yOffset));
+
+        // This is slightly more expensive but it gives a more even distribution compared to naively doing the above
+        var lightningDistance = MathF.Sqrt(_random.NextFloat() * (comp.MaxOffset - comp.MinOffset) + comp.MinOffset);
+        return initial.Offset(_random.NextAngle().ToVec() * lightningDistance);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,6 +102,8 @@ public sealed class SpawnOnApproachSystem : EntitySystem
         var triesSoFar = 0; // ST14-EN Addition
         var offset = initial;
 
+
+
         // ST14-EN: Made this all `||` instead of `&&`, so you keep retrying if any of these return true
         while (CheckBlocked(offset, comp /* ST14-EN Addition */) || CheckEntities(offset, comp) || CheckPlayerNearby(offset, comp) /* ST14-EN Addition */)
         {
@@ -104,7 +111,7 @@ public sealed class SpawnOnApproachSystem : EntitySystem
 
             // ST14-EN Addition: infinite-loop check:
             if (++triesSoFar == 15)
-                break;
+                return initial;
         }
 
         return offset;
@@ -134,12 +141,16 @@ public sealed class SpawnOnApproachSystem : EntitySystem
             return false;
 
         var actorQuery = GetEntityQuery<ActorComponent>();
-        foreach (var uid in _lookupSystem.GetEntitiesInRange(coords, comp.MinOffset * 0.67f, flags: LookupFlags.Approximate | LookupFlags.Dynamic))
+        foreach (var uid in _lookupSystem.GetEntitiesInRange(coords, comp.MinOffset * 0.75f, flags: LookupFlags.Approximate | LookupFlags.Dynamic))
         {
             if (actorQuery.HasComponent(uid))
+            {
+                Log.Debug($"Preventing spawn at {coords} because player {uid} is nearby");
                 return true;
+            }
         }
 
+        Log.Debug($"Opa");
         return false;
     }
 
