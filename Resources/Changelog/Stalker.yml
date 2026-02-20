@@ -508,5 +508,13 @@
   id: 58
   time: '2026-02-20T19:32:24.903441+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/468
+- author: teecoding
+  changes:
+  - message: PvP zone indicator now shows in the alerts panel, displaying which zone
+      type you are currently in
+    type: Add
+  id: 59
+  time: '2026-02-20T20:58:00.053800+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/469
 Name: Stalker
 Order: -1
