@@ -516,5 +516,13 @@
   id: 59
   time: '2026-02-20T20:58:00.053800+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/469
+- author: teecoding
+  changes:
+  - message: Compression artifacts now properly reduce bleed stacks when healing compression
+      damage
+    type: Fix
+  id: 60
+  time: '2026-02-20T21:00:13.584019+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/470
 Name: Stalker
 Order: -1
