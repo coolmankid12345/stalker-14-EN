@@ -96,8 +96,10 @@
     castShadows: false
     radius: 1.5
   - type: LitOnPowered
-  - type: ApcPowerReceiver
-    powerLoad: 200
+  # stalker-en-changes - disable powernet system
+  #- type: ApcPowerReceiver
+  #  powerLoad: 200
+  # stalker-en-changes-end
   - type: Actions
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical
