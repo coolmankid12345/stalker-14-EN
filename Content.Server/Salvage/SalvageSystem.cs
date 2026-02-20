@@ -68,12 +68,14 @@ namespace Content.Server.Salvage
             _radioSystem.SendRadioMessage(source, message, channel, source);
         }
 
+        /* stalker-changes - disable salvageSystem updates
         public override void Update(float frameTime)
         {
             UpdateExpeditions();
             UpdateMagnet();
             UpdateRunner();
         }
+        stalker-changes-end*/
     }
 }
 

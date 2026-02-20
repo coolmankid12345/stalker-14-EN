@@ -23553,8 +23553,6 @@ entities:
     - type: Transform
       pos: -14.5,31.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
 - proto: BoxFolderBase
   entities:
   - uid: 188
@@ -28041,12 +28039,12 @@ entities:
     - type: Transform
       pos: -26.5,49.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
     - type: FaxMachine
       name: Military Unit
     - type: DeviceNetwork
       address: Военная Часть
+    missingComponents:
+    - ApcPowerReceiver
   - uid: 1035
     components:
     - type: Transform
@@ -32520,8 +32518,8 @@ entities:
     - type: Transform
       pos: -53.5,27.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
   - uid: 5397
     components:
     - type: Transform
@@ -32532,8 +32530,8 @@ entities:
     - type: Configuration
       config:
         tag: Trash
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
 - proto: MatrassBed
   entities:
   - uid: 1884
@@ -39576,8 +39574,6 @@ entities:
     - type: Transform
       pos: -13.5,31.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
 - proto: Stairs
   entities:
   - uid: 2907
@@ -43405,8 +43401,8 @@ entities:
       - SurveillanceCameraCommand
       nameSet: True
       id: '[ТЕХ] Серверная'
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
 - proto: SurveillanceCameraGeneral
   entities:
   - uid: 3156
@@ -43419,8 +43415,8 @@ entities:
       - SurveillanceCameraGeneral
       nameSet: True
       id: '[МГЗ] Чипок'
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
   - uid: 3157
     components:
     - type: Transform
@@ -43530,8 +43526,8 @@ entities:
       - SurveillanceCameraMedical
       nameSet: True
       id: '[МЕД] Морг'
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
   - uid: 3167
     components:
     - type: Transform
@@ -43543,8 +43539,8 @@ entities:
       - SurveillanceCameraMedical
       nameSet: True
       id: '[МЕД] Дежурная'
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
   - uid: 3168
     components:
     - type: Transform
@@ -43556,8 +43552,8 @@ entities:
       - SurveillanceCameraMedical
       nameSet: True
       id: '[МЕД] Коридор'
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
 - proto: SurveillanceCameraSecurity
   entities:
   - uid: 3174
@@ -43623,8 +43619,8 @@ entities:
       - SurveillanceCameraSecurity
       nameSet: True
       id: '[СТР] Полигон'
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
   - uid: 3182
     components:
     - type: Transform
@@ -43636,8 +43632,8 @@ entities:
       - SurveillanceCameraSecurity
       nameSet: True
       id: '[СТР] Оружейная'
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
   - uid: 3183
     components:
     - type: Transform
@@ -43648,8 +43644,8 @@ entities:
       - SurveillanceCameraSecurity
       nameSet: True
       id: '[СТР] Коридор'
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
   - uid: 3184
     components:
     - type: Transform
@@ -43759,8 +43755,8 @@ entities:
       - SurveillanceCameraSecurity
       nameSet: True
       id: '[КПП] Дежурная'
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
   - uid: 3196
     components:
     - type: Transform
@@ -44186,8 +44182,6 @@ entities:
       parent: 1
     - type: PointLight
       enabled: True
-    - type: ApcPowerReceiver
-      needsPower: False
 - proto: VendingMachineCoffee
   entities:
   - uid: 3297
@@ -44210,8 +44204,6 @@ entities:
       parent: 1
     - type: PointLight
       enabled: True
-    - type: ApcPowerReceiver
-      needsPower: False
 - proto: VendingMachineDinnerware
   entities:
   - uid: 3299
@@ -44230,8 +44222,6 @@ entities:
       parent: 1
     - type: PointLight
       enabled: True
-    - type: ApcPowerReceiver
-      needsPower: False
   - uid: 3302
     components:
     - type: Transform
@@ -51876,10 +51866,10 @@ entities:
     - type: Transform
       pos: -23.5,121.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
     - type: Fixtures
       fixtures: {}
+    missingComponents:
+    - ApcPowerReceiver
 - proto: WallReinfMetalFallout
   entities:
   - uid: 4698

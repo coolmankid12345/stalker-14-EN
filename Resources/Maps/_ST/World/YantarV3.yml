@@ -35635,8 +35635,8 @@ entities:
     - type: Transform
       pos: 0.5,-50.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
+    missingComponents:
+    - ApcPowerReceiver
 - proto: MetalAltDoorFalloutAnomalistGuardianClosed
   entities:
   - uid: 838
