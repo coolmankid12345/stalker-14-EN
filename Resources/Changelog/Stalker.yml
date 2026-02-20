@@ -493,5 +493,13 @@
   id: 56
   time: '2026-02-20T15:33:09.757156+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/466
+- author: teecoding
+  changes:
+  - message: Clicking on yourself no longer shows a CPR popup that blocks unbuckling
+      and fire patting
+    type: Fix
+  id: 57
+  time: '2026-02-20T15:37:15.468251+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/467
 Name: Stalker
 Order: -1
