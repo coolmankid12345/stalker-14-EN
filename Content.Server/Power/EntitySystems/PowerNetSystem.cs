@@ -285,7 +285,8 @@ namespace Content.Server.Power.EntitySystems
             RaiseLocalEvent(new NetworkBatteryPreSync());
 
             // Run power solver.
-            _solver.Tick(frameTime, _powerState, _parMan);
+            // stalker-en-changes - disable ticking power
+            // _solver.Tick(frameTime, _powerState, _parMan);
 
             // Synchronize batteries, the other way around.
             RaiseLocalEvent(new NetworkBatteryPostSync());
@@ -293,10 +294,10 @@ namespace Content.Server.Power.EntitySystems
             // Send events where necessary.
             // TODO: Instead of querying ALL power components every tick, and then checking if an event needs to be
             // raised, should probably assemble a list of entity Uids during the actual solver steps.
-            /* stalker-changes - disable power updates
+            /* stalker-en-changes - disable power updates
             // UpdateApcPowerReceiver(frameTime);
             // UpdatePowerConsumer();
-            stalker-changes-end */
+            stalker-en-changes-end */
             UpdateNetworkBattery();
         }
 
