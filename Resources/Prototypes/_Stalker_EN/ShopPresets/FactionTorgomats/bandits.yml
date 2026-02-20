@@ -129,7 +129,7 @@
         STWeaponRifleAKS74: 3000
         # SMGs
         STWeaponSMGMP5: 2000
-        STWeaponSMGPPSh41: 1250
+        STWeaponSMGPPSh41Band: 1250
         STWeaponSMGMP40: 500
         STWeaponSMGPP19: 3000
         # Snipers
@@ -231,6 +231,8 @@
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
         CigPackSuka: 100
+        FoodSTEgg: 75
+        FoodSTTomato: 75
 
     - name: shop-category-armor
       priority: 6
@@ -347,31 +349,54 @@
     - name: shop-category-customization
       priority: 13
       items:
-        ClothingTorsoJacketAdidasBlue: 5
-        ClothingTorsoJacketAdidasRed: 5
-        ClothingBandageStalkerWhite: 5
+        # HAT
         ClothingHeadHatBeaniehat: 10
-        ClothingMaskNeckFacemask: 10
-        ClothingMaskNeckBalaklava1: 10
-        ClothingUniformJumpsuitTacticool: 10
-        ClothingMaskNeckBalaklava2: 10
-        ClothingMaskNeckBalaklava3: 10
         ClothingHeadBandMerc: 30
-        ClothingHeadBandSkull: 30
         ClothingHeadHatUshanka: 30
-        ClothingHandsGlovesFingerless: 30
-        ClothingHandsGlovesMercFingerless: 60
-        ClothingShoesColorBlack: 30
-        ClothingShoesBootsWork: 30
-        ClothingShoesLeather: 30
-        ClothingShoesBootsMerc: 30
-        ClothingShoesSwat: 35
         ClothingHeadHatBlacksoft: 10
         ClothingHeadHatGreysoft: 10
         ClothingHeadHatSovietUshankaStalker: 40
-        ClothingTshirtBlue: 10
-        ClothingTshirtOrange: 10
-        ClothingCloakStalker: 30
+        # faction
+        ClothingHeadBandSkull: 30
+        # EYES
+        ClothingEyesGlasses: 50
+        # faction
+        ClothingEyesGlassesCheapSunglasses: 50
+        # MASK
+        ClothingMaskNeckFacemask: 10
+        ClothingMaskNeckBalaklava1: 10
+        ClothingMaskNeckBalaklava2: 10
+        ClothingMaskNeckBalaklava3: 10
+        # faction
+        ClothingMaskSkull: 100
+        # NECK
+        # faction
+        ClothingNeckScarfBandit: 100
+        ClothingBandageStalkerBand: 10
+        # TORSO
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTShirtSailorSuit: 30
+        ClothingTorsoTShirtColorBlack: 30
+        ClothingTorsoTurtlenecksBlack: 90
+        ClothingTorsoTurtlenecksGorka: 90
+        ClothingTorsoTurtlenecksGorka6: 90
+        ClothingTorsoTurtlenecksBereza: 90
+        ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+        ClothingTorsoTurtlenecksBlackTurtleneck: 50
+        ClothingTorsoTurtlenecksCombatForest: 50
+        ClothingTorsoTurtlenecksGorka5: 50
+        ClothingTorsoTurtlenecksGorka6B: 50
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+        ClothingTorsoTurtlenecksMatrosska: 50
+        # faction
+        ClothingTorsoJacketAdidasBlue: 5
+        ClothingTorsoJacketAdidasRed: 5
+        # HANDS
+        ClothingHandsGlovesFingerless: 30
+        # OUTERCLOTHING
+        # CLOAK
+        # LEGS
         ClothingLegsJeansBlue: 10
         ClothingLegsJeansStalker: 10
         ClothingLegsJeansGreenCargo: 10
@@ -382,18 +407,8 @@
         ClothingLegsJeansRussianPixel: 20
         ClothingLegsJeansBlackNew: 20
         ClothingLegsJeansGorka: 20
-        ClothingShoesBootsCombat: 30
-        ClothingTorsoTShirtPivozavr: 30
-        ClothingTorsoTShirtSailorSuit: 30
-        ClothingTorsoTShirtColorBlack: 30
-        ClothingTorsoTurtlenecksBlack: 90
-        ClothingTorsoTurtlenecksGorka: 90
-        ClothingTorsoTurtlenecksGorka6: 90
-        ClothingTorsoTurtlenecksBereza: 90
         ClothingLegsJeansBereza: 20
         ClothingLegsJeansGorka6: 20
-        ClothingTorsoTurtlenecksGorkaRus: 90
-        # new shit
         ClothingLegsBattlePantsBlack: 50
         ClothingLegsVeryBlueJenas: 50
         ClothingLegsCombatForest: 50
@@ -401,15 +416,14 @@
         ClothingLegsGorka6b: 50
         ClothingLegsNavyPants: 50
         ClothingLegsRussianNumber: 50
-        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
-        ClothingTorsoTurtlenecksBlackTurtleneck: 50
-        ClothingTorsoTurtlenecksCombatForest: 50
-        ClothingTorsoTurtlenecksGorka5: 50
-        ClothingTorsoTurtlenecksGorka6B: 50
-        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
-        ClothingTorsoTurtlenecksMatrosska: 50
-        ClothingEyesGlassesCheapSunglasses: 5
-        ClothingNeckScarfBandit: 100
+        # FEET
+        ClothingShoesColorBlack: 30
+        ClothingShoesBootsWork: 30
+        ClothingShoesLeather: 30
+        ClothingShoesBootsMerc: 30
+        ClothingShoesSwat: 35
+        ClothingShoesBootsCombat: 30
+
     - name: shop-category-entertainment
       priority: 14
       items:

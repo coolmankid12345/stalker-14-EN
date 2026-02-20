@@ -61,6 +61,21 @@
   - type: Sprite
     sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/l85_forecaster.rsi
 
+# SMGS
+# ppsh
+- type: entity
+  parent: STBaseWeaponSMGPPSh41
+  id: STWeaponSMGPPSh41Band
+  name: PPSh-41 "Robbery"
+  description: A PPSh-41 submachine gun with a thick layer of paint. The lines are a little sloppy but were clearly applied with love.
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/ppsh_band.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/ppsh_band.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/ppsh_band.rsi
+
 # SNIPERS
 # svds
 - type: entity

@@ -180,11 +180,18 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
     state: icon
-  - type: MeleeWeapon
-    attackRate: 1.0
+  - type: MeleeWeapon # stalker EN
+    wideAnimationRotation: -135
+    attackRate: 1
     damage:
       types:
-        Slash: 15
+        Slash: 23
+  - type: EmbeddableProjectile # stalker EN
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: DamageOtherOnHit # stalker EN
+    damage:
+      types:
+        Slash: 33
   - type: Item
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
     storedSprite:

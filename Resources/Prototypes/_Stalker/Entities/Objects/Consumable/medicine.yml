@@ -229,7 +229,7 @@
     - state: antiradpen
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Item
-    sprite: _Stalker/Objects/Medicine/steampack/antirad.rsi
+#    sprite: _Stalker/Objects/Medicine/steampack/antirad.rsi
     size: Normal
   - type: RepositoryItem
     categoryName: repository-medicine-category
@@ -358,7 +358,7 @@
     - state: probudpen
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Item
-    sprite: _Stalker/Objects/Medicine/steampack/probud.rsi
+#    sprite: _Stalker/Objects/Medicine/steampack/probud.rsi
     size: Normal
   - type: RepositoryItem
     categoryName: repository-medicine-category

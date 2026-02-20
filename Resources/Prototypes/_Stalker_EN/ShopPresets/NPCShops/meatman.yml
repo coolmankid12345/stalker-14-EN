@@ -39,8 +39,7 @@
     - name: FAMINE
       priority: 2
       items:
-        GL3Grenade: 5
-        STPlushieFeltCat3: 10
-        FlippoLighter: 10
-        ClothingNeckScarfBlack: 20
-        ClothingHandsGlovesColorRed: 85
+        FoodSnackSemki: 3
+        ClothingHeadHatCowboyGrey: 15
+        PlushieSharkGrey: 20
+        STWeaponPistolDesertEagle: 150

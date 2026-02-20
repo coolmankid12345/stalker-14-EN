@@ -122,6 +122,7 @@
         Defibrillator: 700
         AntiRadMedipen: 200
         STPillboxProbud: 300
+        WakeUpMedipen: 250
         MedkitMilitary: 250
         MedkitScience: 450
         MedkitElite: 750
@@ -248,30 +249,57 @@
     - name: shop-category-customization
       priority: 13
       items:
-        ClothingBandageStalkerRed: 5
-        ClothingBandageStalkerRus: 25
-        ClothingBandageStalkerUk: 25
-        ClothingBandageStalkerPeace: 25
-        ClothingBandageStalkerJid: 35
+        # HAT
         ClothingHeadHatBeaniehat: 10
+        ClothingHeadBandMerc: 30
+        ClothingHeadHatUshanka: 30
+        ClothingHeadHatBlacksoft: 10
+        ClothingHeadHatGreysoft: 10
+        ClothingHeadHatSovietUshankaStalker: 40
+        # faction
+        ClothingHeadBandSkull: 30
+        STClothingHeadBeretDolg: 80
+        # EYES
+        ClothingEyesGlasses: 50
+        # faction
+        ClothingEyesGlassesCheapSunglasses: 50
+        # MASK
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
-        ClothingHeadBandMerc: 30
-        ClothingHeadBandSkull: 30
-        ClothingHeadHatUshanka: 30
+        # NECK
+        ClothingNeckScarfGray: 100
+        ClothingBandageStalkerUk: 10
+        ClothingBandageStalkerRus: 10
+        ClothingBandageStalkerArgentina: 10
+        # faction
+        ClothingBandageStalkerRed: 10
+        ClothingNeckScarfDuty: 100
+        # TORSO
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTShirtSailorSuit: 30
+        ClothingTorsoTShirtColorBlack: 30
+        ClothingTorsoTurtlenecksBlack: 90
+        ClothingTorsoTurtlenecksGorka: 90
+        ClothingTorsoTurtlenecksGorka6: 90
+        ClothingTorsoTurtlenecksBereza: 90
+        ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+        ClothingTorsoTurtlenecksBlackTurtleneck: 50
+        ClothingTorsoTurtlenecksCombatForest: 50
+        ClothingTorsoTurtlenecksGorka5: 50
+        ClothingTorsoTurtlenecksGorka6B: 50
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+        ClothingTorsoTurtlenecksMatrosska: 50
+        # HANDS
         ClothingHandsGlovesFingerless: 30
         ClothingHandsGlovesMercFingerless: 60
-        ClothingShoesColorBlack: 30
-        ClothingShoesBootsWork: 30
-        ClothingShoesLeather: 30
-        ClothingShoesBootsMerc: 30
-        ClothingShoesSwat: 35
-        ClothingHeadHatBlacksoft: 10
-        ClothingHeadHatGreysoft: 10
-        ClothingHeadHatSovietUshankaStalker: 40
-        ClothingCloakStalker: 30
+        # OUTERCLOTHING
+        # CLOAK
+        # faction
+        ClothingNeckCloakDolg: 250
+        # LEGS
         ClothingLegsJeansBlue: 10
         ClothingLegsJeansStalker: 10
         ClothingLegsJeansGreenCargo: 10
@@ -282,18 +310,8 @@
         ClothingLegsJeansRussianPixel: 20
         ClothingLegsJeansBlackNew: 20
         ClothingLegsJeansGorka: 20
-        ClothingShoesBootsCombat: 30
-        ClothingTorsoTShirtPivozavr: 30
-        ClothingTorsoTShirtSailorSuit: 30
-        ClothingTorsoTShirtColorBlack: 30
-        ClothingTorsoTurtlenecksBlack: 90
-        ClothingTorsoTurtlenecksGorka: 90
-        ClothingTorsoTurtlenecksGorka6: 90
-        ClothingTorsoTurtlenecksBereza: 90
         ClothingLegsJeansBereza: 20
         ClothingLegsJeansGorka6: 20
-        ClothingTorsoTurtlenecksGorkaRus: 90
-        # new shit
         ClothingLegsBattlePantsBlack: 50
         ClothingLegsVeryBlueJenas: 50
         ClothingLegsCombatForest: 50
@@ -301,12 +319,10 @@
         ClothingLegsGorka6b: 50
         ClothingLegsNavyPants: 50
         ClothingLegsRussianNumber: 50
-        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
-        ClothingTorsoTurtlenecksBlackTurtleneck: 50
-        ClothingTorsoTurtlenecksCombatForest: 50
-        ClothingTorsoTurtlenecksGorka5: 50
-        ClothingTorsoTurtlenecksGorka6B: 50
-        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
-        ClothingTorsoTurtlenecksMatrosska: 50
-        STClothingHeadBeretDolg: 80
-        ClothingNeckScarfDuty: 100
+        # FEET
+        ClothingShoesColorBlack: 30
+        ClothingShoesBootsWork: 30
+        ClothingShoesLeather: 30
+        ClothingShoesBootsMerc: 30
+        ClothingShoesSwat: 35
+        ClothingShoesBootsCombat: 30
