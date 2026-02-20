@@ -95,7 +95,7 @@
   id: STMercenariesBand
   name: Mercenaries
   factionId: Mercenaries
-  maxMembers: 6
+  maxMembers: 11
   managingRankId: 2
   hierarchy:
     1: StalkerMercenary
