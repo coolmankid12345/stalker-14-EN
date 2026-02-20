@@ -9,3 +9,15 @@
     sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_arg.rsi
   - type: Clothing
     sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_arg.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingBandageStalkerBand
+  name: Bandit Armband
+  description: A scrap of cloth with a black skull patch sewn into it, made to be quickly identifiable.
+  suffix: Stalker, Armband
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_band.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_band.rsi

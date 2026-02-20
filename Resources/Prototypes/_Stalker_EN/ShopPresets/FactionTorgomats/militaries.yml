@@ -625,6 +625,7 @@
       ClothingHeadBandSkull: 30
       ClothingHeadBandana2Military: 15
       ClothingHeadHatMilitary: 15
+      ClothingHeadHatBeretBrigmedic: 100
 
   - name: "Shirt"
     priority: 2
@@ -699,8 +700,8 @@
     priority: 3
     items:
       # Armbands
-      ClothingBandageStalkerUk: 5
-      ClothingBandageStalkerRed: 5
+      ClothingBandageStalkerUk: 10
+      ClothingBandageStalkerKrest: 10
       ClothingMaskNeckFacemask: 10
       # Masks
       ClothingMaskNeckBalaklava1: 10
