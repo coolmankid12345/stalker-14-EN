@@ -1,0 +1,15 @@
+- type: personalShop
+  id: PersonalCMKShop
+  username: coolmankid12345
+  categories:
+  - name: Owner
+    items:
+      STWeaponSMGVector9Black: 3000
+
+- type: personalShop
+  id: PersonalFriedFCCShop
+  username: FriedFCC
+  categories:
+  - name: Contributor
+    items:
+      STWeaponRifleAK74M: 3000
