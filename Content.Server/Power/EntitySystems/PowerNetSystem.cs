@@ -293,8 +293,10 @@ namespace Content.Server.Power.EntitySystems
             // Send events where necessary.
             // TODO: Instead of querying ALL power components every tick, and then checking if an event needs to be
             // raised, should probably assemble a list of entity Uids during the actual solver steps.
-            UpdateApcPowerReceiver(frameTime);
-            UpdatePowerConsumer();
+            /* stalker-changes - disable power updates
+            // UpdateApcPowerReceiver(frameTime);
+            // UpdatePowerConsumer();
+            stalker-changes-end */
             UpdateNetworkBattery();
         }
 
