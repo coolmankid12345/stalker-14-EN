@@ -531,5 +531,22 @@
   id: 61
   time: '2026-02-20T21:03:30.618170+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/465
+- author: crocodilecarousel
+  changes:
+  - message: Probudophiline syringe added to relevant shops
+    type: Add
+  - message: Armband for bandits
+    type: Add
+  - message: PPSh skin for bandits
+    type: Add
+  - message: Shops organized somewhat
+    type: Tweak
+  - message: Kukri brought up to par with Stalker knives
+    type: Tweak
+  - message: Inhands for injectable medipens fixed
+    type: Fix
+  id: 62
+  time: '2026-02-20T21:05:21.887682+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/472
 Name: Stalker
 Order: -1
