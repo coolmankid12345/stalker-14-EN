@@ -42264,16 +42264,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -9.5,14.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
   - uid: 1394
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -0.5,90.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
 - proto: BoozeDispenserEmpty
   entities:
   - uid: 2750
@@ -48704,16 +48700,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -9.5,15.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
   - uid: 1395
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -0.5,91.5
       parent: 1
-    - type: ApcPowerReceiver
-      needsPower: False
 - proto: SodaDispenserEmpty
   entities:
   - uid: 40

@@ -2,7 +2,7 @@
 
 - type: entity
   id: VendingMachine
-  parent: BaseMachinePowered
+  parent: BaseMachine # stalker-en-changes - remove powernet system
   name: vending machine
   description: Just add capitalism!
   abstract: true
