@@ -548,5 +548,12 @@
   id: 62
   time: '2026-02-20T21:05:21.887682+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/472
+- author: DuckManZach
+  changes:
+  - message: removed salvageSystem and the powernet system for performance
+    type: Remove
+  id: 63
+  time: '2026-02-20T21:08:42.264807+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/471
 Name: Stalker
 Order: -1
