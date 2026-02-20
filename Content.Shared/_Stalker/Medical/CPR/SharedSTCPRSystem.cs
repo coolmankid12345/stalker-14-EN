@@ -33,11 +33,7 @@ public abstract class SharedSTCPRSystem : EntitySystem
 
         // Can't CPR yourself
         if (user == target)
-        {
-            args.Handled = true;
-            AttemptCPR(uid, comp, args);
             return;
-        }
 
         // Target must have MobState and be critical or dead
         if (!TryComp<MobStateComponent>(target, out var mobState))
