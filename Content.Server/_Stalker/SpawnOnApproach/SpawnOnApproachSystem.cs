@@ -144,13 +144,9 @@ public sealed class SpawnOnApproachSystem : EntitySystem
         foreach (var uid in _lookupSystem.GetEntitiesInRange(coords, comp.MinOffset * 0.75f, flags: LookupFlags.Approximate | LookupFlags.Dynamic))
         {
             if (actorQuery.HasComponent(uid))
-            {
-                Log.Debug($"Preventing spawn at {coords} because player {uid} is nearby");
                 return true;
-            }
         }
 
-        Log.Debug($"Opa");
         return false;
     }
 
