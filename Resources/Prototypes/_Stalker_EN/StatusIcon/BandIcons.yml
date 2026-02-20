@@ -48,6 +48,24 @@
     state: voen3
 
 - type: jobIcon
+  id: dolg1
+  locationPreference: Right
+  isShaded: true
+  icon:
+    sprite: /Textures/_Stalker_EN/Icons/Patches/band.rsi
+    hideOnStealth: true
+    state: dolg1
+
+- type: jobIcon
+  id: dolg2
+  locationPreference: Right
+  isShaded: true
+  icon:
+    sprite: /Textures/_Stalker_EN/Icons/Patches/band.rsi
+    hideOnStealth: true
+    state: dolg2
+
+- type: jobIcon
   id: rookie
   locationPreference: Right
   isShaded: true
