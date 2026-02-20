@@ -555,5 +555,14 @@
   id: 63
   time: '2026-02-20T21:08:42.264807+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/471
+- author: RebelledCombine
+  changes:
+  - message: Dolg patch for fighter duty
+    type: Tweak
+  - message: Dolg patch for commander duty
+    type: Tweak
+  id: 64
+  time: '2026-02-20T21:19:30.268930+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/459
 Name: Stalker
 Order: -1
