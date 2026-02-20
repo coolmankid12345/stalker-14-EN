@@ -524,5 +524,12 @@
   id: 60
   time: '2026-02-20T21:00:13.584019+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/470
+- author: clay_500z
+  changes:
+  - message: Reduced prices of Barman's drinks
+    type: Tweak
+  id: 61
+  time: '2026-02-20T21:03:30.618170+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/465
 Name: Stalker
 Order: -1
