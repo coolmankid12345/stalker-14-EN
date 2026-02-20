@@ -40,8 +40,6 @@ entities:
       inherent: True
       enabled: True
     - type: MapAtmosphere
-    - type: Parallax
-      parallax: Snow
   - uid: 104
     components:
     - type: MetaData
