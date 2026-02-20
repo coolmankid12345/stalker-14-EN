@@ -486,5 +486,12 @@
   id: 55
   time: '2026-02-19T21:44:41.741805+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/461
+- author: teecoding
+  changes:
+  - message: Ushanka hats now properly give a Russian accent when worn
+    type: Fix
+  id: 56
+  time: '2026-02-20T15:33:09.757156+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/466
 Name: Stalker
 Order: -1
