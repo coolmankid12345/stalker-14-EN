@@ -1,4 +1,6 @@
-﻿using Content.Shared.Whitelist;
+﻿using Content.Shared.Tag;
+using Content.Shared.Whitelist;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Stalker.ZoneAnomaly.Triggers;
 
@@ -9,6 +11,10 @@ public abstract partial class ZoneAnomalyTriggerCollideComponent : Component
     /// </summary>
     public readonly EntityWhitelist? BaseBlacklist = new()
     {
+        Tags = new List<ProtoId<TagPrototype>>
+        {
+            "STArtifact",
+        },
         Components = new []
         {
             "Projectile",
