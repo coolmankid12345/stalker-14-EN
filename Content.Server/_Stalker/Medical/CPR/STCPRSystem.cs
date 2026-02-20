@@ -38,13 +38,6 @@ public sealed class STCPRSystem : SharedSTCPRSystem
         var user = args.User;
         var target = uid;
 
-        // Self-CPR: show popup only
-        if (user == target)
-        {
-            _popup.PopupEntity(Loc.GetString("st-cpr-fail-self"), target, user);
-            return;
-        }
-
         // Start popups
         _popup.PopupEntity(
             Loc.GetString("st-cpr-start-performer", ("target", Identity.Entity(target, EntityManager))),
@@ -113,8 +106,7 @@ public sealed class STCPRSystem : SharedSTCPRSystem
         // Success popups
         _popup.PopupEntity(
             Loc.GetString("st-cpr-success-performer",
-                ("target", Identity.Entity(target, EntityManager)),
-                ("seconds", (int) comp.CooldownSeconds)),
+                ("target", Identity.Entity(target, EntityManager))),
             target, user);
         _popup.PopupEntity(
             Loc.GetString("st-cpr-success-others",
