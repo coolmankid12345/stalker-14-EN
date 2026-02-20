@@ -264,23 +264,23 @@
         DrinkVodkaGlass: 25
         STDrinkBeerCanBaltic: 50
         DrinkCossackVodkaBottleFull: 100
-        DrinkArnoldPalmer: 250
-        DrinkIcedTeaGlass: 250
-        DrinkMoonshineGlass: 400
-        DrinkOrangeLimeSodaGlass: 500
-        DrinkMargaritaGlass: 500
-        DrinkPinaColadaGlass: 500
-        DrinkScrewdriverCocktailGlass: 500
-        DrinkTequilaSunriseGlass: 500
-        DrinkVodkaTonicGlass: 500
-        DrinkWhiteRussianGlass: 500
-        DrinkBlackRussianGlass: 500
-        DrinkMeadGlass: 500
-        DrinkManlyDorfGlass: 500
-        DrinkManhattanGlass: 500
-        DrinkWhiskeyColaGlass: 500
-        DrinkB52Glass: 500
-        DrinkLongIslandIcedTeaGlass: 6969 # Long Island Time
+        DrinkArnoldPalmer: 75
+        DrinkIcedTeaGlass: 75
+        DrinkMoonshineGlass: 100
+        DrinkOrangeLimeSodaGlass: 75
+        DrinkMargaritaGlass: 160
+        DrinkPinaColadaGlass: 180
+        DrinkScrewdriverCocktailGlass: 90
+        DrinkTequilaSunriseGlass: 140
+        DrinkVodkaTonicGlass: 40
+        DrinkWhiteRussianGlass: 100
+        DrinkBlackRussianGlass: 80
+        DrinkMeadGlass: 50
+        DrinkManlyDorfGlass: 60
+        DrinkManhattanGlass: 100
+        DrinkWhiskeyColaGlass: 60
+        DrinkB52Glass: 150
+        DrinkLongIslandIcedTeaGlass: 420 # Long Island Time
 
     - name: shop-category-armor
       priority: 7
