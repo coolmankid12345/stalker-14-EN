@@ -1,0 +1,195 @@
+# PvP Zone Indicator Triggers
+# Collision triggers that set/clear the zone override when players walk through them.
+# Place paired In/Out triggers to create zone override areas within a map.
+
+- type: entity
+  abstract: true
+  id: STPvpZoneTriggerBase
+  parent: MarkerBase
+  suffix: ST, ZoneIndicator
+  components:
+  - type: Transform
+    anchored: true
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.48,0.25,0.48"
+        mask:
+          - FullTileMask
+        layer:
+          - WallLayer
+        hard: false
+
+# Green Zone (Safe) triggers
+- type: entity
+  id: STPvpZoneTriggerGreenIn
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Green (In)
+  suffix: ST, ZoneGreen, In
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: true
+    zone: Green
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: green
+
+- type: entity
+  id: STPvpZoneTriggerGreenOut
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Green (Out)
+  suffix: ST, ZoneGreen, Out
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: false
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: gray
+
+# Gray Zone (Limited PvP) triggers
+- type: entity
+  id: STPvpZoneTriggerGrayIn
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Gray (In)
+  suffix: ST, ZoneGray, In
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: true
+    zone: Gray
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: gray
+
+- type: entity
+  id: STPvpZoneTriggerGrayOut
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Gray (Out)
+  suffix: ST, ZoneGray, Out
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: false
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: gray
+
+# Yellow Zone (Standard PvP) triggers
+- type: entity
+  id: STPvpZoneTriggerYellowIn
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Yellow (In)
+  suffix: ST, ZoneYellow, In
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: true
+    zone: Yellow
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: yellow
+
+- type: entity
+  id: STPvpZoneTriggerYellowOut
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Yellow (Out)
+  suffix: ST, ZoneYellow, Out
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: false
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: gray
+
+# Red Zone (High Danger) triggers
+- type: entity
+  id: STPvpZoneTriggerRedIn
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Red (In)
+  suffix: ST, ZoneRed, In
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: true
+    zone: Red
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: red
+
+- type: entity
+  id: STPvpZoneTriggerRedOut
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Red (Out)
+  suffix: ST, ZoneRed, Out
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: false
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: gray
+
+# Black Zone (Free-For-All) triggers
+- type: entity
+  id: STPvpZoneTriggerBlackIn
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Black (In)
+  suffix: ST, ZoneBlack, In
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: true
+    zone: Black
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: black
+
+- type: entity
+  id: STPvpZoneTriggerBlackOut
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Black (Out)
+  suffix: ST, ZoneBlack, Out
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: false
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: gray
+
+# Faction Base triggers
+- type: entity
+  id: STPvpZoneTriggerFactionIn
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Faction (In)
+  suffix: ST, ZoneFaction, In
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: true
+    zone: Faction
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: faction
+
+- type: entity
+  id: STPvpZoneTriggerFactionOut
+  parent: STPvpZoneTriggerBase
+  name: PvP Zone - Faction (Out)
+  suffix: ST, ZoneFaction, Out
+  components:
+  - type: STPvpZoneTrigger
+    isEntering: false
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Interface/Alerts/pvpzone.rsi
+    layers:
+    - state: gray
