@@ -33,7 +33,7 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
                 break;
 
             // We don't need to shoot all the entities
-            if(_whitelistSystem.IsWhitelistPass(effect.Comp.Whitelist, entity))
+            if(!_whitelistSystem.IsWhitelistPass(effect.Comp.Whitelist, entity))
                 continue;
 
             // Fixes 10 million shots being fired at one entity due to it containing targets
