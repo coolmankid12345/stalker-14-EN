@@ -591,5 +591,15 @@
   id: 66
   time: '2026-02-21T21:09:05.021527+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/477
+- author: teecoding
+  changes:
+  - message: Boars, flesh, and oracle mutants no longer get slowed or stuck due to
+      their own body weight
+    type: Fix
+  - message: Common trophies now display the specimen weight when examined
+    type: Fix
+  id: 67
+  time: '2026-02-21T23:28:30.046154+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/480
 Name: Stalker
 Order: -1
