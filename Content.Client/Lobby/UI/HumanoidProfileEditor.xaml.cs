@@ -143,15 +143,13 @@ namespace Content.Client.Lobby.UI
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
 
-            ImportButton.Disabled = true; // Stalker-Changes: Temporarily disable button
+            ImportButton.Disabled = false;
 
             // Stalker-TODO: Add a command to control this. After that, uncomment this block
-            // Stalker-Changes-Start
-            // ImportButton.OnPressed += args =>
-            // {
-            //     ImportProfile();
-            // };
-            // Stalker-Changes-End
+            ImportButton.OnPressed += args =>
+            {
+                 ImportProfile();
+            };
 
             ExportButton.OnPressed += args =>
             {
