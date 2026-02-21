@@ -85,6 +85,8 @@
       damage: 7.5
     - type: STWeight
       self: 120
+      overload: 204
+      maximum: 300
     - type: InteractionPopup
       successChance: 0.9
       interactSuccessString: petting-success-flesh
@@ -218,6 +220,8 @@
       damage: 5
     - type: STWeight
       self: 120
+      overload: 204
+      maximum: 300
     - type: InteractionPopup
       successChance: 0.6
       interactSuccessString: petting-success-flesh

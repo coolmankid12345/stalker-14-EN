@@ -33,6 +33,7 @@ public sealed class RDDeathScreenControl : RDControl
 
     private float _elapsedTime;
     private float _delayElapsedTime;
+    private bool _animationEnded; // stalker-en
 
     public RDDeathScreenControl()
     {
@@ -59,6 +60,7 @@ public sealed class RDDeathScreenControl : RDControl
 
         _elapsedTime = 0;
         _delayElapsedTime = 0;
+        _animationEnded = false; // stalker-en
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -73,7 +75,12 @@ public sealed class RDDeathScreenControl : RDControl
                 return;
             }
 
-            OnAnimationEnd?.Invoke();
+            if (!_animationEnded) // stalker-en-start
+            {
+                _animationEnded = true;
+                OnAnimationEnd?.Invoke();
+            } // stalker-en-end
+
             return;
         }
 

@@ -29,9 +29,6 @@ public sealed class STTrophyWeightSystem : EntitySystem
 
     private void OnTrophyStartup(EntityUid uid, STTrophyComponent trophy, ComponentStartup args)
     {
-        if (trophy.Quality == STTrophyQuality.Common)
-            return;
-
         var coords = _transform.GetMapCoordinates(uid);
         if (coords == MapCoordinates.Nullspace)
             return;
@@ -40,18 +37,15 @@ public sealed class STTrophyWeightSystem : EntitySystem
     }
 
     /// <summary>
-    /// Finds the closest variant mob within range and copies its weight and shader data.
+    /// Finds the closest mob within range and copies its weight (and shader data for variants).
     /// </summary>
     private void CopyMobData(EntityUid uid, STTrophyComponent trophy, MapCoordinates coords)
     {
-        Entity<STMobVariantComponent>? closestMob = null;
+        EntityUid? closestMob = null;
         var closestDist = float.MaxValue;
 
-        foreach (var ent in _lookup.GetEntitiesInRange<STMobVariantComponent>(coords, SearchRadius))
+        foreach (var ent in _lookup.GetEntitiesInRange<STWeightComponent>(coords, SearchRadius))
         {
-            if (!HasComp<STWeightComponent>(ent))
-                continue;
-
             var mobCoords = _transform.GetMapCoordinates(ent);
             var dist = (coords.Position - mobCoords.Position).Length();
             if (dist < closestDist)
@@ -64,17 +58,20 @@ public sealed class STTrophyWeightSystem : EntitySystem
         if (closestMob == null)
         {
             _sawmill.Warning(
-                $"No variant mob found within {SearchRadius}m of trophy {ToPrettyString(uid)} (quality={trophy.Quality})");
+                $"No mob found within {SearchRadius}m of trophy {ToPrettyString(uid)} (quality={trophy.Quality})");
             return;
         }
 
-        var variant = closestMob.Value.Comp;
         var weight = Comp<STWeightComponent>(closestMob.Value);
-
         trophy.SourceMobWeight = weight.Self;
-        trophy.SpriteTint = variant.SpriteTint;
-        trophy.SpriteSaturation = variant.SpriteSaturation;
-        trophy.SpriteBrightness = variant.SpriteBrightness;
+
+        if (TryComp<STMobVariantComponent>(closestMob.Value, out var variant))
+        {
+            trophy.SpriteTint = variant.SpriteTint;
+            trophy.SpriteSaturation = variant.SpriteSaturation;
+            trophy.SpriteBrightness = variant.SpriteBrightness;
+        }
+
         Dirty(uid, trophy);
     }
 }

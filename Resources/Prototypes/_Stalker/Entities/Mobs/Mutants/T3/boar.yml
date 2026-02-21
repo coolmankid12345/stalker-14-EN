@@ -94,6 +94,8 @@
       damage: 10
     - type: STWeight
       self: 110
+      overload: 187
+      maximum: 275
     # Stalker-EN start
     - type: STMobVariantConfig
       variants:
