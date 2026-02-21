@@ -72,6 +72,12 @@
     id: BandPDA
     neck: ClothingNeckDogtagRenegade # EN
 
+- type: startingGear # EN # You just can't have, working tests, because, YOU DON'T NEED THEM, OKAY?
+  id: ReneGearHead
+  equipment:
+    id: BandPDA
+    neck: ClothingNeckDogtagRenegadeLeader
+
 - type: stBand
   id: STRenegatsBand
   name: Renegades

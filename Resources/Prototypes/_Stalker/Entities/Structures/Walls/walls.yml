@@ -9,7 +9,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/wood.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/wood.rsi
@@ -31,7 +31,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/wood.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/wood.rsi
@@ -53,7 +53,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/siding.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/siding.rsi
@@ -75,7 +75,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/siding.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/siding.rsi
@@ -97,7 +97,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/brick.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/brick.rsi
@@ -119,7 +119,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/brick.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/brick.rsi
@@ -141,7 +141,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/bunker.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/bunker.rsi
@@ -163,7 +163,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/bunker.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/bunker.rsi
@@ -185,7 +185,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/dungeon.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/dungeon.rsi
@@ -207,7 +207,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/dungeon.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/dungeon.rsi
@@ -229,7 +229,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/metal.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/metal.rsi
@@ -251,7 +251,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/metal.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/metal.rsi
@@ -273,7 +273,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/rustmetal.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/rustmetal.rsi
@@ -295,7 +295,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/rustmetal.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/rustmetal.rsi
@@ -317,7 +317,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/scrap.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/scrap.rsi
@@ -339,7 +339,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/scrap.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/scrap.rsi
@@ -361,7 +361,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/sewer.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/sewer.rsi
@@ -383,7 +383,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/sewer.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/sewer.rsi
@@ -405,7 +405,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/rmetal.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/rmetal.rsi
@@ -427,7 +427,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/rmetal.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/rmetal.rsi
@@ -449,7 +449,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/rrmetal.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/rrmetal.rsi
@@ -471,7 +471,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/rrmetal.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/rrmetal.rsi
@@ -493,7 +493,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/vault.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/vault.rsi
@@ -515,7 +515,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/vault.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/vault.rsi
@@ -538,7 +538,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/concrete.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/concrete.rsi
@@ -561,7 +561,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/concrete.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/concrete.rsi
@@ -583,7 +583,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/rock.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/rock.rsi
@@ -605,7 +605,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/rock.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/rock.rsi
@@ -627,7 +627,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/prison.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/prison.rsi
@@ -649,7 +649,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/prison.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/prison.rsi
@@ -672,7 +672,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/concrete.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/concrete.rsi
@@ -703,7 +703,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/new_walls/concrete.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/new_walls/concrete.rsi
@@ -785,7 +785,7 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/metal.rsi
-    drawdepth: WallTops
+    drawdepth: OverMobs # ST14-EN
   - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/metal.rsi
