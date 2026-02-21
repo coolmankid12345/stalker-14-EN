@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartPseudodogTail
+  id: STMutantPartUncommonPseudodogTail
+  name: Adapted Pseudodog Tail
+  description: A dark violet-tinged tail from a pseudodog that has hunted in anomaly corridors for years. The muscle fibers have become unusually dense, granting the creature explosive acceleration. Researchers note elevated psionic residue in the nerve tissue.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartPseudodogTail
+  id: STMutantPartRarePseudodogTail
+  name: Mutated Pseudodog Tail
+  description: An electric-blue tail from a pseudodog whose fur crackles with residual static discharge. The creature appears to have developed a symbiotic relationship with electrical anomalies, channeling their energy through its nervous system. An extraordinary find for psionic researchers.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartPseudodogTail
+  id: STMutantPartLegendaryPseudodogTail
+  name: Singular Pseudodog Tail
+  description: A crimson-red tail radiating palpable heat from a pseudodog of terrifying power. Stalkers who have encountered such beasts report reality distortions in their wake — phantom images that persist long after the creature has gone. The psionic energy saturating this tissue is unlike anything documented. Worth more than most artifacts.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

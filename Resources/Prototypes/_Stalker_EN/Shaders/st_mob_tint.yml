@@ -1,0 +1,8 @@
+- type: shader
+  id: STMobTint
+  kind: source
+  path: "/Textures/Shaders/_Stalker_EN/st_mob_tint.swsl"
+  params:
+    tintColor: 1, 1, 1
+    saturation: 1.0
+    brightness: 1.0

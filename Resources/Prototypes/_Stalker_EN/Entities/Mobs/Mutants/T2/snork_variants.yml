@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobMutantSnork
+  id: STMobMutantSnorkCommon
+  name: Snork
+  suffix: ST, T2, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantSnork
+  id: STMobMutantSnorkUncommon
+  name: Adapted Snork
+  suffix: ST, T2, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantSnork
+  id: STMobMutantSnorkRare
+  name: Mutated Snork
+  suffix: ST, T2, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantSnork
+  id: STMobMutantSnorkLegendary
+  name: Singular Snork
+  suffix: ST, T2, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

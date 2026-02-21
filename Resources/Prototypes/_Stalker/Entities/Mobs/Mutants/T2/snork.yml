@@ -97,3 +97,46 @@
       damage: 15
     - type: STWeight
       self: 73
+    # Stalker-EN start
+    - type: STMobVariantConfig
+      variants:
+      - chance: 0.08
+        quality: Uncommon
+        nameOverride: st-mob-variant-uncommon-snork
+        healthMultiplier: 1.1
+        damageMultiplier: 1.1
+        spriteScale: 1.05
+        spriteTint: "#405030FF"
+        spriteSaturation: 1.4
+        spriteBrightness: 0.8
+        minWeightMultiplier: 0.95
+        maxWeightMultiplier: 1.25
+        butcherSwaps:
+          MutantPartSnorkFoot: STMutantPartUncommonSnorkFoot
+      - chance: 0.02
+        quality: Rare
+        nameOverride: st-mob-variant-rare-snork
+        healthMultiplier: 1.2
+        damageMultiplier: 1.2
+        spriteScale: 1.1
+        spriteTint: "#E0D0C0FF"
+        spriteSaturation: 0.15
+        spriteBrightness: 1.5
+        minWeightMultiplier: 1.1
+        maxWeightMultiplier: 1.4
+        butcherSwaps:
+          MutantPartSnorkFoot: STMutantPartRareSnorkFoot
+      - chance: 0.001
+        quality: Legendary
+        nameOverride: st-mob-variant-legendary-snork
+        healthMultiplier: 1.3
+        damageMultiplier: 1.3
+        spriteScale: 1.15
+        spriteTint: "#C02020FF"
+        spriteSaturation: 1.4
+        spriteBrightness: 1.3
+        minWeightMultiplier: 1.3
+        maxWeightMultiplier: 1.6
+        butcherSwaps:
+          MutantPartSnorkFoot: STMutantPartLegendarySnorkFoot
+    # Stalker-EN end

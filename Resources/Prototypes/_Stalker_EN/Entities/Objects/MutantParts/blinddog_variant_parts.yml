@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartBlindDogTail
+  id: STMutantPartUncommonBlindDogTail
+  name: Adapted Blind Dog Tail
+  description: A thick, muscular tail from a blind dog that has survived longer than most in the Zone. The fur has coarsened into a bristly armor-like texture from prolonged radiation exposure. Ecologists note these specimens show accelerated nerve density — a sign of advanced Zone adaptation.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartBlindDogTail
+  id: STMutantPartRareBlindDogTail
+  name: Mutated Blind Dog Tail
+  description: A frost-pale tail from an albino blind dog — an extraordinarily rare mutation triggered by sustained exposure to gravitational anomalies. The vertebrae have partially fused into a rigid whip-like structure. Researchers at the Yantar lab consider these specimens critical for understanding Zone-driven neural evolution.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartBlindDogTail
+  id: STMutantPartLegendaryBlindDogTail
+  name: Singular Blind Dog Tail
+  description: A blood-red tail pulsing with residual warmth, taken from a blind dog of terrifying proportions. Stalkers whisper of crimson pack leaders that hunt near the edges of anomaly clusters where reality itself bends. The tissue contains crystalline microstructures that faintly resonate when near artifacts. Priceless to any collector.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

@@ -93,7 +93,50 @@
     - type: StaminaDamageOnHit
       damage: 10
     - type: STWeight
-      self: 140
+      self: 300
+      # Stalker-EN start
+    - type: STMobVariantConfig
+      variants:
+      - chance: 0.08
+        quality: Uncommon
+        nameOverride: st-mob-variant-uncommon-boar
+        healthMultiplier: 1.1
+        damageMultiplier: 1.1
+        spriteScale: 1.05
+        spriteTint: "#805030FF"
+        spriteSaturation: 1.5
+        spriteBrightness: 0.7
+        minWeightMultiplier: 0.95
+        maxWeightMultiplier: 1.25
+        butcherSwaps:
+          MutantPartBoarHoof: STMutantPartUncommonBoarHoof
+      - chance: 0.02
+        quality: Rare
+        nameOverride: st-mob-variant-rare-boar
+        healthMultiplier: 1.2
+        damageMultiplier: 1.2
+        spriteScale: 1.1
+        spriteTint: "#E0D8FFFF"
+        spriteSaturation: 0.15
+        spriteBrightness: 1.6
+        minWeightMultiplier: 1.1
+        maxWeightMultiplier: 1.4
+        butcherSwaps:
+          MutantPartBoarHoof: STMutantPartRareBoarHoof
+      - chance: 0.001
+        quality: Legendary
+        nameOverride: st-mob-variant-legendary-boar
+        healthMultiplier: 1.3
+        damageMultiplier: 1.3
+        spriteScale: 1.15
+        spriteTint: "#FFC040FF"
+        spriteSaturation: 1.3
+        spriteBrightness: 1.4
+        minWeightMultiplier: 1.3
+        maxWeightMultiplier: 1.6
+        butcherSwaps:
+          MutantPartBoarHoof: STMutantPartLegendaryBoarHoof
+      # Stalker-EN end
     - type: Jumpscare
       chargeDamage:
         types:

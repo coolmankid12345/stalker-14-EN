@@ -134,3 +134,46 @@
       movementVisibilityRate: -0.8
     - type: STWeight
       self: 96
+    # Stalker-EN start
+    - type: STMobVariantConfig
+      variants:
+      - chance: 0.08
+        quality: Uncommon
+        nameOverride: st-mob-variant-uncommon-bloodsucker
+        healthMultiplier: 1.1
+        damageMultiplier: 1.1
+        spriteScale: 1.05
+        spriteTint: "#800020FF"
+        spriteSaturation: 1.5
+        spriteBrightness: 0.7
+        minWeightMultiplier: 0.95
+        maxWeightMultiplier: 1.25
+        butcherSwaps:
+          MutantPartBloodsuckerTentacles: STMutantPartUncommonBloodsuckerTentacles
+      - chance: 0.02
+        quality: Rare
+        nameOverride: st-mob-variant-rare-bloodsucker
+        healthMultiplier: 1.15
+        damageMultiplier: 1.2
+        spriteScale: 1.1
+        spriteTint: "#E0E8FFFF"
+        spriteSaturation: 0.1
+        spriteBrightness: 1.6
+        minWeightMultiplier: 1.1
+        maxWeightMultiplier: 1.4
+        butcherSwaps:
+          MutantPartBloodsuckerTentacles: STMutantPartRareBloodsuckerTentacles
+      - chance: 0.001
+        quality: Legendary
+        nameOverride: st-mob-variant-legendary-bloodsucker
+        healthMultiplier: 1.25
+        damageMultiplier: 1.3
+        spriteScale: 1.15
+        spriteTint: "#FFC040FF"
+        spriteSaturation: 1.3
+        spriteBrightness: 1.4
+        minWeightMultiplier: 1.3
+        maxWeightMultiplier: 1.6
+        butcherSwaps:
+          MutantPartBloodsuckerTentacles: STMutantPartLegendaryBloodsuckerTentacles
+    # Stalker-EN end

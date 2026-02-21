@@ -1,0 +1,113 @@
+# Blind Dog Small variants
+- type: entity
+  parent: MobMutantBlindDogSmall
+  id: STMobMutantBlindDogSmallCommon
+  name: Small Blind Dog
+  suffix: ST, T1, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantBlindDogSmall
+  id: STMobMutantBlindDogSmallUncommon
+  name: Adapted Small Blind Dog
+  suffix: ST, T1, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantBlindDogSmall
+  id: STMobMutantBlindDogSmallRare
+  name: Mutated Small Blind Dog
+  suffix: ST, T1, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantBlindDogSmall
+  id: STMobMutantBlindDogSmallLegendary
+  name: Singular Small Blind Dog
+  suffix: ST, T1, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary
+
+# Blind Dog Tall variants
+- type: entity
+  parent: MobMutantBlindDogTall
+  id: STMobMutantBlindDogTallCommon
+  name: Tall Blind Dog
+  suffix: ST, T1, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantBlindDogTall
+  id: STMobMutantBlindDogTallUncommon
+  name: Adapted Tall Blind Dog
+  suffix: ST, T1, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantBlindDogTall
+  id: STMobMutantBlindDogTallRare
+  name: Mutated Tall Blind Dog
+  suffix: ST, T1, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantBlindDogTall
+  id: STMobMutantBlindDogTallLegendary
+  name: Singular Tall Blind Dog
+  suffix: ST, T1, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary
+
+# Blind Dog Red variants
+- type: entity
+  parent: MobMutantBlindDogRed
+  id: STMobMutantBlindDogRedCommon
+  name: Red Blind Dog
+  suffix: ST, T1, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantBlindDogRed
+  id: STMobMutantBlindDogRedUncommon
+  name: Adapted Red Blind Dog
+  suffix: ST, T1, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantBlindDogRed
+  id: STMobMutantBlindDogRedRare
+  name: Mutated Red Blind Dog
+  suffix: ST, T1, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantBlindDogRed
+  id: STMobMutantBlindDogRedLegendary
+  name: Singular Red Blind Dog
+  suffix: ST, T1, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

@@ -1,0 +1,89 @@
+- type: entity
+  parent: MutantPartBearClaw
+  id: STMutantPartUncommonBearClaw
+  name: Adapted Bear Claw
+  description: A darkened, earth-stained claw from a bear that has roamed the deepest forests of the Zone. The keratin has hardened beyond normal biological limits, capable of scoring steel. Military collectors prize these as trophies of Zone survival.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartBearClaw
+  id: STMutantPartRareBearClaw
+  name: Mutated Bear Claw
+  description: A silver-grey claw from a bear whose coloring has shifted through prolonged anomaly exposure. The internal structure has become partially metallic — X-ray analysis reveals a lattice of mineral deposits woven through the keratin. An incredible specimen of Zone-driven biomineralization.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartBearClaw
+  id: STMutantPartLegendaryBearClaw
+  name: Singular Bear Claw
+  description: A massive golden claw from a bear of near-mythical proportions. The surface shimmers with an iridescent sheen, and the tip is sharp enough to puncture reinforced body armor. Stalkers speak of golden bears that guard the hearts of anomaly fields. This claw alone is worth more than most expeditions yield in a month.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1
+
+- type: entity
+  parent: MutantPartBearPaw
+  id: STMutantPartUncommonBearPaw
+  name: Adapted Bear Paw
+  description: A massive, calloused paw from a Zone-hardened bear. The pad has thickened into a leathery shield resistant to chemical burns and radiation. Evidence of years spent traversing the most hostile terrain the Zone has to offer.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartBearPaw
+  id: STMutantPartRareBearPaw
+  name: Mutated Bear Paw
+  description: A silver-tinged paw from a bear that has undergone radical mutation. The bones have partially fused, creating a club-like structure of devastating striking power. The fur has taken on a metallic sheen that deflects low-caliber rounds. A remarkable specimen.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartBearPaw
+  id: STMutantPartLegendaryBearPaw
+  name: Singular Bear Paw
+  description: An enormous golden paw from a legendary Zone bear. The sheer mass of this appendage defies biological norms. The claws are embedded with crystalline formations identical to artifact matter, and the pad radiates faint warmth even hours after harvest. The Ecologists consider specimens like this the key to understanding the Zone's endgame.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1
+
+- type: entity
+  parent: MutantPartBearEye
+  id: STMutantPartUncommonBearEye
+  name: Adapted Bear Eye
+  description: A dark, psionic-tinged eye from a Zone bear with heightened psychic sensitivity. The iris has developed unusual refractive properties, suggesting the creature could perceive psionic energy fields directly. Valuable to researchers studying Zone-born psychic phenomena.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartBearEye
+  id: STMutantPartRareBearEye
+  name: Mutated Bear Eye
+  description: A teal-glowing eye from a psionically gifted bear whose mutation has reached an advanced stage. The pupil has expanded to fill nearly the entire iris, and the lens contains bioluminescent compounds that glow in darkness. Proximity causes mild psychic discomfort. An extremely rare find.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartBearEye
+  id: STMutantPartLegendaryBearEye
+  name: Singular Bear Eye
+  description: A magenta-burning eye from a psi-bear of legendary psychic power. Even preserved, it induces vivid dreams in anyone who sleeps near it. The crystalline structures within the lens appear to store and amplify psionic energy indefinitely. Scientists theorize this eye alone could power experimental psionic equipment. Truly one of a kind.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1
