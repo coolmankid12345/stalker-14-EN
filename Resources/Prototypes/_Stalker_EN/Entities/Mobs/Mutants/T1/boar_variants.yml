@@ -1,5 +1,15 @@
 - type: entity
   parent: MobMutantBoar
+  id: STMobMutantBoarCommon
+  name: Boar
+  suffix: ST, T1, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantBoar
   id: STMobMutantBoarUncommon
   name: Adapted Boar
   suffix: ST, T1, Adapted
