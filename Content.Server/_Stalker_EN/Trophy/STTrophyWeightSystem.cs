@@ -1,15 +1,13 @@
-using Content.Server.Store.Components;
 using Content.Shared._Stalker.Weight;
 using Content.Shared._Stalker_EN.MobVariant;
 using Content.Shared._Stalker_EN.Trophy;
-using Content.Shared.FixedPoint;
 using Robust.Shared.Map;
 
 namespace Content.Server._Stalker_EN.Trophy;
 
 /// <summary>
 /// Initializes trophy items at spawn time: propagates the source mob's weight and shader
-/// parameters via spatial lookup, and bakes the price multiplier into CurrencyComponent.
+/// parameters via spatial lookup. Prices are set directly in YAML prototypes via Currency.
 /// </summary>
 public sealed class STTrophyWeightSystem : EntitySystem
 {
@@ -39,7 +37,6 @@ public sealed class STTrophyWeightSystem : EntitySystem
             return;
 
         CopyMobData(uid, trophy, coords);
-        ApplyPriceMultiplier(uid, trophy);
     }
 
     /// <summary>
@@ -79,27 +76,5 @@ public sealed class STTrophyWeightSystem : EntitySystem
         trophy.SpriteSaturation = variant.SpriteSaturation;
         trophy.SpriteBrightness = variant.SpriteBrightness;
         Dirty(uid, trophy);
-    }
-
-    /// <summary>
-    /// Multiplies CurrencyComponent.Price values by the trophy's price multiplier so
-    /// the shop system picks up the adjusted price automatically.
-    /// </summary>
-    private void ApplyPriceMultiplier(EntityUid uid, STTrophyComponent trophy)
-    {
-        // ReSharper disable once CompareOfFloatsByEqualityOperator
-        if (trophy.PriceMultiplier == 1f)
-            return;
-
-        if (!TryComp<CurrencyComponent>(uid, out var currency))
-            return;
-
-        var keys = new List<string>(currency.Price.Keys);
-        foreach (var key in keys)
-        {
-            currency.Price[key] = FixedPoint2.New((float) currency.Price[key] * trophy.PriceMultiplier);
-        }
-
-        Dirty(uid, currency);
     }
 }
