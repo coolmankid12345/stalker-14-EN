@@ -72,9 +72,9 @@
       task: STGuard
     blackboard:
       VisionRadius: !type:Single
-        25
+        12
       AggroVisionRadius: !type:Single
-        20
+        5
   - type: STWeight
     self: 120
   - type: Tag

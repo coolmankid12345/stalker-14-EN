@@ -82,26 +82,12 @@
   id: BandGear
   equipment:
     id: BandPDA
-    neck: ClothingNeckDogtagBandit # EN
-    belt: ClothingBeltBandolierStalker
-    shoes: ClothingShoesBootsCombat
-    legs: ClothingLegsJeansBlue
-    torso: ClothingTorsoJacketAdidas
-    pocket1: RadioBandPlayer
-    outerClothing: ClothingOuterJacketBandit
-    mask: ClothingMaskGasMarlya
-    back: ClothingBackpackDuffelBlackStalker
-
+    neck: ClothingNeckDogtagBandit
 - type: startingGear
   id: BandHeadGear
   equipment:
     id: BandPDA
     neck: ClothingNeckDogtagBanditPahan # EN
-    shoes: ClothingShoesBootsCombat
-    legs: ClothingLegsJeansBlue
-    torso: ClothingTorsoJacketAdidas
-    pocket1: RadioBandPlayer
-    outerClothing: ClothingOuterCoatBanditBlack
 
 - type: stBand
   id: STBanditsBand

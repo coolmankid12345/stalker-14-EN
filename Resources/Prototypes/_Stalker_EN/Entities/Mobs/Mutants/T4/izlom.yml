@@ -34,7 +34,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      700: Dead
+      3700: Dead
   - type: Damageable
     damageModifierSet: STMutantT4DamageModifierSet
   - type: SlowOnDamage
@@ -44,7 +44,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 700
+        damage: 3700
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -84,13 +84,17 @@
     needsHands: false
   - type: NPCRetaliation
     attackMemoryLength: 30 # 30 what?
-  - type: PassiveDamage
-    allowedStates:
-    - Alive
-    damageCap: 700
-    damage:
-      types:
-        Bloodloss: -0.75
   - type: NpcFactionMember
     factions:
     - Izlom
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damage:
+      types:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Psy: -100
+        Radiation: -100

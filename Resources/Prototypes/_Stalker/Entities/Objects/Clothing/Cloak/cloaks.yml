@@ -173,3 +173,124 @@
         startingItem: PowerCellMedium
   - type: Tag
     tags: []
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingOuterCoatAugust
+  name: август
+  description: Необычный плащ, произведённый техниками Чистого Неба. Окрашен в камуфляж, помогающий скрыться в условиях Зоны. Облегчён засчёт отсутствия капюшона, имеет слой изоляционного материала, который предоставляет небольшую защиту от химических воздействий.
+  suffix: ST, T3
+  components:
+  - type: STWeight
+    self: 5
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/august.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/august.rsi
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Caustic: 0.9
+        Radiation: 0.9
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+      - 0,2,0,3
+      - 0,-2,0,0
+      - 2,2,2,3
+      - 2,-1,3,-0
+      - 4,2,4,3
+      - 5,-1,6,-0
+      - 6,2,6,3
+      - 8,2,8,3
+      - 8,-2,8,0
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+  - type: Craftable
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingOuterCoatAugustM
+  name: Август-М
+  description: Необычный плащ, произведённый техниками Чистого Неба. Окрашен в камуфляж, помогающий скрыться в условиях Зоны. Является улучшенной версией одноимённого плаща Август. Имеет слой изоляционного материала, который предоставляет небольшую защиту от химических воздействий. Оснащён прочным капюшоном с комплектным противогазом, создающим дополнительную защиту от внешних воздействий.
+  suffix: ST, T3
+  components:
+  - type: STWeight
+    self: 6
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/august-m.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/august-m.rsi
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Caustic: 0.9
+        Radiation: 0.9
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+      - 0,2,0,3
+      - 0,-2,0,0
+      - 2,2,2,3
+      - 2,-1,3,-0
+      - 4,2,4,3
+      - 5,-1,6,-0
+      - 6,2,6,3
+      - 8,2,8,3
+      - 8,-2,8,0
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetAugustM
+    requiredSlot:
+    - cloak
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetAugustM
+  name: Капюшон плаща Август-М
+  description: Прочный капюшон, скрывающий голову владельца.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_august-m.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_august-m.rsi
+    slots:
+      - mask
+      - head
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+        Radiation: 0.85
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop

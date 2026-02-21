@@ -44,7 +44,6 @@
         mask:
         - FullTileMask
         layer:
-        - TableLayer
         - MidImpassable
         - LowImpassable
   - type: Sprite

@@ -1,0 +1,37 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterArmorCN-4aResearcher
+  name: ЧН-4а Исследователь
+  description: Неофициальная версия научного комбинезона «СЕВА», основательно модифицированная Новиковым, техником «Чистого неба». Комбинезон отличается высокой эргономичностью, обеспечивающей столь необходимую мобильность при исследовании аномальных полей. Чрезвычайно популярен среди исследователей-ветеранов группировки. 
+  suffix: ST, T3, Env
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHardsuitSevaHelmBase
+    slot: head
+  - type: Craftable
+  - type: STWeight
+    self: 10
+  - type: Armor
+    armorClass: 1
+    modifiers:
+      flatReductions:
+        Blunt: 4
+        Slash: 4
+        Piercing: 3
+        Heat: 6
+        Radiation: 6
+        Caustic: 6
+        Shock: 6
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.35
+        Radiation: 0.5
+        Caustic: 0.35
+        Shock: 0.45
+        Compression: 0.6

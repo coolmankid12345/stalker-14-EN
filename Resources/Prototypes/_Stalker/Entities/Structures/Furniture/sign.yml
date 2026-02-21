@@ -20,7 +20,7 @@
     sprite: _Stalker/Structures/Furniture/sign.rsi
     state: sign
     noRot: true
-    
+
 - type: entity
   name: TEST big wooden sign
   id: signnewwords

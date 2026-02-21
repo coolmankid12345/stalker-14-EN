@@ -71,23 +71,6 @@
   equipment:
     id: BandPDA
     neck: ClothingNeckDogtagRenegade # EN
-    head: ClothingHeadHatGreyFlatcap
-    torso: ClothingTorsoTShirtColorBlack
-    legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesBootsWork
-    back: ClothingBackpackDuffelBlackStalker
-
-# EN
-- type: startingGear
-  id: ReneGearHead
-  equipment:
-    id: BandPDA
-    neck: ClothingNeckDogtagRenegadeLeader # EN
-    head: ClothingHeadHatGreyFlatcap
-    torso: ClothingTorsoTShirtColorBlack
-    legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesBootsWork
-    back: ClothingBackpackDuffelBlackStalker
 
 - type: stBand
   id: STRenegatsBand

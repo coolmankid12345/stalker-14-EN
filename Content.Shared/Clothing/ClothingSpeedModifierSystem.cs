@@ -9,6 +9,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 using Content.Shared.Armor;
+using Content.Shared.Tag; // stalker-changes
 
 namespace Content.Shared.Clothing;
 
@@ -19,6 +20,8 @@ public sealed class ClothingSpeedModifierSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!; // stalker-changes
+    [Dependency] private readonly TagSystem _tag = default!; // stalker-changes
 
     public override void Initialize()
     {
@@ -63,9 +66,30 @@ public sealed class ClothingSpeedModifierSystem : EntitySystem
         if (component.Standing != null && !_standing.IsMatchingState(args.Owner, component.Standing.Value))
             return;
 
+
+        if (!IsArtifactAllowed(uid)) // stalker-changes
+            return;
+
         args.Args.ModifySpeed(component.WalkModifier, component.SprintModifier);
     }
+     // stalker-changes-start
+    private bool IsArtifactAllowed(EntityUid uid)
+    {
 
+        if (!TryComp<TagComponent>(uid, out var tagComp) || !_tag.HasTag(tagComp, "STArtifact"))
+            return true;
+
+
+        if (!TryComp<TransformComponent>(uid, out var xform) || !TryComp<MetaDataComponent>(uid, out var meta))
+            return false;
+
+        if (!_inventory.TryGetContainingSlot((uid, xform, meta), out var slotDef) || slotDef == null)
+            return false;
+
+        var name = slotDef.Name;
+        return name == "artifact1" || name == "artifact2" || name == "artifact3" || name == "artifact4";
+    }
+    // stalker-changes-end
     private void OnClothingVerbExamine(EntityUid uid, ClothingSpeedModifierComponent component, GetVerbsEvent<ExamineVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)

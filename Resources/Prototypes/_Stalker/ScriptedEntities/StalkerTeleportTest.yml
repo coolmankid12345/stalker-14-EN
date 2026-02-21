@@ -99,7 +99,7 @@
   suffix: Cache, Dolg
   components:
     - type: AccessReader
-      access: [["Dolg"]]
+      access: [["Dolg"] , ["DolgNovice"]]
     - type: DuplicateTeleport
       mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
@@ -111,7 +111,7 @@
   suffix: Cache, Freedom
   components:
     - type: AccessReader
-      access: [["Freedom"]]
+      access: [["Freedom"] , ["FreedomNovice"]]
     - type: DuplicateTeleport
       mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 

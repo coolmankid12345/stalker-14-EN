@@ -1,0 +1,18 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "axolol_ for S.T.A.L.K.E.R.-14",
+    "size": { "x": 32, "y": 32 },
+    "states": [
+        {
+            "name": "peckish"
+        },
+        {
+            "name": "starving"
+        },
+        {
+            "name": "overfed" 
+        }
+    ]
+}
+
