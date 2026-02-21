@@ -142,7 +142,7 @@
       whitelist:
         components:
           - ZoneAnomalyActivator
-          - Battery
+          - PredictedBattery
         tags:
           - AnomalyGarlandActivationTarget
       lighting: GarlandLightning
@@ -207,7 +207,7 @@
       whitelist:
         components:
         - ZoneAnomalyActivator
-        - Battery
+        - PredictedBattery
       lighting: SourceLightning
       chargePercent: 1
       distance: 6

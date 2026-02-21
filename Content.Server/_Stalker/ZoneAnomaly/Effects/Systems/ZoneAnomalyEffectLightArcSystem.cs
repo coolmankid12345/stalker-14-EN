@@ -4,6 +4,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared.Power.Components;
+using Content.Shared.Power.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.Map.Components;
 
@@ -13,7 +14,7 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
 {
     private const int MaxIterations = 12;
 
-    [Dependency] private readonly BatterySystem _battery = default!;
+    [Dependency] private readonly PredictedBatterySystem _battery = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly LightningSystem _lightning = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
@@ -49,10 +50,10 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
 
     private void TryRecharge(Entity<ZoneAnomalyEffectLightArcComponent> effect, EntityUid target)
     {
-        if (!TryComp<BatteryComponent>(target, out var battery))
+        if (!TryComp<PredictedBatteryComponent>(target, out var battery))
             return;
 
-        _battery.SetCharge((target, battery), battery.CurrentCharge + battery.MaxCharge * effect.Comp.ChargePercent);
+        _battery.SetCharge((target, battery), battery.LastCharge + battery.MaxCharge * effect.Comp.ChargePercent);
     }
 
     private bool IsValidRecursively(Entity<ZoneAnomalyEffectLightArcComponent> effect, EntityUid uid)
