@@ -26,6 +26,7 @@
     <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="_CE\ZLevels\" />
     <Folder Include="_Goob\" />
     <Folder Include="_Stalker_EN\" />
   </ItemGroup>

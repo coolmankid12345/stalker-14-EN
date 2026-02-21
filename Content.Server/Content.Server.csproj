@@ -30,8 +30,14 @@
     <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="_CE\AutoTilePlacement\" />
+    <Folder Include="_CE\PVS\" />
+    <Folder Include="_CE\ZLevels\" />
     <Folder Include="_Goob\" />
     <Folder Include="_Stalker\Weapon\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="_CP14\ZLevels\Components\CP14ZLevelAutoPortalComponent.cs" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>
