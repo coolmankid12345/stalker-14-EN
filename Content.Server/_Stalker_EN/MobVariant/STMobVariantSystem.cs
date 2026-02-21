@@ -4,6 +4,7 @@ using Content.Shared._Stalker_EN.MobVariant;
 using Content.Shared._Stalker_EN.Trophy;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Server.Destructible.Thresholds.Behaviors;
 using Content.Shared.Destructible.Thresholds.Triggers;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
@@ -104,6 +105,7 @@ public sealed class STMobVariantSystem : EntitySystem
         ApplySpriteScale(uid, variant.SpriteScale);
         ApplyNameOverride(uid, variant.NameOverride);
         SwapButcherableLoot(uid, variant.ButcherSwaps);
+        SwapDestructibleLoot(uid, variant.ButcherSwaps);
         ApplyWeightRange(uid, variant);
     }
 
@@ -241,6 +243,44 @@ public sealed class STMobVariantSystem : EntitySystem
         }
 
         Dirty(uid, butcherable);
+    }
+
+    /// <summary>
+    /// Swaps entity prototype IDs in DestructibleComponent's SpawnEntitiesBehavior entries.
+    /// Used for mobs that drop parts via Destructible instead of Butcherable (e.g. Psidog).
+    /// </summary>
+    private void SwapDestructibleLoot(EntityUid uid, Dictionary<EntProtoId, EntProtoId> swaps)
+    {
+        if (swaps.Count == 0)
+            return;
+
+        if (!TryComp<DestructibleComponent>(uid, out var destructible))
+            return;
+
+        foreach (var threshold in destructible.Thresholds)
+        {
+            foreach (var behavior in threshold.Behaviors)
+            {
+                if (behavior is not SpawnEntitiesBehavior spawnBehavior)
+                    continue;
+
+                var toSwap = new List<(EntProtoId Old, EntProtoId New)>();
+                foreach (var (protoId, _) in spawnBehavior.Spawn)
+                {
+                    if (swaps.TryGetValue(protoId, out var replacement))
+                        toSwap.Add((protoId, replacement));
+                }
+
+                foreach (var (old, newId) in toSwap)
+                {
+                    var minMax = spawnBehavior.Spawn[old];
+                    spawnBehavior.Spawn.Remove(old);
+                    spawnBehavior.Spawn[newId] = minMax;
+                }
+            }
+        }
+
+        // DestructibleComponent is server-only, no Dirty() needed.
     }
 
     /// <summary>

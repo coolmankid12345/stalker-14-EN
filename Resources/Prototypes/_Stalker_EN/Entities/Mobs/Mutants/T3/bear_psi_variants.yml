@@ -1,0 +1,36 @@
+- type: entity
+  parent: STMobMutantBearPsi
+  id: STMobMutantBearPsiCommon
+  name: Psi-Bear
+  suffix: ST, T3, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: STMobMutantBearPsi
+  id: STMobMutantBearPsiUncommon
+  name: Adapted Psi-Bear
+  suffix: ST, T3, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: STMobMutantBearPsi
+  id: STMobMutantBearPsiRare
+  name: Mutated Psi-Bear
+  suffix: ST, T3, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: STMobMutantBearPsi
+  id: STMobMutantBearPsiLegendary
+  name: Singular Psi-Bear
+  suffix: ST, T3, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

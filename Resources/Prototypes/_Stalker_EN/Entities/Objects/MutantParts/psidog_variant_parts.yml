@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartPsiDogTail
+  id: STMutantPartUncommonPsiDogTail
+  name: Adapted Psi-Dog Tail
+  description: A deep purple tail from a psi-dog whose psychic abilities have intensified through prolonged Zone exposure. The neural fibers running through the tail glow faintly under UV light, suggesting an expanded psionic nervous system. Valuable to researchers studying Zone-born telepathy.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartPsiDogTail
+  id: STMutantPartRarePsiDogTail
+  name: Mutated Psi-Dog Tail
+  description: A spectral green tail from a psi-dog that has transcended typical psychic mutation. The tissue pulses with visible energy in dim light, and proximity causes mild headaches in unprotected humans. Scientists theorize the creature could project illusions across vast distances. An extremely dangerous specimen to handle.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartPsiDogTail
+  id: STMutantPartLegendaryPsiDogTail
+  name: Singular Psi-Dog Tail
+  description: A magenta-glowing tail from a psi-dog of almost mythical psychic potency. Even severed, it causes vivid hallucinations in anyone who holds it for too long. Stalkers claim these creatures can drive entire squads mad from a hundred meters away. The psionic energy contained in this specimen exceeds anything measured in controlled laboratory conditions. Handle with extreme caution.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

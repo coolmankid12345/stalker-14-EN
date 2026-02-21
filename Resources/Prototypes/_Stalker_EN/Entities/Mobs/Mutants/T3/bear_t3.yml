@@ -84,3 +84,49 @@
       500: 0.6
   - type: STWeight
     self: 100
+  # Stalker-EN start
+  - type: STMobVariantConfig
+    variants:
+    - chance: 0.08
+      quality: Uncommon
+      nameOverride: st-mob-variant-uncommon-bear-t3
+      healthMultiplier: 1.1
+      damageMultiplier: 1.1
+      spriteScale: 1.05
+      spriteTint: "#402010FF"
+      spriteSaturation: 1.3
+      spriteBrightness: 0.7
+      minWeightMultiplier: 0.95
+      maxWeightMultiplier: 1.25
+      butcherSwaps:
+        MutantPartBearClaw: STMutantPartUncommonBearClaw
+        MutantPartBearPaw: STMutantPartUncommonBearPaw
+    - chance: 0.02
+      quality: Rare
+      nameOverride: st-mob-variant-rare-bear-t3
+      healthMultiplier: 1.2
+      damageMultiplier: 1.2
+      spriteScale: 1.1
+      spriteTint: "#E0E8F0FF"
+      spriteSaturation: 0.15
+      spriteBrightness: 1.6
+      minWeightMultiplier: 1.1
+      maxWeightMultiplier: 1.4
+      butcherSwaps:
+        MutantPartBearClaw: STMutantPartRareBearClaw
+        MutantPartBearPaw: STMutantPartRareBearPaw
+    - chance: 0.005
+      quality: Legendary
+      nameOverride: st-mob-variant-legendary-bear-t3
+      healthMultiplier: 1.3
+      damageMultiplier: 1.3
+      spriteScale: 1.15
+      spriteTint: "#FFB020FF"
+      spriteSaturation: 1.3
+      spriteBrightness: 1.4
+      minWeightMultiplier: 1.3
+      maxWeightMultiplier: 1.6
+      butcherSwaps:
+        MutantPartBearClaw: STMutantPartLegendaryBearClaw
+        MutantPartBearPaw: STMutantPartLegendaryBearPaw
+  # Stalker-EN end

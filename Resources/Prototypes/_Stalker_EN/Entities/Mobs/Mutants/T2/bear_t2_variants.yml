@@ -1,0 +1,36 @@
+- type: entity
+  parent: STMobMutantBearT2
+  id: STMobMutantBearT2Common
+  name: Mature Bear
+  suffix: ST, T2, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: STMobMutantBearT2
+  id: STMobMutantBearT2Uncommon
+  name: Adapted Mature Bear
+  suffix: ST, T2, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: STMobMutantBearT2
+  id: STMobMutantBearT2Rare
+  name: Mutated Mature Bear
+  suffix: ST, T2, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: STMobMutantBearT2
+  id: STMobMutantBearT2Legendary
+  name: Singular Mature Bear
+  suffix: ST, T2, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

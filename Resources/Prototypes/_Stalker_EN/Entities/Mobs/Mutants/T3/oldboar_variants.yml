@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobMutantOldBoar
+  id: STMobMutantOldBoarCommon
+  name: Old Boar
+  suffix: ST, T3, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantOldBoar
+  id: STMobMutantOldBoarUncommon
+  name: Adapted Old Boar
+  suffix: ST, T3, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantOldBoar
+  id: STMobMutantOldBoarRare
+  name: Mutated Old Boar
+  suffix: ST, T3, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantOldBoar
+  id: STMobMutantOldBoarLegendary
+  name: Singular Old Boar
+  suffix: ST, T3, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

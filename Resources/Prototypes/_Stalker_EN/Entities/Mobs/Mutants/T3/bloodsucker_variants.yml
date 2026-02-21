@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobMutantBloodsucker
+  id: STMobMutantBloodsuckerCommon
+  name: Bloodsucker
+  suffix: ST, T3, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantBloodsucker
+  id: STMobMutantBloodsuckerUncommon
+  name: Adapted Bloodsucker
+  suffix: ST, T3, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantBloodsucker
+  id: STMobMutantBloodsuckerRare
+  name: Mutated Bloodsucker
+  suffix: ST, T3, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantBloodsucker
+  id: STMobMutantBloodsuckerLegendary
+  name: Singular Bloodsucker
+  suffix: ST, T3, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

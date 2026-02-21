@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartBloodsuckerTentacles
+  id: STMutantPartUncommonBloodsuckerTentacles
+  name: Adapted Bloodsucker Tentacles
+  description: Dark, blood-crusted tentacles from a bloodsucker that has fed on Zone-contaminated prey for years. The suckers have developed barbed hooks for gripping armored targets. The tissue secretes a potent anticoagulant that researchers have been unable to synthesize artificially.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartBloodsuckerTentacles
+  id: STMutantPartRareBloodsuckerTentacles
+  name: Mutated Bloodsucker Tentacles
+  description: Ghostly white tentacles from an albino bloodsucker — a predator that has become one with the anomalous darkness. The bioluminescent cells along each tentacle pulse with a hypnotic rhythm. Scientists theorize this specimen could remain invisible even under direct observation. An extraordinarily dangerous trophy.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartBloodsuckerTentacles
+  id: STMutantPartLegendaryBloodsuckerTentacles
+  name: Singular Bloodsucker Tentacles
+  description: Golden-tinged tentacles from a bloodsucker of almost supernatural power. The tissue radiates warmth and faintly glows in darkness. Stalkers who have survived encounters with such creatures describe an overwhelming psychic pressure — as if the beast could sense their fear. These tentacles contain trace amounts of artifact-grade compounds. The scientific community would wage war over this specimen.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

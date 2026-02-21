@@ -93,6 +93,49 @@
       intervalSeconds: 4
       minimumEntitiesSpawned: 1
       maximumEntitiesSpawned: 2
+    # Stalker-EN start
+    - type: STMobVariantConfig
+      variants:
+      - chance: 0.08
+        quality: Uncommon
+        nameOverride: st-mob-variant-uncommon-psidog
+        healthMultiplier: 1.1
+        damageMultiplier: 1.1
+        spriteScale: 1.05
+        spriteTint: "#602080FF"
+        spriteSaturation: 1.4
+        spriteBrightness: 0.8
+        minWeightMultiplier: 0.95
+        maxWeightMultiplier: 1.25
+        butcherSwaps:
+          MutantPartPsiDogTail: STMutantPartUncommonPsiDogTail
+      - chance: 0.02
+        quality: Rare
+        nameOverride: st-mob-variant-rare-psidog
+        healthMultiplier: 1.2
+        damageMultiplier: 1.2
+        spriteScale: 1.1
+        spriteTint: "#A0FFE0FF"
+        spriteSaturation: 0.2
+        spriteBrightness: 1.6
+        minWeightMultiplier: 1.1
+        maxWeightMultiplier: 1.4
+        butcherSwaps:
+          MutantPartPsiDogTail: STMutantPartRarePsiDogTail
+      - chance: 0.005
+        quality: Legendary
+        nameOverride: st-mob-variant-legendary-psidog
+        healthMultiplier: 1.3
+        damageMultiplier: 1.3
+        spriteScale: 1.15
+        spriteTint: "#FF60FFFF"
+        spriteSaturation: 1.3
+        spriteBrightness: 1.3
+        minWeightMultiplier: 1.3
+        maxWeightMultiplier: 1.6
+        butcherSwaps:
+          MutantPartPsiDogTail: STMutantPartLegendaryPsiDogTail
+    # Stalker-EN end
 
 - type: entity
   parent: STBaseMobMutant

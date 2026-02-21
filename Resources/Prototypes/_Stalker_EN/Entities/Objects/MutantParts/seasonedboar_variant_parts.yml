@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartSeasonedBoarHoof
+  id: STMutantPartUncommonSeasonedBoarHoof
+  name: Adapted Seasoned Boar Hoof
+  description: A battle-scarred hoof from a seasoned boar that has claimed territory deep within the Zone. The keratin shows layered growth rings from years of anomaly exposure, each ring denser than the last. Military collectors value these as proof of long-term Zone survival.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartSeasonedBoarHoof
+  id: STMutantPartRareSeasonedBoarHoof
+  name: Mutated Seasoned Boar Hoof
+  description: An ice-pale hoof from a seasoned boar whose pigmentation has been completely stripped by sustained chemical anomaly exposure. The bone structure has become semi-translucent, revealing an internal lattice of mineral deposits. Ecologists consider this among the finest examples of Zone-induced mineral accretion.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartSeasonedBoarHoof
+  id: STMutantPartLegendarySeasonedBoarHoof
+  name: Singular Seasoned Boar Hoof
+  description: A massive, fiery-orange hoof from a seasoned boar of near-mythical size. The surface is covered in hairline fractures that glow faintly with residual thermal energy. Veterans of the Zone claim these beasts charge through active anomaly fields unscathed. Worth a small fortune to the right buyer.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1
