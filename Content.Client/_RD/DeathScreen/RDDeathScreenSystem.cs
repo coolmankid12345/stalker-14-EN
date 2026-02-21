@@ -69,7 +69,10 @@ public sealed class RDDeathScreenSystem : EntitySystem
         }
 
         _ui.AnimationStart(ev);
-        _userInterface.RootControl.AddChild(_ui);
+        _remove = false; // stalker-en
+
+        if (!_userInterface.RootControl.Children.Contains(_ui)) // stalker-en
+            _userInterface.RootControl.AddChild(_ui);
     }
 
    /*

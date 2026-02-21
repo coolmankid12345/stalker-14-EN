@@ -1159,6 +1159,7 @@ namespace Content.Client.Lobby.UI
             if (!disposing)
                 return;
 
+            _sponsors.SponsorSpeciesUpdated -= RefreshSpecies; // Stalker-Changes-Sponsors
             _loadoutWindow?.Dispose();
             _loadoutWindow = null;
         }
