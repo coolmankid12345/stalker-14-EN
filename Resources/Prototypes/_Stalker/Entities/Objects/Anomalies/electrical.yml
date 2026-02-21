@@ -58,6 +58,9 @@
         - id: ZoneArtifactBattery
           tier: 2
           ratio: 5
+        - id: ZoneArtifactAccumulator
+          tier: 2
+          ratio: 8
 
 - type: entity
   parent: ZoneAnomalyBase
@@ -111,6 +114,9 @@
         - id: ZoneArtifactBattery
           tier: 2
           ratio: 5
+        - id: ZoneArtifactAccumulator
+          tier: 2
+          ratio: 7
     - type: ZoneAnomalyEffectFlash
       range: 5
     - type: Fixtures
@@ -195,6 +201,15 @@
         - id: ZoneArtifactFlash
           tier: 3
           ratio: 5
+        - id: ZoneArtifactAccumulator
+          tier: 2
+          ratio: 5
+        - id: ZoneArtifactDiamond
+          tier: 4
+          ratio: 2
+        - id: ZoneArtifactCharger
+          tier: 4
+          ratio: 2
 
 - type: entity
   parent: ZoneAnomalyBaseElectrical
@@ -256,6 +271,12 @@
         - id: null
           ratio: 300
         - id: ArtMoon
+          tier: 4
+          ratio: 15
+        - id: ZoneArtifactDiamond
+          tier: 4
+          ratio: 15
+        - id: ZoneArtifactCharger
           tier: 4
           ratio: 15
         - id: ZoneArtifactTesla

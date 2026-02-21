@@ -24,7 +24,7 @@ public sealed class PersonalDamageSystem : EntitySystem
             if (component.NextDamage > _timing.CurTime)
                 continue;
 
-            
+
             if (!IsArtifactAllowed(uid))
                 continue;
 
@@ -60,6 +60,6 @@ public sealed class PersonalDamageSystem : EntitySystem
             return false;
 
         var name = slotDef.Name;
-        return name == "artifact1" || name == "artifact2" || name == "artifact3" || name == "artifact4";
+        return name == "artifact1" || name == "artifact2" || name == "artifact3" || name == "artifact4" || name == "artifact5";
     }
 }

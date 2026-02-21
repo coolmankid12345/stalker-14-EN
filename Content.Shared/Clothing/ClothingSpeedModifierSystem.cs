@@ -87,7 +87,7 @@ public sealed class ClothingSpeedModifierSystem : EntitySystem
             return false;
 
         var name = slotDef.Name;
-        return name == "artifact1" || name == "artifact2" || name == "artifact3" || name == "artifact4";
+        return name == "artifact1" || name == "artifact2" || name == "artifact3" || name == "artifact4" || name == "artifact5";
     }
     // stalker-changes-end
     private void OnClothingVerbExamine(EntityUid uid, ClothingSpeedModifierComponent component, GetVerbsEvent<ExamineVerb> args)

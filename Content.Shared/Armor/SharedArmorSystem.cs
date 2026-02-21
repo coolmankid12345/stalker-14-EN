@@ -196,7 +196,7 @@ public abstract partial class SharedArmorSystem : EntitySystem
             return false;
 
         var name = slotDef.Name;
-        return name == "artifact1" || name == "artifact2" || name == "artifact3" || name == "artifact4";
+        return name == "artifact1" || name == "artifact2" || name == "artifact3" || name == "artifact4" || name == "artifact5";
     }
 }
   // stalker-changes-end
