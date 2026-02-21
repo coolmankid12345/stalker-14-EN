@@ -564,5 +564,12 @@
   id: 64
   time: '2026-02-20T21:19:30.268930+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/459
+- author: clay_500z
+  changes:
+  - message: Grizzly and CMS can fit inside waist bags once again
+    type: Tweak
+  id: 65
+  time: '2026-02-21T15:09:44.520314+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/473
 Name: Stalker
 Order: -1
