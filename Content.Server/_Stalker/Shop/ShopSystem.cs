@@ -456,14 +456,23 @@ public sealed partial class ShopSystem : SharedShopSystem
             }
 
             var meta = MetaData(item);
+
+            // stalker-changes-en: resolve price with parent fallback + trophy multiplier
+            int basePrice;
+            if (TryResolveSellPrice(item, meta.EntityPrototype!.ID, sellItems, out var resolved))
+                basePrice = resolved;
+            else
+                basePrice = money.Int();
+
             var listing = new ListingData
             {
                 Categories = new HashSet<ProtoId<StoreCategoryPrototype>>(),
                 Conditions = new List<ListingCondition>(),
 
-                OriginalCost = sellItems.TryGetValue(meta.EntityPrototype!.ID, out var sellItem)
-                    ? new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> { [component.MoneyId] = sellItem + Math.Round(solPrice) }
-                    : new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> { [component.MoneyId] = money.Int() + Math.Round(solPrice) },
+                OriginalCost = new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>
+                {
+                    [component.MoneyId] = basePrice + Math.Round(solPrice),
+                },
 
                 Description = meta.EntityDescription,
                 Icon = null,
@@ -648,7 +657,8 @@ public sealed partial class ShopSystem : SharedShopSystem
     {
         var itemProtoId = GetItemProtoId(item);
 
-        if (shopPrototype.SellingItems.TryGetValue(itemProtoId, out var price))
+        // stalker-changes-en: resolve price with parent fallback + trophy multiplier
+        if (TryResolveSellPrice(item, itemProtoId, shopPrototype.SellingItems, out var price))
             return price;
 
         if (listing != null && listing.OriginalCost.TryGetValue(component.MoneyId, out var originalCost))
