@@ -3,12 +3,6 @@
   equipment:
     id: StalkerPDA
     neck: ClothingNeckDogtagRookie
-    belt: ClothingBeltBandolierStalker
-    shoes: ClothingShoesNovice
-    pocket1: STShiv
-    pocket2: 7mmBuckshotBox
-    mask: ClothingMaskGasMarlya
-    suitstorage: STWeaponShotgunMP155T
 
 - type: job
   id: StalkerRookie
