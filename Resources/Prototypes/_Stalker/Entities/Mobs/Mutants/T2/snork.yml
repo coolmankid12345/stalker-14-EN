@@ -126,7 +126,7 @@
         maxWeightMultiplier: 1.4
         butcherSwaps:
           MutantPartSnorkFoot: STMutantPartRareSnorkFoot
-      - chance: 0.005
+      - chance: 0.001
         quality: Legendary
         nameOverride: st-mob-variant-legendary-snork
         healthMultiplier: 1.3

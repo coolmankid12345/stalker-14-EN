@@ -115,7 +115,7 @@
       butcherSwaps:
         MutantPartBearClaw: STMutantPartRareBearClaw
         MutantPartBearPaw: STMutantPartRareBearPaw
-    - chance: 0.005
+    - chance: 0.001
       quality: Legendary
       nameOverride: st-mob-variant-legendary-bear-t3
       healthMultiplier: 1.3

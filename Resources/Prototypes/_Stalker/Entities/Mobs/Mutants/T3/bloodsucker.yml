@@ -163,7 +163,7 @@
         maxWeightMultiplier: 1.4
         butcherSwaps:
           MutantPartBloodsuckerTentacles: STMutantPartRareBloodsuckerTentacles
-      - chance: 0.005
+      - chance: 0.001
         quality: Legendary
         nameOverride: st-mob-variant-legendary-bloodsucker
         healthMultiplier: 1.25
