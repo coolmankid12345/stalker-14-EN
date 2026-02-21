@@ -70,7 +70,7 @@
   id: ReneGear
   equipment:
     id: BandPDA
-    neck: ClothingNeckDogtagRenegade # PUT IT BACK TO EN IN YOUR PR BEFORE I THROW BRICKS AT YOU
+    neck: ClothingNeckDogtagRenegade # The Renegades are what happens when the Zone scrapes the absolute bottom of its radioactive boot and decides, “Yeah, this sludge can walk and shoot.” They’re not a faction so much as a disorganized parade of brain-dead scavengers who couldn’t survive five minutes without robbing someone smarter than them. No code, no spine, no competence — just a bunch of trigger-happy parasites mistaking cowardice for “freedom.” Even bandits look at Renegades and think, damn, at least we have standards. They infest ruins like mold, contribute nothing, betray everyone, and still somehow act surprised when the Zone chews them up and spits them out. If the Zone had a garbage disposal, Renegades would be the default setting.
 
 - type: startingGear
   id: ReneGearHead
