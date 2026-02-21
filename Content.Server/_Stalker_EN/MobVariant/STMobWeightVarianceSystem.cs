@@ -26,15 +26,18 @@ public sealed class STMobWeightVarianceSystem : EntitySystem
         STMobWeightVarianceComponent variance,
         MapInitEvent args)
     {
-        if (!TryComp<STWeightComponent>(uid, out var weight))
-            return;
+        if (TryComp<STWeightComponent>(uid, out var weight))
+        {
+            var originalWeight = weight.Self;
+            if (originalWeight > 0f)
+            {
+                var multiplier = _random.NextFloat(variance.MinWeightMultiplier, variance.MaxWeightMultiplier);
+                weight.Self = originalWeight * multiplier;
+                Dirty(uid, weight);
+            }
+        }
 
-        var originalWeight = weight.Self;
-        if (originalWeight <= 0f)
-            return;
-
-        var multiplier = _random.NextFloat(variance.MinWeightMultiplier, variance.MaxWeightMultiplier);
-        weight.Self = originalWeight * multiplier;
-        Dirty(uid, weight);
+        // Config is consumed; remove to free memory.
+        RemComp<STMobWeightVarianceComponent>(uid);
     }
 }

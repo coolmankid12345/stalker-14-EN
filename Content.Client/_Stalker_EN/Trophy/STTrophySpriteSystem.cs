@@ -1,7 +1,6 @@
-using System.Numerics;
+using Content.Client._Stalker_EN.Shaders;
 using Content.Shared._Stalker_EN.Trophy;
 using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._Stalker_EN.Trophy;
@@ -13,8 +12,6 @@ namespace Content.Client._Stalker_EN.Trophy;
 public sealed class STTrophySpriteSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-
-    private const string ShaderProtoId = "STMobTint";
 
     private readonly Dictionary<EntityUid, (Color? Tint, float Sat, float Bright)> _appliedParams = new();
 
@@ -28,40 +25,21 @@ public sealed class STTrophySpriteSystem : EntitySystem
 
     private void OnAfterState(EntityUid uid, STTrophyComponent trophy, ref AfterAutoHandleStateEvent args)
     {
-        // ReSharper disable CompareOfFloatsByEqualityOperator
-        if (trophy.SpriteTint == null
-            && trophy.SpriteSaturation == 1f
-            && trophy.SpriteBrightness == 1f)
-            return;
-        // ReSharper restore CompareOfFloatsByEqualityOperator
-
-        var key = (trophy.SpriteTint, trophy.SpriteSaturation, trophy.SpriteBrightness);
-
-        if (_appliedParams.TryGetValue(uid, out var existing) && existing == key)
-            return;
-
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        var shader = _prototypeManager.Index<ShaderPrototype>(ShaderProtoId).InstanceUnique();
-
-        var tint = trophy.SpriteTint ?? Color.White;
-        shader.SetParameter("tintColor", new Vector3(tint.R, tint.G, tint.B));
-        shader.SetParameter("saturation", trophy.SpriteSaturation);
-        shader.SetParameter("brightness", trophy.SpriteBrightness);
-
-        var layerIndex = 0;
-        foreach (var _ in sprite.AllLayers)
-        {
-            sprite.LayerSetShader(layerIndex, shader, ShaderProtoId);
-            layerIndex++;
-        }
-
-        _appliedParams[uid] = key;
+        STMobTintHelper.TryApplyTint(
+            uid,
+            trophy.SpriteTint,
+            trophy.SpriteSaturation,
+            trophy.SpriteBrightness,
+            sprite,
+            _prototypeManager,
+            _appliedParams);
     }
 
     private void OnRemove(EntityUid uid, STTrophyComponent component, ComponentRemove args)
     {
-        _appliedParams.Remove(uid);
+        STMobTintHelper.RemoveCached(uid, _appliedParams);
     }
 }

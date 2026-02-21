@@ -37,17 +37,14 @@ public sealed class STTrophyExamineSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, STTrophyComponent trophy, ExaminedEvent args)
     {
-        // Quality label — Common specimens don't get one.
-        if (trophy.Quality != STTrophyQuality.Common)
+        // Quality label for all trophies including Common ("Standard").
+        if (QualityData.TryGetValue(trophy.Quality, out var data))
         {
-            if (QualityData.TryGetValue(trophy.Quality, out var data))
-            {
-                var qualityName = Loc.GetString(data.LocKey);
+            var qualityName = Loc.GetString(data.LocKey);
 
-                args.PushMarkup(Loc.GetString(LocExamineQuality,
-                    ("color", data.Color),
-                    ("quality", qualityName)));
-            }
+            args.PushMarkup(Loc.GetString(LocExamineQuality,
+                ("color", data.Color),
+                ("quality", qualityName)));
         }
 
         // Source mob weight.

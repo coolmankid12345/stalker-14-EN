@@ -30,9 +30,13 @@ public sealed class STMobVariantSystem : EntitySystem
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly SharedScaleVisualsSystem _scaleVisuals = default!;
 
+    private ISawmill _sawmill = default!;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        _sawmill = Logger.GetSawmill("st.mob.variant");
 
         SubscribeLocalEvent<STMobVariantConfigComponent, MapInitEvent>(OnMapInit);
     }
@@ -43,26 +47,27 @@ public sealed class STMobVariantSystem : EntitySystem
         // apply the matching variant entry instead of rolling randomly.
         if (TryComp<STMobVariantComponent>(uid, out var existing))
         {
-            if (existing.Applied)
-                return;
-
-            foreach (var entry in config.Variants)
+            if (!existing.Applied)
             {
-                if (entry.Quality != existing.Quality)
-                    continue;
+                foreach (var entry in config.Variants)
+                {
+                    if (entry.Quality != existing.Quality)
+                        continue;
 
-                ApplyVariant(uid, entry, existing);
-                break;
+                    ApplyVariant(uid, entry, existing);
+                    break;
+                }
             }
-
-            return;
+        }
+        else
+        {
+            var variant = RollVariant(config);
+            if (variant != null)
+                ApplyVariant(uid, variant);
         }
 
-        var variant = RollVariant(config);
-        if (variant == null)
-            return;
-
-        ApplyVariant(uid, variant);
+        // Config is consumed; remove to free memory.
+        RemComp<STMobVariantConfigComponent>(uid);
     }
 
     /// <summary>
@@ -80,6 +85,9 @@ public sealed class STMobVariantSystem : EntitySystem
             if (roll < cumulative)
                 return entry;
         }
+
+        if (cumulative > 1f)
+            _sawmill.Warning($"Variant chances sum to {cumulative:F3} (>1.0) — some entries may be unreachable as common.");
 
         return null;
     }
@@ -110,7 +118,7 @@ public sealed class STMobVariantSystem : EntitySystem
     }
 
     /// <summary>
-    /// Scales all MobThresholds entries by the health multiplier using the MobThresholdSystem API.
+    /// Scales all MobThresholds entries by the health multiplier via the MobThresholdSystem API.
     /// </summary>
     private void ScaleHealthThresholds(EntityUid uid, float multiplier)
     {
