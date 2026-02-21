@@ -96,6 +96,7 @@ public sealed class STRespawnConfirmSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<PlayerDetachedEvent>(OnPlayerDetached);
+        SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
     }
 
     public override void Update(float frameTime)
@@ -123,6 +124,14 @@ public sealed class STRespawnConfirmSystem : EntitySystem
         // Clean up if player disconnects
         _openConfirms.Remove(args.Player);
         _pendingRespawns.Remove(args.Player);
+    }
+
+    private void OnPlayerJoinedLobby(PlayerJoinedLobbyEvent args)
+    {
+        // Ensure no stale pending respawn state remains when a player reaches the lobby
+        // (e.g., body decomposed while respawn was pending)
+        _openConfirms.Remove(args.PlayerSession);
+        _pendingRespawns.Remove(args.PlayerSession);
     }
 
     /// <summary>
