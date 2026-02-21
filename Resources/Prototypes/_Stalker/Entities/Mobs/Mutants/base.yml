@@ -176,6 +176,7 @@
     evasion: 0
   - type: RequireProjectileTarget
     active: False
+  - type: STMobWeightVariance # Stalker-EN
 
 # временно так, до перевода всех мобов на новые HTN
 
@@ -350,3 +351,4 @@
       evasion: 0.01
     - type: RequireProjectileTarget
       active: False
+    - type: STMobWeightVariance # Stalker-EN

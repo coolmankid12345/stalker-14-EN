@@ -1,0 +1,22 @@
+// Per-layer color modification: brightness → saturation → tint.
+// Used by STMobVariantSpriteSystem to create visually distinct mob variants
+// without requiring unique sprite assets.
+uniform highp vec3 tintColor;
+uniform highp float saturation;
+uniform highp float brightness;
+
+void fragment() {
+    highp vec4 color = zTexture(UV);
+
+    // Brightness
+    color.rgb *= brightness;
+
+    // Saturation (mix with luminance-preserving greyscale)
+    highp float grey = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+    color.rgb = mix(vec3(grey), color.rgb, saturation);
+
+    // Tint (multiplicative)
+    color.rgb *= tintColor;
+
+    COLOR = color;
+}
