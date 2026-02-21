@@ -70,7 +70,7 @@
   id: ReneGear
   equipment:
     id: BandPDA
-    neck: ClothingNeckDogtagRenegade # EN
+    neck: ClothingNeckDogtagRenegade # gREEN HELL REFERENCE
 
 - type: startingGear # EN # You just can't have, working tests, because, YOU DON'T NEED THEM, OKAY?
   id: ReneGearHead

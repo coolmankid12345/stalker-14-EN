@@ -18,6 +18,24 @@
   - STGlasses
 
 - type: roleLoadout
+  id: JobStalkerRookie
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STOuterClothingStalkerGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+
+- type: roleLoadout
   id: JobStalkerVeteran
   groups:
   - STTrinketsGroupOne
@@ -294,7 +312,7 @@
   - STOuterClothingStalkerClearSky
 
 - type: roleLoadout
-  id: JobStalkerClearSkyHead
+  id: JobStalkerHeadClearSky
   groups:
   - STTrinketsGroupOne
   - STTrinketsGroupTwo
@@ -315,6 +333,24 @@
 
 - type: roleLoadout
   id: JobStalkerRene
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroupRene
+  - STTorsoGroupRene
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingStalkerRene
+
+- type: roleLoadout
+  id: JobStalkerHeadRene
   groups:
   - STTrinketsGroupOne
   - STTrinketsGroupTwo
