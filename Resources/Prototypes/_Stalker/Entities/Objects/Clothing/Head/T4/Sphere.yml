@@ -49,7 +49,7 @@
     sprite: _Stalker/Objects/Clothing/hats/bulat_helm_mercenary.rsi
 
 - type: entity
-  parent: STClothingHeadHelmetEnvironmentT4Base #Нужны спрайты под шлем с фонариком и без
+  parent: STClothingHeadHelmetCombatT3Base #Нужны спрайты под шлем с фонариком и без
   id: ClothingHeadHelmetBulatMonolith
   name: шлем «Сфера-12» монолита
   description: Является шлемом от Берилла.
@@ -60,6 +60,10 @@
     sprite: _Stalker/Objects/Clothing/hats/bulat_helm_monolit.rsi
   - type: IngestionBlocker
   - type: IdentityBlocker
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 18.01
 
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT4Base #Нужны спрайты под шлем с фонариком и без
@@ -108,3 +112,41 @@
         Radiation: 0.80
   - type: ExplosionResistance
     damageCoefficient: 0.70
+
+- type: entity
+  parent: STClothingHeadBase
+  id: ClothingHeadHelmetCN3b
+  name: шлем «ЧН-3б»
+  suffix: ST, T4, Env
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/cn3b_helm.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/cn3b_helm.rsi
+    - type: BreathMask
+    - type: IngestionBlocker
+    - type: IdentityBlocker
+    - type: Tag
+      tags:
+        - BlockMask
+        - HidesNose
+    - type: Armor
+      armorClass: 4
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Psy:   0.9
+          Radiation: 0.9
+    - type: ExplosionResistance
+      damageCoefficient: 0.9
+    - type: Reflect
+      reflectProb: 0.9
+      spread: 360
+      reflects:
+        - NonEnergy
+      soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+    - type: HideLayerClothing
+      slots:
+      - Hair

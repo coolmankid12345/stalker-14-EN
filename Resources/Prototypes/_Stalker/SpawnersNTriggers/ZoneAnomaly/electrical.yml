@@ -1,6 +1,6 @@
 - type: entity
   id: SpawnerZoneAnomalyElectricalGroupChance1
-  name: спавнер электрической аномалии (1% шанс появления)
+  name: спавнер электрической аномалии (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -18,12 +18,12 @@
     prototypes:
       - ZoneAnomalyElectra
       - ZoneAnomalyGarland
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyElectricalGroupChance5
-  name: спавнер электрической аномалии (5% шанс появления)
+  name: спавнер электрической аномалии (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -41,12 +41,12 @@
     prototypes:
       - ZoneAnomalyElectra
       - ZoneAnomalyGarland
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyElectricalGroupChance10
-  name: спавнер электрической аномалии (10% шанс появления)
+  name: спавнер электрической аномалии (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -64,12 +64,12 @@
     prototypes:
       - ZoneAnomalyElectra
       - ZoneAnomalyGarland
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyElectricalGroupChance25
-  name: спавнер электрической аномалии (25% шанс появления)
+  name: спавнер электрической аномалии (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -87,7 +87,7 @@
     prototypes:
       - ZoneAnomalyElectra
       - ZoneAnomalyGarland
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity
@@ -139,7 +139,7 @@
 # Электра (Electra)
 - type: entity
   id: SpawnerZoneAnomalyElectraChance1
-  name: спавнер аномалии электра (1% шанс появления)
+  name: спавнер аномалии электра (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -153,12 +153,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyElectra
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyElectraChance5
-  name: спавнер аномалии электра (5% шанс появления)
+  name: спавнер аномалии электра (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -172,12 +172,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyElectra
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyElectraChance10
-  name: спавнер аномалии электра (10% шанс появления)
+  name: спавнер аномалии электра (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -191,12 +191,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyElectra
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyElectraChance25
-  name: спавнер аномалии электра (25% шанс появления)
+  name: спавнер аномалии электра (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -210,7 +210,7 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyElectra
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity
@@ -254,7 +254,7 @@
 # Аномалия ЭМИ
 - type: entity
   id: SpawnerZoneAnomalyEMPChance1
-  name: спавнер аномалии ЭМИ (1% шанс появления)
+  name: спавнер аномалии ЭМИ (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -268,12 +268,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyElectra
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyEMPChance5
-  name: спавнер аномалии ЭМИ (5% шанс появления)
+  name: спавнер аномалии ЭМИ (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -287,12 +287,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyEMP
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyEMPChance10
-  name: спавнер аномалии ЭМИ (10% шанс появления)
+  name: спавнер аномалии ЭМИ (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -306,12 +306,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyEMP
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyEMPChance25
-  name: спавнер аномалии ЭМИ (25% шанс появления)
+  name: спавнер аномалии ЭМИ (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -325,7 +325,7 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyEMP
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity
@@ -369,7 +369,7 @@
 # Источник (Source)
 - type: entity
   id: SpawnerZoneAnomalySource1
-  name: спавнер аномалии источник (1% шанс появления)
+  name: спавнер аномалии источник (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -383,12 +383,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalySource
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalySource5
-  name: спавнер аномалии источник (5% шанс появления)
+  name: спавнер аномалии источник (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -402,12 +402,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalySource
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalySource10
-  name: спавнер аномалии источник (10% шанс появления)
+  name: спавнер аномалии источник (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -421,12 +421,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalySource
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalySource25
-  name: спавнер аномалии источник (25% шанс появления)
+  name: спавнер аномалии источник (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -440,7 +440,7 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalySource
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity
@@ -484,7 +484,7 @@
 # Гирлянда (Garland)
 - type: entity
   id: SpawnerZoneAnomalyGarland1
-  name: спавнер аномалии гирлянда (1% шанс появления)
+  name: спавнер аномалии гирлянда (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -498,12 +498,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyGarland
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyGarland5
-  name: спавнер аномалии гирлянда (5% шанс появления)
+  name: спавнер аномалии гирлянда (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -517,12 +517,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyGarland
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyGarland10
-  name: спавнер аномалии гирлянда (10% шанс появления)
+  name: спавнер аномалии гирлянда (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -536,12 +536,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyGarland
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyGarland25
-  name: спавнер аномалии гирлянда (25% шанс появления)
+  name: спавнер аномалии гирлянда (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -555,7 +555,7 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyGarland
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity

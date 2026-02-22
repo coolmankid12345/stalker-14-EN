@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartFleshEye
+  id: STMutantPartUncommonFleshEye
+  name: Adapted Flesh Eye
+  description: A swollen, greenish eye from a flesh mutant that has fed extensively in anomaly-rich territories. The iris has developed an unusual bioluminescent sheen, suggesting the creature could perceive radiation spectra invisible to humans. Scientists pay a premium for specimens showing sensory adaptation.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartFleshEye
+  id: STMutantPartRareFleshEye
+  name: Mutated Flesh Eye
+  description: A grotesque, purple-veined eye from a flesh mutant warped beyond recognition by concentrated anomaly exposure. The pupil has split into a compound structure resembling insect optics. Ecologists theorize this represents a radical evolutionary branch found only in the deepest anomaly fields.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartFleshEye
+  id: STMutantPartLegendaryFleshEye
+  name: Singular Flesh Eye
+  description: An enormous golden eye radiating faint warmth, harvested from a flesh mutant of mythical proportions. The lens contains microscopic artifact-like formations that refract light in impossible patterns. Stalkers who have seen such creatures claim they glow faintly in the dark. The Ecologists would kill for this specimen.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

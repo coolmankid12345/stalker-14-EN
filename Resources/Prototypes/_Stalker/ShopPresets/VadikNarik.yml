@@ -7,7 +7,7 @@
     HydroponicsToolMiniHoe: 35
     Blunt: 40
     Bucket: 30
-    STJoint: 200
+    STJoint: 50
   categories:
     - name: Готовая продукция
       priority: 1

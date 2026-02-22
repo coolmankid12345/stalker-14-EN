@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartBoarHoof
+  id: STMutantPartUncommonBoarHoof
+  name: Adapted Boar Hoof
+  description: A heavy, scarred hoof from a boar that survived many anomaly seasons in the Zone. The keratin has thickened from prolonged exposure to low-level radiation. Scientists at the Yantar mobile lab pay well for specimens showing signs of chronic Zone adaptation.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartBoarHoof
+  id: STMutantPartRareBoarHoof
+  name: Mutated Boar Hoof
+  description: A pale, almost translucent hoof from an albino boar — an extremely rare genetic drift caused by sustained anomaly exposure. The bone structure shows microscopic crystalline inclusions similar to artifact formations. Ecologists consider these specimens invaluable for understanding Zone-induced mutagenesis.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartBoarHoof
+  id: STMutantPartLegendaryBoarHoof
+  name: Singular Boar Hoof
+  description: An enormous hoof radiating faint warmth, taken from a boar of near-mythical proportions. Stalkers who have seen such creatures claim they dwell near the center of anomaly fields where no ordinary beast could survive. The tissue contains trace amounts of an unidentified substance with properties resembling raw artifact matter. The Ecologists would pay a fortune for this.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

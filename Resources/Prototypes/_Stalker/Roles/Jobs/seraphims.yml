@@ -46,14 +46,8 @@
   equipment:
     id: STSeraphimPDA
     neck: ClothingStalkerNeckTokenSeraphim
-    shoes: STClothingShoesBootsSeraFilled
-    legs: STClothingLegsSerafimPants
-    torso: STClothingTorsoSerafimLittleChaos
     mask: STClothingMaskKufei
-    gloves: STClothingHandsGlovesSera
-    pocket1: STBoltBagFilled
-    pocket2: GeigerCounter
-    back: ClothingBackpackDuffelBlackStalker
+
 
 - type: job
   id: SeraphimHead
@@ -103,19 +97,13 @@
           factions:
           - Seraphims
         - type: STAnomalyTipsViewing
+
 - type: startingGear
   id: SeraphimHeadGear
   equipment:
     id: STSeraphimPDA
     neck: ClothingStalkerNeckTokenSeraphim
-    shoes: STClothingShoesBootsSeraFilled
-    legs: STClothingLegsSerafimPants
-    torso: STClothingTorsoSerafimFullReady
     mask: STClothingMaskKufei
-    gloves: STClothingHandsGlovesSera
-    pocket1: STBoltBagFilled
-    pocket2: GeigerCounter
-    back: ClothingBackpackDuffelBlackStalker
 - type: stBand
   id: STSeraphimsBand
   name: Seraphims
@@ -182,9 +170,3 @@
   equipment:
     id: STSeraphimPDA
     neck: ClothingStalkerNeckKulonSeraphim
-    shoes: STClothingShoesBootsSeraFilled
-    legs: STClothingLegsSerafimCherubimPants
-    torso: STClothingTorsoSerafimCherubimFullReady
-    gloves: STClothingHandsGlovesSera
-    pocket1: STBoltBagFilled
-    pocket2: GeigerCounter

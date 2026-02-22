@@ -1,3 +1,3 @@
-ent-ClothingTorsoTShirtPivozavr = pivozavr t-shirt
-ent-ClothingTorsoTShirtSailorSuit = sailor suit t-shirt
-ent-ClothingTorsoTShirtColorBlack = black t-shirt
+ent-ClothingTorsoTShirtPivozavr = футболка «Пивозавр"
+ent-ClothingTorsoTShirtSailorSuit = футболка в морском стиле
+ent-ClothingTorsoTShirtColorBlack = чёрная футболка

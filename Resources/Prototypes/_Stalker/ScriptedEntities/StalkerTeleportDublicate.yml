@@ -173,7 +173,7 @@
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
-    access: [["Dolg"]]
+    access: [["Dolg"] , ["DolgNovice"]]
 
 - type: entity
   id: StalkerDublicateFreedom
@@ -188,7 +188,7 @@
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
-    access: [["Freedom"]]
+    access: [["Freedom"] , ["FreedomNovice"]]
 
 - type: entity
   id: StalkerDublicateRenegats
@@ -376,6 +376,17 @@
     prefix: Bar
     maxWeight: 150
 
+- type: entity
+  id: StalkerDublicateBoloto
+  parent: StalkerDuplicateTeleportBase
+  name: Подвал в логово
+  description: С помощью этого подвала вы можете попасть в своё логово.
+  suffix: Teleport, Portal, Duplicate, Boloto
+  components:
+  - type: DuplicateTeleport
+    prefix: Boloto
+    maxWeight: 150
+
 - type: duplicateSymbols
   id: DublicateSymbols
   symbols:
@@ -402,3 +413,4 @@
     - Mechanic
     - Project
     - Deserter
+    - Boloto

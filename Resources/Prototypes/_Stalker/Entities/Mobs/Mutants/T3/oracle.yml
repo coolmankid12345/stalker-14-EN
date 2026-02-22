@@ -107,3 +107,5 @@
           Piercing: -0.1
     - type: STWeight
       self: 100
+      overload: 170
+      maximum: 250

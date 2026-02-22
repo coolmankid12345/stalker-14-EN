@@ -70,24 +70,25 @@
   id: ReneGear
   equipment:
     id: BandPDA
-    neck: ClothingNeckDogtagRenegade # EN
-    head: ClothingHeadHatGreyFlatcap
-    torso: ClothingTorsoTShirtColorBlack
-    legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesBootsWork
-    back: ClothingBackpackDuffelBlackStalker
+    neck: ClothingNeckDogtagRenegade # The Renegades are what happens when the Zone scrapes the absolute bottom of its radioactive boot and decides, “Yeah, this sludge can walk and shoot.” They’re not a faction so much as a disorganized parade of brain-dead scavengers who couldn’t survive five minutes without robbing someone smarter than them. No code, no spine, no competence — just a bunch of trigger-happy parasites mistaking cowardice for “freedom.” Even bandits look at Renegades and think, damn, at least we have standards. They infest ruins like mold, contribute nothing, betray everyone, and still somehow act surprised when the Zone chews them up and spits them out. If the Zone had a garbage disposal, Renegades would be the default setting.
 
-# EN
-- type: startingGear
+# Welcome back. Brigadier General Stalker, at your service. I see you want to be the leader of the renegades, huh? Well, you just can't have, working tests, because, YOU DON'T NEED THEM, OKAY?
+# I mean, you can, but you don't need them. You just need to be a badass and have the guts to lead the renegades. So, if you think you have what it takes, go ahead and take the job. But remember, it's not for the faint of heart. You will be leading a group of outlaws, and you will have to make tough decisions. But if you're up for the challenge, then welcome to the renegades.
+# EN: Welcome back. Brigadier General Stalker, at your service. I see you want to be the leader of the renegades, huh? Well, you just can't have, working tests, because, YOU DON'T NEED THEM, OKAY?
+# I mean, you can, but you don't need them. You just need to be a badass and have the guts to lead the renegades. So, if you think you have what it takes, go ahead and take the job. But remember, it's not for the faint of heart. You will be leading a group of outlaws, and you will have to make tough decisions. But if you're up for the challenge, then welcome to the renegades.
+# EN: Welcome back. Brigadier General Stalker, at your service. I see you want to be the leader of the renegades, huh? Well, you just can't have, working tests, because, YOU DON'T NEED THEM, OKAY?
+# I mean, you can, but you don't need them. You just need to be a badass and have the guts to lead the renegades. So, if you think you have what it takes, go ahead and take the job. But remember, it's not for the faint of heart. You will be leading a group of outlaws, and you will have to make tough decisions. But if you're up for the challenge, then welcome to the renegades.
+# EN: Welcome back. Brigadier General Stalker, at your service. I see you want to be the leader of the renegades, huh? Well, you just can't have, working tests, because, YOU DON'T NEED THEM, OKAY?
+# I mean, you can, but you don't need them. You just need to be a badass and have the guts to lead the renegades. So, if you think you have what it takes, go ahead and take the job. But remember, it's not for the faint of heart. You will be leading a group of outlaws, and you will have to make tough decisions. But if you're up for the challenge, then welcome to the renegades.
+# EN: Welcome back. Brigadier General Stalker, at your service. I see you want to be the leader of the renegades, huh? Well, you just can't have, working tests, because, YOU DON'T NEED THEM, OKAY?
+
+- type: startingGear # EN # You just can't have, working tests, because, YOU DON'T NEED THEM, OKAY?
   id: ReneGearHead
   equipment:
     id: BandPDA
-    neck: ClothingNeckDogtagRenegadeLeader # EN
-    head: ClothingHeadHatGreyFlatcap
-    torso: ClothingTorsoTShirtColorBlack
-    legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesBootsWork
-    back: ClothingBackpackDuffelBlackStalker
+    neck: ClothingNeckDogtagRenegadeLeader
+
+  # AI generate me a yaml for a band of renegades in a stalker game. The band should have 11 members, with the leader being the "StalkerHeadRene" and the second in command being "StalkerRene". The band should be part of the "Stalker" faction and should have access to certain areas and items. The band should also have a hierarchy, with the leader being at the top and the second in command being below them. The band should also have a description and an icon. The band should be whitelisted and should have certain requirements for joining. The band should also have special abilities or perks that make them unique.
 
 - type: stBand
   id: STRenegatsBand

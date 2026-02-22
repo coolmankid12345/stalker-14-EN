@@ -1,0 +1,146 @@
+# Костёр
+
+- type: lightCraftingRecipe
+  id: BarbarisBonfireCraft
+  results:
+    - StalkerFoodBarbarisBonfire
+  steps:
+    firstIngredient: StalkerFoodBarbaris
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: GojiBonfireCraft
+  results:
+    - StalkerFoodGojiBonfire
+  steps:
+    firstIngredient: StalkerFoodGoji
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: KrijovnikBonfireCraft
+  results:
+    - StalkerFoodKrijovnikBonfire
+  steps:
+    firstIngredient: StalkerFoodKrijovnik
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: MalinaBonfireCraft
+  results:
+    - StalkerFoodMalinaBonfire
+  steps:
+    firstIngredient: StalkerFoodMalina
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: VishnaBonfireCraft
+  results:
+    - StalkerFoodVishnaBonfire
+  steps:
+    firstIngredient: StalkerFoodVishna
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+# Мякоть
+
+- type: lightCraftingRecipe
+  id: BarbarisPulbCraft
+  results:
+    - StalkerFoodBarbarisPulb
+  steps:
+    firstIngredient: StalkerFoodBarbaris
+    secondIngredient: STCraftMortarAndPestle
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: ChereshnaPulbCraft
+  results:
+    - StalkerFoodChereshnaPulb
+  steps:
+    firstIngredient: StalkerFoodChereshna
+    secondIngredient: STCraftMortarAndPestle
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: EjevikaPulbCraft
+  results:
+    - StalkerFoodEjevikaPulb
+  steps:
+    firstIngredient: StalkerFoodEjevika
+    secondIngredient: STCraftMortarAndPestle
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: GojiPulbCraft
+  results:
+    - StalkerFoodGojiPulb
+  steps:
+    firstIngredient: StalkerFoodGoji
+    secondIngredient: STCraftMortarAndPestle
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: GolubikaPulbCraft
+  results:
+    - StalkerFoodGolubikaPulb
+  steps:
+    firstIngredient: StalkerFoodGolubika
+    secondIngredient: STCraftMortarAndPestle
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: IrgaPulbCraft
+  results:
+    - StalkerFoodIrgaPulb
+  steps:
+    firstIngredient: StalkerFoodIrga
+    secondIngredient: STCraftMortarAndPestle
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: KlukvaPulbCraft
+  results:
+    - StalkerFoodKlukvaPulb
+  steps:
+    firstIngredient: StalkerFoodKlukva
+    secondIngredient: STCraftMortarAndPestle
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: VolkPulbCraft
+  results:
+    - StalkerFoodVolkPulb
+  steps:
+    firstIngredient: StalkerFoodVolk
+    secondIngredient: STCraftMortarAndPestle
+    keepSecond: true
+    exactSecond: false
+    time: 10

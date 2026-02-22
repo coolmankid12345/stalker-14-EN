@@ -19,3 +19,4 @@
         Dollar: 1
         Fangs: 1
         Hryvnias: 0 # EN
+    - type: STTrophy # stalker-en-changes: enables quality display on all mutant parts

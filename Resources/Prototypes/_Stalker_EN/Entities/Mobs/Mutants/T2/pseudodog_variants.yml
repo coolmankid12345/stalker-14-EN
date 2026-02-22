@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobMutantPseudodog
+  id: STMobMutantPseudodogCommon
+  name: Pseudodog
+  suffix: ST, T2, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantPseudodog
+  id: STMobMutantPseudodogUncommon
+  name: Adapted Pseudodog
+  suffix: ST, T2, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantPseudodog
+  id: STMobMutantPseudodogRare
+  name: Mutated Pseudodog
+  suffix: ST, T2, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantPseudodog
+  id: STMobMutantPseudodogLegendary
+  name: Singular Pseudodog
+  suffix: ST, T2, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

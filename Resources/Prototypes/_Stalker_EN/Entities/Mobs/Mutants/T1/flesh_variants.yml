@@ -1,0 +1,75 @@
+# Flesh Neutral variants
+- type: entity
+  parent: MobMutantFleshNeutral
+  id: STMobMutantFleshNeutralCommon
+  name: Flesh
+  suffix: ST, T1, Common, Neutral
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantFleshNeutral
+  id: STMobMutantFleshNeutralUncommon
+  name: Adapted Flesh
+  suffix: ST, T1, Adapted, Neutral
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantFleshNeutral
+  id: STMobMutantFleshNeutralRare
+  name: Mutated Flesh
+  suffix: ST, T1, Mutated, Neutral
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantFleshNeutral
+  id: STMobMutantFleshNeutralLegendary
+  name: Singular Flesh
+  suffix: ST, T1, Singular, Neutral
+  components:
+  - type: STMobVariant
+    quality: Legendary
+
+# Flesh Aggressive variants
+- type: entity
+  parent: MobMutantFleshAgressive
+  id: STMobMutantFleshAgressiveCommon
+  name: Aggressive Flesh
+  suffix: ST, T1, Common, Aggressive
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantFleshAgressive
+  id: STMobMutantFleshAgressiveUncommon
+  name: Adapted Aggressive Flesh
+  suffix: ST, T1, Adapted, Aggressive
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantFleshAgressive
+  id: STMobMutantFleshAgressiveRare
+  name: Mutated Aggressive Flesh
+  suffix: ST, T1, Mutated, Aggressive
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantFleshAgressive
+  id: STMobMutantFleshAgressiveLegendary
+  name: Singular Aggressive Flesh
+  suffix: ST, T1, Singular, Aggressive
+  components:
+  - type: STMobVariant
+    quality: Legendary

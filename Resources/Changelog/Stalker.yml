@@ -564,5 +564,42 @@
   id: 64
   time: '2026-02-20T21:19:30.268930+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/459
+- author: clay_500z
+  changes:
+  - message: Grizzly and CMS can fit inside waist bags once again
+    type: Tweak
+  id: 65
+  time: '2026-02-21T15:09:44.520314+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/473
+- author: teecoding
+  changes:
+  - message: Mutants now have a small chance to spawn as Adapted, Mutated, or Singular
+      variants - look for the unusual coloring and size!
+    type: Add
+  - message: Variant mutants are tougher, deal more damage, and are visually larger
+      than their normal counterparts
+    type: Add
+  - message: All mutants now spawn with slight natural weight variation
+    type: Add
+  - message: Butchering a variant mutant yields trophy-quality parts worth more when
+      sold
+    type: Add
+  - message: Examining any mutant part now shows its quality tier and specimen weight
+    type: Add
+  - message: GMs can spawn specific variant tiers of any mutant for events and testing
+    type: Add
+  id: 66
+  time: '2026-02-21T21:09:05.021527+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/477
+- author: teecoding
+  changes:
+  - message: Boars, flesh, and oracle mutants no longer get slowed or stuck due to
+      their own body weight
+    type: Fix
+  - message: Common trophies now display the specimen weight when examined
+    type: Fix
+  id: 67
+  time: '2026-02-21T23:28:30.046154+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/480
 Name: Stalker
 Order: -1

@@ -1,6 +1,6 @@
 - type: entity
   id: SpawnerZoneAnomalyChemicalGroupChance1
-  name: спавнер химической аномалии (1% шанс появления)
+  name: спавнер химической аномалии (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -19,12 +19,12 @@
       - ZoneAnomalyKissel
       - ZoneAnomalyGazirovka
       - ZoneAnomalySmoke
-    chance: 0.01
+    chance: 0.05
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyChemicalGroupChance5
-  name: спавнер химической аномалии (5% шанс появления)
+  name: спавнер химической аномалии (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -43,12 +43,12 @@
       - ZoneAnomalyKissel
       - ZoneAnomalyGazirovka
       - ZoneAnomalySmoke
-    chance: 0.05
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyChemicalGroupChance10
-  name: спавнер химической аномалии (10% шанс появления)
+  name: спавнер химической аномалии (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -67,12 +67,12 @@
       - ZoneAnomalyKissel
       - ZoneAnomalyGazirovka
       - ZoneAnomalySmoke
-    chance: 0.1
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyChemicalGroupChance25
-  name: спавнер химической аномалии (25% шанс появления)
+  name: спавнер химической аномалии (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -91,7 +91,7 @@
       - ZoneAnomalyKissel
       - ZoneAnomalyGazirovka
       - ZoneAnomalySmoke
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity
@@ -145,7 +145,7 @@
 # Кисель (Kissel)
 - type: entity
   id: SpawnerZoneAnomalyKisselChance1
-  name: спавнер аномалии киселя (1% шанс появления)
+  name: спавнер аномалии киселя (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -159,12 +159,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyKissel
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyKisselChance5
-  name: спавнер аномалии киселя (5% шанс появления)
+  name: спавнер аномалии киселя (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -178,12 +178,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyKissel
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyKisselChance10
-  name: спавнер аномалии киселя (10% шанс появления)
+  name: спавнер аномалии киселя (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -197,12 +197,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyKissel
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyKisselChance25
-  name: спавнер аномалии киселя (25% шанс появления)
+  name: спавнер аномалии киселя (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -216,7 +216,7 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyKissel
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity
@@ -260,7 +260,7 @@
 # Газировка (Gazirovka)
 - type: entity
   id: SpawnerZoneAnomalyGazirovkaChance1
-  name: спавнер аномалии газировка (1% шанс появления)
+  name: спавнер аномалии газировка (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -274,12 +274,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyGazirovka
-    chance: 0.01
+    chance: 0.1
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyGazirovkaChance5
-  name: спавнер аномалии газировка (5% шанс появления)
+  name: спавнер аномалии газировка (15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -293,12 +293,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyGazirovka
-    chance: 0.05
+    chance: 0.15
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyGazirovkaChance10
-  name: спавнер аномалии газировка (10% шанс появления)
+  name: спавнер аномалии газировка (20% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -312,12 +312,12 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyGazirovka
-    chance: 0.1
+    chance: 0.2
     offset: 0.0
 
 - type: entity
   id: SpawnerZoneAnomalyGazirovkaChance25
-  name: спавнер аномалии газировка (25% шанс появления)
+  name: спавнер аномалии газировка (35% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -331,7 +331,7 @@
   - type: RandomSpawner
     prototypes:
       - ZoneAnomalyGazirovka
-    chance: 0.25
+    chance: 0.35
     offset: 0.0
 
 - type: entity

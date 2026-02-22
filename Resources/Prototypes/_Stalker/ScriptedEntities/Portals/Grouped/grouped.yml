@@ -329,8 +329,18 @@
   components:
     - type: GroupTeleport
       group: "MonolithBaseGroup"
-      targetGroup: "BaseProjectGroup"
+      targetGroup: "RandomLocationmonolith"
       allowAll: true
+
+- type: entity
+  parent: GroupedTeleportUncollideBase
+  id: RandomLocationmonolithUncollide
+  name: RandomLocationmonolithUncollide
+  components:
+  - type: GroupTeleport
+    group: "RandomLocationmonolith"
+    targetGroup: "MonolithBaseGroup"
+    allowAll: true
 
 - type: entity
   parent: GroupedTeleportBase

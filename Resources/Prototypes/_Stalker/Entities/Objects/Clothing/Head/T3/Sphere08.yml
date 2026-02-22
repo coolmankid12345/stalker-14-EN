@@ -94,7 +94,7 @@
         startingItem: PowerCellHyper
 
 - type: entity
-  parent: STClothingHeadHelmetEnvironmentT3Base
+  parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadHelmetBerill5MMonolith
   name: шлем «Сфера-08» монолита
   description: Шлем тех самых фанатиков, разработанный для защиты от колющих атак. Является шлемом от «Берилл-5М». Класс брони - 3.

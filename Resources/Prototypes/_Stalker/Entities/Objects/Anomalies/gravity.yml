@@ -140,6 +140,12 @@
       - id: ZoneArtifactSpring
         tier: 5
         ratio: 5
+      - id: ZoneArtifactCompass
+        tier: 4
+        ratio: 12
+      - id: ZoneArtifactCrucifix
+        tier: 5
+        ratio: 5
 
 - type: entity
   id: ZoneAnomalySpringboard
@@ -197,6 +203,9 @@
           ratio: 15
         - id: ZoneArtifactNightStar
           tier: 4
+          ratio: 5
+        - id: ZoneArtifactDarkCube
+          tier: 5
           ratio: 5
 
 - type: entity

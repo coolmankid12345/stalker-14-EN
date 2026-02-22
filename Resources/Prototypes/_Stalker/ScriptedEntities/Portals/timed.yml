@@ -12,12 +12,4 @@
     radius: 3
     energy: 1
 
-- type: entity
-  parent: STBaseTimedPortal
-  id: TimedPortalRedForest
-  components:
-  - type: TimedPortal
-    portalName: "RedForest"
-    activeTimeStart: 7h # 13:00 UTC
-    activeTimeEnd: 18h   # 18:00 UTC
-    allowAll: true
+

@@ -29,6 +29,21 @@ chat-emote-name-monkeyscreeches = Обезьяньи крики
 chat-emote-name-robotbeep = Робот
 chat-emote-name-yawn = Зевать
 chat-emote-name-snore = Храпеть
+
+#Тактические
+chat-emote-name-tacticalgen-come = Сигнализировать идти
+chat-emote-name-tacticalgen-stop = Сигнализировать остановиться
+chat-emote-name-tacticalgen-moveforward = Сигнализировать идти вперёд
+chat-emote-name-tacticalgen-fallback = Сигнализировать отступать
+chat-emote-name-tacticalgen-listen = Сигнализировать слушать
+chat-emote-name-tacticalgen-look = Сигнализировать наблюдать
+chat-emote-name-tacticalgen-thumbsup = Поднять большой палец вверх
+chat-emote-name-tacticalgen-thumbsdown = Опустить большой палец вниз
+chat-emote-name-tacticalwarn-anomaly = Предупредить об аномалии
+chat-emote-name-tacticalwarn-enemy = Предупредить о враге
+chat-emote-name-tacticalwarn-friendly = Предупредить о своих
+chat-emote-name-tacticalwarn-mutants = Предупредить о мутантах
+
 # Сообщение
 chat-emote-msg-scream = кричит!
 chat-emote-msg-laugh = смеётся
@@ -59,3 +74,17 @@ chat-emote-msg-cathisses = шипит
 chat-emote-msg-monkeyscreeches = кричит
 chat-emote-msg-yawn = зевает
 chat-emote-msg-snore = храпит
+
+#Тактические
+chat-emote-msg-tacticalgen-come = сигнализирует идти.
+chat-emote-msg-tacticalgen-stop = сигнализирует остановиться.
+chat-emote-msg-tacticalgen-moveforward = сигнализирует идти вперёд.
+chat-emote-msg-tacticalgen-fallback = сигнализирует отступать.
+chat-emote-msg-tacticalgen-listen = сигнализирует слушать.
+chat-emote-msg-tacticalgen-look = сигнализирует наблюдать.
+chat-emote-msg-tacticalgen-thumbsup = поднимает большой палец вверх.
+chat-emote-msg-tacticalgen-thumbsdown = опускает большой палец вниз.
+chat-emote-msg-tacticalwarn-anomaly = предупреждает об аномалии.
+chat-emote-msg-tacticalwarn-enemy = предупреждает о врагах.
+chat-emote-msg-tacticalwarn-friendly = предупреждает о своих.
+chat-emote-msg-tacticalwarn-mutants = предупреждает о мутанте.

@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartOldBoarHoof
+  id: STMutantPartUncommonOldBoarHoof
+  name: Adapted Old Boar Hoof
+  description: A weathered, ash-grey hoof from an old boar that has endured decades in the deepest reaches of the Zone. The tissue has calcified into something closer to stone than keratin. Its very existence proves that some mutants don't just survive the Zone — they become part of it.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartOldBoarHoof
+  id: STMutantPartRareOldBoarHoof
+  name: Mutated Old Boar Hoof
+  description: A ghostly white hoof from an ancient boar bleached by years of gravitational anomaly exposure. The interior is hollow and resonates with a low hum when struck — the bone has been restructured into a natural acoustic chamber. Ecologists have never documented anything like it.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartOldBoarHoof
+  id: STMutantPartLegendaryOldBoarHoof
+  name: Singular Old Boar Hoof
+  description: An immense amber-gold hoof from an old boar of legendary proportions. The surface shimmers with an opalescent sheen, and the tissue contains trace amounts of an unknown crystalline compound identical to artifact matter. Stalkers speak of this creature as a force of nature. The Ecologists would empty their coffers for this.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

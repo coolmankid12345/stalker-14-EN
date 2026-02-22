@@ -66,3 +66,30 @@
         Compression: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.7
+
+- type: entity
+  parent: ClothingOuterArmorStalkerCombatCN
+  id: ClothingOuterArmorCN3b
+  name: бронекомбез «ЧН-3б
+  description: Штатная экипировка штурмовых отрядов «Чистого неба». Бронежилет способен остановить пистолетную пулю, а встроенный брезентовый комбинезон с особой пропиткой обеспечивают хорошую защиту от аномальных воздействий. 3 класс
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/cn3b.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/cn3b.rsi
+# bonus
+  - type: Storage
+    maxItemsize: Large
+    grid:
+      - -3,2,-2,3
+      - 0,2,0,3
+      - 0,-2,0,0
+      - 2,2,2,3
+      - 2,-1,3,-0
+      - 4,2,4,3
+      - 5,-1,6,-0
+      - 6,2,6,3
+      - 8,2,8,3
+      - 8,-2,8,0
+      - 10,2,11,3
+      - -2,2,-2,3

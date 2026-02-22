@@ -2,82 +2,96 @@
   id: SerafimShopPresetCustom
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 405
-    ZoneArtifactEye: 610
-    ZoneArtifactFlame: 1215
+    ZoneArtifactFireball: 900
+    ZoneArtifactEye: 1200
+    ZoneArtifactFlame: 1944
     # Thermal group - 2
-    ZoneArtifactCristall: 2430
-    ZoneArtifactLithosphere: 4860
+    ZoneArtifactCristall: 3888
+    ZoneArtifactLithosphere: 5760
     # Electrical group - 1
-    ZoneArtifactSparkler: 405
-    ZoneArtifactBattery: 475
-    ZoneArtifactFlash: 1215
-    ArtMoon: 2430
-    ZoneArtifactTesla: 3645
-    ZoneArtifactIce: 4860
+    ZoneArtifactSparkler: 825
+    ZoneArtifactBattery: 840
+    ZoneArtifactFlash: 1944
+    ArtMoon: 3888
+    ZoneArtifactTesla: 4320
+    ZoneArtifactIce: 5760
     # Gravity group - 1
-    ArtMedusa: 405
-    ZoneArtifactFlower: 610
-    ZoneArtifactNightStar: 2430
+    ArtMedusa: 825
+    ZoneArtifactFlower: 900
+    ZoneArtifactNightStar: 3888
     # Gravity group - 2
-    ZoneArtifactVyvert: 405
-    ZoneArtifactAmoeba: 610
-    ZoneArtifactFloodlight: 610
-    ZoneArtifactGravi: 1215
-    ZoneArtifactGoldfish: 4860
-    ZoneArtifactSpring: 2700
-    ZoneArtifactFocus: 3645
-    ZoneArtifactStuntman: 4860
-    ZoneArtifactDistorter: 4860
-    ZoneArtifactSoul: 3645
+    ZoneArtifactVyvert: 975
+    ZoneArtifactAmoeba: 1020
+    ZoneArtifactFloodlight: 972
+    ZoneArtifactGravi: 1944
+    ZoneArtifactGoldfish: 5760
+    ZoneArtifactSpring: 4320
+    ZoneArtifactFocus: 4320
+    ZoneArtifactStuntman: 5760
+    ZoneArtifactDistorter: 5760
+    ZoneArtifactSoul: 4320
+    # Food
+    FoodMeatDogCooked: 84
+    STFoodMeatSpiderCooked: 42
+    FoodMeatBoarCooked: 132
+
     # Acidic group - 1
-    ZoneArtifactBlood: 1215
-    ZoneArtifactMeat: 2430
-    ZoneArtifactKolobok: 3645
+    ZoneArtifactBlood: 1944
+    ZoneArtifactMeat: 3888
+    ZoneArtifactKolobok: 4320
     # Acidic group - 2
-    ZoneArtifactPellicle: 405
-    ZoneArtifactBaloon: 3645
+    ZoneArtifactPellicle: 825
+    ZoneArtifactBaloon: 4320
 
-    # Mutant parts 1.5x Sidorovich
+    # Mutant parts
 
-    #Boars -------- Health * T *
-    MutantPartBoarHoof: 275 # T1
-    MutantPartSeasonedBoarHoof: 545 # T2
-    MutantPartOldBoarHoof: 825 # T3
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 330 # T1
+    MutantPartSeasonedBoarHoof: 660 # T2
+    MutantPartOldBoarHoof: 975 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 180
-    MutantPartFleshEye: 405
-    FoodMeatSpiderLeg: 100
+    MutantPartBlindDogTail: 135
+    MutantPartFleshEye: 248
+    FoodMeatSpiderLeg: 90
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 1115
-    MutantPartPseudodogTail: 610
-    MutantPartSnorkFoot: 1015
+    MutantPartLeshiyRoot: 1050
+    MutantPartPseudodogTail: 450
+    MutantPartSnorkFoot: 675
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 1520
-    MutantPartOraculeEye: 3240
-    MutantPartPseudogiantHeart: 8100
-    MutantPartZombieHand: 1215
+    MutantPartBloodsuckerTentacles: 1620
+    MutantPartOraculeEye: 2106
+    MutantPartPseudogiantHeart: 12636
+    MutantPartZombieHand: 825
+
+    # Mutant parts EN
+
+    MutantPartCatGland: 125
+    MutantPartBearClaw: 375
+    MutantPartBearPaw: 720
+    MutantPartBearEye: 1539
+    MutantPartFrogLeg: 600
+    MutantPartIzlomArm: 3402
+    MutantPartChimeraTooth: 4860
   categories:
     - name: shop-category-weapons
       priority: 1
       items:
           # 7mm
-        STWeaponShotgunTOZ34: 200
-        STWeaponShotgunBenelliM4Super90Seraphim: 800
+        STWeaponShotgunMP133: 385
+        STWeaponShotgunBenelliM4Super90Seraphim: 1000
           # 5,45x39
         arbaletserih: 1500
-        STWeaponRifleAKS74USERAPH: 500
+        STWeaponRifleAKS74USERAPH: 700
         STWeaponRifleAKS74: 4000
         STWeaponRifleAKM: 5500
-        STWeaponRifleStalkerAK12Sera: 8700
+        STWeaponRifleStalkerAK12Sera: 8000
           # Smg
-        STWeaponSMGStalkerCP2VereskSera: 2000
+        STWeaponSMGStalkerCP2VereskSera: 3500
           # Other
-        WeaponPistolStalkerAPS: 500 #T2
-        WeaponPistolStalkerTT: 250
+        WeaponPistolStalkerPM: 100
         STThrowingknifeYellow: 300
     - name: shop-category-magazines
       priority: 2
@@ -138,13 +152,13 @@
         ClothingHeadAssaultHelmetLimaSeraZastup: 2500
         ClothingHeadAssaultHelmetSeraZastup: 2500
           # OuterClothing #
-        ClothingOuterJacketSera: 60 # T1 - PVE
-        STClothingOuterArmorLightPlateVestBaseSera: 1000 # T2 - PvP
-        ClothingOuterArmorRCBZSera: 1700 # T2 - ENV
-        STClothingOuterArmorRassvetSera: 2000 # T2 - universal
-        STClothingOuterArmorLightPlateVestSera: 4000 # T3 - PvP
-        ClothingOuterArmorSevasera: 7000 # T3 - ENV
-        STClothingOuterArmorSeraphimStrash: 10000
+        ClothingOuterJacketSera: 70 # T1 - PVE
+        STClothingOuterArmorLightPlateVestBaseSera: 900 # T2 - PvP
+        ClothingOuterArmorRCBZSera: 1500 # T2 - ENV
+        STClothingOuterArmorRassvetSera: 1200 # T2 - universal
+        STClothingOuterArmorLightPlateVestSera: 5000 # T3 - PvP
+        ClothingOuterArmorSevasera: 6000 # T3 - ENV
+        STClothingOuterArmorSeraphimStrash: 9000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -178,6 +192,10 @@
     - name: shop-category-utilities
       priority: 8
       items:
+        STElasticRubberRed: 15
+        STElasticRubberGreen: 15
+        STElasticRubberBlue: 15
+        STRadioHeadset: 150
         STCombatKnife: 25
         STSeraKnife: 30
         BoxZiptie: 50

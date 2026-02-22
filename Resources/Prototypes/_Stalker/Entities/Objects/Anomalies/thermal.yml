@@ -65,6 +65,12 @@
         - id: ZoneArtifactEye
           tier: 2
           ratio: 10
+        - id: ZoneArtifactBunch
+          tier: 3
+          ratio: 10
+        - id: ZoneArtifactConflagration
+          tier: 2
+          ratio: 15
         - id: ZoneArtifactFlame
           tier: 3
           ratio: 5
@@ -95,6 +101,21 @@
         - id: ZoneArtifactEye
           tier: 2
           ratio: 15
+        - id: ZoneArtifactBunch
+          tier: 3
+          ratio: 15
+        - id: ZoneArtifactConflagration
+          tier: 2
+          ratio: 12
+        - id: ZoneArtifactRoot
+          tier: 4
+          ratio: 5
+        - id: ZoneArtifactSun
+          tier: 4
+          ratio: 5
+        - id: ZoneArtifactRock
+          tier: 4
+          ratio: 5
         - id: ZoneArtifactFlame
           tier: 3
           ratio: 10
@@ -159,8 +180,23 @@
         - id: ZoneArtifactEye
           tier: 2
           ratio: 10
+        - id: ZoneArtifactBunch
+          tier: 3
+          ratio: 8
         - id: ZoneArtifactFlame
           tier: 3
+          ratio: 5
+        - id: ZoneArtifactConflagration
+          tier: 2
+          ratio: 12
+        - id: ZoneArtifactRock
+          tier: 4
+          ratio: 5
+        - id: ZoneArtifactSun
+          tier: 4
+          ratio: 5
+        - id: ZoneArtifactRoot
+          tier: 4
           ratio: 5
 
 - type: entity
@@ -194,10 +230,22 @@
         - id: ZoneArtifactEye
           tier: 2
           ratio: 20
+        - id: ZoneArtifactBunch
+          tier: 3
+          ratio: 20
         - id: ZoneArtifactFlame
           tier: 3
           ratio: 15
         - id: ZoneArtifactCristall
+          tier: 4
+          ratio: 10
+        - id: ZoneArtifactRock
+          tier: 4
+          ratio: 10
+        - id: ZoneArtifactRoot
+          tier: 4
+          ratio: 5
+        - id: ZoneArtifactSun
           tier: 4
           ratio: 10
         - id: ZoneArtifactLithosphere
@@ -304,12 +352,24 @@
       - id: ZoneArtifactEye
         tier: 2
         ratio: 15
+      - id: ZoneArtifactBunch
+        tier: 3
+        ratio: 12
       - id: ZoneArtifactFlame
         tier: 3
         ratio: 10
       - id: ZoneArtifactCristall
         tier: 4
         ratio: 5
+      - id: ZoneArtifactRoot
+        tier: 4
+        ratio: 5
+      - id: ZoneArtifactRock
+        tier: 4
+        ratio: 5
+      - id: ZoneArtifactSun
+        tier: 4
+        ratio: 8
 
 - type: entity
   parent: ZoneAnomalyBaseThermal

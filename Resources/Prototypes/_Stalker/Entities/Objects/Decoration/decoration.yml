@@ -252,7 +252,6 @@
         layer:
         - MidImpassable
         - LowImpassable
-        - TableLayer
 
 - type: entity
   id: OldGen

@@ -16,3 +16,12 @@
   tags:
     - Dolg
     - DolgHead
+
+- type: accessLevel
+  id: DolgNovice
+  name: id-card-access-level-dolg-novice
+
+- type: accessGroup
+  id: DolgNovice
+  tags:
+    - DolgNovice

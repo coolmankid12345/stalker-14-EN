@@ -1,0 +1,38 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterArmorCN-4a
+  name: ЧН-4а
+  description: Неофициальная версия научного комбинезона «СЕВА» для исследовательских групп «Чистого неба», поставляемая в Зону контрабандистами. Всё ещё сохранила запах Большой земли.
+  suffix: ST, T3, Env
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHardsuitSevaHelmBase
+    slot: head
+  - type: Craftable
+  - type: STWeight
+    self: 10
+  - type: Armor
+    armorClass: 1
+    modifiers:
+      flatReductions:
+        Blunt: 4
+        Slash: 4
+        Piercing: 3
+        Heat: 4
+        Radiation: 4
+        Caustic: 4
+        Shock: 4
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.50
+        Radiation: 0.6
+        Caustic: 0.50
+        Shock: 0.60
+        Compression: 0.7
+

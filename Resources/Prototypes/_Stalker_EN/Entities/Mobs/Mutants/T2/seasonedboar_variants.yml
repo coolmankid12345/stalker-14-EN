@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobMutantSeasonedBoar
+  id: STMobMutantSeasonedBoarCommon
+  name: Seasoned Boar
+  suffix: ST, T2, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantSeasonedBoar
+  id: STMobMutantSeasonedBoarUncommon
+  name: Adapted Seasoned Boar
+  suffix: ST, T2, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantSeasonedBoar
+  id: STMobMutantSeasonedBoarRare
+  name: Mutated Seasoned Boar
+  suffix: ST, T2, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantSeasonedBoar
+  id: STMobMutantSeasonedBoarLegendary
+  name: Singular Seasoned Boar
+  suffix: ST, T2, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

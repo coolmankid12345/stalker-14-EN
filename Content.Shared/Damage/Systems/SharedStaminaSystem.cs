@@ -334,10 +334,10 @@ public abstract partial class SharedStaminaSystem : EntitySystem
             _adminLogger.Add(LogType.Stamina, $"{ToPrettyString(uid):target} took {value} stamina damage");
         }
 
-        if (visual)
-        {
-            _color.RaiseEffect(Color.Aqua, new List<EntityUid>() { uid }, Filter.Pvs(uid, entityManager: EntityManager));
-        }
+        // if (visual)
+        // {
+        //     _color.RaiseEffect(Color.Aqua, new List<EntityUid>() { uid }, Filter.Pvs(uid, entityManager: EntityManager));
+        // }
 
         if (_net.IsServer)
         {

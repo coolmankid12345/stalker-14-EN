@@ -82,22 +82,13 @@
   id: DolgGear
   equipment:
     id: DolgPDA
-    neck: ClothingNeckDogtagDuty # EN
-    legs: ClothingLegsJeansDolgCamouflage
-    shoes: STClothingShoesBootsCombatFilled
-    torso: ClothingTorsoTurtlenecksDolgCamouflage
-    back: ClothingBackpackDuffelBlackStalker
+    neck: ClothingNeckDogtagDuty
 
- # EN
 - type: startingGear
   id: DolgGearHead
   equipment:
     id: DolgPDA
     neck: ClothingNeckDogtagDutyCommander
-    legs: ClothingLegsJeansDolgCamouflage
-    shoes: STClothingShoesBootsCombatFilled
-    torso: ClothingTorsoTurtlenecksDolgCamouflage
-    back: ClothingBackpackDuffelBlackStalker
 
 - type: stBand
   id: STDolgBand
