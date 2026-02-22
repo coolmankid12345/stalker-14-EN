@@ -91,7 +91,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: SciGearHead
+  startingGear: SciGear2
   supervisors: job-scientist-supervisor
   canBeAntag: false
   special:
@@ -130,7 +130,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: SciGearHead
+  startingGear: SciGear3
   supervisors: job-scientist-supervisor
   canBeAntag: false
   special:
