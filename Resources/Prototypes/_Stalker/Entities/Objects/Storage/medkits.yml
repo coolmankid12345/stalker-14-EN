@@ -140,7 +140,7 @@
       state: icon
       scale: 0.8, 0.8
     - type: Storage
-      maxItemSize: Normal
+      maxItemSize: Large
       grid:
         - 0,0,3,3
     - type: RepositoryItem
@@ -157,7 +157,7 @@
       state: icon
       scale: 0.8, 0.8
     - type: Storage
-      maxItemSize: Normal
+      maxItemSize: Large
       grid:
         - 0,0,4,4
     - type: RepositoryItem
