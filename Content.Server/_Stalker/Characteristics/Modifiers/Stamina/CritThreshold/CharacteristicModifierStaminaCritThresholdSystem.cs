@@ -1,6 +1,0 @@
-using Content.Shared._Stalker.Damage.Components.Stamina;
-using Content.Shared._Stalker.Damage.Systems.Stamina;
-
-namespace Content.Server._Stalker.Characteristics.Modifiers.Stamina.CritThreshold;
-
-public sealed class CharacteristicModifierStaminaCritThresholdSystem: BaseCharacteristicFloatModifierSystem<CharacteristicModifierStaminaCritThresholdComponent, StaminaCritThresholdModifierComponent, StaminaCritThresholdModifierSystem>;
