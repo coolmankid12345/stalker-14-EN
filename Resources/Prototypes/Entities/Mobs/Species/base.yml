@@ -42,6 +42,7 @@
     - map: [ "cloak" ] # stalker-changes
     - map: [ "back" ]
     - map: [ "neck" ]
+    - map: [ "dogtag" ] # stalker-changes
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
@@ -361,6 +362,7 @@
     - map: [ "cloak" ] # stalker-changes
     - map: [ "back" ]
     - map: [ "neck" ]
+    - map: [ "dogtag" ] # stalker-changes
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]

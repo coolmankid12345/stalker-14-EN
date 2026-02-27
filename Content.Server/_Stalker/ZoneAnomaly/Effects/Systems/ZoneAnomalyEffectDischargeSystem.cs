@@ -14,6 +14,9 @@ public sealed class ZoneAnomalyEffectDischargeSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly BatterySystem _batterySystem = default!;
 
+    // stalker-en-changes: reusable list to avoid per-call heap allocations
+    private readonly List<(EntityUid Entity, BatteryComponent Battery)> _batteryBuffer = new();
+
     public override void Initialize()
     {
         SubscribeLocalEvent<ZoneAnomalyEffectDischargeComponent, ZoneAnomalyActivateEvent>(OnActivate);
@@ -52,25 +55,25 @@ public sealed class ZoneAnomalyEffectDischargeSystem : EntitySystem
         }
     }
 
+    // stalker-en-changes-start: avoid per-call list allocations in Discharge/GetBatteries
     private void Discharge(Entity<ZoneAnomalyEffectDischargeComponent> effect, EntityUid target)
     {
         if (!TryComp<ContainerManagerComponent>(target, out var container))
             return;
-        var batteries = GetBatteries(target, container);
-        foreach(var (item, battery) in batteries)
+
+        _batteryBuffer.Clear();
+        GetBatteries(target, _batteryBuffer, container);
+
+        foreach (var (item, battery) in _batteryBuffer)
         {
-            if (battery != null)
-            {
-                _batterySystem.UseCharge((item, battery), battery.CurrentCharge);
-            }
+            _batterySystem.UseCharge((item, battery), battery.CurrentCharge);
         }
     }
 
-    private List<(EntityUid entity, BatteryComponent battery)> GetBatteries(EntityUid uid, ContainerManagerComponent? managerComponent = null)
+    private void GetBatteries(EntityUid uid, List<(EntityUid Entity, BatteryComponent Battery)> result, ContainerManagerComponent? managerComponent = null)
     {
-        var result = new List<(EntityUid entity, BatteryComponent battery)>();
         if (!Resolve(uid, ref managerComponent))
-            return new List<(EntityUid entity, BatteryComponent battery)>();
+            return;
 
         foreach (var container in managerComponent.Containers.Values)
         {
@@ -82,10 +85,10 @@ public sealed class ZoneAnomalyEffectDischargeSystem : EntitySystem
                 }
                 if (TryComp<ContainerManagerComponent>(element, out var manager))
                 {
-                    result.AddRange(GetBatteries(element, manager));
+                    GetBatteries(element, result, manager);
                 }
             }
         }
-        return result;
     }
+    // stalker-en-changes-end
 }

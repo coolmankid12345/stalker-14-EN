@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartPseudogiantHeart
+  id: STMutantPartUncommonPseudogiantHeart
+  name: Adapted Pseudogiant Heart
+  description: A massive heart from a pseudogiant that has adapted to thrive in the Zone's most dangerous areas. The organ has developed additional chambers and the muscle walls are thick enough to stop a pistol round. The rhythmic contractions continue for hours after removal, a grim testament to the creature's vitality. Military researchers pay handsomely for these.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartPseudogiantHeart
+  id: STMutantPartRarePseudogiantHeart
+  name: Mutated Pseudogiant Heart
+  description: An impossibly dense heart from a pseudogiant whose cardiovascular system has mutated beyond recognition. The organ has a crystalline lattice structure woven through the muscle tissue, and it generates enough force to pump blood through a creature twice its already enormous size. Ecologists theorize this mutation could explain the creatures' near-invulnerability. Worth a fortune to the right buyer.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartPseudogiantHeart
+  id: STMutantPartLegendaryPseudogiantHeart
+  name: Singular Pseudogiant Heart
+  description: The heart of a pseudogiant of legendary proportions. The organ is nearly the size of a man's torso and radiates heat like a furnace. Each beat, which continues days after extraction, sends tremors through the ground. The tissue is saturated with an unknown energy that causes nearby anomalies to fluctuate. No price tag can capture the true value of this specimen to Zone researchers.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

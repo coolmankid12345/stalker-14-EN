@@ -90,7 +90,7 @@
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/brown.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/cloak/blrown.rsi
+    sprite: _Stalker/Objects/Clothing/cloak/brown.rsi
 
 - type: entity
   parent: STClothingCapeBase

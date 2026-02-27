@@ -77,3 +77,13 @@
     secondIngredient: ClothingOuterArmorZaryaStalker
     keepFirst: true
     time: 5
+
+- type: lightCraftingRecipe
+  id: STCraftSkinSTClothingOuterArmorFreedomZarya
+  results:
+  - ClothingOuterArmorFreedomWind
+  steps:
+    firstIngredient: STSkinsKitFreedom
+    secondIngredient: ClothingOuterArmorZaryaStalker
+    keepFirst: true
+    time: 5

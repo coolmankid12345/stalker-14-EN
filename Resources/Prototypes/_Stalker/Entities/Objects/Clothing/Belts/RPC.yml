@@ -175,6 +175,7 @@
       state: icon
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/belt/belt_zarya_holster.rsi
+    - type: Craftable
 
 - type: entity
   parent: ClothingBeltStorageStalkerBase

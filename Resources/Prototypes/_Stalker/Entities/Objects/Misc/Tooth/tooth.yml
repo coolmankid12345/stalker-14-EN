@@ -21,7 +21,7 @@
     damage:
       types:
         Piercing: 2
-    attackRate: 2 
+    attackRate: 2
     soundHit:
       path: "/Audio/Items/wirecutter.ogg"
   - type: RandomSprite
@@ -44,7 +44,36 @@
   name: Зуб
   description: Обычный целый зуб.
   components:
+  - type: PhysicalComposition
+    materialComposition:
+      Credit: 1
   - type: Sprite
     sprite: _Stalker/Objects/Misc/tooth.rsi
     state: icon
     scale: 0.3, 0.3
+  - type: Stack
+    stackType: ToothStalker
+    count: 1
+    baseLayer: base
+    layerStates:
+    - cash
+  - type: StackLayerThreshold
+    thresholds: [1]
+  - type: Tag
+    tags:
+    - ToothStalker
+
+- type: currency
+  id: ToothStalker
+  displayName: store-currency-display-tooth-stalker
+  cash:
+    1: ToothStalker
+  canWithdraw: true
+
+- type: stack
+  id: ToothStalker
+  name: stack-teeth
+  icon: { sprite: /Textures/_Stalker/Objects/Misc/tooth.rsi, state: icon }
+  spawn: ToothStalker
+  splitAmounts: [1]
+  maxCount: 1

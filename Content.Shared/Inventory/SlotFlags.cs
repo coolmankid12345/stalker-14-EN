@@ -30,6 +30,7 @@ public enum SlotFlags
     ARTIFACT = 1 << 17, // Stalker-Changes-UI
     BACK2 = 1 << 18, // Stalker-Changes-UI
     CLOAK = 1 << 19, // Stalker-Changes-UI
+    DOGTAG = 1 << 20, // Stalker-Changes-UI
     All = ~NONE,
 
     WITHOUT_POCKET = All & ~POCKET

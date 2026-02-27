@@ -91,8 +91,8 @@ public sealed class SpawnOnApproachSystem : EntitySystem
         // var yOffset = _random.NextFloat(-offset, offset);
         // return initial.Offset(new Vector2(xOffset, yOffset));
 
-        // This is slightly more expensive but it gives a more even distribution compared to naively doing the above
-        var lightningDistance = MathF.Sqrt(_random.NextFloat() * (comp.MaxOffset - comp.MinOffset) + comp.MinOffset);
+        // ST14-EN fix: Correct formula for uniform distance in [MinOffset, MaxOffset]
+        var lightningDistance = comp.MinOffset + _random.NextFloat() * (comp.MaxOffset - comp.MinOffset);
         return initial.Offset(_random.NextAngle().ToVec() * lightningDistance);
     }
 

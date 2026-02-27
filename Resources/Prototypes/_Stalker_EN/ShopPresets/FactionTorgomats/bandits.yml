@@ -6,6 +6,11 @@
     ZoneArtifactFireball: 310
     ZoneArtifactEye: 510
     ZoneArtifactFlame: 1000
+    ZoneArtifactBunch: 1100
+    ZoneArtifactRock: 1000
+    ZoneArtifactSun: 2000
+    ZoneArtifactRoot: 2100
+    ZoneArtifactConflagration: 510
     # Thermal group - 2
     ZoneArtifactCristall: 2300
     ZoneArtifactLithosphere: 4700
@@ -13,6 +18,9 @@
     ZoneArtifactSparkler: 280
     ZoneArtifactBattery: 350
     ZoneArtifactFlash: 1220
+    ZoneArtifactAccumulator: 1220
+    ZoneArtifactDiamond: 2000
+    ZoneArtifactCharger: 2000
     ArtMoon: 2100
     ZoneArtifactTesla: 3200
     ZoneArtifactIce: 4200
@@ -24,6 +32,7 @@
     ZoneArtifactPebble: 510
     ZoneArtifactRosin: 1000
     ZoneArtifactStoneCube: 700
+    ZoneArtifactDarkCube: 3400
     # Gravity group - 2
     ZoneArtifactVyvert: 260
     ZoneArtifactAmoeba: 450
@@ -35,7 +44,13 @@
     ZoneArtifactStuntman: 4200
     ZoneArtifactDistorter: 4200
     ZoneArtifactSoul: 2900
+    ZoneArtifactCompass: 2300
+    ZoneArtifactCrucifix: 3000
+    ZoneArtifactThorn: 1800
+    ZoneArtifactArf: 610
     # Acidic group - 1
+    ZoneArtifactToxic: 400
+    ZoneArtifactCytoplasm: 3100
     ZoneArtifactBlood: 1520
     ZoneArtifactMeat: 3140
     ZoneArtifactKolobok: 4760
@@ -75,6 +90,8 @@
     MutantPartPseudogiantHeart: 3400
     MutantPartZombieHand: 450
     MutantPartIzlomArm: 545
+    MutantPartBurerBrain: 1500
+    MutantPartControllerBrain: 2500
 
     #Value
     STJewelrySilver: 400
@@ -278,7 +295,17 @@
         ClothingOuterCoatPahan: 140 # T1
         ClothingOuterCoatKolchyga: 550 # T1
         ClothingOuterCoatBanditRedline: 3000 # T2 pvp
-        ClothingOuterCoatLoyalist: 2500 # T2
+        ClothingCloakStalker: 30
+        ClothingCloakBeige: 1000
+        ClothingCloakBlack: 1000
+        ClothingCloakBrown: 1000
+        ClothingCloakGreen: 1000
+        ClothingCloakNavy: 1000
+        ClothingCloakShortCoverBlack: 1000
+        ClothingOuterCoatDoshdevik: 100 # T1
+        ClothingOuterCoatStalker: 1000
+        ClothingOuterCoatLoyalistLight: 2500
+        ClothingOuterCoatLoyalist: 3000
           # Gasmasks
         ClothingMaskXoma: 100 # T1
         ClothingMaskGP5: 200 # T2

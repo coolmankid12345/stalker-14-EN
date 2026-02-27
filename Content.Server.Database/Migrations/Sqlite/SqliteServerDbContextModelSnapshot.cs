@@ -1351,6 +1351,58 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("stalker_factions", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.StalkerFactionRelation", b =>
+                {
+                    b.Property<string>("FactionA")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("faction_a");
+
+                    b.Property<string>("FactionB")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("faction_b");
+
+                    b.Property<int>("RelationType")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("relation_type");
+
+                    b.HasKey("FactionA", "FactionB")
+                        .HasName("PK_stalker_faction_relations");
+
+                    b.ToTable("stalker_faction_relations", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.StalkerFactionRelationProposal", b =>
+                {
+                    b.Property<string>("InitiatingFaction")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("initiating_faction");
+
+                    b.Property<string>("TargetFaction")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("target_faction");
+
+                    b.Property<bool>("Broadcast")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("broadcast");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("CustomMessage")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_message");
+
+                    b.Property<int>("ProposedRelationType")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("proposed_relation_type");
+
+                    b.HasKey("InitiatingFaction", "TargetFaction")
+                        .HasName("PK_stalker_faction_relation_proposals");
+
+                    b.ToTable("stalker_faction_relation_proposals", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.StalkerStats", b =>
                 {
                     b.Property<int>("Id")

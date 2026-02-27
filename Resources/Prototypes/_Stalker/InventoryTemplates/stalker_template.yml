@@ -173,6 +173,16 @@
       uiWindowPos: 3,0
       strippingWindowPos: 3,4
       displayName: Cloak
+    - name: dogtag
+      slotTexture: neck
+      slotFlags: DOGTAG
+      stripTime: 3
+      uiWindowPos: 3,1
+      strippingWindowPos: 2,1
+      displayName: Dogtag
+      whitelist:
+        tags:
+          - Dogtag
     - name: back2
       slotTexture: suit_storage
       slotFlags: BACK2

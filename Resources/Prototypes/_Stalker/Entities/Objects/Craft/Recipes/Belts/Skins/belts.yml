@@ -1,0 +1,44 @@
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingBeltWebbingHolsterBandit
+  results:
+    - ClothingBeltWebbingHolsterMercBandit
+  steps:
+    firstIngredient: STSkinsKitBandits
+    secondIngredient: ClothingBeltWebbingHolsterStalkerZarya
+    keepFirst: true
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingBeltWebbingHolsterDolg
+  results:
+    - ClothingBeltWebbingHolsterDolgPS5M
+  steps:
+    firstIngredient: STSkinsKitDolg
+    secondIngredient: ClothingBeltWebbingHolsterStalkerZarya
+    keepFirst: true
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingBeltWebbingHolsterFreedom
+  results:
+    - ClothingBeltWebbingHolsterFreedomDefender
+  steps:
+    firstIngredient: STSkinsKitFreedom
+    secondIngredient: ClothingBeltWebbingHolsterStalkerZarya
+    keepFirst: true
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingBeltWebbingHolsterMerc
+  results:
+    - ClothingBeltWebbingHolsterMerc2
+  steps:
+    firstIngredient: STSkinsKitMercenary
+    secondIngredient: ClothingBeltWebbingHolsterStalkerZarya
+    keepFirst: true
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingBeltWebbingHolsterMilitary
+  results:
+    - ClothingBeltWebbingOfficerStalker
+  steps:
+    firstIngredient: STSkinsKitMilitary
+    secondIngredient: ClothingBeltWebbingHolsterStalkerZarya
+    keepFirst: true

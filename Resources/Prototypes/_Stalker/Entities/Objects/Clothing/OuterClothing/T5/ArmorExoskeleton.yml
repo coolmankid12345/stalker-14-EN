@@ -62,6 +62,8 @@
     reflects:
     - NonEnergy
     soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: IngestionBlocker # stalker-en-changes
+  - type: IdentityBlocker # stalker-en-changes
   - type: HideLayerClothing
     slots:
     - Hair
@@ -125,6 +127,8 @@
       sprite: _Stalker/Objects/Clothing/outerClothing/zavet_ekzo/helmet.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/outerClothing/zavet_ekzo/helmet.rsi
+    - type: IngestionBlocker # stalker-en-changes
+    - type: IdentityBlocker # stalker-en-changes
 
 # Project
 

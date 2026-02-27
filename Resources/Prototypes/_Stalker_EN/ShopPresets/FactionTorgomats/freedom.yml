@@ -6,6 +6,11 @@
     ZoneArtifactFireball: 810
     ZoneArtifactEye: 1215
     ZoneArtifactFlame: 2430
+    ZoneArtifactBunch: 2835
+    ZoneArtifactRock: 2430
+    ZoneArtifactSun: 4425
+    ZoneArtifactRoot: 4860
+    ZoneArtifactConflagration: 1215
     # Thermal group - 2
     ZoneArtifactCristall: 4860
     ZoneArtifactLithosphere: 9720
@@ -13,6 +18,9 @@
     ZoneArtifactSparkler: 810
     ZoneArtifactBattery: 1215
     ZoneArtifactFlash: 2430
+    ZoneArtifactAccumulator: 2430
+    ZoneArtifactDiamond: 4425
+    ZoneArtifactCharger: 4425
     ArtMoon: 4860
     ZoneArtifactTesla: 7290
     ZoneArtifactIce: 9720
@@ -24,6 +32,7 @@
     ZoneArtifactPebble: 810
     ZoneArtifactRosin: 1215
     ZoneArtifactStoneCube: 1825
+    ZoneArtifactDarkCube: 7300
     # Gravity group - 2
     ZoneArtifactVyvert: 810
     ZoneArtifactAmoeba: 1215
@@ -35,7 +44,13 @@
     ZoneArtifactStuntman: 9720
     ZoneArtifactDistorter: 9720
     ZoneArtifactSoul: 7290
+    ZoneArtifactCompass: 5400
+    ZoneArtifactCrucifix: 6275
+    ZoneArtifactThorn: 3825
+    ZoneArtifactArf: 1215
     # Acidic group - 1
+    ZoneArtifactToxic: 975
+    ZoneArtifactCytoplasm: 4860
     ZoneArtifactBlood: 2430
     ZoneArtifactMeat: 4860
     ZoneArtifactKolobok: 7290
@@ -209,6 +224,17 @@
       priority: 8
       items:
           # Cloaks
+        ClothingCloakStalker: 30
+        ClothingCloakBeige: 1000
+        ClothingCloakBlack: 1000
+        ClothingCloakBrown: 1000
+        ClothingCloakGreen: 1000
+        ClothingCloakNavy: 1000
+        ClothingCloakShortCoverBlack: 1000
+        ClothingOuterCoatDoshdevik: 100 # T1
+        ClothingOuterCoatStalker: 1000
+        ClothingOuterCoatLoyalistLight: 2500
+        ClothingOuterCoatLoyalist: 3000
         STClothingCapeFreedomChain: 2500 # T4
           # Gasmasks
         ClothingMaskGasFreedom: 100 # T1

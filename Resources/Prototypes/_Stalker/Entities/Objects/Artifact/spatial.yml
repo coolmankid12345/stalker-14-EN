@@ -76,8 +76,8 @@
       hiddenExamine: true
       modifiers:
         flatReductions:
-          Psy: 2
-#
+          Psy: 1 # you can have ONE
+
 - type: entity
   parent: BaseArtifactStorage
   id: ZoneArtifactMagneticFlower
@@ -97,21 +97,21 @@
     - type: PersonalDamage
       damage:
         types:
-          Piercing: -0.3
           Slash: -0.5
           Blunt: -0.5
           Heat: 0.3
       interval: 1
     - type: Storage
       grid:
-        - 0,0,3,3
-    - type: ClothingSpeedModifier
-      walkModifier: 0.95
-      sprintModifier: 0.95
+        - 0,0,2,2
+      blacklist:
+        tags:
+        - STArtifact
     - type: Reflect
       reflectProb: 0.1
       spread: 340
 
+# t4 so i think its fine. maybe.
 - type: entity
   parent: BaseArtifactStorage
   id: ZoneArtifactCompass
@@ -133,23 +133,26 @@
         types:
           Radiation: -1
           Cold: -2
-          Compression: -3
-          Heat: -3
-          Shock: -3
+          Compression: -0.5
+          Heat: -1
+          Shock: -1
           Caustic: -1
-          Asphyxiation: -1
-          Piercing: 0.7
           Blunt: 0.5
       interval: 1
     - type: Storage
       grid:
-        - 0,0,3,3
+      - 0,0,2,2
+      maxItemSize: Small
+      blacklist:
+        tags:
+        - STArtifact
     - type: STWeight
-      self: 30
+      self: 20
     - type: Reflect
-      reflectProb: 0.1
+      reflectProb: 0.05
       spread: 340
 
+# not sure what to do with this one but its t5 so it doesnt matter yet
 - type: entity
   name: Распятие
   parent: BaseArtifact
@@ -171,16 +174,17 @@
   - type: PersonalDamage
     damage:
       types:
-        Piercing: -3
         Radiation: 1
         Cold: 3.5
+        Asphyxiation: -2
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Piercing: 0.7
+        Heat: 0.7
+        Shock: 0.7
   - type: STWeight
     self: -5
 
@@ -204,19 +208,14 @@
   - type: PersonalDamage
     damage:
       types:
-        Piercing: -1
         Heat: -3
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
-      flatReductions:
-        Piercing: 1
       coefficients:
         Slash: 1.2
-  - type: Reflect
-    reflectProb: 0.15
     spread: 340
   - type: SolutionContainerManager
     solutions:
@@ -264,7 +263,10 @@
           Blunt: 2
     - type: Storage
       grid:
-        - 0,0,8,8
+        - 0,0,5,5
+      blacklist:
+        tags:
+        - STArtifact
     - type: STWeight
       self: -30
 
@@ -288,18 +290,22 @@
   - type: PersonalDamage
     damage:
       types:
-        Compression: 0.3
+        Shock: 0.3
     interval: 1
-  - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Cold: 0.7
         Radiation: 0.95
-  - type: Reflect
-    reflectProb: 0.1
-    spread: 340
+  - type: BasicEntityAmmoProvider
+    proto: STBulletLightning
+    capacity: 3
+    count: 3
+  - type: Gun
+    fireRate: 1
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/Effects/Lightning/lightningbolt.ogg

@@ -1,0 +1,36 @@
+- type: entity
+  parent: STMobMutantIzlom
+  id: STMobMutantIzlomCommon
+  name: Izlom
+  suffix: ST, T4, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: STMobMutantIzlom
+  id: STMobMutantIzlomUncommon
+  name: Adapted Izlom
+  suffix: ST, T4, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: STMobMutantIzlom
+  id: STMobMutantIzlomRare
+  name: Mutated Izlom
+  suffix: ST, T4, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: STMobMutantIzlom
+  id: STMobMutantIzlomLegendary
+  name: Singular Izlom
+  suffix: ST, T4, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

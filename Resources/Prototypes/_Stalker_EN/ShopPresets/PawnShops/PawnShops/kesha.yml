@@ -1,11 +1,16 @@
 - type: shopPreset
-  id: KekeshaShopPresetEN # i miss my boy
+  id: KekeshaShopPresetEN # whimsy based pricing
   minSellPrice: 5
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 400
     ZoneArtifactEye: 600
     ZoneArtifactFlame: 1200
+    ZoneArtifactBunch: 1150
+    ZoneArtifactRock: 1000
+    ZoneArtifactSun: 1900
+    ZoneArtifactRoot: 2100
+    ZoneArtifactConflagration: 400
     # Thermal group - 2
     ZoneArtifactCristall: 2400
     ZoneArtifactLithosphere: 4800
@@ -13,6 +18,9 @@
     ZoneArtifactSparkler: 400
     ZoneArtifactBattery: 600
     ZoneArtifactFlash: 1200
+    ZoneArtifactAccumulator: 900
+    ZoneArtifactDiamond: 1900
+    ZoneArtifactCharger: 1900
     ArtMoon: 2400
     ZoneArtifactTesla: 3600
     ZoneArtifactIce: 4800
@@ -20,9 +28,11 @@
     ArtMedusa: 400
     ZoneArtifactFlower: 600
     ZoneArtifactNightStar: 2400
+    ZoneArtifactWhirlwind: 450
     ZoneArtifactPebble: 400
     ZoneArtifactRosin: 600
     ZoneArtifactStoneCube: 1200
+    ZoneArtifactDarkCube: 2800
     # Gravity group - 2
     ZoneArtifactVyvert: 400
     ZoneArtifactAmoeba: 600
@@ -34,7 +44,13 @@
     ZoneArtifactStuntman: 4800
     ZoneArtifactDistorter: 4800
     ZoneArtifactSoul: 3600
+    ZoneArtifactCompass: 2450
+    ZoneArtifactCrucifix: 2800
+    ZoneArtifactThorn: 2500 # kesha whimsy
+    ZoneArtifactArf: 410
     # Acidic group - 1
+    ZoneArtifactToxic: 500
+    ZoneArtifactCytoplasm: 2100
     ZoneArtifactBlood: 1200
     ZoneArtifactMeat: 2400
     ZoneArtifactKolobok: 3600

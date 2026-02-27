@@ -2,7 +2,7 @@
   id: StalkerRookieGear
   equipment:
     id: StalkerPDA
-    neck: ClothingNeckDogtagRookie
+    dogtag: ClothingNeckDogtagRookie
 
 - type: job
   id: StalkerRookie

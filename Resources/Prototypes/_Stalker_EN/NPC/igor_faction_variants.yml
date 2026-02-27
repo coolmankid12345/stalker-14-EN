@@ -1,0 +1,102 @@
+# Faction-specific variants of NPCIgorIvanovich for the Relations tab.
+# Each variant sets a faction so the Relations tab knows which faction this NPC manages.
+# Mappers should place the correct variant at each faction base.
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichLoners
+  suffix: ST, Loners
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Loners
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichFreedom
+  suffix: ST, Freedom
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Freedom
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichBandits
+  suffix: ST, Bandits
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Bandits
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichDuty
+  suffix: ST, Duty
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Duty
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichEcologist
+  suffix: ST, Ecologist
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Ecologist
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichNeutrals
+  suffix: ST, Neutrals
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Neutrals
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichMercenaries
+  suffix: ST, Mercenaries
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Mercenaries
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichMilitary
+  suffix: ST, Military
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Military
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichMonolith
+  suffix: ST, Monolith
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Monolith
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichClearSky
+  suffix: ST, ClearSky
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: ClearSky
+
+- type: entity
+  parent: NPCIgorIvanovich
+  id: NPCIgorIvanovichRenegades
+  suffix: ST, Renegades
+  components:
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+    faction: Renegades

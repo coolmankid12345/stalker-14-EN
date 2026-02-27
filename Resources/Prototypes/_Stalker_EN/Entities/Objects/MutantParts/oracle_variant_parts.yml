@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartOraculeEye
+  id: STMutantPartUncommonOraculeEye
+  name: Adapted Oracle Eye
+  description: A bulging eye from an oracle that has adapted to the deepest, most irradiated swamps of the Zone. The pupil has split into three, each one tracking independently, and the vitreous fluid within glows a sickly green. Ecologists studying mutant sensory evolution pay well for specimens of this quality.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartOraculeEye
+  id: STMutantPartRareOraculeEye
+  name: Mutated Oracle Eye
+  description: An enormous, crystalline eye from an oracle that has undergone extreme mutation. The cornea has hardened into something resembling quartz and the multiple pupils have merged into an intricate fractal pattern. Some stalkers claim these eyes can still see, even severed from the creature. Research teams have been known to bid against each other for specimens like this.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartOraculeEye
+  id: STMutantPartLegendaryOraculeEye
+  name: Singular Oracle Eye
+  description: A mesmerizing eye from an oracle of staggering proportions. The organ is the size of a human head and appears to contain an entire miniature galaxy of bioluminescent organisms within its fluid. Staring into it too long induces hallucinations of places the viewer has never been. This is the kind of specimen that redefines what Ecologists thought possible about Zone mutations.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

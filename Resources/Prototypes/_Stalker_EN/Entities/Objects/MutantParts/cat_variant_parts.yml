@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartCatGland
+  id: STMutantPartUncommonCatGland
+  name: Adapted Cat Gland
+  description: A swollen gland from a bayun that has adapted to the Zone's psionic fields. The tissue pulses with a faint bioluminescence, and the chemical compounds within are far more potent than the standard variety. Ecologists studying psionic mutations pay well for specimens like this.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartCatGland
+  id: STMutantPartRareCatGland
+  name: Mutated Cat Gland
+  description: A grotesquely enlarged gland from a bayun whose psionic abilities have mutated far beyond the norm. The organ emits a low hum that makes nearby stalkers uneasy, and the concentrated chloral compounds within could sedate a pseudogiant. Researchers at the Ecologist camps would pay top roubles for this specimen.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartCatGland
+  id: STMutantPartLegendaryCatGland
+  name: Singular Cat Gland
+  description: An extraordinary gland from a bayun of legendary power. The organ is crystalline in structure and radiates a warmth that numbs the mind of anyone holding it too long. The chemical cocktail within defies analysis with standard equipment. Only the most well-funded research stations could afford to acquire this, and they would pay handsomely for the privilege.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

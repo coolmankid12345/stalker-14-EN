@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartZombieHand
+  id: STMutantPartUncommonZombieHand
+  name: Adapted Zombie Hand
+  description: A hand from a zombified stalker that has survived far longer than most in its condition. The fingers have developed claw-like nails and the skin has hardened into a tough, bark-like surface. Military researchers are interested in the preserved nerve tissue, which still shows signs of electrical activity.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartZombieHand
+  id: STMutantPartRareZombieHand
+  name: Mutated Zombie Hand
+  description: A ghostly pale hand from a zombie that has undergone secondary mutation. The bones have fused into a single solid structure and the tissue has been replaced by something that is neither flesh nor mineral. Ecologists are baffled by how the hand still functions and are willing to pay generously for study specimens.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartZombieHand
+  id: STMutantPartLegendaryZombieHand
+  name: Singular Zombie Hand
+  description: A hand from an ancient zombie of terrifying resilience. The limb is almost petrified, harder than stone, yet it still twitches occasionally when touched. The tissue emits a faint psionic field that disturbs sensitive equipment. Researchers would give anything to study this specimen, one of the rarest examples of sustained Zone mutation on formerly human tissue.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

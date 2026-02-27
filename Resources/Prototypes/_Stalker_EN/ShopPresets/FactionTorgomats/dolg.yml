@@ -30,6 +30,8 @@
     MutantPartZombieHand: 1215
     ClothingHeadBear: 1400
     MutantPartIzlomArm: 1200
+    MutantPartBurerBrain: 2000
+    MutantPartControllerBrain: 3500
 
   categories:
     - name: shop-category-weapons
@@ -182,6 +184,17 @@
         ClothingMaskGasDolg2: 100 # T2
         ClothingMaskGP21: 1200 # T3
           # Cloaks
+        ClothingCloakStalker: 30
+        ClothingCloakBeige: 1000
+        ClothingCloakBlack: 1000
+        ClothingCloakBrown: 1000
+        ClothingCloakGreen: 1000
+        ClothingCloakNavy: 1000
+        ClothingCloakShortCoverBlack: 1000
+        ClothingOuterCoatDoshdevik: 100 # T1
+        ClothingOuterCoatStalker: 1000
+        ClothingOuterCoatLoyalistLight: 2500
+        ClothingOuterCoatLoyalist: 3000
         STClothingCapeDolgArmor: 2500 # T4
 
     - name: shop-category-research-equipment

@@ -49,6 +49,7 @@ public sealed class ApproachTriggerMigrationSystem : EntitySystem
 
         var addedComp = EntityManager.ComponentFactory.GetComponent<TriggerOnProximityComponent>();
         addedComp.Shape.Radius = entity.Comp.Range;
+        addedComp.TriggerSpeed = 0f; // ST14-EN: Approach triggers should fire regardless of velocity
 
         var physicsComponent = EnsureComp<PhysicsComponent>(entity);
         AddComp(entity.Owner, addedComp);

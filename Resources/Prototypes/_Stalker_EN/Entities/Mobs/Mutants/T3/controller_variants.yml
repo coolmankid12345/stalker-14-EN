@@ -1,0 +1,40 @@
+- type: entity
+  parent: STMutantController
+  id: STMobMutantControllerCommon
+  name: Controller
+  description: A humanoid mutant with overwhelming psionic powers. It can disorient and control the minds of nearby stalkers.
+  suffix: ST, T3, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: STMutantController
+  id: STMobMutantControllerUncommon
+  name: Adapted Controller
+  description: A humanoid mutant with overwhelming psionic powers. It can disorient and control the minds of nearby stalkers.
+  suffix: ST, T3, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: STMutantController
+  id: STMobMutantControllerRare
+  name: Mutated Controller
+  description: A humanoid mutant with overwhelming psionic powers. It can disorient and control the minds of nearby stalkers.
+  suffix: ST, T3, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: STMutantController
+  id: STMobMutantControllerLegendary
+  name: Singular Controller
+  description: A humanoid mutant with overwhelming psionic powers. It can disorient and control the minds of nearby stalkers.
+  suffix: ST, T3, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

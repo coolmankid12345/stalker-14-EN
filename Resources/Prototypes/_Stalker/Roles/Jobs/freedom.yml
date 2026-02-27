@@ -82,13 +82,13 @@
   id: FreedomGear
   equipment:
     id: FreedomPDA
-    neck: ClothingNeckDogtagFreedom # EN
+    dogtag: ClothingNeckDogtagFreedom # EN
 
 - type: startingGear
   id: FreedomGearHead
   equipment:
     id: FreedomPDA
-    neck: ClothingNeckDogtagFreedomAtaman # EN
+    dogtag: ClothingNeckDogtagFreedomAtaman # EN
 
 - type: stBand
   id: STFreedomBand

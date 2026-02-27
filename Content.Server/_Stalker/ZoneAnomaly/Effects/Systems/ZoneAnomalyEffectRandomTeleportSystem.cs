@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
@@ -17,28 +16,49 @@ public sealed class ZoneAnomalyEffectRandomTeleportSystem : SharedZoneAnomalyEff
         SubscribeLocalEvent<ZoneAnomalyEffectRandomTeleportComponent, ZoneAnomalyActivateEvent>(OnActivate);
     }
 
+    // stalker-en-changes-start: avoid ToList() allocation on every activation
     private void OnActivate(Entity<ZoneAnomalyEffectRandomTeleportComponent> effect, ref ZoneAnomalyActivateEvent args)
     {
-        var points = EntityQuery<ZoneAnomalyEffectRandomTeleportComponent>().ToList();
-        if (points.Contains(effect))
-            points.Remove(effect);
+        // First pass: count valid targets (excluding self)
+        var count = 0;
+        var query = EntityQueryEnumerator<ZoneAnomalyEffectRandomTeleportComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            if (uid != effect.Owner)
+                count++;
+        }
 
         foreach (var trigger in args.Triggers)
         {
-            var transform = Transform(effect);
-            if (points.Count == 0)
+            if (count == 0)
             {
-                TeleportEntity(trigger, transform.Coordinates);
+                TeleportEntity(trigger, Transform(effect).Coordinates);
                 return;
             }
 
-            var point = _random.Pick(points);
-            var destination = Transform(point.Owner).Coordinates;
+            // Second pass: pick a random target by index
+            var targetIndex = _random.Next(count);
+            var i = 0;
+            var query2 = EntityQueryEnumerator<ZoneAnomalyEffectRandomTeleportComponent>();
+            while (query2.MoveNext(out var uid, out _))
+            {
+                if (uid == effect.Owner)
+                    continue;
 
-            if (TryComp<ZoneAnomalyComponent>(point.Owner, out var comp))
-                _anomaly.TryRecharge((point.Owner, comp));
+                if (i == targetIndex)
+                {
+                    var destination = Transform(uid).Coordinates;
 
-            TeleportEntity(trigger, destination);
+                    if (TryComp<ZoneAnomalyComponent>(uid, out var comp))
+                        _anomaly.TryRecharge((uid, comp));
+
+                    TeleportEntity(trigger, destination);
+                    break;
+                }
+
+                i++;
+            }
         }
     }
+    // stalker-en-changes-end
 }

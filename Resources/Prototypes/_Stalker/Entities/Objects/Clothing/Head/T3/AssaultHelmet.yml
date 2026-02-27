@@ -90,9 +90,9 @@
   description: боевой шлем марки «Зенит» третьего класса защиты.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/assault_helm_dolg.rsi
+    sprite: _stalker-14-EN/Resources/Textures/_Stalker_EN/Objects/Clothing/hats/assault_helm_dolg.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/assault_helm_dolg.rsi
+    sprite: _stalker-14-EN/Resources/Textures/_Stalker_EN/Objects/Clothing/hats/assault_helm_dolg.rsi
 
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base

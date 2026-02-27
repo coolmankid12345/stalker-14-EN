@@ -90,7 +90,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_stalker.rsi
 
 # Dolg - 3
-
+# stalker-en change
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseDolg
@@ -98,9 +98,9 @@
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/plate_dolg.rsi
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/DOLG_T2_Plate_armor.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/plate_dolg.rsi
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/DOLG_T2_Plate_armor.rsi
 
 # Military - 4
 

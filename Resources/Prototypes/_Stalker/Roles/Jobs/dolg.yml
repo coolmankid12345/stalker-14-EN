@@ -82,13 +82,13 @@
   id: DolgGear
   equipment:
     id: DolgPDA
-    neck: ClothingNeckDogtagDuty
+    dogtag: ClothingNeckDogtagDuty
 
 - type: startingGear
   id: DolgGearHead
   equipment:
     id: DolgPDA
-    neck: ClothingNeckDogtagDutyCommander
+    dogtag: ClothingNeckDogtagDutyCommander
 
 - type: stBand
   id: STDolgBand

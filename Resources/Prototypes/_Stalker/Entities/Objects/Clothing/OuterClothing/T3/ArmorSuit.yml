@@ -252,9 +252,9 @@
   description: Современная модель комбинезона «Долга». Больше подходит новобранцам из сталкеров, которые привыкли к относительно лёгким костюмам третьего класса защиты. В отличие от серии ПС3, обеспечивает хорошую защиту от аномального воздействия и при этом способен остановить пистолетную пулю. Контейнеры для артефактов не предусмотрены, зато возможна установка различных вспомогательных систем.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/ps5m.rsi
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/ps5m.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/ps5m.rsi
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/ps5m.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetDolgPS5M
     slot: head

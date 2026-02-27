@@ -59,3 +59,13 @@
     secondIngredient: ClothingHeadHelmetLight
     keepFirst: true
     time: 5
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingHeadHelmetSH68ClearSky
+  results:
+    - ClothingHeadHelmetSH68ClearSky
+  steps:
+    firstIngredient: STSkinsKitClearSky
+    secondIngredient: ClothingHeadHelmetSH68
+    keepFirst: true
+    time: 5

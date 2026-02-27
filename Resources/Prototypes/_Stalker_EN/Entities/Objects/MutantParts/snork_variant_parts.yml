@@ -2,7 +2,7 @@
   parent: MutantPartSnorkFoot
   id: STMutantPartUncommonSnorkFoot
   name: Adapted Snork Foot
-  description: A swamp-green foot from a snork that has adapted to the toxic marshes deep within the Zone. The tendons have thickened dramatically, granting the creature its legendary leaping ability. Military researchers pay well for specimens showing enhanced musculature.
+  description: A swamp-green foot from a snork that has adapted to the toxic marshes deep within the Zone. The tendons have thickened dramatically, granting the creature its legendary leaping ability. Duty and Ecologist researchers pay well for specimens showing enhanced musculature.
   components:
   - type: STTrophy
     quality: Uncommon
@@ -12,7 +12,7 @@
   parent: MutantPartSnorkFoot
   id: STMutantPartRareSnorkFoot
   name: Mutated Snork Foot
-  description: A bone-pale foot from a snork whose skin has lost all pigmentation through extreme anomaly exposure. The joints have fused into a spring-loaded mechanism of terrifying efficiency. Ecologists note the bone density exceeds that of any known mammal — a testament to the Zone's power to reshape biology.
+  description: A bone-pale foot from a snork whose skin has lost all pigmentation through extreme anomaly exposure. The joints have fused into a spring-loaded mechanism of terrifying efficiency. Ecologists note the bone density exceeds that of any known mammal, a testament to the Zone's power to reshape biology. Duty wants specimens like this to develop better anti-snork tactics.
   components:
   - type: STTrophy
     quality: Rare
@@ -22,7 +22,7 @@
   parent: MutantPartSnorkFoot
   id: STMutantPartLegendarySnorkFoot
   name: Singular Snork Foot
-  description: A dark crimson foot from a snork of terrifying size and power. The claws have hardened into something resembling polished obsidian, and the muscle tissue is saturated with an unknown compound that grants impossible strength. Veterans of the Zone speak of these creatures in hushed tones — the ones that hunt in silence and strike from nowhere.
+  description: A dark crimson foot from a snork of terrifying size and power. The claws have hardened into something resembling polished obsidian, and the muscle tissue is saturated with an unknown compound that grants impossible strength. Veterans of the Zone speak of these creatures in hushed tones, the ones that hunt in silence and strike from nowhere. Ecologists and Duty would both pay top price for this.
   components:
   - type: STTrophy
     quality: Legendary

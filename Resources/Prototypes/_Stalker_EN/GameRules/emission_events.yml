@@ -56,6 +56,11 @@
     lightningSpawnRadius: 17.5 # slightly smaller than PVS range which is 25
     lightningIntervalRange: 4, 15
     lightningEffectProtoId: EmissionLightningEffect
+  - type: EmissionAnomalyRegen
+    deletionDelay: 30               # 30s after Stage 2 starts
+    deletionStaggerInterval: 5      # 5s between each map's deletion
+    regenerationDelay: 10           # 10s after all deletions complete
+    regenerationStaggerInterval: 15  # 15s between each map's regen start
 
 - type: entity
   parent: STEmissionEvent
@@ -70,3 +75,8 @@
     damageStartDelay: 15   # Damage begins
     redHueBeforeEndDelay: 30
     damageEndDelay: 50     # Damage ends, stage 3 plays, red hue clears
+  - type: EmissionAnomalyRegen
+    deletionDelay: 5
+    deletionStaggerInterval: 1
+    regenerationDelay: 3
+    regenerationStaggerInterval: 3

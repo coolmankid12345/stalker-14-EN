@@ -79,7 +79,7 @@
     size: Tiny
     storedRotation: 0
   - type: Handcuff
-    breakoutTime: 3
+    breakoutTime: 10 #Stalker-EN
     cuffedRSI: Objects/Misc/cablecuffs.rsi  # cablecuffs will look fine
     bodyIconState: body-overlay
     breakOnRemove: true

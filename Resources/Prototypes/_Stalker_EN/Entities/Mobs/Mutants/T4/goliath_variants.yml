@@ -1,0 +1,40 @@
+- type: entity
+  parent: STMutantGoliath
+  id: STMobMutantGoliathCommon
+  name: Goliath
+  description: A hulking, burrowing predator that strikes from beneath the ground with its massive tentacles.
+  suffix: ST, T4, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: STMutantGoliath
+  id: STMobMutantGoliathUncommon
+  name: Adapted Goliath
+  description: A hulking, burrowing predator that strikes from beneath the ground with its massive tentacles.
+  suffix: ST, T4, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: STMutantGoliath
+  id: STMobMutantGoliathRare
+  name: Mutated Goliath
+  description: A hulking, burrowing predator that strikes from beneath the ground with its massive tentacles.
+  suffix: ST, T4, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: STMutantGoliath
+  id: STMobMutantGoliathLegendary
+  name: Singular Goliath
+  description: A hulking, burrowing predator that strikes from beneath the ground with its massive tentacles.
+  suffix: ST, T4, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

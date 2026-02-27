@@ -89,6 +89,7 @@
     color: orange
   - type: ItemTogglePointLight
   - type: PhysicalComposition
+  - type: Craftable
   - type: Tag
     tags:
     - Cigarette
@@ -214,6 +215,7 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  - type: Craftable
   - type: Tag
     tags:
     - Cigarette

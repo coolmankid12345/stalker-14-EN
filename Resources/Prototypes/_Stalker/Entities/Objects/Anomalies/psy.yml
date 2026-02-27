@@ -55,10 +55,10 @@
   components:
   - type: ZoneAnomalyTriggerStartCollide
   - type: ZoneAnomalyEffectDamage
-    ignoreResistances: true
+    ignoreResistances: false
     damage:
       types:
-        Psy: 60
+        Psy: 30
   - type: ZoneAnomalyEffectSpawn
     entry:
       - id: EffectEmpPulse

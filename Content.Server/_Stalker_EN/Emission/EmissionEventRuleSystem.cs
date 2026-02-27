@@ -205,16 +205,16 @@ public sealed class EmissionEventRuleSystem : StationEventSystem<EmissionEventRu
         var query = EntityQueryEnumerator<MapLightComponent>();
         while (query.MoveNext(out var mapUid, out _))
         {
-            var mapActiveEmissionComponent = EntityManager.ComponentFactory.GetComponent<MapActiveEmissionComponent>();
-            mapActiveEmissionComponent.PrimaryEmissionColor = emissionRuleComponent.PrimaryEmissionColor;
-            mapActiveEmissionComponent.SecondaryEmissionColor = emissionRuleComponent.SecondaryEmissionColor;
+            var comp = EnsureComp<MapActiveEmissionComponent>(mapUid);
+            comp.PrimaryEmissionColor = emissionRuleComponent.PrimaryEmissionColor;
+            comp.SecondaryEmissionColor = emissionRuleComponent.SecondaryEmissionColor;
+            comp.Deviation = 1f; // Reset in case component already existed from a previous emission
 
-            mapActiveEmissionComponent.TotalDeviationDecreaseStartTime = emissionRuleComponent.EventStartTime + emissionRuleComponent.RedHueBeforeEndDelay;
-            mapActiveEmissionComponent.TotalDeviationDecreaseRate =
-                mapActiveEmissionComponent.Deviation / (float)(emissionRuleComponent.DamageEndDelay - emissionRuleComponent.RedHueBeforeEndDelay).TotalSeconds;
+            comp.TotalDeviationDecreaseStartTime = emissionRuleComponent.EventStartTime + emissionRuleComponent.RedHueBeforeEndDelay;
+            comp.TotalDeviationDecreaseRate =
+                comp.Deviation / (float)(emissionRuleComponent.DamageEndDelay - emissionRuleComponent.RedHueBeforeEndDelay).TotalSeconds;
 
-            AddComp(mapUid, mapActiveEmissionComponent);
-            Dirty(mapUid, mapActiveEmissionComponent);
+            Dirty(mapUid, comp);
         }
     }
 

@@ -25,6 +25,11 @@ namespace Content.Client._Stalker.Bands.UI
                 _window.OnAddMemberButtonPressed += AddMember;
                 _window.OnRemoveMemberButtonPressed += RemoveMember;
                 _window.OnBuyItemButtonPressed += BuyItem;
+                // stalker-en-changes start
+                _window.OnProposeRelationPressed += ProposeRelation;
+                _window.OnRespondProposalPressed += RespondProposal;
+                _window.OnCancelProposalPressed += CancelProposal;
+                // stalker-en-changes end
             }
         }
 
@@ -44,6 +49,23 @@ namespace Content.Client._Stalker.Bands.UI
             SendMessage(new BandsManagingBuyItemMessage(itemId));
         }
 
+        // stalker-en-changes start
+        private void ProposeRelation(string targetFaction, int relation, string? customMessage, bool broadcast)
+        {
+            SendMessage(new BandsManagingProposeRelationMessage(targetFaction, relation, customMessage, broadcast));
+        }
+
+        private void RespondProposal(string initiatingFaction, bool accept)
+        {
+            SendMessage(new BandsManagingRespondProposalMessage(initiatingFaction, accept));
+        }
+
+        private void CancelProposal(string targetFaction)
+        {
+            SendMessage(new BandsManagingCancelProposalMessage(targetFaction));
+        }
+        // stalker-en-changes end
+
         protected override void UpdateState(BoundUserInterfaceState state)
         {
             base.UpdateState(state);
@@ -59,6 +81,11 @@ namespace Content.Client._Stalker.Bands.UI
                 _window.OnAddMemberButtonPressed -= AddMember;
                 _window.OnRemoveMemberButtonPressed -= RemoveMember;
                 _window.OnBuyItemButtonPressed -= BuyItem;
+                // stalker-en-changes start
+                _window.OnProposeRelationPressed -= ProposeRelation;
+                _window.OnRespondProposalPressed -= RespondProposal;
+                _window.OnCancelProposalPressed -= CancelProposal;
+                // stalker-en-changes end
                 _window.Dispose();
             }
         }

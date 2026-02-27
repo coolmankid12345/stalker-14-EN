@@ -43,7 +43,7 @@
       projectileClass: 3
       damage:
         types:
-          Blunt: 60
+          Blunt: 40
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/boxes.rsi
       layers:

@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartLeshiyRoot
+  id: STMutantPartUncommonLeshiyRoot
+  name: Adapted Leshiy's Root
+  description: A thick, gnarled root from a leshiy that has grown deep into the anomalous soil of the Zone. The bark-like surface is warm to the touch and seeps a sap that glows faintly green. Herbalists and Ecologists alike value this specimen for its unusual regenerative properties.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartLeshiyRoot
+  id: STMutantPartRareLeshiyRoot
+  name: Mutated Leshiy's Root
+  description: A pale, almost translucent root from a leshiy that has absorbed massive quantities of anomalous radiation. The root pulses with an internal light and the sap within has crystallized into tiny formations that refract light like prisms. Ecologists theorize these specimens hold the key to understanding how the Zone transforms plant matter.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartLeshiyRoot
+  id: STMutantPartLegendaryLeshiyRoot
+  name: Singular Leshiy's Root
+  description: An awe-inspiring root from a leshiy of immense age and power. The root is as hard as steel yet flexible, and it hums with an energy that makes nearby vegetation visibly grow faster. Stalkers who have carried one report vivid dreams of ancient forests. This is the kind of specimen that could fund an entire research expedition.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

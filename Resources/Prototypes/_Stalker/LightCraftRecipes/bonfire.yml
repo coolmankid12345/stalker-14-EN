@@ -43,12 +43,52 @@
   id: LogStalker
 
 - type: lightCraftingRecipe
-  id: BonfireOnCraft
+  id: BonfireOnCraftMatch
   results:
     - BonfireOn
   steps:
     firstIngredient: Matchstick
     secondIngredient: BonfireOff
+    time: 5
+
+- type: lightCraftingRecipe
+  id: BonfireOnCraftLighter1
+  results:
+    - BonfireOn
+  steps:
+    firstIngredient: Lighter
+    secondIngredient: BonfireOff
+    keepFirst: True
+    time: 5
+
+- type: lightCraftingRecipe
+  id: BonfireOnCraftLighter2
+  results:
+    - BonfireOn
+  steps:
+    firstIngredient: CheapLighter
+    secondIngredient: BonfireOff
+    keepFirst: True
+    time: 5
+
+- type: lightCraftingRecipe
+  id: BonfireOnCraftLighter3
+  results:
+    - BonfireOn
+  steps:
+    firstIngredient: FlippoLighter
+    secondIngredient: BonfireOff
+    keepFirst: True
+    time: 5
+
+- type: lightCraftingRecipe
+  id: BonfireOnCraftLighter4
+  results:
+    - BonfireOn
+  steps:
+    firstIngredient: FlippoEngravedLighter
+    secondIngredient: BonfireOff
+    keepFirst: True
     time: 5
 
 # ##################### Деревья

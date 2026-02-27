@@ -16,6 +16,7 @@
   - type: Speech
     speechVerb: Robotic
   - type: Clothing
+    quickEquip: false
     slots: [ears]
     sprite: _Stalker_EN/Objects/Clothing/Ears/radio_headset.rsi
   - type: Item

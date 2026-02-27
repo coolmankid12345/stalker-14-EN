@@ -87,3 +87,33 @@
     secondIngredient: ClothingOuterArmorSevaStalker
     keepFirst: true
     time: 5
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingOuterArmorSevaBandits
+  results:
+    - ClothingOuterArmorSevaBandit
+  steps:
+    firstIngredient: STSkinsKitBandits
+    secondIngredient: ClothingOuterArmorSevaStalker
+    keepFirst: true
+    time: 5
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingOuterArmorSevaDolg
+  results:
+    - ClothingOuterArmorSevaDolgRed
+  steps:
+    firstIngredient: STSkinsKitDolg
+    secondIngredient: ClothingOuterArmorSevaStalker
+    keepFirst: true
+    time: 5
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingOuterArmorSevaFreedom
+  results:
+    - ClothingOuterArmorSevaFreedom
+  steps:
+    firstIngredient: STSkinsKitFreedom
+    secondIngredient: ClothingOuterArmorSevaStalker
+    keepFirst: true
+    time: 5

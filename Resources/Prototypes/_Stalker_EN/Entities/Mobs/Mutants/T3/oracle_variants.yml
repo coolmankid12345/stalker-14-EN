@@ -1,0 +1,40 @@
+- type: entity
+  parent: MobMutantOraclesBrown
+  id: STMobMutantOracleCommon
+  name: Oracle
+  description: A massive mutant toad, capable of swallowing a full-grown boar whole.
+  suffix: ST, T3, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantOraclesBrown
+  id: STMobMutantOracleUncommon
+  name: Adapted Oracle
+  description: A massive mutant toad, capable of swallowing a full-grown boar whole.
+  suffix: ST, T3, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantOraclesBrown
+  id: STMobMutantOracleRare
+  name: Mutated Oracle
+  description: A massive mutant toad, capable of swallowing a full-grown boar whole.
+  suffix: ST, T3, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantOraclesBrown
+  id: STMobMutantOracleLegendary
+  name: Singular Oracle
+  description: A massive mutant toad, capable of swallowing a full-grown boar whole.
+  suffix: ST, T3, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

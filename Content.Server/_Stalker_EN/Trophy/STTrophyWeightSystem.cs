@@ -1,6 +1,7 @@
 using Content.Shared._Stalker.Weight;
 using Content.Shared._Stalker_EN.MobVariant;
 using Content.Shared._Stalker_EN.Trophy;
+using Content.Shared.Mobs.Components;
 using Robust.Shared.Map;
 
 namespace Content.Server._Stalker_EN.Trophy;
@@ -46,6 +47,9 @@ public sealed class STTrophyWeightSystem : EntitySystem
 
         foreach (var ent in _lookup.GetEntitiesInRange<STWeightComponent>(coords, SearchRadius))
         {
+            if (!HasComp<MobStateComponent>(ent))
+                continue;
+
             var mobCoords = _transform.GetMapCoordinates(ent);
             var dist = (coords.Position - mobCoords.Position).Length();
             if (dist < closestDist)

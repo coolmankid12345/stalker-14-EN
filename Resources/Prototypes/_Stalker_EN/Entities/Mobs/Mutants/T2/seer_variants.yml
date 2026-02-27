@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobMutantSeer
+  id: STMobMutantSeerCommon
+  name: Seer
+  suffix: ST, T2, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantSeer
+  id: STMobMutantSeerUncommon
+  name: Adapted Seer
+  suffix: ST, T2, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantSeer
+  id: STMobMutantSeerRare
+  name: Mutated Seer
+  suffix: ST, T2, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantSeer
+  id: STMobMutantSeerLegendary
+  name: Singular Seer
+  suffix: ST, T2, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartFrogLeg
+  id: STMutantPartUncommonFrogLeg
+  name: Adapted Frog Leg
+  description: A muscular leg from a seer that has adapted to the Zone's toxic marshes. The skin has developed a thick, leathery texture and the tendons are visibly reinforced. The meat within is denser than usual and carries a faint radioactive signature that Ecologists find fascinating.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartFrogLeg
+  id: STMutantPartRareFrogLeg
+  name: Mutated Frog Leg
+  description: A bone-white leg from a seer whose body has been fundamentally altered by prolonged anomaly exposure. The musculature is unlike anything found in nature, with fibers arranged in a helical pattern that grants extraordinary jumping power. Ecologists studying locomotion mutations consider these specimens invaluable.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartFrogLeg
+  id: STMutantPartLegendaryFrogLeg
+  name: Singular Frog Leg
+  description: An extraordinary leg from a seer of terrifying size. The limb is covered in iridescent scales that shift color with temperature, and the muscles within contain a compound that Ecologists have never seen before. Rumors say the creature this came from could leap across entire anomaly fields in a single bound. A specimen of incalculable research value.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

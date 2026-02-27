@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using Content.Shared.Access.Components;
+using Content.Shared.Administration.Managers;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
@@ -25,6 +26,7 @@ namespace Content.Shared.Access.Systems;
 
 public sealed class AccessReaderSystem : EntitySystem
 {
+    [Dependency] private readonly ISharedAdminManager _admin = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -54,6 +56,10 @@ public sealed class AccessReaderSystem : EntitySystem
 
     private void OnExamined(Entity<AccessReaderComponent> ent, ref ExaminedEvent args)
     {
+        // stalker-changes: only show access descriptions to admins
+        if (!_admin.IsAdmin(args.Examiner))
+            return;
+
         if (!GetMainAccessReader(ent, out var mainAccessReader))
             return;
 

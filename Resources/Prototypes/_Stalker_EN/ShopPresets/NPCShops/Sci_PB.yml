@@ -7,6 +7,11 @@
     ZoneArtifactFireball: 680
     ZoneArtifactEye: 1020
     ZoneArtifactFlame: 2040
+    ZoneArtifactBunch: 1775
+    ZoneArtifactRock: 2040
+    ZoneArtifactSun: 2760
+    ZoneArtifactRoot: 3800
+    ZoneArtifactConflagration: 1020
     # Thermal group - 2
     ZoneArtifactCristall: 4080
     ZoneArtifactLithosphere: 8160
@@ -14,6 +19,9 @@
     ZoneArtifactSparkler: 680
     ZoneArtifactBattery: 1020
     ZoneArtifactFlash: 2040
+    ZoneArtifactAccumulator: 2040
+    ZoneArtifactDiamond: 2760
+    ZoneArtifactCharger: 2760
     ArtMoon: 4080
     ZoneArtifactTesla: 6120
     ZoneArtifactIce: 8160
@@ -25,6 +33,7 @@
     ZoneArtifactPebble: 680
     ZoneArtifactRosin: 1020
     ZoneArtifactStoneCube: 1520
+    ZoneArtifactDarkCube: 6120
     # Gravity group - 2
     ZoneArtifactVyvert: 680
     ZoneArtifactAmoeba: 1020
@@ -36,7 +45,13 @@
     ZoneArtifactStuntman: 8160
     ZoneArtifactDistorter: 8160
     ZoneArtifactSoul: 6120
+    ZoneArtifactCompass: 3375
+    ZoneArtifactCrucifix: 3990
+    ZoneArtifactThorn: 2390
+    ZoneArtifactArf: 1020
     # Acidic group - 1
+    ZoneArtifactToxic: 610
+    ZoneArtifactCytoplasm: 3030
     ZoneArtifactBlood: 2040
     ZoneArtifactMeat: 4080
     ZoneArtifactKolobok: 6120
@@ -75,6 +90,8 @@
     MutantPartChimeraTooth: 1000
     ClothingMaskChimera: 1 # its gross why would they want it
     MutantPartIzlomArm: 1150
+    MutantPartBurerBrain: 2500
+    MutantPartControllerBrain: 4375
 
     #Fish -------- Unc * 1.5
     #Only anomalous fish

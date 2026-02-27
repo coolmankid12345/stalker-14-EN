@@ -65,7 +65,7 @@ public abstract class SharedLightCycleSystem : EntitySystem
         var waveLength = MathF.Max(1, (float) comp.Duration.TotalSeconds);
         var crest = MathF.Max(0f, comp.MaxLightLevel);
         var shift = MathF.Max(0f, comp.MinLightLevel);
-        return Math.Min(comp.ClipLight, CalculateCurve(time, waveLength, crest, shift, 6));
+        return Math.Min(comp.ClipLight, CalculateCurve(time, waveLength, crest, shift, 4)); // stalker-changes: 6 -> 4 for ~66% day
     }
 
     /// <summary>
@@ -91,7 +91,7 @@ public abstract class SharedLightCycleSystem : EntitySystem
                 waveLength,
                 MathF.Max(0f, comp.MaxLevel.G),
                 MathF.Max(0f, comp.MinLevel.G),
-                8f)); // Stalker-Changes: Before it was 10f, but was replaced to modify the curve so we can adapt it to the longer days
+                6f)); // Stalker-Changes: 10f -> 8f -> 6f; higher exponent than red ensures green lags during dawn/dusk for warm transitions
 
         var blue = MathF.Min(comp.ClipLevel.B,
             CalculateBlueWithGapControl(time, // Stalker-Changes: CalculateCurve doesn't fit if we need to make days longer, so as the distance for gaps for this function

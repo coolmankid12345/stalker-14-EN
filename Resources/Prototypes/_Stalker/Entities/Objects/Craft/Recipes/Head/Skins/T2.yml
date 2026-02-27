@@ -75,7 +75,7 @@
     firstIngredient: STSkinsKitPilgrim
     secondIngredient: ClothingHeadHelmetVityaz1C
     keepFirst: true
-  
+
 - type: lightCraftingRecipe
   id: STCraftSkinClothingHeadHelmetVityaz1B
   results:
@@ -85,3 +85,47 @@
     secondIngredient: ClothingHeadHelmetVityaz1C
     keepFirst: true
 
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingHeadHelmetVityaz1U
+  results:
+    - ClothingHeadHelmetVityazClearSky
+  steps:
+    firstIngredient: STSkinsKitClearSky
+    secondIngredient: ClothingHeadHelmetVityaz1C
+    keepFirst: true
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingHeadHelmetVityaz1F
+  results:
+    - ClothingHeadHelmetVityazKushch
+  steps:
+    firstIngredient: STSkinsKitFreedom
+    secondIngredient: ClothingHeadHelmetVityaz1C
+    keepFirst: true
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingHeadInfantryHelmetMercenary
+  results:
+    - ClothingHeadHelmetInfantryMerc
+  steps:
+    firstIngredient: STSkinsKitMercenary
+    secondIngredient: ClothingHeadHelmetInfantry
+    keepFirst: true
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingHeadHelmetVityaz1S
+  results:
+    - ClothingHeadHelmetVityaz1Merc
+  steps:
+    firstIngredient: STSkinsKitMercenary
+    secondIngredient: ClothingHeadHelmetVityaz1C
+    keepFirst: true
+
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingHeadHelmetVityaz1N
+  results:
+    - ClothingHeadHelmetVityazNeutral
+  steps:
+    firstIngredient: STSkinsKitNeutral
+    secondIngredient: ClothingHeadHelmetVityaz1C
+    keepFirst: true

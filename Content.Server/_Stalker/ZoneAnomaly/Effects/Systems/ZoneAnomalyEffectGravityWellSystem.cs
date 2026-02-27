@@ -53,18 +53,17 @@ public sealed class ZoneAnomalyEffectGravityWellSystem : EntitySystem
     {
         var epicenter = _transform.GetMapCoordinates(effect);
         var targets = _lookup.GetEntitiesInRange(epicenter, effect.Comp.Distance);
-        var bodyQuery = GetEntityQuery<PhysicsComponent>();
-        var xformQuery = GetEntityQuery<TransformComponent>();
 
+        // stalker-en-changes: use cached queries instead of recreating per GravPulse call
         foreach (var entity in targets)
         {
             if (effect.Comp.Whitelist is { } whitelist && !_whitelistSystem.IsWhitelistPass(whitelist, entity))
                 continue;
 
-            if (!bodyQuery.TryGetComponent(entity, out var physics) || physics.BodyType == BodyType.Static)
+            if (!_physicsQuery.TryGetComponent(entity, out var physics) || physics.BodyType == BodyType.Static)
                 continue;
 
-            var entityPosition = _transform.GetWorldPosition(entity, xformQuery);
+            var entityPosition = _transform.GetWorldPosition(entity, _transformQuery);
             var displacement = epicenter.Position - entityPosition;
             var distance = displacement.Length();
 

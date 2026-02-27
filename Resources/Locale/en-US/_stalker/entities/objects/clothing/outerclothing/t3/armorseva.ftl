@@ -56,3 +56,7 @@ ent-ClothingOuterArmorSevaFreedom = Freedom Seva Suit
     .desc = A closed-cycle suit developed by the Kyiv Research Institute, specifically designed for working in Zone conditions.
 ent-ClothingHeadHardsuitSevaHelmFreedom = Seva Helmet (Freedom)
     .desc = { ent-ClothingHeadHardsuitSevaHelmDolgRed.desc }
+ent-STClothingOuterArmorCN-4a = CN-4A Seva Suit
+    .desc = An unofficial version of the SEVA scientific suit for Clear Sky research teams, supplied to the Zone by smugglers. Still retains the scent of the mainland.
+ent-STClothingOuterArmorCN-4aResearcher = CHN-4a Explorer
+    .desc = An unofficial version of the SEVA scientific suit, extensively modified by Novikov, a Clear Sky technician. The suit is highly ergonomic, providing much-needed mobility when exploring anomalous fields. It is extremely popular among the group's veteran researchers.

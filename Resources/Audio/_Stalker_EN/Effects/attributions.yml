@@ -1,0 +1,9 @@
+- files: ["fall_impact.ogg"]
+  license: "CC-BY-NC-4.0"
+  copyright: "Taken from source at https://freesound.org, credited to ROHHSADOTCOM. Converted to mono .ogg file and equalised peak valley volume for Stalker14 EN."
+  source: "https://freesound.org/people/ROHHSADOTCOM/sounds/825772/"
+
+- files: [ritualpit.ogg]
+  license: "CC-BY-NC-4.0"
+  copyright: "Taken from source at youtube.com, credited to stanmar13. Converted to mono .ogg file, inverted, reverbed and bass boosted for Stalker14 EN."
+  source: "https://www.youtube.com/watch?v=A_i7Wd07-1k"

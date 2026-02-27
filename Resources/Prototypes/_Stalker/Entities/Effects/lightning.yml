@@ -13,7 +13,7 @@
     - type: Electrified
       #ignoreInsulation: true # Stalker-TODO: This field does not exist!
       requirePower: false
-      shockDamage: 50
+      shockDamage: 150
       shockTime: 2
     - type: Lightning
       canArc: true

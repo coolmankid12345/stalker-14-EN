@@ -10,6 +10,11 @@
     ZoneArtifactFireball: 400
     ZoneArtifactEye: 600
     ZoneArtifactFlame: 1200
+    ZoneArtifactBunch: 1421
+    ZoneArtifactRock: 1200
+    ZoneArtifactSun: 2200
+    ZoneArtifactRoot: 2400
+    ZoneArtifactConflagration: 600
     # Thermal group - 2
     ZoneArtifactCristall: 2400
     ZoneArtifactLithosphere: 4800
@@ -17,6 +22,9 @@
     ZoneArtifactSparkler: 400
     ZoneArtifactBattery: 600
     ZoneArtifactFlash: 1200
+    ZoneArtifactAccumulator: 1200
+    ZoneArtifactDiamond: 2200
+    ZoneArtifactCharger: 2200
     ArtMoon: 2400
     ZoneArtifactTesla: 3600
     ZoneArtifactIce: 4800
@@ -28,6 +36,7 @@
     ZoneArtifactPebble: 400
     ZoneArtifactRosin: 600
     ZoneArtifactStoneCube: 845
+    ZoneArtifactDarkCube: 3600
     # Gravity group - 2
     ZoneArtifactVyvert: 400
     ZoneArtifactAmoeba: 600
@@ -39,7 +48,13 @@
     ZoneArtifactStuntman: 4800
     ZoneArtifactDistorter: 4800
     ZoneArtifactSoul: 3600
+    ZoneArtifactCompass: 2680
+    ZoneArtifactCrucifix: 3170
+    ZoneArtifactThorn: 1900
+    ZoneArtifactArf: 600
     # Acidic group - 1
+    ZoneArtifactToxic: 450
+    ZoneArtifactCytoplasm: 2400
     ZoneArtifactBlood: 1200
     ZoneArtifactMeat: 2400
     ZoneArtifactKolobok: 3600
@@ -80,6 +95,8 @@
     MutantPartZombieHand: 420
     MutantPartIzlomArm: 580
     MutantPartChimeraTooth: 3300 # nerfed for plans of nerfing the mutant soon
+    MutantPartBurerBrain: 1500
+    MutantPartControllerBrain: 2500
 
   categories:
   - name: shop-category-weapons
@@ -208,7 +225,7 @@
       ClothingOuterArmorRCBZRene: 2000 # T2 - ENV
       ClothingOuterArmorZaryaRene: 1500 # T2 - PVE
       ClothingOuterArmorRenegate: 11000 # T3
-      STClothingOuterArmorLightPlateVestBasePSZ7rene: 12000 # T3 - PVP
+      # STClothingOuterArmorLightPlateVestBasePSZ7rene: 12000 # T3 - PVP ST-EN: Moved to Zealot
       ClothingOuterArmorSevarenegat: 4000 # T3 - PVE
 
   - name: shop-category-storage-and-containers
@@ -230,6 +247,16 @@
     items:
       # Cloaks
       ClothingOuterCoatStalker: 350 # T2
+      ClothingCloakStalker: 30
+      ClothingCloakBeige: 1000
+      ClothingCloakBlack: 1000
+      ClothingCloakBrown: 1000
+      ClothingCloakGreen: 1000
+      ClothingCloakNavy: 1000
+      ClothingCloakShortCoverBlack: 1000
+      ClothingOuterCoatDoshdevik: 100 # T1
+      ClothingOuterCoatLoyalistLight: 2500
+      ClothingOuterCoatLoyalist: 3000
       ClothingOuterCoatRenegat: 2000 # T3 Cheaper cause let a renegade be drippy
       # Gasmasks
       ClothingMaskGasRenegats: 100 # T1
@@ -376,3 +403,60 @@
       ClothingShoesBootsMerc: 30
       ClothingShoesSwat: 35
       ClothingShoesBootsCombat: 30
+
+- type: shopPreset
+  id: ZealotTrader
+  # minSellPrice: 0
+  # itemsForSale:
+  categories:
+  - name: shop-category-weapons
+    priority: 1
+    items:
+      # 5,45x39
+      STWeaponRifleAKS74U: 3
+      STWeaponRifleAKS74: 6
+      # SMGS
+      STWeaponSMGPPSh41: 5
+      STWeaponSMGMP5: 4
+      # 7,62x39
+      STWeaponRifleAKMC: 10 # Worse AKM version for cheaper
+      STWeaponSniperSKS: 3
+  - name: shop-category-magazines
+    priority: 2
+    items:
+      739Mag30: 1
+  - name: shop-category-ammunition
+    priority: 3
+    items:
+      # 7.25
+      725PSTBox: 3 # T3
+      # 9.19
+      919PBMBox: 3 # T3
+      # 9.18
+      918PBMBox: 3 # T3
+      # 5.45
+      545PCBox: 3 # T3
+      # 7.39
+      739FMJBox: 4 # T3
+      # 7.54
+      754FMJBox: 4 # T3
+      # .45
+      45ACPAPBox: 4 # T3
+  - name: shop-category-medicine
+    priority: 4
+    items:
+      MedkitElite: 2
+  - name: shop-category-armor
+    priority: 6
+    items:
+      # ARMOR
+      STClothingOuterArmorLightPlateVestBasePSZ7rene: 22
+  # - name: shop-category-storage-and-containers
+  #   priority: 7
+  #   items:
+
+
+
+
+
+

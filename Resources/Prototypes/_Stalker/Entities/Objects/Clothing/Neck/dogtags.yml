@@ -6,6 +6,9 @@
   name: жетон
   description: стандартный жетон
   components:
+  - type: Clothing
+    slots:
+    - dogtag
   - type: StealTarget
     stealGroup: HeadCloak
   # need this to be able to insert it back in PDA

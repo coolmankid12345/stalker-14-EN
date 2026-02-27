@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobMutantLeshiy
+  id: STMobMutantLeshiyCommon
+  name: Leshiy
+  suffix: ST, T2, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantLeshiy
+  id: STMobMutantLeshiyUncommon
+  name: Adapted Leshiy
+  suffix: ST, T2, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantLeshiy
+  id: STMobMutantLeshiyRare
+  name: Mutated Leshiy
+  suffix: ST, T2, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantLeshiy
+  id: STMobMutantLeshiyLegendary
+  name: Singular Leshiy
+  suffix: ST, T2, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

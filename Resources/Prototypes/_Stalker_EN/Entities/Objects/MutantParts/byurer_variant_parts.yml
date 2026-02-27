@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartBurerBrain
+  id: STMutantPartUncommonBurerBrain
+  name: Adapted Burer Brain
+  description: A dense lump of grey matter, its lobes noticeably overdeveloped compared to a normal human brain. The Zone's psionic fields have begun restructuring it in ways standard mutation cannot account for. Still holds the rough shape of something human.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartBurerBrain
+  id: STMutantPartRareBurerBrain
+  name: Mutated Burer Brain
+  description: A heavily mutated burer brain, its structure warped far beyond typical specimens. The lobes responsible for telekinesis are clearly visible, threaded with dark deposits unlike anything in normal tissue. Scientists will want a look at this one.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartBurerBrain
+  id: STMutantPartLegendaryBurerBrain
+  name: Singular Burer Brain
+  description: A burer brain unlike any documented specimen. The tissue has been so thoroughly reshaped by prolonged psionic exposure that calling it a brain feels generous. Whatever this thing was thinking in its final moments, it was not thinking like anything human.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

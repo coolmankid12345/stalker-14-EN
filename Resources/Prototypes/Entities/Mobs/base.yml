@@ -120,6 +120,8 @@
   - type: STSoftCritEnabled # stalker-en-changes
     softCritFraction: 0.5
     crawlSpeedModifier: 0.3
+  - type: STAnomalyGeneratorSpawnBlocker #Stalker-EN
+    size: 5
   - type: MobStateActions
     actions:
       Critical:

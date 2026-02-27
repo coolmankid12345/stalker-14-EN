@@ -63,6 +63,8 @@
         Heat: 1.4
         Cold: 1.4
 
+# really shitty cell charger
+# i cant actually check to make sure this works so make sure it works for me <3
 - type: entity
   parent: BaseArtifact
   id: ZoneArtifactAccumulator
@@ -74,18 +76,28 @@
   - type: ZoneArtifact
     anomaly: ZoneAnomalyGarland
   - type: ZoneArtifactDetectorTarget
-    detectedLevel: 2
+    detectedLevel: 3
   - type: PointLight
     radius: 1.5
     energy: 5.5
     color: "#09efff"
     castShadows: false
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: # make an anomalous power cell later maybe
+#  - type: Charger # someone fix this
+#    chargeRate: 5
   - type: PersonalDamage
     damage:
       types:
-        Slash: -0.4
-        Blunt: -0.4
-        Shock: 0.5
+        Shock: 0.3
         Asphyxiation: -0.5
     interval: 1
   - type: Armor
@@ -95,6 +107,7 @@
       coefficients:
         Cold: 0.5
 
+# honestly not sure what to do with this one
 - type: entity
   parent: BaseArtifact
   id: ZoneArtifactDiamond
@@ -115,14 +128,11 @@
   - type: PersonalDamage
     damage:
       types:
-        Cold: 2.3
-        Psy: -1.6
-        Piercing: 1.4
+        Cold: 2
+        Psy: -0.5
+        Radiation: -1
         Blunt: 2
     interval: 1
-  - type: ClothingSpeedModifier
-    walkModifier: 1.65
-    sprintModifier: 1.65
   - type: STWeight
     self: -1
   - type: Armor
@@ -130,9 +140,10 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Piercing: 0.8
+        Blunt: 0.8
         Radiation: 0.3
 
+# its just flash again. idk what to do with it.
 - type: entity
   parent: BaseArtifact
   id: ZoneArtifactCharger
@@ -151,16 +162,13 @@
     color: "#09efff"
     castShadows: false
   - type: PersonalDamage
-    staminaDamage: -1.5
+    staminaDamage: -6
     damage:
       types:
-        Shock: 2
-        Radiation: 2
-        Cold: 2
+        Shock: 1
+        Radiation: 1
+        Cold: 1
     interval: 1
-  - type: ClothingSpeedModifier
-    walkModifier: 1.35
-    sprintModifier: 1.35
   - type: Armor
     hiddenExamine: true
     armorClass: 2

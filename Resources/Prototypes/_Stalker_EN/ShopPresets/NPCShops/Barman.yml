@@ -7,6 +7,11 @@
     ZoneArtifactFireball: 540
     ZoneArtifactEye: 810
     ZoneArtifactFlame: 1620
+    ZoneArtifactBunch: 1890
+    ZoneArtifactRock: 1620
+    ZoneArtifactSun: 2950
+    ZoneArtifactRoot: 3240
+    ZoneArtifactConflagration: 810
     # Thermal group - 2
     ZoneArtifactCristall: 3240
     ZoneArtifactLithosphere: 6480
@@ -14,6 +19,9 @@
     ZoneArtifactSparkler: 540
     ZoneArtifactBattery: 810
     ZoneArtifactFlash: 1620
+    ZoneArtifactAccumulator: 1620
+    ZoneArtifactDiamond: 2950
+    ZoneArtifactCharger: 2950
     ArtMoon: 3240
     ZoneArtifactTesla: 4860
     ZoneArtifactIce: 6480
@@ -25,6 +33,7 @@
     ZoneArtifactPebble: 540
     ZoneArtifactRosin: 810
     ZoneArtifactStoneCube: 1215
+    ZoneArtifactDarkCube: 4860
     # Gravity group - 2
     ZoneArtifactVyvert: 540
     ZoneArtifactAmoeba: 810
@@ -36,7 +45,13 @@
     ZoneArtifactStuntman: 6480
     ZoneArtifactDistorter: 6480
     ZoneArtifactSoul: 4860
+    ZoneArtifactCompass: 3600
+    ZoneArtifactCrucifix: 4250
+    ZoneArtifactThorn: 2550
+    ZoneArtifactArf: 810
     # Acidic group - 1
+    ZoneArtifactToxic: 650
+    ZoneArtifactCytoplasm: 3200
     ZoneArtifactBeer: 450
     ZoneArtifactBlood: 1600
     ZoneArtifactMeat: 3200
@@ -79,6 +94,8 @@
     ClothingMaskChimera: 1
     MutantPartChimeraTooth: 1
     MutantPartIzlomArm: 865
+    MutantPartBurerBrain: 2000
+    MutantPartControllerBrain: 3500
 
     # Meat
     STFoodMeatSalo: 95
@@ -322,9 +339,18 @@
         ClothingMaskGasZarya: 125
         ClothingMaskGasZaryaMono: 150
         ClothingMaskXoma: 95
-        ClothingCloakStalker: 100
+        ClothingCloakStalker: 30
+        ClothingCloakBeige: 1000
+        ClothingCloakBlack: 1000
+        ClothingCloakBrown: 1000
+        ClothingCloakGreen: 1000
+        ClothingCloakNavy: 1000
+        ClothingCloakShortCoverBlack: 1000
+        ClothingOuterCoatDoshdevik: 100 # T1
+        ClothingOuterCoatStalker: 1000
+        ClothingOuterCoatLoyalistLight: 2500
+        ClothingOuterCoatLoyalist: 3000
         STClothingCapeArmorChainmailSeva: 2000
-        #ClothingOuterCoatLoyalist: 3400 Might add back or just locked to crafting
 
     - name: shop-category-research-equipment
       priority: 10
@@ -418,7 +444,6 @@
         ClothingHeadHatBlacksoft: 10
         ClothingHeadHatGreysoft: 10
         ClothingHeadHatSovietUshankaStalker: 40
-        ClothingCloakStalker: 30
         ClothingLegsJeansBlue: 10
         ClothingLegsJeansStalker: 10
         ClothingLegsJeansGreenCargo: 10

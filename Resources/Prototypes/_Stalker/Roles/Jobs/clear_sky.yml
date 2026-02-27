@@ -84,6 +84,13 @@
   id: StalkerClearSkyGear
   equipment:
     id: ClearSkyPDA
+    dogtag: ClothingNeckDogtagClearSky
+
+- type: startingGear
+  id: StalkerClearSkyGearHead
+  equipment:
+    id: ClearSkyPDA
+    dogtag: ClothingNeckDogtagClearSkyLeader
 
 - type: stBand
   id: STClearSkyBand

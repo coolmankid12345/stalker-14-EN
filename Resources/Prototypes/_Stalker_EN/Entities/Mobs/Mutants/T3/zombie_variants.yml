@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobStalkerZombieBase
+  id: STMobMutantZombieCommon
+  name: Zombie
+  suffix: ST, T3, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobStalkerZombieBase
+  id: STMobMutantZombieUncommon
+  name: Adapted Zombie
+  suffix: ST, T3, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobStalkerZombieBase
+  id: STMobMutantZombieRare
+  name: Mutated Zombie
+  suffix: ST, T3, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobStalkerZombieBase
+  id: STMobMutantZombieLegendary
+  name: Singular Zombie
+  suffix: ST, T3, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

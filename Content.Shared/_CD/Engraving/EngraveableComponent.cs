@@ -1,4 +1,5 @@
-﻿using Robust.Shared.GameStates;
+﻿using Content.Shared._Stalker.Storage;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared._CD.Engraving;
 
@@ -6,7 +7,7 @@ namespace Content.Shared._CD.Engraving;
 ///     Allows an items' description to be modified with an engraving
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedEngraveableSystem))]
+[Access(typeof(SharedEngraveableSystem), typeof(SharedStalkerStorageSystem))]
 public sealed partial class EngraveableComponent : Component
 {
     /// <summary>

@@ -67,8 +67,9 @@
         Blunt: 0.7
         Slash: 0.7
 
+# t5 so look at it again later
 - type: entity
-  parent: BaseArtifact
+  parent: BaseArtifactStorage
   id: ZoneArtifactDarkCube
   suffix: Stalker, Тёмный куб
   components:
@@ -86,9 +87,13 @@
     castShadows: false
   - type: Storage
     grid:
-    - 0,0,8,8
+      - 0,0,8,8
+    blacklist:
+      tags:
+      - STArtifact
+    maxItemSize: Small # maybe switch to tiny idk
   - type: STWeight
-    self: 15
+    self: 30
 
 - type: entity
   name: Ночная звезда

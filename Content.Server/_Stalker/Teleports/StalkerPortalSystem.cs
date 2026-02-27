@@ -158,6 +158,28 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
                 }
             }
 
+            // stalker-changes-start: also check MAP children for minded entities
+            // TeleportEntity reparents players to the map, not the grid,
+            // so disconnected players in stash are missed by the grid child check above
+            if (!hasMind && TryComp<TransformComponent>(data.MapId, out var mapTransform))
+            {
+                var mapEnumerator = mapTransform.ChildEnumerator;
+                while (mapEnumerator.MoveNext(out var mapChild))
+                {
+                    if (_ent.HasComponent<MapGridComponent>(mapChild))
+                        continue;
+
+                    if (TryComp<MindContainerComponent>(mapChild, out var mapMind) && mapMind.HasMind
+                        && !HasComp<GhostComponent>(mapChild)
+                        && !HasComp<DatasetVocalizerComponent>(mapChild))
+                    {
+                        hasMind = true;
+                        break;
+                    }
+                }
+            }
+            // stalker-changes-end
+
             if (hasMind)
                 continue;
 

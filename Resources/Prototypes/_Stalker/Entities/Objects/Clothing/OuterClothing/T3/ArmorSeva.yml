@@ -370,7 +370,7 @@
       color: orange
 
 # Dolg
-
+# stalker-en change
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaDolgRed
@@ -378,9 +378,9 @@
   description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны."
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/seva_dolg.rsi
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/DOLG_T3_SEVA.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/seva_dolg.rsi
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/DOLG_T3_SEVA.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitSevaHelmDolgRed
     slot: head
@@ -393,9 +393,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/seva_helm_dolg.rsi
+    sprite: _Stalker_EN/Objects/Clothing/hats/seva_helm_dolg.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/seva_helm_dolg.rsi
+    sprite: _Stalker_EN/Objects/Clothing/hats/seva_helm_dolg.rsi
 
 # Freedom
 

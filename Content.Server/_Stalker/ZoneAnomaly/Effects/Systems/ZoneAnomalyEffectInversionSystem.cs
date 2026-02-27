@@ -30,9 +30,16 @@ public sealed class ZoneAnomalyEffectInversionSystem : EntitySystem
     [Dependency] private readonly ZoneAnomalySystem _anomaly = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
+    // stalker-en-changes: cache entity queries instead of recreating per GravPulse call
+    private EntityQuery<PhysicsComponent> _physicsQuery;
+    private EntityQuery<TransformComponent> _transformQuery;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        _physicsQuery = GetEntityQuery<PhysicsComponent>();
+        _transformQuery = GetEntityQuery<TransformComponent>();
 
         SubscribeLocalEvent<ZoneAnomalyEffectInversionComponent, ZoneAnomalyActivateEvent>(OnActivate);
     }
@@ -44,6 +51,13 @@ public sealed class ZoneAnomalyEffectInversionSystem : EntitySystem
         var query = EntityQueryEnumerator<ZoneAnomalyComponent, ZoneAnomalyEffectInversionComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var anomaly, out var inversion, out var transform))
         {
+            // stalker-en-changes: skip non-activated anomalies to avoid unnecessary per-frame physics
+            if (anomaly.State != ZoneAnomalyState.Activated)
+                continue;
+
+            if (anomaly.InAnomaly.Count == 0)
+                continue;
+
             GravPulse(_transform.GetMapCoordinates(uid, transform), anomaly.InAnomaly, inversion.Radial, inversion.Tangential);
         }
     }
@@ -101,15 +115,14 @@ public sealed class ZoneAnomalyEffectInversionSystem : EntitySystem
     private void GravPulse(MapCoordinates mapPos, HashSet<EntityUid> targets, float radial, float tangential)
     {
         var epicenter = mapPos.Position;
-        var bodyQuery = GetEntityQuery<PhysicsComponent>();
-        var xformQuery = GetEntityQuery<TransformComponent>();
 
+        // stalker-en-changes: use cached queries instead of recreating per call
         foreach (var entity in targets)
         {
-            if (!bodyQuery.TryGetComponent(entity, out var physics) || physics.BodyType == BodyType.Static)
+            if (!_physicsQuery.TryGetComponent(entity, out var physics) || physics.BodyType == BodyType.Static)
                 continue;
 
-            var displacement = epicenter - _transform.GetWorldPosition(entity, xformQuery);
+            var displacement = epicenter - _transform.GetWorldPosition(entity, _transformQuery);
             var distance2 = displacement.LengthSquared();
 
             if (distance2 <= 0)

@@ -129,10 +129,13 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
         return result;
     }
 
+    // stalker-en-changes-start: Snapshot blocker data synchronously to fix collection modified exception.
+    // EntityQueryEnumerator is not safe across await boundaries. MakeOperation() can yield across ticks,
+    // during which other systems may modify the entity collection, causing InvalidOperationException.
     private async Task RemoveByBlockers()
     {
+        var blockerAreas = new List<Box2i>();
         var entities = _entityManager.EntityQueryEnumerator<STAnomalyGeneratorSpawnBlockerComponent, TransformComponent>();
-        var coordinatesToRemove = new List<Vector2i>();
 
         while (entities.MoveNext(out _, out var blocker, out var transform))
         {
@@ -142,8 +145,13 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
             var position = _transform.GetWorldPosition(transform);
             var coordinates = new Vector2i((int) position.X, (int) position.Y);
             var size = blocker.Size;
-            var box2 = new Box2i(coordinates.X - size, coordinates.Y - size, coordinates.X + size + 1, coordinates.Y + size);
+            blockerAreas.Add(new Box2i(coordinates.X - size, coordinates.Y - size, coordinates.X + size + 1, coordinates.Y + size));
+        }
 
+        var coordinatesToRemove = new List<Vector2i>();
+
+        foreach (var box2 in blockerAreas)
+        {
             for (var x = box2.Left; x < box2.Right; x++)
             {
                 for (var y = box2.Bottom; y < box2.Top; y++)
@@ -164,6 +172,7 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
             _tileCoordinates.Remove(coord);
         }
     }
+    // stalker-en-changes-end
 
     private async Task LoadTiles()
     {

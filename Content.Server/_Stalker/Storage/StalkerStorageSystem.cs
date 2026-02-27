@@ -23,10 +23,13 @@ using Content.Shared.Paper;
 using Content.Shared.Stacks;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Server.Botany.Components;
+using Content.Shared._CD.Engraving;
 using Content.Shared._Stalker;
 using Content.Shared._Stalker.Storage;
 using Content.Shared.Charges.Components;
 using Content.Shared.Crayon;
+using Content.Shared.Labels.Components;
+using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Power.Components;
 using Robust.Shared.Prototypes;
 
@@ -40,6 +43,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
     [Dependency] private readonly StalkerRepositorySystem _stalkerRepositorySystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly NameModifierSystem _nameModifier = default!;
 
     private delegate List<object> DelegateItemStalkerConverter(EntityUid inputEntityUid);
 
@@ -170,7 +174,9 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
 
         if (_convertersItemStalker.ContainsKey(Components))
         {
-            return _convertersItemStalker[Components](InputItem);
+            var result = _convertersItemStalker[Components](InputItem);
+            ApplyCrossCuttingData(InputItem, result);
+            return result;
         }
         else
         {
@@ -321,6 +327,35 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         return returnList;
     }
 
+    /// <summary>
+    /// Applies cross-cutting component data (engraving, labels) to all storage items.
+    /// These components can appear on any item type, so they are handled uniformly
+    /// rather than in each individual converter.
+    /// </summary>
+    private void ApplyCrossCuttingData(EntityUid entity, List<object> storageItems)
+    {
+        var hasEngraving = TryComp<EngraveableComponent>(entity, out var engraveable);
+        var hasLabel = TryComp<LabelComponent>(entity, out var label);
+
+        if (!hasEngraving && !hasLabel)
+            return;
+
+        foreach (var item in storageItems)
+        {
+            if (item is not IItemStalkerStorage storage)
+                continue;
+
+            if (hasEngraving && !string.IsNullOrEmpty(engraveable!.EngravedMessage))
+            {
+                storage.EngravedMessage = engraveable.EngravedMessage;
+            }
+
+            if (hasLabel && !string.IsNullOrEmpty(label!.CurrentLabel))
+            {
+                storage.CurrentLabel = label.CurrentLabel;
+            }
+        }
+    }
 
     #endregion
 
@@ -480,6 +515,24 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                     Dirty(inputItemUid, chargesComponent);
                 }
                 break;
+        }
+
+        // stalker-changes: Restore cross-cutting component data (engraving, labels)
+        if (!string.IsNullOrEmpty(nextSpawnOptions?.EngravedMessage) &&
+            TryComp<EngraveableComponent>(inputItemUid, out var engraveComp))
+        {
+            engraveComp.EngravedMessage = nextSpawnOptions.EngravedMessage;
+            Dirty(inputItemUid, engraveComp);
+        }
+
+        if (!string.IsNullOrEmpty(nextSpawnOptions?.CurrentLabel))
+        {
+            // Set directly to avoid double-escaping: CurrentLabel is already escaped from the
+            // original LabelSystem.Label() call, so we must not pass it through Label() again.
+            var labelComp = EnsureComp<LabelComponent>(inputItemUid);
+            labelComp.CurrentLabel = nextSpawnOptions.CurrentLabel;
+            Dirty(inputItemUid, labelComp);
+            _nameModifier.RefreshNameModifiers(inputItemUid);
         }
 
         if (nextSpawnOptions is not PaperItemStalker paperItemStalker)
@@ -661,6 +714,13 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         RepositoryItemInfo NewRepositoryItemInfo = _stalkerRepositorySystem.GenerateItemInfoByPrototype(protoName);
         NewRepositoryItemInfo.SStorageData = stalkerItem;
         NewRepositoryItemInfo.Identifier = keyIdentifier;
+
+        // stalker-changes: Restore label suffix in the display name for stash UI
+        if (stalkerItem is IItemStalkerStorage { CurrentLabel: { Length: > 0 } label })
+        {
+            NewRepositoryItemInfo.Name = Loc.GetString("comp-label-format",
+                ("baseName", NewRepositoryItemInfo.Name), ("label", label));
+        }
 
         var Count = (int)((IItemStalkerStorage)stalkerItem).CountVendingMachine;
         if (Count < 1)
@@ -852,7 +912,11 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                         }
                     }
 
-                    newObject = new AmmoContainerStalker(protoName, ammoProtoName, entProtoIds, ammoCount, countVending);
+                    var ammoContainer = new AmmoContainerStalker(protoName, ammoProtoName, entProtoIds, ammoCount, countVending);
+                    // stalker-changes: Restore cross-cutting data not handled by the constructor
+                    ammoContainer.EngravedMessage = node["EngravedMessage"]?.GetValue<string>();
+                    ammoContainer.CurrentLabel = node["CurrentLabel"]?.GetValue<string>();
+                    newObject = ammoContainer;
                     if (newObject != null)
                         playerInventory.AllItems.Add(newObject);
                     break;

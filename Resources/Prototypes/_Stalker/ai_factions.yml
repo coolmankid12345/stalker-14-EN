@@ -60,6 +60,7 @@
     - Hostile
     - Meat
     - Bandit
+    - Military
 
 - type: npcFaction
   id: Sci
@@ -186,6 +187,14 @@
   - Hostile
   - Freedom
   - Duty
+  - Dolg
+  - Military
+  - MilitaryStalker
+  - Mercenaries
+  - Scientists
+  - Sci
+  - SSU
+  - Monolith
   - Seraphims
   - Meat
 

@@ -1,0 +1,40 @@
+- type: entity
+  parent: MobMutantRat
+  id: STMobMutantRatCommon
+  name: Rat
+  description: An angry, hungry, oversized rat.
+  suffix: ST, T1, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantRat
+  id: STMobMutantRatUncommon
+  name: Adapted Rat
+  description: An angry, hungry, oversized rat.
+  suffix: ST, T1, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantRat
+  id: STMobMutantRatRare
+  name: Mutated Rat
+  description: An angry, hungry, oversized rat.
+  suffix: ST, T1, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantRat
+  id: STMobMutantRatLegendary
+  name: Singular Rat
+  description: An angry, hungry, oversized rat.
+  suffix: ST, T1, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

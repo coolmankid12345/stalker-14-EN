@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobMutantRodent
+  id: STMobMutantRodentCommon
+  name: Rodent
+  suffix: ST, T0, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantRodent
+  id: STMobMutantRodentUncommon
+  name: Adapted Rodent
+  suffix: ST, T0, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantRodent
+  id: STMobMutantRodentRare
+  name: Mutated Rodent
+  suffix: ST, T0, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantRodent
+  id: STMobMutantRodentLegendary
+  name: Singular Rodent
+  suffix: ST, T0, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

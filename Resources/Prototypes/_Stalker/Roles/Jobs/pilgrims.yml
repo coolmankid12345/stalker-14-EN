@@ -83,7 +83,7 @@
   id: PilgrimPostulantGear
   equipment:
     id: PilgrimPDA
-    cloak: ClothingNeckDogtagPilgrim
+    dogtag: ClothingNeckDogtagPilgrim
     shoes: ClothingShoesBootsLaceup
     legs: ClothingLegsJeansBlackCargo
     torso: ClothingTorsoTShirtColorBlack
@@ -98,7 +98,7 @@
     legs: ClothingLegsJeansBlackCargo
     pocket1: STPilgrimBible
     torso: ClothingTorsoTShirtColorBlack
-    pocket2: ClothingNeckDogtagPilgrim
+    dogtag: ClothingNeckDogtagPilgrim
 - type: stBand
   id: STPilgrimsBand
   name: Pilgrims

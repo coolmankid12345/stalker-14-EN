@@ -129,5 +129,27 @@
             </PanelContainer>
 
         </BoxContainer>
+
+        <!-- stalker-en-changes start - Relations Tab -->
+        <BoxContainer Name="RelationsTab" Orientation="Vertical" HorizontalExpand="True" Margin="10" SeparationOverride="10" Access="Public">
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202025" />
+                </PanelContainer.PanelOverride>
+                <Label Text="{Loc 'bands-managing-window-relations-header'}" Align="Center" />
+            </PanelContainer>
+
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                </PanelContainer.PanelOverride>
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Name="RelationsList" Orientation="Vertical" Margin="4" HorizontalExpand="True">
+                        <Label Name="NoRelationsLabel" Text="{Loc 'bands-managing-window-no-relations-text'}" StyleClasses="LabelSecondaryColor" />
+                    </BoxContainer>
+                </ScrollContainer>
+            </PanelContainer>
+        </BoxContainer>
+        <!-- stalker-en-changes end -->
     </TabContainer>
 </controls:FancyWindow>

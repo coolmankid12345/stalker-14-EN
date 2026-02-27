@@ -31,3 +31,11 @@ bands-managing-window-shop-list-header = Band Shop
 bands-managing-window-no-shop-items-text = No items available in the shop.
 bands-managing-window-shop-item-entry = { $itemName } - { $price } Points
 bands-managing-window-buy-button = Buy
+# Bands Managing Window - Relations Tab
+bands-managing-window-relations-tab-title = Relations
+bands-managing-window-relations-header = Faction Relations
+bands-managing-window-no-relations-text = No faction assigned
+bands-managing-window-relation-alliance = Alliance
+bands-managing-window-relation-neutral = Neutral
+bands-managing-window-relation-hostile = Hostile
+bands-managing-window-relation-war = War

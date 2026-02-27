@@ -354,6 +354,13 @@ public sealed class StalkerRepositorySystem : EntitySystem
         if (args.Handled)
             return;
 
+        // Block operations during loadout processing to prevent race conditions
+        if (component.LoadoutOperationInProgress)
+        {
+            _sawmill.Debug($"Blocked interact-using during loadout operation for {Name(args.User)}");
+            return;
+        }
+
         // generate new item info for clicked entity
         var itemInfo = GenerateItemInfo(args.Used, true);
         // check for valid weight
@@ -367,23 +374,24 @@ public sealed class StalkerRepositorySystem : EntitySystem
         // this method also returns us a hashset of entities to delete, so we are sure, we are deleting needed entity
         var toDelete = InsertToRepositoryRecursively(args.User, (uid, component), itemInfo);
 
-        // logging, saving, event raising
-        _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(args.User):user} inserted 1 {Name(args.Used)} into repository");
-        _stalkerStorageSystem.SaveStorage(component);
-        RaiseLocalEvent(args.User, new RepositoryItemInjectedEvent(args.Target, itemInfo));
-        _loadoutSystem.SendLoadoutStateUpdate(uid, component, args.User);
-
         // Mark as handled BEFORE deletion - prevents interaction system from continuing with deleted entity
         args.Handled = true;
 
-        // removing by hashset we got from above
-        // i had to move it here because of references
         if (toDelete == null)
             return;
 
-        // removing items
+        // removing items FIRST so UI state is built after entity is deleted
         RemoveItems(args.User, toDelete.Value.Item1, toDelete.Value.Item2);
-        args.Handled = true;
+
+        // logging, saving, ui updating
+        _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(args.User):user} inserted 1 {itemInfo.Name} into repository");
+        _stalkerStorageSystem.SaveStorage(component);
+        RaiseLocalEvent(args.User, new RepositoryItemInjectedEvent(args.Target, itemInfo));
+        // stalker-changes: only update UI if already open, don't open it just from inserting an item
+        if (_ui.IsUiOpen(uid, StalkerRepositoryUiKey.Key, args.User))
+            UpdateUiState(args.User, uid, component);
+
+        _loadoutSystem.SendLoadoutStateUpdate(uid, component, args.User);
     }
 
     #endregion
@@ -748,7 +756,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
             if (!allowInsert)
                 return null;
             InsertIntoRepository(entity, toInsertItem, amount);
-            DropDependencies(user, playerItem.Value);
+            HandleDependentItems(user, playerItem.Value, entity);
             return (playerItem.Value, amount);
         }
         // so we have contManComp, get all elements inside main entity
@@ -804,67 +812,80 @@ public sealed class StalkerRepositorySystem : EntitySystem
         if (!allowInsert)
             return null;
         InsertIntoRepository(entity, toInsertItem, amount);
-        // dropping dependent items
-        DropDependencies(user, playerItem.Value);
+        // handle dependent items (auto-insert into stash or drop as fallback)
+        HandleDependentItems(user, playerItem.Value, entity);
         return (playerItem.Value, amount);
     }
     /// <summary>
-    /// Method to drop dependent items, like gun in back slot, but we inserted our coat into repository, so we need to drop the gun
+    /// Handles dependent items when clothing is inserted into the repository.
+    /// When outerClothing is inserted, items in suitstorage are affected.
+    /// When innerClothing is inserted, items in pocket1 and pocket2 are affected.
+    /// Dependent items are auto-inserted into the repository if weight/whitelist allows,
+    /// otherwise they are dropped next to the player as a fallback.
     /// </summary>
-    /// <param name="user">Player</param>
-    /// <param name="playerItem">Item inserted</param>
-    private void DropDependencies(EntityUid user, EntityUid playerItem)
+    /// <param name="user">Player entity</param>
+    /// <param name="playerItem">The clothing item being inserted into the stash</param>
+    /// <param name="repository">The repository entity to try inserting dependent items into</param>
+    private void HandleDependentItems(EntityUid user, EntityUid playerItem, Entity<StalkerRepositoryComponent> repository)
     {
-        // if it wasn't clothing, do nothing
         if (!TryComp<ClothingComponent>(playerItem, out var comp))
             return;
-        // check if it was innerclothing
+
+        // Collect all dependent items first to avoid modifying collections during iteration
+        var dependentItems = new List<EntityUid>();
+
         if (comp.Slots.HasFlag(SlotFlags.INNERCLOTHING))
         {
-            // Check for item is on player
             if (!_inventory.TryGetSlotContainer(user, "jumpsuit", out var jumpsuitSlot, out _) ||
                 !jumpsuitSlot.ContainedEntities.Contains(playerItem))
                 return;
 
-            if (_inventory.TryGetSlotContainer(user, "pocket1", out var slotCont, out var _) &&
-                _inventory.TryGetSlotContainer(user, "pocket2", out var slotCont2, out _))
-            {
-                foreach (var item in slotCont.ContainedEntities)
-                {
-                    if(!_container.TryGetContainingContainer(user, item, out var container))
-                        return;
-                    _container.Remove(item, container);
-                    _xforms.DropNextTo(user, item);
-                }
-                foreach (var item in slotCont2.ContainedEntities)
-                {
-                    if(!_container.TryGetContainingContainer(user, item, out var container))
-                        return;
-                    _container.Remove(item, container);
-                    _xforms.DropNextTo(user, item);
-                }
-            }
+            if (_inventory.TryGetSlotContainer(user, "pocket1", out var pocket1, out _))
+                dependentItems.AddRange(pocket1.ContainedEntities);
+            if (_inventory.TryGetSlotContainer(user, "pocket2", out var pocket2, out _))
+                dependentItems.AddRange(pocket2.ContainedEntities);
         }
-        // check for it was outerclothing
-        if (!comp.Slots.HasFlag(SlotFlags.OUTERCLOTHING))
-            return;
 
-        // new block to use the same name of the variable
+        if (comp.Slots.HasFlag(SlotFlags.OUTERCLOTHING))
         {
-            // Check for item is on player
             if (!_inventory.TryGetSlotContainer(user, "outerClothing", out var outerSlot, out _) ||
                 !outerSlot.ContainedEntities.Contains(playerItem))
                 return;
 
-            if (!_inventory.TryGetSlotContainer(user, "suitstorage", out var slotCont, out _))
-                return;
-            foreach (var item in slotCont.ContainedEntities)
+            if (_inventory.TryGetSlotContainer(user, "suitstorage", out var suitStorage, out _))
+                dependentItems.AddRange(suitStorage.ContainedEntities);
+        }
+
+        foreach (var item in dependentItems)
+        {
+            if (!_container.TryGetContainingContainer(user, item, out var containingContainer))
+                continue;
+
+            // Generate item info BEFORE removing from container so Entities field is populated
+            var itemInfo = GenerateItemInfo(item, true);
+
+            // Try to auto-insert into the repository if allowed
+            if (CanStoreItem(repository, item))
             {
-                if(!_container.TryGetContainingContainer(user, item, out var container))
-                    return;
-                _container.Remove(item, container);
-                _xforms.DropNextTo(user, item);
+                var newWeight = repository.Comp.CurrentWeight + itemInfo.SumWeight;
+                if (Math.Round(newWeight, 2) <= repository.Comp.MaxWeight)
+                {
+                    _container.Remove(item, containingContainer);
+                    var toDelete = InsertToRepositoryRecursively(user, repository, itemInfo);
+                    if (toDelete != null)
+                    {
+                        Del(toDelete.Value.Item1);
+                        continue;
+                    }
+                    // If insertion somehow failed, item is already removed from container - drop it
+                    _xforms.DropNextTo(user, item);
+                    continue;
+                }
             }
+
+            // Fallback: remove from slot and drop next to user
+            _container.Remove(item, containingContainer);
+            _xforms.DropNextTo(user, item);
         }
     }
 

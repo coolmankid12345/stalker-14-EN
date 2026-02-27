@@ -1,3 +1,0 @@
-st-search-label = Search:
-st-search-placeholder = Search items...
-st-search-clear = Clear

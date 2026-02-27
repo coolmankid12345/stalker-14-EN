@@ -197,7 +197,12 @@ public sealed class IdentitySystem : EntitySystem
         var ev = new SeeIdentityAttemptEvent();
 
         RaiseLocalEvent(target, ev);
-        return representation.ToStringKnown(!ev.Cancelled);
+        // stalker-en-changes-start
+        // When identity is fully blocked, always use unknown representation.
+        // Base SS14 falls back to ID card name via PresumedName, but in Stalker full face
+        // coverage should completely hide identity regardless of equipped ID.
+        return ev.Cancelled ? representation.ToStringUnknown() : representation.ToStringKnown(true);
+        // stalker-en-changes-end
     }
 
     /// <summary>

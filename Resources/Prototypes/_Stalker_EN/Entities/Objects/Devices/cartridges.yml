@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseItem
+  id: STFactionRelationsCartridge
+  name: faction relations cartridge
+  description: A program showing relations between Zone factions.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-y
+  - type: UIFragment
+    ui: !type:FactionRelationsUi
+  - type: Cartridge
+    programName: st-faction-relations-program-name
+    icon:
+      sprite: _Stalker_EN/Interface/Cartridges/faction_relations.rsi
+      state: icon
+  - type: STFactionRelationsCartridge

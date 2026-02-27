@@ -1,0 +1,36 @@
+- type: entity
+  parent: STMobMutatedGosha
+  id: STMobMutantGoshaCommon
+  name: Gosha
+  suffix: ST, T4, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: STMobMutatedGosha
+  id: STMobMutantGoshaUncommon
+  name: Adapted Gosha
+  suffix: ST, T4, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: STMobMutatedGosha
+  id: STMobMutantGoshaRare
+  name: Mutated Gosha
+  suffix: ST, T4, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: STMobMutatedGosha
+  id: STMobMutantGoshaLegendary
+  name: Singular Gosha
+  suffix: ST, T4, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

@@ -1,4 +1,4 @@
-﻿# OKSOP Enlisted - Restock on RU's Vendor File
+# OKSOP Enlisted - Restock on RU's Vendor File
 
 - type: entity
   parent: VendingMachine
@@ -44,12 +44,17 @@
 - type: vendingMachineInventory
   id: MilitaryPSZInventoryEN
   startingInventory:
+    OKSOPMP153Crate: 8 #T2 Enlisted - (Amount of Enlisted x 2)
+    OKSOPSKSCrate: 4 #T2 senior privates (amount of senior privates x 4)
     OKSOPAK74uCrate: 8 # T2 Enlisted - (Amount of Enlisted x 2)
+    OKSOPCombatMedCrate: 6 # T2 Enlisted - (Amount of Enlisted x 3)
     OKSOPAK74Crate: 4 # T2 Sergeant - (Amount of SGT x 4)
+    OKSOPMosinCrate: 2 #T2 Sergeant - (Amount of SGT x 2)
     ArmyProvisionCrate: 6
     ArmyMedkitMilitaryCrate: 6
     Army545Mag30Crate: 6
     Army545FMJCrate: 6
+    Army6mmbuckshotCrate: 6
     STBoltBagFilled: 10
     BaseRadio: 10
 

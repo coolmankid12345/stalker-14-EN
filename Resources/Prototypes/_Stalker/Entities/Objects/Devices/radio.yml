@@ -16,6 +16,7 @@
     channels: [StalkerInternal] # Listen only to our hidden channel
   - type: RadioStalker
     requiresPower: false
+    currentFrequency: "120.0"
   - type: Speech
     speechVerb: Robotic
   - type: ExtensionCableReceiver
@@ -53,4 +54,4 @@
   - type: UserInterface
     interfaces:
       enum.RadioStalkerUiKey.Key:
-        type: RadioStalkerBoundUserInterface
+        type: STRadioBoundUserInterface

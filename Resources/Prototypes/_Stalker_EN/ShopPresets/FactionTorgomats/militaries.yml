@@ -543,6 +543,9 @@
       STSkinsKitMilitary: 500
       AccordionInstrument: 500
       FoldedFlagMili: 250
+      STElasticRubberRed: 50
+      STElasticRubberGreen: 50
+      STElasticRubberBlue: 50
 
   - name: shop-category-modules
     priority: 11

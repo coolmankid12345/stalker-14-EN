@@ -52,6 +52,14 @@ public sealed class ZoneAnomalyEffectGibSystem : EntitySystem
         var query = EntityQueryEnumerator<ZoneAnomalyEffectGibComponent, ZoneAnomalyComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var gib, out var anomaly, out var xform))
         {
+            // Fast path: skip entirely when anomaly is idle/charging with no pending work
+            if (anomaly.State != ZoneAnomalyState.Activated
+                && gib.DoomedEntities.Count == 0
+                && gib.PendingDoom.Count == 0)
+            {
+                continue;
+            }
+
             var anomalyPos = _transform.GetWorldPosition(xform);
             var anyNewDoomed = false;
             var anyGibbed = false;

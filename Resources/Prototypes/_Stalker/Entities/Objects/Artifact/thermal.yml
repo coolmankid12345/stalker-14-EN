@@ -33,6 +33,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.80
 
+# its pretty good since it also broadcasts your location with its silly light
 - type: entity
   parent: BaseArtifact
   name: Гроздь
@@ -47,15 +48,21 @@
   - type: ZoneArtifactDetectorTarget
     detectedLevel: 3
   - type: PointLight
-    radius: 0.5
-    energy: 4
-    color: "#ff0000"
+    radius: 4.5
+    energy: 6
+    color: "#FF893B"
     castShadows: false
+    netsync: false
+    mask: /Textures/_Stalker_EN/Effects/LightMasks/disco.png
+  - type: RotatingLight
+    speed: 100
+    netsync: false
   - type: PersonalDamage
     damage:
       types:
         Blunt: -0.3
         Slash: -0.3
+        Radiation: -0.5
         Heat: 0.3
     interval: 1
   - type: Armor
@@ -64,15 +71,11 @@
     modifiers:
       coefficients:
         Radiation: 0.7
-        Caustic: 0.95
-        Compression: 0.6
+        Compression: 0.95
       flatReductions:
-        Piercing: 1
-        Slash: 2
-        Cold: 4
+        Compression: 1
   - type: ExplosionResistance
     damageCoefficient: 0.8
-
 
 - type: entity
   parent: BaseArtifact
@@ -109,6 +112,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.70
 
+# its so nothing
+# ill probably change it again later when i think of something else it can do
 - type: entity
   parent: BaseArtifact
   name: Скала
@@ -119,14 +124,19 @@
     state: rock
     scale: 0.5, 0.5
   - type: PointLight
-    radius: 0.5
-    energy: 4
-    color: "#ff0000"
+    radius: 1.5
+    energy: 0.5
+    color: "#FF893B"
     castShadows: false
   - type: ZoneArtifact
     anomaly: ZoneAnomalyJarkaStrong
   - type: ZoneArtifactDetectorTarget
     detectedLevel: 3
+  - type: DamageOnInteract # its hot, pick it up carefully
+    damage:
+      types:
+        Heat: 10
+    popupText: artifact-component-contact-damage
   - type: PersonalDamage
     damage:
       types:
@@ -162,6 +172,11 @@
     energy: 0.5
     color: "#FF893B"
     castShadows: false
+  - type: DamageOnInteract # its hot, pick it up carefully
+    damage:
+      types:
+        Heat: 10
+    popupText: artifact-component-contact-damage
   - type: PersonalDamage
     damage:
       types:
@@ -179,6 +194,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.60
 
+# i really dont know what to do with this one
 - type: entity
   parent: BaseArtifact
   name: Солнце
@@ -193,9 +209,9 @@
   - type: ZoneArtifactDetectorTarget
     detectedLevel: 4
   - type: PointLight
-    radius: 0.5
-    energy: 4
-    color: "#ecf96a"
+    radius: 1.5
+    energy: 0.5
+    color: "#FF893B"
     castShadows: false
   - type: PersonalDamage
     damage:
@@ -207,11 +223,11 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.85
         Heat: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.5
 
+# bezoar type artifact
 - type: entity
   parent: BaseArtifact
   name: Корень
@@ -226,22 +242,27 @@
   - type: ZoneArtifactDetectorTarget
     detectedLevel: 4
   - type: PointLight
-    radius: 0.5
-    energy: 4
-    color: "#ff0000"
+    radius: 1.5
+    energy: 0.5
+    color: "#FF893B"
     castShadows: false
   - type: PersonalDamage
     staminaDamage: 1
     damage:
       types:
-        Bloodloss: -3
+        Bloodloss: -2
+        Poison: -3
+        Cellular: -3
+        Heat: 0.1
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Piercing: 0.75
+        Poison: 0.75
+        Caustic: 0.75
+        Cellular: 0.1 # this is really funny. to me.
 
 - type: entity
   parent: BaseArtifact
@@ -257,15 +278,15 @@
   - type: ZoneArtifactDetectorTarget
     detectedLevel: 2
   - type: PointLight
-    radius: 0.5
-    energy: 4
-    color: "#ff0000"
+    radius: 1.5
+    energy: 0.5
+    color: "#FF893B"
     castShadows: false
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 100
-    intensitySlope: 5
-    totalIntensity: 240
+    explosionType: Radioactive # i wish this didnt do damage other than rads but im not adding a new explosion type
+    maxIntensity: 5
+    intensitySlope: 3
+    totalIntensity: 12
     canCreateVacuum: false
   - type: TriggerOnUse
   - type: TimerTrigger
@@ -292,14 +313,21 @@
   - type: ZoneArtifactDetectorTarget
     detectedLevel: 4
   - type: PointLight
-    radius: 1.5
-    energy: 0.5
+    radius: 3.5
+    energy: 5
     color: "#FF893B"
     castShadows: false
+#    netsync: false
+    mask: /Textures/_Stalker_EN/Effects/LightMasks/confetti.png
+  - type: RotatingLight
+    speed: 5
+#    netsync: false
+  - type: RgbLightController # its a crystal...
   - type: PersonalDamage
     damage:
       types:
         Compression: -2
+        Piercing: 0.08 # we're so back
   - type: Armor
     hiddenExamine: true
     armorClass: 2

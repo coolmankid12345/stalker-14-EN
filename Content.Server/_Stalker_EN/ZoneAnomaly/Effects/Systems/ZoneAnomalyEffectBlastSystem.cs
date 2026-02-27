@@ -32,6 +32,7 @@ public sealed class ZoneAnomalyEffectBlastSystem : EntitySystem
             var currentState = (int)anomaly.State;
 
             // Detect state transition - reset when entering charging
+            // (must always run so LastState stays in sync)
             if (blast.LastState != currentState)
             {
                 blast.LastState = currentState;
@@ -42,7 +43,7 @@ public sealed class ZoneAnomalyEffectBlastSystem : EntitySystem
                 }
             }
 
-            // Only process during charging state
+            // Fast path: skip accumulation/blast logic when not in Charging state
             if (anomaly.State != ZoneAnomalyState.Charging)
                 continue;
 

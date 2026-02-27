@@ -1,4 +1,4 @@
-﻿# Bulk Medical Items
+# Bulk Medical Items
 
 - type: entity
   parent: UNstandartCrate
@@ -206,6 +206,8 @@
     - id: 545Mag30
     - id: 545Mag30
     - id: 545Mag30
+    - id: 545Mag30
+    - id: 545PCBox
     - id: 545PCBox
     - id: 545PCBox
     - id: 545PCBox
@@ -274,12 +276,77 @@
     - id: 545Mag30
     - id: 545Mag30
     - id: 545Mag30
+    - id: 545Mag30
     - id: 545FMJBox
     - id: 545FMJBox
     - id: 545FMJBox
     - id: 545FMJBox
     - id: 545FMJBox
     - id: 545FMJBox
+    - id: 545FMJBox
+    - id: STFlashlightSeclite
+    - id: STBoltBagFilled
+    - id: BaseRadio
+    - id: Binocularus1
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: UNstandartCrate
+  id: OKSOPMosinCrate
+  name: OKSOP Sergeant Sniper Kit
+  description: Sergeant's Recon kit intended for OKSOP soldiers, converted for the Chernobyl Exclusion Zone.
+  suffix: OKSOP, T2
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: STClothingOuterArmorLightPlateVestBaseMilitary
+    - id: Zipties
+    - id: Zipties
+    - id: PowerCellHyper
+    - id: ClothingHeadHatMilitary
+    - id: STWeaponSniperMosin
+    - id: WeaponPistolGSH18
+    - id: BaseGSH-18Mag10
+    - id: BaseGSH-18Mag10
+    - id: BaseGSH-18Mag10
+    - id: BaseGSH-18Mag10
+    - id: BaseGSH-18Mag10
+    - id: BaseGSH-18Mag10
+    - id: 919PSTBox
+    - id: 919RIPBox
+    - id: STModuleSniperSightT1
+    - id: ClothingBeltGreenWebbingStalker
+    - id: ClothingBackpackTacticOliveStalker
+    - id: DrinkMREFlask
+    - id: DrinkMREFlask
+    - id: FoodTinMRE
+    - id: FoodTinMRE
+    - id: RGD5Grenade
+    - id: RGD5Grenade
+    - id: STFoodBreadPlain
+    - id: STCombatKnife
+    - id: MedkitAI2
+    - id: MedkitAI2
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitScience
+    - id: STTourniquet
+    - id: STOintmentGood
+    - id: STGauze
+    - id: STGauze
+    - id: 754FMJBox
+    - id: 754FMJBox
+    - id: 754FMJBox
+    - id: 754FMJBox
     - id: STFlashlightSeclite
     - id: STBoltBagFilled
     - id: BaseRadio
@@ -333,12 +400,192 @@
     - id: 545Mag30
     - id: 545Mag30
     - id: 545Mag30
+    - id: 545Mag30
     - id: 545FMJBox
     - id: 545FMJBox
     - id: 545FMJBox
     - id: 545FMJBox
     - id: 545FMJBox
     - id: 545FMJBox
+    - id: 545FMJBox
+    - id: STFlashlightSeclite
+    - id: STBoltBagFilled
+    - id: BaseRadio
+    - id: Binocularus1
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: OKSOPMP153Crate
+  name: OKSOP Enlisted Pointman Standard Kit
+  description: Basic army kit intended for OKSOP Pointmen, For soldiers designated to breach into tight spaces, and with a helmet for once! Converted for the Chernobyl Exclusion Zone.
+  suffix: OKSOP, T2
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: STClothingOuterArmorLightPlateVestBaseMilitary
+    - id: Zipties
+    - id: Zipties
+    - id: PowerCellHyper
+    - id: ClothingHeadHelmetSH68
+    - id: STBaseWeaponShotgunMP153
+    - id: ClothingBeltGreenWebbingStalker
+    - id: ClothingBeltBandolierStalker
+    - id: ClothingBackpackTacticOliveStalker
+    - id: DrinkMREFlask
+    - id: DrinkMREFlask
+    - id: FoodTinMRE
+    - id: FoodTinMRE
+    - id: RGD5Grenade
+    - id: RGD5Grenade
+    - id: STFoodBreadPlain
+    - id: STCombatKnife
+    - id: MedkitAI2
+    - id: MedkitAI2
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitScience
+    - id: STOintment
+    - id: STGauze
+    - id: STGauze
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: STFlashlightSeclite
+    - id: STBoltBagFilled
+    - id: BaseRadio
+    - id: Binocularus1
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: OKSOPCombatMedCrate
+  name: OKSOP Senior Enlisted Combat Medic Kit
+  description: Basic army kit intended for OKSOP Combat Medics, for those to provide care for wounded OKSOP soldiers. Converted for the Chernobyl Exclusion Zone.
+  suffix: OKSOP, T2
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: STClothingOuterArmorLightPlateVestBaseMilitary
+    - id: Zipties
+    - id: Zipties
+    - id: PowerCellHyper
+    - id: ClothingHeadHatMilitary
+    - id: STWeaponRifleAKS74U
+    - id: ClothingBeltGreenWebbingStalker
+    - id: ClothingBackpackTacticOliveStalker
+    - id: DrinkMREFlask
+    - id: DrinkMREFlask
+    - id: FoodTinMRE
+    - id: FoodTinMRE
+    - id: ClothingBandageStalkerKrest
+    - id: ClothingHeadHatBeretBrigmedic
+    - id: STFoodBreadPlain
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitScience
+    - id: MedkitScience
+    - id: MedkitScience
+    - id: STOintmentGood
+    - id: STOintmentGood
+    - id: STTourniquet
+    - id: STTourniquet
+    - id: STTourniquet
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: STFlashlightSeclite
+    - id: STBoltBagFilled
+    - id: BaseRadio
+    - id: Binocularus1
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: OKSOPSKSCrate
+  name: OKSOP Senior Enlisted Designated Marksman Kit
+  description: Basic army kit intended for OKSOP soldiers, converted for the Chernobyl Exclusion Zone.
+  suffix: OKSOP, T2
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: STClothingOuterArmorLightPlateVestBaseMilitary
+    - id: Zipties
+    - id: Zipties
+    - id: PowerCellHyper
+    - id: ClothingHeadHatMilitary
+    - id: STWeaponSniperSKS
+    - id: STModuleSilencerSniperT1
+    - id: STModuleSniperSightT1
+    - id: ClothingBeltGreenWebbingStalker
+    - id: ClothingBackpackTacticOliveStalker
+    - id: DrinkMREFlask
+    - id: DrinkMREFlask
+    - id: FoodTinMRE
+    - id: FoodTinMRE
+    - id: RGD5Grenade
+    - id: STFoodBreadPlain
+    - id: STCombatKnife
+    - id: MedkitAI2
+    - id: MedkitAI2
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitScience
+    - id: STOintment
+    - id: STGauze
+    - id: STGauze
+    - id: 739FMJBox
+    - id: 739FMJBox
+    - id: 739FMJBox
     - id: STFlashlightSeclite
     - id: STBoltBagFilled
     - id: BaseRadio
@@ -369,6 +616,34 @@
     - id: 545FMJBox
     - id: 545FMJBox
     - id: 545FMJBox
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: Army6mmbuckshotCrate
+  name: Army 6mm Buckshot Ammo Boxes
+  description: Basic Army Kit containing 6.5mm buckshot cartridges, intended for OKSOP soldiers.
+  suffix: Stalker, T2
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
+    - id: 6mmBuckshotBox
     sound:
       path: /Audio/Effects/unwrap.ogg
 

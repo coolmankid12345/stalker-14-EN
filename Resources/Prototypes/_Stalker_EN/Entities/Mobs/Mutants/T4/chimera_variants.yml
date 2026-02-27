@@ -1,0 +1,36 @@
+- type: entity
+  parent: STMobMutantChimera
+  id: STMobMutantChimeraCommon
+  name: Chimera
+  suffix: ST, T4, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: STMobMutantChimera
+  id: STMobMutantChimeraUncommon
+  name: Adapted Chimera
+  suffix: ST, T4, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: STMobMutantChimera
+  id: STMobMutantChimeraRare
+  name: Mutated Chimera
+  suffix: ST, T4, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: STMobMutantChimera
+  id: STMobMutantChimeraLegendary
+  name: Singular Chimera
+  suffix: ST, T4, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

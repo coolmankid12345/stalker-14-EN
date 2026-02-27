@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartControllerBrain
+  id: STMutantPartUncommonControllerBrain
+  name: Adapted Controller Brain
+  description: A swollen, pale brain recovered from a controller. The prefrontal cortex is dramatically enlarged, consistent with reports of the creature's ability to dominate weaker minds. Still recognizable as something that was once human.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartControllerBrain
+  id: STMutantPartRareControllerBrain
+  name: Mutated Controller Brain
+  description: A heavily restructured controller brain, its surface covered in irregular fissures. The organs responsible for its psionic attacks are well-developed and intact. Ecologists consider specimens like this among the most scientifically valuable finds in the Zone.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartControllerBrain
+  id: STMutantPartLegendaryControllerBrain
+  name: Singular Controller Brain
+  description: A controller brain of extraordinary mutation. The tissue barely resembles human grey matter, having been reshaped by years of psionic activity into something closer to a sensory organ than a thinking one. Veteran stalkers report a faint pressure behind the eyes when holding it. Probably nothing.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

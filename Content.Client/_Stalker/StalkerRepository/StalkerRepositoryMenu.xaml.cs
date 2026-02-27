@@ -324,6 +324,15 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
             CrayonItemStalker crayon => Loc.GetString("repository-crayon-item-charges-display", ("charges", crayon.Charges)),
             _ => string.Empty
         };
+
+        // Append engraving info if present
+        if (control.ItemInfo.SStorageData is IItemStalkerStorage { EngravedMessage: { } engraved } && engraved.Length > 0)
+        {
+            var engravingText = Loc.GetString("repository-item-engraving-display", ("message", engraved));
+            AdditionalInfo.Text = string.IsNullOrEmpty(AdditionalInfo.Text)
+                ? engravingText
+                : AdditionalInfo.Text + "\n" + engravingText;
+        }
     }
 
     private string GetName(string id)

@@ -19,6 +19,7 @@ public sealed class STTrophyExamineSystem : EntitySystem
 
     private const string LocExamineQuality = "st-trophy-examine-quality";
     private const string LocExamineWeight = "st-trophy-examine-weight";
+    private const string LocExamineWeightUnknown = "st-trophy-examine-weight-unknown";
 
     private static readonly Dictionary<STTrophyQuality, (string Color, string LocKey)> QualityData = new()
     {
@@ -52,6 +53,10 @@ public sealed class STTrophyExamineSystem : EntitySystem
         {
             args.PushMarkup(Loc.GetString(LocExamineWeight,
                 ("weight", $"{trophy.SourceMobWeight:0.0}")));
+        }
+        else
+        {
+            args.PushMarkup(Loc.GetString(LocExamineWeightUnknown));
         }
     }
 }

@@ -29,10 +29,11 @@ public sealed class ZoneAnomalyEffectDamageSystem : EntitySystem
         var query = EntityQueryEnumerator<ZoneAnomalyComponent, ZoneAnomalyEffectDamageComponent>();
         while (query.MoveNext(out var uid, out var anomaly, out var effect))
         {
-            if (!effect.DamageUpdate)
+            // stalker-en-changes: check state first since most anomalies are Idle
+            if (anomaly.State != ZoneAnomalyState.Activated)
                 continue;
 
-            if (anomaly.State != ZoneAnomalyState.Activated)
+            if (!effect.DamageUpdate)
                 continue;
 
             if (effect.DamageUpdateTime > _timing.CurTime)

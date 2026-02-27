@@ -17,6 +17,16 @@ public interface IItemStalkerStorage
     string PrototypeName { get; set; }
     string Identifier();
     uint CountVendingMachine { get; set; }
+    /// <summary>
+    /// Engraved message text from <see cref="Content.Shared._CD.Engraving.EngraveableComponent"/>.
+    /// Null when item has no engraving. Backward compatible with existing JSON data.
+    /// </summary>
+    string? EngravedMessage { get; set; }
+    /// <summary>
+    /// Label text from <see cref="Content.Shared.Labels.Components.LabelComponent"/>.
+    /// Null when item has no label. Backward compatible with existing JSON data.
+    /// </summary>
+    string? CurrentLabel { get; set; }
 }
 
 [Serializable, NetSerializable]
@@ -26,6 +36,8 @@ public class SpecialLoadClass : IItemStalkerStorage
     public string PrototypeName { get; set; } = "SpecialLoadClassPrototypeName";
 
     public uint CountVendingMachine { get; set; } = 0u;
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
     public string Identifier()
     {
         return ClassType + "_" + "_" + PrototypeName + "_" + "SpecialLoadClassIdentifier";
@@ -49,6 +61,8 @@ public class EmptyItemStalker : IItemStalkerStorage
     public string PrototypeName { get; set; } = "EmptyItemStalker";
 
     public uint CountVendingMachine { get; set; } = 0u;
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
 
     public string Identifier()
     {
@@ -63,6 +77,8 @@ public class SimpleItemStalker : IItemStalkerStorage
     public string PrototypeName { get; set; } = "";
 
     public uint CountVendingMachine { get; set; }
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
 
     public SimpleItemStalker(string prototypeName = "", uint CountVendingMachine = 1)
     {
@@ -72,7 +88,12 @@ public class SimpleItemStalker : IItemStalkerStorage
 
     public string Identifier()
     {
-        return "S_" + PrototypeName;
+        var id = "S_" + PrototypeName;
+        if (!string.IsNullOrEmpty(EngravedMessage))
+            id += "_ENG=" + EngravedMessage.GetHashCode();
+        if (!string.IsNullOrEmpty(CurrentLabel))
+            id += "_LBL=" + CurrentLabel.GetHashCode();
+        return id;
     }
 
 }
@@ -84,6 +105,8 @@ public class PaperItemStalker : IItemStalkerStorage
     public string ClassType { get; set; } = "PaperItemStalker";
     public string PrototypeName { get; set; } = "";
     public uint CountVendingMachine { get; set; }
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
     public string Content { get; set; } = "";
     public int ContentSize { get; set; } = 0;
     public List<StampStalkerData> ListStampStalkerData { get; set; } = new(0);
@@ -120,7 +143,11 @@ public class PaperItemStalker : IItemStalkerStorage
             StampsDataString += "SN=" + OneStamp.StampedName + "_SC=" + OneStamp.PaperColorStalkerData.R + "_" + OneStamp.PaperColorStalkerData.G + "_" + OneStamp.PaperColorStalkerData.B + "_" + OneStamp.PaperColorStalkerData.A + "#";
         }
 
-        string Return = "P_" + PrototypeName + "_HASHTEXT=" + Hash(Content) + "_CS=" + ContentSize + "_SS=" + StampState + "_STAMPS=" + StampsDataString;
+        var Return = "P_" + PrototypeName + "_HASHTEXT=" + Hash(Content) + "_CS=" + ContentSize + "_SS=" + StampState + "_STAMPS=" + StampsDataString;
+        if (!string.IsNullOrEmpty(EngravedMessage))
+            Return += "_ENG=" + EngravedMessage.GetHashCode();
+        if (!string.IsNullOrEmpty(CurrentLabel))
+            Return += "_LBL=" + CurrentLabel.GetHashCode();
 
         SavedIdentifier = Return;
 
@@ -165,11 +192,18 @@ public sealed class BatteryItemStalker : IItemStalkerStorage
     public string ClassType { get; set; } = "BatteryItemStalker";
     public string PrototypeName { get; set; } = "";
     public uint CountVendingMachine { get; set; }
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
     public float CurrentCharge { get; set; }
 
     public string Identifier()
     {
-        return PrototypeName + "_" + CurrentCharge;
+        var id = PrototypeName + "_" + CurrentCharge;
+        if (!string.IsNullOrEmpty(EngravedMessage))
+            id += "_ENG=" + EngravedMessage.GetHashCode();
+        if (!string.IsNullOrEmpty(CurrentLabel))
+            id += "_LBL=" + CurrentLabel.GetHashCode();
+        return id;
     }
 
     public BatteryItemStalker(float CurrentCharge = 100, string PrototypeName = "", uint CountVendingMachine = 1)
@@ -193,13 +227,20 @@ public sealed class SolutionItemStalker : IItemStalkerStorage
     public string ClassType { get; set; } = "SolutionItemStalker";
     public string PrototypeName { get; set; } = "";
     public uint CountVendingMachine { get; set; }
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
     public Dictionary<string, List<ReagentQuantity>> Contents { get; set; } = new();
     public FixedPoint2 Volume { get; set; } // Needed for solution correct consuming
 
     public string Identifier()
     {
         var contentsString = string.Join(", ", Contents.Select(kv => $"{kv.Key}: [{string.Join(", ", kv.Value)}]"));
-        return $"{PrototypeName}_{contentsString}_{Volume}";
+        var id = $"{PrototypeName}_{contentsString}_{Volume}";
+        if (!string.IsNullOrEmpty(EngravedMessage))
+            id += "_ENG=" + EngravedMessage.GetHashCode();
+        if (!string.IsNullOrEmpty(CurrentLabel))
+            id += "_LBL=" + CurrentLabel.GetHashCode();
+        return id;
     }
 
 }
@@ -211,6 +252,8 @@ public class StackItemStalker : IItemStalkerStorage
     public string PrototypeName { get; set; } = "";
     public uint StackCount { get; set; } = 0;
     public uint CountVendingMachine { get; set; } = 0u;
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
 
     public StackItemStalker(string prototypeName = "", uint CountVendingMachine = 1, uint stackCount = 1)
     {
@@ -221,7 +264,12 @@ public class StackItemStalker : IItemStalkerStorage
 
     public string Identifier()
     {
-        return PrototypeName + "_" + StackCount;
+        var id = PrototypeName + "_" + StackCount;
+        if (!string.IsNullOrEmpty(EngravedMessage))
+            id += "_ENG=" + EngravedMessage.GetHashCode();
+        if (!string.IsNullOrEmpty(CurrentLabel))
+            id += "_LBL=" + CurrentLabel.GetHashCode();
+        return id;
     }
 }
 /// <summary>
@@ -237,6 +285,8 @@ public sealed class AmmoContainerStalker : IItemStalkerStorage
     public string? AmmoPrototypeName { get; set; }
     public int AmmoCount { get; set; }
     public uint CountVendingMachine { get; set; }
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
 
     /// <summary>
     /// List of ammo prototype IDs stored as strings for JSON serialization compatibility.
@@ -259,7 +309,12 @@ public sealed class AmmoContainerStalker : IItemStalkerStorage
         var entProtosHash = EntProtoIds.Count > 0
             ? string.Join(",", EntProtoIds).GetHashCode()
             : 0;
-        return $"{PrototypeName}_{AmmoPrototypeName}_{AmmoCount}_{entProtosHash}";
+        var id = $"{PrototypeName}_{AmmoPrototypeName}_{AmmoCount}_{entProtosHash}";
+        if (!string.IsNullOrEmpty(EngravedMessage))
+            id += "_ENG=" + EngravedMessage.GetHashCode();
+        if (!string.IsNullOrEmpty(CurrentLabel))
+            id += "_LBL=" + CurrentLabel.GetHashCode();
+        return id;
     }
 }
 [Serializable, NetSerializable]
@@ -269,6 +324,8 @@ public sealed class AmmoItemStalker : IItemStalkerStorage
     public string PrototypeName { get; set; } = "";
     public bool Exhausted { get; set; }
     public uint CountVendingMachine { get; set; }
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
 
     public AmmoItemStalker(string prototypeName, bool exhausted, uint countVendingMachine = 1)
     {
@@ -279,7 +336,12 @@ public sealed class AmmoItemStalker : IItemStalkerStorage
 
     public string Identifier()
     {
-        return $"{PrototypeName}_{Exhausted}";
+        var id = $"{PrototypeName}_{Exhausted}";
+        if (!string.IsNullOrEmpty(EngravedMessage))
+            id += "_ENG=" + EngravedMessage.GetHashCode();
+        if (!string.IsNullOrEmpty(CurrentLabel))
+            id += "_LBL=" + CurrentLabel.GetHashCode();
+        return id;
     }
 }
 
@@ -289,6 +351,8 @@ public sealed class CrayonItemStalker : IItemStalkerStorage
     public string ClassType { get; set; } = "CrayonItemStalker";
     public string PrototypeName { get; set; } = "";
     public uint CountVendingMachine { get; set; }
+    public string? EngravedMessage { get; set; }
+    public string? CurrentLabel { get; set; }
     public int Charges { get; set; }
 
     public CrayonItemStalker(string prototypeName, int charges, uint countVendingMachine = 1)
@@ -300,6 +364,11 @@ public sealed class CrayonItemStalker : IItemStalkerStorage
 
     public string Identifier()
     {
-        return $"{PrototypeName}_{Charges}";
+        var id = $"{PrototypeName}_{Charges}";
+        if (!string.IsNullOrEmpty(EngravedMessage))
+            id += "_ENG=" + EngravedMessage.GetHashCode();
+        if (!string.IsNullOrEmpty(CurrentLabel))
+            id += "_LBL=" + CurrentLabel.GetHashCode();
+        return id;
     }
 }

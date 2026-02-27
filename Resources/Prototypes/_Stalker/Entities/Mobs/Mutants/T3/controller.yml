@@ -21,7 +21,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      400: Dead
   - type: MeleeWeapon
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
@@ -50,7 +50,7 @@
     actionId: ActionPsyonicsDizzyMutant
     damage:
       types:
-        Psy: 50
+        Psy: 40
   - type: PsyonicsShieldVisuals
     sprite: _Stalker/Effects/psyonic_shield.rsi
     state: Standing
@@ -69,12 +69,53 @@
     soundGunshot: /Audio/_Stalker/Mutants/controller_shot.ogg
   - type: Butcherable
     spawned:
-    - id: Roubles500
-      amount: 3
-      prob: 1
-    - id: Roubles1000
-      amount: 1
-      prob: 0.5
-    - id: STJunkTracker # EN
+    - id: MutantPartControllerBrain
+    - id: STJunkTag # EN
       maxAmount: 1
       prob: 0.05
+    - id: STJunkTagWhite # EN
+      maxAmount: 1
+      prob: 0.1
+    - id: STJunkTracker # EN
+      maxAmount: 1
+      prob: 0.15
+  # Stalker-EN start
+  - type: STMobVariantConfig
+    variants:
+    - chance: 0.08
+      quality: Uncommon
+      nameOverride: st-mob-variant-uncommon-controller
+      healthMultiplier: 1.1
+      spriteScale: 1.05
+      spriteTint: "#805030FF"
+      spriteSaturation: 1.5
+      spriteBrightness: 0.7
+      minWeightMultiplier: 0.95
+      maxWeightMultiplier: 1.25
+      butcherSwaps:
+          MutantPartControllerBrain: STMutantPartUncommonControllerBrain
+    - chance: 0.02
+      quality: Rare
+      nameOverride: st-mob-variant-rare-controller
+      healthMultiplier: 1.2
+      spriteScale: 1.1
+      spriteTint: "#E0D8FFFF"
+      spriteSaturation: 0.15
+      spriteBrightness: 1.6
+      minWeightMultiplier: 1.1
+      maxWeightMultiplier: 1.4
+      butcherSwaps:
+          MutantPartControllerBrain: STMutantPartRareControllerBrain
+    - chance: 0.001
+      quality: Legendary
+      nameOverride: st-mob-variant-legendary-controller
+      healthMultiplier: 1.3
+      spriteScale: 1.15
+      spriteTint: "#FFC040FF"
+      spriteSaturation: 1.3
+      spriteBrightness: 1.4
+      minWeightMultiplier: 1.3
+      maxWeightMultiplier: 1.6
+      butcherSwaps:
+          MutantPartControllerBrain: STMutantPartLegendaryControllerBrain
+  # Stalker-EN end

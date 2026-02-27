@@ -1,0 +1,29 @@
+- type: entity
+  parent: MutantPartIzlomArm
+  id: STMutantPartUncommonIzlomArm
+  name: Adapted Izlom's Arm
+  description: A grotesquely elongated arm from an izlom that has adapted to the Zone's warping influence. The bones have stretched and thickened, and the muscles are corded with unnatural strength. The fingers end in hardened, claw-like tips that could tear through sheet metal. Researchers studying human mutation in the Zone will pay well for this.
+  components:
+  - type: STTrophy
+    quality: Uncommon
+    priceMultiplier: 1.5
+
+- type: entity
+  parent: MutantPartIzlomArm
+  id: STMutantPartRareIzlomArm
+  name: Mutated Izlom's Arm
+  description: A bone-white arm from an izlom that has undergone severe secondary mutation. The limb is nearly twice the length of a normal human arm and the joint structure has been completely rearranged, allowing impossible angles of rotation. The tissue is cool to the touch yet the muscles contract reflexively when stimulated. A deeply unsettling specimen that Ecologists find invaluable for their research.
+  components:
+  - type: STTrophy
+    quality: Rare
+    priceMultiplier: 3.7
+
+- type: entity
+  parent: MutantPartIzlomArm
+  id: STMutantPartLegendaryIzlomArm
+  name: Singular Izlom's Arm
+  description: A terrifying arm from an izlom of immense power and intelligence. The limb is armored in bony plates that have fused into a natural exoskeleton, and the hand has developed an additional joint that grants it a crushing grip strength beyond measurement. Veterans who have seen the creature this came from say it moved with deliberate purpose, almost human. A specimen that haunts the dreams of those who study it.
+  components:
+  - type: STTrophy
+    quality: Legendary
+    priceMultiplier: 11.1

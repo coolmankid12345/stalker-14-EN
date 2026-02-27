@@ -10,6 +10,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Map; // stalker-changes: nullspace check on reconnect
 using Robust.Shared.Utility;
 
 namespace Content.Server.GameTicking
@@ -95,9 +96,12 @@ namespace Content.Server.GameTicking
                         break;
                     }
 
-                    if (mind.CurrentEntity == null || Deleted(mind.CurrentEntity))
+                    // stalker-changes-start: prevent reattaching to entities in nullspace (causes black screen)
+                    if (mind.CurrentEntity == null || Deleted(mind.CurrentEntity)
+                        || Transform(mind.CurrentEntity.Value).MapID == MapId.Nullspace)
+                    // stalker-changes-end
                     {
-                        DebugTools.Assert(mind.CurrentEntity == null, "a mind's current entity was deleted without updating the mind");
+                        DebugTools.Assert(mind.CurrentEntity == null || Transform(mind.CurrentEntity.Value).MapID == MapId.Nullspace, "a mind's current entity was deleted without updating the mind"); // stalker-changes: allow nullspace assert
 
                         // This player is joining the game with an existing mind, but the mind has no entity.
                         // Their entity was probably deleted sometime while they were disconnected, or they were an observer.

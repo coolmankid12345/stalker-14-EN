@@ -1,0 +1,40 @@
+- type: entity
+  parent: MobMutantRogonosets
+  id: STMobMutantRogonosetsCommon
+  name: Rogonosets
+  description: A gigantic mutated deer. Its antlers can impale a man and its charge flattens everything in its path.
+  suffix: ST, Boss, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: MobMutantRogonosets
+  id: STMobMutantRogonosetsUncommon
+  name: Adapted Rogonosets
+  description: A gigantic mutated deer. Its antlers can impale a man and its charge flattens everything in its path.
+  suffix: ST, Boss, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: MobMutantRogonosets
+  id: STMobMutantRogonosetsRare
+  name: Mutated Rogonosets
+  description: A gigantic mutated deer. Its antlers can impale a man and its charge flattens everything in its path.
+  suffix: ST, Boss, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: MobMutantRogonosets
+  id: STMobMutantRogonosetsLegendary
+  name: Singular Rogonosets
+  description: A gigantic mutated deer. Its antlers can impale a man and its charge flattens everything in its path.
+  suffix: ST, Boss, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

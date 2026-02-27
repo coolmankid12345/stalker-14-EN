@@ -1,0 +1,40 @@
+- type: entity
+  parent: STMutantByurer
+  id: STMobMutantByurerCommon
+  name: Byurer
+  description: A dwarf-like mutant with powerful telekinetic abilities. It hurls objects at its enemies with deadly force.
+  suffix: ST, T3, Common
+  components:
+  - type: STMobVariant
+    quality: Common
+    applied: true
+
+- type: entity
+  parent: STMutantByurer
+  id: STMobMutantByurerUncommon
+  name: Adapted Byurer
+  description: A dwarf-like mutant with powerful telekinetic abilities. It hurls objects at its enemies with deadly force.
+  suffix: ST, T3, Adapted
+  components:
+  - type: STMobVariant
+    quality: Uncommon
+
+- type: entity
+  parent: STMutantByurer
+  id: STMobMutantByurerRare
+  name: Mutated Byurer
+  description: A dwarf-like mutant with powerful telekinetic abilities. It hurls objects at its enemies with deadly force.
+  suffix: ST, T3, Mutated
+  components:
+  - type: STMobVariant
+    quality: Rare
+
+- type: entity
+  parent: STMutantByurer
+  id: STMobMutantByurerLegendary
+  name: Singular Byurer
+  description: A dwarf-like mutant with powerful telekinetic abilities. It hurls objects at its enemies with deadly force.
+  suffix: ST, T3, Singular
+  components:
+  - type: STMobVariant
+    quality: Legendary

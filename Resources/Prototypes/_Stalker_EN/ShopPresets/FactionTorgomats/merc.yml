@@ -6,6 +6,11 @@
     ZoneArtifactFireball: 400
     ZoneArtifactEye: 600
     ZoneArtifactFlame: 1200
+    ZoneArtifactBunch: 1421
+    ZoneArtifactRock: 1200
+    ZoneArtifactSun: 2200
+    ZoneArtifactRoot: 2400
+    ZoneArtifactConflagration: 600
     # Thermal group - 2
     ZoneArtifactCristall: 2400
     ZoneArtifactLithosphere: 4800
@@ -13,6 +18,9 @@
     ZoneArtifactSparkler: 400
     ZoneArtifactBattery: 600
     ZoneArtifactFlash: 1200
+    ZoneArtifactAccumulator: 1200
+    ZoneArtifactDiamond: 2200
+    ZoneArtifactCharger: 2200
     ArtMoon: 2400
     ZoneArtifactTesla: 3600
     ZoneArtifactIce: 4800
@@ -24,6 +32,7 @@
     ZoneArtifactPebble: 400
     ZoneArtifactRosin: 600
     ZoneArtifactStoneCube: 845
+    ZoneArtifactDarkCube: 3600
     # Gravity group - 2
     ZoneArtifactVyvert: 400
     ZoneArtifactAmoeba: 600
@@ -35,7 +44,13 @@
     ZoneArtifactStuntman: 4800
     ZoneArtifactDistorter: 4800
     ZoneArtifactSoul: 3600
+    ZoneArtifactCompass: 2680
+    ZoneArtifactCrucifix: 3170
+    ZoneArtifactThorn: 1900
+    ZoneArtifactArf: 600
     # Acidic group - 1
+    ZoneArtifactToxic: 450
+    ZoneArtifactCytoplasm: 2400
     ZoneArtifactBlood: 1200
     ZoneArtifactMeat: 2400
     ZoneArtifactKolobok: 3600
@@ -76,6 +91,8 @@
     MutantPartPseudogiantHeart: 2500
     MutantPartZombieHand: 380
     MutantPartIzlomArm: 525
+    MutantPartBurerBrain: 1000
+    MutantPartControllerBrain: 2000
 
   categories:
     - name: shop-category-weapons
@@ -211,7 +228,17 @@
       priority: 8
       items:
         # Coats
-        ClothingOuterCoatDoshdevik: 100
+        ClothingCloakStalker: 30
+        ClothingCloakBeige: 1000
+        ClothingCloakBlack: 1000
+        ClothingCloakBrown: 1000
+        ClothingCloakGreen: 1000
+        ClothingCloakNavy: 1000
+        ClothingCloakShortCoverBlack: 1000
+        ClothingOuterCoatDoshdevik: 100 # T1
+        ClothingOuterCoatStalker: 1000
+        ClothingOuterCoatLoyalistLight: 2500
+        ClothingOuterCoatLoyalist: 3000
         ClothingOuterCoatKevlarMercenaries: 2750
         # Gas Masks
         ClothingMaskGasZarya: 100

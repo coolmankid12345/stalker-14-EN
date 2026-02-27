@@ -21,7 +21,7 @@
             True: { visible: true }
             False: { visible: false }
     - type: Item
-      size: Large
+      size: Normal #Stalker EN
     - type: RepositoryItem #Stalker EN
       categoryName: repository-medicine-category
     - type: Speech

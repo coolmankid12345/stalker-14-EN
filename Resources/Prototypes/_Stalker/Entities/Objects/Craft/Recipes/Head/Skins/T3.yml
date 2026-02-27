@@ -40,6 +40,26 @@
     keepFirst: true
     time: 5
 
+- type: lightCraftingRecipe
+  id:  STCraftSkinClothingHeadAssaultHelmetMerc
+  results:
+    - ClothingHeadAssaultHelmetMerc
+  steps:
+    firstIngredient: STSkinsKitMercenary
+    secondIngredient: ClothingHeadAssaultHelmet
+    keepFirst: true
+    time: 5
+
+- type: lightCraftingRecipe
+  id:  STCraftSkinClothingHeadAssaultHelmetMilitary
+  results:
+    - ClothingHeadAssaultHelmetMilitary
+  steps:
+    firstIngredient: STSkinsKitMilitary
+    secondIngredient: ClothingHeadAssaultHelmet
+    keepFirst: true
+    time: 5
+
 # Сфера 08 шлем
 
 - type: lightCraftingRecipe

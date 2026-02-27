@@ -27,7 +27,7 @@ public sealed partial class BandsComponent : Component
 
     [DataField] public EntityUid? ActionChangeEntity;
 
-    [DataField("bandProto"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("bandProto"), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField] // stalker-en-changes: networked for client-side faction check
     public ProtoId<STBandPrototype>? BandProto;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]

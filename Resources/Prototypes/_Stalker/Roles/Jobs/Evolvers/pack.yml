@@ -85,7 +85,7 @@
   id: STEvolverPackAlphaGear
   equipment:
     id: BandPDA
-    neck: ClothingNeckDogtagBrigand
+    dogtag: ClothingNeckDogtagBrigand
     eyes: ClothingEyesGlassesSunglasses
     torso: STClothingTorsoJacketGray
     legs: STClothingLegsPantsGray

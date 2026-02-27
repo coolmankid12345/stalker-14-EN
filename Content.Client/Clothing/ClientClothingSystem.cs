@@ -48,7 +48,8 @@ public sealed class ClientClothingSystem : ClothingSystem
         {"legs", "LEGS"},
         {"cloak", "CLOAK"},
         {"torso", "TORSO" },
-        {"dopweapon", "BACKPACK"}
+        {"dopweapon", "BACKPACK"},
+        {"dogtag", "NECK"},
         // stalke-changes-ends
     };
 
