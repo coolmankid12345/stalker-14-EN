@@ -1,6 +1,0 @@
-﻿<BoxContainer
-    Orientation="Vertical"
-    xmlns="https://spacestation14.io">
-    <Label Name="Title"/>
-    <RichTextLabel Margin="8,8,8,8" Name="Content" VerticalAlignment="Top"/>
-</BoxContainer>
