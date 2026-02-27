@@ -1,9 +1,0 @@
-ent-BaseShotgunBullet = Shell (.50)
-ent-Cartridge7mmBuckshot = 12x70 Buckshot 7mm
-ent-Cartridge6mmBuckshot = 12x70 Buckshot 6.5mm "Express"
-ent-CartridgeShotgunBullet = 12x70 Slug
-ent-CartridgeShotgunBulletRIP = 12x70 Slug RIP
-ent-CartridgeShotgunDart = 12x70 Dart
-ent-ShellShotgunBeanbagStalker = 12x70 Non-lethal
-ent-Cartridge8mmBuckshot = 12x70 Buckshot 8.5mm "Magnum"
-ent-CartridgeShotgunFlechette = 12x70 Flechette

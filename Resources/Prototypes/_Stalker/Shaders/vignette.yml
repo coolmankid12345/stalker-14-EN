@@ -1,9 +1,0 @@
-﻿- type: shader
-  id: VignetteNoised
-  kind: source
-  path: "/Textures/_Stalker/Shaders/vignette_noised.swsl"
-
-- type: shader
-  id: VignetteBase
-  kind: source
-  path: "/Textures/_Stalker/Shaders/vignette_base.swsl"

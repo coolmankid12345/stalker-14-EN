@@ -1,8 +1,0 @@
-- type: construction
-  id: JointCraft
-  hide: false # stalker-changes
-  graph: Joint
-  startNode: start
-  targetNode: jointend
-  category: construction-category-utilities
-  objectType: Item

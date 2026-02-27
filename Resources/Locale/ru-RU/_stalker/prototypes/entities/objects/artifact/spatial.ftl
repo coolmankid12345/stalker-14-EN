@@ -1,9 +1,0 @@
-ent-ZoneArtifactSoul = { ent-BaseArtifact }
-    .suffix = Stalker, Душа
-    .desc = артефакт
-ent-ZoneArtifactMagneticFlower = { ent-BaseArtifact }
-    .suffix = Stalker, Магнитный цветок
-    .desc = артефакт
-ent-ZoneArtifactAtom = { ent-BaseArtifact }
-    .suffix = Stalker, Атом
-    .desc = артефакт

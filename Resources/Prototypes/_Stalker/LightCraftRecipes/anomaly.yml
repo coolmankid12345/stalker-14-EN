@@ -1,9 +1,0 @@
-﻿
-- type: lightCraftingRecipe
-  id: ActivateWorkbench
-  results:
-    - StalkerWorkbenchON
-  steps:
-    firstIngredient: Coupon
-    secondIngredient: StalkerWorkbenchOFF
-    time: 3

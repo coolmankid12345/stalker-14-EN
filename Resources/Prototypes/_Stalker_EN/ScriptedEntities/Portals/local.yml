@@ -1,8 +1,0 @@
-﻿- type: entity
-  parent: LocalTeleportBase
-  id: LocalTeleportEcoBunker
-  suffix: Ecologist
-  name: Elevator Teleport
-  components:
-  - type: LocalTeleport
-    portalName: EcoBunker

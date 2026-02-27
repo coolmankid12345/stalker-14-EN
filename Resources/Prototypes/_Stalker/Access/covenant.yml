@@ -1,8 +1,0 @@
-- type: accessLevel
-  id: Covenant
-  name: id-card-access-level-covenant
-
-- type: accessGroup
-  id: Covenant
-  tags:
-    - Covenant

@@ -1,5 +1,0 @@
-- type: entity
-  abstract: true
-  parent: STBaseFloorMounted
-  id: STBaseCarpet
-  suffix: Carpet

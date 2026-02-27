@@ -1,9 +1,0 @@
-ent-CatwalkRusty = Rusty Bridge
-    .desc = Bridge
-    .suffix = ST, Mapping
-ent-CatwalkSteel = Steel Bridge
-    .desc = Bridge
-    .suffix = { ent-CatwalkRusty.suffix }
-ent-CatwalkOld = Old Bridge
-    .desc = Bridge
-    .suffix = { ent-CatwalkRusty.suffix }

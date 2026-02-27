@@ -1,7 +1,0 @@
-- type: entity
-  parent: STBaseBlueprint
-  id: ClothingOuterCoatSmugglerBlueprint
-  name: smuggler's coat blueprint
-  components:
-    - type: STBlueprint
-      blueprint: recipeClothingOuterCoatSmuggler

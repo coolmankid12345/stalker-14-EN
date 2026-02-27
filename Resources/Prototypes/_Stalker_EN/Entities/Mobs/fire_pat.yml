@@ -1,9 +1,0 @@
-- type: entity
-  save: false
-  id: MobFirePat
-  abstract: true
-  components:
-  - type: STFirePattable
-  - type: STFirePatter
-    stacks: -2
-    cooldown: 1

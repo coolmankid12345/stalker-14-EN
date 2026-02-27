@@ -1,2 +1,0 @@
-ent-STWeaponSMGMP40 = MP-40 Submachine Gun
-    .desc = The iconic German MP-40 submachine gun chambered in 9x19mm Parabellum. While outdated by modern standards, its simple design and reliability make it surprisingly effective in Zone conditions.

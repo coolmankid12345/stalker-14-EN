@@ -1,9 +1,0 @@
-- type: lightCraftingRecipe
-  id: STCraftSkinClothingOuterCoatRenegat
-  results:
-    - ClothingOuterCoatRenegat
-  steps:
-    firstIngredient: STSkinsKitRenegate
-    secondIngredient: ClothingOuterCoatLoyalist
-    keepFirst: true
-    time: 5

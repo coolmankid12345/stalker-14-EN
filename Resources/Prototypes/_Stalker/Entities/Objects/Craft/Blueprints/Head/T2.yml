@@ -1,7 +1,0 @@
-- type: entity
-  parent: STBaseBlueprint
-  id:   STClothingHeadTinfoilBlueprint
-  name: Рецепт шапочки из фольги
-  components:
-    - type: STBlueprint
-      blueprint: newrecipeSTClothingHeadTinfoil

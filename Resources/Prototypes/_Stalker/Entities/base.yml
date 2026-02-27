@@ -1,4 +1,0 @@
-- type: entity
-  abstract: true
-  id: STBaseEntity
-  categories: [ ForkFiltered ]

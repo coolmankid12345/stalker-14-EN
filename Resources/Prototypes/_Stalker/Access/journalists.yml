@@ -1,8 +1,0 @@
-- type: accessGroup
-  id: Journalist
-  tags:
-    - Journalist
-
-- type: accessLevel
-  id: Journalist
-  name: id-card-access-level-journalist

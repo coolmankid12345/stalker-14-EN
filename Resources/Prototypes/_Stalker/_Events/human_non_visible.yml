@@ -1,8 +1,0 @@
-- type: entity
-  parent: BaseMobHuman
-  id: MobHumanNonVisible
-  name: Almost invisible human
-  suffix: Stalker, Ивенты
-  components:
-  - type: Visibility
-    layer: 5

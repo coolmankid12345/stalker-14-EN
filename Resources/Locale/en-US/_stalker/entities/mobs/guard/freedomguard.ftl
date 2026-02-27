@@ -1,9 +1,0 @@
-ent-MobFreedomGuardPatrool = Freedom Fighter
-    .desc = A Freedom patrolman.
-    .suffix = Freedom, T6, NPC
-ent-MobFreedomSecurityLow = Freedom Guard
-    .desc = Security guard for Freedom.
-    .suffix = Freedom, Т6, NPC
-ent-MobFreedomSecurityTop = Freedom Guard
-    .desc = Security guard for Freedom.
-    .suffix = Freedom, Т6, NPC

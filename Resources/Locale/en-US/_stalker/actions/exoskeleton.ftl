@@ -1,1 +1,0 @@
-ent-ActionToggleExoskeleton = Toggle Exoskeleton

@@ -1,6 +1,0 @@
-ent-MobMutantMeatSimple = Aggressive Flesh Lump
-    .desc = A distorted lump of flesh...
-    .suffix = ST, T1
-ent-MobMeatRat = Aggressive Flesh Rat
-    .desc = A rat consumed by distorted flesh...
-    .suffix = { ent-MobMutantMeatSimple.suffix }

@@ -1,9 +1,0 @@
-ent-CatwalkRusty = ржавый мостик
-    .suffix = ST, Mapping
-    .desc = ржавый мостик
-ent-CatwalkSteel = стальной мостик
-    .suffix = { ent-CatwalkRusty.suffix }
-    .desc = стальной мостик
-ent-CatwalkOld = старый мостик
-    .suffix = { ent-CatwalkRusty.suffix }
-    .desc = старый мостик

@@ -1,7 +1,0 @@
-- type: stPack
-  id: STSpiderLapachPack
-  head: MobMutantSpiderLapach
-  members:
-    - MobMutantSpiderLapach
-  minMemberCount: 4
-  maxMemberCount: 7

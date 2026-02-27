@@ -1,8 +1,0 @@
-- type: accessLevel
-  id: Circus
-  name: id-card-access-level-circus
-
-- type: accessGroup
-  id: Circus
-  tags:
-  - Circus

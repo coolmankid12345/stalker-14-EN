@@ -1,8 +1,0 @@
-- type: accessLevel
-  id: Jaba
-  name: id-card-access-level-jaba
-
-- type: accessGroup
-  id: Jaba
-  tags:
-    - Jaba

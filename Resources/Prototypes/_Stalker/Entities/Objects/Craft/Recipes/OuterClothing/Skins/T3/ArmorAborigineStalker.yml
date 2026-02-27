@@ -1,9 +1,0 @@
-- type: lightCraftingRecipe
-  id: STCraftSkinClothingOuterArmorAborigineFreedom
-  results:
-    - ClothingOuterArmorAborigineFreedom
-  steps:
-    firstIngredient: STSkinsKitFreedom
-    secondIngredient: ClothingOuterArmorAborigineStalker
-    keepFirst: true
-    time: 5

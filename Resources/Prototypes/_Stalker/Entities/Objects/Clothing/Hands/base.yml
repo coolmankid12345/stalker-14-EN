@@ -1,9 +1,0 @@
-- type: entity
-  parent: ClothingHandsBase
-  id: ClothingHandsBaseST
-  abstract: true
-  components:
-  - type: Tag
-    tags:
-    - BlockGloves
-

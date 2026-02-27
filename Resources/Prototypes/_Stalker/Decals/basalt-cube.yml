@@ -1,8 +1,0 @@
-- type: decal
-  id: STBasaltCubeSmallBroken
-  tags: ["stalker", "cube", "basalt"]
-  snapCardinals: true
-  defaultSnap: false
-  sprite:
-    sprite: _Stalker/Decals/basalt-cube.rsi
-    state: basalt-cube-small-broken

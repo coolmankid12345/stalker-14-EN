@@ -1,8 +1,0 @@
-- type: entity
-  parent: STBaseBlueprint
-  id: STGasMaskM50Blueprint
-  name: Рецепт противогаза M50
-  components:
-    - type: STBlueprint
-      blueprint: recipeGasMaskM50
-

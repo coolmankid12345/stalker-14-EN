@@ -1,7 +1,0 @@
-- type: decal
-  id: STgraffiti200K
-  tags: ["stalker", "200k"]
-  defaultCleanable: true
-  sprite:
-    sprite: _Stalker/Decals/200k.rsi
-    state: 200k

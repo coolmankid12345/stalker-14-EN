@@ -1,9 +1,0 @@
-- type: damageContainer
-  id: Mutant
-  supportedGroups:
-    - Brute
-    - Burn
-    - Toxin
-    - Airloss
-    - Genetic
-    - Mutant

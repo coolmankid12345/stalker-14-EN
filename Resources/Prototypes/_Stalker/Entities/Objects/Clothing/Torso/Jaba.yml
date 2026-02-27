@@ -1,9 +1,0 @@
-- type: entity
-  parent: BaseClothingTorso
-  id: ClothingTorsoJaba
-  name: jaba torso clothing
-  components:
-    - type: Sprite
-      sprite: _Stalker/Objects/Clothing/Torso/jaba.rsi
-    - type: Clothing
-      sprite: _Stalker/Objects/Clothing/Torso/jaba.rsi

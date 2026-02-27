@@ -1,9 +1,0 @@
-ent-STAltarPilgrim = алтарь паломников
-    .suffix = ST, Mapping
-    .desc = алтарь паломников
-ent-STSeraAltar = алтарь серафимов
-    .suffix = { ent-STAltarPilgrim.suffix }
-    .desc = алтарь серафимов
-ent-STSeraAltar2 = { ent-STSeraAltar }
-    .suffix = { ent-STAltarPilgrim.suffix }
-    .desc = { ent-STSeraAltar.desc }

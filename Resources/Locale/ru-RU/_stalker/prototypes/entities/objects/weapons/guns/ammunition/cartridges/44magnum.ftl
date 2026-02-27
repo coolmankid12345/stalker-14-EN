@@ -1,9 +1,0 @@
-ent-BaseCartridgeRemingtonMagnum = cartridge (.44 remington magnum)
-    .suffix = Stalker
-    .desc = cartridge (.44 remington magnum)
-ent-CartridgeRemingtonMagnum = { ent-BaseCartridgeRemingtonMagnum }
-    .suffix = { ent-BaseCartridgeRemingtonMagnum.suffix }
-    .desc = { ent-BaseCartridgeRemingtonMagnum.desc }
-ent-CartridgeRemingtonMagnumAP = cartridge (.44 remington magnum armor-piercing)
-    .suffix = { ent-BaseCartridgeRemingtonMagnum.suffix }
-    .desc = { ent-BaseCartridgeRemingtonMagnum.desc }
