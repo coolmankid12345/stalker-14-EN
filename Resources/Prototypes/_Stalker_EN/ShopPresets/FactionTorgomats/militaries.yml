@@ -1,4 +1,4 @@
-﻿- type: shopPreset
+- type: shopPreset
   id: MilitaryPremiumShopPresetEN # PENDING REWORK
   minSellPrice: 0
   itemsForSale:
@@ -395,7 +395,7 @@
       7mmBuckshotBox: 40 # T0
       6mmBuckshotBox: 245 # T1
       8mmBuckshotBox: 535 # T2
-      #ShotgunFlechette: 50 # T3
+      ShotgunFlechette: 650 # T3
       # 9x18
       918PGJBox: 50  # T1
       918PSTBox: 365 # T2
@@ -502,7 +502,7 @@
       ClothingMaskGasXM40: 450 # T3
       ClothingMaskGP7: 500 #T3
       # Raincoats
-      #ClothingOuterCoatLoyalist: 2500
+      ClothingOuterCoatLoyalist: 2500
 
   - name: shop-category-research-equipment
     priority: 9

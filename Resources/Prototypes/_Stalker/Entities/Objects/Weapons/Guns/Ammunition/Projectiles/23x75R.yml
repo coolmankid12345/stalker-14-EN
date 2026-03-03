@@ -51,23 +51,24 @@
   - type: StaminaDamageOnCollide
     damage: 90
 
-#- type: entity
-#  id: BulletShotgunZvezda
-#  name: bullet Zvezda
-#  parent: STBaseSPBullet
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: Destructible
-#    thresholds:
-#    - trigger:
-#        !type:DamageTrigger
-#        damage: 1
-#      behaviors:
-#      - !type:TriggerBehavior
-#      - !type:DoActsBehavior
-#        acts: ["Destruction"]
-#  - type: FlashOnTrigger
-#    range: 8
-#  - type: EmitSoundOnTrigger
-#    sound:
-#      path: "/Audio/Effects/flash_bang.ogg"
+- type: entity
+  id: BulletShotgunZvezda
+  name: bullet Zvezda
+  parent: STBaseSPBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: FlashOnTrigger
+    duration: 3
+    range: 8
+  - type: EmitSoundOnTrigger
+    sound:
+      path: "/Audio/Effects/flash_bang.ogg"

@@ -53,19 +53,19 @@
     - state: 1270gray-1
       map: ["enum.GunVisualLayers.Mag"]
 
-#- type: entity
-#  parent: 7mmBuckshotBox
-#  id: 2375ZvezdaBulletBox
-#  name: Коробка пуль "Звезда" 23х75мм R
-#  description: Для КС-23, в коробке 10 штук. Это просто ослепительный снаряд, не более. НЕ наносит урона.
-#  components:
-#  - type: MagazineVisuals
-#    magState: 1270yellow
-#  - type: BallisticAmmoProvider
-#    proto: CartridgeShotgunZvezdaBullet
-#  - type: Sprite
-#    layers:
-#    - state: 1270solid
-#      map: ["enum.GunVisualLayers.Base"]
-#    - state: 1270yellow-1
-#      map: ["enum.GunVisualLayers.Mag"]
+- type: entity
+  parent: 7mmBuckshotBox
+  id: 2375ZvezdaBulletBox
+  name: Коробка пуль "Звезда" 23х75мм R
+  description: Для КС-23, в коробке 10 штук. Это просто ослепительный снаряд, не более. НЕ наносит урона.
+  components:
+  - type: MagazineVisuals
+    magState: 1270yellow
+  - type: BallisticAmmoProvider
+    proto: CartridgeShotgunZvezdaBullet
+  - type: Sprite
+    layers:
+    - state: 1270solid
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 1270yellow-1
+      map: ["enum.GunVisualLayers.Mag"]

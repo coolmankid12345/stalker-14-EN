@@ -157,6 +157,7 @@
         # Shotguns
         STWeaponShotgunMossbergM88: 600
         STWeaponShotgunSPAS: 2100
+        STBaseWeaponShotgunKS23: 8000
         # SMGs
         STWeaponSMGPPS43: 1750
         STWeaponSMGMP5: 2600
@@ -174,6 +175,7 @@
       items:
         TTMag: 120
         BaseGlockMag10: 135
+        GlockMag17: 400
         BaseGSH-18Mag10: 135
         BaseAPSMag: 225
         STSpeedLoader45ACPEmpty: 120
@@ -196,6 +198,11 @@
         7mmBuckshotBox: 65 # T0
         6mmBuckshotBox: 375 # T1
         8mmBuckshotBox: 825 # T2
+        #23x75R
+        2375VolnaRBulletBox: 1500 # T1
+        2375BarricadaBulletBox: 2200 # T3
+        2375ZvezdaBulletBox: 5000 # Flashbang
+        2375ShrapnelBuckshotBox: 10000 #T1 Find out IC
         # .45
         45ACPLFMJBox: 100 # T1
         45ACPMFMJBox: 350 # T2

@@ -96,8 +96,8 @@
     projectileClass: 3
     damage:
       types:
-        Piercing: 6
-        Mutant: 18
+        Piercing: 18
+        Mutant: 6
 
 - type: entity
   id: BulletShotgunFlechette
@@ -108,7 +108,7 @@
   - type: ProjectileSpread
     proto: STPelletFlechetta
     count: 8
-    spread: 12
+    spread: 5
 
 # bullets
 
@@ -153,7 +153,7 @@
     projectileClass: 3
     damage:
       types:
-        Piercing: 35
+        Piercing: 45
   - type: StaminaDamageOnCollide
     damage: 20
 
