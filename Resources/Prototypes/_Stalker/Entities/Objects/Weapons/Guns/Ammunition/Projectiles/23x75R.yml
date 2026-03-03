@@ -18,7 +18,7 @@
   components:
   - type: ProjectileSpread
     proto: STPelletShrapnel25
-    count: 8
+    count: 7
     spread: 12
 
 
