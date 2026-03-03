@@ -7,7 +7,7 @@
     projectileClass: 1
     damage:
       types:
-        Piercing: 27
+        Piercing: 30
         Mutant: 30
 
 - type: entity
@@ -18,7 +18,7 @@
   components:
   - type: ProjectileSpread
     proto: STPelletShrapnel25
-    count: 7
+    count: 6
     spread: 12
 
 
