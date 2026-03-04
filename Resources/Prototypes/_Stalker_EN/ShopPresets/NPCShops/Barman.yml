@@ -201,8 +201,8 @@
         #23x75R
         2375VolnaRBulletBox: 1500 # T1
         2375BarricadaBulletBox: 2200 # T3
-        2375ZvezdaBulletBox: 5000 # Flashbang
-        2375ShrapnelBuckshotBox: 10000 #T1 Find out IC
+        # 2375ZvezdaBulletBox: 5000 # Flashbang but not yet, wait until the hit against coolman goes through with the reddit assassin
+        2375ShrapnelBuckshotBox: 4000 #T1 Find out IC
         # .45
         45ACPLFMJBox: 100 # T1
         45ACPMFMJBox: 350 # T2
