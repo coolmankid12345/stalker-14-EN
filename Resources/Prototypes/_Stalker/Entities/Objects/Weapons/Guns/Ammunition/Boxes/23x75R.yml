@@ -55,9 +55,9 @@
 
 - type: entity
   parent: 7mmBuckshotBox
-  id: 2375ZvezdaBulletBox
+  id:
   name: Коробка пуль "Звезда" 23х75мм R
-  description: For the KS-23, there are 10 pieces in the box. It's just a dazzling projectile, nothing more. DOES NOT cause damage.
+  description: 
   components:
   - type: MagazineVisuals
     magState: 1270yellow

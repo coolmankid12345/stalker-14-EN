@@ -1,0 +1,10 @@
+ent-2375ShrapnelBuckshotBox = 23x75R "Shrapnel" Buckshot Box
+    .desc = Shrapnel Rounds For the KS-23, God help whoever's on the other end of these shells. There are 10 pieces in the box. Provides penetration of class 1 armor.
+ent-2375BarricadaBulletBox = 23x75R "Barricada" Slug Box
+    .desc = Barricada Slugs for the KS-23, there are 10 pieces in the box. Provides penetration of class 3 armor, and maybe a bit more behind that. Could probably knock out an engine block if you tried, a real FAT round.
+ent-8mmBuckshotBox = 8.5mm "Magnum" Buckshot Box
+    .desc = For shotguns, 10 pieces in a box. Provides penetration of armor class 2.
+ent-2375VolnaRBulletBox = 23x75R "Volna R" Slug Box
+    .desc = For the KS-23, there are 10 pieces in the box. It's practically useless against armor, but can knock down an enemy with class 1 armor without doing them much damage.
+ent-2375ZvezdaBulletBox = 23x75 "Vezda" Flashbang Slug Box
+    .desc =  For the KS-23, there are 10 pieces in the box. It's just a dazzling projectile, nothing more. DOES NOT cause damage.
