@@ -181,6 +181,7 @@
         # 7mm
         STWeaponShotgunSPAS: 3500 # T3
         STWeaponShotgunBenelliM4Super90: 6500 #i dont think its actually that good
+        STBaseWeaponShotgunKS23: 6000
         # Smg
         STWeaponSMGMP5: 2250
         STWeaponSMGPP91: 2750
@@ -211,6 +212,7 @@
         6mmBuckshotBox: 325
         7mmBuckshotBox: 45
         8mmBuckshotBox: 650
+        ShotgunFlechette: 1300 # T3
          # 7.25
         725PBox: 120
         725PTBox: 280
@@ -221,6 +223,11 @@
         919PSTBox: 525
         919RIPBox: 575
         919PBMBox: 1325
+        #23x75R
+        2375VolnaRBulletBox: 1350 # T1
+        2375BarricadaBulletBox: 1900 # T3
+        # 2375ZvezdaBulletBox: 5000 # Flashbang but not yet, wait until the hit against coolman goes through with the reddit assassin
+        2375ShrapnelBuckshotBox: 2500 #T1 Find out IC
         # 5.56
         556FMJBox: 600
         556M855Box: 1500
