@@ -3,7 +3,7 @@
   parent: STBaseWeaponShotgun
   id: STBaseWeaponShotgunKS23
   name: КС-23
-  description: Soviet and Russian 23 mm caliber carbine. Originally a multifunctional police special tool designed to suppress mass riots, selectively apply physical, psychological, and chemical impact on offenders. In the zone? It's only purpose is to blow the lung out of the other guy's ribcage as hard as it possibly can.
+  description: Советский и Российский карабин Калибра 23 мм. Изначально многофункциональное полицейское спецсредство, предназначенное для пресечения массовых беспорядков, избирательного силового, психического и химического воздействия на правонарушителей. В зоне с чёрного рынка, но тут у него цель лишь убивать с умопомрачительной мощью.
   components:
   - type: BallisticAmmoProvider
     capacity: 4
