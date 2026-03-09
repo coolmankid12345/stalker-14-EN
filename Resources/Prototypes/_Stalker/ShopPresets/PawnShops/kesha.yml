@@ -1,77 +1,6 @@
 - type: shopPreset
   id: KekeshaShopPreset
   itemsForSale:
-    #Weapons and armour ---- min cost / 2
-    #12x70
-    STWeaponShotgunMP155T: 20
-    STWeaponShotgunTOZ34: 100
-    STWeaponShotgunMP133: 170
-    STWeaponShotgunMP153: 400
-    STWeaponShotgunBenelliM4Super90: 550
-    STWeaponShotgunMossbergM88: 280
-    STWeaponShotgunSPAS: 580
-    STWeaponShotgunProtecta: 1305
-    STWeaponShotgunSaiga12: 140
-
-    #5.45x39
-    STWeaponRifleSaiga545: 400
-    STWeaponRifleAKS74U: 745
-    STWeaponRifleAKS74: 1500
-    STWeaponRifleAK74M: 2175
-    STWeaponRifleStalkerAK12: 2250
-
-    #5.56x39
-    STWeaponRifleL85: 950
-    STWeaponRifleM16: 1550
-    STWeaponRifleSIG550: 1800
-    STWeaponRifleM4: 1600
-    STWeaponRifleGalil: 2250
-    STWeaponRifleG36: 2175
-
-    #7.62x39
-    STWeaponRifleAKM: 1500
-    STWeaponRifleAK103: 2500
-    STWeaponRifleStalkerAK104: 2750
-    STWeaponMachineGunRPD: 4500
-    STWeaponSniperSKS: 850
-
-    #7.62x51
-    STWeaponRifleFAL: 750
-    STWeaponRifleGalatz: 2000
-    STWeaponRifleSCARH: 2625
-    STWeaponRifleM14: 2125
-
-    #7.62x54
-    STWeaponSniperMosin: 400
-    STWeaponSniperSVDS: 5500
-    STWeaponSniperSVU: 5500
-    STWeaponSniperVepr: 2000
-
-    #9x18
-    WeaponPistolStalkerGlock: 100
-    WeaponStalkerPistolTec9: 125
-    STWeaponSMGMP40: 150
-    STWeaponSMGMP5: 850
-    STWeaponSMGPP91: 375
-    STWeaponSMGThompson: 2500
-    STWeaponSMGStalkerCP2Veresk: 750
-    STWeaponSMGPP1901: 750
-
-    #7.62x25
-    WeaponPistolStalkerTT: 50
-    STWeaponSMGPPSh41: 600
-
-    #9x39
-    STWeaponRifleASVAL: 7500
-    STWeaponSniperVSS: 6000
-
-    #.45 acp
-    STWeaponRevolverRugerRedhawk: 150
-    STWeaponRevolverSWPC325TR: 125
-    STWeaponRevolverChiappaRhino60DS: 450
-    STWeaponRevolverSWModel325: 500
-    STWeaponRevolverSWModel625: 725
-
     #values
     ClothingNeckBronzeheart: 100
     ClothingNeckCargomedal: 100
@@ -110,7 +39,6 @@
       # Smg
       STWeaponSMGMP5: 2500
       STWeaponSMGPP91: 2000
-      STWeaponSMGStalkerCP2Veresk: 4000
       # Other
       STWeaponRifleGalatz: 3500
       STWeaponRevolverSWPC325TR: 140

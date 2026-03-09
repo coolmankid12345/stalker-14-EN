@@ -78,34 +78,44 @@
       items:
             # Melee
          WeaponPistolStalkerTT: 50
-         WeaponPistolStalkerAPS: 500
+         WeaponPistolStalkerAPS: 350
+         STWeaponShotgunTOZ34: 200
+         STWeaponSMGMP40: 700
+         SledgehammerRenegats: 500
          STWeaponRevolverSWPC325TR: 1000
          STWeaponSMGPPSh41: 2200
-         STWeaponRifleSaiga545: 1150
+         STWeaponSMGPP19: 3000
+         STWeaponSMGPP91: 2200
          STWeaponRifleAKS74U: 1600
          STWeaponSniperMosin: 1600
     - name: shop-category-magazines
       priority: 2
       items:
         TTMag: 15
-        BaseAPSMag: 300
+        BaseAPSMag: 200
         STSpeedLoader45ACPEmpty: 100
         BasePPSHMag: 350
         BizonMag: 875
-        Base545Mag10: 150
         545Mag20: 250
-        545Mag30: 500
+        545Mag30: 400
+        739Mag30: 600
+        PP91Mag: 350
+        MP40Mag: 250
     - name: shop-category-ammunition
       priority: 3
       items:
         7mmBuckshotBox: 50
-        6mmBuckshotBox: 150
-        45ACPRIPBox: 450
+        6mmBuckshotBox: 100
+        545HPBox: 200
+        45ACPRIPBox: 300
         45ACPLFMJBox: 250
         45ACPAPBox: 1400
         725PBox: 100
         725LRNPCBox: 50
-        725PTBox: 665
+        725PTBox: 465
+        739FMJBox: 2100
+        754FMJBox: 2000
+        725PSTBox: 1200
         918PGJBox: 80
         918SP7Box: 200
         918PBMBox: 1200
@@ -119,20 +129,16 @@
     - name: shop-category-armor
       priority: 4
       items:
-        ClothingHeadInfantryHelmetRenegate: 550
-        ClothingHeadHelmetSH6Renegate: 200
-        ClothingOuterArmorRene6B2: 1300
-        STClothingOuterArmorLightPlateVestBaseStalker: 1000
+        ClothingHeadInfantryHelmetRenegate: 700
+        ClothingHeadHelmetSH6Renegate: 400
+        ClothingOuterArmorRene6B2: 1000
+        STClothingOuterArmorLightPlateVestBaseStalker: 1800
         ClothingOuterArmorRCBZRene: 2000
-        ClothingOuterArmorZaryaRene: 2200
-        ClothingOuterArmourJacketBandit: 800
+        ClothingOuterArmorZaryaRene: 1800
         STSkinsKitRenegate: 1000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
-          # BackPacks
-        ClothingBackpackTownBlackStalker: 155 # T1
-        ClothingBackpackTownWhiteStalker: 150 # T1
         ##-------------------------------------------
         ClothingBackpackTacticOliveStalker: 497 # T2
         ClothingBackpackTacticBeigeStalker: 498 # T2
@@ -140,6 +146,7 @@
         ClothingBackpackMercStalker: 899 # T3 |pve backpack
         ##-------------------------------------------
           # Belts
+        ClothingBeltWebbingHolsterMercBandit: 700
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanGreen: 200 # T1 - PVP
         ClothingBeltTarzanOrange: 200 # T1 - PVP
@@ -152,9 +159,12 @@
       items:
         ClothingOuterCoatDoshdevik: 1000 # T1
           # Gasmasks
-        ClothingMaskGasZarya: 90 # T1
+        ClothingMaskGasRenegats: 90
         ClothingMaskGP5: 350 # T2
         ClothingMaskGP7: 900  # T3
+        ClothingNeckScarfRenegade: 100
+        ClothingCapeRenegat: 100
+        ClothingOuterCoatRenegat: 1800
     - name: shop-category-research-equipment
       priority: 7
       items:

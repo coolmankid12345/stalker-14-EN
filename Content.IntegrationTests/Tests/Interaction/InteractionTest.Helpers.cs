@@ -15,6 +15,7 @@ using Content.Shared.CombatMode;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Gravity;
 using Content.Shared.Item;
+using Content.Shared.Power;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
@@ -1455,6 +1456,26 @@ public abstract partial class InteractionTest
         var comp = Comp<ApcPowerReceiverComponent>(target);
         comp.NeedsPower = !comp.NeedsPower;
     }
+    // stalker-en-start
+    /// <summary>
+    /// Directly sets the powered state of an entity. Necessary because the power network
+    /// solver is disabled in Stalker-EN (stalker-en-changes in PowerNetSystem).
+    /// </summary>
+    protected async Task SetPowered(bool powered, NetEntity? target = null)
+    {
+        target ??= Target;
+        Assert.That(target, Is.Not.Null);
+        var uid = SEntMan.GetEntity(target!.Value);
+        await Server.WaitPost(() =>
+        {
+            if (SEntMan.TryGetComponent<ApcPowerReceiverComponent>(uid, out var receiver))
+                receiver.Powered = powered;
+            var ev = new PowerChangedEvent(powered, 0f);
+            SEntMan.EventBus.RaiseLocalEvent(uid, ref ev);
+        });
+        await RunTicks(1);
+    }
+    // stalker-en-end
 
     #endregion
 

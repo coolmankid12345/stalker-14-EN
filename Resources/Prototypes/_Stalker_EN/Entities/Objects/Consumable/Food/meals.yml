@@ -208,7 +208,7 @@
 
 - type: entity
   name: deruny
-  parent: FoodSTDeruny
+  parent: FoodBase
   id: FoodSTDerunySingle
   suffix: Stalker, Food
   description: What's better than fried potatoes?
@@ -268,7 +268,7 @@
 
 - type: entity
   name: hrechanyky
-  parent: FoodSTHrechanyky
+  parent: FoodBase
   id: FoodSTHrechanykySingle
   suffix: Stalker, Food
   description: What's better than fried buckwheat and meat?
@@ -329,7 +329,7 @@
 
 - type: entity
   name: syrnyky
-  parent: FoodSTSyrnyky
+  parent: FoodBase
   id: FoodSTSyrnykySingle
   suffix: Stalker, Food
   description: What's better than fried cheese?
@@ -534,7 +534,7 @@
 
 - type: entity
   name: plain cake slice
-  parent: FoodSTCakePlain
+  parent: FoodBase
   id: FoodSTCakePlainSlice
   suffix: Stalker, Food
   description: A slice of plain white cake.
@@ -596,7 +596,7 @@
 
 - type: entity
   name: berry cake slice
-  parent: FoodSTCakeBerry
+  parent: FoodBase
   id: FoodSTCakeBerrySlice
   suffix: Stalker, Food
   description: A slice of cake with a berry filling.

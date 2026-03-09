@@ -35,6 +35,7 @@ public sealed class SmartFridgeInteractionTest : InteractionTest
 ";
 
     [Test]
+    [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
     public async Task InsertAndDispenseItemTest()
     {
         await PlaceInHands(SampleItemProtoId);

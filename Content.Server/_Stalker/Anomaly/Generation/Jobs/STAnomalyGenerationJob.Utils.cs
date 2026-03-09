@@ -72,7 +72,7 @@ public sealed partial class STAnomalyGenerationJob
         var (gridPos, gridRot, matrix) = _transform.GetWorldPositionRotationMatrix(gridXform, xformQuery);
 
         var size = grid.TileSize;
-        var localPos = new Vector2(indices.X * size + (size / 2f), indices.Y * size + (size / 2f));
+        var localPos = new Vector2(indices.X * size + size / 2f, indices.Y * size + size / 2f);
         var worldPos = Vector2.Transform(localPos, matrix);
 
         // This is scaled to 95 % so it doesn't encompass walls on other tiles.

@@ -43,6 +43,24 @@
     ZoneArtifactPellicle: 825
     ZoneArtifactBaloon: 4320
 
+    # New
+    
+    ZoneArtifactAccumulator: 1200
+    ZoneArtifactDiamond: 3888
+    ZoneArtifactCharger: 3888
+    ZoneArtifactToxic: 1200
+    ZoneArtifactCytoplasm: 900
+    ZoneArtifactCompass: 3888
+    ZoneArtifactCrucifix: 5760
+    ZoneArtifactThorn: 1944
+    ZoneArtifactArf: 1200
+    ZoneArtifactDarkCube: 5760
+    ZoneArtifactBunch: 1944
+    ZoneArtifactRock: 1944
+    ZoneArtifactSun: 3888
+    ZoneArtifactRoot: 3888
+    ZoneArtifactConflagration: 1944
+
     # Mutant parts
 
     #Boars -------- Health * T * 0.45

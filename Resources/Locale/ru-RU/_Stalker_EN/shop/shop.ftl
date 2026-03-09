@@ -1,0 +1,3 @@
+st-search-label =Найти:
+st-search-placeholder = Найти предмет...
+st-search-clear = Очистить

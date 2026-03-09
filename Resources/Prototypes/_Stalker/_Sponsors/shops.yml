@@ -37,7 +37,7 @@
   categories:
     - name: Персональная категория
       items:
-        STWeaponSniperSVDSGrass: 15000
+        STWeaponSniperSVDSGrass: 12000
 
 - type: personalShop
   id: PersonalKLeymiShop
@@ -180,7 +180,7 @@
   - name: Персональная категория
     items:
       CasseteFiftyEightRadio: 250
-      STWeaponRifleZastavaM92: 8000
+      STWeaponSniperHK417: 15000
       STWeaponRifleStalkerAK15: 15000
 
 - type: personalShop
@@ -206,3 +206,27 @@
   - name: Персональная категория
     items:
       STWeaponRifleSCARL: 3500
+
+- type: personalShop
+  id: PersonalHLoRka_202Shop
+  username: HLoRka_202
+  categories:
+  - name: Персональная категория
+    items:
+      STWeaponSniperSVUTop: 12000
+
+- type: personalShop
+  id: Personalclown_228Shop
+  username: clown_228
+  categories:
+  - name: Персональная категория
+    items:
+      ClothingOuterArmorSevaVano: 8500
+
+- type: personalShop
+  id: PersonalMuhakaShop
+  username: Muhaka
+  categories:
+  - name: Персональная категория
+    items:
+      claymoreBattle: 3500

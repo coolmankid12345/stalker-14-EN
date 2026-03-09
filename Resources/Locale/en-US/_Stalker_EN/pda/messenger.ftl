@@ -1,6 +1,6 @@
 # Messenger cartridge
-st-messenger-cartridge-name = Messenger
-st-messenger-cartridge-description = A program for communication between stalkers.
+ent-STMessengerCartridge = Messenger
+    .desc = A program for communication between stalkers.
 st-messenger-program-name = Messenger
 
 # Channel names

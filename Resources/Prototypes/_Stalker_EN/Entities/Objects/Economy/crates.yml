@@ -1,4 +1,4 @@
-# Bulk Medical Items
+﻿# Bulk Medical Items
 
 - type: entity
   parent: UNstandartCrate
@@ -667,6 +667,7 @@
   - type: SpawnItemsOnUse
     items:
     - id: ClothingOuterArmorMonolith
+    - id: ClothingOuterCoatKevlarMonolith
     - id: ClothingMaskNeckBalaklava1
     - id: ClothingBeltWebbingHolsterMonolith
     - id: ClothingBackpackStalkerZaryaGreen
@@ -856,7 +857,7 @@
     - id: BaseAPSMag
     - id: 918PBMBox
     - id: 918PBMBox
-    - id: STWeaponSniperSKS
+    - id: STWeaponSniperSKSIntegrated
     - id: 739FMJBox
     - id: 739FMJBox
     - id: PowerCellHyper

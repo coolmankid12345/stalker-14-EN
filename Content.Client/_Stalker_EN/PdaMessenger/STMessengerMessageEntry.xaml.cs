@@ -18,7 +18,9 @@ public sealed partial class STMessengerMessageEntry : BoxContainer
     /// <summary>Raised when the user clicks reply; args are (messageId, snippetPreview).</summary>
     public event Action<uint, string>? OnReply;
 
-    private static readonly Regex OfferRefPattern = new(@"\[([A-Z]+#)(\d+)\]", RegexOptions.Compiled);
+    private const string NewsLinkPrefix = "NEWS#";
+
+    private static readonly Regex LinkRefPattern = new(@"\[([A-Z]+#)(\d+)\]", RegexOptions.Compiled);
 
     public STMessengerMessageEntry(STMessengerMessage message)
     {
@@ -56,7 +58,8 @@ public sealed partial class STMessengerMessageEntry : BoxContainer
 
     /// <summary>
     /// Builds a <see cref="FormattedMessage"/> from message content, replacing
-    /// <c>[XX#N]</c> patterns (e.g. [MB#3], [TB#5]) with clickable offer link markup.
+    /// <c>[XX#N]</c> patterns with clickable link markup: <c>[NEWS#N]</c> becomes a news link,
+    /// while other prefixes (e.g. [MB#3], [TB#5]) become offer links.
     /// Non-matching text is escaped via <see cref="FormattedMessage.AddText"/> to prevent injection.
     /// </summary>
     private static FormattedMessage BuildMessageContent(string content)
@@ -64,17 +67,20 @@ public sealed partial class STMessengerMessageEntry : BoxContainer
         var msg = new FormattedMessage();
         var lastIndex = 0;
 
-        foreach (Match match in OfferRefPattern.Matches(content))
+        foreach (Match match in LinkRefPattern.Matches(content))
         {
             // Add escaped text before the match
             if (match.Index > lastIndex)
                 msg.AddText(content[lastIndex..match.Index]);
 
-            // Add offer link markup with prefix attribute — controlled markup, not user input
-            // Prefix is quoted to handle special characters like #
+            // Add clickable link markup — controlled markup, not user input
             var prefix = match.Groups[1].Value;
             var id = match.Groups[2].Value;
-            msg.AddMarkupPermissive($"[offerlink={id} prefix=\"{prefix}\"][/offerlink]");
+
+            if (prefix == NewsLinkPrefix)
+                msg.AddMarkupPermissive($"[newslink={id}][/newslink]");
+            else
+                msg.AddMarkupPermissive($"[offerlink={id} prefix=\"{prefix}\"][/offerlink]");
 
             lastIndex = match.Index + match.Length;
         }

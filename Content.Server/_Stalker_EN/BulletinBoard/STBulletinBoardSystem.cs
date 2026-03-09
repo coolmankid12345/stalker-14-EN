@@ -34,6 +34,8 @@ public sealed class STBulletinBoardSystem : EntitySystem
     [Dependency] private readonly SharedSTFactionResolutionSystem _factionResolution = default!;
     [Dependency] private readonly STMessengerSystem _messenger = default!;
 
+    private static readonly ProtoId<STBandPrototype> ClearSkyBandId = "STClearSkyBand";
+
     /// <summary>
     /// Offers grouped by board type ID, then keyed by offer ID.
     /// </summary>
@@ -216,7 +218,7 @@ public sealed class STBulletinBoardSystem : EntitySystem
         storage[offer.Id] = offer;
         _globalOfferIndex[offer.Id] = board.BoardTypeId;
 
-        _adminLogger.Add(LogType.Action, LogImpact.Low,
+        _adminLogger.Add(LogType.STBulletinBoard, LogImpact.Low,
             $"{ToPrettyString(args.Actor):player} posted bulletin board [{board.BoardTypeId}] {post.Category}: " +
             $"desc=\"{description}\"");
 
@@ -246,7 +248,7 @@ public sealed class STBulletinBoardSystem : EntitySystem
         storage.Remove(withdraw.OfferId);
         _globalOfferIndex.Remove(withdraw.OfferId);
 
-        _adminLogger.Add(LogType.Action, LogImpact.Low,
+        _adminLogger.Add(LogType.STBulletinBoard, LogImpact.Low,
             $"{ToPrettyString(args.Actor):player} withdrew bulletin board [{boardTypeId}] offer #{withdraw.OfferId}");
 
         BroadcastUiUpdate(boardTypeId);
@@ -283,7 +285,7 @@ public sealed class STBulletinBoardSystem : EntitySystem
         var draftMessage = STBulletinOffer.FormatRef(draftPrefix, contact.OfferId);
         _messenger.OpenDm(loaderUid, messengerUid.Value, contact.PosterMessengerId, draftMessage);
 
-        _adminLogger.Add(LogType.Action, LogImpact.Low,
+        _adminLogger.Add(LogType.STBulletinBoard, LogImpact.Low,
             $"{ToPrettyString(args.Actor):player} opened DM from bulletin board with: " +
             $"{contact.PosterMessengerId} (offer #{contact.OfferId})");
     }
@@ -608,6 +610,10 @@ public sealed class STBulletinBoardSystem : EntitySystem
     {
         if (!TryComp<BandsComponent>(uid, out var bands))
             return null;
+
+        // Only Clear Sky is disguised as Loners on PDA
+        if (bands.BandProto == ClearSkyBandId)
+            return _factionResolution.GetBandFactionName(bands.BandName);
 
         if (bands.BandProto is not { } bandProtoId)
             return null;

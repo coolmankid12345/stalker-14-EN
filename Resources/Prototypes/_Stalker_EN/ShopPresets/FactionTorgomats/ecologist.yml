@@ -197,6 +197,8 @@
         HandheldGPSBasic: 50
         Paper: 2
         Pen: 5
+        BoxFolderClipboardEmpty: 20 # Clipboard
+        STEcoClipboard: 20 # Cool Clipboard
         Binocularus1: 750
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500

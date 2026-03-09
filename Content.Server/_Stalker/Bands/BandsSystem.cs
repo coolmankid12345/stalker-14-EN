@@ -198,7 +198,7 @@ namespace Content.Server._Stalker.Bands
             var allFactions = new List<string>();
             foreach (var f in relationsState.FactionIds)
             {
-                if (!_factionRelations.IsAlias(f) && !_factionRelations.IsFactionRestricted(f))
+                if (!_factionRelations.IsAlias(f) && !_factionRelations.IsFactionRestricted(f) && !_factionRelations.IsFactionHidden(f))
                     allFactions.Add(f);
             }
 

@@ -33,6 +33,12 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: StalkerSafeZone
+    - type: Gravity
+      gravityShakeSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/alert.ogg
+      inherent: True
+      enabled: True
+    - type: MapAtmosphere
   - uid: 104
     components:
     - type: MetaData

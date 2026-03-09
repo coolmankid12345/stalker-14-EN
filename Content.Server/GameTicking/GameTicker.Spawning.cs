@@ -489,6 +489,8 @@ namespace Content.Server.GameTicking
             }
             // stalker-en-end
 
+            // stalker-en-end
+            
             if (_possiblePositions.Count != 0)
             {
                 // TODO: This is just here for the eye lerping.

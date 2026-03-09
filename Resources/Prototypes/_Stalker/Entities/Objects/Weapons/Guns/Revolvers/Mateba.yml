@@ -10,7 +10,12 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
   - type: Gun
-    fireRate: 3
+    minAngle: 0
+    maxAngle: 15
+    fireRate: 4
+    angleIncrease: 5
+    angleDecay: 5
+    projectileSpeed: 55
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
   - type: RevolverAmmoProvider
@@ -21,6 +26,14 @@
       - SpeedLoaderMagnum
       - SpeedLoaderRemingtonMagnum
     proto: CartridgeRemingtonMagnum
+  - type: STWeight
+    self: 1.57
+  - type: PullDoAfter
+    pullTime: 1.5
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.46
 
 # REDO-MODULES
 - type: entity

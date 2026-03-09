@@ -5,25 +5,30 @@
   description: Точный и мощный автомат для боя на средней дистанции. Из-за невысокой дульной скорости стреляет тише других и не обладает высокой настильностью.
   components:
   - type: STWeight
-    self: 2.5
+    self: 2
+  - type: PullDoAfter
+    pullTime: 2.5
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/vsv.rsi
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/vsv.rsi
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/vsv.rsi
+  - type: GunWieldBonus
+    minAngle: -55
+    maxAngle: -55
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/val_shoot.ogg
-    minAngle: 50
-    maxAngle: 95
-    angleIncrease: 1
-    angleDecay: 15
-    selectedMode: FullAuto
+    minAngle: 55
+    maxAngle: 105
+    projectileSpeed: 65
+    angleIncrease: 0.8
+    angleDecay: 5
+    fireRate: 5
+    selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    - FullAuto
-    fireRate: 6.5
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -48,8 +53,8 @@
           tags:
           - STCartridge545
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.5
+    falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.55
+    accuracyMultiplier: 1.45
   - type: FarGunshot
     sound: /Audio/_DZ/Effects/FarGunshots/supressed1.ogg

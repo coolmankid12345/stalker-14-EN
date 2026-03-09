@@ -57,6 +57,7 @@ namespace Content.Server.Database
         public DbSet<StalkerMessengerId> StalkerMessengerIds { get; set; } = null!; // stalker-en-changes
         public DbSet<StalkerMessengerContact> StalkerMessengerContacts { get; set; } = null!; // stalker-en-changes
         public DbSet<StalkerPdaPassword> StalkerPdaPasswords { get; set; } = null!; // stalker-en-changes
+        public DbSet<StalkerNewsArticle> StalkerNewsArticles { get; set; } = null!; // stalker-en-changes
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Preference>()
@@ -388,6 +389,9 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<StalkerPdaPassword>()
                 .HasKey(p => p.CharacterName);
+
+            modelBuilder.Entity<StalkerNewsArticle>()
+                .HasKey(a => a.Id);
             // stalker-en-changes-end
 
             // Changes for modern HWID integration
@@ -1624,6 +1628,33 @@ namespace Content.Server.Database
 
         [Required]
         public string Password { get; set; } = default!;
+    }
+
+    /// <summary>
+    /// Stores a published Stalker News article. Persists across rounds.
+    /// </summary>
+    public sealed class StalkerNewsArticle
+    {
+        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [Required]
+        public string Title { get; set; } = default!;
+
+        [Required]
+        public string Content { get; set; } = default!;
+
+        [Required]
+        public string Author { get; set; } = default!;
+
+        public int RoundId { get; set; }
+
+        /// <summary>Stored as TimeSpan.Ticks for precision.</summary>
+        public long PublishTimeTicks { get; set; }
+
+        public int EmbedColor { get; set; }
+
+        public DateTime CreatedAt { get; set; }
     }
     // stalker-en-changes-end
 

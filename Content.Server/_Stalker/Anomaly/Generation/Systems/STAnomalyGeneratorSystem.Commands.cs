@@ -8,7 +8,7 @@ namespace Content.Server._Stalker.Anomaly.Generation.Systems;
 
 public sealed partial class STAnomalyGeneratorSystem
 {
-    [Dependency] private readonly IConsoleHost _consoleHost = default!;
+    [Dependency] private readonly IConsoleHost _consoleHost = null!;
 
     private void InitializeCommands()
     {
@@ -85,13 +85,13 @@ public sealed partial class STAnomalyGeneratorSystem
         shell.WriteLine($"Create generation {task.Id}");
     }
 
-    private CompletionResult StartGenerationCallbackHelper(IConsoleShell shell, string[] args)
+    private static CompletionResult StartGenerationCallbackHelper(IConsoleShell shell, string[] args)
     {
         return args.Length switch
         {
             1 => CompletionResult.FromOptions(CompletionHelper.MapIds()),
             2 => CompletionResult.FromOptions(CompletionHelper.PrototypeIDs<STAnomalyGenerationOptionsPrototype>()),
-            _ => CompletionResult.Empty
+            _ => CompletionResult.Empty,
         };
     }
 

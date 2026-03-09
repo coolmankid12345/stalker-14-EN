@@ -52,6 +52,13 @@ public sealed class STFactionRelationDefaultsPrototype : IPrototype
     public List<string> RestrictedFactions { get; } = new();
 
     /// <summary>
+    /// Factions hidden from all relation UIs (PDA app grid, Igor Relations tab).
+    /// Unlike aliases, hidden factions are independent — they just don't appear in UI.
+    /// </summary>
+    [DataField]
+    public List<string> HiddenFactions { get; } = new();
+
+    /// <summary>
     /// Maps faction IDs to human-readable display names.
     /// Only factions that differ from their ID need an entry (e.g. "ClearSky" → "Clear Sky").
     /// Factions without an entry use their ID as-is.

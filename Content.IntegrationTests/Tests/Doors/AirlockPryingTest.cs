@@ -10,9 +10,7 @@ public sealed class AirlockPryingTest : InteractionTest
     public async Task PoweredClosedAirlock_Pry_DoesNotOpen()
     {
         await SpawnTarget(Airlock);
-        await SpawnEntity("APCBasic", SEntMan.GetCoordinates(TargetCoords));
-
-        await RunTicks(5);
+        await SetPowered(true); // stalker-en-change
 
         Assert.That(TryComp<AirlockComponent>(out var airlockComp), "Airlock does not have AirlockComponent?");
         Assert.That(airlockComp.Powered, "Airlock should be powered for this test.");
@@ -29,9 +27,7 @@ public sealed class AirlockPryingTest : InteractionTest
     public async Task PoweredOpenAirlock_Pry_DoesNotClose()
     {
         await SpawnTarget(Airlock);
-        await SpawnEntity("APCBasic", SEntMan.GetCoordinates(TargetCoords));
-
-        await RunTicks(5);
+        await SetPowered(true);
 
         Assert.That(TryComp<AirlockComponent>(out var airlockComp), "Airlock does not have AirlockComponent?");
         Assert.That(airlockComp.Powered, "Airlock should be powered for this test.");

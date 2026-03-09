@@ -1555,6 +1555,8 @@
       items:
         - id: MedkitMilitary
         - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
         - id: MedkitScience
         - id: MedkitScience
         - id: MedkitScience

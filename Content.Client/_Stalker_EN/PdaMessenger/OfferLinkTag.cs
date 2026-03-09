@@ -1,9 +1,6 @@
-using System.Diagnostics.CodeAnalysis;
 using Content.Client.UserInterface.ControlExtensions;
+using Content.Client._Stalker_EN.UI.Controls;
 using Robust.Client.UserInterface;
-using Robust.Client.UserInterface.Controls;
-using Robust.Client.UserInterface.RichText;
-using Robust.Shared.Input;
 using Robust.Shared.Utility;
 
 namespace Content.Client._Stalker_EN.PdaMessenger;
@@ -14,24 +11,15 @@ namespace Content.Client._Stalker_EN.PdaMessenger;
 /// Supports any board prefix (MB#, TB#, etc.).
 /// Click handling is delegated to the nearest parent implementing <see cref="IOfferLinkClickHandler"/>.
 /// </summary>
-public sealed class OfferLinkTag : IMarkupTagHandler
+public sealed class OfferLinkTag : PdaLinkTag
 {
     /// <summary>Fallback prefix used when no prefix attribute is present (backwards compatibility).</summary>
     private const string FallbackPrefix = "MB#";
 
-    public string Name => "offerlink";
+    public override string Name => "offerlink";
 
-    public bool TryCreateControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
+    protected override string GetLabel(MarkupNode node, long id)
     {
-        if (!node.Value.TryGetLong(out var longId))
-        {
-            control = null;
-            return false;
-        }
-
-        var id = (uint) longId;
-
-        // Read prefix from attributes, default to fallback for backwards compatibility
         var prefix = FallbackPrefix;
         if (node.Attributes.TryGetValue("prefix", out var prefixValue)
             && prefixValue.TryGetString(out var prefixStr))
@@ -39,27 +27,13 @@ public sealed class OfferLinkTag : IMarkupTagHandler
             prefix = prefixStr;
         }
 
-        var label = new Label
-        {
-            Text = $"[{prefix}{id}]",
-            MouseFilter = Control.MouseFilterMode.Stop,
-            FontColorOverride = Color.CornflowerBlue,
-            DefaultCursorShape = Control.CursorShape.Hand,
-        };
+        return $"[{prefix}{id}]";
+    }
 
-        label.OnMouseEntered += _ => label.FontColorOverride = Color.LightSkyBlue;
-        label.OnMouseExited += _ => label.FontColorOverride = Color.CornflowerBlue;
-        label.OnKeyBindDown += args =>
-        {
-            if (args.Function != EngineKeyFunctions.UIClick)
-                return;
-
-            if (label.TryGetParentHandler<IOfferLinkClickHandler>(out var handler))
-                handler.HandleOfferLinkClick(id);
-        };
-
-        control = label;
-        return true;
+    protected override void OnClick(Control source, long id)
+    {
+        if (source.TryGetParentHandler<IOfferLinkClickHandler>(out var handler))
+            handler.HandleOfferLinkClick((uint) id);
     }
 }
 

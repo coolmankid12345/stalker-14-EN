@@ -127,6 +127,7 @@ namespace Content.Client.GameTicking.Managers
             AreWeReady = message.YouAreReady;
             LobbyBackground = message.LobbyBackground;
             Paused = message.Paused;
+            RoundId = message.RoundId; // stalker-en-changes - network RoundId for the PDA
 
             LobbyStatusUpdated?.Invoke();
         }

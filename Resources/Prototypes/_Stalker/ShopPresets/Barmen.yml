@@ -38,6 +38,24 @@
     ZoneArtifactPellicle: 594
     ZoneArtifactBaloon: 4752
 
+    # New
+    
+    ZoneArtifactAccumulator: 864
+    ZoneArtifactDiamond: 3168
+    ZoneArtifactCharger: 3168
+    ZoneArtifactToxic: 864
+    ZoneArtifactCytoplasm: 648
+    ZoneArtifactCompass: 3168
+    ZoneArtifactCrucifix: 5760
+    ZoneArtifactThorn: 1296
+    ZoneArtifactArf: 864
+    ZoneArtifactDarkCube: 5760
+    ZoneArtifactBunch: 1296
+    ZoneArtifactRock: 1296
+    ZoneArtifactSun: 3168
+    ZoneArtifactRoot: 3168
+    ZoneArtifactConflagration: 1296
+
     # Mutant parts
 
     #Boars -------- Health * T * 0.45
@@ -88,9 +106,10 @@
         STWeaponShotgunSPAS: 1200
         STWeaponRifleAKS74: 3000
         STWeaponRifleA545: 13000
+        STWeaponRifleLR300v1: 13000
         STWeaponSMGPP91: 1500
-        STWeaponSMGStalkerCP2Veresk: 3500
         STWeaponSMGPPSh41: 2000
+        WeaponGameRevolverMateba: 4000
     - name: shop-category-magazines
       priority: 1
       items:
@@ -121,6 +140,8 @@
         45ACPMFMJBox: 350
         45ACPRIPBox: 200
         45ACPAPBox: 1000
+        MagazineBoxRemingtonMagnum: 320
+        MagazineBoxRemingtonMagnumAP: 520
         # 7.25
         725PBox: 130
         725PTBox: 525

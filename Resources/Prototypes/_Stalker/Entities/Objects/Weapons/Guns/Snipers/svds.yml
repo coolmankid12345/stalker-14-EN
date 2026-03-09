@@ -4,7 +4,12 @@
   id: STBaseWeaponRifleSVDS
   components:
   - type: STWeight
-    self: 4.8
+    self: 5
+  - type: PullDoAfter
+    pullTime: 5
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -70
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVDS/base.rsi
   - type: Item
@@ -16,9 +21,12 @@
       path: /Audio/_Stalker/Effects/Guns/svd.ogg
     minAngle: 50
     maxAngle: 120
+    fireRate: 1.2
+    angleIncrease: 3
     angleDecay: 60
-    angleIncrease: 2
-    fireRate: 1
+    projectileSpeed: 75
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.2
   - type: STWeaponAccuracy
     accuracyMultiplier: 5
   - type: ChamberMagazineAmmoProvider
@@ -128,7 +136,12 @@
   description: A selfmade rifle for an SVD magazine. Oblique, but wildly lethal.
   components:
     - type: STWeight
-      self: 4.8
+      self: 4
+    - type: PullDoAfter
+      pullTime: 3
+    - type: GunWieldBonus
+      minAngle: -48
+      maxAngle: -70
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVDS/wood.rsi
     - type: Item
@@ -139,10 +152,11 @@
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/svd.ogg
       minAngle: 50
-      maxAngle: 120
-      angleDecay: 25
-      angleIncrease: 8
-      fireRate: 0.6
+      maxAngle: 150
+      fireRate: 1
+      angleIncrease: 10
+      angleDecay: 50
+      projectileSpeed: 75
     - type: ChamberMagazineAmmoProvider
       soundRack:
         path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg
@@ -168,4 +182,20 @@
         gun_magazine: !type:ContainerSlot
         gun_chamber: !type:ContainerSlot
     - type: STWeaponDamageFalloff
-      falloffMultiplier: 1.2
+      falloffMultiplier: 0.2
+    - type: STWeaponAccuracy
+      accuracyMultiplier: 5
+
+- type: entity
+  parent: STBaseWeaponRifleSVDS
+  id: STWeaponSniperSVUTop
+  name: СВУ "Топь"
+  suffix: ST, Кастомка
+  description: Снайперская винтовка укороченная — самозарядная снайперская винтовка компоновки булл-пап, разработанная ЦКИБ СОО на основе СВД. Разработка предназначенной для воздушно-десантных войск СССР укороченной снайперской винтовки на базе СВД началась в ЦКИБ СОО в 1977 году. В 1979 году демонстрационные образцы винтовки СВУ конструктора Л. В. Бондарева были предложены частям ВДВ, однако до их производства дело тогда не дошло. В 1991 году было начато серийное производство СВУ, первые серийные винтовки поступили на вооружение 106-й гвардейской воздушно-десантной дивизии, где они прошли войсковые испытания. Ствол оснащён массивным маскирующим дульным устройством, разработанным конструктором Л. В. Бондарёвым. Глушитель обеспечивает снижение уровня звука выстрела на 10-12 % по сравнению с СВД, практически полностью устраняет дульное пламя и рассеивает звук выстрела таким образом, что определить точную позицию стрелка становится невозможным. Фурнитура выполнена из полиамида. У данного образца подавляющая часть корпуса, включая приклад, обмотана камуфляжной лентой, а на прицеле и дульном устройстве намотана дополнительная обмотка, разбивающая силуэт оружия на фоне растительности.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVU/Top.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVU/Top.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVU/Top.rsi

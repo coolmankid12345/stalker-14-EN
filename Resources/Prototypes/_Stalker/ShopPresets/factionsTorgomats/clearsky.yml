@@ -66,6 +66,24 @@
     MutantPartPseudogiantHeart: 5400
     MutantPartZombieHand: 810
 
+    # New
+    
+    ZoneArtifactAccumulator: 840
+    ZoneArtifactDiamond: 3240
+    ZoneArtifactCharger: 3240
+    ZoneArtifactToxic: 840
+    ZoneArtifactCytoplasm: 720
+    ZoneArtifactCompass: 3240
+    ZoneArtifactCrucifix: 6480
+    ZoneArtifactThorn: 1620
+    ZoneArtifactArf: 840
+    ZoneArtifactDarkCube: 6480
+    ZoneArtifactBunch: 1620
+    ZoneArtifactRock: 1620
+    ZoneArtifactSun: 3240
+    ZoneArtifactRoot: 3240
+    ZoneArtifactConflagration: 1620
+
     # Mutant parts EN
 
     MutantPartCatGland: 125

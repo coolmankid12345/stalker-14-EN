@@ -17,6 +17,7 @@
     - Renegades
     - Rookies
     - Journalists
+    - UN
   bandMapping:
     Stalker: Loners
     Freedom: Freedom
@@ -30,6 +31,7 @@
     "Clear Sky": ClearSky
     Renegades: Renegades
     Journalists: Journalists
+    UN: UN
   factionGroups:
     Loners:
       - Rookies
@@ -38,6 +40,9 @@
   restrictedFactions:
     - Loners
     - Monolith
+  hiddenFactions:
+    - Journalists
+    - UN
   displayNames:
     ClearSky: Clear Sky
   relations:

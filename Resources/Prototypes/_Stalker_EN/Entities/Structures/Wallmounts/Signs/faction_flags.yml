@@ -41,7 +41,7 @@
     normalState: fire
   - type: Damageable
     damageModifierSet: Web
-  - type: Destructible
+  - type: Destructible # TODO: a destroyed entity for every flag type, offset one tile down so it doesnt spawn on walls
     thresholds:
     - trigger: # Excess damage, don't spawn entities
         !type:DamageTrigger
@@ -50,7 +50,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
     - trigger:
-        !type:DamageTrigger
+        !type:DamageTypeTrigger
+        damageType: Heat
         damage: 15
       behaviors:
       - !type:SpawnEntitiesBehavior
@@ -61,4 +62,3 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Craftable
-

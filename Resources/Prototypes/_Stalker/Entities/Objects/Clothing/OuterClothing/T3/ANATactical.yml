@@ -118,6 +118,7 @@
   id: STClothingOuterArmorLightPlateVestBaseANAUN
   name: Бронеразгрузка «Степь-4» ООН
   description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+  suffix: ST, UN, T3, PvP # EN
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ANA/UN.rsi

@@ -13,6 +13,16 @@ public sealed class HandButton : SlotControl
         Name = "hand_" + handName;
         SlotName = handName;
         SetBackground(handLocation);
+        FullButtonTexturePath = "HandSlotBackground";
+
+        // TODO: slot_highlight_l.png and slot_highlight_r.png are placeholders (copies of slot_highlight.png) — replace with proper per-hand sprites
+        HighlightTexturePath = handLocation switch
+        {
+            HandLocation.Left => "slot_highlight_l",
+            HandLocation.Middle => "slot_highlight",
+            HandLocation.Right => "slot_highlight_r",
+            _ => "slot_highlight"
+        };
     }
 
     private void SetBackground(HandLocation handLoc)

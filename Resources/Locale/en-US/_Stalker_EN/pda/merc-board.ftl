@@ -1,6 +1,6 @@
 # Mercenary Board cartridge
-st-merc-board-cartridge-name = Merc Board
-st-merc-board-cartridge-description = A program for posting and browsing mercenary offers.
+ent-STMercBoardCartridge = Merc Board
+    .desc = A program for posting and browsing mercenary offers.
 st-merc-board-program-name = Merc Board
 
 # Header

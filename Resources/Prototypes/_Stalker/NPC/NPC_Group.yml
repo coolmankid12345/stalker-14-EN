@@ -398,7 +398,7 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
-    shopPresetId: StalkerShopPreset
+    shopPresetId: VeteranShopPreset
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS

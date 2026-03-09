@@ -74,13 +74,10 @@ public sealed partial class STAnomalyGeneratorSystem : EntitySystem
             if (!_prototype.TryIndex(targetComponent.OptionsId, out var options))
             {
                 Log.Error($"Can't start generation on {ToPrettyString(entityUid)}!");
-#if DEBUG
-                throw new KeyNotFoundException();
-#endif
                 continue;
             }
 
-            StartGeneration(mapComponent.MapId, options.Options);
+            _ = StartGeneration(mapComponent.MapId, options.Options);
         }
     }
 
@@ -112,7 +109,7 @@ public sealed partial class STAnomalyGeneratorSystem : EntitySystem
 
         var count = job.Result!.SpawnedAnomalies.Count;
         var total = options.TotalCount;
-        var percent = (float)Math.Round(count / (float)total * 100f, 2);
+        var percent = float.Round(count / (float) total * 100f, 2);
 
         Log.Info($"Generation {job.AsTask.Id} end, count: {count}\\{total} ({percent}%)");
 

@@ -84,6 +84,7 @@
   id: ClothingHeadsetNato
   name: "United Nations over-ear headset"
   description: State-of-the-art headset that is linked to NATO's communications relay.
+  suffix: ST, UN # EN
   components:
   - type: ContainerContainer
     containers:

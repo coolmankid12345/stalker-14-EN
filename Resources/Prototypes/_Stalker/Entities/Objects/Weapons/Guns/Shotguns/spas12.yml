@@ -5,6 +5,11 @@
   components:
   - type: STWeight
     self: 4.4
+  - type: PullDoAfter
+    pullTime: 2.6
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -50
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/spas.rsi
   - type: Clothing
@@ -18,9 +23,14 @@
       path: /Audio/_Stalker/Effects/Guns/spas_shoot.ogg
     minAngle: 60
     maxAngle: 80
+    fireRate: 3
     angleIncrease: 10
     angleDecay: 50
-    fireRate: 2
+    projectileSpeed: 55
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
 
 - type: entity
   parent: STBaseWeaponShotgunSPAS

@@ -1438,14 +1438,33 @@ public sealed class LoadoutSystem : EntitySystem
 
         // Fallback to prototype match - return ANY item with count > 0
         // This handles state-based identifier mismatches (stack counts, ammo counts, charges)
-        // Prefer items at the end of the list (most recently added)
+        // For magazines, prefer the fullest one (highest AmmoCount)
         if (lookup.ByPrototype.TryGetValue(prototypeId, out var protoList))
         {
+            RepositoryItemInfo? best = null;
+            var bestAmmo = -1;
+            RepositoryItemInfo? fallback = null;
+
             for (var i = protoList.Count - 1; i >= 0; i--)
             {
-                if (protoList[i].Count > 0)
-                    return protoList[i];
+                if (protoList[i].Count <= 0)
+                    continue;
+
+                if (protoList[i].SStorageData is AmmoContainerStalker ammo)
+                {
+                    if (ammo.AmmoCount > bestAmmo)
+                    {
+                        bestAmmo = ammo.AmmoCount;
+                        best = protoList[i];
+                    }
+                }
+                else
+                {
+                    fallback ??= protoList[i];
+                }
             }
+
+            return best ?? fallback;
         }
 
         return null;

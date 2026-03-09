@@ -1,0 +1,9 @@
+- type: lightCraftingRecipe
+  id: STCraftSkinSTClothingOuterArmorVeryHeavyFreedomBaseFreedom
+  results:
+    - STClothingOuterArmorVeryHeavyFreedom
+  steps:
+    firstIngredient: STSkinsKitFreedom
+    secondIngredient: STClothingOuterArmorVeryHeavy
+    keepFirst: true
+    time: 5

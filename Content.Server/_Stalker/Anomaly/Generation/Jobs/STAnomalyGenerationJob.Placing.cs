@@ -8,10 +8,7 @@ public sealed partial class STAnomalyGenerationJob
 {
     private async Task<EntityUid> TrySpawn(STAnomalyGeneratorAnomalyEntry anomalyEntry, Vector2i coords)
     {
-        if (!_tileCoordinates.TryGetValue(coords, out var tileRef))
-            return EntityUid.Invalid;
-
-        if (!await PlaceFree(anomalyEntry, coords))
+        if (!_tileCoordinates.TryGetValue(coords, out var tileRef) || !await PlaceFree(anomalyEntry, coords))
             return EntityUid.Invalid;
 
         var gridComp = _entityManager.EnsureComponent<MapGridComponent>(tileRef.GridUid);

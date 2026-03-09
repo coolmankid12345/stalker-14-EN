@@ -4,7 +4,12 @@
   id: STBaseWeaponRifleGalil
   components:
   - type: STWeight
-    self: 4.5
+    self: 4.3
+  - type: PullDoAfter
+    pullTime: 5
+  - type: GunWieldBonus
+    minAngle: -40
+    maxAngle: -55
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galil.rsi
   - type: Sprite
@@ -12,17 +17,18 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galil.rsi
   - type: Gun
-    fireRate: 8
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/sks_shoot.ogg
       params:
         volume: -2
-    minAngle: 50
-    maxAngle: 100
-    angleIncrease: 1.5
-    selectedMode: Burst
+    minAngle: 45
+    maxAngle: 75
+    fireRate: 9.5
+    angleIncrease: 0.9
+    angleDecay: 5
+    projectileSpeed: 60
+    selectedMode: FullAuto
     availableModes:
-    - Burst
     - SemiAuto
     - FullAuto
   - type: ItemSlots
@@ -56,9 +62,9 @@
           tags:
           - STCartridge556
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
+    falloffMultiplier: 0.5
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.5
+    accuracyMultiplier: 1.56
 
 - type: entity
   parent: STBaseWeaponRifleGalil

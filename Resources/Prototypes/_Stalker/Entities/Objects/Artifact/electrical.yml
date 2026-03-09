@@ -128,10 +128,10 @@
   - type: PersonalDamage
     damage:
       types:
-        Cold: 2
+        Cold: 1
         Psy: -0.5
         Radiation: -1
-        Blunt: 2
+        Blunt: 1
     interval: 1
   - type: STWeight
     self: -1
@@ -155,7 +155,7 @@
   - type: ZoneArtifact
     anomaly: ZoneAnomalyGarland
   - type: ZoneArtifactDetectorTarget
-    detectedLevel: 4
+    detectedLevel: 2
   - type: PointLight
     radius: 1.5
     energy: 5.5

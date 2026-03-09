@@ -4,7 +4,12 @@
   id: STBaseWeaponRifleAKM
   components:
   - type: STWeight
-    self: 3.1
+    self: 3.5
+  - type: PullDoAfter
+    pullTime: 3.5
+  - type: GunWieldBonus
+    minAngle: -53
+    maxAngle: -55
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/akm.rsi
   - type: Item
@@ -14,15 +19,16 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
-    minAngle: 52
-    maxAngle: 115
-    angleIncrease: 1.5
+    minAngle: 55
+    maxAngle: 105
+    fireRate: 6
+    angleIncrease: 1.6
+    angleDecay: 7
+    projectileSpeed: 60
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
     - FullAuto
-    angleDecay: 8
-    fireRate: 5.5
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -54,7 +60,7 @@
           tags:
           - STCartridge739
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.9
+    falloffMultiplier: 0.8
   - type: STWeaponAccuracy
     accuracyMultiplier: 1.55
 
@@ -79,5 +85,5 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/akms.rsi
   - type: Gun
-    minAngle: 57
-    maxAngle: 130
+    minAngle: 50
+    maxAngle: 90

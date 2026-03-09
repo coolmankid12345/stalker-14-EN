@@ -319,3 +319,18 @@
   - type: Currency
     price:
       PremiumSupplyTalons: 0
+
+- type: entity
+  parent: ClothingNeckDogtagBaseEN
+  id: ClothingNeckDogtagUN
+  name: united nations dogtag
+  description: A lightweight dogtag with a globe and laurels pressed into it.
+  suffix: ST, UN
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Dogtags/un.rsi
+  - type: TypingIndicatorClothing
+    proto: un
+  - type: Currency
+    price:
+      PremiumSupplyTalons: 3 # i dont know okslops stance on the un

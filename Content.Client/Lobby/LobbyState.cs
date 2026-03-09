@@ -128,7 +128,8 @@ namespace Content.Client.Lobby
             {
                 Lobby!.StartTime.Text = string.Empty;
                 var roundTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
-                Lobby!.StationTime.Text = Loc.GetString("lobby-state-player-status-round-time", ("hours", roundTime.Hours), ("minutes", roundTime.Minutes));
+                // stalker-en-changes - display current time
+                Lobby!.StationTime.Text = Loc.GetString("lobby-state-player-status-round-time-stalker", ("hours", roundTime.Hours), ("minutes", roundTime.Minutes));
                 return;
             }
 

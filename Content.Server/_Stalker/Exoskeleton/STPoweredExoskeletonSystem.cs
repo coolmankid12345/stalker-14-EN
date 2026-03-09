@@ -1,4 +1,3 @@
-using Content.Server._Stalker.Weight;
 using Content.Shared._Stalker.Exoskeleton;
 using Content.Shared._Stalker.Weight;
 using Content.Shared.PowerCell;

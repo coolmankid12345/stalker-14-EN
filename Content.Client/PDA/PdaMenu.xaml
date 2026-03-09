@@ -32,19 +32,23 @@
             <ContainerButton Name="PdaOwnerButton">
                 <RichTextLabel Name="PdaOwnerLabel" Access="Public"/>
             </ContainerButton>
-            <ContainerButton Name="IdInfoButton">
+            <!-- stalker-en-changes - current week button -->
+            <ContainerButton Name="StalkerWeekButton">
+                <RichTextLabel Name="StalkerWeekLabel" Access="Public"/>
+            </ContainerButton>
+            <ContainerButton Name="IdInfoButton" Visible="False"> <!-- stalker-en-changes - PDA homescreen layout -->
                 <RichTextLabel Name="IdInfoLabel" Access="Public"/>
             </ContainerButton>
-            <ContainerButton Name="StationNameButton">
+            <ContainerButton Name="StationNameButton" Visible="False"> <!-- stalker-en-changes - PDA homescreen layout -->
                 <RichTextLabel Name="StationNameLabel" Access="Public"/>
             </ContainerButton>
-            <ContainerButton Name="StationAlertLevelButton">
+            <ContainerButton Name="StationAlertLevelButton" Visible="False"> <!-- stalker-en-changes - PDA homescreen layout -->
                 <RichTextLabel Name="StationAlertLevelLabel" Access="Public"/>
             </ContainerButton>
             <ContainerButton Name="StationTimeButton">
                 <RichTextLabel Name="StationTimeLabel" Access="Public"/>
             </ContainerButton>
-            <ContainerButton Name="StationAlertLevelInstructionsButton">
+            <ContainerButton Name="StationAlertLevelInstructionsButton" Visible="False"> <!-- stalker-en-changes - PDA homescreen layout -->
                 <RichTextLabel Name="StationAlertLevelInstructions" Access="Public"/>
             </ContainerButton>
         </BoxContainer>

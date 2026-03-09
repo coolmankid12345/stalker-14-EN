@@ -6,6 +6,11 @@
   components:
   - type: STWeight
     self: 3.45
+  - type: PullDoAfter
+    pullTime: 2.4
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -50
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp-133.rsi
     scale: 0.7, 0.7
@@ -16,10 +21,17 @@
   - type: BallisticAmmoProvider
     capacity: 6
   - type: Gun
+    minAngle: 55
+    maxAngle: 60
+    fireRate: 1
     angleIncrease: 15
-    angleDecay: 75
-    fireRate: 0.8
-
+    angleDecay: 50
+    projectileSpeed: 50
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.15
+    
 - type: entity
   parent: STBaseWeaponShotgunMP133
   id: STWeaponShotgunMP133

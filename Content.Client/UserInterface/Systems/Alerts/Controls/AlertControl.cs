@@ -5,6 +5,7 @@ using Content.Shared.Alert;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.ContentPack;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -13,6 +14,7 @@ namespace Content.Client.UserInterface.Systems.Alerts.Controls
     public sealed class AlertControl : BaseButton
     {
         [Dependency] private readonly IEntityManager _entityManager = default!;
+        [Dependency] private readonly IResourceManager _resourceManager = default!;
 
         private readonly SpriteSystem _sprite;
 
@@ -96,7 +98,7 @@ namespace Content.Client.UserInterface.Systems.Alerts.Controls
 
             if (!_entityManager.TryGetComponent<SpriteComponent>(_spriteViewEntity, out var sprite))
                 return;
-            var icon = Alert.GetIcon(_severity);
+            var icon = ThemedSpriteResolver.Resolve(Alert.GetIcon(_severity), Theme.Path, _resourceManager);
             if (_sprite.LayerMapTryGet((_spriteViewEntity, sprite), AlertVisualLayers.Base, out var layer, false))
                 _sprite.LayerSetSprite((_spriteViewEntity, sprite), layer, icon);
         }
@@ -116,6 +118,12 @@ namespace Content.Client.UserInterface.Systems.Alerts.Controls
             _cooldownGraphic.FromTime(Cooldown.Value.Start, Cooldown.Value.End);
         }
 
+        protected override void OnThemeUpdated()
+        {
+            base.OnThemeUpdated();
+            SetupIcon();
+        }
+
         private void SetupIcon()
         {
             if (!_entityManager.Deleted(_spriteViewEntity))
@@ -124,7 +132,7 @@ namespace Content.Client.UserInterface.Systems.Alerts.Controls
             _spriteViewEntity = _entityManager.Spawn(Alert.AlertViewEntity);
             if (_entityManager.TryGetComponent<SpriteComponent>(_spriteViewEntity, out var sprite))
             {
-                var icon = Alert.GetIcon(_severity);
+                var icon = ThemedSpriteResolver.Resolve(Alert.GetIcon(_severity), Theme.Path, _resourceManager);
                 if (_sprite.LayerMapTryGet((_spriteViewEntity, sprite), AlertVisualLayers.Base, out var layer, false))
                     _sprite.LayerSetSprite((_spriteViewEntity, sprite), layer, icon);
             }

@@ -5,7 +5,7 @@
   baseTurf: FloorPlanetDirt
   isSubfloor: false
   heatCapacity: 10000
-  weather: false
+  weather: true
   indestructible: true
   footstepSounds:
     collection: STFootstepDirt

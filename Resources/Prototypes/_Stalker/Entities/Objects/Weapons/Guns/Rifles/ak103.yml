@@ -4,7 +4,12 @@
   id: STBaseWeaponRifleAK103
   components:
   - type: STWeight
-    self: 3.6
+    self: 4
+  - type: PullDoAfter
+    pullTime: 3.5
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -50
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
   - type: Sprite
@@ -14,15 +19,16 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
-    minAngle: 50
-    maxAngle: 100
-    angleIncrease: 1.8
+    minAngle: 55
+    maxAngle: 110
+    fireRate: 7
+    angleIncrease: 1.7
+    angleDecay: 7.5
+    projectileSpeed: 65
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
     - FullAuto
-    angleDecay: 8
-    fireRate: 7
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -53,9 +59,9 @@
           tags:
           - STCartridge739
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.85
+    falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.55
+    accuracyMultiplier: 1.56
 
 - type: entity
   parent: STBaseWeaponRifleAK103
@@ -113,6 +119,25 @@
   name: saiga 7.39
   description: Civilian version of AK-74M with fixed stock. Popular among stalkers for reliability and ammo availability.
   components:
+  - type: STWeight
+    self: 3.2
+  - type: PullDoAfter
+    pullTime: 3
+  - type: GunWieldBonus
+    minAngle: -40
+    maxAngle: -40
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
+    minAngle: 60
+    maxAngle: 110
+    fireRate: 3
+    angleIncrease: 1.4
+    angleDecay: 4
+    projectileSpeed: 55
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -142,6 +167,10 @@
         whitelist:
           tags:
           - STCartridge739
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 1
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.5
 
 - type: entity
   parent: STWeaponRifleSaiga739
@@ -149,17 +178,19 @@
   name: saiga 7.39
   description: Civilian version of AK-74M with fixed stock. Popular among stalkers for reliability and ammo availability.
   components:
+  - type: STWeight
+    self: 3.5
+  - type: PullDoAfter
+    pullTime: 3
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
-    minAngle: 50
-    maxAngle: 90
-    angleIncrease: 2
+    minAngle: 65
+    maxAngle: 110
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
     - FullAuto
-    angleDecay: 10
     fireRate: 5
 
 - type: entity

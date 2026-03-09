@@ -76,6 +76,7 @@ id-card-access-level-military-stalker = Military Stalker
 id-card-access-level-military-head = Headquarters
 id-card-access-level-sci-base = Scientists
 id-card-access-level-sci-head = Head Scientist
+id-card-access-level-sci-rector = Rector
 
 # Militia
 id-card-access-level-militia = Militia

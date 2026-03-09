@@ -13,7 +13,7 @@
     maxIntensity: 200
     intensitySlope: 1.5
   - type: Sprite
-    sprite: Objects/Power/power_cells.rsi
+    sprite: _Stalker_EN/Objects/Power/power_cells.rsi #stalker_en changed by Oracle
   - type: SolutionContainerManager
     solutions:
       battery:

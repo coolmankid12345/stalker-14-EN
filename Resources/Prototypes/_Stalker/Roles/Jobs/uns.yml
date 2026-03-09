@@ -30,6 +30,8 @@
         - type: Bands
           band: Stalker
           bandIcon: un
+          bandProto: STUNBand
+          bandRankId: 1
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -41,6 +43,16 @@
   id: UNGear
   equipment:
     id: MilitaryPDA
+    dogtag: ClothingNeckDogtagUN # EN
     legs: ClothingLegsJeansGreenCargo
     shoes: STClothingShoesBootsCombatFilled
     torso: ClothingTorsoTurtlenecksUN
+
+- type: stBand
+  id: STUNBand
+  name: UN
+  factionId: Military
+  maxMembers: 30
+  managingRankId: 2
+  hierarchy:
+    1: StalkerUN

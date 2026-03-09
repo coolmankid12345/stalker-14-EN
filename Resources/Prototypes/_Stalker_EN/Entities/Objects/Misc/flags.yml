@@ -147,7 +147,7 @@
         - to: flagbandend
           steps:
             - tag: FoldedFlagBand
-              name: folded bandit flag
+              name: construction-step-folded-bandit-flag
               icon:
                 sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
                 state: band
@@ -176,7 +176,7 @@
     - to: flagdutyend
       steps:
       - tag: FoldedFlagDuty
-        name: folded duty flag
+        name: construction-step-folded-duty-flag
         icon:
           sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
           state: duty
@@ -205,7 +205,7 @@
     - to: flagfreeend
       steps:
       - tag: FoldedFlagFree
-        name: folded freedom flag
+        name: construction-step-folded-freedom-flag
         icon:
           sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
           state: free
@@ -234,7 +234,7 @@
     - to: flagmercend
       steps:
       - tag: FoldedFlagMerc
-        name: folded mercenary flag
+        name: construction-step-folded-mercenary-flag
         icon:
           sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
           state: merc
@@ -263,7 +263,7 @@
     - to: flaghelperend
       steps:
       - tag: FoldedFlagHelper
-        name: folded kindness flag
+        name: construction-step-folded-kindness-flag
         icon:
           sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
           state: helper
@@ -292,7 +292,7 @@
     - to: flagreneend
       steps:
       - tag: FoldedFlagRene
-        name: folded renegade flag
+        name: construction-step-folded-renegade-flag
         icon:
           sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
           state: rene
@@ -321,7 +321,7 @@
     - to: flagcsend
       steps:
       - tag: FoldedFlagCS
-        name: folded clear sky flag
+        name: construction-step-folded-clear-sky-flag
         icon:
           sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
           state: cs
@@ -350,7 +350,7 @@
     - to: flagmiliend
       steps:
       - tag: FoldedFlagMili
-        name: folded ukrainian flag
+        name: construction-step-folded-ukrainian-flag
         icon:
           sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
           state: military
@@ -379,7 +379,7 @@
     - to: flagmonoend
       steps:
       - tag: FoldedFlagMono
-        name: folded monolith flag
+        name: construction-step-folded-monolith-flag
         icon:
           sprite: _Stalker_EN/Objects/Fun/flags_folded.rsi
           state: mono

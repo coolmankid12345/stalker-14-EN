@@ -21,7 +21,7 @@
     ZoneArtifactFlash: 2040
     ZoneArtifactAccumulator: 2040
     ZoneArtifactDiamond: 2760
-    ZoneArtifactCharger: 2760
+    ZoneArtifactCharger: 1020
     ArtMoon: 4080
     ZoneArtifactTesla: 6120
     ZoneArtifactIce: 8160
@@ -48,10 +48,10 @@
     ZoneArtifactCompass: 3375
     ZoneArtifactCrucifix: 3990
     ZoneArtifactThorn: 2390
-    ZoneArtifactArf: 1020
+    ZoneArtifactArf: 2390
     # Acidic group - 1
     ZoneArtifactToxic: 610
-    ZoneArtifactCytoplasm: 3030
+    ZoneArtifactCytoplasm: 2040
     ZoneArtifactBlood: 2040
     ZoneArtifactMeat: 4080
     ZoneArtifactKolobok: 6120

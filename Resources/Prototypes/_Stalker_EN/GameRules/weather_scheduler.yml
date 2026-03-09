@@ -74,3 +74,12 @@
           STRain: 2.0
           STStorm: 1.0
         clearWeatherWeight: 3.0
+
+      # Yantar - Weather unlikely, but not 0
+      Yantar:
+        weatherPool:
+          STFogLight: 0.5
+          STRain: 0.5
+          STStorm: 0.5
+          STRedStorm: 0.1
+        clearWeatherWeight: 3.0

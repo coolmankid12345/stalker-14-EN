@@ -1028,5 +1028,224 @@
   id: 112
   time: '2026-03-03T00:23:04.467458+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/568
+- author: teecoding
+  changes:
+  - message: Fixed character dummy in lobby sometimes displaying incorrectly
+    type: Fix
+  - message: Fixed gauze stack showing wrong amount
+    type: Fix
+  - message: Balaklava and some outfits no longer have visual issues
+    type: Fix
+  - message: PDA cartridge names, flag construction steps, and loadout groups are
+      now properly translated
+    type: Add
+  - message: Some toggleable clothing was missing its storage when toggled
+    type: Fix
+  - message: Covert factions no longer expose their real faction on the bulletin board
+    type: Fix
+  id: 113
+  time: '2026-03-03T14:06:41.642879+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/570
+- author: Roland410
+  changes:
+  - message: Rebalances new artifacts, and changes vendor prices accordingly.
+    type: Tweak
+  id: 114
+  time: '2026-03-03T23:29:28.796693+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/542
+- author: Roland410
+  changes:
+  - message: Adds NanoTask cartridge to all PDAs, giving a task manager for your PDA,
+      which you can print and give to others.
+    type: Add
+  - message: Adds a pen to all PDAs.
+    type: Add
+  - message: Makes the flashlight on PDAs stronger.
+    type: Tweak
+  - message: Changes the English translation of PDA names and descriptions to ease
+      metagaming of them, the skins of them remain.
+    type: Tweak
+  - message: Adds ST and job role suffixes to PDAs for admins/GMs.
+    type: Tweak
+  id: 115
+  time: '2026-03-03T23:39:30.886857+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/565
+- author: teecoding
+  changes:
+  - message: only Clear Sky is disguised as Loners on PDA; Monolith, Military, Project,
+      and SSU now show their real faction patch
+    type: Fix
+  id: 116
+  time: '2026-03-03T23:44:55.177598+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/572
+- author: teecoding
+  changes:
+  - message: Journalists are no longer shown in the PDA faction relations app or Igor's
+      Relations tab
+    type: Tweak
+  id: 117
+  time: '2026-03-03T23:46:52.131997+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/573
+- author: teecoding
+  changes:
+  - message: Fixed inconsistent weapon damage at range caused by incorrect distance
+      calculations across grids
+    type: Fix
+  id: 118
+  time: '2026-03-04T21:17:12.501800+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/575
+- author: teecoding
+  changes:
+  - message: Armor level modifiers now calculate correctly and no longer stack improperly
+    type: Fix
+  id: 119
+  time: '2026-03-04T21:29:19.614311+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/576
+- author: teecoding
+  changes:
+  - message: Loadout now equips the fullest available magazine instead of a random
+      one
+    type: Fix
+  id: 120
+  time: '2026-03-04T21:46:49.437356+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/577
+- author: teecoding
+  changes:
+  - message: Voice chat is now muffled when heard through walls, similar to whispering.
+      At longer range, walls block speech entirely.
+    type: Add
+  id: 121
+  time: '2026-03-04T21:48:33.221038+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/578
+- author: GreenCanine
+  changes:
+  - message: Elastic bands now have their color in parentheses.
+    type: Tweak
+  id: 122
+  time: '2026-03-04T21:50:17.104748+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/579
+- author: RebelledCombine
+  changes:
+  - message: Uploaded the seva resprite.
+    type: Tweak
+  id: 123
+  time: '2026-03-04T21:57:31.142618+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/581
+- author: GreenCanine
+  changes:
+  - message: New clipboard for Eco!
+    type: Add
+  - message: Added clipboards to some shops.
+    type: Tweak
+  id: 124
+  time: '2026-03-05T03:50:52.304994+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/582
+- author: RebelledCombine
+  changes:
+  - message: Replaced new battery sprites.
+    type: Tweak
+  id: 125
+  time: '2026-03-05T15:38:36.165034+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/584
+- author: teecoding
+  changes:
+  - message: Fixed ghost bullets appearing when reloading ballistic weapons
+    type: Fix
+  - message: Fixed stash search skipping valid magazines when non-magazine items were
+      present
+    type: Fix
+  - message: Fixed ammo count mismatches when storing weapons in stashes
+    type: Fix
+  id: 126
+  time: '2026-03-05T17:41:06.629844+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/585
+- author: TheOverwatchVoice
+  changes:
+  - message: Updates RF and DV
+    type: Add
+  id: 127
+  time: '2026-03-06T11:49:43.779282+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/587
+- author: teecoding
+  changes:
+  - message: News cartridge PDA program for reading and publishing Zone news
+    type: Add
+  - message: Journalists can write and publish news articles visible to all stalkers
+    type: Add
+  - message: News articles persist across rounds
+    type: Add
+  - message: Clickable news links in messenger chat via [NEWS#id] format
+    type: Add
+  - message: Copy Link button to share articles in messenger
+    type: Add
+  - message: Search bar to filter news by title or author
+    type: Add
+  - message: New article notifications with PDA ringtone
+    type: Add
+  - message: Embed color picker for article styling
+    type: Add
+  - message: Discord webhook for published articles
+    type: Add
+  id: 128
+  time: '2026-03-06T20:00:33.225916+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/590
+- author: crocodilecarousel
+  changes:
+  - message: Cook's Wine added to barman
+    type: Add
+  - message: Fishing rods can be equipped to back or gun slots
+    type: Add
+  - message: You can no longer sell sliced food
+    type: Fix
+  - message: Flags no longer ash when destroyed via means that are not fire
+    type: Fix
+  - message: SKS with integrated scope added to Monolith infiltrator loadout
+    type: Tweak
+  - message: Beer artifact despawns in 9999 seconds instead of 300
+    type: Tweak
+  id: 129
+  time: '2026-03-06T20:03:55.386372+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/591
+- author: dallaszzz
+  changes:
+  - message: enables weather on concrete tiles used in roads
+    type: Fix
+  id: 130
+  time: '2026-03-06T20:17:57.733614+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/592
+- author: RebelledCombine
+  changes:
+  - message: Edited batteries yml and made a new folder in _stalkerEN
+    type: Tweak
+  id: 131
+  time: '2026-03-06T20:32:09.628919+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/589
+- author: dallaszzz
+  changes:
+  - message: Makes distant gunshots directional
+    type: Add
+  - message: Makes distant gunshots get occluded by walls
+    type: Add
+  - message: Suppresses work with distant gunshots now
+    type: Fix
+  - message: Suppressed guns now use the distant suppressed gunshot sound
+    type: Tweak
+  id: 132
+  time: '2026-03-06T21:31:16.210684+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/593
+- author: King-spin
+  changes:
+  - message: Sound to t2 springboards
+    type: Add
+  id: 133
+  time: '2026-03-08T10:23:12.931612+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/597
+- author: crocodilecarousel
+  changes:
+  - message: Fresh Yantar map
+    type: Add
+  id: 134
+  time: '2026-03-08T10:27:03.502573+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/598
 Name: Stalker
 Order: -1

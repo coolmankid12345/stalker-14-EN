@@ -30,6 +30,10 @@
   id: SciHead
   name: id-card-access-level-sci-head
 
+- type: accessLevel
+  id: Sci_rector
+  name: id-card-access-level-sci-rector
+
 - type: accessGroup
   id: Military
   tags:

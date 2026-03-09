@@ -160,6 +160,7 @@ namespace Content.IntegrationTests.Tests.Power
         ///     Test small power net with a simple surplus of power over the loads.
         /// </summary>
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestSimpleSurplus()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -222,6 +223,7 @@ namespace Content.IntegrationTests.Tests.Power
         ///     Test small power net with a simple deficit of power over the loads.
         /// </summary>
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestSimpleDeficit()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -280,6 +282,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestSupplyRamp()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -368,6 +371,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestBatteryRamp()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -468,6 +472,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestNoDemandRampdown()
         {
             // checks that batteries and supplies properly ramp down if the load is disconnected/disabled.
@@ -567,6 +572,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestSimpleBatteryChargeDeficit()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -624,6 +630,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestFullBattery()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -702,6 +709,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestFullBatteryEfficiencyPassThrough()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -780,6 +788,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestFullBatteryEfficiencyDemandPassThrough()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -877,6 +886,7 @@ namespace Content.IntegrationTests.Tests.Power
         ///     having generators and batteries sharing the load.
         /// </summary>
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestSupplyPrioritized()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -976,6 +986,7 @@ namespace Content.IntegrationTests.Tests.Power
         ///     Test that power is distributed proportionally, even through batteries.
         /// </summary>
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestBatteriesProportional()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -1064,6 +1075,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestBatteryEngineCut()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -1149,6 +1161,7 @@ namespace Content.IntegrationTests.Tests.Power
         ///     Test that <see cref="CableTerminalNode"/> correctly isolates two networks.
         /// </summary>
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task TestTerminalNodeGroups()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -1215,6 +1228,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task ApcChargingTest()
         {
             await using var pair = await PoolManager.GetServerClient();
@@ -1271,6 +1285,7 @@ namespace Content.IntegrationTests.Tests.Power
         }
 
         [Test]
+        [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
         public async Task ApcNetTest()
         {
             await using var pair = await PoolManager.GetServerClient();

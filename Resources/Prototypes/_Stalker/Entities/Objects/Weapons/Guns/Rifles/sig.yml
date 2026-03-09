@@ -4,7 +4,12 @@
   id: STBaseWeaponRifleSIG
   components:
   - type: STWeight
-    self: 3.5
+    self: 4
+  - type: PullDoAfter
+    pullTime: 3
+  - type: GunWieldBonus
+    minAngle: -45
+    maxAngle: -50
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/sig-550.rsi
   - type: Sprite
@@ -12,15 +17,17 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/sig-550.rsi
   - type: Gun
-    fireRate: 6
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/n_sig550_shot.ogg
       params:
         volume: -2
     minAngle: 40
-    maxAngle: 75
-    angleIncrease: 0.7
-    selectedMode: Burst
+    maxAngle: 60
+    fireRate: 5
+    angleIncrease: 1.75
+    angleDecay: 5.5
+    projectileSpeed: 55
+    selectedMode: FullAuto
     availableModes:
     - Burst
     - SemiAuto
@@ -56,9 +63,9 @@
           tags:
           - STCartridge556
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
+    falloffMultiplier: 0.6
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.45
+    accuracyMultiplier: 1.46
 
 - type: entity
   parent: STBaseWeaponRifleSIG

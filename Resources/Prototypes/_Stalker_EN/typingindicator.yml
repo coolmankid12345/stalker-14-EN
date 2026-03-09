@@ -83,3 +83,9 @@
   spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
   typingState: sprout0
   idleState: sprout1
+
+- type: typingIndicator
+  id: un
+  spritePath: /Textures/_Stalker_EN/Effects/speech.rsi
+  typingState: un0
+  idleState: un1

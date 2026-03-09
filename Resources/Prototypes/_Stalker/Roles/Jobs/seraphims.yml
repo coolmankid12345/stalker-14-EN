@@ -96,7 +96,6 @@
         - type: NpcFactionMember
           factions:
           - Seraphims
-        - type: STAnomalyTipsViewing
 
 - type: startingGear
   id: SeraphimHeadGear

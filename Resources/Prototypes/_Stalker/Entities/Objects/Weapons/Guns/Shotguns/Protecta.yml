@@ -9,16 +9,26 @@
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
   - type: STWeight
     self: 4.3
+  - type: PullDoAfter
+    pullTime: 3
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -50
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
   - type: BallisticAmmoProvider
     capacity: 12
   - type: Gun
-    minAngle: 40
-    maxAngle: 50
+    minAngle: 50
+    maxAngle: 55
+    fireRate: 3.5
     angleIncrease: 10
-    angleDecay: 50
-    fireRate: 2
+    angleDecay: 55
+    projectileSpeed: 50
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.25
 
 - type: entity
   parent: STBaseWeaponShotgunProtecta

@@ -6,3 +6,12 @@
   id: Monolith
   tags:
     - Monolith
+
+- type: accessLevel
+  id: MonolithFree
+  name: id-card-access-level-monolith
+
+- type: accessGroup
+  id: MonolithFree
+  tags:
+    - MonolithFree

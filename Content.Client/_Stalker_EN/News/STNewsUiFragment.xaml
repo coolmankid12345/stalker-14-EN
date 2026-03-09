@@ -1,0 +1,108 @@
+<news:STNewsUiFragment
+    xmlns="https://spacestation14.io"
+    xmlns:news="clr-namespace:Content.Client._Stalker_EN.News"
+    xmlns:controls="clr-namespace:Content.Client._Stalker_EN.UI.Controls"
+    Margin="4">
+
+    <PanelContainer StyleClasses="BackgroundDark"/>
+
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+
+        <!-- Article List View -->
+        <BoxContainer Name="ArticleListView" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+            <Label Name="HeaderLabel" StyleClasses="LabelHeadingBigger"
+                   HorizontalAlignment="Center" Margin="0 4 0 2"/>
+            <PanelContainer StyleClasses="LowDivider" Margin="4 0 4 4"/>
+
+            <Button Name="WriteButton" HorizontalAlignment="Center" Margin="0 2 0 4"
+                    Visible="False"/>
+
+            <controls:STSearchBarControl Name="SearchBar" Margin="4 0 4 4"/>
+
+            <ScrollContainer Name="ArticleScroll" HScrollEnabled="False" VScrollEnabled="True"
+                             HorizontalExpand="True" VerticalExpand="True" MinSize="100 256">
+                <BoxContainer Name="ArticleList" Orientation="Vertical" HorizontalExpand="True"/>
+            </ScrollContainer>
+
+            <Label Name="NoArticlesLabel"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontColorOverride="#888888" Visible="False"/>
+        </BoxContainer>
+
+        <!-- Article Detail View -->
+        <BoxContainer Name="ArticleDetailView" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True"
+                      Visible="False">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="4 4 4 2">
+                <Button Name="BackButton"/>
+                <Control HorizontalExpand="True"/>
+                <Button Name="DetailCopyLinkButton"/>
+            </BoxContainer>
+            <PanelContainer StyleClasses="LowDivider" Margin="4 0 4 4"/>
+
+            <ScrollContainer HScrollEnabled="False" VScrollEnabled="True"
+                             HorizontalExpand="True" VerticalExpand="True" MinSize="100 256">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="8 4 8 4">
+                    <Label Name="DetailTitle" StyleClasses="LabelHeading" HorizontalExpand="True" ClipText="False"/>
+                    <PanelContainer StyleClasses="LowDivider" Margin="0 4 0 4"/>
+                    <Label Name="DetailAuthor" FontColorOverride="#AAAAAA"/>
+                    <Label Name="DetailMeta" FontColorOverride="#888888"/>
+                    <PanelContainer StyleClasses="LowDivider" Margin="0 4 0 4"/>
+                    <RichTextLabel Name="DetailContent" HorizontalExpand="True"/>
+                </BoxContainer>
+            </ScrollContainer>
+        </BoxContainer>
+
+        <!-- Writer View -->
+        <BoxContainer Name="WriterView" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True"
+                      Visible="False">
+            <Label Name="WriterHeaderLabel" StyleClasses="LabelHeadingBigger"
+                   HorizontalAlignment="Center" Margin="0 4 0 2"/>
+            <PanelContainer StyleClasses="LowDivider" Margin="4 0 4 4"/>
+
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="8 4 8 4">
+                <Label Name="TitleLabel" Margin="0 0 0 2"/>
+                <LineEdit Name="TitleEdit" HorizontalExpand="True"/>
+                <Label Name="TitleCounter" HorizontalAlignment="Right" FontColorOverride="#888888" Margin="0 0 0 4"/>
+
+                <Label Name="ContentLabel" Margin="0 4 0 2"/>
+                <TextEdit Name="ContentEdit" HorizontalExpand="True" VerticalExpand="True" MinSize="0 120"/>
+                <Label Name="ContentCounter" HorizontalAlignment="Right" FontColorOverride="#888888" Margin="0 0 0 4"/>
+
+                <Label Name="EmbedColorLabel" Margin="0 4 0 2"/>
+                <BoxContainer Name="ColorPicker" Orientation="Horizontal" SeparationOverride="4" Margin="0 0 0 4"/>
+
+                <BoxContainer Orientation="Horizontal" HorizontalAlignment="Right" SeparationOverride="8"
+                              Margin="0 4 0 0">
+                    <Button Name="CancelButton"/>
+                    <Button Name="PreviewButton"/>
+                    <Button Name="PublishButton"/>
+                </BoxContainer>
+            </BoxContainer>
+        </BoxContainer>
+
+        <!-- Preview View -->
+        <BoxContainer Name="PreviewView" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True"
+                      Visible="False">
+            <Label Name="PreviewHeaderLabel" StyleClasses="LabelHeadingBigger"
+                   HorizontalAlignment="Center" Margin="0 4 0 2"/>
+            <PanelContainer StyleClasses="LowDivider" Margin="4 0 4 4"/>
+
+            <ScrollContainer HScrollEnabled="False" VScrollEnabled="True"
+                             HorizontalExpand="True" VerticalExpand="True" MinSize="100 256">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="8 4 8 4">
+                    <Label Name="PreviewTitle" StyleClasses="LabelHeading" HorizontalExpand="True"/>
+                    <PanelContainer StyleClasses="LowDivider" Margin="0 4 0 4"/>
+                    <RichTextLabel Name="PreviewContent" HorizontalExpand="True"/>
+                </BoxContainer>
+            </ScrollContainer>
+
+            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Right" SeparationOverride="8"
+                          Margin="8 4 8 4">
+                <Button Name="PreviewCancelButton"/>
+                <Button Name="EditButton"/>
+                <Button Name="PreviewPublishButton"/>
+            </BoxContainer>
+        </BoxContainer>
+
+    </BoxContainer>
+</news:STNewsUiFragment>

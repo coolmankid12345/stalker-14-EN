@@ -1,0 +1,44 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "New power cells by Oracle",
+    "states": [
+        {
+            "name": "potato"
+        },
+        {
+            "name": "small"
+        },
+        {
+            "name": "medium"
+        },
+        {
+            "name": "high"
+        },
+        {
+            "name": "hyper"
+        },
+        {
+            "name": "microreactor"
+        },
+        {
+            "name": "antique"
+        },
+        {
+            "name": "o1"
+        },
+        {
+            "name": "o2"
+        },
+        {
+            "name": "o3"
+        },
+        {
+            "name": "o4"
+        }
+    ]
+}

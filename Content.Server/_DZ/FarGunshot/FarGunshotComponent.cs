@@ -1,4 +1,4 @@
-﻿using Content.Shared.Tools.Components;
+using Content.Shared.Tools.Components;
 using Robust.Shared.Audio;
 
 namespace Content.Server._DZ.FarGunshot;
@@ -19,6 +19,13 @@ public sealed partial class FarGunshotComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public SoundSpecifier? Sound = new SoundPathSpecifier("/Audio/_DZ/Effects/FarGunshots/rifle1.ogg");
+
+    // stalker EN change
+    /// <summary>
+    /// The sound used when a silencer is equipped on the gun.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public SoundSpecifier? SoundSilencer = new SoundPathSpecifier("/Audio/_DZ/Effects/FarGunshots/supressed1.ogg");
 
     /// <summary>
     /// How much should silencer decrease range (by miltiply)

@@ -220,6 +220,7 @@
   id: STClothingOuterArmorLightPlateVestBaseUN
   name: бронежилет «Щиток-2» ООН
   description: Лёгкий бронежилет второго класса защиты, основа основ.
+  suffix: ST, UN, T2, PvP # EN
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/un_armor.rsi

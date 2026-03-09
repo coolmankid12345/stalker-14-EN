@@ -2,6 +2,8 @@ stack-st-copper = copper sheet
 stack-st-iron = sheet of iron
 stack-st-aluminum = aluminum sheet
 stack-st-gauze-sera = piece of cloth
+stack-st-gauze-barbaris = barbaris-soaked bandage
+stack-st-gauze-universal = universal ointment bandage
 
 stack-rouble = rouble
 stack-dollar = dollar
@@ -9,6 +11,7 @@ stack-gold-coins = gold coin
 stack-supply-talons = talon
 stack-premium-supply-talons = premium talon
 stack-fang = fang
+stack-teeth = tooth
 stack-chevron-monolit = monolith chevron
 
 stack-st-bolt = bolt

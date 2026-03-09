@@ -425,6 +425,10 @@ namespace Content.Server.Database
         Task<StalkerPdaPassword?> GetStalkerPdaPasswordAsync(string characterName);
         Task SetStalkerPdaPasswordAsync(string characterName, string password);
         Task RemoveStalkerPdaPasswordAsync(string characterName);
+
+        // stalker-en-changes: News articles
+        Task<List<StalkerNewsArticle>> GetRecentStalkerNewsArticlesAsync(int limit);
+        Task<int> AddStalkerNewsArticleAsync(StalkerNewsArticle article);
         #endregion
     }
     /// <summary>
@@ -1277,6 +1281,20 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.RemoveStalkerPdaPasswordAsync(characterName));
         }
+
+        // stalker-en-changes: News articles
+        public Task<List<StalkerNewsArticle>> GetRecentStalkerNewsArticlesAsync(int limit)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetRecentStalkerNewsArticlesAsync(limit));
+        }
+
+        public Task<int> AddStalkerNewsArticleAsync(StalkerNewsArticle article)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddStalkerNewsArticleAsync(article));
+        }
+        // stalker-en-changes-end
 
         public Task SetStalkerBandAsync(ProtoId<STBandPrototype> band, float rewardPoints)
         {

@@ -43,6 +43,7 @@
   id: ClothingHeadHelmetUlachUN
   name: улач ООН
   description: Шлем контингента ООН.
+  suffix: ST, UN, T4 # EN
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/ulach-un.rsi
@@ -67,6 +68,7 @@
   id: ClothingHeadHelmetHardUlachUN
   name: тактический противоударный улач ООН
   description: Шлем контингента ООН, имеет большую защиту от ударных атак, а также колющих атак. Является модифицированным шлемом от «Улач ООН» но более продвинутый. Класс брони - 3
+  suffix: ST, UN, T4 # EN
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/hard-ulach-un.rsi

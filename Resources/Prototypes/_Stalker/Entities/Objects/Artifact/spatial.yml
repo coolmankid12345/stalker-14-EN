@@ -142,7 +142,7 @@
     - type: Storage
       grid:
       - 0,0,2,2
-      maxItemSize: Small
+      maxItemSize: Normal
       blacklist:
         tags:
         - STArtifact
@@ -175,7 +175,7 @@
     damage:
       types:
         Radiation: 1
-        Cold: 3.5
+        Cold: 2.5
         Asphyxiation: -2
     interval: 1
   - type: Armor
@@ -281,7 +281,7 @@
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
-    detectedLevel: 2
+    detectedLevel: 3
   - type: PointLight
     radius: 1.5
     energy: 5.5
@@ -298,6 +298,10 @@
     modifiers:
       coefficients:
         Radiation: 0.95
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 10
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/energycrossbow_reload.ogg
   - type: BasicEntityAmmoProvider
     proto: STBulletLightning
     capacity: 3

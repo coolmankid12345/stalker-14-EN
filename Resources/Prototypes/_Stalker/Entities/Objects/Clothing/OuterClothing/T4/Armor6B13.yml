@@ -60,6 +60,7 @@
   id: ClothingOuterArmorUNTAR
   name: бронежилет UNTAR
   description: Стандартный бронежилет IV типа, обеспечивающий достойную защиту от большинства видов повреждений. Адаптированный от 6Б13.
+  suffix: ST, UN, T4, PvP # EN
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/Untar.rsi

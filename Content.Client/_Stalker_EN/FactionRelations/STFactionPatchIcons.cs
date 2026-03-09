@@ -23,6 +23,7 @@ public static class STFactionPatchIcons
     private const string Renegades = "Renegades";
     private const string Rookies = "Rookies";
     private const string Journalists = "Journalists";
+    private const string UN = "UN";
 
     /// <summary>
     /// Maps faction relation names to their patch RSI paths and state names.
@@ -42,5 +43,6 @@ public static class STFactionPatchIcons
         [Renegades] = (PatchRsiPath, "rene"),
         [Rookies] = (PatchRsiPathEN, "rookie"),
         [Journalists] = (PatchRsiPath, "journalist"),
+        [UN] = (PatchRsiPath, "un"),
     };
 }

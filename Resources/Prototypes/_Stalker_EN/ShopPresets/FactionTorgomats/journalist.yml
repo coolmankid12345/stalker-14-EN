@@ -65,6 +65,7 @@
         HandheldGPSBasic: 35
         Paper: 1
         Pen: 1
+        BoxFolderClipboardEmpty: 50 # Clipboard
         Binocularus1: 800
         ClothingGoPro: 100
         LuxuryPen: 1000

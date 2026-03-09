@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.CartridgeLoader;
 using Content.Server.Chat.Systems;
 using Content.Server.Database;
@@ -81,6 +82,11 @@ public sealed class STFactionRelationsCartridgeSystem : EntitySystem
     /// Factions that cannot be targeted by player-initiated relation changes.
     /// </summary>
     private HashSet<string> _cachedRestrictedFactions = new();
+
+    /// <summary>
+    /// Factions hidden from all relation UIs (PDA app grid, Igor Relations tab).
+    /// </summary>
+    private HashSet<string> _cachedHiddenFactions = new();
 
     /// <summary>
     /// Tracks loaders (PDAs) that currently have the faction relations cartridge active.
@@ -207,6 +213,7 @@ public sealed class STFactionRelationsCartridgeSystem : EntitySystem
         _aliasToPrimary = new Dictionary<string, string>();
         _primaryToAliases = new Dictionary<string, List<string>>();
         _cachedRestrictedFactions = new HashSet<string>();
+        _cachedHiddenFactions = new HashSet<string>();
         _cachedFactionIds = null;
 
         if (!_protoManager.TryIndex(DefaultsProtoId, out var proto))
@@ -222,6 +229,7 @@ public sealed class STFactionRelationsCartridgeSystem : EntitySystem
         }
 
         _cachedRestrictedFactions = new HashSet<string>(proto.RestrictedFactions);
+        _cachedHiddenFactions = new HashSet<string>(proto.HiddenFactions);
 
         // Keep full faction list — filtering for specific UIs is done at the caller level
         _cachedFactionIds = proto.Factions;
@@ -326,7 +334,7 @@ public sealed class STFactionRelationsCartridgeSystem : EntitySystem
         if (!_protoManager.TryIndex(DefaultsProtoId, out var defaults))
             return new STFactionRelationsUiState(new List<string>(), new List<STFactionRelationEntry>());
 
-        var factions = defaults.Factions;
+        var factions = defaults.Factions.Where(f => !_cachedHiddenFactions.Contains(f)).ToList();
         var entries = new List<STFactionRelationEntry>();
 
         for (var i = 0; i < factions.Count; i++)
@@ -452,6 +460,14 @@ public sealed class STFactionRelationsCartridgeSystem : EntitySystem
     {
         var resolved = ResolvePrimary(faction);
         return _cachedRestrictedFactions.Contains(resolved);
+    }
+
+    /// <summary>
+    /// Returns true if the faction is hidden from relation UIs.
+    /// </summary>
+    public bool IsFactionHidden(string faction)
+    {
+        return _cachedHiddenFactions.Contains(faction);
     }
 
     #endregion

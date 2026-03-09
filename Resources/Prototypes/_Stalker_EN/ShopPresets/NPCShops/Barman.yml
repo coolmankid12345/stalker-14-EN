@@ -21,7 +21,7 @@
     ZoneArtifactFlash: 1620
     ZoneArtifactAccumulator: 1620
     ZoneArtifactDiamond: 2950
-    ZoneArtifactCharger: 2950
+    ZoneArtifactCharger: 810
     ArtMoon: 3240
     ZoneArtifactTesla: 4860
     ZoneArtifactIce: 6480
@@ -48,10 +48,10 @@
     ZoneArtifactCompass: 3600
     ZoneArtifactCrucifix: 4250
     ZoneArtifactThorn: 2550
-    ZoneArtifactArf: 810
+    ZoneArtifactArf: 2550
     # Acidic group - 1
     ZoneArtifactToxic: 650
-    ZoneArtifactCytoplasm: 3200
+    ZoneArtifactCytoplasm: 1600
     ZoneArtifactBeer: 450
     ZoneArtifactBlood: 1600
     ZoneArtifactMeat: 3200
@@ -305,6 +305,7 @@
         DrinkWhiskeyColaGlass: 60
         DrinkB52Glass: 150
         DrinkLongIslandIcedTeaGlass: 420 # Long Island Time
+        STDrinkYevishWineBottleFull: 2000
 
     - name: shop-category-armor
       priority: 7

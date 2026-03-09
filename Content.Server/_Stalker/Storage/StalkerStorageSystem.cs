@@ -261,6 +261,14 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
             }
         }
 
+        // stalker-en-changes-start
+        // Clamp to actual ammo count — prevents persisting stale entries from TakeAmmo desync
+        if (completeEntProtos.Count > ammoProvider.Count)
+        {
+            completeEntProtos.RemoveRange(0, completeEntProtos.Count - ammoProvider.Count);
+        }
+        // stalker-en-changes-end
+
         returnList.Add(new AmmoContainerStalker(
             GetPrototypeName(inputItem),
             ammoProvider.Proto,

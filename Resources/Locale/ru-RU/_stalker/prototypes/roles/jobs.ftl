@@ -32,7 +32,7 @@ job-dolg-supervisor = Вы подчиняетесь старшим по зван
 job-head-dolg = Лидер Долга
 job-head-dolg-desc = Защитник человечества.
 job-head-dolg-supervisor = Вы командуете другими бойцами Долга.
-job-novice-dolg= Рядовой Долга
+job-novice-dolg= Новобранец Долга
 
 job-freedom = Боец Свободы
 job-freedom-desc = Защитник зоны.
@@ -40,7 +40,7 @@ job-freedom-supervisor = Кури, защищай Зону и игнорируй
 job-head-freedom = Лидер Свободы
 job-head-freedom-desc = Защитник зоны.
 job-head-freedom-supervisor = Командиры? У анархистов?.
-job-novice-freedom = Рядовой Свободы
+job-novice-freedom = Новобранец Свободы
 
 job-journalist = Журналист
 job-journalist-desc = Вестники Зоны.
@@ -98,6 +98,10 @@ job-renegade = Ренегат
 job-renegade-desc = Просто какой-то дегенерат.
 job-renegade-supervisor = "ебаш."
 
+job-monolith-free = Монолит
+job-monolith-free-desc = Искореняйте неверных.
+job-monolith-free-supervisor = Вы подчиняетесь Монолиту.
+
 job-scientist = Учёный
 job-scientist-desc = Основная цель - изучение всех аспектов Зоны, использование научных методов для дальнейшего объяснения того, что это за Зона и её предназначения.
 job-sci = Учёный
@@ -129,6 +133,7 @@ job-stalker = Одиночка
 job-stalker-desc = Это кочевая полуобъединенная группировка, которая просто живёт за счет Зоны, чтобы заработать немного монет на свою повседневную жизнь.
 job-stalker-supervisor = Вы работаете сами на себя
 job-stalker-veteran = Одиночка Ветеран
+job-stalker-atom = Сталкерская группа "Атом"
 
 job-jaba = Жаба
 job-jaba-desc = Группа по интересам. Жадность это стиль жизнь, любопытство не порок.

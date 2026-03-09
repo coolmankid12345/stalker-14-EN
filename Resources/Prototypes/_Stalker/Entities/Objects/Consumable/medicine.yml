@@ -1053,7 +1053,7 @@
         damage:
           groups:
             Burn: -5
-            Brute: -7.5
+            Brute: -30.5
       - !type:GenericStatusEffect
         key: TemporaryBlindness
         component: TemporaryBlindness

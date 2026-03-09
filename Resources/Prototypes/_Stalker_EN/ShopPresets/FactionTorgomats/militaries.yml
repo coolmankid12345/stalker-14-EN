@@ -530,6 +530,7 @@
       HandheldGPSBasic: 50
       Paper: 2
       Pen: 5
+      BoxFolderClipboardEmpty: 20 # Clipboard
       Binocularus1: 2500
       BoxFlare: 60
       ClothingBackpackDuffelGreenStalkerHydroponic: 500
@@ -600,6 +601,7 @@
       Paper: 5
       Pen: 5
       LuxuryPen: 15
+      BoxFolderClipboardEmpty: 20 # Clipboard
 
   - name: "Morale Boosters"
     priority: 2

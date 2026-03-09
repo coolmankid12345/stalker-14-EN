@@ -1,0 +1,158 @@
+- type: shopPreset
+  id: VeteranShopPreset
+  itemsForSale:
+    STWeaponShotgunTOZ34: 1
+  categories:
+  - name: shop-category-ammunition
+    priority: 3
+    items:
+      6mmBuckshotBox: 115
+      7mmBuckshotBox: 45
+      # 9.19
+      919PBMBox: 1000
+      918PBMBox: 1000
+      # 5.56
+      556M856Box: 2200
+      # 5.45
+      545BPBox: 2100
+      # .45
+      45ACPAPBox: 1200
+  - name: shop-category-armor
+    priority: 4
+    items:
+      ClothingOuterArmorStalkerCombat: 8500
+  - name: shop-category-utilities
+    priority: 8
+    items:
+      STElasticRubberRed: 15
+      STElasticRubberGreen: 15
+      STElasticRubberBlue: 15
+      STRadioHeadset: 150
+      STCombatKnife: 25
+      BoxZiptie: 50
+      BoxSafebox: 300
+      CheapLighter: 5
+      GeigerCounter: 50
+      BaseRadio: 50
+      STFlashlightSeclite: 50
+      PowerCellHyper: 50
+      HandheldGPSBasic: 50
+      Paper: 2
+      Pen: 5
+      Binocularus1: 800
+      BoxFlare: 60
+      ClothingBackpackDuffelGreenStalkerHydroponic: 500
+      Beaker: 40
+      Syringe: 20
+      ClothingGoPro: 250
+      STOxygenTanksFractionalFreedom2: 500
+      Matchbox: 10
+      HatchetStalker: 150
+      RobustHarvestChemistryBottleStalker: 50
+      CannabisSeedsStalker: 70
+      HydroponicsToolMiniHoe: 70
+      Bucket: 60
+  - name: shop-category-provisions
+    priority: 9
+    items:
+      STEnergyDrink: 100
+      STEnergyDrinkMonster: 150
+      STEnergyDrinkRevo: 150
+      STDrinkBeerCanBaltic: 90
+      DrinkVodkaBottleFull: 55
+      STFoodBreadPlain: 35
+      DrinkFlaskOld: 30
+      DrinkWaterBottleFull: 45
+      FoodTinMRE: 120
+      DrinkLemonadehBottleFull: 50
+      STFoodMeatSalami: 350
+  - name: shop-category-medicine
+    priority: 10
+    items:
+      STPillboxAntirad: 350
+      STGauze: 65
+      STOintment: 75
+      STBrutepack: 65
+      Bloodpack: 550
+      MedkitAI2: 135
+      Defibrillator: 1000
+      AntiRadMedipen: 300
+      STPillboxProbud: 500
+      MedkitMilitary: 400
+      MedkitScience: 450
+      MedkitElite: 1500
+      MedkitLAR: 3200
+      STPillboxShiza: 10000
+      MedkitCMSStalker: 150 # T1
+      MedkitGrizzlyStalker: 850 # T2
+  - name: shop-category-modules
+    priority: 11
+    items:
+      STModuleScopeRiflesT1Ru: 600
+      STModuleScopeRiflesT1Nato: 600
+      STModuleSilencerRiflesT1Ru: 400
+      STModuleSilencerRiflesT1Nato: 400
+      STModuleSMGGripT1: 600
+      STModuleSilencerSMGT1: 600
+      STModuleSniperSightT1: 600
+      STModuleSilencerSniperT1: 600
+  - name: shop-category-customization
+    priority: 12
+    items:
+      ClothingBandageStalkerGreen: 5
+      ClothingHeadHatBeaniehat: 10
+      ClothingMaskNeckFacemask: 10
+      ClothingMaskNeckBalaklava1: 10
+      ClothingMaskNeckBalaklava2: 10
+      ClothingMaskNeckBalaklava3: 10
+      ClothingHeadBandMerc: 30
+      ClothingHeadBandSkull: 30
+      ClothingHeadHatUshanka: 30
+      ClothingHandsGlovesFingerless: 30
+      ClothingHandsGlovesMercFingerless: 60
+      ClothingShoesColorBlack: 30
+      ClothingShoesBootsWork: 30
+      ClothingShoesLeather: 30
+      ClothingShoesBootsMerc: 30
+      ClothingShoesSwat: 35
+      ClothingHeadHatBlacksoft: 10
+      ClothingHeadHatGreysoft: 10
+      ClothingHeadHatSovietUshankaStalker: 40
+      ClothingCloakStalker: 30
+      ClothingLegsJeansBlue: 10
+      ClothingLegsJeansStalker: 10
+      ClothingLegsJeansGreenCargo: 10
+      ClothingLegsJeansGreyCargo: 10
+      ClothingLegsJeansBlackCargo: 10
+      ClothingLegsJeansBrownCargo: 10
+      ClothingLegsJeansSandCargo: 10
+      ClothingLegsJeansRussianPixel: 20
+      ClothingLegsJeansBlackNew: 20
+      ClothingLegsJeansGorka: 20
+      ClothingShoesBootsCombat: 30
+      ClothingTorsoTShirtPivozavr: 30
+      ClothingTorsoTShirtSailorSuit: 30
+      ClothingTorsoTShirtColorBlack: 30
+      ClothingTorsoTurtlenecksBlack: 90
+      ClothingTorsoTurtlenecksGorka: 90
+      ClothingTorsoTurtlenecksGorka6: 90
+      ClothingTorsoTurtlenecksBereza: 90
+      ClothingLegsJeansBereza: 20
+      ClothingLegsJeansGorka6: 20
+      ClothingTorsoTurtlenecksGorkaRus: 90
+      ClothingOuterCoatKKK: 67
+      # new shit
+      ClothingLegsBattlePantsBlack: 50
+      ClothingLegsVeryBlueJenas: 50
+      ClothingLegsCombatForest: 50
+      ClothingLegsGorka5: 50
+      ClothingLegsGorka6b: 50
+      ClothingLegsNavyPants: 50
+      ClothingLegsRussianNumber: 50
+      ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+      ClothingTorsoTurtlenecksBlackTurtleneck: 50
+      ClothingTorsoTurtlenecksCombatForest: 50
+      ClothingTorsoTurtlenecksGorka5: 50
+      ClothingTorsoTurtlenecksGorka6B: 50
+      ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+      ClothingTorsoTurtlenecksMatrosska: 50

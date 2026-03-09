@@ -2317,6 +2317,24 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 await db.DbContext.SaveChangesAsync();
             }
         }
+
+        // stalker-en-changes: News articles
+        public async Task<List<StalkerNewsArticle>> GetRecentStalkerNewsArticlesAsync(int limit)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.StalkerNewsArticles
+                .OrderByDescending(a => a.Id)
+                .Take(limit)
+                .ToListAsync();
+        }
+
+        public async Task<int> AddStalkerNewsArticleAsync(StalkerNewsArticle article)
+        {
+            await using var db = await GetDb();
+            db.DbContext.StalkerNewsArticles.Add(article);
+            await db.DbContext.SaveChangesAsync();
+            return article.Id;
+        }
         // stalker-en-changes-end
 
         #endregion

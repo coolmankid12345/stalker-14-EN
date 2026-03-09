@@ -203,6 +203,16 @@
 
 - type: entity
   parent: MapTeleportBase
+  id: YantarUpstairs
+  name: Yantar Upstairs
+  components:
+  - type: NewMapTeleport
+    portalName: YantarUpstairs
+    cooldownEnabled: true
+    cooldownTime: 15
+
+- type: entity
+  parent: MapTeleportBase
   id: Yantar-Lab
   name: Yantar-Lab
   components:

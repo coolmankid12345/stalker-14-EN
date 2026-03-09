@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseItem
+  id: STNewsCartridge
+  name: stalker news cartridge
+  description: A program for reading and writing Zone news articles.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-y
+  - type: UIFragment
+    ui: !type:STNewsUi
+  - type: Cartridge
+    programName: st-news-program-name
+    icon:
+      sprite: _Stalker_EN/Interface/Cartridges/stalker_news.rsi
+      state: icon
+  - type: STNewsCartridge

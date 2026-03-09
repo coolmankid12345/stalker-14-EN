@@ -28,9 +28,9 @@
     legs: STClothingLegsSerafimPants
 
 - type: loadout
-  id: STlegsSTClothingLegsSerafimCherubimPants
+  id: STlegsClothingLegsSerafimCherubimPants
   equipment:
-    legs: STSTClothingLegsSerafimCherubimPants
+    legs: STClothingLegsSerafimCherubimPants
 
 - type: loadout
   id: STlegsClothingLegsJeansBlue

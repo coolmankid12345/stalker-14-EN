@@ -118,3 +118,18 @@ public sealed class STMessengerNavigateToOfferEvent : CartridgeMessageEvent
         OfferId = offerId;
     }
 }
+
+/// <summary>
+/// Client requests navigation to a news article from a clickable news link in chat.
+/// Handled by the messenger system, which raises a local event for the news cartridge to pick up.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class STMessengerNavigateToNewsEvent : CartridgeMessageEvent
+{
+    public readonly int ArticleId;
+
+    public STMessengerNavigateToNewsEvent(int articleId)
+    {
+        ArticleId = articleId;
+    }
+}

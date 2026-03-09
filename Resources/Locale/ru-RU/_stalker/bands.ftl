@@ -31,3 +31,12 @@ bands-managing-window-shop-list-header = Магазин группировки
 bands-managing-window-no-shop-items-text = В магазине нет доступных предметов.
 bands-managing-window-shop-item-entry = { $itemName } - { $price } Очков
 bands-managing-window-buy-button = Купить
+
+# Bands Managing Window - Relations Tab
+bands-managing-window-relations-tab-title = Отношения
+bands-managing-window-relations-header = Отношения группировок
+bands-managing-window-no-relations-text = Нет группировки под контролем
+bands-managing-window-relation-alliance = Союз
+bands-managing-window-relation-neutral = Нейтралитет
+bands-managing-window-relation-hostile = Конфликт
+bands-managing-window-relation-war = Война

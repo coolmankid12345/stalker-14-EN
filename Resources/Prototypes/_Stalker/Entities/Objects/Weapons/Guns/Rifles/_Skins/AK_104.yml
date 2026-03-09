@@ -6,7 +6,12 @@
   description: Данная модель входит в так называемую «сотую» серию автоматов Калашникова и отличается полной заменой деревянных частей на полимерные и наличием боковой планки для установки прицелов.
   components:
   - type: STWeight
-    self: 5
+    self: 4.3
+  - type: PullDoAfter
+    pullTime: 3.5
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -50
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak104.rsi
   - type: Sprite
@@ -14,11 +19,12 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
-    minAngle: 50
+    minAngle: 60
     maxAngle: 100
-    angleIncrease: 1.8
+    fireRate: 8
+    angleIncrease: 1.75
     angleDecay: 8
-    fireRate: 7
+    projectileSpeed: 65
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -49,6 +55,6 @@
           tags:
             - STCartridge739
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 1.2
+    falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 0.9
+    accuracyMultiplier: 1.56

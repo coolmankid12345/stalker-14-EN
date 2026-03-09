@@ -4,7 +4,12 @@
   id: STBaseWeaponSniperSKS
   components:
   - type: STWeight
-    self: 3.75
+    self: 4
+  - type: PullDoAfter
+    pullTime: 3
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -45
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/sks.rsi
   - type: Item
@@ -17,11 +22,12 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/sks_shoot.ogg
-    minAngle: 50
-    maxAngle: 85
-    angleIncrease: 1.5
-    angleDecay: 30
-    fireRate: 2
+    minAngle: 55
+    maxAngle: 110
+    fireRate: 3
+    angleIncrease: 3
+    angleDecay: 20
+    projectileSpeed: 70
   - type: BallisticAmmoProvider
     capacity: 10
     whitelist:
@@ -30,7 +36,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 2
+    accuracyMultiplier: 3
 
 - type: entity
   parent: STBaseWeaponSniperSKS

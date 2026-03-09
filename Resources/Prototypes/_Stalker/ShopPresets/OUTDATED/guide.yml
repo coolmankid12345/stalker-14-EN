@@ -75,19 +75,19 @@
       items:
         STCombatKnife: 10
         STWeaponShotgunSPAS: 3500
-        STWeaponRifleAUG: 4000
+        STWeaponSMGVector9: 4500
     - name: shop-category-magazines
       priority: 2
       items:
-        556Mag20: 250
-        556Mag30: 500
+        BaseMP5Mag: 200
     - name: shop-category-ammunition
       priority: 3
       items:
         7mmBuckshotBox: 40
         6mmBuckshotBox: 120
-        556FMJBox: 500
-        556WarmagBox: 300
+        919PSOGJBox: 65
+        919PSTBox: 400
+        919RIPBox: 200
     - name: shop-category-armor
       priority: 4
       items:

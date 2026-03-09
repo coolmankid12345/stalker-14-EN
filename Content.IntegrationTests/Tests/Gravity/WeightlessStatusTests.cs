@@ -1,4 +1,5 @@
 using Content.Server.Gravity;
+using Content.Server.Power.Components;
 using Content.Shared.Alert;
 using Content.Shared.Gravity;
 using Robust.Shared.GameObjects;
@@ -65,6 +66,9 @@ namespace Content.IntegrationTests.Tests.Gravity
                 Assert.That(alertsSystem.IsShowingAlert(human, weightlessAlert));
 
                 generatorUid = entityManager.SpawnEntity("WeightlessGravityGeneratorDummy", entityManager.GetComponent<TransformComponent>(human).Coordinates);
+
+                var genPower = entityManager.GetComponent<ApcPowerReceiverComponent>(generatorUid);
+                genPower.Powered = true; // stalker-en-changes: power solver disabled
             });
 
             // Let WeightlessSystem and GravitySystem tick

@@ -22,3 +22,35 @@
   - type: Item
     sprite: _Stalker_EN/Objects/Consumable/Drinks/cossackvodka.rsi
   - type: Sealable
+
+- type: entity
+  parent: [DrinkBottleGlassBaseFull, DrinkVisualsAllFilled]
+  id: STDrinkYevishWineBottleFull
+  name: Cook's wine
+  description: The label is a bit messy and clearly printed by hand but the wine itself is top notch and clearly crafted by someone dedicated to making something worth drinking.
+  suffix: ST, Food
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Wine
+          Quantity: 90
+  - type: Label
+    currentLabel: reagent-name-wine
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Drinks/yevish_wine.rsi
+    layers:
+    - state: icon_empty
+      map: [ "enum.OpenableVisuals.Layer" ]
+    - state: fill-5
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    inHandsFillBaseName: null
+  - type: FitsInDispenser
+    solution: drink
+  - type: Tag
+    tags:
+    - Wine
+    - DrinkBottle

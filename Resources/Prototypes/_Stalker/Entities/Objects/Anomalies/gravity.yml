@@ -232,6 +232,12 @@
       activationDelay: 1
       preparingDelay: 0
       chargingTime: 5
+    - type: AmbientSound
+      enabled: true
+      volume: -4
+      range: 12
+      sound:
+        path: /Audio/_Stalker/Effects/anomaly_gravy_idle.ogg
     - type: Sprite
       sprite: _Stalker/Objects/Anomalies/springobard.rsi
       layers:

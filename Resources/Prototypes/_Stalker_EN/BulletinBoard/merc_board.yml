@@ -1,8 +1,6 @@
 - type: entity
   parent: BaseSTBulletinCartridge
   id: STMercBoardCartridge
-  name: st-merc-board-cartridge-name
-  description: st-merc-board-cartridge-description
   components:
   - type: Cartridge
     programName: st-merc-board-program-name

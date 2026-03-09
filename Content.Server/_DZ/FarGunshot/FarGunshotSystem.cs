@@ -1,4 +1,4 @@
-﻿using Content.Shared._DZ.FarGunshot;
+using Content.Shared._DZ.FarGunshot;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -27,7 +27,7 @@ public sealed class FarGunshotSystem : EntitySystem
 
         var shootPos = _transform.GetMapCoordinates(uid);
 
-        var range = component.Range * component.SilencerDecrease ?? component.BaseSilencerDecrease;
+        var range = component.Range * (component.SilencerDecrease ?? component.BaseSilencerDecrease);
 
         if (component.Range <= 14f) // we need this since i want to decrease number of uselles iterations
             return;
@@ -39,20 +39,20 @@ public sealed class FarGunshotSystem : EntitySystem
             .AddInRange(shootPos, range)
             .RemoveInRange(shootPos, 14f);
 
-        // TODO:
-        // Actually, i think we need to override .AddInRange(MapCoordinates mappos, float range)
-        // so it would skip vanilla tiles, so we could decrease amount of iterations for each gunshot
-        // but i want to take a look and how it actually work, and maybe after perfomance issue start to
-        // rewritign this (торнадыч сказал что лагать не будет)
+        var soundParams = component.Sound?.Params ?? AudioParams.Default;
+        soundParams.MaxDistance = component.Range;
+        soundParams.ReferenceDistance = 14f;
 
-        // Play the distant gunshot sound globally:
-        // - Enabled for replay recording
-        // - Not toggleable by the player (forced playback)
-        _audio.PlayGlobal(
-            component.Sound,
+        var sound = component.Sound;
+        if (component.SilencerDecrease is null)
+            sound = component.SoundSilencer;
+
+        _audio.PlayEntity(
+            sound,
             farSoundFilter,
+            uid,
             recordReplay: true,
-            component.Sound?.Params ?? AudioParams.Default
+            soundParams
         );
     }
 

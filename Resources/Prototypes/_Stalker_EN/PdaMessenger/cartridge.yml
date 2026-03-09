@@ -1,8 +1,6 @@
 - type: entity
   parent: BaseItem
   id: STMessengerCartridge
-  name: st-messenger-cartridge-name
-  description: st-messenger-cartridge-description
   components:
   - type: Sprite
     sprite: Objects/Devices/cartridge.rsi

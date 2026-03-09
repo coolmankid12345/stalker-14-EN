@@ -43,7 +43,12 @@ public sealed class STProjectileSystem : EntitySystem
         if (ent.Comp.StartCoordinates is null || ent.Comp.MinRemainingDamageModifier < 0)
             return;
 
-        var distance = (_transform.GetMoverCoordinates(args.Target).Position - ent.Comp.StartCoordinates.Value.Position).Length();
+        // stalker-changes: use map coordinates to avoid cross-grid distance errors
+        var startMapPos = _transform.ToMapCoordinates(ent.Comp.StartCoordinates.Value);
+        var targetMapPos = _transform.GetMapCoordinates(args.Target);
+        if (startMapPos.MapId != targetMapPos.MapId)
+            return;
+        var distance = (targetMapPos.Position - startMapPos.Position).Length();
         var minDamage = args.Damage.GetTotal() * ent.Comp.MinRemainingDamageModifier;
 
         foreach (var threshold in ent.Comp.Thresholds)
@@ -78,8 +83,12 @@ public sealed class STProjectileSystem : EntitySystem
             return;
 
         var accuracy = ent.Comp.Accuracy;
-        var targetCoordinates = _transform.GetMoverCoordinates(args.OtherEntity);
-        var distance = (targetCoordinates.Position - ent.Comp.StartCoordinates.Value.Position).Length();
+        // stalker-changes: use map coordinates to avoid cross-grid distance errors
+        var startMapPos = _transform.ToMapCoordinates(ent.Comp.StartCoordinates.Value);
+        var targetMapPos = _transform.GetMapCoordinates(args.OtherEntity);
+        if (startMapPos.MapId != targetMapPos.MapId)
+            return;
+        var distance = (targetMapPos.Position - startMapPos.Position).Length();
 
         foreach (var threshold in ent.Comp.Thresholds)
         {

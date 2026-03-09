@@ -4,7 +4,12 @@
   id: STBaseWeaponRifleM14
   components:
   - type: STWeight
-    self: 4.5
+    self: 4.2
+  - type: PullDoAfter
+    pullTime: 4
+  - type: GunWieldBonus
+    minAngle: -55
+    maxAngle: -45
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/m14.rsi
   - type: Item
@@ -12,15 +17,19 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/m14.rsi
   - type: Gun
-    fireRate: 4
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/fal.ogg
       params:
         volume: -2
-    minAngle: 50
+    minAngle: 55
     maxAngle: 100
-    angleIncrease: 4
-    angleDecay: 27.5
+    fireRate: 3.5
+    angleIncrease: 3.5
+    angleDecay: 25
+    projectileSpeed: 70
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -52,9 +61,9 @@
           tags:
           - STCartridge751
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.9
+    falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.2
+    accuracyMultiplier: 2
 
 - type: entity
   parent: STBaseWeaponRifleM14

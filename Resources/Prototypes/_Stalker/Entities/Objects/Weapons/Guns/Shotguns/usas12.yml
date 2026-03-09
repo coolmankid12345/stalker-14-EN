@@ -7,6 +7,8 @@
   components:
   - type: STWeight
     self: 3.6
+  - type: PullDoAfter
+    pullTime: 3
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/usas/usas.rsi
   - type: Item
@@ -22,16 +24,17 @@
       map: ["enum.GunVisualLayers.Mag"]
   #ST14-EN: Removed Wieldable
   - type: GunWieldBonus
-    minAngle: -20
-    maxAngle: -20
+    minAngle: -30
+    maxAngle: -30
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/saiga_shoot.ogg
     minAngle: 60
     maxAngle: 80
+    fireRate: 4
     angleIncrease: 10
     angleDecay: 50
-    fireRate: 4
+    projectileSpeed: 55
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -68,8 +71,10 @@
       gun_magazine: !type:ContainerSlot {}
       gun_auto_sear: !type:ContainerSlot {}
       gun_chamber: !type:ContainerSlot {}
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.3
+    accuracyMultiplier: 1.25
 
 - type: entity
   parent: STBaseWeaponShotgunUSAS

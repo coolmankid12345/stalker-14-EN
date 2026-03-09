@@ -344,7 +344,7 @@
 
 - type: stack
   id: STGauzeUniversal
-  name: stack-st-gauze-barbaris
+  name: stack-st-gauze-universal
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: cast

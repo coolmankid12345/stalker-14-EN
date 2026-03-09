@@ -116,6 +116,7 @@
   id: ClothingOuterArmorHeavyUNTAR
   name: Бронежилет UNTAR-H
   description: Тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений.
+  suffix: ST, UN, T5, PvP # EN
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/heavy_unstar.rsi

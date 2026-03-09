@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-NC-SA-3.0",
-  "copyright": "Goonstation, taken at commit 39ddf6bbd54c9f27fe49f5cea1a3119738b09596",
+  "copyright": "Goonstation, taken at commit 39ddf6bbd54c9f27fe49f5cea1a3119738b09596, backpack and storage sprites by carousel for Stalker14",
   "size": {
     "x": 32,
     "y": 32
@@ -28,6 +28,14 @@
     },
     {
       "name": "icon-active"
+    },
+    {
+      "name": "equipped-BACKPACK",
+      "directions": 4
+    },
+    {
+      "name": "equipped-SUITSTORAGE",
+      "directions": 4
     }
   ]
 }

@@ -283,14 +283,14 @@
     color: "#FF893B"
     castShadows: false
   - type: Explosive
-    explosionType: Radioactive # i wish this didnt do damage other than rads but im not adding a new explosion type
-    maxIntensity: 5
-    intensitySlope: 3
-    totalIntensity: 12
+    explosionType: Radioactive
+    maxIntensity: 3
+    intensitySlope: 5
+    totalIntensity: 50
     canCreateVacuum: false
   - type: TriggerOnUse
   - type: TimerTrigger
-    delay: 1.5
+    delay: 2
   - type: TwoStageTrigger
     keysIn:
     - timer

@@ -179,3 +179,44 @@
   - type: Tag
     tags:
     - GrehCanTakeOnly
+
+#Кастомки
+- type: entity
+  name: клеймор
+  parent: BaseItem
+  id: claymoreBattle
+  description: Двуручный меч
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Sharp
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Melee/claymore.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Melee/claymore.rsi
+      slots:
+        - Back
+    - type: MeleeWeapon
+      attackRate: 0.3
+      range: 2.2
+      damage:
+        types:
+          Slash: 40
+    - type: Wieldable
+    - type: Item
+    - type: MeleeRequiresWield
+    - type: Damageable
+      damageContainer: Shield
+    - type: ShieldRegen
+      health: 50
+      healDamage:
+        types:
+          Piercing: 3
+    - type: Reflect
+      reflectProb: 0.17
+      spread: 360
+      reflects:
+        - NonEnergy
+      soundOnReflect: /Audio/_Stalker/Effects/sear.ogg

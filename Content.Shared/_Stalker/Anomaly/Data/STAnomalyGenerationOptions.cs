@@ -7,7 +7,7 @@ using Robust.Shared.Random;
 namespace Content.Shared._Stalker.Anomaly.Data;
 
 [DataDefinition, Serializable]
-public partial struct STAnomalyGenerationOptions
+public partial struct STAnomalyGenerationOptions()
 {
     public MapId MapId;
 
@@ -20,14 +20,11 @@ public partial struct STAnomalyGenerationOptions
 
 
 [DataDefinition, Serializable]
-public partial struct STAnomalyGeneratorAnomalyEntry
+public partial struct STAnomalyGeneratorAnomalyEntry()
 {
     [DataField]
     public EntProtoId ProtoId;
 
-    /// <summary>
-    /// Idk how do it
-    /// </summary>
     [DataField]
     public float Dangerous = 1f;
 

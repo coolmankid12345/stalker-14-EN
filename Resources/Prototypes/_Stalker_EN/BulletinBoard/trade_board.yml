@@ -1,8 +1,6 @@
 - type: entity
   parent: BaseSTBulletinCartridge
   id: STTradeBoardCartridge
-  name: st-trade-board-cartridge-name
-  description: st-trade-board-cartridge-description
   components:
   - type: Cartridge
     programName: st-trade-board-program-name

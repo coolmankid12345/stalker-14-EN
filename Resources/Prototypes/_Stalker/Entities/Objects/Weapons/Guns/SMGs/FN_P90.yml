@@ -4,7 +4,12 @@
   id: STBaseWeaponSMGFNP90
   components:
   - type: STWeight
-    self: 2.9
+    self: 3.5
+  - type: PullDoAfter
+    pullTime: 2.5
+  - type: GunWieldBonus
+    minAngle: -40
+    maxAngle: -45
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/p90.rsi
   - type: Sprite
@@ -12,11 +17,12 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/p90.rsi
   - type: Gun
-    minAngle: 40
-    maxAngle: 80
-    angleIncrease: 1.5
-    angleDecay: 8
-    fireRate: 10
+    minAngle: 45
+    maxAngle: 100
+    fireRate: 12
+    angleIncrease: 1
+    angleDecay: 6
+    projectileSpeed: 55
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/919.ogg
   - type: ItemSlots
@@ -49,6 +55,10 @@
         whitelist:
           tags:
           - STCartridge919
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.43
 
 - type: entity
   parent: STBaseWeaponSMGFNP90

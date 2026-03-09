@@ -2,7 +2,13 @@
   id: STDefaultTheme
   name: st-ui-options-hud-theme-default
   path: /_Stalker/Interface/STDefault
-  order: -1
+  order: 2
+
+- type: hudTheme
+  id: STDeepDiveTheme
+  name: st-ui-options-hud-theme-deepdive
+  path: /_Stalker/Interface/STDeepdive
+  order: 1
 
 #- type: hudTheme
 #  id: BanditsTheme

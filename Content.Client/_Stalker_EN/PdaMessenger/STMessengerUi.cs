@@ -105,6 +105,12 @@ public sealed partial class STMessengerUi : UIFragment
                 new STMessengerNavigateToOfferEvent(offerId)));
         };
 
+        _channelPage.OnNewsLinkClicked += articleId =>
+        {
+            userInterface.SendMessage(new CartridgeUiMessage(
+                new STMessengerNavigateToNewsEvent(articleId)));
+        };
+
         _composePage.OnBack += () =>
         {
             _composePage.Visible = false;

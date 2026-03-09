@@ -138,7 +138,7 @@
   sprite: /Textures/_Stalker/Tiles/wood_broken.png
   baseTurf: STFloorPlanetDirt
   isSubfloor: false
-  weather: false
+  weather: true
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 10000
@@ -207,6 +207,7 @@
   itemDrop: FloorTileItemConcrete
   heatCapacity: 10000
   indestructible: true
+  weather: true
 
 - type: tile
   id: STFloorConcreteMono
@@ -226,6 +227,7 @@
   itemDrop: FloorTileItemConcreteMono
   heatCapacity: 10000
   indestructible: true
+  weather: true
 
 - type: tile
   id: STFloorConcreteSmooth
@@ -245,6 +247,7 @@
   itemDrop: FloorTileItemConcreteSmooth
   heatCapacity: 10000
   indestructible: true
+  weather: true
 
 - type: tile
   id: STFloorGrayConcrete
@@ -264,6 +267,7 @@
   itemDrop: FloorTileItemGrayConcrete
   heatCapacity: 10000
   indestructible: true
+  weather: true
 
 - type: tile
   id: STFloorGrayConcreteMono
@@ -283,6 +287,7 @@
   itemDrop: FloorTileItemGrayConcreteMono
   heatCapacity: 10000
   indestructible: true
+  weather: true
 
 - type: tile
   id: STFloorGrayConcreteSmooth
@@ -302,6 +307,7 @@
   itemDrop: FloorTileItemGrayConcreteSmooth
   heatCapacity: 10000
   indestructible: true
+  weather: true
 
 - type: tile
   id: STFloorOldConcrete
@@ -321,6 +327,7 @@
   itemDrop: FloorTileItemOldConcrete
   heatCapacity: 10000
   indestructible: true
+  weather: true
 
 - type: tile
   id: STFloorOldConcreteMono
@@ -340,6 +347,7 @@
   itemDrop: FloorTileItemOldConcreteMono
   heatCapacity: 10000
   indestructible: true
+  weather: true
 
 - type: tile
   id: STFloorOldConcreteSmooth
@@ -359,4 +367,4 @@
   itemDrop: FloorTileItemOldConcreteSmooth
   heatCapacity: 10000
   indestructible: true
-
+  weather: true

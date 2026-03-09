@@ -8,6 +8,7 @@ using Content.Shared._Stalker.Bands;
 using Content.Shared._Stalker_EN.CCVar;
 using Content.Shared._Stalker_EN.FactionRelations;
 using Content.Shared._Stalker_EN.BulletinBoard;
+using Content.Shared._Stalker_EN.News;
 using Content.Shared._Stalker_EN.PdaMessenger;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Database;
@@ -52,6 +53,7 @@ public sealed partial class STMessengerSystem : EntitySystem
     private const int MaxRetryCollision = 10;
     private const int MaxPseudonymSuffix = 999;
     private static readonly TimeSpan InteractionCooldown = TimeSpan.FromSeconds(0.5);
+    private static readonly ProtoId<STBandPrototype> ClearSkyBandId = "STClearSkyBand";
 
     /// <summary>
     /// Maps (userId, charName) → anonymous pseudonym for the current round.
@@ -238,6 +240,9 @@ public sealed partial class STMessengerSystem : EntitySystem
             case STMessengerNavigateToOfferEvent navigateToOffer:
                 OnNavigateToOffer(args.LoaderUid, navigateToOffer);
                 break;
+            case STMessengerNavigateToNewsEvent navigateToNews:
+                OnNavigateToNews(args.LoaderUid, navigateToNews);
+                break;
         }
     }
 
@@ -349,16 +354,20 @@ public sealed partial class STMessengerSystem : EntitySystem
             chatMessages.RemoveRange(0, chatMessages.Count - maxMessages);
 
         // Admin log — include anonymous pseudonym so admins can trace abuse
+        var replyInfo = send.ReplyToId is { } rid
+            ? $" (reply to #{rid}: \"{replySnippet}\")"
+            : "";
+
         if (send.IsAnonymous && !isDm)
         {
-            _adminLogger.Add(LogType.PdaMessage, LogImpact.Medium,
+            _adminLogger.Add(LogType.STMessenger, LogImpact.Medium,
                 $"{ToPrettyString(args.Actor):player} sent anonymous message " +
-                $"(as \"{displayName}\") to {chatId}: {content}");
+                $"(as \"{displayName}\") to {chatId}{replyInfo}: {content}");
         }
         else
         {
-            _adminLogger.Add(LogType.PdaMessage, LogImpact.Medium,
-                $"{ToPrettyString(args.Actor):player} sent message to {chatId}: {content}");
+            _adminLogger.Add(LogType.STMessenger, LogImpact.Medium,
+                $"{ToPrettyString(args.Actor):player} sent message to {chatId}{replyInfo}: {content}");
         }
 
         if (isDm)
@@ -495,6 +504,10 @@ public sealed partial class STMessengerSystem : EntitySystem
         AddContactAsync(server.OwnerUserId, server.OwnerCharacterName,
             contactIdentity.UserId, contactIdentity.CharName, factionName);
 
+        _adminLogger.Add(LogType.STMessenger, LogImpact.Low,
+            $"{ToPrettyString(args.Actor):player} added messenger contact " +
+            $"{contactIdentity.CharName} (ID: {add.MessengerId})");
+
         BroadcastUiUpdate();
     }
 
@@ -513,6 +526,10 @@ public sealed partial class STMessengerSystem : EntitySystem
             return;
 
         server.Contacts.Remove(remove.ContactMessengerId);
+
+        _adminLogger.Add(LogType.STMessenger, LogImpact.Low,
+            $"{ToPrettyString(args.Actor):player} removed messenger contact " +
+            $"{contactEntry.CharacterName} (ID: {remove.ContactMessengerId})");
 
         RemoveContactAsync(server.OwnerUserId, server.OwnerCharacterName,
             contactEntry.UserId, contactEntry.CharacterName);
@@ -577,6 +594,25 @@ public sealed partial class STMessengerSystem : EntitySystem
                 return;
         }
     }
+
+    // stalker-en-changes: news link navigation
+    private void OnNavigateToNews(NetEntity loaderNetUid, STMessengerNavigateToNewsEvent navigateToNews)
+    {
+        var loaderUid = GetEntity(loaderNetUid);
+
+        var ev = new STOpenNewsArticleEvent(loaderUid, navigateToNews.ArticleId);
+        var installed = _cartridgeLoader.GetInstalled(loaderUid);
+        foreach (var progUid in installed)
+        {
+            if (!HasComp<STNewsCartridgeComponent>(progUid))
+                continue;
+
+            RaiseLocalEvent(progUid, ref ev);
+            if (ev.Handled)
+                return;
+        }
+    }
+    // stalker-en-changes-end
 
     private void MarkChatAsRead(string chatId, STMessengerServerComponent server)
     {
@@ -910,8 +946,8 @@ public sealed partial class STMessengerSystem : EntitySystem
         if (!TryComp<BandsComponent>(holder, out var bands))
             return null;
 
-        // Covert factions (CanChange = true, e.g. Monolith, Clear Sky) always appear as Loners on PDA
-        if (bands.CanChange)
+        // Only Clear Sky is disguised as Loners on PDA
+        if (bands.BandProto == ClearSkyBandId)
             return _factionResolution.GetBandFactionName(bands.BandName);
 
         if (bands.BandProto is not { } bandProtoId)

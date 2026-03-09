@@ -1,0 +1,26 @@
+﻿- type: entity
+  parent: STBaseWeaponSniperSKS
+  id: STWeaponSniperSKSIntegrated
+  name: SKS Carbine
+  description: The Simonov self-loading carbine chambered in 7.62x39mm with fixed 10-round magazine. This lightweight model has been modified with a special scope.
+  suffix: Weapon, Sniper, Integrated Scope
+  components:
+  - type: Scope
+    zoom: 1.35
+    delay: 1
+    offset: 14
+  - type: STWeight
+    self: 2.5
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: [ ]
+      gun_module_muzzle: !type:ContainerSlot {}
+  - type: ItemSlots
+    slots:
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 1
+        whitelist:
+          tags:
+          - STWeaponModuleSniperSilencer

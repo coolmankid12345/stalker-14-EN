@@ -9,10 +9,12 @@
     - MobAnomalyTarget
     - MobPolymorphable
     - StripableInventoryBase
+    - MobFirePat # stalker-changes - fire patting
   id: BaseMobSpecies
   abstract: true
   components:
   - type: RDDeathScreen # stalker-changes
+  - type: RDWatcherTarget # stalker-changes
   - type: Sprite
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]

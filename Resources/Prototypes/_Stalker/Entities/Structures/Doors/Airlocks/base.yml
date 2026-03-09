@@ -149,6 +149,16 @@
       access: [["Dolg"] , ["DolgNovice"]]
 
 - type: entity
+  id: MetalAltDoorFalloutDolgOnlyClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Долг
+  components:
+    - type: AccessReader
+      access: [["Dolg"]]
+
+- type: entity
   id: HermoDverTypeOneLibertyClosed
   name: гермодверь
   parent: HermoDverTypeOne
@@ -167,6 +177,17 @@
   components:
     - type: AccessReader
       access: [["Freedom"] , ["FreedomNovice"]]
+
+- type: entity
+  id: MetalAltDoorFalloutFreedomOnlyClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Свобода
+  components:
+    - type: AccessReader
+      access: [["Freedom"]]
+
 
 # Чистому небу
 

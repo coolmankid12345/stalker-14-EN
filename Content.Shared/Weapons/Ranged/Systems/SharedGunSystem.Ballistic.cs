@@ -259,6 +259,12 @@ public abstract partial class SharedGunSystem
                 args.Ammo.Add((entity, EnsureShootable(entity)));
                 component.Entities.RemoveAt(component.Entities.Count - 1);
                 DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.Entities));
+                // Sync EntProtos with Entities removal (matches Cycle behavior) — stalker-en-changes
+                if (component.EntProtos.Count > 0)
+                {
+                    component.EntProtos.RemoveAt(component.EntProtos.Count - 1);
+                    DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.EntProtos));
+                }
                 Containers.Remove(entity, component.Container);
             }
             else if (component.UnspawnedCount > 0)

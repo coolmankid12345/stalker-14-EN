@@ -33,7 +33,7 @@
       shape:
         - 0,0,3,3
     - type: STWeight
-      self: 25
+      self: 15
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/carton_box.rsi
       state: kb2
@@ -75,7 +75,7 @@
       shape:
         - 0,0,3,3
     - type: STWeight
-      self: 25
+      self: 15
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/carton_box.rsi
       state: kb2
@@ -121,7 +121,7 @@
       shape:
         - 0,0,3,3
     - type: STWeight
-      self: 25
+      self: 15
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/carton_box.rsi
       state: kb2
@@ -143,10 +143,19 @@
         - id: ClothingShoesBootsCombat
         - id: STCombatKnife
         - id: STModuleSMGGripT1
+        - id: ClothingBackpackStalkerZaryaBlack
+        - id: STPillboxProbud
         - id: BaseMP5Mag
         - id: BaseMP5Mag
         - id: BaseMP5Mag
         - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: Binocularus1
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
         - id: 919PBMBox
         - id: 919PBMBox
         - id: 919PBMBox
@@ -169,7 +178,7 @@
     shape:
     - 0,0,3,3
   - type: STWeight
-    self: 25
+    self: 15
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/carton_box.rsi
     state: kb2
@@ -179,12 +188,18 @@
   - type: SpawnItemsOnUse
     items:
     - id: STClothingOuterArmorLightPlateVestBaseANAgreen
-    - id: ClothingHeadHelmetLight
-    - id: STWeaponRifleL85
+    - id: ClothingHeadHelmetInfantry
+    - id: Binocularus1
+    - id: STWeaponRifleM4
     - id: MedkitMilitary
     - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: ClothingBackpackStalkerZaryaBlack
+    - id: STPillboxProbud
     - id: MedkitAI2
     - id: MedkitAI2
+    - id: MedkitScience
     - id: MedkitScience
     - id: STGauze
     - id: STBrutepack
@@ -195,10 +210,17 @@
     - id: 556Mag30
     - id: 556Mag30
     - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
     - id: 556M855Box
     - id: 556M855Box
     - id: 556M855Box
     - id: 556M855Box
+    - id: 556M855Box
+    - id: 556M855Box
+    - id: 556M855Box
+    - id: 556M856Box
     - id: 556M856Box
     - id: GeigerCounter
     - id: STSkinsKitProject

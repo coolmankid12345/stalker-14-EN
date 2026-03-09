@@ -716,9 +716,15 @@ public new const int VoiceRange = 15; // how far voice goes in world units
             var entHideChat = entRange == MessageRangeCheckResult.HideChat;
 
             // Stalker-chat-start
-            var ev = new STChatMessageOverrideInVoiceRangeEvent(session, channel, source, message, wrappedMessage, entHideChat);
+            // stalker-en-changes-start: voice occlusion support
+            var ev = new STChatMessageOverrideInVoiceRangeEvent(
+                session, channel, source, message, wrappedMessage, entHideChat,
+                data.Range, data.Observer, data.HideChatOverride);
             RaiseLocalEvent(session.AttachedEntity ?? source, ref ev);
+            if (ev.Cancelled)
+                continue;
             _chatManager.ChatMessageToOne(channel, ev.Message, ev.WrappedMessage, source, ev.EntHideChat, session.Channel, author: author);
+            // stalker-en-changes-end
             // Stalker-chat-end
         }
 

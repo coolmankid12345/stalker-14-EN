@@ -17,7 +17,6 @@
     - Hair
     - FacialHair
   - type: IdentityBlocker
-    enabled: false
     coverage: FULL # stalker-en-changes
   - type: Sprite
     layers:

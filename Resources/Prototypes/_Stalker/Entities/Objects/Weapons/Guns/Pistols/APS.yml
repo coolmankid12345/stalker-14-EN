@@ -6,7 +6,9 @@
   description: Автоматический Пистолет Стечкина под калибр 9х18 и собственный формат магазина на 20 патрон.
   components:
     - type: STWeight
-      self: 1.1
+      self: 0.5
+    - type: PullDoAfter
+      pullTime: 0.5
     - type: Sprite
       scale: 0.6, 0.6
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/aps.rsi
@@ -20,12 +22,12 @@
     - type: Gun
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/pm-shoot.ogg
-      projectileSpeed: 35
+      projectileSpeed: 45
       minAngle: 10
       maxAngle: 50
       fireRate: 8
       angleIncrease: 1.5
-      angleDecay: 5
+      angleDecay: 3
       selectedMode: FullAuto
       availableModes:
         - FullAuto
@@ -63,6 +65,10 @@
       steps: 1
       zeroVisible: true
     - type: Craftable
+    - type: STWeaponDamageFalloff
+      falloffMultiplier: 1.4
+    - type: STWeaponAccuracy
+      accuracyMultiplier: 1.4
 
 - type: entity
   parent: WeaponPistolStalkerAPS

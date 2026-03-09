@@ -1,6 +1,6 @@
 # Trade Board cartridge
-st-trade-board-cartridge-name = Trade Board
-st-trade-board-cartridge-description = A program for posting and browsing trade offers.
+ent-STTradeBoardCartridge = Trade Board
+    .desc = A program for posting and browsing trade offers.
 st-trade-board-program-name = Trade Board
 
 # Header

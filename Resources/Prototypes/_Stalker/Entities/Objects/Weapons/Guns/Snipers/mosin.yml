@@ -7,6 +7,11 @@
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/Mosin.rsi
   - type: STWeight
     self: 4.5
+  - type: PullDoAfter
+    pullTime: 3
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -70
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/Mosin.rsi
   - type: Sprite
@@ -21,14 +26,17 @@
         volume: 0.7 # EN
     minAngle: 50
     maxAngle: 80
+    fireRate: 0.6
     angleIncrease: 5
     angleDecay: 25
-    fireRate: 0.6
+    projectileSpeed: 75
   - type: BallisticAmmoProvider
     capacity: 5
     whitelist:
       tags:
       - STCartridge754
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.2
   - type: STWeaponAccuracy
     accuracyMultiplier: 5
 

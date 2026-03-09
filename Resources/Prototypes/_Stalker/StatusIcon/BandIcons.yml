@@ -511,3 +511,18 @@
     hideOnStealth: true
     state: voen3
 
+- type: jobIcon
+  id: monolithfree
+  locationPreference: Right
+  icon:
+    sprite: /Textures/_Stalker/Icons/Patches/band.rsi
+    hideOnStealth: true
+    state: monolithfree
+
+- type: jobIcon
+  id: atom
+  locationPreference: Right
+  icon:
+    sprite: /Textures/_Stalker/Icons/Patches/band.rsi
+    hideOnStealth: true
+    state: atom

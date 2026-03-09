@@ -67,6 +67,7 @@ public sealed class VendingInteractionTest : InteractionTest
 ";
 
     [Test]
+    [Ignore("stalker-en-changes: power solver disabled in PowerNetSystem")]
     public async Task InteractUITest()
     {
         await SpawnTarget(VendingMachineProtoId);

@@ -40,14 +40,22 @@
   - type: Icon
     sprite: _Stalker_EN/Objects/Devices/pda.rsi
     state: merc_off
+  - type: Pda # stalker-en-changes-start
+    penSlot:
+      startingItem: Pen
+      priority: 1
+      whitelist:
+        tags:
+        - Write
   - type: Boombox
   - type: ItemSlots
     slots:
       cassette_slot:
         name: Cassete
+        priority: 2
         whitelist:
           tags:
-          - Cassete
+            - Cassete
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellSmall
@@ -57,6 +65,11 @@
         whitelist:
           tags:
           - Dogtag
+  - type: PointLight
+    enabled: false
+    radius: 5
+    energy: 2.5
+    netsync: false # stalker-en-changes-end
 
 # Militaries
 
@@ -75,6 +88,13 @@
   - type: Unremoveable
   - type: PdaBorderColor
     borderColor: "#285714"
+  - type: Pda # stalker-en-changes-start
+    penSlot:
+      startingItem: Pen
+      priority: 1
+      whitelist:
+        tags:
+        - Write
   - type: ItemSlots
     slots:
       cell_slot:
@@ -92,6 +112,11 @@
       flatReductions:
         Radiation: 2
         Psy: 2
+  - type: PointLight
+    enabled: false
+    radius: 5
+    energy: 2.5
+    netsync: false # stalker-en-changes-end
 
 - type: entity
   parent: BaseStalkerPDAEN
@@ -107,6 +132,13 @@
        mpda_on
   - type: PdaBorderColor
     borderColor: "#285714"
+  - type: Pda # stalker-en-changes-start
+    penSlot:
+      startingItem: Pen
+      priority: 1
+      whitelist:
+        tags:
+        - Write
   - type: ItemSlots
     slots:
       cell_slot:
@@ -122,4 +154,4 @@
     enabled: false
     radius: 5
     energy: 2.5
-    netsync: false
+    netsync: false # stalker-en-changes-end

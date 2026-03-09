@@ -1,7 +1,7 @@
 - type: entity
   parent: STBaseItem
   id: STElasticRubberRed
-  name: elastic rubber
+  name: Elastic Rubber (Red)
   description: "For some reason, looking at them, the ONLY idea that comes to mind is to tie around your magazine."
   components:
   - type: Sprite
@@ -16,7 +16,7 @@
 - type: entity
   parent: STBaseItem
   id: STElasticRubberGreen
-  name: elastic rubber
+  name: Elastic Rubber (Green)
   description: "For some reason, looking at them, the ONLY idea that comes to mind is to tie around your magazine."
   components:
   - type: Sprite
@@ -31,7 +31,7 @@
 - type: entity
   parent: STBaseItem
   id: STElasticRubberBlue
-  name: elastic rubber
+  name: Elastic Rubber (Blue)
   description: "For some reason, looking at them, the ONLY idea that comes to mind is to tie around your magazine."
   components:
   - type: Sprite

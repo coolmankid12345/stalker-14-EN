@@ -6,6 +6,11 @@
   components:
   - type: STWeight
     self: 2.3
+  - type: PullDoAfter
+    pullTime: 2.3
+  - type: GunWieldBonus
+    minAngle: -35
+    maxAngle: -30
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mossberg.rsi
   - type: Clothing
@@ -17,9 +22,14 @@
   - type: Gun
     minAngle: 40
     maxAngle: 50
+    fireRate: 1.5
     angleIncrease: 10
     angleDecay: 50
-    fireRate: 1
+    projectileSpeed: 50
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.15
 
 - type: entity
   parent: STBaseWeaponShotgunMossbergM88

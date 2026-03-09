@@ -80,7 +80,7 @@ public sealed class StorageWindow : BaseWindow
     public event Action? OnCraftButtonPressed;
     public event Action? OnDisassembleButtonPressed;
 
-    private const string StalkerStoragePath = "/Textures/_Stalker/Interface/STDefault/Storage/";
+    private const string StalkerStoragePath = "Storage/";
 
     private readonly string _craftTexturePath = StalkerStoragePath + "craft";
     private Texture? _craftTexture;

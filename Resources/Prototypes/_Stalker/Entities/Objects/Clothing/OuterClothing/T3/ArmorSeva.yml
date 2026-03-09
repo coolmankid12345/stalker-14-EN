@@ -458,3 +458,39 @@
     - type: IngestionBlocker
     - type: PointLight
       color: orange
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: ClothingOuterArmorSevaVano
+  name: костюм "Сева" М1 V.A.N.O
+  description: "Сева, сделанная народным умельцем, имеет улучшенные характеристики как для боя с мутантами, так и с недоброжелателями. Модифицирована пластинами из композитных материалов и прошита поликарбонатной нитью. Руки и ноги окрашены белым цветом, нагрудник и шлем, напротив, - чёрным. На нагруднике виднеется белый череп."
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_VANO.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_VANO.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHardsuitSevaVano
+      slot: head
+    - type: Armor
+      armorClass: 3
+      modifiers:
+       flatReductions:
+         Blunt: 5
+         Slash: 5
+         Piercing: 5
+       coefficients:
+         Slash: 0.6
+         Piercing: 0.55
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaVano
+  name: шлем севы М1 V.A.N.O
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_helmet_VANO.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_helmet_VANO.rsi

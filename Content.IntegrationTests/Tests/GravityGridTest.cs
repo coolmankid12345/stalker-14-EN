@@ -63,6 +63,7 @@ namespace Content.IntegrationTests.Tests
 
                 var powerComponent = entityMan.GetComponent<ApcPowerReceiverComponent>(generator);
                 powerComponent.NeedsPower = false;
+                powerComponent.Powered = true; // stalker-en-changes: power solver disabled
             });
 
             await server.WaitRunTicks(5);
@@ -82,6 +83,7 @@ namespace Content.IntegrationTests.Tests
                 // Re-enable needs power so it turns off again.
                 // Charge rate is ridiculously high so it finishes in one tick.
                 powerComponent.NeedsPower = true;
+                powerComponent.Powered = false; // stalker-en-changes: power solver disabled
             });
 
             await server.WaitRunTicks(5);

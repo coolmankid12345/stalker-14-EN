@@ -45,7 +45,7 @@
     legs: ClothingLegsJeansBlue
     shoes: STClothingShoesBootsCombatFilled
     back: ClothingBackpackDuffelGreenStalker
-    pocket1: WeaponPistolStalkerTT # EN
+    pocket1: WeaponPistolStalkerPM # EN
     pocket2: 918PGJBox # EN
 - type: stBand
   id: STJournalistsBand

@@ -120,3 +120,5 @@
           True: {state: "icon_open"}
           False: {state: "icon"}
   - type: Sealable
+  - type: Trash
+    time: 9999

@@ -1534,6 +1534,52 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("stalker_messenger_ids", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.StalkerNewsArticle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("stalker_news_articles_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("author");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("content");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<int>("EmbedColor")
+                        .HasColumnType("integer")
+                        .HasColumnName("embed_color");
+
+                    b.Property<long>("PublishTimeTicks")
+                        .HasColumnType("bigint")
+                        .HasColumnName("publish_time_ticks");
+
+                    b.Property<int>("RoundId")
+                        .HasColumnType("integer")
+                        .HasColumnName("round_id");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("title");
+
+                    b.HasKey("Id")
+                        .HasName("PK_stalker_news_articles");
+
+                    b.ToTable("stalker_news_articles", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.StalkerPdaPassword", b =>
                 {
                     b.Property<string>("CharacterName")

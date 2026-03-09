@@ -4,7 +4,12 @@
   id: STBaseWeaponRifleFALo
   components:
   - type: STWeight
-    self: 3.6
+    self: 4
+  - type: PullDoAfter
+    pullTime: 3.5
+  - type: GunWieldBonus
+    minAngle: -47
+    maxAngle: -50
   - type: Clothing
     sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/FALo.rsi
   - type: Sprite
@@ -15,14 +20,15 @@
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/groza_shot.ogg
     minAngle: 50
-    maxAngle: 100
-    angleIncrease: 1.8
+    maxAngle: 110
+    fireRate: 7
+    angleIncrease: 1.5
+    angleDecay: 6
+    projectileSpeed: 65
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
     - FullAuto
-    angleDecay: 8
-    fireRate: 7
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -53,9 +59,9 @@
           tags:
           - STCartridge751
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.85
+    falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.55
+    accuracyMultiplier: 1.56
 
 - type: entity
   parent: STBaseWeaponRifleFALo

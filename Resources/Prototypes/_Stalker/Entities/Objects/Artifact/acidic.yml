@@ -224,30 +224,27 @@
   - type: ZoneArtifact
     anomaly: ZoneAnomalyKissel
   - type: ZoneArtifactDetectorTarget
-    detectedLevel: 3
+    detectedLevel: 2
   - type: PointLight
     radius: 1.5
     energy: 2.5
     color: "#7fff00"
     castShadows: false
   - type: STWeight
-    self: 5
+    self: 3
   - type: PersonalDamage
     damage:
       types:
-        Bloodloss: -0.2
+        Bloodloss: -1
         Radiation: -0.5
-        Heat: -0.2
-        Shock: -0.2
-        Cold: -0.2
-        Caustic: -0.5
+        Psy: -0.25
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Slash: 1.1
+        Psy: 0.9
 
 - type: entity
   parent: BaseArtifact

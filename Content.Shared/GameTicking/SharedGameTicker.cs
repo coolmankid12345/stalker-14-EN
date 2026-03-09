@@ -103,7 +103,10 @@ namespace Content.Shared.GameTicking
         public TimeSpan RoundStartTimeSpan { get; }
         public bool Paused { get; }
 
-        public TickerLobbyStatusEvent(bool isRoundStarted, ProtoId<LobbyBackgroundPrototype>? lobbyBackground, bool youAreReady, TimeSpan startTime, TimeSpan preloadTime, TimeSpan roundStartTimeSpan, bool paused)
+        public int RoundId { get; } // stalker-en-changes - getting this fo the PDA
+
+        // stalker-en-changes - network RoundId for the PDA
+        public TickerLobbyStatusEvent(bool isRoundStarted, ProtoId<LobbyBackgroundPrototype>? lobbyBackground, bool youAreReady, TimeSpan startTime, TimeSpan preloadTime, TimeSpan roundStartTimeSpan, bool paused, int  roundId)
         {
             IsRoundStarted = isRoundStarted;
             LobbyBackground = lobbyBackground;
@@ -111,6 +114,7 @@ namespace Content.Shared.GameTicking
             StartTime = startTime;
             RoundStartTimeSpan = roundStartTimeSpan;
             Paused = paused;
+            RoundId = roundId; // stalker-en-changes - network RoundId for the PDA
         }
     }
 

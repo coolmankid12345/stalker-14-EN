@@ -1,0 +1,29 @@
+- type: entity
+  id: RDArea
+  categories: [ RDArea ]
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Tag
+    tags: [ ForceFixRotations ]
+  - type: Transform
+    anchored: true
+  - type: RDArea
+  - type: Sprite
+    sprite: Markers/cross.rsi
+    state: pink
+    drawdepth: Overdoors
+  - type: Marker
+
+- type: entity
+  parent: RDArea
+  id: RDAreaDebug
+  name: area debug
+
+- type: entity
+  parent: RDAreaDebug
+  id: RDAreaDebugNoAnomaly
+  name: area debug no anomaly
+  components:
+  - type: STAnomalyGeneratorSpawnBlocker

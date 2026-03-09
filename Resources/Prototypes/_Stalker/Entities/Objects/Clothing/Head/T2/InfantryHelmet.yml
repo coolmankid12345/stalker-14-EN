@@ -77,6 +77,7 @@
   id: ClothingHeadInfantryHelmetUN
   name: шлем «Запад»
   description: Пехотный шлем «Восток», перекрашенный в голубой цвет.
+  suffix: ST, UN, T2 # EN
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/pehhelm_un.rsi

@@ -13,7 +13,12 @@
       - CartridgeShotgunBullet
       - ShellKS23
   - type: STWeight
-    self: 3.85
+    self: 4
+  - type: PullDoAfter
+    pullTime: 3
+  - type: GunWieldBonus
+    minAngle: -30
+    maxAngle: -35
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/ks23/ks-23.rsi
   - type: Clothing
@@ -23,11 +28,14 @@
   - type: Gun
     minAngle: 40
     maxAngle: 50
+    fireRate: 0.5
     angleIncrease: 15
-    angleDecay: 7
-    fireRate: 0.6
+    angleDecay: 55
+    projectileSpeed: 55
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.3
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1
+    accuracyMultiplier: 1.05
 
 - type: entity
   parent: STBaseWeaponShotgunKS23

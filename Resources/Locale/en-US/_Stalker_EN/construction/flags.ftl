@@ -1,0 +1,9 @@
+construction-step-folded-bandit-flag = folded bandit flag
+construction-step-folded-duty-flag = folded duty flag
+construction-step-folded-freedom-flag = folded freedom flag
+construction-step-folded-mercenary-flag = folded mercenary flag
+construction-step-folded-kindness-flag = folded kindness flag
+construction-step-folded-renegade-flag = folded renegade flag
+construction-step-folded-clear-sky-flag = folded clear sky flag
+construction-step-folded-ukrainian-flag = folded ukrainian flag
+construction-step-folded-monolith-flag = folded monolith flag
