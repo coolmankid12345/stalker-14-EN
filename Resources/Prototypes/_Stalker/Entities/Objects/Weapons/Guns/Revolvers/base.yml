@@ -52,6 +52,3 @@
       path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
-  - type: STWeaponAccuracy
-    accuracyMultiplierUnwielded: 1.5
-    modifiedAccuracyMultiplier: 1.5

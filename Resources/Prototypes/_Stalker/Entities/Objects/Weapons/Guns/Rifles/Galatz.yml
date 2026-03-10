@@ -5,11 +5,6 @@
   components:
   - type: STWeight
     self: 3.5
-  - type: PullDoAfter
-    pullTime: 4.5
-  - type: GunWieldBonus
-    minAngle: -50
-    maxAngle: -55
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galatz.rsi
   - type: Sprite
@@ -17,12 +12,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galatz.rsi
   - type: Gun
-    minAngle: 45
-    maxAngle: 120
     fireRate: 5
-    angleIncrease: 5.5
-    angleDecay: 30
-    projectileSpeed: 75
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -30,6 +20,10 @@
       path: /Audio/_Stalker/Effects/Guns/sks_shoot.ogg
       params:
         volume: -2
+    minAngle: 44
+    maxAngle: 120
+    angleIncrease: 5
+    angleDecay: 25
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -61,9 +55,9 @@
           tags:
           - STCartridge751
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
+    falloffMultiplier: 0
   - type: STWeaponAccuracy
-    accuracyMultiplier: 3
+    accuracyMultiplier: 5
 
 - type: entity
   parent: STBaseWeaponRifleGalatz

@@ -6,9 +6,7 @@
   description: Легендарный пистолет калибра 7.62х25, разработанный в СССР и прошедший множество войн.
   components:
   - type: STWeight
-    self: 0.5
-  - type: PullDoAfter
-    pullTime: 0.5
+    self: 0.7
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Pistols/tt.rsi
@@ -22,10 +20,10 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/tt.ogg
-    projectileSpeed: 55
+    projectileSpeed: 35
     minAngle: 5
-    maxAngle: 20
-    fireRate: 5
+    maxAngle: 40
+    fireRate: 4
     angleIncrease: 0.5
     angleDecay: 5
     selectedMode: SemiAuto
@@ -65,7 +63,3 @@
     steps: 1
     zeroVisible: true
   - type: Craftable
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 1.4
-  - type: STWeaponAccuracy
-    accuracyMultiplier: 1.4

@@ -4,12 +4,7 @@
   id: STBaseWeaponRifleL85
   components:
   - type: STWeight
-    self: 4
-  - type: PullDoAfter
-    pullTime: 2.5
-  - type: GunWieldBonus
-    minAngle: -45
-    maxAngle: -45
+    self: 4.2
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/l85.rsi
   - type: Sprite
@@ -17,19 +12,17 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/l85.rsi
   - type: Gun
+    fireRate: 6
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/l85.ogg
       params:
         volume: -2
-    minAngle: 50
-    maxAngle: 100
-    fireRate: 5
-    angleIncrease: 1.4
-    angleDecay: 5.5
-    projectileSpeed: 55
-    selectedMode: FullAuto
+    minAngle: 40
+    maxAngle: 75
+    angleIncrease: 1.25
+    selectedMode: Burst
     availableModes:
-    - SemiAuto
+    - Burst
     - FullAuto
   - type: ItemSlots
     slots:
@@ -61,7 +54,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.43
+    accuracyMultiplier: 1.5
 
 
 - type: entity

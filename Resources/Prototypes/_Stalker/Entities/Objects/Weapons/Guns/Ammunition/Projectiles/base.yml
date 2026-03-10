@@ -96,7 +96,7 @@
   - type: STProjectileAccuracy
     thresholds:
     - range: 1
-      falloff: 0.05
+      falloff: 0.1
   - type: STProjectileDamageFalloff
     thresholds:
     - range: 2

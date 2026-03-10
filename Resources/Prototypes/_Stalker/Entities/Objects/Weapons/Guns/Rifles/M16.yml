@@ -4,12 +4,7 @@
   id: STBaseWeaponRifleM16
   components:
   - type: STWeight
-    self: 3.4
-  - type: PullDoAfter
-    pullTime: 3
-  - type: GunWieldBonus
-    minAngle: -45
-    maxAngle: -45
+    self: 3
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/m16.rsi
   - type: Sprite
@@ -17,16 +12,14 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/m16.rsi
   - type: Gun
+    fireRate: 4.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/m4.ogg
       params:
         volume: -2
-    minAngle: 45
-    maxAngle: 85
-    fireRate: 9
-    angleIncrease: 1.25
-    angleDecay: 6
-    projectileSpeed: 55
+    minAngle: 50
+    maxAngle: 100
+    angleIncrease: 1
     selectedMode: Burst
     availableModes:
     - Burst
@@ -64,7 +57,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.45
+    accuracyMultiplier: 1.5
 
 - type: entity
   parent: STBaseWeaponRifleM16

@@ -5,11 +5,6 @@
   components:
   - type: STWeight
     self: 3
-  - type: PullDoAfter
-    pullTime: 2
-  - type: GunWieldBonus
-    minAngle: -43
-    maxAngle: -45
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/bizon.rsi
   - type: Sprite
@@ -17,12 +12,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/bizon.rsi
   - type: Gun
-    minAngle: 45
+    minAngle: 40
     maxAngle: 90
-    fireRate: 10
     angleIncrease: 1
-    angleDecay: 6
-    projectileSpeed: 50
+    angleDecay: 5
+    fireRate: 10
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/919.ogg
   - type: ItemSlots
@@ -55,10 +49,6 @@
         whitelist:
           tags:
           - STCartridge918
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
-  - type: STWeaponAccuracy
-    accuracyMultiplier: 1.43
 
 - type: entity
   parent: STBaseWeaponSMGPP19

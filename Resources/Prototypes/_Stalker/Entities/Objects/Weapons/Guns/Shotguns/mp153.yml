@@ -5,11 +5,6 @@
   components:
   - type: STWeight
     self: 3.3
-  - type: PullDoAfter
-    pullTime: 2.5
-  - type: GunWieldBonus
-    minAngle: -51
-    maxAngle: -55
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153.rsi
     scale: 0.6, 0.6
@@ -20,16 +15,11 @@
   - type: BallisticAmmoProvider
     capacity: 5
   - type: Gun
-    minAngle: 52
-    maxAngle: 56
-    fireRate: 2.5
+    minAngle: 40
+    maxAngle: 50
     angleIncrease: 10
     angleDecay: 50
-    projectileSpeed: 55
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
-  - type: STWeaponAccuracy
-    accuracyMultiplier: 1.15
+    fireRate: 2.3
 
 - type: entity
   parent: STBaseWeaponShotgunMP153
@@ -78,10 +68,6 @@
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
   - type: STWeight
     self: 3
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
-  - type: STWeaponAccuracy
-    accuracyMultiplier: 1.2
 
 - type: entity
   parent: STBaseWeaponShotgunMP153

@@ -1,0 +1,5 @@
+- type: hudTheme
+  id: STClassicTheme
+  name: st-ui-options-hud-theme-classic
+  path: /_Stalker_EN/Interface/STClassic
+  order: 0

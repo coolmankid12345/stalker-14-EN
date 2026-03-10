@@ -7,12 +7,7 @@
   description: Данная модель является вершиной развития системы АК и отличается от предыдущих поколений продуманной эргономикой, адаптацией к всесуточному применению и повышенной точностью и кучностью стрельбы.
   components:
   - type: STWeight
-    self: 3.5
-  - type: PullDoAfter
-    pullTime: 3.5
-  - type: GunWieldBonus
-    minAngle: -45
-    maxAngle: -50
+    self: 4.5
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak12.rsi
   - type: Sprite
@@ -23,17 +18,10 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/ak.ogg
-    minAngle: 45
-    maxAngle: 85
+    minAngle: 48
+    maxAngle: 95
+    angleIncrease: 0.8
     fireRate: 7
-    angleIncrease: 1.5
-    angleDecay: 6
-    projectileSpeed: 60
-    selectedMode: FullAuto
-    availableModes:
-    - SemiAuto
-    - FullAuto
-    - Burst
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -64,9 +52,9 @@
           tags:
             - STCartridge545
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.45
+    accuracyMultiplier: 1.2
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.7
+    falloffMultiplier: 0.8
 
 - type: entity
   name: АК-12 серафимов

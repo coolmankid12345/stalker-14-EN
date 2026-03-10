@@ -92,6 +92,7 @@
         300: 0.7
     - type: StaminaDamageOnHit
       damage: 10
+    - type: STWeight
       self: 140
       overload: 238
       maximum: 350

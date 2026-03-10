@@ -4,12 +4,7 @@
   id: STBaseWeaponSMGMP40
   components:
   - type: STWeight
-    self: 1.8
-  - type: PullDoAfter
-    pullTime: 3.1
-  - type: GunWieldBonus
-    minAngle: -40
-    maxAngle: -40
+    self: 3.2
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp40.rsi
     shape:
@@ -20,12 +15,11 @@
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp40.rsi
     equipDelay: 1
   - type: Gun
-    minAngle: 40
-    maxAngle: 100
-    fireRate: 7
-    angleIncrease: 1.5
-    angleDecay: 3
-    projectileSpeed: 45
+    minAngle: 52
+    maxAngle: 70
+    angleIncrease: 3
+    angleDecay: 4
+    fireRate: 7.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/mp40.ogg
   - type: ItemSlots
@@ -58,10 +52,6 @@
         whitelist:
           tags:
           - STCartridge919
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
-  - type: STWeaponAccuracy
-    accuracyMultiplier: 1.42
 
 - type: entity
   parent: STBaseWeaponSMGMP40

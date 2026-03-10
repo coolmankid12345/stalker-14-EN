@@ -7,8 +7,6 @@
   components:
     - type: STWeight
       self: 1
-    - type: PullDoAfter
-      pullTime: 0.5
     - type: Sprite
       scale: 0.8, 0.8
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/glock.rsi
@@ -18,12 +16,12 @@
         - state: mag-0
           map: ["enum.GunVisualLayers.Mag"]
     - type: Gun
-      projectileSpeed: 45
+      projectileSpeed: 35
       minAngle: 5
-      maxAngle: 15
-      angleIncrease: 1.5
+      maxAngle: 50
+      angleIncrease: 1
       angleDecay: 5
-      fireRate: 8
+      fireRate: 6
       availableModes:
         - SemiAuto
     - type: ItemSlots
@@ -56,7 +54,3 @@
         gun_auto_sear: !type:ContainerSlot {}
         gun_chamber: !type:ContainerSlot {}
     - type: Craftable
-    - type: STWeaponDamageFalloff
-      falloffMultiplier: 1.4
-    - type: STWeaponAccuracy
-      accuracyMultiplier: 1.4

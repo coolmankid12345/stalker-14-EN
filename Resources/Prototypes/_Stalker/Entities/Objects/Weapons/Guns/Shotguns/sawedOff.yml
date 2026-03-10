@@ -12,26 +12,16 @@
     size: Small
     heldPrefix: sawn
   - type: STWeight
-    self: 2
-  - type: PullDoAfter
-    pullTime: 2
-  - type: GunWieldBonus
-    minAngle: -50
-    maxAngle: -50
+    self: 2.0
   - type: Gun
-    minAngle: 60
-    maxAngle: 70
-    fireRate: 7
-    angleIncrease: 10
-    angleDecay: 50
-    projectileSpeed: 50
+    minAngle: 30
+    maxAngle: 80
+    fireRate: 2
+    angleIncrease: 15
+    angleDecay: 75
   - type: BallisticAmmoProvider
     capacity: 2
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
-  - type: STWeaponAccuracy
-    accuracyMultiplier: 1.15
-    
+
 - type: entity
   parent: STBaseWeaponShotgunSawedOf
   id: STWeaponShotgunSawedOf

@@ -5,11 +5,6 @@
   components:
   - type: STWeight
     self: 4
-  - type: PullDoAfter
-    pullTime: 3.5
-  - type: GunWieldBonus
-    minAngle: -47
-    maxAngle: -50
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/fn-f2000.rsi
   - type: Sprite
@@ -17,16 +12,14 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/fn-f2000.rsi
   - type: Gun
+    fireRate: 12
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/n_fn2000_shot.ogg
       params:
         volume: -2
     minAngle: 45
-    maxAngle: 95
-    fireRate: 8.5
-    angleIncrease: 1
-    angleDecay: 7.5
-    projectileSpeed: 60
+    maxAngle: 85
+    angleIncrease: 0.6
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -51,7 +44,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.57
+    accuracyMultiplier: 1.5
 
 - type: entity
   parent: STBaseWeaponRifleF2000

@@ -6,9 +6,7 @@
   description: Пистолет ГШ-18 был разработан в конце 1990-х годов в тульском Конструкторском бюро приборостроения (КБП). Название он получил по первым буквам фамилий конструкторов, под руководством которых проектировался – Василия Грязева и Аркадия Шипунова, и числа «18», означало емкость магазина. Но сейчас поставляется с разными магазинами.
   components:
     - type: STWeight
-      self: 1
-    - type: PullDoAfter
-      pullTime: 0.5
+      self: 0.47
     - type: Sprite
       scale: 0.8, 0.8
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/gsh-18.rsi
@@ -20,11 +18,11 @@
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/gsh-18.rsi
     - type: Gun
-      projectileSpeed: 45
-      minAngle: 8
-      maxAngle: 20
-      angleIncrease: 1.2
-      angleDecay: 3
+      projectileSpeed: 35
+      minAngle: 3
+      maxAngle: 40
+      angleIncrease: 1
+      angleDecay: 5
       fireRate: 6
       availableModes:
         - SemiAuto
@@ -58,7 +56,3 @@
         gun_auto_sear: !type:ContainerSlot {}
         gun_chamber: !type:ContainerSlot {}
     - type: Craftable
-    - type: STWeaponDamageFalloff
-      falloffMultiplier: 1.4
-    - type: STWeaponAccuracy
-      accuracyMultiplier: 1.4

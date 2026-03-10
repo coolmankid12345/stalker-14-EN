@@ -4,12 +4,7 @@
   id: STBaseWeaponRifleG36
   components:
   - type: STWeight
-    self: 3.3
-  - type: PullDoAfter
-    pullTime: 3
-  - type: GunWieldBonus
-    minAngle: -45
-    maxAngle: -50
+    self: 3.4
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/g36.rsi
   - type: Sprite
@@ -18,18 +13,17 @@
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/g36.rsi
     equipDelay: 2
   - type: Gun
+    fireRate: 7.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/n_g36_shot.ogg
       params:
         volume: -2
-    minAngle: 40
-    maxAngle: 95
-    fireRate: 6.5
-    angleIncrease: 1.2
-    angleDecay: 6.5
-    projectileSpeed: 60
+    minAngle: 50
+    maxAngle: 90
+    angleIncrease: 0.9
     selectedMode: FullAuto
     availableModes:
+    - Burst
     - SemiAuto
     - FullAuto
   - type: ItemSlots
@@ -57,7 +51,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.45
+    accuracyMultiplier: 1.5
   - type: Scope
     zoom: 1.1
     offset: 21

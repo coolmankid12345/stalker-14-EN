@@ -4,12 +4,7 @@
   id: STVBaseWeaponSniperVepr
   components:
   - type: STWeight
-    self: 3
-  - type: PullDoAfter
-    pullTime: 4
-  - type: GunWieldBonus
-    minAngle: -50
-    maxAngle: -70
+    self: 3.2
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/base.rsi
   - type: Item
@@ -21,10 +16,9 @@
       path: /Audio/_Stalker/Effects/Guns/svd.ogg
     minAngle: 50
     maxAngle: 140
-    fireRate: 1
+    angleDecay: 65
     angleIncrease: 2
-    angleDecay: 60
-    projectileSpeed: 75
+    fireRate: 0.65
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg
@@ -65,9 +59,7 @@
       gun_module_scope: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: STWeaponAccuracy
-    accuracyMultiplier: 5
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.2
+    accuracyMultiplier: 3
 
 - type: entity
   parent: STVBaseWeaponSniperVepr

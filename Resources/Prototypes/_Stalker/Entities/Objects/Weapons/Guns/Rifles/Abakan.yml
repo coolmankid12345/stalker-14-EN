@@ -5,13 +5,6 @@
   id: STWeaponRifleStalkerAbakan
   description: Оружие элитных войск советской армии. Был разработан в качестве замены устаревшему АКС. В «Абакане» подвижны не только внутренние механизмы, но и вся ствольная коробка вместе со стволом, что позволяет снизить отдачу, тем самым значительно повысив точность боя.
   components:
-  - type: STWeight
-    self: 4.5
-  - type: PullDoAfter
-    pullTime: 3.5
-  - type: GunWieldBonus
-    minAngle: -53
-    maxAngle: -65
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/abakan.rsi
   - type: Item
@@ -21,21 +14,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/n_abakan_shot.ogg
-    minAngle: 55
-    maxAngle: 95
-    fireRate: 7.5
-    angleIncrease: 1.4
-    angleDecay: 7
-    projectileSpeed: 60
-    selectedMode: FullAuto
-    availableModes:
-    - SemiAuto
-    - FullAuto
-    - Burst
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.5
-  - type: STWeaponAccuracy
-    accuracyMultiplier: 1.45
+    fireRate: 8.5
 
 - type: entity
   name: AEK-971
@@ -44,13 +23,6 @@
   id: STWeaponRifleStalkerAek971
   description: Советский автомат, разработанный в 1978 году на заводе имени Дегтярёва в Коврове под руководством Станислава Ивановича Кокшарова на основе автоматов систем Константинова.
   components:
-  - type: STWeight
-    self: 3
-  - type: PullDoAfter
-    pullTime: 2.5
-  - type: GunWieldBonus
-    minAngle: -43
-    maxAngle: -60
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/aek971.rsi
   - type: Item
@@ -60,18 +32,4 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/aek971.ogg
-    minAngle: 45
-    maxAngle: 105
     fireRate: 9
-    angleIncrease: 1
-    angleDecay: 6
-    projectileSpeed: 60
-    selectedMode: FullAuto
-    availableModes:
-    - SemiAuto
-    - FullAuto
-    - Burst
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
-  - type: STWeaponAccuracy
-    accuracyMultiplier: 1.46
