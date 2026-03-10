@@ -55,7 +55,7 @@
 
 - type: entity
   parent: 7mmBuckshotBox
-  id:
+  id: 2375ZvezdaBulletBox
   name: Коробка пуль "Звезда" 23х75мм R
   description: Для КС-23, в коробке 10 штук. Это просто ослепительный снаряд, не более. НЕ наносит урона.
   components:
