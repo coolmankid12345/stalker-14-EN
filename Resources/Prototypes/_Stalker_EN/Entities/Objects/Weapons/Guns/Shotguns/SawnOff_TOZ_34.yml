@@ -1,0 +1,53 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgunCompact
+  id: STBaseWeaponShotgunSawedTOZ34
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Shotguns/SawnOff_TOZ_34.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Shotguns/SawnOff_TOZ_34.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Shotguns/SawnOff_TOZ_34.rsi
+  - type: STWeight
+    self: 2.0
+  - type: Gun
+    minAngle: 30
+    maxAngle: 80
+    fireRate: 4
+    angleIncrease: 15
+    angleDecay: 75
+  - type: BallisticAmmoProvider
+    capacity: 2
+
+- type: entity
+  parent: STBaseWeaponShotgunSawedTOZ34
+  id: STWeaponShotgunSawedTOZ34
+  name: Sawed-off TOZ-34
+  description: Soviet double-barreled shotgun with vertical barrel arrangement. Prized in the Zone for its reliability and powerful stopping effect against mutants. Sawed-off version.
+
+- type: entity
+  parent: STBaseWeaponShotgunSawedTOZ34
+  id: STWeaponShotgunSawedOfAnomalyTOZ34
+  name: Anomalous Sawed-off TOZ-34
+  description: Anomaly-tainted sawed-off TOZ-34. Barrels glow faintly and capacity defies physics. 'The Zone loves to distort even simple weapons'.
+  components:
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,3,1
+  - type: BallisticAmmoProvider
+    capacity: 4
+    proto: Cartridge7mmBuckshot
+    whitelist:
+      tags:
+      - ShellShotgun
+  - type: Gun
+    minAngle: 30
+    maxAngle: 80
+    fireRate: 7
+    angleIncrease: 15
+    angleDecay: 75
+
