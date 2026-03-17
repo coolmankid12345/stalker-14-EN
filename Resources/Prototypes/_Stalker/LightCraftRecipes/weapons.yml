@@ -1,7 +1,7 @@
 - type: lightCraftingRecipe
   id: LightCraftSawedOff
   results:
-  - STWeaponShotgunSawedOf
+  - STWeaponShotgunSawedTOZ34
   steps:
     firstIngredient: CraftSaw
     secondIngredient: STWeaponShotgunTOZ34
