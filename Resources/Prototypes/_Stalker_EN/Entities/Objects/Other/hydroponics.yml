@@ -1,0 +1,29 @@
+﻿- type: entity
+  name: portable soil
+  id: SoilStalkerPortable
+  suffix: Stalker
+  parent: SoilStalker
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: DisassembleOnAltVerb
+    prototypeToSpawn: PortableSoilBox
+    disassembleTime: 5
+
+
+- type: entity
+  name: portable soil box
+  parent: BaseItem
+  id: PortableSoilBox
+  description: A box of good soil, for growing on the go.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Other/soil_box.rsi
+    state: soil
+  - type: Item
+    sprite: _Stalker_EN/Objects/Other/soil_box.rsi
+    size: Normal
+  - type: SpawnAfterInteract
+    prototype: SoilStalkerPortable
+    doAfter: 5
+    removeOnInteract: true

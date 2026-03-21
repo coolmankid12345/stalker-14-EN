@@ -1,0 +1,391 @@
+﻿### plant prototype
+
+- type: seed
+  id: STcannabisGrowSoothing
+  name: soothing marijuana
+  displayName: soothing marijuana
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: CannabisSeeds
+  productPrototypes:
+  - STLeavesCannabisSoothing
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    THC:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STcannabisGrowInvigorating
+  name: invigorating marijuana
+  displayName: invigorating marijuana
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: CannabisSeeds
+  productPrototypes:
+  - STLeavesCannabisInvigorating
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    THC:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+
+### seeds
+
+- type: entity
+  id: CannabisSeedsStalkerSoothing
+  parent: SeedBase
+  name: soothing marijuana seeds
+  suffix: ST, Stalker, craft, ботаника
+  description: Just don't get caught by the cops. Seems to be soothing.
+  components:
+  - type: Seed
+    seedId: STcannabisGrowSoothing
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cannabis.rsi
+    color: teal
+
+- type: entity
+  id: CannabisSeedsStalkerInvigorating
+  parent: SeedBase
+  name: invigorating marijuana seeds
+  suffix: ST, Stalker, craft, ботаника
+  description: Just don't get caught by the cops. Seems to be invigorating.
+  components:
+  - type: Seed
+    seedId: STcannabisGrowInvigorating
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cannabis.rsi
+    color: red
+
+### leaves
+
+- type: entity
+  name: soothing barrels
+  parent: ProduceBase
+  id: STLeavesCannabisSoothing
+  suffix: ST, Stalker, craft
+  description: At first glance, ordinary marijuana buds. Probably due to the abnormal effect of the local soil on the seeds, the fruits acquired an unusual color. Seems to be soothing.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cannabis.rsi
+    color: teal
+  - type: Produce
+    seedId: STcannabisGrowSoothing
+  - type: Edible
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 15
+  - type: Craftable
+
+- type: entity
+  name: invigorating barrels
+  parent: ProduceBase
+  id: STLeavesCannabisInvigorating
+  suffix: ST, Stalker, craft
+  description: At first glance, ordinary marijuana buds. Probably due to the abnormal effect of the local soil on the seeds, the fruits acquired an unusual color. Seems to be invigorating.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cannabis.rsi
+    color: red
+  - type: Produce
+    seedId: STcannabisGrowInvigorating
+  - type: Edible
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 15
+  - type: Craftable
+
+### dried
+
+- type: entity
+  name: dried soothing barrels
+  parent: BaseItem
+  id: STLeavesCannabisDriedSoothing
+  suffix: ST, Stalker, craft
+  description: Almost ready-to-eat dried marijuana fruit, but the buds are too large to be easy to smoke. Seems to be soothing.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 12
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/tobacco.rsi
+    state: dried
+    color: teal
+  - type: Craftable
+
+- type: entity
+  name: dried invigorating barrels
+  parent: BaseItem
+  id: STLeavesCannabisDriedInvigorating
+  suffix: ST, Stalker, craft
+  description: Almost ready-to-eat dried marijuana fruit, but the buds are too large to be easy to smoke. Seems to be invigorating.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 12
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/tobacco.rsi
+    state: dried
+    color: red
+  - type: Craftable
+
+### shredded
+
+- type: entity
+  name: shredded soothing barrels
+  parent: BaseItem
+  id: STGroundCannabisSoothing
+  suffix: ST, Stalker, craft
+  description: Fully finished hand for tight jambing. Seems to be soothing.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: teal
+  - type: Tag
+    tags:
+    - Cannabis
+    - Smokable
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 20
+  - type: Craftable
+
+- type: entity
+  name: shredded invigorating barrels
+  parent: BaseItem
+  id: STGroundCannabisInvigorating
+  suffix: ST, Stalker, craft
+  description: Fully finished hand for tight jambing. Seems to be invigorating.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkred
+  - type: Tag
+    tags:
+    - Cannabis
+    - Smokable
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 20
+  - type: Craftable
+
+### joints
+
+- type: entity
+  id: STJointSoothing
+  suffix: ST, Stalker, craft
+  parent: STBaseCigar
+  name: soothing picket fence
+  description: A tightly packed picket of local sativa. Holding it in your teeth, you are overwhelmed with an intoxicating feeling of freedom. All that remains is to blow smoke and have a good time. Seems to be soothing.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
+    state: unlit-icon
+  - type: Clothing
+    sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
+    slots: [ mask ]
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: THC
+          Quantity: 20
+        - ReagentId: Tricordrazine
+          Quantity: 14
+        - ReagentId: Omnizine
+          Quantity: 6
+
+- type: entity
+  id: STJointInvigorating
+  suffix: ST, Stalker, craft
+  parent: STBaseCigar
+  name: invigorating picket fence
+  description: A tightly packed picket of local sativa. Holding it in your teeth, you are overwhelmed with an intoxicating feeling of freedom. All that remains is to blow smoke and have a good time. Seems to be invigorating.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
+    state: unlit-icon
+  - type: Clothing
+    sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
+    slots: [ mask ]
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: THC
+          Quantity: 20
+        - ReagentId: STStimulants
+          Quantity: 20
+
+### boxes
+
+- type: entity
+  parent: BaseItem
+  id: STCannabisBoxSoothing
+  name: selected soothing grass briquette
+  description: Carefully disguised as a cigarette block. Seems to be soothing.
+  suffix: Stalker, Economy, Contraband
+  components:
+  - type: STWeight
+    self: 5
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/red.rsi
+    state: icon
+  - type: Icon
+    sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/red.rsi
+    state: icon
+
+- type: entity
+  parent: BaseItem
+  id: STCannabisBoxInvigorating
+  name: selected invigorating grass briquette
+  description: Carefully disguised as a cigarette block. Seems to be invigorating.
+  suffix: Stalker, Economy, Contraband
+  components:
+  - type: STWeight
+    self: 5
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/red.rsi
+    state: icon
+  - type: Icon
+    sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/red.rsi
+    state: icon
+
+### recipes
+
+## soothing
+
+- type: lightCraftingRecipe
+  id: LightCraftLeavesCannabisDriedSoothing
+  results:
+  - STLeavesCannabisDriedSoothing
+  steps:
+    firstIngredient: STLeavesCannabisSoothing
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 8
+
+- type: lightCraftingRecipe
+  id: LightCraftGroundCannabisSoothing
+  results:
+  - STGroundCannabisSoothing
+  steps:
+    firstIngredient: STCraftMortarAndPestle
+    secondIngredient: STLeavesCannabisDriedSoothing
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: LightCraftJointSoothing
+  results:
+  - STJointSoothing
+  steps:
+    firstIngredient: STPaperRolling
+    secondIngredient: STGroundCannabisSoothing
+    time: 8
+
+
+- type: craftRecipe
+  id: STCannabisBoxRecipeSoothing
+  resultProtos:
+  - STCannabisBoxSoothing
+  craftTime: 15
+  items:
+    STJointSoothing:
+      amount: 15
+    CigCartonRed:
+      amount: 1
+
+## invigorating
+
+- type: lightCraftingRecipe
+  id: LightCraftLeavesCannabisDriedInvigorating
+  results:
+  - STLeavesCannabisDriedInvigorating
+  steps:
+    firstIngredient: STLeavesCannabisInvigorating
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: LightCraftGroundCannabisInvigorating
+  results:
+  - STGroundCannabisInvigorating
+  steps:
+    firstIngredient: STCraftMortarAndPestle
+    secondIngredient: STLeavesCannabisDriedInvigorating
+    keepFirst: true
+    time: 10
+
+- type: lightCraftingRecipe
+  id: LightCraftJointInvigorating
+  results:
+  - STJointInvigorating
+  steps:
+    firstIngredient: STPaperRolling
+    secondIngredient: STGroundCannabisInvigorating
+    time: 10
+
+
+- type: craftRecipe
+  id: STCannabisBoxRecipeInvigorating
+  resultProtos:
+  - STCannabisBoxInvigorating
+  craftTime: 20
+  items:
+    STJointInvigorating:
+      amount: 15
+    CigCartonRed:
+      amount: 1

@@ -45,7 +45,7 @@
   description: На первый взгляд обычные шишки марихуанны. Вероятно из-за аномального воздействия местной почвы на семена, плоды преобрели необычный цвет.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
+    sprite: Objects/Specific/Hydroponics/cannabis.rsi
   - type: Produce
     seedId: STcannabisGrow
   - type: Edible
@@ -73,7 +73,7 @@
         - ReagentId: THC
           Quantity: 12
   - type: Sprite
-    sprite: Objects/Specific/Hydroponics/cannabis.rsi
+    sprite: Objects/Specific/Hydroponics/tobacco.rsi
     state: dried
   - type: Craftable
 
@@ -85,12 +85,13 @@
   description: Полностью готовый ручничек для плотной забивки косячка.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
-    state: powderpile_rainbow
-    color: white
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgreen
   - type: Tag
     tags:
     - Cannabis
+    - Smokable
   - type: SolutionContainerManager
     solutions:
       food:

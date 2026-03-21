@@ -4,6 +4,18 @@
   itemsForSale:
     CannabisSeedsStalker: 1
     Blunt: 1
+    STLeavesCannabis: 35
+    STLeavesCannabisDried: 50
+    STGroundCannabis: 80
+    STJoint: 160
+    STLeavesCannabisSoothing: 53
+    STLeavesCannabisDriedSoothing: 75
+    STGroundCannabisSoothing: 120
+    STJointSoothing: 240
+    STLeavesCannabisInvigorating: 70
+    STLeavesCannabisDriedInvigorating: 100
+    STGroundCannabisInvigorating: 160
+    STJointInvigorating: 320
   categories:
   - name: Finished Products
     priority: 1
@@ -18,8 +30,11 @@
     items:
       RobustHarvestChemistryBottleStalker: 50
       CannabisSeedsStalker: 70
+      CannabisSeedsStalkerSoothing: 105
+      CannabisSeedsStalkerInvigorating: 140
       HydroponicsToolMiniHoe: 70
       Bucket: 60
+      PortableSoilBox: 300
   - name: Miscellaneous
     priority: 3
     items:
