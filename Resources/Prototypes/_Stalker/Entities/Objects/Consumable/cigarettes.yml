@@ -23,6 +23,10 @@
   id: STBaseCigar
   abstract: true
   components:
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
   - type: Smokable
     exposeTemperature: 1173.15
   - type: Cigar

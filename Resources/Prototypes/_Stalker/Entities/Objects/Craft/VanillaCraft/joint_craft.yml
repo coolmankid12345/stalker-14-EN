@@ -132,6 +132,9 @@
   name: штакет
   description: Плотно забитый штакет местной сативы. Держа его в зубах, вас переполняет опьяняющее чувство свободы. Остается только пустить дымок и хорошо провести время.
   components:
+  - type: Tag
+    tags:
+    - Smokable
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
     state: unlit-icon

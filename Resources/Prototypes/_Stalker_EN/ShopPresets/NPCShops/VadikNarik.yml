@@ -3,19 +3,22 @@
   minSellPrice: 5
   itemsForSale:
     CannabisSeedsStalker: 1
-    Blunt: 1
-    STLeavesCannabis: 35
-    STLeavesCannabisDried: 50
-    STGroundCannabis: 80
-    STJoint: 160
-    STLeavesCannabisSoothing: 53
-    STLeavesCannabisDriedSoothing: 75
-    STGroundCannabisSoothing: 120
-    STJointSoothing: 240
-    STLeavesCannabisInvigorating: 70
-    STLeavesCannabisDriedInvigorating: 100
-    STGroundCannabisInvigorating: 160
-    STJointInvigorating: 320
+    Blunt: 20
+    STLeavesCannabis: 20
+    STLeavesCannabisDried: 40
+    STGroundCannabis: 60
+    STJoint: 80
+    STCannabisBox: 1620 #15 pickets plus box multiplied by 1.2
+    STLeavesCannabisSoothing: 30
+    STLeavesCannabisDriedSoothing: 60
+    STGroundCannabisSoothing: 90
+    STJointSoothing: 120
+    STCannabisBoxSoothing: 2340 #15 soothing pickets plus box multiplied by 1.2
+    STLeavesCannabisInvigorating: 40
+    STLeavesCannabisDriedInvigorating: 80
+    STGroundCannabisInvigorating: 120
+    STJointInvigorating: 160
+    STCannabisBoxInvigorating: 3060 #15 invigorating pickets plus box multiplied by 1.2
   categories:
   - name: Finished Products
     priority: 1
@@ -41,3 +44,4 @@
       STPaperRolling: 40
       ClothingNeckScarfRainbow: 100
       STCraftMortarAndPestle: 250
+      BulkCigPackBox: 150

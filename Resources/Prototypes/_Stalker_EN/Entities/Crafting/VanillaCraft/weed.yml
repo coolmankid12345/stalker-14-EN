@@ -217,6 +217,9 @@
   name: soothing picket fence
   description: A tightly packed picket of local sativa. Holding it in your teeth, you are overwhelmed with an intoxicating feeling of freedom. All that remains is to blow smoke and have a good time. Seems to be soothing.
   components:
+  - type: Tag
+    tags:
+    - Smokable
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
     state: unlit-icon
@@ -242,6 +245,9 @@
   name: invigorating picket fence
   description: A tightly packed picket of local sativa. Holding it in your teeth, you are overwhelmed with an intoxicating feeling of freedom. All that remains is to blow smoke and have a good time. Seems to be invigorating.
   components:
+  - type: Tag
+    tags:
+    - Smokable
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
     state: unlit-icon
@@ -339,11 +345,11 @@
   id: STCannabisBoxRecipeSoothing
   resultProtos:
   - STCannabisBoxSoothing
-  craftTime: 15
+  craftTime: 60
   items:
     STJointSoothing:
       amount: 15
-    CigCartonRed:
+    BulkCigPackBox:
       amount: 1
 
 ## invigorating
@@ -383,9 +389,39 @@
   id: STCannabisBoxRecipeInvigorating
   resultProtos:
   - STCannabisBoxInvigorating
-  craftTime: 20
+  craftTime: 60
   items:
     STJointInvigorating:
       amount: 15
-    CigCartonRed:
+    BulkCigPackBox:
       amount: 1
+
+### cig packing box
+
+- type: entity
+  parent: [ BoxCardboard, BaseBagOpenClose ]
+  id: BulkCigPackBox
+  name: bulk cigarette packing box
+  description: A large box, useful for storing large amounts of cigarettes and other smoking paraphernalia.
+  components:
+  - type: STWeight
+    self: 0.01
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: Storage
+    grid:
+    - 0,0,3,3
+    whitelist:
+      tags:
+      - RollingPaper
+      - CigFilter
+      - Smokable
+      - Cigarette
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/red.rsi
+    state: icon
+  - type: Icon
+    sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/red.rsi
+    state: icon

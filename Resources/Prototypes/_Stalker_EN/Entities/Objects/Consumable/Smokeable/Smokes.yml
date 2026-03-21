@@ -70,7 +70,6 @@
       - CigFilter
       - Smokable
       - Cigarette
-      - Lighters
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigarettes/paper.rsi
     state: cigpapers

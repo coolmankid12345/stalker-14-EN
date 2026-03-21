@@ -33,9 +33,9 @@
   id: STCannabisBoxRecipe
   resultProtos:
     - STCannabisBox
-  craftTime: 10
+  craftTime: 60
   items:
     STJoint:
       amount: 15
-    CigCartonRed:
+    BulkCigPackBox:
       amount: 1

@@ -273,6 +273,7 @@
         FoodSTRice: 210
         FoodBowlBig: 300
         Spoon: 50
+        CigPackBub: 200
 
     - name: shop-category-armor
       priority: 6
