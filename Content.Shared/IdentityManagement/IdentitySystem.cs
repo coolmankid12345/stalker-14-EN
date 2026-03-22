@@ -33,6 +33,7 @@ public sealed class IdentitySystem : EntitySystem
     [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoid = default!;
     [Dependency] private readonly SharedIdCardSystem _idCard = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!; // stalker-en-changes
+    [Dependency] private readonly SharedSTAnonymousAliasSystem _stAnonymousAliasSystem = default!; // stalker-en-changes
 
     // The name of the container holding the identity entity
     private const string SlotName = "identity";
@@ -224,11 +225,8 @@ public sealed class IdentitySystem : EntitySystem
             return representation.ToStringKnown(true);
 
         // Use anonymous alias if available, otherwise fall back to age+gender descriptor
-        if (TryComp<STAnonymousAliasComponent>(target, out var alias)
-            && !string.IsNullOrEmpty(alias.Alias))
-        {
-            return FormattedMessage.EscapeText(alias.Alias);
-        }
+        if (_stAnonymousAliasSystem.TryGetFullAlias(target, out var alias))
+            return FormattedMessage.EscapeText(alias);
 
         return representation.ToStringUnknown();
         // stalker-en-changes-end

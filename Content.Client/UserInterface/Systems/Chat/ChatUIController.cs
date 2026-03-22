@@ -43,6 +43,7 @@ using Content.Client._Stalker_EN.CharacterRank; // stalker-changes
 using Content.Shared._Stalker_EN.AnonymousAlias; // stalker-en-changes
 using Content.Shared.IdentityManagement.Components; // stalker-en-changes
 using Robust.Shared.Utility;
+using Content.Client._Stalker_EN.AnonymousAlias; // stalker-en-changes
 
 
 namespace Content.Client.UserInterface.Systems.Chat;
@@ -69,6 +70,8 @@ public sealed partial class ChatUIController : UIController
     [UISystemDependency] private readonly TransformSystem? _transform = default;
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
+
+    [UISystemDependency] private readonly STAnonymousAliasSystem? _stAnonymousAliasSystem = default!; // stalker-en-changes
 
     private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
     private string[] _chatNameColors = default!;
@@ -544,7 +547,7 @@ public sealed partial class ChatUIController : UIController
 
             // Can only send local / radio / emote when attached to a non-ghost entity.
             // TODO: this logic is iffy (checking if controlling something that's NOT a ghost), is there a better way to check this?
-            if (_ghost is not {IsGhost: true})
+            if (_ghost is not { IsGhost: true })
             {
                 CanSendChannels |= ChatSelectChannel.Local;
                 CanSendChannels |= ChatSelectChannel.Whisper;
@@ -554,7 +557,7 @@ public sealed partial class ChatUIController : UIController
         }
 
         // Only ghosts and admins can send / see deadchat.
-        if (_admin.HasFlag(AdminFlags.Admin) || _ghost is {IsGhost: true})
+        if (_admin.HasFlag(AdminFlags.Admin) || _ghost is { IsGhost: true })
         {
             FilterableChannels |= ChatChannel.Dead;
             CanSendChannels |= ChatSelectChannel.Dead;
@@ -690,7 +693,7 @@ public sealed partial class ChatUIController : UIController
 
     public ChatSelectChannel MapLocalIfGhost(ChatSelectChannel channel)
     {
-        if (channel == ChatSelectChannel.Local && _ghost is {IsGhost: true})
+        if (channel == ChatSelectChannel.Local && _ghost is { IsGhost: true })
             return ChatSelectChannel.Dead;
 
         return channel;
@@ -840,9 +843,12 @@ public sealed partial class ChatUIController : UIController
             var senderEnt = _ent.GetEntity(msg.SenderEntity);
 
             // Check for alias color when identity is masked
+            // EUGGHH WTFF IS THIS (i made it worse dw
+
             if (_ent.TryGetComponent<STAnonymousAliasComponent>(senderEnt, out var aliasComp)
                 && aliasComp.AliasColor != null
-                && !string.IsNullOrEmpty(aliasComp.Alias)
+                && _stAnonymousAliasSystem != null
+                && _stAnonymousAliasSystem.GetFullAlias(aliasComp) != ""
                 && _ent.TryGetComponent<IdentityComponent>(senderEnt, out var identity)
                 && identity.IdentityEntitySlot?.ContainedEntity is { } identEnt
                 && _ent.TryGetComponent<GrammarComponent>(identEnt, out var identGrammar)
@@ -913,7 +919,7 @@ public sealed partial class ChatUIController : UIController
                 break;
 
             case ChatChannel.Dead:
-                if (_ghost is not {IsGhost: true})
+                if (_ghost is not { IsGhost: true })
                     break;
 
                 AddSpeechBubble(msg, SpeechBubble.SpeechType.Say);
