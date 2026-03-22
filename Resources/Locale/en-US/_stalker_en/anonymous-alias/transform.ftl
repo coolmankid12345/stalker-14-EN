@@ -1,1 +1,1 @@
-st-anonymous-alias-default-transform = \[?\] {$alias}
+st-anonymous-alias-default-transform = [?] {$alias}

@@ -843,7 +843,7 @@ public sealed partial class ChatUIController : UIController
             var senderEnt = _ent.GetEntity(msg.SenderEntity);
 
             // Check for alias color when identity is masked
-            // EUGGHH WTFF IS THIS (i made it worse dw
+            // EUGGHH WTFF IS THIS (i made it worse dw)
 
             if (_ent.TryGetComponent<STAnonymousAliasComponent>(senderEnt, out var aliasComp)
                 && aliasComp.AliasColor != null

@@ -12,7 +12,6 @@ using Content.Shared.Mobs; // stalker-en-changes
 using Content.Shared.Mobs.Systems; // stalker-en-changes
 using Content.Shared._Stalker_EN.AnonymousAlias; // stalker-en-changes
 using Robust.Shared.Containers;
-using Robust.Shared.Utility; // stalker-en-changes: FormattedMessage.EscapeText
 using Robust.Shared.Enums;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Timing;
@@ -226,7 +225,7 @@ public sealed class IdentitySystem : EntitySystem
 
         // Use anonymous alias if available, otherwise fall back to age+gender descriptor
         if (_stAnonymousAliasSystem.TryGetFullAlias(target, out var alias))
-            return FormattedMessage.EscapeText(alias);
+            return alias;
 
         return representation.ToStringUnknown();
         // stalker-en-changes-end
