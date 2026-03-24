@@ -1,0 +1,50 @@
+﻿- type: lightCraftingRecipe
+  id: MpregRecipe
+  results:
+  - MobHuman
+  steps:
+    firstIngredient: MpregMattress
+    secondIngredient: MpregItem
+    keepSecond: true
+    exactSecond: false
+    exactFirst: false
+    time: 30
+
+- type: entity
+  id: BorgModuleMpreg
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: thruster cyborg module
+  description: NT assigned a team to design a jetpack for cyborg units, but they ran out of funding and just made a bigger fire extinguisher. It comes with a integrated GPS and mass scanner though!
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Other/mpreg/mpreg.rsi
+    state: icon
+  - type: ItemBorgModule
+    hands:
+    - item: MpregItem
+  - type: BorgModuleIcon
+    icon: { sprite: _Stalker_EN/Objects/Other/mpreg/mpreg.rsi, state: icon }
+
+- type: entity
+  parent: BaseItem
+  id: MpregItem
+  name: mpreg
+  description: this is not how humans work
+  suffix: Stalker, крафт, T1
+  components:
+  - type: Sprite
+    state: icon
+    sprite: _Stalker_EN/Objects/Other/mpreg/mpreg.rsi
+  - type: Craftable
+  - type: SpawnAfterInteract
+    prototype: MpregMattress
+    doAfter: 5
+    removeOnInteract: false
+
+- type: entity
+  parent: STOldMattress
+  id: MpregMattress
+  name: mattress of nightly comforts
+  description: i hope that that's dried yogurt...
+  components:
+  - type: Craftable

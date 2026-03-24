@@ -3,6 +3,15 @@
   name: Urist McHands
   parent: BaseMobHuman
   id: MobHuman
+  components:
+  - type: BorgChassis
+  - type: ContainerContainer
+    containers:
+      borg_module: !type:Container { }
+  - type: ContainerFill
+    containers:
+      borg_module:
+      - BorgModuleMpreg
 
 #Syndie
 - type: entity
