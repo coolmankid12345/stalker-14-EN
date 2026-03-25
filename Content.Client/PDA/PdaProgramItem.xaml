@@ -1,20 +1,17 @@
-﻿<pda:PdaProgramItem HorizontalExpand="True" MinHeight="60" Margin="4"
+﻿<pda:PdaProgramItem HorizontalExpand="True" MinHeight="52" Margin="2"
                     xmlns:pda="clr-namespace:Content.Client.PDA"
                     xmlns="https://spacestation14.io">
     <PanelContainer Name="Panel"/>
     <!-- stalker-changes: notification dot -->
-    <PanelContainer Name="NotificationDot" Access="Public" SetSize="8 8" Visible="False"
+    <PanelContainer Name="NotificationDot" Access="Public" SetSize="6 6" Visible="False"
                     HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 2 2 0"/>
-    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
-        <BoxContainer Orientation="Vertical" VerticalExpand="True" MinWidth="60">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" MinHeight="40">
             <AnimatedTextureRect HorizontalAlignment="Center" VerticalAlignment="Center" VerticalExpand="True" Name="Icon" Access="Public"/>
         </BoxContainer>
-        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
-            <Label Name="ProgramName" Access="Public" VerticalExpand="True"/>
-            <BoxContainer HorizontalExpand="True" SetHeight="28" Margin="0 0 4 4">
-                <BoxContainer HorizontalExpand="True"/>
-                <Button Name="InstallButton" Access="Public" Visible="False" SetWidth="90" HorizontalAlignment="Right" VerticalExpand="True"></Button>
-            </BoxContainer>
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetHeight="24" Margin="0 0 2 2">
+            <Label Name="ProgramName" Access="Public" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4 0"/>
+            <Button Name="InstallButton" Access="Public" Visible="False" SetWidth="60" HorizontalAlignment="Center" VerticalExpand="True" Margin="2 0"></Button>
         </BoxContainer>
     </BoxContainer>
 </pda:PdaProgramItem>

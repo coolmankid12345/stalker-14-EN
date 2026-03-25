@@ -87,6 +87,23 @@ public sealed class PdaSheetlet : Sheetlet<NanotrasenStylesheet>
                 .Class("PdaWindowFooterText")
                 .Prop(Label.StylePropertyFont, sheet.BaseFont.GetFont(10))
                 .Prop(Label.StylePropertyFontColor, Color.FromHex("#333d3b")),
+
+            E<Label>()
+                .Class("PdaProgramsBlockTitle")
+                .Prop(Label.StylePropertyFont, sheet.BaseFont.GetFont(10))
+                .Prop(Label.StylePropertyFontColor, Color.FromHex("#CCCCCC")),
+
+            E<PanelContainer>()
+                .Class("PdaProgramViewBorder")
+                .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat
+                {
+                    BackgroundColor = Color.FromHex("#1A1A1D"),
+                }),
+
+            E<Label>()
+                .Class("PdaProgramViewLabel")
+                .Prop(Label.StylePropertyFont, sheet.BaseFont.GetFont(11))
+                .Prop(Label.StylePropertyFontColor, Color.FromHex("#888888")),
         ];
     }
 }

@@ -88,10 +88,14 @@ namespace Content.Client.PDA
                 SendMessage(new STPdaPasswordOpenSettingsMessage());
             };
 
-            _menu.OnProgramItemPressed += ActivateCartridge;
+            _menu.OnProgramItemPressed += (uid) =>
+            {
+                // Close current program before opening a new one
+                _menu?.CloseProgram();
+                ActivateCartridge(uid);
+            };
             _menu.OnInstallButtonPressed += InstallCartridge;
             _menu.OnUninstallButtonPressed += UninstallCartridge;
-            _menu.ProgramCloseButton.OnPressed += _ => DeactivateActiveCartridge();
 
             var borderColorComponent = GetBorderColorComponent();
             if (borderColorComponent == null)
@@ -136,9 +140,9 @@ namespace Content.Client.PDA
             if (_menu is null)
                 return;
 
-            _menu.ToHomeScreen();
-            _menu.HideProgramHeader();
-            _menu.ProgramView.RemoveChild(cartridgeUIFragment);
+            if (cartridgeUIFragment.Parent != null)
+                cartridgeUIFragment.Orphan();
+            _menu.CloseProgram();
         }
 
         protected override void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)

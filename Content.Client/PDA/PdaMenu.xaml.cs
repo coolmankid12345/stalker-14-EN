@@ -20,21 +20,12 @@ namespace Content.Client.PDA
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
         private readonly ClientGameTicker _gameTicker;
 
-        public const int HomeView = 0;
-        public const int ProgramListView = 1;
-        public const int SettingsView = 2;
-        public const int ProgramContentView = 3;
-
-
         private string _pdaOwner = Loc.GetString("comp-pda-ui-unknown");
         private string _owner = Loc.GetString("comp-pda-ui-unknown");
         private string _jobTitle = Loc.GetString("comp-pda-ui-unassigned");
         private string _stationName = Loc.GetString("comp-pda-ui-unknown");
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
         private string _instructions = Loc.GetString("comp-pda-ui-unknown");
-
-
-        private int _currentView;
 
         public event Action<EntityUid>? OnProgramItemPressed;
         public event Action<EntityUid>? OnUninstallButtonPressed;
@@ -45,53 +36,27 @@ namespace Content.Client.PDA
             _gameTicker = _entitySystem.GetEntitySystem<ClientGameTicker>();
             RobustXamlLoader.Load(this);
 
-            ViewContainer.OnChildAdded += control => control.Visible = false;
-
             HomeButton.IconTexture = new SpriteSpecifier.Texture(new("/Textures/Interface/home.png"));
             FlashLightToggleButton.IconTexture = new SpriteSpecifier.Texture(new("/Textures/Interface/light.png"));
             EjectPenButton.IconTexture = new SpriteSpecifier.Texture(new("/Textures/Interface/pencil.png"));
             EjectIdButton.IconTexture = new SpriteSpecifier.Texture(new("/Textures/Interface/eject.png"));
             EjectPaiButton.IconTexture = new SpriteSpecifier.Texture(new("/Textures/Interface/pai.png"));
-            ProgramCloseButton.IconTexture = new SpriteSpecifier.Texture(new("/Textures/Interface/Nano/cross.svg.png"));
 
 
             HomeButton.OnPressed += _ => ToHomeScreen();
 
-            ProgramListButton.OnPressed += _ =>
-            {
-                HomeButton.IsCurrent = false;
-                ProgramListButton.IsCurrent = true;
-                SettingsButton.IsCurrent = false;
-                ProgramTitle.IsCurrent = false;
-
-                ChangeView(ProgramListView);
-            };
-
-
             SettingsButton.OnPressed += _ =>
             {
+                // Close any open program when switching to settings
+                CloseProgram();
+                
                 HomeButton.IsCurrent = false;
-                ProgramListButton.IsCurrent = false;
                 SettingsButton.IsCurrent = true;
-                ProgramTitle.IsCurrent = false;
 
-                ChangeView(SettingsView);
-            };
-
-            ProgramTitle.OnPressed += _ =>
-            {
-                HomeButton.IsCurrent = false;
-                ProgramListButton.IsCurrent = false;
-                SettingsButton.IsCurrent = false;
-                ProgramTitle.IsCurrent = true;
-
-                ChangeView(ProgramContentView);
-            };
-
-            ProgramCloseButton.OnPressed += _ =>
-            {
-                HideProgramHeader();
-                ToHomeScreen();
+                MainContentContainer.Visible = true;
+                HomeViewContainer.Visible = false;
+                SettingsViewContainer.Visible = true;
+                ProgramView.Visible = false;
             };
 
             PdaOwnerButton.OnPressed += _ =>
@@ -125,10 +90,6 @@ namespace Content.Client.PDA
                 _clipboard.SetText(_instructions);
             };
 
-
-
-
-            HideAllViews();
             ToHomeScreen();
         }
 
@@ -210,34 +171,18 @@ namespace Content.Client.PDA
 
         public void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
         {
-            ProgramList.RemoveAllChildren();
+            ProgramsContainer.RemoveAllChildren();
 
             if (programs.Count == 0)
             {
-                ProgramList.AddChild(new Label()
-                {
-                    Text = Loc.GetString("comp-pda-io-no-programs-available"),
-                    HorizontalAlignment = HAlignment.Center,
-                    VerticalAlignment = VAlignment.Center,
-                    VerticalExpand = true
-                });
-
+                ProgramsBlock.Visible = false;
                 return;
             }
 
-            var row = CreateProgramListRow();
-            var itemCount = 1;
-            ProgramList.AddChild(row);
+            ProgramsBlock.Visible = true;
 
             foreach (var (uid, component) in programs)
             {
-                //Create a new row every second program item starting from the first
-                if (itemCount % 2 != 0)
-                {
-                    row = CreateProgramListRow();
-                    ProgramList.AddChild(row);
-                }
-
                 var item = new PdaProgramItem();
 
                 if (component.Icon is not null)
@@ -271,91 +216,47 @@ namespace Content.Client.PDA
                     };
                 }
 
-                item.SetHeight = 20;
-                row.AddChild(item);
-
-                itemCount++;
+                ProgramsContainer.AddChild(item);
             }
-
-            //Add a filler item to the last row when it only contains one item
-            if (itemCount % 2 == 0)
-                row.AddChild(new Control() { HorizontalExpand = true });
         }
 
         /// <summary>
-        /// Changes the current view to the home screen (view 0) and sets the tabs `IsCurrent` flag accordingly
+        /// Changes the current view to the home screen and closes any open program
         /// </summary>
         public void ToHomeScreen()
         {
+            CloseProgram();
+            
             HomeButton.IsCurrent = true;
-            ProgramListButton.IsCurrent = false;
             SettingsButton.IsCurrent = false;
-            ProgramTitle.IsCurrent = false;
 
-            ChangeView(HomeView);
+            MainContentContainer.Visible = true;
+            HomeViewContainer.Visible = true;
+            SettingsViewContainer.Visible = false;
         }
 
         /// <summary>
-        /// Hides the program title and close button.
+        /// Closes the currently open program and clears ProgramView
         /// </summary>
-        public void HideProgramHeader()
+        public void CloseProgram()
         {
-            ProgramTitle.IsCurrent = false;
-            ProgramTitle.Visible = false;
-            ProgramCloseButton.Visible = false;
-            ProgramListButton.Visible = true;
-            SettingsButton.Visible = true;
+            ProgramView.Visible = false;
+            ProgramView.RemoveAllChildren();
         }
 
         /// <summary>
-        /// Changes the current view to the program content view (view 3), sets the program title and sets the tabs `IsCurrent` flag accordingly
+        /// Opens a program in the ProgramView area
         /// </summary>
         public void ToProgramView(string title)
         {
             HomeButton.IsCurrent = false;
-            ProgramListButton.IsCurrent = false;
             SettingsButton.IsCurrent = false;
-            ProgramTitle.IsCurrent = false;
-            ProgramTitle.IsCurrent = true;
-            ProgramTitle.Visible = true;
-            ProgramCloseButton.Visible = true;
-            ProgramListButton.Visible = false;
-            SettingsButton.Visible = false;
 
-            ProgramTitle.LabelText = title;
-            ChangeView(ProgramContentView);
-        }
-
-
-        /// <summary>
-        /// Changes the current view to the given view number
-        /// </summary>
-        public void ChangeView(int view)
-        {
-            if (ViewContainer.ChildCount <= view)
-                return;
-
-            ViewContainer.GetChild(_currentView).Visible = false;
-            ViewContainer.GetChild(view).Visible = true;
-            _currentView = view;
-        }
-
-        private static BoxContainer CreateProgramListRow()
-        {
-            return new BoxContainer()
-            {
-                Orientation = BoxContainer.LayoutOrientation.Horizontal,
-                HorizontalExpand = true
-            };
-        }
-
-        private void HideAllViews()
-        {
-            var views = ViewContainer.Children;
-            foreach (var view in views)
-            {
-                view.Visible = false;
-            }
+            // Hide Home/Settings and collapse their container so ProgramView can expand upward
+            HomeViewContainer.Visible = false;
+            SettingsViewContainer.Visible = false;
+            MainContentContainer.Visible = false;
+            ProgramView.Visible = true;
         }
 
         protected override void Draw(DrawingHandleScreen handle)

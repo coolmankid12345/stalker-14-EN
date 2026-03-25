@@ -5,6 +5,7 @@ comp-pda-ui = ID: [color=white]{ $owner }[/color], [color=yellow]{ CAPITALIZE($j
 comp-pda-ui-blank = ID:
 comp-pda-ui-owner = Владелец: [color=white]{ $actualOwnerName }[/color]
 comp-pda-io-program-list-button = Программы
+comp-pda-io-programs-block-title = Программы
 comp-pda-io-settings-button = Настройки
 comp-pda-io-program-fallback-title = Программа
 comp-pda-io-no-programs-available = Нет доступных программ

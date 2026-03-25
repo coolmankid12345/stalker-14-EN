@@ -2,33 +2,38 @@
 <pda:PdaWindow  xmlns="https://spacestation14.io"
                 xmlns:pda="clr-namespace:Content.Client.PDA"
                 xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-                MinSize="576 480"
-                SetSize="576 480">
+                SetSize="900 600"
+                Resizable="True">
     <!-- This: (Margin="1 1 3 0") is necessary so the navigation bar doesn't sticks into the black content border. -->
     <BoxContainer Name="NavigationBar" HorizontalExpand="True" MinHeight="32" Margin="1 1 3 0">
         <pda:PdaNavigationButton Name="HomeButton" SetWidth="32" CurrentTabBorderThickness="0 0 2 0" IsCurrent="True"/>
-        <pda:PdaNavigationButton Name="ProgramListButton" Access="Public" MinWidth="100" LabelText="{Loc 'comp-pda-io-program-list-button'}"/>
         <pda:PdaNavigationButton Name="SettingsButton" MinWidth="100" LabelText="{Loc 'comp-pda-io-settings-button'}"/>
 
-        <pda:PdaNavigationButton Name="ProgramTitle" Access="Public" BorderThickness="0 0 0 2" CurrentTabBorderThickness="2 0 0 2"
-                                 ActiveBgColor="#202023" Visible="False"/>
-
         <pda:PdaNavigationButton HorizontalExpand="True"/>
-
-        <pda:PdaNavigationButton Name="ProgramCloseButton" Access="Public" IconScale="0.5 0.5" BorderThickness="0 0 2 2"
-                                 Visible="False" IsActive="False" SetWidth="32"/>
 
         <pda:PdaNavigationButton Name="FlashLightToggleButton" Access="Public" ToggleMode="True" ActiveFgColor="#EAEFBB" SetWidth="32"/>
         <pda:PdaNavigationButton Name="EjectPenButton" Access="Public" SetWidth="32"/>
         <pda:PdaNavigationButton Name="EjectIdButton" Access="Public" SetWidth="32"/>
         <pda:PdaNavigationButton Name="EjectPaiButton" Access="Public" SetWidth="32"/>
     </BoxContainer>
-    <BoxContainer Name="ViewContainer" HorizontalExpand="True" VerticalExpand="True" Access="Public">
+    <!-- Programs Block - displays all available programs below navigation (fixed height with horizontal scroll) -->
+    <BoxContainer Name="ProgramsBlock" Orientation="Vertical" HorizontalExpand="True" Visible="True" Margin="4 0 4 4">
+        <Label Text="{Loc 'comp-pda-io-programs-block-title'}" Margin="4 0 0 4" StyleClasses="PdaProgramsBlockTitle"/>
+        <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VScrollEnabled="False" SetHeight="52">
+            <BoxContainer Name="ProgramsContainer" Orientation="Horizontal" HorizontalExpand="True" Margin="4 0"/>
+        </ScrollContainer>
+    </BoxContainer>
+    <!-- Main content area - Home/Settings views (collapsible when program is active) -->
+    <BoxContainer Name="MainContentContainer"
+                  Orientation="Vertical"
+                  VerticalExpand="True"
+                  HorizontalExpand="True"
+                  Margin="8"
+                  MinHeight="200">
         <BoxContainer Orientation="Vertical"
                       VerticalExpand="True"
                       HorizontalExpand="True"
-                      MinSize="50 50"
-                      Margin="8">
+                      Name="HomeViewContainer">
             <ContainerButton Name="PdaOwnerButton">
                 <RichTextLabel Name="PdaOwnerLabel" Access="Public"/>
             </ContainerButton>
@@ -36,35 +41,26 @@
             <ContainerButton Name="StalkerWeekButton">
                 <RichTextLabel Name="StalkerWeekLabel" Access="Public"/>
             </ContainerButton>
-            <ContainerButton Name="IdInfoButton" Visible="False"> <!-- stalker-en-changes - PDA homescreen layout -->
+            <ContainerButton Name="IdInfoButton" Visible="False">
                 <RichTextLabel Name="IdInfoLabel" Access="Public"/>
             </ContainerButton>
-            <ContainerButton Name="StationNameButton" Visible="False"> <!-- stalker-en-changes - PDA homescreen layout -->
+            <ContainerButton Name="StationNameButton" Visible="False">
                 <RichTextLabel Name="StationNameLabel" Access="Public"/>
             </ContainerButton>
-            <ContainerButton Name="StationAlertLevelButton" Visible="False"> <!-- stalker-en-changes - PDA homescreen layout -->
+            <ContainerButton Name="StationAlertLevelButton" Visible="False">
                 <RichTextLabel Name="StationAlertLevelLabel" Access="Public"/>
             </ContainerButton>
             <ContainerButton Name="StationTimeButton">
                 <RichTextLabel Name="StationTimeLabel" Access="Public"/>
             </ContainerButton>
-            <ContainerButton Name="StationAlertLevelInstructionsButton" Visible="False"> <!-- stalker-en-changes - PDA homescreen layout -->
+            <ContainerButton Name="StationAlertLevelInstructionsButton" Visible="False">
                 <RichTextLabel Name="StationAlertLevelInstructions" Access="Public"/>
             </ContainerButton>
         </BoxContainer>
-        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="True">
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="True" Name="SettingsViewContainer" Visible="False">
             <BoxContainer Orientation="Vertical"
                           VerticalExpand="True"
                           HorizontalExpand="True"
-                          MinSize="50 50"
-                          Name="ProgramList"
-                          Margin="4"/>
-        </ScrollContainer>
-        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="True">
-            <BoxContainer Orientation="Vertical"
-                          VerticalExpand="True"
-                          HorizontalExpand="True"
-                          MinSize="50 50"
                           Name="Settings">
                 <pda:PdaSettingsButton Name="AccessRingtoneButton"
                                        Access="Public"
@@ -96,12 +92,19 @@
                                        Description="{Loc 'st-pda-password-settings-button-description'}"/>
             </BoxContainer>
         </ScrollContainer>
-        <BoxContainer Orientation="Vertical"
-                      VerticalExpand="True"
-                      HorizontalExpand="True"
-                      Name="ProgramView"
-                      Access="Public">
-        </BoxContainer>
+    </BoxContainer>
+    <!-- Program content area - takes maximum available space at the bottom -->
+    <BoxContainer Orientation="Vertical"
+                  VerticalExpand="True"
+                  HorizontalExpand="True"
+                  Name="ProgramView"
+                  Access="Public"
+                  Visible="False"
+                  Margin="4">
+        <PanelContainer StyleClasses="PdaProgramViewBorder" VerticalExpand="True" HorizontalExpand="True">
+            <BoxContainer Orientation="Vertical" Margin="8" VerticalExpand="True" HorizontalExpand="True">
+            </BoxContainer>
+        </PanelContainer>
     </BoxContainer>
     <BoxContainer Name="ContentFooter" HorizontalExpand="True" SetHeight="28" Margin="1 0 2 1">
         <controls:StripeBack HasBottomEdge="False" HasMargins="False" HorizontalExpand="True">

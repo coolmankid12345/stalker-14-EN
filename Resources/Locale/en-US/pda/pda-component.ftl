@@ -10,6 +10,8 @@ comp-pda-ui-owner = Owner: [color=white]{$actualOwnerName}[/color]
 
 comp-pda-io-program-list-button = Programs
 
+comp-pda-io-programs-block-title = Programs
+
 comp-pda-io-settings-button = Settings
 
 comp-pda-io-program-fallback-title = Program
