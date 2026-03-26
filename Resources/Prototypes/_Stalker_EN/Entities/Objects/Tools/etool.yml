@@ -2,6 +2,7 @@
   parent: BaseItem
   id: BaseEntrenchingTool
   name: entrenching tool
+  suffix: ST, Tool
   description: Used to dig holes and bash heads in. You feel like doing some gardening in a market..
   abstract: true
   components:
@@ -39,6 +40,7 @@
   parent: BaseEntrenchingTool
   id: EntrenchingTool
   name: entrenching tool
+  suffix: ST, Tool
   description: Used to dig holes and bash heads in. You feel like doing some gardening in a market..
   components:
   - type: Craftable
@@ -48,7 +50,7 @@
   id: EntrenchingToolMemorial
   name: Rick May's entrenching tool
   description: Used to dig holes and bash heads in. You can faintly hear the song "Rocket Jump Waltz" emanating from it. Dedicated to one legend of a soldier.
-  suffix: memorial, limited edition
+  suffix: memorial, limited edition, ST, Tool
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Tools/etool_memorial.rsi

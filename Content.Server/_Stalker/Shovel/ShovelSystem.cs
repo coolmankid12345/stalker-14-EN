@@ -32,8 +32,8 @@ public sealed class ShovelSystem : EntitySystem
         SubscribeLocalEvent<StalkerShovelComponent, PlowGroundDoAfterEvent>(OnDoAfterPlowGround);
         _tileForPlowGround.Add("FloorPlanetGreenGrass");
         _tileForPlowGround.Add("FloorPlanetYellowGrass");
-        _tileForPlowGround.Add("FloorPlanetRedGrass");
-        _tileForPlowGround.Add("STFloorPlanetDirt");
+        _tileForPlowGround.Add("FloorPlanetRedGrass"); // STEN
+        _tileForPlowGround.Add("STFloorPlanetDirt"); // STEN
         for (var i = 0; i <= 6; i++)
         {
             _shovelSounds.Add(new SoundPathSpecifier("/Audio/_Stalker/Effects/LopataSound/Lopata"+i+".ogg"));
@@ -41,8 +41,8 @@ public sealed class ShovelSystem : EntitySystem
         _entitiesForPlowGround.Add("hydroponicsSoil");
         _entitiesForPlowGround.Add("SoilStalker");
         _entitiesForPlowGround.Add("CrateStoneGrave");
-        _entitiesForPlowGround.Add("RoughTerrain");
-        _entitiesForPlowGround.Add("QuickPath");
+        _entitiesForPlowGround.Add("RoughTerrain"); // STEN
+        _entitiesForPlowGround.Add("QuickPath"); // STEN
     }
 
     private SoundSpecifier GetRandomShovelSound()
@@ -100,7 +100,7 @@ public sealed class ShovelSystem : EntitySystem
         }
         else
         {
-            _popup.PopupEntity("Tile Obstructed", args.User, PopupType.Large);
+            _popup.PopupEntity("Tile Obstructed", args.User, PopupType.Large); // STEN translated
         }
     }
 
@@ -166,7 +166,7 @@ public sealed class ShovelSystem : EntitySystem
 
         ActivationVerb verb = new()
         {
-            Text = Loc.GetString("Dig a garden plot"),
+            Text = Loc.GetString("Dig a garden plot"), // STEN translated
             Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/light.svg.192dpi.png")),
 
             Act = () => PlowGround(@event.User, ent,"hydroponicsSoil",30)
@@ -178,7 +178,7 @@ public sealed class ShovelSystem : EntitySystem
 
         ActivationVerb verb2 = new()
         {
-            Text = Loc.GetString("Dig a grave"),
+            Text = Loc.GetString("Dig a grave"), // STEN translated
             Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/light.svg.192dpi.png")),
 
             Act = () => PlowGround(@event.User, ent,"CrateStoneGrave",60)
@@ -187,7 +187,7 @@ public sealed class ShovelSystem : EntitySystem
         {
             args.Verbs.Add(verb2);
         }
-
+// STEN start
         ActivationVerb verb3 = new()
         {
             Text = Loc.GetString("Dig a patch of rough terrain"),
@@ -211,7 +211,7 @@ public sealed class ShovelSystem : EntitySystem
         {
             args.Verbs.Add(verb4);
         }
-
+// STEN end
 
     }
 
@@ -237,7 +237,7 @@ public sealed class ShovelSystem : EntitySystem
         }
         else
         {
-            _popup.PopupEntity("Wrong terrain!", eventUser, PopupType.Large);
+            _popup.PopupEntity("Wrong terrain!", eventUser, PopupType.Large); // STEN translated
         }
     }
 }
