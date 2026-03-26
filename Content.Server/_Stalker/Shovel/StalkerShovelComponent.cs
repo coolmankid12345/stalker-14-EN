@@ -17,4 +17,10 @@ public sealed partial class StalkerShovelComponent : Component
 
     [DataField, ViewVariables]
     public bool CanMakeGrave = true;
+
+    [DataField, ViewVariables]
+    public bool CanMakeRoughTerrain = true;
+
+    [DataField, ViewVariables]
+    public bool CanMakeQuickPath = true;
 }
