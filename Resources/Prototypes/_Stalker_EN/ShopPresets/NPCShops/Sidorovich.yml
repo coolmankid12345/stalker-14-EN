@@ -391,6 +391,8 @@
         STCameraVintage: 1200
         STCameraDamaged: 400
         STCameraFilm: 150
+        EntrenchingTool: 1000
+
     - name: shop-category-customization
       priority: 11
       items:
