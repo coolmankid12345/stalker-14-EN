@@ -24,8 +24,6 @@
   - type: StalkerShovel
     canPlow: false
     canMakeGrave: True
-    canMakeRoughTerrain: True
-    canMakeQuickPath: True
   - type: MeleeWeapon
     autoAttack: true
     damage:
@@ -57,7 +55,6 @@
   - type: StalkerShovel
     canPlow: True
     canMakeGrave: True
-    canMakeRoughTerrain: True
   - type: MeleeWeapon
     autoAttack: true
     damage:
@@ -66,103 +63,3 @@
     soundHit:
       path: /Audio/_Stalker_EN/Effects/Etool/metal_chair_clang.ogg
   - type: Craftable
-
-- type: entity
-  id: RoughTerrain
-  name: rough terrain
-  description: Slows you down slightly.
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
-  components:
-  - type: SpeedModifierContacts
-    walkSpeedModifier: 0.7
-    sprintSpeedModifier: 0.7
-  - type: StepTrigger
-    requiredTriggeredSpeed: 0
-    intersectRatio: 0.1
-    blacklist:
-      tags:
-      - Catwalk
-  - type: Transform
-    anchored: true
-  - type: Clickable
-  - type: Sprite
-    sprite: Structures/Walls/cobblebrick.rsi
-    drawdepth: BelowFloor
-    layers:
-    - state: full
-  - type: Icon
-    sprite: Structures/Walls/cobblebrick.rsi
-    state: full
-  - type: IconSmooth
-    key: cobblebricks
-    base: cobblebrick
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
-        layer:
-        - WallLayer
-        mask:
-        - ItemMask
-        density: 1000
-        hard: false
-  - type: Tag
-    tags:
-    - HideContextMenu
-
-- type: entity
-  id: QuickPath
-  name: smooth path
-  description: speeds you up slightly.
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
-  components:
-  - type: SpeedModifierContacts
-    walkSpeedModifier: 1.3
-    sprintSpeedModifier: 1.3
-  - type: StepTrigger
-    requiredTriggeredSpeed: 0
-    intersectRatio: 0.1
-    blacklist:
-      tags:
-      - Catwalk
-  - type: Transform
-    anchored: true
-  - type: Clickable
-  - type: Sprite
-    sprite: _Stalker/Structures/Walls/rock.rsi
-    drawdepth: BelowFloor
-    layers:
-    - state: full
-  - type: Icon
-    sprite: _Stalker/Structures/Walls/rock.rsi
-    state: full
-  - type: IconSmooth
-    key: walls
-    base: rock
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
-        layer:
-        - WallLayer
-        mask:
-        - ItemMask
-        density: 1000
-        hard: false
-  - type: Tag
-    tags:
-    - HideContextMenu

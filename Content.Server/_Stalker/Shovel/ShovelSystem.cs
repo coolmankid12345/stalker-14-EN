@@ -41,8 +41,6 @@ public sealed class ShovelSystem : EntitySystem
         _entitiesForPlowGround.Add("hydroponicsSoil");
         _entitiesForPlowGround.Add("SoilStalker");
         _entitiesForPlowGround.Add("CrateStoneGrave");
-        _entitiesForPlowGround.Add("RoughTerrain"); // STEN
-        _entitiesForPlowGround.Add("QuickPath"); // STEN
     }
 
     private SoundSpecifier GetRandomShovelSound()
@@ -187,31 +185,6 @@ public sealed class ShovelSystem : EntitySystem
         {
             args.Verbs.Add(verb2);
         }
-// STEN start
-        ActivationVerb verb3 = new()
-        {
-            Text = Loc.GetString("Dig a patch of rough terrain"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/light.svg.192dpi.png")),
-
-            Act = () => PlowGround(@event.User, ent,"RoughTerrain",30)
-        };
-        if (ent.Comp.CanMakeRoughTerrain)
-        {
-            args.Verbs.Add(verb3);
-        }
-
-        ActivationVerb verb4 = new()
-        {
-            Text = Loc.GetString("Dig a smooth path"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/light.svg.192dpi.png")),
-
-            Act = () => PlowGround(@event.User, ent,"QuickPath",30)
-        };
-        if (ent.Comp.CanMakeQuickPath)
-        {
-            args.Verbs.Add(verb4);
-        }
-// STEN end
 
     }
 
