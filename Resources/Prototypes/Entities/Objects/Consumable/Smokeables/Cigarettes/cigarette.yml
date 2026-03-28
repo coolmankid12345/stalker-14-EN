@@ -83,8 +83,8 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Omnizine
-            Quantity: 30
+          #- ReagentId: Omnizine ## STEN change ### oops i accidentally created a meta that severely messes up balancing
+          #  Quantity: 30
 
 - type: entity
   id: CigaretteOmnizine
