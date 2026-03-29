@@ -396,13 +396,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 700
+        damage: 80 #STEN change ## mfw a bundle of twigs is as tanky as a tree
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 700
+        damage: 40 #STEN change
       behaviors:
       - !type:PlaySoundBehavior
         sound:
