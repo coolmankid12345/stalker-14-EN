@@ -1,8 +1,6 @@
 using Content.Server.SubFloor;
-using Content.Shared.Random.Rules;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Teleportation.Systems;
-using NetCord;
 using Robust.Shared.GameStates;
 using Robust.Shared.Physics.Events;
 
@@ -19,13 +17,45 @@ public sealed class LinkByStringSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<LinkByStringComponent, ComponentStartup>(OnStartup);
+        // ComponentInit fires after component creation but BEFORE data is loaded from save.
+        SubscribeLocalEvent<LinkByStringComponent, ComponentInit>(OnInit);
+
+        // ComponentHandleState fires when component state is applied (from save or network).
         SubscribeLocalEvent<LinkByStringComponent, ComponentHandleState>(OnHandleState);
     }
 
-    private void OnStartup(Entity<LinkByStringComponent> ent, ref ComponentStartup args)
+    private void OnInit(Entity<LinkByStringComponent> ent, ref ComponentInit args)
     {
-        // Don't modify the component data - just use the fallback ID for linking
+        // For entities spawned during gameplay, data is already set.
+        // For entities loaded from save, this fires BEFORE data is restored.
+
+        if (ent.Comp.LinkString != null)
+        {
+            LinkEntity(ent);
+            return;
+        }
+
+        if (ent.Comp.FallbackId)
+        {
+            var prototypeId = MetaData(ent.Owner).EntityPrototype?.ID;
+            if (prototypeId != null)
+            {
+                TryLinkWithFallback(ent, prototypeId);
+            }
+        }
+    }
+
+    private void OnHandleState(Entity<LinkByStringComponent> ent, ref ComponentHandleState args)
+    {
+        // State was just applied from save or network sync.
+        LinkEntity(ent);
+    }
+
+    /// <summary>
+    /// Links an entity to its pair based on the effective link string.
+    /// </summary>
+    private void LinkEntity(Entity<LinkByStringComponent> ent)
+    {
         if (ent.Comp.FallbackId && ent.Comp.LinkString == null)
         {
             var prototypeId = MetaData(ent.Owner).EntityPrototype?.ID;
@@ -58,29 +88,52 @@ public sealed class LinkByStringSystem : EntitySystem
         }
     }
 
-    private void OnHandleState(Entity<LinkByStringComponent> ent, ref ComponentHandleState args)
-    {
-        if (ent.Comp.FallbackId && ent.Comp.LinkString == null)
-        {
-            var prototypeId = MetaData(ent.Owner).EntityPrototype?.ID;
-            if (prototypeId != null)
-            {
-                TryLinkWithFallback(ent, prototypeId);
-                return;
-            }
-        }
-        TryLink(ent);
-    }
-
     private void TryLink(Entity<LinkByStringComponent> ent)
     {
+        var entString = GetEffectiveLinkString(ent);
+        if (entString == null)
+            return;
+
         var query = EntityQueryEnumerator<LinkByStringComponent>();
 
         while (query.MoveNext(out var uid, out var link))
         {
-            if (ent.Comp.LinkString != link.LinkString || ent.Owner == uid)
+            if (ent.Owner == uid)
                 continue;
+
+            var otherString = GetEffectiveLinkString(uid, link);
+            if (entString != otherString)
+                continue;
+
             _link.TryLink(ent.Owner, uid);
         }
+    }
+
+    /// <summary>
+    /// Gets the effective link string for an entity, considering FallbackId if LinkString is null.
+    /// </summary>
+    private string? GetEffectiveLinkString(Entity<LinkByStringComponent> ent)
+    {
+        if (ent.Comp.LinkString != null)
+            return ent.Comp.LinkString;
+
+        if (ent.Comp.FallbackId)
+            return MetaData(ent.Owner).EntityPrototype?.ID;
+
+        return null;
+    }
+
+    /// <summary>
+    /// Gets the effective link string for an entity from its component.
+    /// </summary>
+    private string? GetEffectiveLinkString(EntityUid uid, LinkByStringComponent link)
+    {
+        if (link.LinkString != null)
+            return link.LinkString;
+
+        if (link.FallbackId)
+            return MetaData(uid).EntityPrototype?.ID;
+
+        return null;
     }
 }
