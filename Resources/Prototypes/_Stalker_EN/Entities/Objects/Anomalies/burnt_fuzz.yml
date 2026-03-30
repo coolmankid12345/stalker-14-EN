@@ -1,0 +1,83 @@
+- type: entity
+  name: burnt fuzz
+  id: STpuhBase
+  parent: ZoneAnomalyBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Wallmounts/puh.rsi
+    state: puh1
+    drawdepth: OverMobs
+    snapCardinals: true
+  - type: ZoneAnomalyUpdateTriggerCollide
+  - type: ZoneAnomalyEffectDamage
+    damage:
+      types:
+        Caustic: 10
+  - type: ZoneAnomaly
+    detectedLevel: 0
+    preparingDelay: 0
+    activationDelay: 0
+    chargeTime: 0.5
+  - type: ZoneAnomalyEffectPlaySound
+    sound: /Audio/Effects/cig_snuff.ogg
+  - type: STAnomalyTips
+    icon:
+      sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
+      state: toxic
+
+- type: entity
+  parent: STpuhBase
+  id: BurntFuzz1
+  name: жгучий пух
+  description: Лучше не трогать.
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Wallmounts/puh.rsi
+    state: puh1
+
+- type: entity
+  parent: STpuhBase
+  id: BurntFuzz2
+  name: жгучий пух
+  description: Лучше не трогать.
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Wallmounts/puh.rsi
+    state: puh2
+
+- type: entity
+  parent: STpuhBase
+  id: BurntFuzz3
+  name: жгучий пух
+  description: Лучше не трогать.
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Wallmounts/puh.rsi
+    state: puh3
+
+- type: entity
+  parent: STpuhBase
+  id: BurntFuzz4
+  name: жгучий пух
+  description: Лучше не трогать.
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Wallmounts/puh.rsi
+    state: puh4
+
+- type: entity
+  parent: STpuhBase
+  id: BurntFuzz5
+  name: жгучий пух
+  description: Лучше не трогать.
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Wallmounts/puh.rsi
+    state: puh5
+

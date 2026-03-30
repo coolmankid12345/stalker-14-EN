@@ -1,5 +1,5 @@
 ent-Puh1 = Burnt Fuzz
-    .desc = Best not to code this.
+    .desc = It's better not to touch it
     .suffix = ST, Mapping
 ent-Puh2 = { ent-Puh1 }
     .desc = { ent-Puh1.desc }
