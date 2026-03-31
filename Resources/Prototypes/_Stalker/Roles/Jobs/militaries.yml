@@ -1,6 +1,6 @@
 - type: job
   id: MilitaryStalker
-  name: job-military-stalker
+  name: IPSF Soldier
   icon: voen
   description: job-military-stalker-desc
   playTimeTracker: JobMilitaryStalker
@@ -9,10 +9,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobMilitaryStalker
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: MilitarySpecGear
   supervisors: job-military-stalker-supervisor
   canBeAntag: false
@@ -47,7 +43,7 @@
 
 - type: job
   id: HeadMilitaryStalker
-  name: job-military-stalker-commander
+  name: IPSF Commander
   icon: voen
   description: job-military-stalker-desc
   playTimeTracker: JobHeadMilitaryStalker
@@ -56,10 +52,6 @@
   # - !type:RoleTimeRequirement
   #   role: JobMilitaryStalker
   #   time: 1
-  - !type:SpeciesRequirement
-    species:
-    - Human
-    - Dwarf
   startingGear: MilitarySpecGear
   supervisors: job-military-stalker-commander-supervisor
   canBeAntag: false
@@ -94,7 +86,7 @@
 
 - type: job
   id: Military
-  name: job-military
+  name: IPSF Soldier
   icon: voen1EN
   description: job-military-desc
   playTimeTracker: JobMilitary
@@ -103,10 +95,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobMilitary
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: MilitaryGear
   supervisors: job-military-supervisor
   canBeAntag: false
@@ -138,7 +126,7 @@
 
 - type: job
   id: MilitaryHead
-  name: job-military-head
+  name: IPSF Commander
   icon: voen2EN
   description: job-military-head-desc
   playTimeTracker: JobHeadMilitary
@@ -147,10 +135,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobHeadMilitary
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: MilitaryGearHead
   supervisors: job-military-supervisor
   canBeAntag: false
@@ -185,7 +169,7 @@
 
 - type: job
   id: MilitaryOfficer
-  name: job-military-officer
+  name: IPSF Officer
   icon: voen3EN
   description: job-military-officer-desc
   playTimeTracker: JobOfficerMilitary
@@ -194,10 +178,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobOfficerMilitary
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: MilitaryGearOfficer
   supervisors: job-military-supervisor
   canBeAntag: false

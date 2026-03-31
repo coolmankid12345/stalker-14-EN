@@ -1,6 +1,6 @@
 - type: job
   id: StalkerMercenary
-  name: job-mercenary
+  name: Killer
   icon: merc
   description: job-mercenary-desc
   playTimeTracker: JobStalkerMercenary
@@ -9,10 +9,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobStalkerMercenary
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: StalkerMercenaryGear
   supervisors: job-mercenary-supervisor
   canBeAntag: false
@@ -51,7 +47,7 @@
 
 - type: job
   id: StalkerHeadMercenary
-  name: job-head-mercenary
+  name: Head Killer
   icon: merc
   description: job-head-mercenary-desc
   playTimeTracker: JobStalkerHeadMercenary
@@ -60,10 +56,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobStalkerHeadMercenary
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: StalkerHeadMercenaryGear
   supervisors: job-head-mercenary-supervisor
   canBeAntag: false

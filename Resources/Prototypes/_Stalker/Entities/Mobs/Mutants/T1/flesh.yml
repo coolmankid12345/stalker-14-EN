@@ -28,7 +28,7 @@
           behaviors:
             - !type:PlaySoundBehavior
               sound:
-                path: /Audio/_Stalker/Mutants/boar_death_0.ogg
+                path: /Audio/Animals/small_dog_bark_happy.ogg
     - type: Fixtures
       fixtures:
         fix1:
@@ -52,11 +52,11 @@
       angle: 30
       range: 1.5
       soundHit:
-        path: /Audio/_Stalker/Mutants/snorm_attack.ogg
+        path: /Audio/Animals/cat_meow.ogg
         params:
           variation: 0.125
       soundSwing:
-        path: /Audio/_Stalker/Mutants/snorm_aggressive.ogg
+        path: /Audio/Animals/cat_meow2.ogg
         params:
           variation: 0.125
       animation: WeaponArcClaw
@@ -93,7 +93,7 @@
       interactFailureString: petting-failure-flesh
       interactSuccessSpawn: EffectHearts
       interactSuccessSound:
-        path: /Audio/Animals/pig_oink.ogg
+        path: /Audio/Animals/cat_meow2.ogg
     # Stalker-EN start
     - type: Tag # ST14-EN: Ritual chasm
       tags:
@@ -165,7 +165,7 @@
           behaviors:
             - !type:PlaySoundBehavior
               sound:
-                path: /Audio/_Stalker/Mutants/boar_death_0.ogg
+                path: /Audio/Animals/small_dog_bark_happy.ogg
     - type: Fixtures
       fixtures:
         fix1:
@@ -190,11 +190,11 @@
       angle: 30
       range: 1.5
       soundHit:
-        path: /Audio/_Stalker/Mutants/snorm_attack.ogg
+        path: /Audio/Animals/cat_meow.ogg
         params:
           variation: 0.125
       soundSwing:
-        path: /Audio/_Stalker/Mutants/snorm_aggressive.ogg
+        path: /Audio/Animals/cat_meow2.ogg
         params:
           variation: 0.125
       animation: WeaponArcClaw
@@ -231,7 +231,7 @@
       interactFailureString: petting-failure-flesh
       interactSuccessSpawn: EffectHearts
       interactSuccessSound:
-        path: /Audio/Animals/pig_oink.ogg
+        path: /Audio/Animals/cat_meow2.ogg
     # Stalker-EN start
     - type: Tag # ST14-EN: Ritual chasm
       tags:

@@ -1,0 +1,80 @@
+- type: entity
+  parent: STBaseWeaponRifle
+  id: STBoltACR
+  name: Bolt ACR
+  description: "An experimental energy weapon that deals radiation damage and recharges its own ammo. Shoots quite slow and deals little damage compared to conventional firearms. Beloved by the Crulity Squad."
+  components:
+  - type: STWeight
+    self: 8
+  - type: PullDoAfter
+    pullTime: 3.5
+  - type: GunWieldBonus
+    minAngle: -47
+    maxAngle: -50
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/ACR/inhand.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/ACR/icon.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/ACR/inhand.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker_EN/Effects/bolt.ogg
+      params:
+        volume: -15
+    minAngle: 0
+    maxAngle: 1
+    fireRate: 2
+    angleIncrease: 0.1
+    angleDecay: 1
+    projectileSpeed: 50
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound: null
+  - type: BasicEntityAmmoProvider
+    proto: BoltACRRound
+    capacity: 15
+    count: 15
+
+- type: entity
+  id: BoltACRRound
+  name: Bolt ACR Round [how did you get this?]
+  parent: BaseCartridge
+  components:
+  - type: STWeight
+    self: 0
+  - type: Tag
+    tags:
+      - Cartridge
+  - type: Appearance
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: CartridgeAmmo
+    proto: BoltACRBullet
+    deleteOnSpawn: true
+  - type: SpentAmmoVisuals
+    state: "base"
+
+- type: entity
+  parent: STBaseSPBullet
+  id: BoltACRBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Radiation: 20
+  - type: StaminaDamageOnCollide
+    damage: 30
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: bluespace
+      shader: unshaded

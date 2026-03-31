@@ -166,7 +166,7 @@
           - AnomalyGarlandActivationTarget
       distance: 8
     - type: ZoneAnomalyEffectPlaySound
-      sound: /Audio/_Stalker/Effects/electra_blast.ogg
+      sound: /Audio/_Stalker/Effects/electra_blast2.ogg
     - type: ZoneAnomaly
       detectedLevel: 3
       preparingDelay: 0
@@ -196,7 +196,7 @@
       volume: -7
       range: 2
       sound:
-        path: /Audio/_Stalker/Effects/electra_idle.ogg
+        path: /Audio/_Stalker/Effects/teleport_idle.ogg
     - type: ZoneArtifactSpawner
       artifacts:
         - id: null
@@ -236,7 +236,7 @@
       chargePercent: 1
       distance: 6
     - type: ZoneAnomalyEffectPlaySound
-      sound: /Audio/_Stalker/Effects/electra_blast.ogg
+      sound: /Audio/_Stalker/Effects/stancia_thunder.ogg
     - type: ZoneAnomaly
       detectedLevel: 1
       preparingDelay: 0
@@ -274,7 +274,7 @@
       volume: -10
       range: 3
       sound:
-        path: /Audio/_Stalker/Effects/electra_idle.ogg
+        path: /Audio/_Stalker/Effects/teleport_idle.ogg
     - type: ZoneArtifactSpawner
       artifacts:
         - id: null

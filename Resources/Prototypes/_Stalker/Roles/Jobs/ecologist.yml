@@ -1,6 +1,6 @@
 - type: job
   id: StalkerEcologist
-  name: job-ecologist
+  name: Egg head
   icon: ecologistred
   description: job-scientist-desc
   playTimeTracker: JobEcologist
@@ -44,7 +44,7 @@
 
 - type: job
   id: StalkerHeadEcologist
-  name: job-head-ecologist
+  name: Major Egghead
   icon: ecologistred
   description: job-head-scientist-desc
   playTimeTracker: JobHeadEcologist

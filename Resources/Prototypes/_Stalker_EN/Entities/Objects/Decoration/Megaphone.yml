@@ -47,7 +47,7 @@
     range: 20
     enabled: true
     sound:
-      path: /Audio/_Stalker/Music/Radio/rupor.ogg
+      path: /Audio/_Stalker_EN/Music/Radio/In_the_Duty.ogg
 
 - type: entity
   parent: RadioBaseStalker

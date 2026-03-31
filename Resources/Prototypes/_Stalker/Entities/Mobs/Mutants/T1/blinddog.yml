@@ -82,6 +82,12 @@
       damage: 5
     - type: STWeight
       self: 35
+    - type: FootstepModifier
+      footstepSoundCollection:
+        path: /Audio/_Stalker/Mutants/pseudogiant_step.ogg
+        params:
+          volume: 2
+          variation: 0.2
 
 - type: entity
   parent: BaseMobMutantBlindDog

@@ -257,3 +257,13 @@
       sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/rpd_100.rsi
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/rpd_100.rsi
+
+- type: entity
+  parent: BaseMagazine762x39RPD
+  id: Magazine762x39PKM
+  name: PKM Mag (100)
+  components:
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/rpd_100.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/rpd_100.rsi

@@ -1,0 +1,133 @@
+- type: entity
+  parent: STBaseWeaponSniper
+  id: GaussRifle
+  name: Gauss Rifle
+  description: "A zone produced wonder weapon created by mad scientists in a lab. Shoots extremely high energy bullets using nothing but electricity."
+  components:
+  - type: STWeight
+    self: 4.8
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/gauss_rifle.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/gauss_rifle.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/gauss_rifle.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker_EN/Effects/gauss_shoot.ogg
+    minAngle: 0
+    maxAngle: 40
+    angleDecay: 10
+    angleIncrease: 20
+    fireRate: 0.5
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 5
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: GaussMag
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - gaussmag
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - gaussround
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_module_muzzle: !type:ContainerSlot
+      gun_module_scope: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- type: Tag
+  id: gaussmag
+
+- type: Tag
+  id: gaussround
+
+- type: entity
+  parent: STBaseHRBullet
+  id: BulletGauss
+  name: bullet (gauss)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 4
+    damage:
+      types:
+        Piercing: 80
+  - type: StaminaDamageOnCollide
+    damage: 50
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Projectiles/gauss_bullet.rsi
+    layers:
+    - state: proto
+      shader: unshaded
+
+- type: entity
+  id: CartridgeGauss
+  name: cartridge (gauss)
+  parent: BaseCartridge
+  components:
+  - type: STWeight
+    self: 0.01
+  - type: Tag
+    tags:
+      - Cartridge
+      - gaussround
+  - type: Appearance
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+    drawdepth: Items
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletGauss
+  - type: SpentAmmoVisuals
+    state: "base"
+
+- type: entity
+  id: GaussMag
+  name: Gauss Rifle Mag (10)
+  description: An experimental mag designed for the gauss rifle. Contains a high capacity battery and several solid projectiles designed to be launched at insane speeds.
+  parent: Base739Mag10
+  suffix: Stalker
+  components:
+  - type: STWeight
+    self: 0.35
+  - type: BallisticAmmoProvider
+    proto: CartridgeGauss
+    capacity: 10
+    count: 10
+    mayTransfer: true
+    whitelist:
+      tags:
+        - gaussround
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,0,1
+  - type: Sprite
+    scale: 1, 1
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/gauss_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - gaussmag
+

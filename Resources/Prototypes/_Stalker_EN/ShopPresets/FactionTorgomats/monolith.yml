@@ -33,6 +33,16 @@
     MonolithInventoryRestockEN: 1
     Screwdriver: 1
     Bloodpack: 10
+    STWeaponMachineGunPKM: 1
+    Magazine762x39PKM: 6
+    GaussRifle: 5
+    GaussMag: 25
+    ClothingOuterArmorSSP99Moneygang: 1
+    739HEBox: 10
+    8mmRepulseBox: 10
+    ClothingOuterArmorExoskeletMonolith: 5
+    NitrogenTankFilled: 50
+    STBoltBagFilledMonolith: 500
 
 - type: entity
   parent: BaseItem

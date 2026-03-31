@@ -22,6 +22,8 @@
         STWeaponRifleM16: 3200
         STWeaponRifleM16M203: 4000 # T2
         STWeaponRifleAKS74: 3800
+        STBoltACR: 6000
+        CrowbarRed: 1750
 
     - name: shop-category-magazines
       priority: 2
@@ -59,6 +61,8 @@
         556WarmagBox: 500
         556FMJBox: 300
         556M855Box: 3000
+        739HEBox: 2500
+        8mmRepulseBox: 1000
 
     - name: shop-category-medicine # 70% discount from stalkers
       priority: 4
@@ -118,6 +122,8 @@
         ClothingOuterArmorSSP24Sapfire: 4500
         ClothingOuterArmorSevaSciWhite: 1550
         ClothingOuterArmorSevaSciRed: 1750
+        ClothingOuterArmorSSP99Moneygang: 6969
+        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -228,6 +234,7 @@
         STCameraFilm: 150
         EntrenchingTool: 1000
         STLoggingChainsaw: 1000
+        NitrogenTankFilled: 1000
 
     - name: shop-category-customization
       priority: 11

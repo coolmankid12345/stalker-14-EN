@@ -192,6 +192,8 @@
       MagazineBox357Magnum: 500 # T2
       MagazineBox357MagnumAP: 1600 # T3
       MagazineBox357MagnumHP: 600 # Mutant
+      739HEBox: 2500
+      8mmRepulseBox: 1000
 
   - name: shop-category-medicine
     priority: 4
@@ -242,6 +244,7 @@
       ClothingOuterArmorRenegate: 11000 # T3
       # STClothingOuterArmorLightPlateVestBasePSZ7rene: 12000 # T3 - PVP ST-EN: Moved to Zealot
       ClothingOuterArmorSevarenegat: 4000 # T3 - PVE
+      ClothingOuterArmorExoskelet: 100000
 
   - name: shop-category-storage-and-containers
     priority: 7
@@ -332,6 +335,7 @@
       STCameraFilm: 150
       EntrenchingTool: 1000
       STLoggingChainsaw: 1000
+      NitrogenTankFilled: 1000
 
   - name: shop-category-modules
     priority: 11

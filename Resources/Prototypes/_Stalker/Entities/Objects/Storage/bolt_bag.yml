@@ -61,6 +61,18 @@
 
 - type: entity
   parent: STBoltBag
+  id: STBoltBagFilledMonolith
+  name: noontide bolt bag
+  description: No more anom vision haha good luck.
+  suffix: ST, Filled, Golden
+  components:
+    - type: StorageFill
+      contents:
+        - id: STBoltGolden
+          amount: 64
+
+- type: entity
+  parent: STBoltBag
   id: STBoltBagOliveGray
   suffix: ST
   components:

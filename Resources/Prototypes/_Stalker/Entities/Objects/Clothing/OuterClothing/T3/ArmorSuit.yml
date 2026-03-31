@@ -396,6 +396,69 @@
       sprite: _Stalker/Objects/Clothing/hats/hood_strazh.rsi
 
 - type: entity
+  parent: STClothingOuterArmorBase
+  id: ClothingOuterArmorRangerVet
+  name: NCR Ranger Veteren Armor
+  description:  Armor used by NCR Ranger Veterens.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/rangervet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/rangervet.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetRangerVet
+    slot: head
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 6
+        Piercing: 5
+        Radiation: 4
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.65
+        Piercing: 0.7
+        Compression: 0.65
+        Radiation: 0.80
+        Heat: 0.65
+        Caustic: 0.70
+        Shock: 0.65
+  - type: Storage
+    maxItemSize: Large
+    blacklist:
+      tags:
+      - STArtifact
+    grid:
+      - 0,3,0,4
+      - 2,3,2,4
+      - 4,3,4,4
+      - 6,0,8,1
+      - 6,3,6,4
+      - 8,3,8,4
+      - 10,3,10,4
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetRangerVet
+  name: NCR Ranger Veteren Helmet
+  categories: [ HideSpawnMenu ]
+  description: Used by NCR Ranger Veterens.
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/rangervet.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/rangervet.rsi
+    - type: Armor
+      armorClass: 3
+      modifiers:
+        flatReductions:
+          Piercing: 2
+        coefficients:
+          Piercing: 0.9
+
+- type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorFreedomWind
   name: комбинезон «Ветер свободы»

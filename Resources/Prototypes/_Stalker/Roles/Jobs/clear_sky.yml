@@ -1,6 +1,6 @@
 - type: job
   id: StalkerClearSky
-  name: job-clearsky
+  name: Spark Soldier
   icon: cn
   description: job-clearsky-desc
   playTimeTracker: JobClearSky
@@ -9,10 +9,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobClearSky
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: StalkerClearSkyGear
   supervisors: job-clearsky-supervisor
   canBeAntag: false
@@ -46,7 +42,7 @@
 
 - type: job
   id: StalkerHeadClearSky
-  name: job-clearsky-commander
+  name: Mercenary "Scar" from S.T.A.L.K.E.R. Clear Sky tm
   icon: cn
   description: job-clearsky-commander-desc
   playTimeTracker: JobHeadClearSky
@@ -55,10 +51,6 @@
   # - !type:RoleTimeRequirement
   #   role: JobClearSky
   #   time: 1
-  - !type:SpeciesRequirement
-    species:
-    - Human
-    - Dwarf
   startingGear: StalkerClearSkyGearHead # EN
   supervisors: job-clearsky-commander-supervisor
   canBeAntag: false

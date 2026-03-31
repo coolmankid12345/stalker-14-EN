@@ -1,6 +1,6 @@
 - type: job
   id: StalkerRene
-  name: job-renegade
+  name: ISG Operative
   icon: rene
   description: job-renegade-desc
   playTimeTracker: JobRenegat
@@ -9,10 +9,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobRenegat
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: ReneGear
   supervisors: job-renegade-supervisor
   canBeAntag: false
@@ -31,6 +27,7 @@
         - type: NpcFactionMember
           factions:
           - Bandit
+        - type: STAnomalyTipsViewing
         - type: Vocal # stalker EN change start
           sounds:
             Male: MaleHumanBandit
@@ -39,7 +36,7 @@
 
 - type: job
   id: StalkerHeadRene
-  name: job-head-renegade
+  name: ISG Commander
   icon: rene
   description: job-head-renegade-desc
   playTimeTracker: JobHeadRenegat
@@ -48,10 +45,6 @@
   # - !type:RoleTimeRequirement
   #   role: JobRenegat
   #   time: 1
-  - !type:SpeciesRequirement
-    species:
-    - Human
-    - Dwarf
   startingGear: ReneGearHead # EN
   supervisors: job-head-renegade-supervisor
   canBeAntag: false
@@ -67,6 +60,7 @@
       bandProto: STRenegatsBand
       bandRankId: 2
     - type: BlockTackingHolyItems
+    - type: STAnomalyTipsViewing
     - type: NpcFactionMember
       factions:
       - Bandit

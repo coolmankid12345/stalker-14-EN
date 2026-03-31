@@ -121,6 +121,8 @@
   - type: Inventory
     templateId: arachnid
     speciesId: arachnid
+  - type: BlowoutTarget # stalker-changes
+  - type: ZoneAnomalyActivator
 
 
 - type: entity
@@ -131,7 +133,7 @@
   - type: HumanoidAppearance
     species: Arachnid
   - type: Inventory
-    speciesId: arachnid
+    templateId: STMain
 
 
 #>88w88<

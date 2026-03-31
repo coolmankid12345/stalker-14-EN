@@ -1,7 +1,7 @@
 
 - type: job
   id: StalkerJournalist
-  name: job-journalist
+  name: Tourist
   icon: journalist
   description: job-journalist-desc
   playTimeTracker: JobJournalist
@@ -10,10 +10,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobJournalist
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: JurGear
   supervisors: job-journalist-supervisor
   canBeAntag: false

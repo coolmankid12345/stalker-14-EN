@@ -2,7 +2,7 @@
 - type: entity
   parent: NPCDoll
   id: NPCSidorovichEN
-  name: Sidorovich [→   ←]
+  name: Prapor [→   ←]
   description: An old squeeze who will not donate even a ruble to save someone. Rancorous.
   suffix: ST, EN-TRADER
   components:

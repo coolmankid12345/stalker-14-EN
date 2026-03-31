@@ -85,8 +85,6 @@
   whitelist:
     components:
     - Vocal
-    - CheekiBreeki
-    requireAll: true
   chatMessages: ["chat-emote-msg-st-cheekibreeki"]
   chatTriggers:
   - stcheeki
@@ -188,6 +186,8 @@
       collection: LonerGrenade
     STMedkit:
       collection: LonerMedkit
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
 - type: emoteSounds
   id: FemaleHumanLoner
@@ -288,6 +288,8 @@
       collection: LonerMedkit
       params:
         pitch: 1.2
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
   # Bandit
 - type: emoteSounds
@@ -564,6 +566,8 @@
       collection: DutyGrenade
     STMedkit:
       collection: DutyMedkit
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
 - type: emoteSounds
   id: FemaleHumanDuty
@@ -664,6 +668,8 @@
       collection: DutyMedkit
       params:
         pitch: 1.2
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
   # Ecologists
 - type: emoteSounds
@@ -749,6 +755,8 @@
       collection: EcologistsGrenade
     STMedkit:
       collection: EcologistsMedkit
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
 - type: emoteSounds
   id: FemaleHumanEcologists
@@ -849,6 +857,8 @@
       collection: EcologistsMedkit
       params:
         pitch: 1.2
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
   # Freedom
 - type: emoteSounds
@@ -934,6 +944,8 @@
       collection: FreedomGrenade
     STMedkit:
       collection: FreedomMedkit
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
 - type: emoteSounds
   id: FemaleHumanFreedom
@@ -1034,6 +1046,8 @@
       collection: FreedomMedkit
       params:
         pitch: 1.2
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
   # Merc
 - type: emoteSounds
@@ -1119,6 +1133,8 @@
       collection: MercGrenade
     STMedkit:
       collection: MercMedkit
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
 - type: emoteSounds
   id: FemaleHumanMerc
@@ -1219,6 +1235,8 @@
       collection: MercMedkit
       params:
         pitch: 1.2
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
   # Military
 - type: emoteSounds
@@ -1304,6 +1322,8 @@
       collection: MilitaryGrenade
     STMedkit:
       collection: MilitaryMedkit
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
 - type: emoteSounds
   id: FemaleHumanMilitary
@@ -1404,6 +1424,8 @@
       collection: MilitaryMedkit
       params:
         pitch: 1.2
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
   # Monolith
 - type: emoteSounds
@@ -1491,6 +1513,8 @@
       collection: MonolithMedkit
     STPsyVoice:
       collection: MonolithPsyVoice
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg
 
 - type: emoteSounds
   id: FemaleHumanMonolith
@@ -1593,3 +1617,5 @@
         pitch: 1.2
     STPsyVoice:
       collection: MonolithPsyVoice
+    STCheekiBreeki:
+      path: /Audio/_Stalker_EN/VoiceLines/Bandit/detour_7.ogg

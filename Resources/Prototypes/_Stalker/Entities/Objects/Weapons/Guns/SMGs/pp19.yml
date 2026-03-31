@@ -14,11 +14,11 @@
   - type: Gun
     minAngle: 35
     maxAngle: 70
-    angleIncrease: 2.3
+    angleIncrease: 0
     angleDecay: 10
     fireRate: 8
     soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/919.ogg
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
   - type: ItemSlots
     slots:
       gun_magazine:

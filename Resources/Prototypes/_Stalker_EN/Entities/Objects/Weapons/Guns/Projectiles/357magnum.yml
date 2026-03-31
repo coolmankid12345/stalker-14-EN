@@ -4,13 +4,15 @@
   parent: STBaseRevolverBullet
   categories: [ HideSpawnMenu ]
   components:
+  - type: Sprite
+    scale: 5, 5
   - type: TimedDespawn
     lifetime: 2
   - type: Projectile
     projectileClass: 2
     damage:
       types:
-        Piercing: 35
+        Piercing: 60
 
 - type: entity
   id: STBullet357MagnumHP
@@ -22,8 +24,8 @@
     projectileClass: 0
     damage:
       types:
-        Piercing: 20
-        Mutant: 80
+        Piercing: 30
+        Mutant: 150
 
 - type: entity
   id: STBullet357MagnumAP
@@ -35,4 +37,4 @@
     projectileClass: 3
     damage:
       types:
-        Piercing: 34
+        Piercing: 70

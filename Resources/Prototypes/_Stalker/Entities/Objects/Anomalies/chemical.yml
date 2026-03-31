@@ -13,7 +13,7 @@
       volume: -18
       range: 10
       sound:
-        path: /Audio/_Stalker/Effects/acidic_idle.ogg
+        path: /Audio/_Stalker/Effects/buzz_idle.ogg
     - type: STAnomalyTips
       icon:
         sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
@@ -82,7 +82,7 @@
         - id: GazirovkaActiveEffect
           amount: 3
     - type: ZoneAnomalyEffectPlaySound
-      sound: /Audio/_Stalker/Effects/acidic_active.ogg
+      sound: /Audio/_Stalker/Effects/buzz_hit.ogg
     - type: ZoneAnomaly
       detectedLevel: 3
       activationDelay: 0

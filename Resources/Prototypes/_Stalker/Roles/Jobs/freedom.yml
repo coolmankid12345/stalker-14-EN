@@ -1,6 +1,6 @@
 - type: job
   id: StalkerFreedom
-  name: job-freedom
+  name: New California Republic Trooper
   icon: freedom
   description: job-freedom-desc
   playTimeTracker: JobFreedom
@@ -9,10 +9,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobFreedom
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: FreedomGear
   supervisors: job-freedom-supervisor
   canBeAntag: false
@@ -44,7 +40,7 @@
 
 - type: job
   id: StalkerHeadFreedom
-  name: job-head-freedom
+  name: President Kimball
   icon: freedom
   description: job-head-freedom-desc
   playTimeTracker: JobHeadFreedom
@@ -53,10 +49,6 @@
     # - !type:RoleTimeRequirement
     #   role: JobHeadFreedom
     #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: FreedomGearHead # EN
   supervisors: job-head-freedom-supervisor
   canBeAntag: false

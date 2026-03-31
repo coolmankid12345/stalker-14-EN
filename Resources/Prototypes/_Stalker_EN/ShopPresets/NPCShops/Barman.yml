@@ -4,98 +4,98 @@
   itemsForSale:
 
     # Thermal group - 1
-    ZoneArtifactFireball: 540
-    ZoneArtifactEye: 810
-    ZoneArtifactFlame: 1620
-    ZoneArtifactBunch: 1890
-    ZoneArtifactRock: 1620
-    ZoneArtifactSun: 2950
-    ZoneArtifactRoot: 3240
-    ZoneArtifactConflagration: 810
+    ZoneArtifactFireball: 1000
+    ZoneArtifactEye: 1300
+    ZoneArtifactFlame: 2100
+    ZoneArtifactBunch: 2200
+    ZoneArtifactRock: 2000
+    ZoneArtifactSun: 3500
+    ZoneArtifactRoot: 4000
+    ZoneArtifactConflagration: 1100
     # Thermal group - 2
-    ZoneArtifactCristall: 3240
-    ZoneArtifactLithosphere: 6480
+    ZoneArtifactCristall: 5000
+    ZoneArtifactLithosphere: 8000
     # Electrical group - 1
-    ZoneArtifactSparkler: 540
-    ZoneArtifactBattery: 810
-    ZoneArtifactFlash: 1620
-    ZoneArtifactAccumulator: 1620
-    ZoneArtifactDiamond: 2950
-    ZoneArtifactCharger: 810
-    ArtMoon: 3240
-    ZoneArtifactTesla: 4860
-    ZoneArtifactIce: 6480
+    ZoneArtifactSparkler: 1000
+    ZoneArtifactBattery: 1200
+    ZoneArtifactFlash: 2100
+    ZoneArtifactAccumulator: 2100
+    ZoneArtifactDiamond: 4000
+    ZoneArtifactCharger: 1200
+    ArtMoon: 5000
+    ZoneArtifactTesla: 7000
+    ZoneArtifactIce: 8000
     # Gravity group - 1
-    ArtMedusa: 540
-    ZoneArtifactFlower: 810
-    ZoneArtifactNightStar: 3240
-    ZoneArtifactWhirlwind: 500
-    ZoneArtifactPebble: 540
-    ZoneArtifactRosin: 810
-    ZoneArtifactStoneCube: 1215
-    ZoneArtifactDarkCube: 4860
+    ArtMedusa: 800
+    ZoneArtifactFlower: 1500
+    ZoneArtifactNightStar: 5000
+    ZoneArtifactWhirlwind: 1200
+    ZoneArtifactPebble: 1900
+    ZoneArtifactRosin: 1500
+    ZoneArtifactStoneCube: 3000
+    ZoneArtifactDarkCube: 8000
     # Gravity group - 2
-    ZoneArtifactVyvert: 540
-    ZoneArtifactAmoeba: 810
-    ZoneArtifactFloodlight: 810
-    ZoneArtifactGravi: 1620
-    ZoneArtifactGoldfish: 6480
-    ZoneArtifactSpring: 3600
-    ZoneArtifactFocus: 4860
-    ZoneArtifactStuntman: 6480
-    ZoneArtifactDistorter: 6480
-    ZoneArtifactSoul: 4860
-    ZoneArtifactCompass: 3600
-    ZoneArtifactCrucifix: 4250
-    ZoneArtifactThorn: 2550
-    ZoneArtifactArf: 2550
+    ZoneArtifactVyvert: 1000
+    ZoneArtifactAmoeba: 1200
+    ZoneArtifactFloodlight: 1000
+    ZoneArtifactGravi: 2000
+    ZoneArtifactGoldfish: 8000
+    ZoneArtifactSpring: 5000
+    ZoneArtifactFocus: 7000
+    ZoneArtifactStuntman: 8000
+    ZoneArtifactDistorter: 8000
+    ZoneArtifactSoul: 6000
+    ZoneArtifactCompass: 6000
+    ZoneArtifactCrucifix: 6000
+    ZoneArtifactThorn: 4000
+    ZoneArtifactArf: 4000
     # Acidic group - 1
-    ZoneArtifactToxic: 650
-    ZoneArtifactCytoplasm: 1600
-    ZoneArtifactBeer: 450
-    ZoneArtifactBlood: 1600
-    ZoneArtifactMeat: 3200
-    ZoneArtifactKolobok: 4800
+    ZoneArtifactToxic: 1000
+    ZoneArtifactCytoplasm: 2200
+    ZoneArtifactBeer: 1000
+    ZoneArtifactBlood: 2200
+    ZoneArtifactMeat: 5000
+    ZoneArtifactKolobok: 8000
     # Acidic group - 2
-    ZoneArtifactPellicle: 535
-    ZoneArtifactBaloon: 4800
+    ZoneArtifactPellicle: 1200
+    ZoneArtifactBaloon: 8000
 
     # Mutant parts
 
     #Boars -------- PENDING REWORK
-    MutantPartBoarHoof: 155 # T1
-    MutantPartSeasonedBoarHoof: 310 # T2
-    MutantPartOldBoarHoof: 465 # T3
+    MutantPartBoarHoof: 300 # T1
+    MutantPartSeasonedBoarHoof: 500 # T2
+    MutantPartOldBoarHoof: 700 # T3
 
     #Bears --------- PENDING REWORK
-    MutantPartBearClaw: 325
-    MutantPartBearPaw: 475
-    MutantPartBearEye: 690
-    ClothingHeadBear: 750
+    MutantPartBearClaw: 500
+    MutantPartBearPaw: 700
+    MutantPartBearEye: 800
+    ClothingHeadBear: 1000
 
     #T1 -------- PENDING REWORK
-    MutantPartBlindDogTail: 105
-    MutantPartFleshEye: 230
-    FoodMeatSpiderLeg: 50
-    MutantPartCatGland: 320
+    MutantPartBlindDogTail: 200
+    MutantPartFleshEye: 400
+    FoodMeatSpiderLeg: 150
+    MutantPartCatGland: 500
 
     #T2 -------- PENDING REWORK
-    MutantPartLeshiyRoot: 630
-    MutantPartPseudodogTail: 345
-    MutantPartSnorkFoot: 575
-    MutantPartPsiDogTail: 475
-    MutantPartFrogLeg: 300
+    MutantPartLeshiyRoot: 800
+    MutantPartPseudodogTail: 500
+    MutantPartSnorkFoot: 700
+    MutantPartPsiDogTail: 700
+    MutantPartFrogLeg: 500
 
     #T3 -------- PENDING REWORK Modified by Oracle
-    MutantPartBloodsuckerTentacles: 2750
-    MutantPartOraculeEye: 1800
-    MutantPartZombieHand: 1000
-    MutantPartPseudogiantHeart: 9050
+    MutantPartBloodsuckerTentacles: 5000
+    MutantPartOraculeEye: 3000
+    MutantPartZombieHand: 3000
+    MutantPartPseudogiantHeart: 20000
     ClothingMaskChimera: 1
     MutantPartChimeraTooth: 1
-    MutantPartIzlomArm: 1650
-    MutantPartBurerBrain: 2000
-    MutantPartControllerBrain: 3500
+    MutantPartIzlomArm: 3000
+    MutantPartBurerBrain: 5000
+    MutantPartControllerBrain: 6000
 
     # Meat
     STFoodMeatSalo: 95
@@ -197,6 +197,7 @@
         STWeaponRifleL85: 2250
         STWeaponRifleAKM: 6700
         STWeaponRifleFAL: 3000
+        STBoltACR: 10000
 
     - name: shop-category-magazines
       priority: 2
@@ -265,6 +266,8 @@
         MagazineBox357Magnum: 600 # T2
         MagazineBox357MagnumAP: 1500 # T3
         MagazineBox357MagnumHP: 800 # Mutant
+        739HEBox: 2500
+        8mmRepulseBox: 1000
 
     - name: shop-category-medicine
       priority: 4
@@ -358,6 +361,8 @@
         # Belt
         ClothingBeltBandolierStalker: 75
         ClothingBeltTarzanOrange: 200
+        ClothingOuterArmorSSP99Moneygang: 42069
+        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 8
@@ -415,6 +420,9 @@
         ZoneArtifactDetectorHunter: 700
         ZoneArtifactDetectorResponse: 2100
         ZoneArtifactDetectorSpruce: 6575 #T3
+        ZoneArtifactDetectorBarracuda: 7000
+        ZoneArtifactDetectorBear: 15000
+        ZoneArtifactDetectorWolfhound: 25000
         Veles: 8000 # T3
         TrashDetectorTier1: 200
         TrashDetectorTier2: 400
@@ -453,12 +461,14 @@
         BookCookingStalkerHomemade: 800
         STRag: 10
         STLoggingChainsaw: 1000
+        BoomboxPortable: 500
         # Cameras
         STCamera: 750
         STCameraVintage: 1200
         STCameraDamaged: 400
         STCameraFilm: 150
         EntrenchingTool: 1000
+        NitrogenTankFilled: 1000
 
     - name: shop-category-modules
       priority: 12

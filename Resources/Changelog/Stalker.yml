@@ -2030,5 +2030,19 @@
   id: 213
   time: '2026-03-31T02:01:45.048411+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/671
+- author: dallaszzz
+  changes:
+  - message: Fools
+    type: Add
+  id: 214
+  time: '2026-03-31T20:08:23.359162+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/730
+- author: dallaszzz
+  changes:
+  - message: races requirements so now you can play any species
+    type: Fix
+  id: 215
+  time: '2026-03-31T20:56:50.327166+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/741
 Name: Stalker
 Order: -1

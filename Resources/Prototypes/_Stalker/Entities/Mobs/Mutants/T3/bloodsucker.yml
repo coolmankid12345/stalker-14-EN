@@ -99,11 +99,11 @@
       angle: 30
       range: 1.5
       soundHit:
-        path: /Audio/_Stalker/Mutants/bloodsucker_hit_3.ogg
+        path: /Audio/Items/trayhit2.ogg
         params:
           variation: 0.125
       soundSwing:
-        path: /Audio/_Stalker/Mutants/bloodsucker_attack_3.ogg
+        path: /Audio/Items/bikehorn.ogg
         params:
           variation: 0.125
       animation: WeaponArcClaw
@@ -128,10 +128,6 @@
           scale: 1.15, 1.15
     - type: StaminaDamageOnHit
       damage: 13
-    - type: Stealth
-    - type: StealthOnMove
-      passiveVisibilityRate: 0.8
-      movementVisibilityRate: -0.8
     - type: STWeight
       self: 96
     # Stalker-EN start

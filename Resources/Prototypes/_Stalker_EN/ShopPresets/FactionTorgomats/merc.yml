@@ -128,6 +128,7 @@
         STWeaponRifleSCARH: 6820 # T3
         STWeaponRifleG36: 7500 # T3
         STWeaponRifleLR300v1: 5250 # T3
+        STBoltACR: 8000
 
     - name: shop-category-magazines
       priority: 2
@@ -180,6 +181,8 @@
         MagazineBox357Magnum: 300 # T2
         MagazineBox357MagnumAP: 1400 # T3
         MagazineBox357MagnumHP: 600 # Mutant
+        739HEBox: 2500
+        8mmRepulseBox: 1000
 
     - name: shop-category-medicine
       priority: 4
@@ -227,6 +230,7 @@
         ClothingHeadAssaultHelmetMerc: 3500 # T3 - PvP
         ClothingHeadHelmetInfantryMerc: 600
         ClothingHeadHelmetVityaz1Merc: 3000 # T3 - PvP
+        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -311,6 +315,8 @@
         STCameraFilm: 150
         EntrenchingTool: 1000
         STLoggingChainsaw: 1000
+        BoomboxPortable: 500
+        NitrogenTankFilled: 1000
 
     - name: shop-category-modules
       priority: 11

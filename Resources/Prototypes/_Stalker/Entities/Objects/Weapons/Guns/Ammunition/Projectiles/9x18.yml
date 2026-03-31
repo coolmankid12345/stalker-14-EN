@@ -12,9 +12,15 @@
     projectileClass: 1
     damage:
       types:
-        Piercing: 22
+        Piercing: 6
   - type: StaminaDamageOnCollide
     damage: 1
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: heavylaser
+      shader: unshaded
 
 - type: entity
   id: Bullet918PST
@@ -26,7 +32,7 @@
     projectileClass: 2
     damage:
       types:
-        Piercing: 25
+        Piercing: 8
 
 - type: entity
   id: Bullet918SP7
@@ -38,7 +44,7 @@
     projectileClass: 0
     damage:
       types:
-        Mutant: 35
+        Mutant: 22
         Piercing: 5
         Blunt: 5
         Slash: 5
@@ -53,7 +59,7 @@
     projectileClass: 3
     damage:
       types:
-        Piercing: 25
+        Piercing: 11
 
 # Anomaly
 

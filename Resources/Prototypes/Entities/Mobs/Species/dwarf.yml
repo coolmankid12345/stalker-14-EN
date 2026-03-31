@@ -61,6 +61,8 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: BlowoutTarget # stalker-changes
+  - type: ZoneAnomalyActivator
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -70,9 +72,4 @@
   - type: ScaleVisuals
     scale: 1, 0.8
   - type: Inventory
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
+    templateId: STMain

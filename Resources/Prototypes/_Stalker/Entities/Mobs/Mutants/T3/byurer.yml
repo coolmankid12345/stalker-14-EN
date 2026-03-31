@@ -55,17 +55,17 @@
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 1.5
   - type: BasicEntityAmmoProvider
-    proto: STBulletBox
+    proto: CartridgeRocketRPOByurer
     capacity: 1
     count: 1
   - type: Gun
-    fireRate: 0.5
+    fireRate: 0.2
     useKey: false
-    projectileSpeed: 15
+    projectileSpeed: 30
     selectedMode: FullAuto
     availableModes:
       - FullAuto
-    soundGunshot: /Audio/_Stalker/Mutants/wooden_box_breaking.ogg
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
   - type: STWeight
     self: 80
   - type: Butcherable
@@ -120,3 +120,35 @@
       butcherSwaps:
           MutantPartBurerBrain: STMutantPartLegendaryBurerBrain
   # Stalker-EN end
+
+- type: entity
+  id: CartridgeRocketRPOByurer
+  name: Выстрел РПО
+  parent: BaseItem
+  description: Военные преступления 
+  components:
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: BulletRocketRPOByurer
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: rpg
+
+- type: entity
+  parent: BulletRocket
+  id: BulletRocketRPOByurer
+  name: Выстрел РПО Шмель
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 60
+    intensitySlope: 3
+    totalIntensity: 60
+    canCreateVacuum: false
+  - type: PointLight
+    radius: 7
+    color: orange
+    energy: 0.51

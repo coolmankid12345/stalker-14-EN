@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Project: raincidation
  * File: RDDeathScreenControl.cs
  * License: All rights reserved
@@ -43,11 +43,11 @@ public sealed class RDDeathScreenControl : RDControl
 
         _label = new Label
         {
-            Text = "lost to the Zone",
+            Text = "skill issue",
             FontOverride = _resourceCache.GetFont("/Fonts/_RD/KosmoletFuturism.otf", 86),
             HorizontalAlignment = HAlignment.Center,
             VerticalAlignment = VAlignment.Center,
-            FontColorOverride = Color.Red,
+            FontColorOverride = Color.Pink,
         };
 
         AddChild(_label);

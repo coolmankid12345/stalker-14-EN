@@ -27,6 +27,9 @@
         # 7.25
         725PBox: 100
         725LRNPCBox: 50
+        739HEBox: 2500
+        8mmRepulseBox: 1000
+
     - name: shop-category-armor
       priority: 4
       items:
@@ -35,6 +38,7 @@
         # OuterClothing #
         STClothingOuterPressVest: 100 # T1
         STClothingOuterArmorPressVest: 1000 # T2
+        ClothingOuterArmorExoskelet: 100000
     - name: shop-category-storage-and-containers
       priority: 5
       items:

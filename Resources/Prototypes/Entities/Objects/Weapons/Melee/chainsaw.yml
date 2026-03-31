@@ -2,7 +2,7 @@
   name: chainsaw
   parent: BaseItem
   id: Chainsaw
-  description: A very large chainsaw. Usually you use this for cutting down trees... usually.
+  description: This is so you chuddies can chop down every single tree in rostok and red forest again.
   components:
   - type: Wieldable
     wieldSound: !type:SoundPathSpecifier
