@@ -67,7 +67,7 @@
         Blunt: 0.7
         Slash: 0.7
 
-# t5 so look at it again later
+# doing something with this dont worry about it
 - type: entity
   parent: BaseArtifactStorage
   id: ZoneArtifactDarkCube
@@ -87,7 +87,7 @@
     castShadows: false
   - type: Storage
     grid:
-      - 0,0,8,8
+      - 0,0,1,1
     blacklist:
       tags:
       - STArtifact

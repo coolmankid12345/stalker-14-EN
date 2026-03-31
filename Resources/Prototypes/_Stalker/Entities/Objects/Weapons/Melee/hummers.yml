@@ -32,6 +32,7 @@
     quickEquip: false
     slots:
     - back
+    - SuitStorage
   - type: UseDelay
     delay: 1
   - type: Tag

@@ -1,0 +1,5 @@
+﻿- type: loadout
+  id: CigPackBub
+  storage:
+    back:
+    - CigPackBub

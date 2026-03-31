@@ -217,7 +217,7 @@
   name: preserved fish steaks recipe
   components:
   - type: STBlueprint
-    blueprint: recipeFoodSTPreservedFishSteaks
+    blueprint: recipeFoodSTPreservedFishSteak
 
 - type: entity
   parent: STCookingRecipe

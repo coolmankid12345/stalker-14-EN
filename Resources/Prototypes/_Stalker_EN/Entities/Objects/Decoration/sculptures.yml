@@ -1,0 +1,48 @@
+﻿- type: entity
+  id: weird_sculpture5ENProp
+  parent: weird_sculpture
+  name: sculpture of you
+  description: It has your face.
+  suffix: ST, ADMEME
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/sculptures.rsi
+    state: ws5
+
+- type: entity
+  id: weird_sculpture5ENProp2
+  parent: weird_sculpture5ENProp
+  name: sculpture of you
+  description: It has your face.
+  suffix: ST, ADMEME, worse
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/sculptures.rsi
+    state: ws5
+  - type: AmbientSound
+    volume: -20
+    range: 10
+    sound:
+      path: /Audio/_Stalker/Effects/CircusMask.ogg
+  - type: SolutionContainerManager
+    solutions:
+      blood:
+        maxVol: 200
+        reagents:
+        - ReagentId: Blood
+          Quantity: 200
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Stalker_EN/Mutants/izlom_death.ogg
+      - !type:SpillBehavior
+        solution: blood
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

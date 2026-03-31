@@ -44,6 +44,12 @@ public sealed partial class ReflectComponent : Component
     public float ReflectProb = 0.25f;
 
     /// <summary>
+    /// Original reflect probability before visor modification (runtime only, not serialized).
+    /// </summary>
+    [DataField(readOnly: true)]
+    public float? OriginalReflectProb;
+
+    /// <summary>
     /// Probability for a projectile to be reflected.
     /// </summary>
     [DataField, AutoNetworkedField]

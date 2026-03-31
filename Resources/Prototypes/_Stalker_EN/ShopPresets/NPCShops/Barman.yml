@@ -153,6 +153,16 @@
     STFoodJarMeatEel: 1450
     STFoodJarWholeEelFermented: 3100
 
+    #Lumber
+    STTradePlankT1: 40
+    STTradePlankT2: 60
+    STTradePlankT3: 80
+    STTradePlankT4: 100
+    STLogStalkerT1: 20
+    STLogStalkerT2: 30
+    STLogStalkerT3: 40
+    STLogStalkerT4: 50
+
     # Smuggling
     TradeBox: 4000
 
@@ -163,6 +173,7 @@
         # Melee
         STThrowingknifeYellow: 500
         # Pistols
+        STWeaponPistolHiPower: 600
         STWeaponPistolM1911: 1500
         STWeaponPistolP99: 700
         WeaponPistolStalkerAPS: 800
@@ -190,6 +201,7 @@
     - name: shop-category-magazines
       priority: 2
       items:
+        HiPowerMag13: 140
         M1911Mag7: 140
         P99Mag15: 150
         TTMag: 120
@@ -440,6 +452,7 @@
         BookCookingStalkerGuide: 200
         BookCookingStalkerHomemade: 800
         STRag: 10
+        STLoggingChainsaw: 1000
         # Cameras
         STCamera: 750
         STCameraVintage: 1200
@@ -569,6 +582,18 @@
         ToolkitTearTwo: 10000
         ToolkitTearThree: 15000
         CraftGunpowderBank: 100
+
+    - name: Smokables #explained using D&D lifestyle expenses
+      priority: 16
+      items:
+        CigPackBub: 250 #comfortable
+        CigPackGreen: 150 #poor
+        CigPackRed: 200 #modest
+        CigPackBlue: 150 #poor
+        CigPackBlack: 200 #modest
+        CigPackMixed: 250 #comfortable
+        CigPackMarlboro: 200 #modest
+        CigPackKosmos: 100 #squalid
   sponsorCategories:
     SponsorBacker:
     - name: sponsor

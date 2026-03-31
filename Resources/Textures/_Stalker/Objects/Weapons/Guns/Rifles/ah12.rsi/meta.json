@@ -38,8 +38,15 @@
     {
       "name": "mag-0"
     },
-	{
+    {
       "name": "base-scope"
+    },
+    {
+      "name": "equipped-SUITSTORAGE"
+    },
+    {
+      "name": "muzzle"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

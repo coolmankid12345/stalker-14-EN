@@ -1,14 +1,14 @@
 {
-    "version": 1,
-    "license": "gulag14's license",
-    "copyright": "taken from gulag14 with permission of the author",
-    "size": {
-        "x": 128,
-        "y": 236
-    },
-    "states": [
-        {
-            "name": "lenin"
-        }
-    ]
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "taken from gulag14 with permission of the author",
+  "size": {
+    "x": 128,
+    "y": 236
+  },
+  "states": [
+    {
+      "name": "lenin"
+    }
+  ]
 }

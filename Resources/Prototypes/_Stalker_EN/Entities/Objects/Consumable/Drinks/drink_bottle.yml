@@ -1,4 +1,36 @@
 - type: entity
+  parent: [DrinkVisualsOpenable, DrinkBottlePlasticSmallBaseFull]
+  id: HerculesBottleFull
+  name: hercules bottle
+  description: A small bottle containing Hercules drug. The liquid has a distinctive light blue color and slightly bitter taste. Reduces body weight by 20kg while in bloodstream and quenches thirst and hunger.
+  suffix: ST
+  components:
+  - type: Trash
+    time: 300
+  - type: STWeight
+    self: 0.5
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: STHercules
+          Quantity: 30
+
+  - type: Label
+    currentLabel: reagent-name-hercules
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Drinks/hercules.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Consumable/Drinks/hercules.rsi
+  - type: FitsInDispenser
+    solution: drink
+  - type: Tag
+    tags:
+    - DrinkBottle
+  - type: Sealable
+
+- type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
   id: DrinkCossackVodkaBottleFull
   name: cossacks vodka bottle
@@ -293,7 +325,7 @@
   - STDrinkJar
   steps:
     firstIngredient: STRag
-    secondIngredient: STDrinkJarDirtWater
+    secondIngredient: STDrinkJarDirtyWater
     keepFirst: true
     exactFirst: false
     time: 3

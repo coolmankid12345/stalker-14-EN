@@ -47,11 +47,55 @@ jobs:
     - name: Run Content.Tests
       run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
 
+    - name: Create swap space (memory overflow protection)
+      run: |
+
+        if [ -f /swapfile ]; then
+          echo "Disabling existing swap..."
+          sudo swapoff /swapfile || true
+          sudo rm /swapfile
+        fi
+
+        echo "Creating 10GB swap file..."
+        sudo fallocate -l 10G /swapfile
+
+        sudo chmod 600 /swapfile
+
+        sudo mkswap /swapfile
+
+        sudo swapon /swapfile
+
+        echo ""
+        echo "Swap file created successfully:"
+        free -h
+        echo ""
+        echo "Available memory increased from 14GB to ~24GB!"
+
+
     - name: Run Content.IntegrationTests
+      timeout-minutes: 30
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
-        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed
+        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- `
+          NUnit.MapWarningTo=Failed `
+          NUnit.NumberOfTestWorkers=1 `
+          NUnit.ConsoleOut=0 `
+
+    - name: Cleanup swap space
+      if: always()
+      run: |
+        echo "=== Cleaning up swap space ==="
+        if [ -f /swapfile ]; then
+          echo "Disabling and removing swap file..."
+          sudo swapoff /swapfile || true
+          sudo rm /swapfile
+          echo "Swap file removed successfully"
+        else
+          echo "No swap file found, nothing to clean"
+        fi
+        free -h
+
   ci-success:
     name: Build & Test Debug
     needs:

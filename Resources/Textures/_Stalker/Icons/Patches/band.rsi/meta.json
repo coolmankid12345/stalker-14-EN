@@ -58,85 +58,85 @@
       "name": "tec"
     },
     {
-        "name": "dolg"
+      "name": "dolg"
     },
     {
-        "name": "cn"
+      "name": "cn"
     },
     {
-        "name": "monolith"
+      "name": "monolith"
     },
     {
-        "name": "ecologist"
+      "name": "ecologist"
     },
     {
-        "name": "freedom"
+      "name": "freedom"
     },
     {
-        "name": "sbu"
+      "name": "sbu"
     },
     {
-        "name": "mechanic"
+      "name": "mechanic"
     },
     {
-        "name": "trader"
+      "name": "trader"
     },
     {
-        "name": "clowns"
+      "name": "clowns"
     },
     {
-        "name": "greh"
+      "name": "greh"
     },
     {
-        "name": "project-1"
+      "name": "project-1"
     },
     {
-        "name": "project-2"
+      "name": "project-2"
     },
     {
-        "name": "project-3"
+      "name": "project-3"
     },
     {
-        "name": "project-4"
+      "name": "project-4"
     },
     {
-        "name": "deserter"
+      "name": "deserter"
     },
     {
-        "name": "jaba"
+      "name": "jaba"
     },
     {
-        "name": "voen"
+      "name": "voen"
     },
     {
-        "name": "zombie"
+      "name": "zombie"
     },
     {
-        "name": "uk"
+      "name": "uk"
     },
     {
-        "name": "ne"
+      "name": "ne"
     },
     {
-        "name": "med"
+      "name": "med"
     },
     {
-        "name": "poisk"
+      "name": "poisk"
     },
     {
-        "name": "pilgrim"
+      "name": "pilgrim"
     },
     {
-        "name": "pack"
+      "name": "pack"
     },
     {
-        "name": "symbiote"
+      "name": "symbiote"
     },
     {
-        "name": "evolver"
+      "name": "evolver"
     },
     {
-        "name": "tulpari"
+      "name": "tulpari"
     },
     {
       "name": "vagner"
@@ -194,6 +194,16 @@
     },
     {
       "name": "atom"
+    },
+    {
+      "name": "raven"
+    },
+    {
+      "name": "tec_old"
+    },
+    {
+      "name": "worms"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

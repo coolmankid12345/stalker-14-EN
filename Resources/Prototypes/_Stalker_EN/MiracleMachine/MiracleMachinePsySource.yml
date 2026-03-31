@@ -1,0 +1,63 @@
+- type: entity
+  parent: AnomalyHeatPsy
+  name: Miracle Machine Psy Source (1 unit in center, 20 tiles)
+  suffix: Stalker, Miracle Machine
+  id: MiracleMachineAnomalyHeatPsy1
+  components:
+    - type: MiracleMachinePsySource
+
+- type: entity
+  parent: AnomalyHeatPsy2
+  name: Miracle Machine Psy Source (2 unit in center, 20 tiles)
+  suffix: Stalker, Miracle Machine
+  id: MiracleMachineAnomalyHeatPsy2
+  components:
+    - type: MiracleMachinePsySource
+
+- type: entity
+  parent: AnomalyHeatPsy3
+  name: Miracle Machine Psy Source (1 unit in center, 10 tiles)
+  suffix: Stalker, Miracle Machine
+  id: MiracleMachineAnomalyHeatPsy3
+  components:
+    - type: MiracleMachinePsySource
+
+- type: entity
+  parent: AnomalyHeatPsy4
+  name: Miracle Machine Psy Source (2 unit in center, 10 tiles)
+  suffix: Stalker, Miracle Machine
+  id: MiracleMachineAnomalyHeatPsy4
+  components:
+    - type: MiracleMachinePsySource
+
+- type: entity
+  parent: AnomalyHeatPsy5
+  name: Miracle Machine Psy Source (5 unit in center, 10 tiles)
+  suffix: Stalker, Miracle Machine
+  id: MiracleMachineAnomalyHeatPsy5
+  components:
+    - type: MiracleMachinePsySource
+
+- type: entity
+  parent: AnomalyHeatPsy6
+  name: Miracle Machine Psy Source (5 unit in center, 20 tiles)
+  suffix: Stalker, Miracle Machine
+  id: MiracleMachineAnomalyHeatPsy6
+  components:
+    - type: MiracleMachinePsySource
+
+- type: entity
+  parent: AnomalyHeatPsy7
+  name: Miracle Machine Psy Source (10 unit in center, 10 tiles)
+  suffix: Stalker, Miracle Machine
+  id: MiracleMachineAnomalyHeatPsy7
+  components:
+    - type: MiracleMachinePsySource
+
+- type: entity
+  parent: AnomalyHeatPsy8
+  name: Miracle Machine Psy Source (10 unit in center, 20 tiles)
+  suffix: Stalker, Miracle Machine
+  id: MiracleMachineAnomalyHeatPsy8
+  components:
+    - type: MiracleMachinePsySource

@@ -8,7 +8,8 @@
   "rsic": false,
   "states": [
     {
-        "name": "snow13"
+      "name": "snow13"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

@@ -21,7 +21,7 @@
         Slash: 0.75
         Piercing: 0.80
   - type: ExplosionResistance
-    damageCoefficient: 0.90
+    damageCoefficient: 0.5
   - type: Reflect
     reflectProb: 0.10
     spread: 360
@@ -113,7 +113,7 @@
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1M.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1M.rsi
-    
+
 - type: entity
   parent: STClothingHeadHelmetTacticalT3Base
   id: ClothingHeadHelmetVityaz1Zavet

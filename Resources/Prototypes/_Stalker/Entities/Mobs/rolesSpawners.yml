@@ -256,6 +256,7 @@
       bandIcon: greh
     - type: Loadout
       prototypes: [ StalkerGrehGear ]
+    - type: PsyEffectImmune
 
 - type: entity
   name: кукла член Чистого Неба (переименуй меня)
@@ -447,7 +448,8 @@
     - type: ActiveRadio
       channels:
       - Monolith
-      GlobalReceive: true # Stalker EN change end
+      # Stalker EN change end
+    - type: PsyEffectImmune
 
 - type: entity
   name: кукла СБУ (переименуй меня)

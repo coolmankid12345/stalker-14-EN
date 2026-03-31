@@ -205,6 +205,19 @@
     damage:
       types:
         Radiation: 18.01
+  - type: Armor # stalker EN change start
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Radiation: 4
+        Caustic: 1
+        Psy: 1
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.80
+        Compression: 0.95
+        Psy: 0.7 # stalker EN change end
 
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase

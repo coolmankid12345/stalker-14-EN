@@ -1,26 +1,26 @@
 {
-    "version": 1,
-    "license": null,
-    "copyright": "Stalker14 CLA",
-    "size": {
-      "x": 32,
-      "y": 32
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Stalker14 CLA",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "basic_pcb"
     },
-    "states": [
-      {
-        "name": "basic_pcb"
-      },
-      {
-        "name": "standard_pcb"
-      },
-      {
-        "name": "multilayer_pcb"
-      },
-      {
-        "name": "high_performance_chip"
-      },
-      {
-        "name": "nano_chip"
-      }
-    ]
-  }
+    {
+      "name": "standard_pcb"
+    },
+    {
+      "name": "multilayer_pcb"
+    },
+    {
+      "name": "high_performance_chip"
+    },
+    {
+      "name": "nano_chip"
+    }
+  ]
+}

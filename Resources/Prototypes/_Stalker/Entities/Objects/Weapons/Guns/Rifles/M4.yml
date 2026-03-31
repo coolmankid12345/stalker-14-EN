@@ -6,11 +6,11 @@
   - type: STWeight
     self: 2.8
   - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/m4/inhand.rsi # stalker EN change
   - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/m4/icon.rsi # stalker EN change
   - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/m4/inhand.rsi # stalker EN change
     equipDelay: 2
   - type: Gun
     fireRate: 6.5

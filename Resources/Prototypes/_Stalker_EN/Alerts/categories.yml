@@ -1,2 +1,5 @@
 - type: alertCategory
   id: STPvpZone
+
+- type: alertCategory
+  id: StatusEffects

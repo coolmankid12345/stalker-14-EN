@@ -6,3 +6,13 @@
   components:
   - type: LinkByString
     linkString: EcoBunker
+
+- type: entity
+  parent: LocalTeleportBaseUncollide
+  id: YantarLabLadderUncollide
+  suffix: Yantar
+  name: Yantar Lab Ladder Uncollide
+  components:
+  - type: LinkByString
+    linkString: YantarLabLadder
+

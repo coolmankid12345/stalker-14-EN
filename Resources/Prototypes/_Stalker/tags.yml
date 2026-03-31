@@ -6,3 +6,6 @@
 
 - type: Tag
   id: FurnitureStalker # ConstructionGraph: STCraftFurniture
+
+- type: Tag
+  id: Stalkertooth

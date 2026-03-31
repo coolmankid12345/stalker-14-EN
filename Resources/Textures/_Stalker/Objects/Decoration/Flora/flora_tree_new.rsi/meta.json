@@ -9,54 +9,54 @@
     {
       "name": "birch01"
     },
-      {
-          "name": "birch02"
-      },
-      {
-          "name": "birch03"
-      },
-      {
-          "name": "birch04"
-      },
-      {
-          "name": "birch05"
-      },
-      {
-          "name": "pine01"
-      },
-      {
-          "name": "pine02"
-      },
-      {
-          "name": "pine03"
-      },
-      {
-          "name": "pine04"
-      },
-      {
-          "name": "pine05"
-      },
-      {
-          "name": "pine06"
-      },
-      {
-          "name": "oak01"
-      },
-      {
-          "name": "oak02"
-      },
-      {
-          "name": "spruce01"
-      },
-      {
-          "name": "spruce02"
-      },
-      {
-          "name": "spruce03"
-      },
-      {
-          "name": "spruce04"
-      }
-
-  ]
+    {
+      "name": "birch02"
+    },
+    {
+      "name": "birch03"
+    },
+    {
+      "name": "birch04"
+    },
+    {
+      "name": "birch05"
+    },
+    {
+      "name": "pine01"
+    },
+    {
+      "name": "pine02"
+    },
+    {
+      "name": "pine03"
+    },
+    {
+      "name": "pine04"
+    },
+    {
+      "name": "pine05"
+    },
+    {
+      "name": "pine06"
+    },
+    {
+      "name": "oak01"
+    },
+    {
+      "name": "oak02"
+    },
+    {
+      "name": "spruce01"
+    },
+    {
+      "name": "spruce02"
+    },
+    {
+      "name": "spruce03"
+    },
+    {
+      "name": "spruce04"
+    }
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

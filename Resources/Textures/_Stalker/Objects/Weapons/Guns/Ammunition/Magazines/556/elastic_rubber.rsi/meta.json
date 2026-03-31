@@ -51,6 +51,15 @@
     },
     {
       "name": "blue_60"
+    },
+    {
+      "name": "blue_30_trans"
+    },
+    {
+      "name": "green_30_trans"
+    },
+    {
+      "name": "red_30_trans"
     }
   ]
 }

@@ -216,7 +216,6 @@
     modifiers:
       coefficients:
         Slash: 1.2
-    spread: 340
   - type: SolutionContainerManager
     solutions:
       pen:

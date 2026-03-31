@@ -1,0 +1,8 @@
+- type: alert
+  id: ReagentWeightReduction
+  icons:
+  - sprite: /Textures/_Stalker_EN/Interface/Alerts/hercules.rsi
+    state: icon
+  name: alerts-reagent-weight-name
+  description: alerts-reagent-weight-desc
+  category: StatusEffects

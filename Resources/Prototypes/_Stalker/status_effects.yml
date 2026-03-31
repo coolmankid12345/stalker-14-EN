@@ -1,3 +1,22 @@
-
+# stalker-en-changes - Status effect for temporary weight modification
+# Used by STHercules reagent to reduce entity weight by 20kg
 - type: statusEffect
   id: Dizzy
+
+# stalker-en-changes - Weight modifier status effect entity
+# Attached to mobs with STWeight component to apply temporary weight changes
+- type: entity
+  parent: MobStatusEffectBase
+  id: ReagentWeight
+  name: reagent weight modifier
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - MobState
+      - STWeight
+      requireAll: true
+  - type: STWeightSelfModifier
+  - type: StatusEffectAlert
+    alert: ReagentWeightReduction
+    showDuration: false

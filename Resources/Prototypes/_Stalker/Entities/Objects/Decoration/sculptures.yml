@@ -15,7 +15,7 @@
   suffix: ST, Mapping
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Decoration/Other/sculptures.rsi/64x64.rsi
+    sprite: _Stalker/Objects/Decoration/Other/64x64.rsi
     state: ws1
 
 - type: entity

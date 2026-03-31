@@ -75,6 +75,13 @@ public sealed class PrototypeSaveTest
 
         var context = new TestEntityUidContext();
 
+        // Components that are automatically added/modified by the engine during entity initialization
+        // These are expected to differ from prototype data and should be ignored
+        var ignoredComponents = new HashSet<string>
+        {
+            "ContainerContainer", // Automatically added when containers are created via EnsureContainer
+        };
+
         await server.WaitAssertion(() =>
         {
             Assert.That(!mapSystem.IsInitialized(mapId));
@@ -118,6 +125,10 @@ public sealed class PrototypeSaveTest
                         compNames.Add(compName);
 
                         if (compType == typeof(MetaDataComponent) || compType == typeof(TransformComponent) || compType == typeof(FixturesComponent))
+                            continue;
+
+                        // Skip components that are automatically added/modified by the engine
+                        if (ignoredComponents.Contains(compName))
                             continue;
 
                         MappingDataNode compMapping;

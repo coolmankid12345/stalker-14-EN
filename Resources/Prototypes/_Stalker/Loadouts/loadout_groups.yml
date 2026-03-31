@@ -186,6 +186,7 @@
   loadouts:
   - STLighter
   - Blunt
+  - CigPackBub
 
 - type: loadoutGroup
   id: STStorage

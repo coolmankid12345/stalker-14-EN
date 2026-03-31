@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "CLA",
+  "license": "CC-BY-NC-SA-3.0",
   "copyright": "Stalker14 CLA, author: kamka1337 & foma_o0 (discord)",
   "size": {
     "x": 32,
@@ -31,18 +31,18 @@
       "name": "bolt-open"
     },
     {
-        "name": "wielded-inhand-left",
-        "directions": 4
+      "name": "wielded-inhand-left",
+      "directions": 4
     },
     {
-        "name": "wielded-inhand-right",
-        "directions": 4
+      "name": "wielded-inhand-right",
+      "directions": 4
     },
     {
       "name": "equipped-BACKPACK",
       "directions": 4
     },
-	{
+    {
       "name": "equipped-SUITSTORAGE",
       "directions": 4
     }

@@ -19,6 +19,10 @@
     },
     {
       "name": "icon-flash"
+    },
+    {
+      "name": "equipped-HELMET"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

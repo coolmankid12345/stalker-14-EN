@@ -18,8 +18,9 @@
     {
       "name": "tc4"
     },
-      {
-          "name": "tc5"
-      }
-  ]
+    {
+      "name": "tc5"
+    }
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

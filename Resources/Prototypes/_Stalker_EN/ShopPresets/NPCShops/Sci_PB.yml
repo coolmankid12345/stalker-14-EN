@@ -112,6 +112,16 @@
     STJunkTagWhite: 100
     STJunkTracker: 250
 
+    #Lumber
+    STTradePlankT1: 40
+    STTradePlankT2: 60
+    STTradePlankT3: 80
+    STTradePlankT4: 100
+    STLogStalkerT1: 20
+    STLogStalkerT2: 30
+    STLogStalkerT3: 40
+    STLogStalkerT4: 50
+
   categories:
     - name: Vodka
       priority: 1

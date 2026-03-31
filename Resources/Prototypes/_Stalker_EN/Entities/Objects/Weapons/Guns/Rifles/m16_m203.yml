@@ -1,0 +1,14 @@
+- type: entity
+  parent: STWeaponRifleM16
+  id: STWeaponRifleM16M203
+  name: M16 M203
+  description: Legendary American rifle from Vietnam era. Appears in the Zone through military depots and black market dealers. This one has an M203 underbarrel grenade launcher built into the handguard.
+  components:
+  - type: STWeight
+    self: 4
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/m16_m203/inhand.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/m16_m203/icon.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/m16_m203/inhand.rsi

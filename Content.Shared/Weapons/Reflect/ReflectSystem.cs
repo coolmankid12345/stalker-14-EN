@@ -51,6 +51,13 @@ public sealed class ReflectSystem : EntitySystem
         SubscribeLocalEvent<ReflectComponent, GotUnequippedHandEvent>(OnReflectHandUnequipped);
         SubscribeLocalEvent<ReflectComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<ReflectComponent, VisorToggledEvent>(OnVisorToggled);
+        SubscribeLocalEvent<ReflectComponent, ComponentInit>(OnInit);
+    }
+
+    private void OnInit(Entity<ReflectComponent> ent, ref ComponentInit args)
+    {
+        // Store the initial reflect probability for visor toggle
+        ent.Comp.OriginalReflectProb ??= ent.Comp.ReflectProb;
     }
 
     private void OnReflectUserCollide(Entity<ReflectComponent> ent, ref ProjectileReflectAttemptEvent args)
@@ -236,7 +243,21 @@ public sealed class ReflectSystem : EntitySystem
         if (!TryComp<HelmetVisorComponent>(ent, out var visor) || visor.VisorUpReflectProb == null)
             return;
 
-        ent.Comp.ReflectProb = args.IsUp ? visor.VisorUpReflectProb.Value : visor.DefaultReflectProb;
+        if (args.IsUp)
+        {
+            // Store original value and set visor up value
+            ent.Comp.OriginalReflectProb ??= ent.Comp.ReflectProb;
+            ent.Comp.ReflectProb = visor.VisorUpReflectProb.Value;
+        }
+        else
+        {
+            // Restore original value from stored value
+            if (ent.Comp.OriginalReflectProb.HasValue)
+            {
+                ent.Comp.ReflectProb = ent.Comp.OriginalReflectProb.Value;
+                ent.Comp.OriginalReflectProb = null;
+            }
+        }
         Dirty(ent);
     }
     #endregion

@@ -1,3 +1,32 @@
+# stalker-en-changes - Hercules reagent - reduces body weight by 20kg while in bloodstream
+- type: reagent
+  id: STHercules
+  name: reagent-name-hercules
+  group: Narcotics
+  desc: reagent-desc-hercules
+  physicalDesc: reagent-physical-desc-exhilarating
+  flavor: medicine
+  color: "#1f8cb8"
+  boilingPoint: 212.0
+  meltingPoint: 170.0
+  evaporationSpeed: 0.4
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.025
+      effects:
+      # stalker-en-changes - Weight modifier effect - applies -20kg while metabolizing
+      # time must be > UpdateInterval (1s) to prevent effect from expiring between updates
+      - !type:STWeightModifier
+        time: 2.0
+        weightModifier: -20
+    Medicine:
+      metabolismRate: 0.1
+      effects:
+        - !type:SatiateHunger
+          factor: 1
+        - !type:SatiateThirst
+          factor: 2
+
 - type: reagent
   id: STTaurine
   name: reagent-name-st-taurine

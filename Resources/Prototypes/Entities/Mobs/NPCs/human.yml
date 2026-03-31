@@ -21,8 +21,7 @@
       factions:
         - Syndicate
     - type: Loadout
-      prototypes:
-        - SalvageSpecialistGear
+      prototypes: []
     - type: InputMover
     - type: MobMover
     - type: HTN

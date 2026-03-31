@@ -662,3 +662,40 @@
     channels:
     - Binary
     - Common
+
+# Monolith
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMonolithPremium
+  name: Holy Altar[→   ←]
+  suffix: ST, Monolith, EN-TRADER
+  description: Takes artifacts as payment.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/bonfire.rsi
+    scale: 1.2, 1.2
+    layers:
+      - state: Monolit
+      - state: MonolitFire
+  - type: Physics
+    bodyType: Static
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: ArtifactShards
+    shopPresetId: MonolithPremium
+  - type: AmbientSound
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/_Stalker_EN/Effects/psi_voices.ogg
+  - type: PointLight
+    radius: 5
+    energy: 3
+    color: "#02DDF9"

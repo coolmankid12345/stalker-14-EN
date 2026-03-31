@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Made by neki5h / gr0x and belay5. All rights belong to neki5h / gr0x.",
+  "states": [
+    {
+      "name": "icon"
+    }
+  ]
+}

@@ -45,19 +45,19 @@
     - to: STStill
       steps:
       - tag: STSugar
-        name: sugar
+        name: construction-insert-info-examine-name-sugar
         icon:
           sprite: Objects/Consumable/Food/ingredients.rsi
           state: sugar-big
         doAfter: 1
       - tag: STCorn
-        name: corn
+        name: construction-insert-info-examine-name-corn
         icon:
           sprite: Objects/Specific/Hydroponics/corn.rsi
           state: produce
         doAfter: 1
       - tag: STYeast
-        name: yeast
+        name: construction-insert-info-examine-name-yeast
         icon:
           sprite: _Stalker_EN/Objects/Consumable/Food/ingredients.rsi
           state: yeast

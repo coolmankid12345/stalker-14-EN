@@ -223,6 +223,8 @@
       capacity: 5
       count: 1
     - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/l85.ogg
       fireRate: 5
       useKey: false
       selectedMode: FullAuto
@@ -252,6 +254,8 @@
       capacity: 7
       count: 5
     - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/l85.ogg
       fireRate: 8
       useKey: false
       selectedMode: FullAuto
@@ -281,6 +285,8 @@
       capacity: 10
       count: 1
     - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/n_mp5_shot.ogg
       fireRate: 9
       useKey: false
       selectedMode: FullAuto
@@ -310,6 +316,8 @@
       capacity: 10
       count: 1
     - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/n_mp5_shot.ogg
       fireRate: 9
       useKey: false
       selectedMode: FullAuto

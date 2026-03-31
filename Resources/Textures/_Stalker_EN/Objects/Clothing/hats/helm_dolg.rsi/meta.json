@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "Stalker14",
+  "license": "CC-BY-NC-SA-3.0",
   "copyright": "man914 оно тебе не надо.",
   "size": {
     "x": 32,
@@ -21,6 +21,9 @@
     {
       "name": "inhand-right",
       "directions": 4
+    },
+    {
+      "name": "helm-dolg"
     }
   ]
 }

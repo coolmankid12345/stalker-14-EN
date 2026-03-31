@@ -38,6 +38,7 @@
         Roubles: 1
         Dollar: 1
         Hryvnias: 0 # EN
+        ArtifactShards: 1 # EN
 
 - type: entity
   parent: BaseArtifact

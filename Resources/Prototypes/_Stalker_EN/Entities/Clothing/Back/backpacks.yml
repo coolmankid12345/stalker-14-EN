@@ -1,0 +1,20 @@
+﻿- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackForestryRig
+  name: stalker forestry rig
+  description: A hefty backpack replacement used to store a hatchet and many logs. Useful for deforesting the cordon.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Other/backpackblue.rsi
+    color: "#ffaa99"
+  - type: Storage #40 клеток преимущественно мелкими квадратами под ношение артов  ##i like your funny words, magic man
+    grid:
+    - 0,0,10,5
+    whitelist:
+      tags:
+      - Lumber
+  - type: Tag
+    tags:
+    - STClothingBackpackT4
+    - BlockBack

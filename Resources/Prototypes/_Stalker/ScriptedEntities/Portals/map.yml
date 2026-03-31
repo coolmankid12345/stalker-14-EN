@@ -3,51 +3,81 @@
   parent: MapTeleportBase
   id: Kordon-Kordondown3
   name: Kordon-Kordondown3
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Kordon-Kordondown1
   name: Kordon-Kordondown1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Kordon-Kordondown2
   name: Kordon-Kordondown2
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Cordon-BasementSidor
   name: Cordon-BasementSidor
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Cordon-BasementMil
   name: Cordon-BasementMil
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Basement1
   name: Cordon-Basement1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Basement2
   name: Cordon-Basement2
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Basement3
   name: Cordon-Basement3
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Basement4
   name: Cordon-Basement4
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Basement5
   name: Cordon-Basement5
+  components:
+  - type: Portal
+    cooldown: 5
 
 ##########################ВОЕННАЯ БАЗА-КОРДОН
 - type: entity
@@ -139,36 +169,57 @@
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka
   name: Svalka-UndergrundSvalka
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka-1
   name: Svalka-UndergrundSvalka-1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka1
   name: Svalka-UndergrundSvalka1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka1-1
   name: Svalka-UndergrundSvalka1-1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka2
   name: Svalka-UndergrundSvalka2
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka2-1
   name: Svalka-UndergrundSvalka2-1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka3
   name: Svalka-UndergrundSvalka3
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBaseUncollide
@@ -179,26 +230,41 @@
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka4
   name: Svalka-UndergrundSvalka4
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka4-1
   name: Svalka-UndergrundSvalka4-1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka5
   name: Svalka-UndergrundSvalka5
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka5-1
   name: Svalka-UndergrundSvalka5-1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka6
   name: Svalka-UndergrundSvalka6
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBaseUncollide
@@ -209,36 +275,57 @@
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka7
   name: Svalka-UndergrundSvalka7
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka7-1
   name: Svalka-UndergrundSvalka7-1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka8
   name: Svalka-UndergrundSvalka8
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka8-1
   name: Svalka-UndergrundSvalka8-1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka9
   name: Svalka-UndergrundSvalka9
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka9-1
   name: Svalka-UndergrundSvalka9-1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalka10
   name: Svalka-UndergrundSvalka10
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
@@ -250,6 +337,9 @@
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalkaStock
   name: Svalka-UndergrundSvalkaStock
+  components:
+  - type: Portal
+    cooldown: 5
 
 ######################################################Кордон-Лощина
 - type: entity
@@ -355,6 +445,7 @@
   suffix: Чистилище - Магазин
   components:
   - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
@@ -363,118 +454,91 @@
   suffix: Чистилище - Магазин
   components:
   - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBaseUncollide
   id: PurgatoryShopUncollibe1
   name: Purgatory-Shop
   suffix: Чистилище - Магазин
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBaseUncollide
   id: PurgatoryShopUncollibe2
   name: Purgatory-Shop
   suffix: Чистилище - Магазин
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBase
   id: PurgatoryMedical1
   name: Purgatory-Medbay
   suffix: Чистилище - Больница
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBase
   id: PurgatoryMedical2
   name: Purgatory-Medbay
   suffix: Чистилище - Больница
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBaseUncollide
   id: PurgatoryMedicalUncollibe1
   name: Purgatory-Medbay
   suffix: Чистилище - Больница
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBaseUncollide
   id: PurgatoryMedicalUncollibe2
   name: Purgatory-Medbay
   suffix: Чистилище - Больница
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBase
   id: PurgatoryTrainStation1
   name: Purgatory-TrainStation
   suffix: Чистилище - Вокзал
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBase
   id: PurgatoryTrainStation2
   name: Purgatory-TrainStation
   suffix: Чистилище - Вокзал
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBase
   id: PurgatoryTrainStation3
   name: Purgatory-TrainStation
   suffix: Чистилище - Вокзал
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBaseUncollide
   id: PurgatoryTrainStationUncollibe1
   name: Purgatory-TrainStation
   suffix: Чистилище - Вокзал
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBaseUncollide
   id: PurgatoryTrainStationUncollibe2
   name: Purgatory-TrainStation
   suffix: Чистилище - Вокзал
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBaseUncollide
   id: PurgatoryTrainStationUncollibe3
   name: Purgatory-TrainStation
   suffix: Чистилище - Вокзал
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBase
   id: TrainStationCordon
   suffix: Вокзал - Кордон
   name: TrainStation-Cordon
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBaseUncollide
   id: TrainStationCordonUncollide
   suffix: Вокзал - Кордон
   name: TrainStation-Cordon
-  components:
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBase
@@ -484,7 +548,6 @@
   components:
   - type: AccessReader
     access: [["Military"]]
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBaseUncollide
@@ -494,15 +557,12 @@
   components:
   - type: AccessReader
     access: [["Military"]]
-  - type: Portal
 
 - type: entity
   parent: MapTeleportBase
   id: PredbannikResearchInstitute
   suffix: Предбанник - НИИ
   name: Predbannik-ResearchInstitute
-  components:
-  - type: Portal
 
 ###################################################### НИИ Порталы этажей
 - type: entity
@@ -512,6 +572,7 @@
   name: ResearchInstitute - ResearchInstitute first floor
   components:
   - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
@@ -520,6 +581,7 @@
   name: ResearchInstitute first - floor ResearchInstitute second floor
   components:
   - type: Portal
+    cooldown: 5
 
 ###################################################### Жабы Порталы этажей
 - type: entity
@@ -529,6 +591,7 @@
   name: Jaba first floor
   components:
   - type: Portal
+    cooldown: 5
 
 ######################################################Предбанник-Болота
 - type: entity
@@ -537,7 +600,7 @@
   name: BolotoPB
   components:
   - type: Portal
-    cooldown: 60
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
@@ -545,7 +608,7 @@
   name: BolotoPB1
   components:
   - type: Portal
-    cooldown: 60
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
@@ -553,7 +616,7 @@
   name: BolotoPB2
   components:
   - type: Portal
-    cooldown: 60
+    cooldown: 5
 
 ######################################################Предбанник-Кордон
 - type: entity
@@ -562,7 +625,7 @@
   name: CordonPB
   components:
   - type: Portal
-    cooldown: 60
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
@@ -570,7 +633,7 @@
   name: CordonPB1
   components:
   - type: Portal
-    cooldown: 60
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
@@ -578,7 +641,7 @@
   name: CordonPB2
   components:
   - type: Portal
-    cooldown: 60
+    cooldown: 5
 
 ###################################################Предбанник-MBase
 - type: entity
@@ -762,12 +825,18 @@
   parent: MapTeleportBase
   id: Kordon-Bunker
   name: Kordon-Bunker
+  components:
+  - type: Portal
+    cooldown: 5
 
 ######## Лощина
 - type: entity
   parent: MapTeleportBase
   id: Kordon-Loshina
   name: Kordon-Loshina
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
@@ -798,26 +867,41 @@
   parent: MapTeleportBase
   id: Freedom_basement1
   name: Freedom_basement1
+  components:
+  - type: Portal
+    cooldown: 5
 
 - type: entity
   parent: MapTeleportBase
   id: Freedom_basement2
   name: Freedom_basement2
+  components:
+  - type: Portal
+    cooldown: 5
 
 ### Агропром - кордон
 - type: entity
   parent: MapTeleportBase
   id: Agro-Kordon
   name: Agro-Kordon
+  components:
+  - type: Portal
+    cooldown: 5
 
 ### Долина - кордон
 - type: entity
   parent: MapTeleportBase
   id: Dolina-Kordon
   name: Dolina-Kordon
+  components:
+  - type: Portal
+    cooldown: 5
 
 ### Долина - рыжий лес
 - type: entity
   parent: MapTeleportBase
   id: Dolina-RedForest
   name: Dolina-RedForest
+  components:
+  - type: Portal
+    cooldown: 5

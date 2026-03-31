@@ -1,0 +1,80 @@
+- type: entity
+  id: MiracleMachinePsyField
+  parent: MarkerBase
+  name: Miracle Machine Psy Field
+  description: A psy field caused by the Miracle Machine that spawns ghosts.
+  suffix: Stalker, Psy, Miracle Machine
+  components:
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 100
+          mask:
+          - FullTileMask
+          layer:
+          - WallLayer
+          hard: false
+    - type: Sprite
+      layers:
+      - state: blue
+      - sprite: Mobs/Aliens/Xenos/burrower.rsi
+        state: crit
+      - state: ai
+    - type: MiracleMachineSpawner
+      ghosts:
+      - MobMutantApparitionBase
+      - MobMutantApparitionDog
+      - MobMutantApparitionBoar
+      - MobMutantApparitionSnork
+      - MobMutantApparitionSucker
+
+- type: entity
+  id: PsyField
+  parent: MiracleMachinePsyField
+  name: Psy Field
+  description: A psy field that spawns ghosts in the surrounding area.
+  suffix: Stalker, Psy
+  components:
+  - type: MiracleMachineSpawner
+    ghosts:
+    - MobMutantApparitionBase
+    - MobMutantApparitionDog
+    - MobMutantApparitionBoar
+    - MobMutantApparitionSnork
+    - MobMutantApparitionSucker
+    miracleMachine: false
+
+- type: entity
+  id: MiracleMachineTeleporterSpawnerBase
+  suffix: Stalker, Teleporter, Miracle Machine, Spawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+
+- type: entity
+  id: MiracleMachineTeleporterSpawnerYantarRostok
+  name: Yantar-Rostok Teleporter Spawner
+  parent: MiracleMachineTeleporterSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+  - type: MiracleMachineTeleports
+    teleport: Yantar-Rostok
+
+- type: entity
+  id: MiracleMachineTeleporterSpawnerYantarDeadCity
+  name: Yantar-DeadCity Teleporter Spawner
+  parent: MiracleMachineTeleporterSpawnerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+  - type: MiracleMachineTeleports
+    teleport: Yantar-DeadCity

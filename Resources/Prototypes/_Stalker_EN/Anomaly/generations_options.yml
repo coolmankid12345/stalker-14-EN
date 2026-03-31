@@ -41,36 +41,36 @@
 - type: stAnomalyGenerationOptions
   id: STYantarGenerationOptions
   options:
-    totalCount: 650
+    totalCount: 300
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalyGarland
       weight: 1
     - protoId: ZoneAnomalyEMP
-      weight: 2
+      weight: 0.5
     # Chemical
     - protoId: ZoneAnomalySmoke
       weight: 0.5
     - protoId: ZoneAnomalyGazirovka
       weight: 2
     - protoId: ZoneAnomalyKissel
-      weight: 1
+      weight: 2
     # Gravity
     - protoId: ZoneAnomalyGravi
-      weight: 1.5
+      weight: 1.25
     - protoId: ZoneAnomalySpringboard
       weight: 1
     - protoId: ZoneAnomalyGrabber
-      weight: 1
+      weight: 0.5
     - protoId: ZoneAnomalyGlassShards
       weight: 3
     # Thermal
     - protoId: ZoneAnomalySteam
-      weight: 2
+      weight: 3
     - protoId: ZoneAnomalyJarka
-      weight: 4
+      weight: 3
     # Psy
     - protoId: ZoneAnomalyLamp
-      weight: 0.5
+      weight: 1
     - protoId: ZoneAnomalyBarabashka
-      weight: 0.5
+      weight: 0.75

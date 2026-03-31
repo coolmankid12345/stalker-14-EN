@@ -1,0 +1,63 @@
+﻿- type: entity
+  parent: BaseItem
+  id: STTradePlankT1
+  name: fine pine plank
+  description: A well-cut and dressed plank of pine wood, ready to be sold to a merchant.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 100
+  - type: Tag
+    tags:
+    - Lumber
+  - type: Sprite
+    state: pine
+    sprite: _Stalker/Objects/Craft/Materials/wood_planks.rsi
+
+- type: entity
+  parent: BaseItem
+  id: STTradePlankT2
+  name: fine birch plank
+  description: A well-cut and dressed plank of birch wood, ready to be sold to a merchant.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 100
+  - type: Tag
+    tags:
+    - Lumber
+  - type: Sprite
+    state: birch
+    sprite: _Stalker/Objects/Craft/Materials/wood_planks.rsi
+
+- type: entity
+  parent: BaseItem
+  id: STTradePlankT3
+  name: fine oak plank
+  description: A well-cut and dressed plank of oak wood, ready to be sold to a merchant.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 100
+  - type: Tag
+    tags:
+    - Lumber
+  - type: Sprite
+    state: oak
+    sprite: _Stalker/Objects/Craft/Materials/wood_planks.rsi
+
+- type: entity
+  parent: BaseItem
+  id: STTradePlankT4
+  name: fine yew plank
+  description: A well-cut and dressed plank of yew wood, ready to be sold to a merchant.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 100
+  - type: Tag
+    tags:
+    - Lumber
+  - type: Sprite
+    state: yew
+    sprite: _Stalker/Objects/Craft/Materials/wood_planks.rsi

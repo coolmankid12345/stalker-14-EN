@@ -14,7 +14,7 @@
       AggroVisionRadius: !type:Single
         15
   - type: Damageable
-    damageModifierSet: STMutantT2DamageModifierSet
+    damageModifierSet: STMutantAnomImmuneT2DamageModifierSet
   - type: Sprite
     drawdepth: Mobs
     sprite: _Stalker_EN/Mobs/Mutants/apparition.rsi
@@ -29,7 +29,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 1
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -54,7 +54,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      1: Dead
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.8
     baseSprintSpeed: 4.4
@@ -85,6 +85,8 @@
         Slash: 0
   - type: BonusMeleeDamage
     heavyDamageMultiplier: 1.25
+  - type: TimedDespawn
+    lifetime: 60
 
 - type: entity
   parent: MobMutantApparitionBase

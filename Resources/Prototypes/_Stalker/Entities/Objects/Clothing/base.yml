@@ -40,6 +40,9 @@
   suffix: ST
   abstract: true
   components:
+  - type: Tag
+    tags:
+    - BlockMask #Stalker EN
   - type: Trash #Stalker EN
     time: 1800
   - type: RepositoryItem

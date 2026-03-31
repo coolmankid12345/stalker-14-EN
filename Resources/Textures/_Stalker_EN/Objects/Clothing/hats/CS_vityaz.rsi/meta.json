@@ -1,25 +1,25 @@
 {
-    "version": 1,
-    "size": {
-        "x": 32,
-        "y": 32
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "original sprites from tgstation at commit https://github.com/tgstation/tgstation/commit/2fea0a59470c476cf3f927833d3918d89cbe6af8, modified by Kinglach for Stalker14",
+  "states": [
+    {
+      "name": "icon"
     },
-    "license": "CC-BY-SA 3.0",
-    "copyright": "original sprites from tgstation at commit https://github.com/tgstation/tgstation/commit/2fea0a59470c476cf3f927833d3918d89cbe6af8, modified by Kinglach for Stalker14",
-    "states": [
-        {
-            "name": "icon"
-        },
-		{
-		  "name": "icon-visor-up"
-		},
-        {
-            "name": "equipped-HELMET",
-            "directions": 4
-        },
-		{
-		  "name": "visor-up-equipped-HELMET",
-		  "directions": 4
-		}
-    ]
+    {
+      "name": "icon-visor-up"
+    },
+    {
+      "name": "equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "visor-up-equipped-HELMET",
+      "directions": 4
+    }
+  ]
 }

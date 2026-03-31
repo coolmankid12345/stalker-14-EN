@@ -13,10 +13,10 @@
       "name": "equipped-BACKPACK",
       "directions": 4
     },
-	{
-	  "name": "equipped-SUITSTORAGE",
-	  "directions": 4
-	},
+    {
+      "name": "equipped-SUITSTORAGE",
+      "directions": 4
+    },
     {
       "name": "icon"
     },
@@ -34,5 +34,6 @@
     {
       "name": "mag-0"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

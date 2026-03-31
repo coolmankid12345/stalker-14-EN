@@ -1,3 +1,4 @@
+# P99 is my fav peashooter from CoD:MW3
 - type: entity
   id: BaseP99Mag
   name: Walther P99 Magazine
@@ -79,3 +80,147 @@
           tags:
             - STElasticRubberBlue
     sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
+
+- type: entity
+  id: BaseHiPowerMag
+  name: Browning Hi-Power Magazine
+  description: A 13-round magazine for the Browning Hi-Power, chambered in 9×19mm. They sell empty.
+  parent: BaseItem
+  suffix: Stalker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STWeight
+    self: 0.1
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/HiPower/13.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazineHipower
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,0
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: RepositoryItem
+    categoryName: repository-magazines-category
+  
+
+- type: entity
+  id: HiPowerMag13
+  name: Browning Hi-Power Magazine (13)
+  parent: BaseHiPowerMag
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - STCartridge919
+    capacity: 13
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/HiPower/13.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_hipower_13:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_hipower_13:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_hipower_13:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
+    
+- type: entity
+  id: BaseSTC96Clip
+  name: Mauser C96 Stripper Clip (10)
+  description: "A 10-round stripper clip for the Mauser C96, used to quickly load 9x19mm rounds into the internal magazine. They sell empty."
+  suffix: Stalker
+  parent: BaseItem
+  abstract: true
+  components:
+    - type: STBulkBuyable
+      maxQuantity: 10
+    - type: Tag
+      tags:
+        - C96Clip
+    - type: Item
+      size: Small
+      shape:
+      - 0,0,0,0
+    - type: SpeedLoader
+    - type: BallisticAmmoProvider
+      whitelist:
+        tags:
+          - STCartridge919
+      capacity: 10
+    - type: Sprite
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
+        item_slot: !type:ContainerSlot {}
+    - type: RepositoryItem
+      categoryName: repository-magazines-category
+
+- type: entity
+  parent: BaseSTC96Clip
+  id: STC96Clip
+  categories: [ HideSpawnMenu ]
+  name: Mauser C96 Stripper Clip (9x19mm)
+  suffix: Stalker
+  components:
+    - type: BallisticAmmoProvider
+      proto: STCartridge919
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/C96/10.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: base-2
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: base
+      steps: 3
+      zeroVisible: false
+    - type: Appearance
+
+- type: entity
+  parent: STC96Clip
+  id: STSTC96ClipEmpty
+  suffix: Stalker
+  components:
+    - type: BallisticAmmoProvider
+      proto: null

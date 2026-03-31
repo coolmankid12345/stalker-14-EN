@@ -43,6 +43,10 @@
     },
     {
       "name": "mag-0"
+    },
+    {
+      "name": "equipped-SUITSTORAGE"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

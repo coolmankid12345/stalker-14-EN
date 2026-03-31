@@ -47,6 +47,10 @@
     {
       "name": "wielded-inhand-right",
       "directions": 4
+    },
+    {
+      "name": "baseNoSight"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

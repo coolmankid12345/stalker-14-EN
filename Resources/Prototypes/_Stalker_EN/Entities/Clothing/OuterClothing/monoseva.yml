@@ -1,0 +1,55 @@
+- type: entity
+  parent: ClothingOuterArmorSevaMonolith
+  id: ClothingOuterArmorSevaMonolithPriest
+  name: Monolith "Priest" Seva suit
+  description: Scientific suit, a variant of "CHEVA" produced by the Monoliths. Has anomalous properties to divert high velocity impacts away from its self more often then other armors.
+  components:
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Radiation: 4
+        Caustic: 1
+        Psy: 1
+        Piercing: 2
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Compression: 0.95
+        Psy: 0.7
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitSevaHelmMonolithPriest
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/seva_priest.rsi
+
+- type: entity
+  parent: ClothingHeadHardsuitSevaHelmMonolith
+  id: ClothingHeadHardsuitSevaHelmMonolithPriest
+  name: Seva "Priest" Helmet
+  description: Despite the predominantly glass composition, it is quite durable. Has been painted and up-armored by Monolith soldiers.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/seva_helm_priest.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/seva_helm_priest.rsi
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Radiation: 4
+        Caustic: 1
+        Psy: 1
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Compression: 0.95
+        Psy: 0.7
+  - type: Reflect
+    reflectProb: 0.40
+    spread: 360
+    reflects:
+      - NonEnergy
+    soundOnReflect: /Audio/Magic/blink.ogg

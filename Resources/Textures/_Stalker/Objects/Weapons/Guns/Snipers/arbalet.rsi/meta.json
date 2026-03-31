@@ -12,7 +12,7 @@
     {
       "name": "unwielded-arrow"
     },
-	{
+    {
       "name": "unwielded-plunger"
     },
     {
@@ -21,7 +21,7 @@
     {
       "name": "wielded-arrow"
     },
-	{
+    {
       "name": "wielded-plunger"
     },
     {
@@ -47,5 +47,6 @@
     {
       "name": "base-scope"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

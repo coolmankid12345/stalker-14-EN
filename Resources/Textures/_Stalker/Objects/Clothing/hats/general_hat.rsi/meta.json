@@ -1,7 +1,10 @@
 {
   "version": 1,
   "copyright": "Stalker14 CLA",
-  "size": {"x": 32,"y": 32},
+  "size": {
+    "x": 32,
+    "y": 32
+  },
   "states": [
     {
       "name": "icon"
@@ -10,5 +13,6 @@
       "name": "equipped-HELMET",
       "directions": 4
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

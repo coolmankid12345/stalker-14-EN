@@ -1,10 +1,12 @@
-﻿using Content.Server._Stalker.ZoneArtifact.Components;
+using Content.Server._Stalker.ZoneArtifact.Components;
 using Content.Server._Stalker.ZoneArtifact.Components.Detector;
 using Content.Server._Stalker.ZoneArtifact.Components.Spawner;
+using Content.Server.Popups; // stalker EN change
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneArtifact;
 using Content.Shared._Stalker.ZoneArtifact.Components;
 using Content.Shared._Stalker.ZoneArtifact.Events;
+using Content.Shared._Stalker_EN.Devices; // stalker EN change
 using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -21,6 +23,7 @@ public sealed class ZoneArtifactDetectorSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly ZoneArtifactSpawnerSystem _artifactSpawner = default!;
+    [Dependency] private readonly PopupSystem _popup = default!; // stalker EN change
 
     public override void Initialize()
     {
@@ -119,6 +122,12 @@ public sealed class ZoneArtifactDetectorSystem : EntitySystem
 
     private void Toggle(Entity<ZoneArtifactDetectorComponent> detector, EntityUid? user = null)
     {
+        if (user is not null && TryComp<CantUseDetectorComponent>(user, out var cantUseComp)) // stalker EN change start
+        {
+            if (cantUseComp.DenialMessage is not null)
+                _popup.PopupEntity(cantUseComp.DenialMessage, user.Value, Shared.Popups.PopupType.Small);
+            return;
+        } // stalker EN change end
         detector.Comp.Enabled = !detector.Comp.Enabled;
         detector.Comp.UpdateTime = _timing.CurTime;
         Dirty(detector);

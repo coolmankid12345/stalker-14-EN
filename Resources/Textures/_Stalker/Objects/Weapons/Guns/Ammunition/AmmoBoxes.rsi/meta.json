@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": null,
+  "license": "CC-BY-NC-SA-3.0",
   "copyright": "Stalker14 CLA",
   "size": {
     "x": 32,
@@ -153,6 +153,9 @@
     },
     {
       "name": "921"
+    },
+    {
+      "name": "cink-mag-1"
     }
   ]
 }

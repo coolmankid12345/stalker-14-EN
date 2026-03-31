@@ -27,7 +27,7 @@
     {
       "name": "mag-0"
     },
-	{
+    {
       "name": "base-scope"
     },
     {
@@ -35,6 +35,16 @@
     },
     {
       "name": "bolt-open"
+    },
+    {
+      "name": "equipped-SUITSTORAGE"
+    },
+    {
+      "name": "wielded-inhand-left"
+    },
+    {
+      "name": "wielded-inhand-right"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

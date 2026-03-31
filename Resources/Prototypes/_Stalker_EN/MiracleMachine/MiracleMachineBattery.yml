@@ -1,0 +1,51 @@
+- type: entity
+  id: MiracleMachineBattery
+  parent: SubstationBasicEmpty
+  name: Psy-Battery
+  description: Looks important, I would probably destroy it if I were you. Perhaps don't stand too close either.
+  suffix: Stalker, Miracle Machine
+  components:
+    - type: MiracleMachineBattery
+    - type: Sprite # TODO: add sprite for maintenance panel open
+      sprite: _Stalker_EN/Structures/Machines/psybattery.rsi
+      layers:
+      - state: icon
+      - state: overlay-unshaded
+        shader: unshaded
+        visible: true
+    - type: IntrinsicRadioTransmitter
+      channels:
+      - Monolith
+    - type: Explosive
+      explosionType: Default
+      maxIntensity: 100
+      intensitySlope: 2
+      totalIntensity: 200
+      maxTileBreak: 0
+      tileBreakScale: 0
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 75
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 50
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:ExplodeBehavior
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalGlassBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            STCraftSheetBrassT3:
+              min: 0
+              max: 3
+            STCraftQuartzCrystalT3:
+              min: 0
+              max: 3

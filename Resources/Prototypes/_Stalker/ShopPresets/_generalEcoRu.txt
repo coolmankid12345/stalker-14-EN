@@ -393,7 +393,6 @@
     # ---COATS---
     #T1
     ClothingOuterCoatDoshdevik: 0
-    ClothingOuterCoatKKK: 0
     ClothingOuterCoatPahan: 0
     ClothingOuterCoatPoisk: 0
     STClothingCapeT1Serafim: 0
@@ -989,7 +988,6 @@
     # ---COATS---
     #T1
     ClothingOuterCoatDoshdevik: 0
-    ClothingOuterCoatKKK: 0
     ClothingOuterCoatPahan: 0
     ClothingOuterCoatPoisk: 0
     STClothingCapeT1Serafim: 0

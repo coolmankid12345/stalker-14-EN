@@ -27,14 +27,15 @@
     {
       "name": "welded"
     },
-	{
+    {
       "name": "generic"
     },
-	{
+    {
       "name": "generic_door"
     },
-	{
+    {
       "name": "generic_open"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

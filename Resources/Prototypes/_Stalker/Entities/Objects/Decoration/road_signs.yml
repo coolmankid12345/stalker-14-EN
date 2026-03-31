@@ -1,6 +1,6 @@
 - type: entity
   id: RoadSigns1
-  parent: STBaseTreeLarge
+  parent: STBaseTreeT1Large #EN change
   name: дорожный знак
   suffix: ST, Mapping
   description: Дорожный знак, "Главная дорога".

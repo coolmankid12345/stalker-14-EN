@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by thebimmer231, chermaity and dallaszzz",
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "bolt-open"
+    },
+    {
+      "name": "icon"
+    },
+    {
+      "name": "mag-0"
+    },
+    {
+      "name": "base-scope"
+    },
+    {
+      "name": "muzzle"
+    },
+    {
+      "name": "base-grip"
+    },
+    {
+      "name": "base-carryhandle"
+    },
+    {
+      "name": "M203"
+    }
+  ]
+}

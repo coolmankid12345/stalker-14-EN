@@ -11,7 +11,7 @@
     },
     {
       "name": "soundpillar"
-    },    
+    },
     {
       "name": "lep2"
     },
@@ -33,5 +33,6 @@
     {
       "name": "lep8"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

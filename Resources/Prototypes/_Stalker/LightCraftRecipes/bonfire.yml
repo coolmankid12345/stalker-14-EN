@@ -20,24 +20,40 @@
   parent: LogStalker
   id: STLogStalkerT1
   name: бревно сосны
+  components: #EN start
+  - type: Tag
+    tags:
+    - Lumber #EN end
 
 - type: entity
   suffix: Stalker, крафт
   parent: LogStalker
   id: STLogStalkerT2
   name: бревно берёзы
+  components: #EN start
+  - type: Tag
+    tags:
+    - Lumber #EN end
 
 - type: entity
   suffix: Stalker, крафт
   parent: LogStalker
   id: STLogStalkerT3
   name: бревно рыжего леса
+  components: #EN start
+  - type: Tag
+    tags:
+    - Lumber #EN end
 
 - type: entity
   suffix: Stalker, крафт
   parent: LogStalker
   id: STLogStalkerT4
   name: бревно ивы
+  components: #EN start
+  - type: Tag
+    tags:
+    - Lumber #EN end
 
 - type: Tag
   id: LogStalker
@@ -94,45 +110,100 @@
 # ##################### Деревья
 
 - type: lightCraftingRecipe
-  id: CraftLogFromTree1
+  id: CraftLogFromT1Type1
   results:
-    - LogStalker
+  - STLogStalkerT1
+  - STLogStalkerT1
   steps:
     firstIngredient: HatchetStalker
-    secondIngredient: STBaseTree
+    secondIngredient: STBaseTreeT1RSItrees
     keepFirst: true
     exactSecond: false
     time: 5
 
 - type: lightCraftingRecipe
-  id: CraftLogFromTree2
+  id: CraftLogFromT1Type2
   results:
-    - LogStalker
+  - STLogStalkerT1
+  - STLogStalkerT1
   steps:
     firstIngredient: HatchetStalker
-    secondIngredient: STBaseTreeLarge
+    secondIngredient: STBaseTreeT1RSItreenew
     keepFirst: true
     exactSecond: false
     time: 5
 
 - type: lightCraftingRecipe
-  id: CraftLogFromTree3
+  id: CraftLogFromT1Large
   results:
-    - LogStalker
+  - STLogStalkerT1
+  - STLogStalkerT1
+  - STLogStalkerT1
   steps:
     firstIngredient: HatchetStalker
-    secondIngredient: BaseTree
+    secondIngredient: STBaseTreeT1Large
     keepFirst: true
     exactSecond: false
     time: 5
 
 - type: lightCraftingRecipe
-  id: CraftLogFromTree4
+  id: CraftLogFromT2Type1
   results:
-    - LogStalker
+  - STLogStalkerT2
+  - STLogStalkerT2
   steps:
     firstIngredient: HatchetStalker
-    secondIngredient: BaseTreeLarge
+    secondIngredient: STBaseTreeT2RSItrees
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT2Type2
+  results:
+  - STLogStalkerT2
+  - STLogStalkerT2
+  steps:
+    firstIngredient: HatchetStalker
+    secondIngredient: STBaseTreeT2RSItreenew
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT3Red
+  results:
+  - STLogStalkerT3
+  - STLogStalkerT3
+  steps:
+    firstIngredient: HatchetStalker
+    secondIngredient: STBaseTreeT3RSIred
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT3RedLarge
+  results:
+  - STLogStalkerT3
+  - STLogStalkerT3
+  - STLogStalkerT3
+  steps:
+    firstIngredient: HatchetStalker
+    secondIngredient: STBaseTreeT3RSIredlarge
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT4Willow
+  results:
+  - STLogStalkerT4
+  - STLogStalkerT4
+  - STLogStalkerT4
+  steps:
+    firstIngredient: HatchetStalker
+    secondIngredient: STBaseTreeT4RSIwillow
     keepFirst: true
     exactSecond: false
     time: 5
@@ -183,48 +254,103 @@
 
 ## Деревья спонсоры
 - type: lightCraftingRecipe
-  id: CraftLogFromTreeSponsor1
+  id: CraftLogFromT1Type1Sponsor
   results:
-    - LogStalker
+  - STLogStalkerT1
+  - STLogStalkerT1
   steps:
     firstIngredient: STHatchetSponsor
-    secondIngredient: STBaseTree
+    secondIngredient: STBaseTreeT1RSItrees
     keepFirst: true
     exactSecond: false
-    time: 3
+    time: 5
 
 - type: lightCraftingRecipe
-  id: CraftLogFromTreeSponsor2
+  id: CraftLogFromT1Type2Sponsor
   results:
-    - LogStalker
+  - STLogStalkerT1
+  - STLogStalkerT1
   steps:
     firstIngredient: STHatchetSponsor
-    secondIngredient: STBaseTreeLarge
+    secondIngredient: STBaseTreeT1RSItreenew
     keepFirst: true
     exactSecond: false
-    time: 1
+    time: 5
 
 - type: lightCraftingRecipe
-  id: CraftLogFromTreeSponsor3
+  id: CraftLogFromT1LargeSponsor
   results:
-    - LogStalker
+  - STLogStalkerT1
+  - STLogStalkerT1
+  - STLogStalkerT1
   steps:
     firstIngredient: STHatchetSponsor
-    secondIngredient: BaseTree
+    secondIngredient: STBaseTreeT1Large
     keepFirst: true
     exactSecond: false
-    time: 1
+    time: 5
 
 - type: lightCraftingRecipe
-  id: CraftLogFromTreeSponsor4
+  id: CraftLogFromT2Type1Sponsor
   results:
-    - LogStalker
+  - STLogStalkerT2
+  - STLogStalkerT2
   steps:
     firstIngredient: STHatchetSponsor
-    secondIngredient: BaseTreeLarge
+    secondIngredient: STBaseTreeT2RSItrees
     keepFirst: true
     exactSecond: false
-    time: 1
+    time: 5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT2Type2Sponsor
+  results:
+  - STLogStalkerT2
+  - STLogStalkerT2
+  steps:
+    firstIngredient: STHatchetSponsor
+    secondIngredient: STBaseTreeT2RSItreenew
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT3RedSponsor
+  results:
+  - STLogStalkerT3
+  - STLogStalkerT3
+  steps:
+    firstIngredient: STHatchetSponsor
+    secondIngredient: STBaseTreeT3RSIred
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT3RedLargeSponsor
+  results:
+  - STLogStalkerT3
+  - STLogStalkerT3
+  - STLogStalkerT3
+  steps:
+    firstIngredient: STHatchetSponsor
+    secondIngredient: STBaseTreeT3RSIredlarge
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT4WillowSponsor
+  results:
+  - STLogStalkerT4
+  - STLogStalkerT4
+  - STLogStalkerT4
+  steps:
+    firstIngredient: STHatchetSponsor
+    secondIngredient: STBaseTreeT4RSIwillow
+    keepFirst: true
+    exactSecond: false
+    time: 5
 
 - type: lightCraftingRecipe
   id: CraftLogFromTreeSponsor5

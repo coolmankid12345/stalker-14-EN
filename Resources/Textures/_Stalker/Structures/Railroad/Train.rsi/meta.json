@@ -1,1 +1,79 @@
-{"version":1,"copyright": "Stalker14 CLA","size":{"x":96,"y":96},"states":[{"name":"\u0441argo2","directions":4},{"name":"\u0441argo3","directions":4},{"name":"\u0441argo4","directions":4},{"name":"\u0441argo5","directions":4},{"name":"\u0441argo6","directions":4},{"name":"\u0441argo7","directions":4},{"name":"cargo_tank","directions":4},{"name":"cargo_tank1","directions":4},{"name":"passenger_head","directions":4},{"name":"passenger_train","directions":4},{"name":"passenger_train1","directions":4},{"name":"passenger_train3","directions":4},{"name":"head_cargo","directions":4},{"name":"\u0441argo","directions":4},{"name":"\u0441argo_head","directions":4},{"name":"\u0441argo_head2","directions":4},{"name":"\u0441argo1","directions":4}]}
+{
+  "version": 1,
+  "copyright": "Stalker14 CLA",
+  "size": {
+    "x": 96,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "сargo2",
+      "directions": 4
+    },
+    {
+      "name": "сargo3",
+      "directions": 4
+    },
+    {
+      "name": "сargo4",
+      "directions": 4
+    },
+    {
+      "name": "сargo5",
+      "directions": 4
+    },
+    {
+      "name": "сargo6",
+      "directions": 4
+    },
+    {
+      "name": "сargo7",
+      "directions": 4
+    },
+    {
+      "name": "cargo_tank",
+      "directions": 4
+    },
+    {
+      "name": "cargo_tank1",
+      "directions": 4
+    },
+    {
+      "name": "passenger_head",
+      "directions": 4
+    },
+    {
+      "name": "passenger_train",
+      "directions": 4
+    },
+    {
+      "name": "passenger_train1",
+      "directions": 4
+    },
+    {
+      "name": "passenger_train3",
+      "directions": 4
+    },
+    {
+      "name": "head_cargo",
+      "directions": 4
+    },
+    {
+      "name": "сargo",
+      "directions": 4
+    },
+    {
+      "name": "сargo_head",
+      "directions": 4
+    },
+    {
+      "name": "сargo_head2",
+      "directions": 4
+    },
+    {
+      "name": "сargo1",
+      "directions": 4
+    }
+  ],
+  "license": "CC-BY-NC-SA-3.0"
+}

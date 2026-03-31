@@ -86,6 +86,6 @@
     sprite: _Stalker/Objects/Clothing/hats/ushanka.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/ushanka.rsi
-  - type: AddAccentClothing
-    accent: RussianAccent
-  - type: STToggleableAccentClothing # stalker-changes
+  #- type: AddAccentClothing
+  #  accent: RussianAccent
+  #- type: STToggleableAccentClothing # stalker-changes

@@ -1,0 +1,3 @@
+ent-MobStalkerZombieMeleeBase = Zombified Melee
+    .desc = A poor person who has lost his mind to the Zone...
+    .suffix = Stalker, T2

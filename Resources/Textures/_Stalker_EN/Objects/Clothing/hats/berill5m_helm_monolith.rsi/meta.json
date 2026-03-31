@@ -12,6 +12,13 @@
     {
       "name": "equipped-HELMET",
       "directions": 4
+    },
+    {
+      "name": "NEWinhand_left"
+    },
+    {
+      "name": "NEWinhand_right"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

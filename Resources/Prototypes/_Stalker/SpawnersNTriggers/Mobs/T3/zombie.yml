@@ -13,6 +13,22 @@
         - MobStalkerZombieChN
         - MobStalkerZombieRHBZ
         - MobStalkerZombieMerc
+        - MobStalkerZombieBandit1
+        - MobStalkerZombieDolg1
+        - MobStalkerZombieDolg2
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieEcologist1
+        - MobStalkerZombieEcologist2
+        - MobStalkerZombieFreedom1
+        - MobStalkerZombieFreedom2
+        - MobStalkerZombieLoner1
+        - MobStalkerZombieLoner2
+        - MobStalkerZombieLoner3
+        - MobStalkerZombieLoner4
+        - MobStalkerZombieLoner5
+        - MobStalkerZombieLonershotgunner1
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieMerc1
       restricted:
         - MobStalkerZombieBase
         - MobStalkerZombieISSG
@@ -21,6 +37,22 @@
         - MobStalkerZombieChN
         - MobStalkerZombieRHBZ
         - MobStalkerZombieMerc
+        - MobStalkerZombieBandit1
+        - MobStalkerZombieDolg1
+        - MobStalkerZombieDolg2
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieEcologist1
+        - MobStalkerZombieEcologist2
+        - MobStalkerZombieFreedom1
+        - MobStalkerZombieFreedom2
+        - MobStalkerZombieLoner1
+        - MobStalkerZombieLoner2
+        - MobStalkerZombieLoner3
+        - MobStalkerZombieLoner4
+        - MobStalkerZombieLoner5
+        - MobStalkerZombieLonershotgunner1
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieMerc1
 
 - type: entity
   name: триггер зомби (1-4) (50%)
@@ -37,6 +69,22 @@
         - MobStalkerZombieChN
         - MobStalkerZombieRHBZ
         - MobStalkerZombieMerc
+        - MobStalkerZombieBandit1
+        - MobStalkerZombieDolg1
+        - MobStalkerZombieDolg2
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieEcologist1
+        - MobStalkerZombieEcologist2
+        - MobStalkerZombieFreedom1
+        - MobStalkerZombieFreedom2
+        - MobStalkerZombieLoner1
+        - MobStalkerZombieLoner2
+        - MobStalkerZombieLoner3
+        - MobStalkerZombieLoner4
+        - MobStalkerZombieLoner5
+        - MobStalkerZombieLonershotgunner1
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieMerc1
       restricted:
         - MobStalkerZombieBase
         - MobStalkerZombieISSG
@@ -45,6 +93,22 @@
         - MobStalkerZombieChN
         - MobStalkerZombieRHBZ
         - MobStalkerZombieMerc
+        - MobStalkerZombieBandit1
+        - MobStalkerZombieDolg1
+        - MobStalkerZombieDolg2
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieEcologist1
+        - MobStalkerZombieEcologist2
+        - MobStalkerZombieFreedom1
+        - MobStalkerZombieFreedom2
+        - MobStalkerZombieLoner1
+        - MobStalkerZombieLoner2
+        - MobStalkerZombieLoner3
+        - MobStalkerZombieLoner4
+        - MobStalkerZombieLoner5
+        - MobStalkerZombieLonershotgunner1
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieMerc1
 
 - type: entity
   name: триггер зомби (1-2) (10%)
@@ -61,6 +125,22 @@
         - MobStalkerZombieChN
         - MobStalkerZombieRHBZ
         - MobStalkerZombieMerc
+        - MobStalkerZombieBandit1
+        - MobStalkerZombieDolg1
+        - MobStalkerZombieDolg2
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieEcologist1
+        - MobStalkerZombieEcologist2
+        - MobStalkerZombieFreedom1
+        - MobStalkerZombieFreedom2
+        - MobStalkerZombieLoner1
+        - MobStalkerZombieLoner2
+        - MobStalkerZombieLoner3
+        - MobStalkerZombieLoner4
+        - MobStalkerZombieLoner5
+        - MobStalkerZombieLonershotgunner1
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieMerc1
       restricted:
         - MobStalkerZombieBase
         - MobStalkerZombieISSG
@@ -69,6 +149,22 @@
         - MobStalkerZombieChN
         - MobStalkerZombieRHBZ
         - MobStalkerZombieMerc
+        - MobStalkerZombieBandit1
+        - MobStalkerZombieDolg1
+        - MobStalkerZombieDolg2
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieEcologist1
+        - MobStalkerZombieEcologist2
+        - MobStalkerZombieFreedom1
+        - MobStalkerZombieFreedom2
+        - MobStalkerZombieLoner1
+        - MobStalkerZombieLoner2
+        - MobStalkerZombieLoner3
+        - MobStalkerZombieLoner4
+        - MobStalkerZombieLoner5
+        - MobStalkerZombieLonershotgunner1
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieMerc1
 
 - type: entity
   name: триггер зомби (1-2) (50%)
@@ -85,6 +181,22 @@
         - MobStalkerZombieChN
         - MobStalkerZombieRHBZ
         - MobStalkerZombieMerc
+        - MobStalkerZombieBandit1
+        - MobStalkerZombieDolg1
+        - MobStalkerZombieDolg2
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieEcologist1
+        - MobStalkerZombieEcologist2
+        - MobStalkerZombieFreedom1
+        - MobStalkerZombieFreedom2
+        - MobStalkerZombieLoner1
+        - MobStalkerZombieLoner2
+        - MobStalkerZombieLoner3
+        - MobStalkerZombieLoner4
+        - MobStalkerZombieLoner5
+        - MobStalkerZombieLonershotgunner1
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieMerc1
       restricted:
         - MobStalkerZombieBase
         - MobStalkerZombieISSG
@@ -93,3 +205,19 @@
         - MobStalkerZombieChN
         - MobStalkerZombieRHBZ
         - MobStalkerZombieMerc
+        - MobStalkerZombieBandit1
+        - MobStalkerZombieDolg1
+        - MobStalkerZombieDolg2
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieEcologist1
+        - MobStalkerZombieEcologist2
+        - MobStalkerZombieFreedom1
+        - MobStalkerZombieFreedom2
+        - MobStalkerZombieLoner1
+        - MobStalkerZombieLoner2
+        - MobStalkerZombieLoner3
+        - MobStalkerZombieLoner4
+        - MobStalkerZombieLoner5
+        - MobStalkerZombieLonershotgunner1
+        - MobStalkerZombieDolgshotgunner1
+        - MobStalkerZombieMerc1

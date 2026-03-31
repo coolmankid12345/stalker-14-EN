@@ -203,6 +203,11 @@ public partial class SharedGunSystem
 
     private void OnRevolverVerbs(EntityUid uid, RevolverAmmoProviderComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
+
+        
+        if (!component.VerbsEnabled)
+            return; 
+
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
 
@@ -429,27 +434,52 @@ public partial class SharedGunSystem
     private void OnRevolverInit(EntityUid uid, RevolverAmmoProviderComponent component, ComponentInit args)
     {
         component.AmmoContainer = Containers.EnsureContainer<Container>(uid, RevolverContainer);
-        component.AmmoSlots.EnsureCapacity(component.Capacity);
-        var remainder = component.Capacity - component.AmmoSlots.Count;
-
-        for (var i = 0; i < remainder; i++)
+        
+        // Initialize AmmoSlots only if empty (not set by prototype)
+        if (component.AmmoSlots.Count == 0)
         {
-            component.AmmoSlots.Add(null);
-        }
-
-        component.Chambers = new bool?[component.Capacity];
-
-        if (component.FillPrototype != null)
-        {
+            component.AmmoSlots = new List<EntityUid?>(component.Capacity);
             for (var i = 0; i < component.Capacity; i++)
             {
-                if (component.AmmoSlots[i] != null)
-                {
-                    component.Chambers[i] = null;
-                    continue;
-                }
+                component.AmmoSlots.Add(null);
+            }
+        }
+        else if (component.AmmoSlots.Count < component.Capacity)
+        {
+            // Ensure capacity if prototype defined fewer slots
+            var remainder = component.Capacity - component.AmmoSlots.Count;
+            for (var i = 0; i < remainder; i++)
+            {
+                component.AmmoSlots.Add(null);
+            }
+        }
 
-                component.Chambers[i] = true;
+        // Initialize Chambers only if empty (not set by prototype)
+        if (component.Chambers.Length == 0)
+        {
+            component.Chambers = new bool?[component.Capacity];
+
+            // Only fill chambers if FillPrototype is set
+            if (component.FillPrototype != null)
+            {
+                for (var i = 0; i < component.Capacity; i++)
+                {
+                    component.Chambers[i] = true;
+                }
+            }
+            // Otherwise leave all chambers as null (empty)
+        }
+        else if (component.Chambers.Length != component.Capacity)
+        {
+            // Resize if prototype defined different capacity
+            var oldChambers = component.Chambers;
+            component.Chambers = new bool?[component.Capacity];
+            
+            for (var i = 0; i < component.Capacity; i++)
+            {
+                if (i < oldChambers.Length)
+                    component.Chambers[i] = oldChambers[i];
+                // Leave new chambers as null if FillPrototype is not set
             }
         }
 

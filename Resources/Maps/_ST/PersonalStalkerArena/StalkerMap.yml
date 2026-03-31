@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/16/2026 03:05:57
+  time: 03/29/2026 11:31:02
   entityCount: 165
 maps:
 - 1
@@ -156,11 +156,6 @@ entities:
             id: STGrassb5
           decals:
             5: 3.0335317,0.031461716
-        - node:
-            color: '#FFFFFFFF'
-            id: y
-          decals:
-            23: 0.5611868,3.966035
     - type: GridAtmosphere
       version: 2
       data:

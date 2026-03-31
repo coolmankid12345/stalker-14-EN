@@ -1,0 +1,135 @@
+- type: entity
+  name: zombie melee trigger (1-4) (20%)
+  id: STTriggerZombieMelee142010
+  parent: STBaseTrigger142010
+  suffix: ST, T2, Trigger
+  components:
+    - type: SpawnOnApproach
+      prototypes:
+        - MobStalkerZombieMeleeBase
+        - MobStalkerZombieCivillian2
+        - MobStalkerZombieCivillian3
+        - MobStalkerZombieCivillian4
+        - MobStalkerZombieHazmat1
+        - MobStalkerZombieHazmat2
+        - MobStalkerZombieHazmatbrute1
+        - MobStalkerZombieHazmatbrute2
+        - MobStalkerZombieMilitary1
+        - MobStalkerZombieMilitary2
+        - MobStalkerZombieMilitary3
+        - MobStalkerZombiePolice1
+      restricted:
+        - MobStalkerZombieMeleeBase
+        - MobStalkerZombieCivillian2
+        - MobStalkerZombieCivillian3
+        - MobStalkerZombieCivillian4
+        - MobStalkerZombieHazmat1
+        - MobStalkerZombieHazmat2
+        - MobStalkerZombieHazmatbrute1
+        - MobStalkerZombieHazmatbrute2
+        - MobStalkerZombieMilitary1
+        - MobStalkerZombieMilitary2
+        - MobStalkerZombieMilitary3
+        - MobStalkerZombiePolice1
+
+- type: entity
+  name: zombie melee trigger (1-4) (50%)
+  id: STTriggerZombieMelee145030
+  parent: STBaseTrigger145030
+  suffix: ST, T2, Trigger
+  components:
+    - type: SpawnOnApproach
+      prototypes:
+        - MobStalkerZombieMeleeBase
+        - MobStalkerZombieCivillian2
+        - MobStalkerZombieCivillian3
+        - MobStalkerZombieCivillian4
+        - MobStalkerZombieHazmat1
+        - MobStalkerZombieHazmat2
+        - MobStalkerZombieHazmatbrute1
+        - MobStalkerZombieHazmatbrute2
+        - MobStalkerZombieMilitary1
+        - MobStalkerZombieMilitary2
+        - MobStalkerZombieMilitary3
+        - MobStalkerZombiePolice1
+      restricted:
+        - MobStalkerZombieMeleeBase
+        - MobStalkerZombieCivillian2
+        - MobStalkerZombieCivillian3
+        - MobStalkerZombieCivillian4
+        - MobStalkerZombieHazmat1
+        - MobStalkerZombieHazmat2
+        - MobStalkerZombieHazmatbrute1
+        - MobStalkerZombieHazmatbrute2
+        - MobStalkerZombieMilitary1
+        - MobStalkerZombieMilitary2
+        - MobStalkerZombieMilitary3
+        - MobStalkerZombiePolice1
+
+- type: entity
+  name: zombie melee trigger (1-2) (10%)
+  id: STTriggerZombieMelee121010
+  parent: STBaseTrigger121010
+  suffix: ST, T2, Trigger
+  components:
+    - type: SpawnOnApproach
+      prototypes:
+        - MobStalkerZombieMeleeBase
+        - MobStalkerZombieCivillian2
+        - MobStalkerZombieCivillian3
+        - MobStalkerZombieCivillian4
+        - MobStalkerZombieHazmat1
+        - MobStalkerZombieHazmat2
+        - MobStalkerZombieHazmatbrute1
+        - MobStalkerZombieHazmatbrute2
+        - MobStalkerZombieMilitary1
+        - MobStalkerZombieMilitary2
+        - MobStalkerZombieMilitary3
+        - MobStalkerZombiePolice1
+      restricted:
+        - MobStalkerZombieMeleeBase
+        - MobStalkerZombieCivillian2
+        - MobStalkerZombieCivillian3
+        - MobStalkerZombieCivillian4
+        - MobStalkerZombieHazmat1
+        - MobStalkerZombieHazmat2
+        - MobStalkerZombieHazmatbrute1
+        - MobStalkerZombieHazmatbrute2
+        - MobStalkerZombieMilitary1
+        - MobStalkerZombieMilitary2
+        - MobStalkerZombieMilitary3
+        - MobStalkerZombiePolice1
+
+- type: entity
+  name: zombie melee trigger (1-2) (50%)
+  id: STTriggerZombieMelee125010
+  parent: STBaseTrigger125010
+  suffix: ST, T2, Trigger
+  components:
+    - type: SpawnOnApproach
+      prototypes:
+        - MobStalkerZombieMeleeBase
+        - MobStalkerZombieCivillian2
+        - MobStalkerZombieCivillian3
+        - MobStalkerZombieCivillian4
+        - MobStalkerZombieHazmat1
+        - MobStalkerZombieHazmat2
+        - MobStalkerZombieHazmatbrute1
+        - MobStalkerZombieHazmatbrute2
+        - MobStalkerZombieMilitary1
+        - MobStalkerZombieMilitary2
+        - MobStalkerZombieMilitary3
+        - MobStalkerZombiePolice1
+      restricted:
+        - MobStalkerZombieMeleeBase
+        - MobStalkerZombieCivillian2
+        - MobStalkerZombieCivillian3
+        - MobStalkerZombieCivillian4
+        - MobStalkerZombieHazmat1
+        - MobStalkerZombieHazmat2
+        - MobStalkerZombieHazmatbrute1
+        - MobStalkerZombieHazmatbrute2
+        - MobStalkerZombieMilitary1
+        - MobStalkerZombieMilitary2
+        - MobStalkerZombieMilitary3
+        - MobStalkerZombiePolice1

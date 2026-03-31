@@ -2,7 +2,7 @@
 
 - type: entity
   id: STPowerlines1
-  parent: STBaseTreeLarge
+  parent: STBaseTreeT1Large # EN change
   name: ЛЭП
   suffix: ST, Mapping
   description: Один из компонентов электрической сети, система энергетического оборудования, предназначенная для передачи электроэнергии посредством электрического тока.

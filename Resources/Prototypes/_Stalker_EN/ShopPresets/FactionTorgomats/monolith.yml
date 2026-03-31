@@ -1,4 +1,4 @@
-﻿# not actually a torg but whatevr
+# not actually a torg but whatevr
 - type: vendingMachineInventory
   id: MonolithInventoryEN
   startingInventory:
@@ -10,6 +10,7 @@
     SetMonolithBuyableCrateInfiltrator2: 10
     ClothingNeckScarfWhite: 10
     MonolithCrateMedkit: 10
+    STWeaponRifleAKM: 10
     STWeaponRifleAKS74Winter: 10
     STWeaponRifleAKS74UWhite: 10
     STWeaponRifleL85: 10
@@ -18,6 +19,8 @@
     MonolithCrate545PC: 10
     MonolithCrate556Mag30: 10
     MonolithCrate556M855: 10
+    MonolithCrate762FMJ: 10
+    MonolithCrate739Mag30: 10
     FoldedFlagMono: 20
     StalkerMonolithAltarKit: 10
     BoxZiptie: 10
@@ -29,6 +32,7 @@
     Matchbox: 5
     MonolithInventoryRestockEN: 1
     Screwdriver: 1
+    Bloodpack: 10
 
 - type: entity
   parent: BaseItem
@@ -48,3 +52,106 @@
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
     state: icon
+
+# The premium vender
+- type: shopPreset
+  id: MonolithPremium
+  minSellPrice: 1
+  itemsForSale:
+    # Thermal group - 1
+    ZoneArtifactFireball: 1
+    ZoneArtifactEye: 2
+    ZoneArtifactFlame: 5
+    ZoneArtifactBunch: 5
+    ZoneArtifactRock: 5
+    ZoneArtifactSun: 8
+    ZoneArtifactRoot: 8
+    ZoneArtifactConflagration: 2
+    # Thermal group - 2
+    ZoneArtifactCristall: 8
+    ZoneArtifactLithosphere: 10
+    # Electrical group - 1
+    ZoneArtifactSparkler: 1
+    ZoneArtifactBattery: 2
+    ZoneArtifactFlash: 5
+    ZoneArtifactAccumulator: 5
+    ZoneArtifactDiamond: 8
+    ZoneArtifactCharger: 2
+    ArtMoon: 5
+    ZoneArtifactTesla: 10
+    ZoneArtifactIce: 10
+    # Gravity group - 1
+    ArtMedusa: 1
+    ZoneArtifactFlower: 1
+    ZoneArtifactNightStar: 8
+    ZoneArtifactWhirlwind: 1
+    ZoneArtifactPebble: 1
+    ZoneArtifactRosin: 1
+    ZoneArtifactStoneCube: 5
+    ZoneArtifactDarkCube: 10
+    # Gravity group - 2
+    ZoneArtifactVyvert: 1
+    ZoneArtifactAmoeba: 2
+    ZoneArtifactFloodlight: 1
+    ZoneArtifactGravi: 8
+    ZoneArtifactGoldfish: 10
+    ZoneArtifactSpring: 10
+    ZoneArtifactFocus: 10
+    ZoneArtifactStuntman: 10
+    ZoneArtifactDistorter: 10
+    ZoneArtifactSoul: 10
+    ZoneArtifactCompass: 8
+    ZoneArtifactCrucifix: 10
+    ZoneArtifactThorn: 5
+    ZoneArtifactArf: 5
+    # Acidic group - 1
+    ZoneArtifactToxic: 1
+    ZoneArtifactCytoplasm: 2
+    ZoneArtifactBlood: 2
+    ZoneArtifactMeat: 5
+    ZoneArtifactKolobok: 8
+    ZoneArtifactBeer: 1
+    # Acidic group - 2
+    ZoneArtifactPellicle: 1
+    ZoneArtifactBaloon: 8
+  categories:
+  - name: shop-category-weapons
+    priority: 1
+    items:
+      STWeaponRifleStalkerAK12en: 10 # replace with mono ver later
+      STWeaponSMGStalkerCP2Veresk: 8
+      #STWeaponRifleAK103: 16 # Give them an RPK later instead
+      STWeaponRifleStalkerAbakan: 14
+      STWeaponShotgunProtecta: 8
+      #STSeraKnife: 3 # removed until oilman lets me add it
+      STWeaponPistolUSP: 2
+
+  - name: shop-category-armor
+    priority: 4
+    items:
+      ClothingOuterArmorSevaMonolithPriest: 10
+      ClothingHeadHelmetBerill5MMonolith: 7
+      ClothingOuterArmorBerill5MMonolith: 25
+
+  - name: shop-category-medicine
+    priority: 4
+    items:
+      MedkitElite: 3
+      MedkitLAR: 4
+
+  - name: shop-category-customization
+    priority: 13
+    items:
+      ClothingHeadBeretMonolith: 1
+      ClothingOuterJacketMonolith: 1
+
+  - name: shop-category-utilities
+    priority: 10
+    items:
+      HandLabeler: 1
+
+  - name: shop-category-grenades
+    priority: 12
+    items:
+      RGD5Grenade: 3
+      DG05SmokeGrenade: 2

@@ -1,0 +1,274 @@
+﻿- type: lightCraftingRecipe
+  id: T1TradePlankCraft
+  results:
+  - STTradePlankT1
+  steps:
+    firstIngredient: HatchetStalker
+    secondIngredient: STCraftPinePlankT1
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: T2TradePlankCraft
+  results:
+  - STTradePlankT2
+  steps:
+    firstIngredient: HatchetStalker
+    secondIngredient: STCraftBirchPlankT2
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: T3TradePlankCraft
+  results:
+  - STTradePlankT3
+  steps:
+    firstIngredient: HatchetStalker
+    secondIngredient: STCraftOakPlankT3
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: T4TradePlankCraft
+  results:
+  - STTradePlankT4
+  steps:
+    firstIngredient: HatchetStalker
+    secondIngredient: STCraftYewPlankT4
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: T1TradePlankCraftSponsor
+  results:
+  - STTradePlankT1
+  steps:
+    firstIngredient: STHatchetSponsor
+    secondIngredient: STCraftPinePlankT1
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: T2TradePlankCraftSponsor
+  results:
+  - STTradePlankT2
+  steps:
+    firstIngredient: STHatchetSponsor
+    secondIngredient: STCraftBirchPlankT2
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: T3TradePlankCraftSponsor
+  results:
+  - STTradePlankT3
+  steps:
+    firstIngredient: STHatchetSponsor
+    secondIngredient: STCraftOakPlankT3
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: T4TradePlankCraftSponsor
+  results:
+  - STTradePlankT4
+  steps:
+    firstIngredient: STHatchetSponsor
+    secondIngredient: STCraftYewPlankT4
+    keepFirst: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT1Type1Chainsaw
+  results:
+  - STLogStalkerT1
+  - STLogStalkerT1
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STBaseTreeT1RSItrees
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT1Type2Chainsaw
+  results:
+  - STLogStalkerT1
+  - STLogStalkerT1
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STBaseTreeT1RSItreenew
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT1LargeChainsaw
+  results:
+  - STLogStalkerT1
+  - STLogStalkerT1
+  - STLogStalkerT1
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STBaseTreeT1Large
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT2Type1Chainsaw
+  results:
+  - STLogStalkerT2
+  - STLogStalkerT2
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STBaseTreeT2RSItrees
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT2Type2Chainsaw
+  results:
+  - STLogStalkerT2
+  - STLogStalkerT2
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STBaseTreeT2RSItreenew
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT3RedChainsaw
+  results:
+  - STLogStalkerT3
+  - STLogStalkerT3
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STBaseTreeT3RSIred
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT3RedLargeChainsaw
+  results:
+  - STLogStalkerT3
+  - STLogStalkerT3
+  - STLogStalkerT3
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STBaseTreeT3RSIredlarge
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromT4WillowChainsaw
+  results:
+  - STLogStalkerT4
+  - STLogStalkerT4
+  - STLogStalkerT4
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STBaseTreeT4RSIwillow
+    keepFirst: true
+    exactSecond: false
+    time: 1.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromTree5Chainsaw
+  results:
+  - STCraftPinePlankT1
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STLogStalkerT1
+    keepFirst: true
+    exactSecond: false
+    time: 1.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromTree6Chainsaw
+  results:
+  - STCraftBirchPlankT2
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STLogStalkerT2
+    keepFirst: true
+    exactSecond: false
+    time: 1.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromTree7Chainsaw
+  results:
+  - STCraftOakPlankT3
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STLogStalkerT3
+    keepFirst: true
+    exactSecond: false
+    time: 1.5
+
+- type: lightCraftingRecipe
+  id: CraftLogFromTree8Chainsaw
+  results:
+  - STCraftYewPlankT4
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STLogStalkerT4
+    keepFirst: true
+    exactSecond: false
+    time: 1.5
+
+- type: lightCraftingRecipe
+  id: T1TradePlankCraftChainsaw
+  results:
+  - STTradePlankT1
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STCraftPinePlankT1
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: T2TradePlankCraftChainsaw
+  results:
+  - STTradePlankT2
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STCraftBirchPlankT2
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: T3TradePlankCraftChainsaw
+  results:
+  - STTradePlankT3
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STCraftOakPlankT3
+    keepFirst: true
+    exactSecond: false
+    time: 2.5
+
+- type: lightCraftingRecipe
+  id: T4TradePlankCraftChainsaw
+  results:
+  - STTradePlankT4
+  steps:
+    firstIngredient: STLoggingChainsaw
+    secondIngredient: STCraftYewPlankT4
+    keepFirst: true
+    exactSecond: false
+    time: 2.5

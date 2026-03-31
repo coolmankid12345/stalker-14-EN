@@ -73,6 +73,10 @@ SubscribeLocalEvent<STPackSpawnerComponent, MapInitEvent>(OnSpawnerMapInit);
         if (args.NewMobState == MobState.Alive)
             return;
 
+        // Skip if the entity is terminating
+        if (Terminating(entity))
+            return;
+
         SetRandomHead(entity);
     }
 
@@ -122,6 +126,10 @@ private void OnSpawnerMapInit(Entity<STPackSpawnerComponent> entity, ref MapInit
             if (memberComponent.Head != previousHead)
                 continue;
 
+            // Skip entities that are terminating
+            if (Terminating(uid))
+                continue;
+
             if (newHead is null)
             {
                 newHead ??= uid;
@@ -135,10 +143,15 @@ private void OnSpawnerMapInit(Entity<STPackSpawnerComponent> entity, ref MapInit
         if (newHead is null)
             return;
 
+        // Skip if the new head is terminating
+        if (Terminating(newHead.Value))
+            return;
+
         if (HasComp<STPackMemberComponent>(newHead.Value))
             RemComp<STPackMemberComponent>(newHead.Value);
 
-        if (!HasComp<STPackHeadComponent>(newHead.Value))
+        // Check again before adding component to avoid race condition
+        if (!Terminating(newHead.Value) && !HasComp<STPackHeadComponent>(newHead.Value))
             AddComp<STPackHeadComponent>(newHead.Value);
     }
 

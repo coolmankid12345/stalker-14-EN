@@ -79,6 +79,16 @@
     FoodSTFrogLegs: 750
     STFoodJarSalo: 750
 
+    #Lumber
+    STTradePlankT1: 40
+    STTradePlankT2: 60
+    STTradePlankT3: 80
+    STTradePlankT4: 100
+    STLogStalkerT1: 20
+    STLogStalkerT2: 30
+    STLogStalkerT3: 40
+    STLogStalkerT4: 50
+
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -100,6 +110,7 @@
         STWeaponRifleL85: 2100 # T2
         STWeaponRifleSCARH: 6000 # T3
         STWeaponRifleM16: 4000 # T2
+        STWeaponRifleM16M203: 5000 # T2
         STWeaponRifleFAL: 1750 # T3
         STWeaponRifleFALo: 8000 # T3
         STWeaponRifleGalil: 7000 # T3
@@ -306,6 +317,7 @@
         STCameraDamaged: 400
         STCameraFilm: 150
         EntrenchingTool: 1000
+        STLoggingChainsaw: 1000
 
     - name: shop-category-modules
       priority: 11
@@ -414,3 +426,15 @@
       items:
         STCookingRenderedSalo: 2000
         STCookingPickledEggs: 2000
+
+    - name: Smokables #explained using D&D lifestyle expenses
+      priority: 16
+      items:
+        CigPackBub: 250 #comfortable
+        CigPackGreen: 150 #poor
+        CigPackRed: 200 #modest
+        CigPackBlue: 150 #poor
+        CigPackBlack: 200 #modest
+        CigPackMixed: 250 #comfortable
+        CigPackMarlboro: 200 #modest
+        CigPackKosmos: 100 #squalid

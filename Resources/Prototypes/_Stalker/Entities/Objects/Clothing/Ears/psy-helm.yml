@@ -12,6 +12,7 @@
     slots:
     - ears
     sprite: Clothing/Ears/Headsets/base.rsi
+  - type: PsyHelmet #Stalker EN
 
 - type: entity
   parent: STClothingPsyHelm

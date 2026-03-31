@@ -21,8 +21,9 @@
     {
       "name": "yaschik4"
     },
-      {
-          "name": "komod"
-      }
-  ]
+    {
+      "name": "komod"
+    }
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

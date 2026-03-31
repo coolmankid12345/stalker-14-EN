@@ -25,12 +25,6 @@ public sealed class LinkByStringSystem : EntitySystem
 
     private void OnStartup(Entity<LinkByStringComponent> ent, ref ComponentStartup args)
     {
-        if (ent.Comp.FallbackId &&
-            ent.Comp.LinkString == null &&
-            MetaData(ent.Owner).EntityPrototype != null)
-        {
-            ent.Comp.LinkString = MetaData(ent.Owner).EntityPrototype?.ID;
-        }
         TryLink(ent);
     }
 
@@ -41,13 +35,41 @@ public sealed class LinkByStringSystem : EntitySystem
 
     private void TryLink(Entity<LinkByStringComponent> ent)
     {
+        // If we don't have any valid way of linking, then return
+        var linkString = EvaluateLinkString(ent);
+        if (linkString == null)
+            return;
+
         var query = EntityQueryEnumerator<LinkByStringComponent>();
 
         while (query.MoveNext(out var uid, out var link))
         {
-            if (ent.Comp.LinkString != link.LinkString || ent.Owner == uid)
+            if (ent.Owner == uid)
                 continue;
+
+            var otherLinkString = EvaluateLinkString((uid, link));
+
+            if (otherLinkString == null)
+                continue;
+
+            if (otherLinkString != linkString)
+                continue;
+
             _link.TryLink(ent.Owner, uid);
         }
+    }
+
+    private string? EvaluateLinkString(Entity<LinkByStringComponent> ent)
+    {
+        var linkString = ent.Comp.LinkString;
+
+        if (ent.Comp.FallbackId &&
+            linkString == null &&
+            MetaData(ent.Owner).EntityPrototype != null)
+        {
+            linkString = MetaData(ent.Owner).EntityPrototype?.ID;
+        }
+
+        return linkString;
     }
 }

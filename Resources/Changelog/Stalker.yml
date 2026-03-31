@@ -1868,5 +1868,167 @@
   id: 196
   time: '2026-03-25T22:10:19.864732+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/688
+- author: King-spin
+  changes:
+  - message: Allows sledgehammers to be stored on back
+    type: Add
+  id: 197
+  time: '2026-03-26T12:49:26.716319+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/714
+- author: dallaszzz
+  changes:
+  - message: Fixes ambient music on yantar, yantar lab and swamps
+    type: Fix
+  id: 198
+  time: '2026-03-28T01:55:41.015603+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/718
+- author: stickycheZ101
+  changes:
+  - message: added a new variety of cigarettes; the Greyman's Specials
+    type: Add
+  - message: added a new smokables category to most faction vendors, that contains
+      almost every variety of cigarette
+    type: Add
+  - message: added the comedically large blunt, an absolutely massive picket of weed,
+      obtainabloe from your local admin
+    type: Add
+  id: 199
+  time: '2026-03-28T02:01:35.682117+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/693
+- author: BELNAKBU
+  changes:
+  - message: Now you can wear a balaclava,etc and lower visor. The visor restriction
+      only applies to the STgasmask and everything that had BlockMask tag.
+    type: Add
+  id: 200
+  time: '2026-03-28T15:37:29.298804+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/722
+- author: dallaszzz
+  changes:
+  - message: Tweaks a bunch of things with monolith
+    type: Tweak
+  id: 201
+  time: '2026-03-28T15:43:26.826861+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/720
+- author: Noguchi47
+  changes:
+  - message: 2 brand new pistols, Browning Hi-Power and Mauser C96
+    type: Add
+  - message: added the new pistols in various of vendors, find out IC as always :3
+    type: Add
+  id: 202
+  time: '2026-03-28T15:46:00.728080+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/721
+- author: dallaszzz
+  changes:
+  - message: Fixes issues with the new mono content
+    type: Fix
+  id: 203
+  time: '2026-03-28T17:24:30.604160+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/724
+- author: BELNAKBU
+  changes:
+  - message: Git test fix
+    type: Fix
+  id: 204
+  time: '2026-03-29T08:15:59.556304+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/725
+- author: stickycheZ101
+  changes:
+  - message: removed a slur from an item's description (thanks peter for pointing
+      this out)
+    type: Remove
+  id: 205
+  time: '2026-03-29T08:54:01.415282+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/726
+- author: Roland410 && @DuckManZach
+  changes:
+  - message: Fixes portals not linking up properly and them not being mapped properly
+      either.
+    type: Fix
+  - message: Opens up some places, that were locked to unused factions, such as Project,
+      Seraphim, etc.
+    type: Tweak
+  - message: Changes the Illegal Bar floor to be less ugly.
+    type: Tweak
+  - message: Translates the spawn NPC.
+    type: Tweak
+  - message: Warp point added for the Illegal Bar for staff/developers.
+    type: Add
+  - message: Changes Bolota to planet type, for easier mapping.
+    type: Tweak
+  id: 206
+  time: '2026-03-30T19:41:27.079536+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/735
+- author: dallaszzz & @CVSthePharmacy
+  changes:
+  - message: PP2000 and OTS
+    type: Add
+  - message: Currently non functional grenade launcher variant of the M16
+    type: Add
+  - message: New sprites for the M4 and M16
+    type: Tweak
+  - message: Fixes an issue with 1911 and USP mags
+    type: Fix
+  id: 207
+  time: '2026-03-30T19:47:36.464778+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/719
+- author: Noguchi47
+  changes:
+  - message: Update the Midi soundfont (GeneralUser GS) to the newest version.
+    type: Add
+  id: 208
+  time: '2026-03-30T19:49:43.855542+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/736
+- author: BELNAKBU
+  changes:
+  - message: 16 new variants of zombies with guns, 12 variants new melee zombies,
+      spawntriggers for new melee zombies
+    type: Add
+  id: 209
+  time: '2026-03-30T19:56:50.923944+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/713
+- author: BELNAKBU
+  changes:
+  - message: Hercules, status effect and whole new system for weight reduction/adduction
+    type: Add
+  id: 210
+  time: '2026-03-30T19:57:48.317412+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/731
+- author: BELNAKBU
+  changes:
+  - message: fixed this build and debug test
+    type: Fix
+  id: 211
+  time: '2026-03-30T20:17:24.455493+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/737
+- author: BELNAKBU
+  changes:
+  - message: Map renderer fix
+    type: Fix
+  id: 212
+  time: '2026-03-30T21:46:00.044155+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/738
+- author: stickycheZ101
+  changes:
+  - message: added the stalker forestry rig, a special bag useful for hauling mass
+      quantities of lumber
+    type: Add
+  - message: added fine variants of all the obtainable wood types, useful only for
+      selling to sido
+    type: Add
+  - message: made trees roughly 1/3 weaker in hitpoints so you're not chopping a single
+      tree for half an hour
+    type: Tweak
+  - message: made the hatchet autoswing, to hopefully prevent carpal tunnel
+    type: Tweak
+  - message: MAJOR refactor to the tree prototypes (they were designed horribly)
+    type: Tweak
+  - message: cvarzi now sells for way more at sido's, to make taking salo back home
+      worth it
+    type: Tweak
+  id: 213
+  time: '2026-03-31T02:01:45.048411+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/671
 Name: Stalker
 Order: -1

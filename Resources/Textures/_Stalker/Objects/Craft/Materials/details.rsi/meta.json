@@ -1,23 +1,23 @@
 {
-    "version": 1,
-    "license": null,
-    "copyright": "Stalker14 CLA",
-    "size": {
-      "x": 32,
-      "y": 32
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Stalker14 CLA",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "battery"
     },
-    "states": [
-      {
-        "name": "battery"
-      },
-      {
-        "name": "coil"
-      },
-      {
-        "name": "capacitor"
-      },
-      {
-        "name": "transformer"
-      }
-    ]
-  }
+    {
+      "name": "coil"
+    },
+    {
+      "name": "capacitor"
+    },
+    {
+      "name": "transformer"
+    }
+  ]
+}

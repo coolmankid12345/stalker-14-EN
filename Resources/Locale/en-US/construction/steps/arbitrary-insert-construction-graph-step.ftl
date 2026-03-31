@@ -10,3 +10,6 @@ construction-insert-info-examine-name-knife = knife
 construction-insert-info-examine-name-utensil = utensil
 construction-insert-info-examine-name-laser-cannon = high power laser weapon
 construction-insert-info-examine-name-power-cell = power cell
+construction-insert-info-examine-name-sugar = sugar
+construction-insert-info-examine-name-corn = corn
+construction-insert-info-examine-name-yeast = yeast

@@ -25,91 +25,98 @@
       "name": "soul"
     },
     {
-        "name": "art1"
+      "name": "art1"
     },
     {
-        "name": "art2"
+      "name": "art2"
     },
     {
-        "name": "art3"
+      "name": "art3"
     },
     {
-        "name": "battery"
+      "name": "battery"
     },
     {
-        "name": "sparkler"
+      "name": "sparkler"
     },
     {
-        "name": "flash"
+      "name": "flash"
     },
     {
-        "name": "vyvert"
+      "name": "vyvert"
     },
     {
-        "name": "gravi"
+      "name": "gravi"
     },
     {
-        "name": "goldfish"
+      "name": "goldfish"
     },
     {
-        "name": "art10"
+      "name": "art10"
     },
     {
-        "name": "flower"
+      "name": "flower"
     },
     {
-        "name": "kolobok"
+      "name": "kolobok"
     },
     {
-        "name": "art13"
+      "name": "art13"
     },
     {
-        "name": "cristall"
+      "name": "cristall"
     },
     {
-        "name": "meat"
+      "name": "meat"
     },
     {
-        "name": "lithosphere"
+      "name": "lithosphere"
     },
     {
-        "name": "night_star"
+      "name": "night_star"
     },
     {
-        "name": "flame"
+      "name": "flame"
     },
     {
-        "name": "pellicle"
+      "name": "pellicle"
     },
     {
-        "name": "baloon"
+      "name": "baloon"
     },
     {
-        "name": "spring"
+      "name": "spring"
     },
     {
-        "name": "art22"
+      "name": "art22"
     },
     {
-        "name": "art23"
+      "name": "art23"
     },
     {
-        "name": "ice"
+      "name": "ice"
     },
     {
-        "name": "tesla"
+      "name": "tesla"
     },
     {
-        "name": "amoeba"
+      "name": "amoeba"
     },
     {
-        "name": "focus"
+      "name": "focus"
     },
     {
-        "name": "stuntman"
+      "name": "stuntman"
     },
     {
-        "name": "distorter"
+      "name": "distorter"
+    },
+    {
+      "name": "piromedusa"
+    },
+    {
+      "name": "second_chance"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

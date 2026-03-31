@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "stalker14 license",
+  "license": "CC-BY-NC-SA-3.0",
   "copyright": "Made by orexcby",
   "size": {
     "x": 32,
@@ -10,16 +10,16 @@
     {
       "name": "icon"
     },
-	{
-	  "name": "icon-visor-up"
-	},
+    {
+      "name": "icon-visor-up"
+    },
     {
       "name": "equipped-HELMET",
       "directions": 4
     },
-	{
-	  "name": "visor-up-equipped-HELMET",
-	  "directions": 4
-	}
+    {
+      "name": "visor-up-equipped-HELMET",
+      "directions": 4
+    }
   ]
 }

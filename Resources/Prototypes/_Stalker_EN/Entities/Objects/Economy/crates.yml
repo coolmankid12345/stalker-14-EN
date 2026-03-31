@@ -1,4 +1,4 @@
-﻿# Bulk Medical Items
+# Bulk Medical Items
 
 - type: entity
   parent: UNstandartCrate
@@ -998,3 +998,51 @@
     - id: 556M856Box
     sound:
       path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate739Mag30
+  name: ящик обойм 5.56 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 739Mag30
+        - id: 739Mag30
+        - id: 739Mag30
+        - id: 739Mag30
+        - id: 739Mag30
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate762FMJ
+  name: ящик M855 патронов 5.56х45 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 739FMJBox
+        - id: 739FMJBox
+        - id: 739FMJBox
+        - id: 739FMJBox
+        - id: 739FMJBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg

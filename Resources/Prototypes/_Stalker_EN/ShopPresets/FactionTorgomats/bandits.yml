@@ -125,6 +125,16 @@
     longrangemetaldetector: 900
     Binocularus1: 200
 
+    #Lumber
+    STTradePlankT1: 40
+    STTradePlankT2: 60
+    STTradePlankT3: 80
+    STTradePlankT4: 100
+    STLogStalkerT1: 20
+    STLogStalkerT2: 30
+    STLogStalkerT3: 40
+    STLogStalkerT4: 50
+
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -132,6 +142,7 @@
         # Melee
         StalkerBallBat: 50
         # Pistols
+        STWeaponPistolC96: 1200
         STWeaponPistolM1911Chrome: 1500
         WeaponPistolStalkerTT: 250
         WeaponPistolStalkerAPS: 500
@@ -168,6 +179,7 @@
         BasePPSHMag: 250
         BizonMag: 1100
           # Other
+        STSTC96ClipEmpty: 120  
         M1911Mag7: 150
         Base556Mag10: 80
         556Mag20: 220
@@ -254,7 +266,6 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-        CigPackSuka: 100
         FoodSTEgg: 75
         FoodSTTomato: 75
         STDrinkJar: 300
@@ -369,6 +380,7 @@
         STCameraDamaged: 400
         STCameraFilm: 150
         EntrenchingTool: 1000
+        STLoggingChainsaw: 1000
 
     - name: shop-category-modules
       priority: 11
@@ -474,3 +486,16 @@
         PokerCardBin: 450
         DiceBag: 50
         CasseteBandit: 500
+
+    - name: Smokables #explained using D&D lifestyle expenses
+      priority: 15
+      items:
+        CigPackBub: 250 #comfortable
+        CigPackGreen: 150 #poor
+        CigPackRed: 200 #modest
+        CigPackBlue: 150 #poor
+        CigPackBlack: 200 #modest
+        CigPackMixed: 250 #comfortable
+        CigPackMarlboro: 200 #modest
+        CigPackKosmos: 100 #squalid
+        CigPackSuka: 100 #cheap cause bandit special

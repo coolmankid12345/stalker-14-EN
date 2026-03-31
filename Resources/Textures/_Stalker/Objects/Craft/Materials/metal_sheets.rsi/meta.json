@@ -1,26 +1,26 @@
 {
-    "version": 1,
-    "license": null,
-    "copyright": "Stalker14 CLA",
-    "size": {
-        "x": 32,
-        "y": 32
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Stalker14 CLA",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "copper"
     },
-    "states": [
-        {
-            "name": "copper"
-        },
-        {
-            "name": "iron"
-        },
-        {
-            "name": "brass"
-        },
-        {
-            "name": "aluminum"
-        },
-        {
-            "name": "steel"
-        }
-    ]
+    {
+      "name": "iron"
+    },
+    {
+      "name": "brass"
+    },
+    {
+      "name": "aluminum"
+    },
+    {
+      "name": "steel"
+    }
+  ]
 }

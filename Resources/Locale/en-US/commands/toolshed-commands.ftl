@@ -6,9 +6,9 @@ command-description-acmd-perms =
     Returns the admin permissions of the given command, if any.
 command-description-acmd-caninvoke =
     Check if the given player can invoke the given command.
-command-description-bank-accounts = 
+command-description-bank-accounts =
     Returns all accounts on a station.
-command-description-bank-account = 
+command-description-bank-account =
     Returns a given bank account from a station.
 command-description-bank-adjust =
     Adjusts the money for the given bank account.
@@ -166,3 +166,9 @@ command-description-dynamicrule-executenow =
     Executes the piped dynamic rule as if it had reached its regular update time.
 command-description-dynamicrule-rules =
     Gets a list of all the rules spawned by the piped dynamic rule.
+command-description-rdwatcher-list =
+    Lists all RD watcher entities and their tracked entities.
+command-description-ares-save =
+    Saves all RD area entities to their containing grid.
+command-description-ares-load =
+    Loads all RD areas from their containing grid.

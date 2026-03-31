@@ -30,6 +30,9 @@ reagent-desc-dexalin-plus-stalker = Используется для лечени
 reagent-name-cossack = cossack
 reagent-desc-cossack = It's the Cossack part of Cossack vodka!
 
+reagent-name-hercules = hercules
+reagent-desc-hercules = Experimental drug that reduces body weight by 20kg. Works while there's at least 0.1 units in bloodstream. Ideal for carrying heavy equipment.
+
 # man i had to call it something
 reagent-name-psiconium = psiconium
 reagent-desc-psiconium = It fixes your brain.

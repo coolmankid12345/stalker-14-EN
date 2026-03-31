@@ -55,6 +55,7 @@
         - type: SinMobController
           toggleOffAction: StalkerSinMobControllerOffAction
           toggleOnAction: StalkerSinMobControllerOnAction
+        - type: PsyEffectImmune
 
 - type: startingGear
   id: StalkerGrehGear

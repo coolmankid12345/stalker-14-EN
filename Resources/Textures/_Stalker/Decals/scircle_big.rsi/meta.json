@@ -1,4 +1,3 @@
-
 {
   "version": 1,
   "copyright": "Stalker14 CLA",
@@ -10,5 +9,6 @@
     {
       "name": "circle_3"
     }
-  ]
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }

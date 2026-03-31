@@ -62,7 +62,10 @@
           Male: MaleHumanMonolith
           Female: FemaleHumanMonolith
           Unsexed: MaleHumanMonolith
+      - type: CantUseDetector
+        denialMessage: "This is not in the will of the Monolith."
       - type: PsyVoiceEmote # stalker EN change end
+      - type: PsyEffectImmune
 
 - type: job
   id: StalkerHeadMonolith
@@ -128,7 +131,10 @@
         Male: MaleHumanMonolith
         Female: FemaleHumanMonolith
         Unsexed: MaleHumanMonolith
+    - type: CantUseDetector
+      denialMessage: "This is not in the will of the Monolith."
     - type: PsyVoiceEmote # stalker EN change end
+    - type: PsyEffectImmune
 
 - type: startingGear
   id: MonolithGear
@@ -149,7 +155,7 @@
     1: StalkerMonolith
     2: StalkerHeadMonolith
 
-- type: damageModifierSet # Stalker EN change 
+- type: damageModifierSet # Stalker EN change
   id: Monolith
   class: 0
   coefficients:

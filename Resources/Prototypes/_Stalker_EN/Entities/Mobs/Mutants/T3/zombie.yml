@@ -1,0 +1,260 @@
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieChN
+  id: MobStalkerZombieBandit1
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Bandit1.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieDolg1
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Dolg1.rsi
+
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieChN
+  id: MobStalkerZombieDolg2
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Dolg2.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieDolgshotgunner1
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Dolgshotgunner1.rsi
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.7
+  - type: BasicEntityAmmoProvider
+    proto: Bullet6mmBuckshot
+    capacity: 3
+    count: 1
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/chipper_shot.ogg
+    fireRate: 1
+    useKey: false
+    selectedMode: SemiAuto
+    minAngle: 40
+    maxAngle: 50
+    angleIncrease: 10
+    angleDecay: 50
+    availableModes:
+      - SemiAuto     
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieMerc
+  id: MobStalkerZombieEcologist1
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Ecologist1.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieChN
+  id: MobStalkerZombieEcologist2
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Ecologist2.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieChN
+  id: MobStalkerZombieFreedom1
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Freedom1.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieMerc
+  id: MobStalkerZombieFreedom2
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Freedom2.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieLoner1
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Loner1.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieChN
+  id: MobStalkerZombieLoner2
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Loner2.rsi
+      
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieChN
+  id: MobStalkerZombieLoner3
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Loner3.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieLoner4
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Loner4.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieLoner5
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Loner5.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieMerc
+  id: MobStalkerZombieLonershotgunner1
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Lonershotgunner1.rsi
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.7
+  - type: BasicEntityAmmoProvider
+    proto: Bullet6mmBuckshot
+    capacity: 4
+    count: 1
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/spas_shoot.ogg
+    fireRate: 2
+    useKey: false
+    selectedMode: SemiAuto
+    minAngle: 60
+    maxAngle: 80
+    angleIncrease: 10
+    angleDecay: 50
+    availableModes:
+      - SemiAuto    
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieDolgshotgunner1
+  id: MobStalkerZombieLonershotgunner2
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Lonershotgunner2.rsi
+
+- type: entity
+  name: Zombified
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieMerc
+  id: MobStalkerZombieMerc1
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Range/Merc1.rsi

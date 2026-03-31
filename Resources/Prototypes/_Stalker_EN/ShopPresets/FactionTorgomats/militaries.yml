@@ -53,6 +53,16 @@
   minSellPrice: 5
   itemsForSale:
     TradeBox: 1
+
+    #Lumber
+    STTradePlankT1: 40
+    STTradePlankT2: 60
+    STTradePlankT3: 80
+    STTradePlankT4: 100
+    STLogStalkerT1: 20
+    STLogStalkerT2: 30
+    STLogStalkerT3: 40
+    STLogStalkerT4: 50
   categories:
   - name: shop-category-weapons
     priority: 1
@@ -70,8 +80,9 @@
       STWeaponSniperSVDS: 11000
       # Smg
       STWeaponSMGPP91: 750
-      STWeaponSMGPP19: 1700
+      STWeaponSMGPP19: 2000
       STWeaponSMGPP1901: 1500
+      STWeaponSMGPP2000: 1650
       # Other
       STWeaponRifleAK103: 5000
       STWeaponRifleAK203: 6500
@@ -238,6 +249,7 @@
       STCameraDamaged: 400
       STCameraFilm: 150
       EntrenchingTool: 1000
+      STLoggingChainsaw: 1000
 
   - name: shop-category-provisions
     priority: 9
@@ -344,6 +356,18 @@
       ClothingTorsoTurtlenecksGorka6B: 50
       ClothingTorsoTurtlenecksKhakiTurtleneck: 50
       ClothingTorsoTurtlenecksMatrosska: 50
+
+  - name: Smokables #explained using D&D lifestyle expenses
+    priority: 13
+    items:
+      CigPackBub: 250 #comfortable
+      CigPackGreen: 150 #poor
+      CigPackRed: 200 #modest
+      CigPackBlue: 150 #poor
+      CigPackBlack: 200 #modest
+      CigPackMixed: 250 #comfortable
+      CigPackMarlboro: 200 #modest
+      CigPackKosmos: 100 #squalid
 
 - type: shopPreset
   id: OKSOPShopPresetEN # OKSOP REWORK IN-PROGRESS

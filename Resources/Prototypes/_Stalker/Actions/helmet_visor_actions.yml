@@ -1,8 +1,6 @@
 - type: entity
   id: ActionToggleHelmetVisor
   parent: BaseAction
-  name: action-name-toggle-visor
-  description: action-description-toggle-visor
   components:
   - type: Action
     useDelay: 1.5

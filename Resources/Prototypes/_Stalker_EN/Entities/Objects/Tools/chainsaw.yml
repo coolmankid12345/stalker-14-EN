@@ -1,0 +1,43 @@
+﻿- type: entity
+  name: logging chainsaw
+  parent: BaseItem
+  id: STLoggingChainsaw
+  description: A very large chainsaw. Usually you use this for cutting down trees... usually.
+  components:
+  - type: Wieldable
+    wieldSound: !type:SoundPathSpecifier
+      path: /Audio/Weapons/chainsawwield.ogg
+      params:
+        volume: -3
+  - type: Sharp
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/chainsaw.rsi
+    state: icon
+  - type: MeleeWeapon
+    autoAttack: true
+    angle: 0
+    wideAnimationRotation: -135
+    attackRate: 4
+    damage: # roughly the same DPS as a boot knife
+      types:
+        Slash: 2.5
+        Blunt: 2
+        Structural: 5
+    soundHit:
+      path: /Audio/Weapons/chainsaw.ogg
+      params:
+        volume: -3
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 2.5
+        Structural: 5
+  - type: Item
+    size: Normal
+    sprite: Objects/Weapons/Melee/chainsaw.rsi
+  - type: DisarmMalus
+  - type: UseDelay
+    delay: 1
+  - type: Craftable
+  - type: RepositoryItem
+    categoryName: repository-weapons-category

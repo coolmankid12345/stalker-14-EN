@@ -1,0 +1,93 @@
+# guns need craftable to use modules
+# but i think something about RevolverAmmoProvider is blocking the autosear from working
+# therefor someone else investigate the c#
+- type: entity
+  name: Mauser C96
+  parent: STBaseWeaponGameRevolver
+  suffix: ST
+  id: STWeaponPistolC96
+  description: The Mauser C96 is a semi-automatic pistol that was originally produced by German arms manufacturer Mauser from 1896 to 1937. Unlicensed copies of the gun were also manufactured in Spain and China in the first half of the 20th century
+  components:
+  - type: STWeight
+    self: 1.13
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Pistols/c96.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    projectileSpeed: 35
+    minAngle: 5
+    maxAngle: 30
+    angleIncrease: 0.6
+    angleDecay: 7
+    fireRate: 4.5
+    soundGunshot:
+      path: /Audio/_Stalker_EN/Effects/Guns/C96_shoot.ogg
+  - type: RevolverAmmoProvider
+    verbsEnabled: false
+    capacity: 10
+    whitelist:
+      tags:
+      - STCartridge919
+      - C96Clip
+    proto: null
+    chambers: [null, null, null, null, null, null, null, null, null, null]
+    ammoSlots: [null, null, null, null, null, null, null, null, null, null]
+  - type: ContainerContainer
+    containers:
+      revolver-ammo: !type:Container
+      gun_auto_sear: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      gun_auto_sear:
+        name: Insides
+        priority: 2
+        whitelist:
+          tags:
+          - STModuleAutoSear
+  - type: RepositoryItem
+    categoryName: repository-weapons-category
+  - type: Craftable
+
+- type: entity
+  name: Red9
+  parent: STWeaponPistolC96
+  suffix: ST
+  id: STWeaponPistolC96RE
+  description: The Red9 is a Handgun that is available for Leon to purchase from the Merchant in Resident Evil 4. It also is notable for having an antique appearance.
+  components:
+  - type: STWeight
+    self: 1.13
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Pistols/_Skins/c96RE.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    projectileSpeed: 35
+    minAngle: 5
+    maxAngle: 30
+    angleIncrease: 0.6
+    angleDecay: 7
+    fireRate: 4.5
+    soundGunshot:
+      path: /Audio/_Stalker_EN/Effects/Guns/C96_shoot.ogg
+  - type: RevolverAmmoProvider
+    verbsEnabled: false
+    capacity: 10
+    whitelist:
+      tags:
+      - STCartridge919
+      - C96Clip
+    proto: null
+    chambers: [null, null, null, null, null, null, null, null, null, null]
+    ammoSlots: [null, null, null, null, null, null, null, null, null, null]
+  - type: ContainerContainer
+    containers:
+      revolver-ammo: !type:Container
+      gun_auto_sear: !type:ContainerSlot
+  - type: RepositoryItem
+    categoryName: repository-weapons-category

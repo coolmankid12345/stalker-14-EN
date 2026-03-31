@@ -105,13 +105,24 @@
     FoodMeatSTFishFilletCooked: 25
     FoodMeatSTFishSteakCooked: 75
     FoodMeatSTEelCooked: 150
-    STFoodMeatCvarci: 5 # 15 profit per salo baby!
+    STFoodMeatCvarci: 22
     FoodMeatSTRatCooked: 5 # whatever
     FoodMeatSTRatJerked: 10
     FoodMeatSTDogJerkedSingle: 75
     FoodMeatSTBoarJerkedSingle: 125
     FoodMeatSTBearJerkedSingle: 245
     FoodMeatSTSuckerJerkedSingle: 600
+    STFoodMeatSalo: 35
+
+    #Lumber
+    STTradePlankT1: 30
+    STTradePlankT2: 45
+    STTradePlankT3: 60
+    STTradePlankT4: 75
+    STLogStalkerT1: 15
+    STLogStalkerT2: 23
+    STLogStalkerT3: 30
+    STLogStalkerT4: 38
 
 # Cooking
     FoodSTFreshCheese: 100
@@ -316,6 +327,8 @@
         STClothingBeltThrowingKnifes: 350
         ClothingBeltPocketPouch: 500
         ClothingBeltHerbalistPouch: 500
+          # Other
+        ClothingBackpackForestryRig: 500
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8
@@ -386,6 +399,7 @@
         BookCookingStalkerGuide: 200
         BookCookingStalkerHomemade: 600
         STRag: 10
+        STLoggingChainsaw: 1000
         # Cameras
         STCamera: 750
         STCameraVintage: 1200
@@ -496,6 +510,18 @@
         STCookingHrechanyky: 2000
         STCookingKebabMeat: 2000
         STCookingPickledSausage: 2000
+
+    - name: Smokables #explained using D&D lifestyle expenses
+      priority: 14
+      items:
+        CigPackBub: 250 #comfortable
+        CigPackGreen: 150 #poor
+        CigPackRed: 200 #modest
+        CigPackBlue: 150 #poor
+        CigPackBlack: 200 #modest
+        CigPackMixed: 250 #comfortable
+        CigPackMarlboro: 200 #modest
+        CigPackKosmos: 100 #squalid
 
   sponsorCategories:
     SponsorBread:

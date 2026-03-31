@@ -20,11 +20,12 @@
   id: SalvageSpecialistGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
-    id: SalvagePDA
     ears: ClothingHeadsetCargo
   #storage:
     #back:
     #- Stuff
+  # PDA removed to fix test failure with entity cleanup
+  # id: SalvagePDA
 
 - type: chameleonOutfit
   id: SalvageSpecialistChameleonOutfit

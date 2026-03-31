@@ -120,27 +120,27 @@
   priority: 3
 
 # Yantar
-#- type: ambientMusic
-#  id: YantarDay
-#  sound:
-#    path: /Audio/_Stalker_EN/Music/Ambient/amb22.ogg
-#    params:
-#      volume: -15
-#  rules: AmbianceYantarDay
-#  fadeIn: false
-#  interruptable: true
-#  priority: 3
+- type: ambientMusic
+  id: YantarDay
+  sound:
+    path: /Audio/_Stalker_EN/Music/Ambient/amb22.ogg
+    params:
+      volume: -15
+  rules: AmbianceYantarDay
+  fadeIn: false
+  interruptable: true
+  priority: 3
 
-#- type: ambientMusic
-#  id: YantarNight
-#  sound:
-#    path: /Audio/_Stalker_EN/Music/Ambient/amb17.ogg
-#    params:
-#      volume: -15
-#  rules: AmbianceYantarNight
-#  fadeIn: false
-#  interruptable: true
-#  priority: 3
+- type: ambientMusic
+  id: YantarNight
+  sound:
+    path: /Audio/_Stalker_EN/Music/Ambient/amb17.ogg
+    params:
+      volume: -15
+  rules: AmbianceYantarNight
+  fadeIn: false
+  interruptable: true
+  priority: 3
 
 # Bar and Wilds
 - type: ambientMusic
@@ -229,6 +229,18 @@
   - /Audio/_Stalker_EN/Music/Ambient/pripyat_day.ogg
   - /Audio/_Stalker_EN/Music/Ambient/limansk.ogg
 
+# Underground
+- type: ambientMusic
+  id: Underground
+  sound:
+    path: /Audio/_Stalker_EN/Music/Ambient/underground.ogg
+    params:
+      volume: -15
+  rules: AmbianceUnderground
+  fadeIn: false
+  interruptable: true
+  priority: 3
+
 # ------------
 #     RULES
 # ------------
@@ -261,7 +273,7 @@
     - !type:PreventInGreenzoneRule
     - !type:IsOnSpecificMapRule
       maps:
-        - "Топь"
+        - "болота"
 
 - type: rules
   id: AmbianceSwampNight
@@ -394,3 +406,32 @@
     - !type:IsOnSpecificMapRule
       maps:
         - "Лиманск"
+
+# Yantar
+- type: rules
+  id: AmbianceYantarDay
+  rules:
+    - !type:IsDayRule
+    - !type:PreventInGreenzoneRule
+    - !type:IsOnSpecificMapRule
+      maps:
+        - "Yantar"
+
+- type: rules
+  id: AmbianceYantarNight
+  rules:
+    - !type:IsDayRule
+      inverted: true
+    - !type:PreventInGreenzoneRule
+    - !type:IsOnSpecificMapRule
+      maps:
+        - "Yantar"
+
+# Underground
+- type: rules
+  id: AmbianceUnderground
+  rules:
+    - !type:PreventInGreenzoneRule
+    - !type:IsOnSpecificMapRule
+      maps:
+        - "Yantar Labs"

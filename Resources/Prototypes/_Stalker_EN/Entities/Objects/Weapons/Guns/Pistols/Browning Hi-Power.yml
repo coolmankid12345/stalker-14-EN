@@ -1,0 +1,54 @@
+
+- type: entity
+  name: Browning Hi-Power
+  parent: STBaseWeaponPistol
+  suffix: ST
+  id: STWeaponPistolHiPower
+  description: The Browning Hi-Power is a classic semi-automatic pistol chambered in 9×19mm. Designed by John Browning and completed by FN Herstal. It features a high-capacity 13 rounds magazine and well ahead of its time.
+  components:
+  - type: STWeight
+    self: 0.92
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Pistols/hipower.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    projectileSpeed: 35
+    minAngle: 5
+    maxAngle: 30
+    angleIncrease: 0.6
+    angleDecay: 7
+    fireRate: 5.0
+    soundGunshot:
+      path: /Audio/_Stalker_EN/Effects/Guns/HiPower_shoot.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: HiPowerMag13
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 3
+        whitelist:
+          tags:
+          - MagazineHipower
+      gun_auto_sear:
+        name: Insides
+        priority: 2
+        whitelist:
+          tags:
+          - STModuleAutoSear
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge919
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_auto_sear: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot

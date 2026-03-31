@@ -669,9 +669,9 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/ushanka.rsi
   - type: Appearance
-  - type: AddAccentClothing
-    accent: RussianAccent
-  - type: STToggleableAccentClothing # stalker-changes
+  #- type: AddAccentClothing
+  #  accent: RussianAccent
+  #- type: STToggleableAccentClothing # stalker-changes
   - type: Foldable
     canFoldInsideContainer: true
   - type: FoldableClothing

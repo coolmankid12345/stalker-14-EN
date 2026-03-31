@@ -20,6 +20,7 @@
         # Rifles
         STWeaponRifleAKS74U: 2050
         STWeaponRifleM16: 3200
+        STWeaponRifleM16M203: 4000 # T2
         STWeaponRifleAKS74: 3800
 
     - name: shop-category-magazines
@@ -226,6 +227,7 @@
         STCameraDamaged: 400
         STCameraFilm: 150
         EntrenchingTool: 1000
+        STLoggingChainsaw: 1000
 
     - name: shop-category-customization
       priority: 11
@@ -325,6 +327,7 @@
         STDetectorAD2Blueprint: 1000
         STDetectorAD3Blueprint: 3000
         STZoneArtifactDetectorBushBlueprint: 3000
+        ClothingEarsPsyHelmBlueprint: 5000
         STZoneArtifactDetectorResponseBlueprint: 6000
         STZoneArtifactDetectorSpruceBlueprint: 12000
         DetectorVelesBlueprint: 10000
@@ -348,8 +351,21 @@
         CardBin: 100
         PokerCardBin: 150
 
-    - name: Gardening
+
+    - name: Smokables #explained using D&D lifestyle expenses
       priority: 14
+      items:
+        CigPackBub: 250 #comfortable
+        CigPackGreen: 150 #poor
+        CigPackRed: 200 #modest
+        CigPackBlue: 150 #poor
+        CigPackBlack: 200 #modest
+        CigPackMixed: 250 #comfortable
+        CigPackMarlboro: 200 #modest
+        CigPackKosmos: 100 #squalid
+
+    - name: Gardening
+      priority: 15
       items:
         HydroponicsToolScythe: 200
         HydroponicsToolMiniHoe: 70

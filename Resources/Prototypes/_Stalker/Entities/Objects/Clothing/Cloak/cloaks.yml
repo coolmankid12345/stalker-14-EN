@@ -215,6 +215,7 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
+  - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
   - type: Craftable

@@ -75,3 +75,17 @@
       params:
         volume: 5
         maxDistance: 15
+
+- type: entity
+  id: AdminInstantEffectAudioSucker
+  suffix: Audio (Bloodsucker)
+  parent: AdminInstantEffectBase
+  components:
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Stalker/Mutants/bloodsucker_scream.ogg
+      params:
+        volume: 1
+        maxDistance: 15
+  - type: TimedDespawn
+    lifetime: 10

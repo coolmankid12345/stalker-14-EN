@@ -1,56 +1,56 @@
 {
-    "version": 1,
-    "license": "CC-BY-DA-3.0",
-    "copyright": "Stalker14 CLA, author: sprites by carousel",
-    "size": {
-        "x": 32,
-        "y": 32
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Stalker14 CLA, author: sprites by carousel",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "borscht"
     },
-    "states": [
-        {
-            "name": "borscht"
-        },
-        {
-            "name": "braid"
-        },
-        {
-            "name": "deruny"
-        },
-        {
-            "name": "deruny2"
-        },
-        {
-            "name": "hrechanyky"
-        },
-        {
-            "name": "hrechanyky2"
-        },
-        {
-            "name": "snorksoup"
-        },
-        {
-            "name": "syrnyk"
-        },
-        {
-            "name": "syrnyk2"
-        },
-        {
-            "name": "ambrosia"
-        },
-        {
-            "name": "fishfry"
-        },
-        {
-            "name": "kebabveggie"
-        },
-        {
-            "name": "kebabmeat"
-        },
-        {
-            "name": "froglegs"
-        },
-        {
-            "name": "oraclegumbo"
-        }
-    ]
+    {
+      "name": "braid"
+    },
+    {
+      "name": "deruny"
+    },
+    {
+      "name": "deruny2"
+    },
+    {
+      "name": "hrechanyky"
+    },
+    {
+      "name": "hrechanyky2"
+    },
+    {
+      "name": "snorksoup"
+    },
+    {
+      "name": "syrnyk"
+    },
+    {
+      "name": "syrnyk2"
+    },
+    {
+      "name": "ambrosia"
+    },
+    {
+      "name": "fishfry"
+    },
+    {
+      "name": "kebabveggie"
+    },
+    {
+      "name": "kebabmeat"
+    },
+    {
+      "name": "froglegs"
+    },
+    {
+      "name": "oraclegumbo"
+    }
+  ]
 }

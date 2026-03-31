@@ -48,6 +48,6 @@ public sealed partial class STProjectileAccuracyComponent : Component
     /// <summary>
     /// These are the coordinates from which the projectile was shot. Used to determine the distance travelled.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField(readOnly: true), AutoNetworkedField]
     public EntityCoordinates? StartCoordinates;
 }

@@ -138,6 +138,9 @@
     STWeaponSniperVepr: 2000
 
     #9x18 9x19
+    STWeaponPistolC96: 300
+    STWeaponPistolHiPower: 300
+    STWeaponPistolP99: 300 
     WeaponPistolStalkerGlock: 100
     WeaponStalkerPistolTec9: 100
     WeaponPistolStalkerAPS: 350
@@ -159,6 +162,9 @@
     STWeaponSniperVSS: 6000
 
     #.45 acp
+    STWeaponPistolUSP: 800
+    STWeaponPistolM1911: 500
+    STWeaponPistolM1911Chrome: 600
     STWeaponRevolverRugerRedhawk: 150
     STWeaponRevolverSWPC325TR: 425
     STWeaponRevolverChiappaRhino60DS: 450
@@ -170,8 +176,6 @@
 
     #values
     TradeBox: 3000
-    STFoodJarWholeEelFermented: 4500
-    STDrinkJarMoonshine: 650 # keshas eyes arent so good so he cant check to see if theres liquid in these
 
   categories:
     - name: shop-category-weapons
@@ -181,20 +185,22 @@
         StalkerBallBat: 70
             # Guns
         # 7mm
-        STWeaponShotgunSPAS: 3000 # T3
-        STWeaponShotgunBenelliM4Super90: 5500 #i dont think its actually that good
+        STWeaponShotgunSPAS: 3500 # T3
+        STWeaponShotgunBenelliM4Super90: 6500 #i dont think its actually that good
         # Smg
         STWeaponSMGMP5: 2250
         STWeaponSMGPP91: 2750
-        STWeaponSMGStalkerCP2Veresk: 4000
+        STWeaponSMGStalkerCP2Veresk: 5000
+        STWeaponSMGPP2000OTS: 3500
         # Other
-        STWeaponPistolUSP: 4000 # this one is supposed to be rare in the zone so it's expensive.
+        STWeaponPistolC96: 2200
+        STWeaponPistolUSP: 5000 # this one is supposed to be rare in the zone so it's expensive.
         STWeaponRifleSaiga739: 1400
         WeaponPistolStalkerTT: 250
         WeaponPistolStalkerAPS: 500
         STWeaponRevolverSWPC325TR: 1000
-        STWeaponRevolverTaurusTracker455: 3000
-        STWeaponRevolverChiappaRhino60DS: 4000
+        STWeaponRevolverTaurusTracker455: 4000
+        STWeaponRevolverChiappaRhino60DS: 5000
     - name: shop-category-magazines
       priority: 2
       items:
@@ -205,6 +211,7 @@
         BasePPSHMag: 350
         VityazMag: 400
           # Other
+        STSTC96ClipEmpty: 300  
         USPMag12: 500
         TTMag: 100
         STSpeedLoader45ACPEmpty: 300
@@ -254,7 +261,7 @@
         STClothingHeadHelmetMakeshiftTacticalT3: 1000
         ClothingOuterArmorSpark: 1750
         ClothingOuterArmorZaryaStalkerModifedType2: 2500
-        ClothingOuterArmorZaryaStalkerModifedType1: 3500
+        ClothingOuterArmorZaryaStalkerModifedType1: 3800
         ClothingOuterArmorZaryaHunter: 2500
     - name: shop-category-storage-and-containers
       priority: 5
@@ -266,8 +273,8 @@
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
           # Containers
-        MedkitCMSStalker: 500 # T1
-        MedkitGrizzlyStalker: 1500 # T2
+        MedkitCMSStalker: 1000 # T1
+        MedkitGrizzlyStalker: 2000 # T2
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
@@ -292,7 +299,6 @@
       priority: 8
       items:
         CraftSaw: 20000
-        CigPackKosmos: 200
         STCombatKnife: 25
         BoxZiptie: 50
         BoxSafebox: 300
@@ -305,7 +311,7 @@
         HandheldGPSBasic: 50
         Paper: 2
         Pen: 5
-        Binocularus1: 2000
+        Binocularus1: 2500
         BoxFlare: 60
         Beaker: 40
         Syringe: 20
@@ -316,18 +322,17 @@
     - name: shop-category-provisions
       priority: 9
       items:
-
-        STEnergyDrink: 100
-        STEnergyDrinkMonster: 200
+        STEnergyDrink: 200
+        STEnergyDrinkMonster: 300
         STEnergyDrinkRevo: 150
         STDrinkBeerCanBaltic: 40
         DrinkCossackVodkaBottleFull: 100
         STFoodBreadPlain: 60
         DrinkFlaskOld: 60
-        DrinkWaterBottleFull: 50
-        FoodTinMRE: 300
+        DrinkWaterBottleFull: 100
+        FoodTinMRE: 500
         DrinkLemonadehBottleFull: 100
-        STFoodMeatSalami: 500
+        STFoodMeatSalami: 1000
     - name: shop-category-medicine # 50% скидка от сталкеров
       priority: 10
       items:

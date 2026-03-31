@@ -79,7 +79,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/cn3b.rsi
 # bonus
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - -3,2,-2,3
       - 0,2,0,3

@@ -1,21 +1,22 @@
 {
-    "version": 1,
-    "copyright": "Stalker14 CLA",
-    "size": {
-        "x": 32,
-        "y": 32
+  "version": 1,
+  "copyright": "Stalker14 CLA",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "equipped-CLOAK",
+      "directions": 4
     },
-    "states": [
-        {
-            "name": "equipped-CLOAK",
-            "directions": 4
-        },
-        {
-            "name": "equipped-CLOAK-fat",
-            "directions": 4
-        },
-        {
-            "name": "icon"
-        }
-    ]
+    {
+      "name": "equipped-CLOAK-fat",
+      "directions": 4
+    },
+    {
+      "name": "icon"
+    }
+  ],
+  "license": "CC-BY-NC-SA-3.0"
 }
