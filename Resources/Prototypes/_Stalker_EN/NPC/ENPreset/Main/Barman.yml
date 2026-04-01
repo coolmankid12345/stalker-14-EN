@@ -1,7 +1,7 @@
-- type: entity
+﻿- type: entity
   parent: NPCDoll
   id: NPCBarmenEN
-  name: Skier [→   ←]
+  name: Barman [→   ←]
   description: Bartender in a bar. A little less greedy than Sidor, but the same miser. By the way, are they brothers?
   suffix: ST, EN-TRADER
   components:

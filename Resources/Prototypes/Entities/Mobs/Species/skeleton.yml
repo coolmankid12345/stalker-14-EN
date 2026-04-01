@@ -119,8 +119,6 @@
     verbOnly: true
     verbText: verb-instrument-openui
     key: enum.InstrumentUiKey.Key
-  - type: BlowoutTarget # stalker-changes
-  - type: ZoneAnomalyActivator
   - type: UserInterface
     interfaces:
       enum.InstrumentUiKey.Key:
@@ -138,4 +136,9 @@
   - type: HumanoidAppearance
     species: Skeleton
   - type: Inventory
-    templateId: STMain
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

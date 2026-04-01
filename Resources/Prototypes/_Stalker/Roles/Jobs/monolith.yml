@@ -1,6 +1,6 @@
 - type: job
   id: StalkerMonolith
-  name: Noontide
+  name: job-monolith
   icon: monolith
   description: job-monolith-desc
   playTimeTracker: JobMonolith
@@ -9,6 +9,9 @@
     # - !type:RoleTimeRequirement
     #   role: JobMonolith
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
   startingGear: MonolithGear
   supervisors: job-monolith-supervisor
   canBeAntag: false
@@ -42,6 +45,7 @@
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+      - type: STAnomalyTipsViewing
       - type: AutoImplant
         implants:
         - STMonoBombImplant # Stalker EN change start
@@ -65,7 +69,7 @@
 
 - type: job
   id: StalkerHeadMonolith
-  name: Noontide Leader
+  name: Monolith Preacher
   icon: monolith
   description: Lead the Monolith on a Crusade across the Zone. Follow the order of the Monolith.
   playTimeTracker: JobHeadMonolith
@@ -74,6 +78,9 @@
   # - !type:RoleTimeRequirement
   #   role: JobMonolith
   #   time: 1
+  - !type:SpeciesRequirement
+    species:
+    - Human
   startingGear: MonolithGear
   supervisors: job-stalker-head-monolith-supervisor
   canBeAntag: false
@@ -107,6 +114,7 @@
       pullingItemTag: PliersStalker
       teethCount: 3
       initialTeeth: 3
+    - type: STAnomalyTipsViewing
     - type: AutoImplant
       implants:
       - STMonoBombImplant # Stalker EN change start

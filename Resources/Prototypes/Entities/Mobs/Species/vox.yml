@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   parent: BaseMobSpeciesOrganic
   id: BaseMobVox
   abstract: true
@@ -211,8 +211,6 @@
         32:
           sprite: Mobs/Species/Vox/displacement.rsi
           state: hand_r
-  - type: BlowoutTarget # stalker-changes
-  - type: ZoneAnomalyActivator
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -232,7 +230,7 @@
   - type: Body
     prototype: Vox
   - type: Inventory
-    templateId: STMain
+    speciesId: vox
     displacements:
       jumpsuit:
         sizeMaps:

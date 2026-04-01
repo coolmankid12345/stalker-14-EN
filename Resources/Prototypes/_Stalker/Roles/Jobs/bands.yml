@@ -1,6 +1,6 @@
 - type: job
   id: StalkerBandit
-  name: Bandito
+  name: job-bandit
   icon: band
   description: job-bandit-desc
   playTimeTracker: JobBandit
@@ -9,6 +9,10 @@
     # - !type:RoleTimeRequirement
     #   role: JobBandit
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
   startingGear: BandGear
   supervisors: job-bandit-supervisor
   canBeAntag: false
@@ -42,7 +46,7 @@
           
 - type: job
   id: StalkerHeadBandit
-  name: Sultan
+  name: job-head-bandit
   icon: band
   description: job-head-bandit-desc
   playTimeTracker: JobHeadBandit
@@ -51,6 +55,10 @@
     # - !type:RoleTimeRequirement
     #   role: JobHeadBandit
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
   startingGear: BandHeadGear
   supervisors: job-bandit-supervisor
   canBeAntag: false

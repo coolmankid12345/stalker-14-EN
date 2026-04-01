@@ -6,12 +6,18 @@
 
 - type: job
   id: StalkerRookie
-  name: Loot Box
+  name: job-stalker-rookie
   icon: rookie
   description: job-stalker-rookie-desc
   playTimeTracker: JobStalkerRookie
   whitelisted: false
   requirements:
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+      - Gingerbread
+      - HumanFat
     - !type:OverallPlaytimeRequirement
       time: 10h
       inverted: true

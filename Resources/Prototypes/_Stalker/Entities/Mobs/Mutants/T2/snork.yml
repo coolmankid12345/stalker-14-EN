@@ -60,15 +60,13 @@
       angle: 30
       range: 1.5
       soundHit:
-        path: /Audio/_Stalker_EN/Mutants/new_snork_attack.ogg
+        path: /Audio/_Stalker/Mutants/snorm_attack.ogg
         params:
-          variation: 0.2
-          volume: -4
+          variation: 0.125
       soundSwing:
-        path: /Audio/_Stalker_EN/Mutants/new_snork_attack.ogg
+        path: /Audio/_Stalker/Mutants/snorm_aggressive.ogg
         params:
-          variation: 0.2
-          volume: -4
+          variation: 0.125
       animation: WeaponArcClaw
       wideAnimation: WeaponArcClaw
       damage:

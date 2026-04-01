@@ -1,7 +1,7 @@
 - type: entity
   parent: NPCDoll
   id: NPCRadioPlayerEN
-  name: Mechanic [→   ←]
+  name: Radio Amateur [→   ←]
   description: He is engaged in the design, construction, modification and use of radio engineering and electronic devices. He loves everything related to the Soviet Union. He tries to be secretive.
   suffix: ST, Music, EN-TRADER
   components:
@@ -41,7 +41,7 @@
 - type: entity
   parent: NPCDoll
   id: NPCVadikNarikEN
-  name: Ragman [→ ? ←]
+  name: Vadik Goy [→ ? ←]
   description: An ordinary drug addict who both sells and buys everything related to cannabis.
   suffix: ST, WEED, EN-TRADER
   components:
@@ -132,7 +132,7 @@
 - type: entity
   parent: NPCDoll
   id: NPCKeshaEN
-  name: Fence [→ ? ←]
+  name: Kesha [→ ? ←]
   description: A shady fellow who's set up his business in Garbage. It's better to avoid getting on his bad side.
   suffix: ST, EN-TRADER
   components:
@@ -215,7 +215,7 @@
 - type: entity
   parent: NPCDoll
   id: NPCAlinaMorozovaEN # Removed for now, Town NPC
-  name: Therapist [→   ←]
+  name: Alina Morozova [→   ←]
   description: Luxury is not about money, it's about requirements for the best. It is a lack of compromise for the most sophisticated consumers.
   suffix: ST, Buying at best prices, EN-TRADER, DO NOT MAP
   components:

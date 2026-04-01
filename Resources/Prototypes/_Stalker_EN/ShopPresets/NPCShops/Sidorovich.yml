@@ -243,8 +243,6 @@
         45ACPLFMJBox: 100 # T1
         45ACPRIPBox: 675 # Mutant
         45ACPMFMJBox: 275 # T2
-        739HEBox: 2500
-        8mmRepulseBox: 1000
 
     - name: shop-category-medicine
       priority: 4
@@ -304,8 +302,6 @@
         ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
         SetZaryaStalkerBuyableCrate: 3300 # T2 - ENV
         ClothingOuterArmorSevaStalker: 5000 # T3 - ENV
-        ClothingOuterArmorSSP99Moneygang: 42069
-        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -410,9 +406,7 @@
         STCameraDamaged: 400
         STCameraFilm: 150
         EntrenchingTool: 1000
-        BoomboxPortable: 500
-        NitrogenTankFilled: 1000
-
+        
     - name: shop-category-customization
       priority: 11
       items:

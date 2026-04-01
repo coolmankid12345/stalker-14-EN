@@ -157,8 +157,6 @@
       # .357
       MagazineBox357Magnum: 260 # T2
       MagazineBox357MagnumAP: 500 # T3
-      739HEBox: 2500
-      8mmRepulseBox: 1000
 
   - name: shop-category-armor
     priority: 4
@@ -178,7 +176,6 @@
       STClothingOuterArmorLightPlateVestBaseANAgray: 2250 # T3 - PVP
       STClothingOuterArmorLightPlateVestBasePSZ7v3: 3000
       STClothingOuterArmorLightPlateVestBasePSZ7v1: 3000
-      ClothingOuterArmorExoskelet: 100000
 
   - name: shop-category-storage-and-containers
     priority: 5
@@ -253,7 +250,6 @@
       STCameraFilm: 150
       EntrenchingTool: 1000
       STLoggingChainsaw: 1000
-      NitrogenTankFilled: 1000
 
   - name: shop-category-provisions
     priority: 9

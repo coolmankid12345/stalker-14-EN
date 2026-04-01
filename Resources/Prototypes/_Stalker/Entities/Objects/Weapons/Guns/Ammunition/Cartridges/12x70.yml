@@ -51,21 +51,6 @@
     state: "express"
 
 - type: entity
-  id: CartridgeRepulseBuckshot
-  name: 12x70 Repulse Slug
-  parent: BaseShotgunBullet
-  components:
-  - type: CartridgeAmmo
-    proto: BulletRepulseBuckshot
-  - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
-    layers:
-      - state: express
-        map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: SpentAmmoVisuals
-    state: "express"
-
-- type: entity
   id: CartridgeShotgunBullet
   name: 12x70 Пуля
   parent: BaseShotgunBullet

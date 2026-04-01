@@ -47,9 +47,3 @@
   id: STWeaponMachineGunRPD
   name: RPD (Light Machine Gun)
   description: Soviet light machine gun (1944). Prized in the Zone for reliability and 7.62x39mm firepower. Heavy but can saturate large areas with lead.
-
-- type: entity
-  parent: STBaseWeaponMachineGunRPD
-  id: STWeaponMachineGunPKM
-  name: PKM
-  description: Soviet light machine gun (1944). Prized in the Zone for reliability and 7.62x39mm firepower. Heavy but can saturate large areas with lead. It looks like someone swapped the lable around.

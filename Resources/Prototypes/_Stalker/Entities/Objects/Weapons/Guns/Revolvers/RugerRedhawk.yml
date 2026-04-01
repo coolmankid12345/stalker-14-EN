@@ -12,17 +12,17 @@
       - state: icon
         map: ["enum.GunVisualLayers.Base"]
     - type: Gun
-      projectileSpeed: 20
+      projectileSpeed: 55
       minAngle:  0
-      maxAngle: 90
-      angleIncrease: 60
-      angleDecay: 12
+      maxAngle: 45
+      angleIncrease: 20
+      angleDecay: 25
       fireRate: 5
       selectedMode: SemiAuto
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/revolver3.ogg
         params:
-          volume: 2
+          volume: -4
     - type: RevolverAmmoProvider
       whitelist:
         tags:

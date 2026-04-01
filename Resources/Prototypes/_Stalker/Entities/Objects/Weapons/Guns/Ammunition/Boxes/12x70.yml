@@ -53,22 +53,6 @@
 
 - type: entity
   parent: 7mmBuckshotBox
-  id: 8mmRepulseBox
-  name: Ammo Box (8.5mm Repulse Slugs)
-  description: Repulses things around the impact site using anomalous slugs. Contains 10 shells.
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeRepulseBuckshot
-  - type: Sprite
-    layers:
-    - state: 1270
-      map: ["enum.GunVisualLayers.Base"]
-    - state: 1270red-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: t4
-
-- type: entity
-  parent: 7mmBuckshotBox
   id: ShotgunFlechette
   name: Коробка флешетта (12x70)
   description: Для дробовиков, в коробке 10 штук. Обеспечивает пробитие 3 класса брони.

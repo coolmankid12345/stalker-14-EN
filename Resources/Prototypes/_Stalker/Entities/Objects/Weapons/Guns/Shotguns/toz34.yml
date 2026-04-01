@@ -6,10 +6,9 @@
   id: STBaseWeaponShotgunTOZ34
   components:
   - type: STWeight
-    self: 50
+    self: 3.2
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz-34.rsi
-    scale: 5, 5
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz-34.rsi
   - type: Item
@@ -17,13 +16,13 @@
     shape:
     - 0,0,7,1
   - type: BallisticAmmoProvider
-    capacity: 1000
+    capacity: 2
   - type: Gun
     minAngle: 60
     maxAngle: 70
     angleIncrease: 10
     angleDecay: 50
-    fireRate: 1.5
+    fireRate: 4
 
 - type: entity
   parent: STBaseWeaponShotgunTOZ34

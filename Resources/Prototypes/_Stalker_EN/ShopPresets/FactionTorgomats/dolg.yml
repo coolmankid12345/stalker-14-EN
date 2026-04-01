@@ -72,8 +72,6 @@
         STWeaponSniperMosin: 1200
         STWeaponSniperSKS: 1500
         # STWeaponSniperSVU: 8400 Removed for early wipe
-        STBoltACR: 8000
-        Chainsaw: 1000
 
     - name: shop-category-magazines
       priority: 2
@@ -125,7 +123,6 @@
         754FMJBox: 2500 # T3
         754HPBox: 1250 # Mutant
         # Other
-        8mmRepulseBox: 1000
 
     - name: shop-category-medicine
       priority: 4
@@ -176,7 +173,6 @@
         ClothingOuterArmorZaryaDolg: 2000 # T2 - Universal
         ClothingOuterArmorSevaDolgRed: 5250 # T3 - ENV
         SetPS5MDolgBuyableCrate: 12000 #T3 - PvP
-        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -265,7 +261,6 @@
         STCameraFilm: 150
         EntrenchingTool: 1000
         STLoggingChainsaw: 1000
-        NitrogenTankFilled: 1000
 
     - name: shop-category-modules
       priority: 11

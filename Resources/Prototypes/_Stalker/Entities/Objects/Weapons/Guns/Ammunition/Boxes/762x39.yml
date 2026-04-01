@@ -72,23 +72,6 @@
     - state: antiarmor
 
 - type: entity
-  parent: 739FMJBox
-  id: 739HEBox
-  name: Ammo Box (7.62x39) HE
-  description: High explosive rounds. Containes 30 per box.
-  suffix: Stalker
-  components:
-  - type: BallisticAmmoProvider
-    proto: STCartridge739HE
-  - type: Sprite
-    layers:
-    - state: 76239
-      map: ["enum.GunVisualLayers.Base"]
-    - state: 76239ammo-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: antiarmor
-
-- type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 739FMJBoxCink
   name: ящик патронов (7,62x39) FMJ

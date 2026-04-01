@@ -70,8 +70,6 @@
       295: 0.8
       285: 0.7
   - type: Wagging
-  - type: BlowoutTarget # stalker-changes
-  - type: ZoneAnomalyActivator
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:
@@ -116,6 +114,33 @@
     - HeadSide
     undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Inventory
-    templateId: STMain
+    speciesId: reptilian
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: jumpsuit-female
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: mask
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: mask
 
 #Weh

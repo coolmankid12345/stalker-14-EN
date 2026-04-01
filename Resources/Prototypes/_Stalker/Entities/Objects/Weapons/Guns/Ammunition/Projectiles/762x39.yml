@@ -54,25 +54,3 @@
     damage:
       types:
         Piercing: 30
-
-- type: entity
-  id: Bullet739HE
-  name: bullet (7.62х39 rifle)
-  parent: Bullet739FMJ
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 5
-    damage:
-      types:
-        Piercing: 5
-  - type: TriggerOnCollide
-    fixtureID: projectile
-    maxTriggers: 1
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 4
-    intensitySlope: 4
-    totalIntensity: 4
-    maxTileBreak: 0

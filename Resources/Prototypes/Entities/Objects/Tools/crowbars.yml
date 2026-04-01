@@ -57,10 +57,10 @@
 
 # Emergency (red) Crowbar
 - type: entity
-  name: Freemans Crowbar
+  name: emergency crowbar
   parent: BaseCrowbar
   id: CrowbarRed
-  description: An emergency crowbar designed to pry open doors and firelocks during power outages. Great for smashing xenian skulls in.
+  description: An emergency crowbar designed to pry open doors and firelocks during power outages.
   components:
   - type: Tag
     tags:
@@ -90,13 +90,6 @@
       - state: equipped-BELT
       - state: cover-equipped-BELT
         color: "#990000"
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    damage:
-      types:
-        Blunt: 35
-        Mutant: 50
-    attackRate: 5
 
 # Autolathe (green) Crowbar
 - type: entity

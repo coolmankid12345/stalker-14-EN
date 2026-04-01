@@ -33,12 +33,11 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 300
+            damage: 450
           behaviors:
             - !type:PlaySoundBehavior
               sound:
-                path: /Audio/_Stalker_EN/Mutants/izlom_death.ogg
-                pitch: 0.7
+                path: /Audio/_Stalker/Mutants/boar_death_0.ogg
     - type: Fixtures
       fixtures:
         fix1:
@@ -52,37 +51,36 @@
             - MobLayer
     - type: FootstepModifier
       footstepSoundCollection:
-        collection: BarestepHard
+        path: /Audio/_Stalker/Mutants/step_hoof_asphalt5.ogg
         params:
-          volume: 1
-          variation: 0.7
+          volume: 0
+          variation: 0.3
     - type: MobThresholds
       thresholds:
         0: Alive
-        300: Dead
+        450: Dead
     - type: MeleeWeapon
-      attackRate: 5
+      attackRate: 0.4
       angle: 30
       range: 1.5
       soundHit:
-        path: /Audio/_Stalker_EN/Mutants/izlom_hit.ogg
+        path: /Audio/_Stalker/Mutants/boar_attack_1.ogg
         params:
           variation: 0.125
       soundSwing:
-        path: /Audio/_Stalker_EN/Mutants/izlom_miss.ogg
+        path: /Audio/_Stalker/Mutants/boar_aggressive_3.ogg
         params:
-          variation: 0.5
-          pitch: 0.7
+          variation: 0.125
       animation: WeaponArcClaw
       wideAnimation: WeaponArcClaw
       damage:
         types:
-          Blunt: 11
+          Blunt: 36
     - type: BonusMeleeDamage
       heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier
-      baseWalkSpeed: 12
-      baseSprintSpeed: 12
+      baseWalkSpeed: 2.2
+      baseSprintSpeed: 3.4
     - type: Sprite
       layers:
         - map: ["enum.DamageStateVisualLayers.Base"]
@@ -91,9 +89,9 @@
           scale: 1.2, 1.2
     - type: SlowOnDamage
       speedModifierThresholds:
-        300: 0.7
+        450: 0.7
     - type: StaminaDamageOnHit
-      damage: 4
+      damage: 10
     - type: STWeight
       self: 110
       overload: 187
@@ -144,9 +142,9 @@
     - type: Jumpscare
       chargeDamage:
         types:
-          Blunt: 20
-      jumpPower: 15
-      jumpDistance: 20
+          Blunt: 25
+      jumpPower: 2
+      jumpDistance: 4
       updateCooldown: 0.25
       #totalSteps: 6 # Stalker-TODO: This field exists in component but is not a datafield!
       #stepInterval: 0.001 # Stalker-TODO: This field exists in component but is not a datafield!

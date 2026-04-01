@@ -201,14 +201,6 @@
         STWeaponRevolverSWPC325TR: 1000
         STWeaponRevolverTaurusTracker455: 4000
         STWeaponRevolverChiappaRhino60DS: 5000
-        STWeaponRifleStalkerAbakan: 6000
-        STWeaponRifleStalkerAek971: 10000
-        STWeaponRifleASVAL: 7000
-        STWeaponRifleSCARHShort: 8000
-        STWeaponRifleARX160: 10000
-        STWeaponRifleF2000: 12000
-        STWeaponRifleSIG550: 8000
-        STWeaponRifleSIG739: 10000
     - name: shop-category-magazines
       priority: 2
       items:
@@ -271,9 +263,6 @@
         ClothingOuterArmorZaryaStalkerModifedType2: 2500
         ClothingOuterArmorZaryaStalkerModifedType1: 3800
         ClothingOuterArmorZaryaHunter: 2500
-        ClothingOuterArmorHazmatRf: 6500
-        STClothingOuterArmorRatnik: 15000
-        ClothingOuterArmorExoskelet: 25000
     - name: shop-category-storage-and-containers
       priority: 5
       items:

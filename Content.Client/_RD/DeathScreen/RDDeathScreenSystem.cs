@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Project: raincidation
  * File: RDDeathScreenSystem.cs
  * License: All rights reserved
@@ -60,7 +60,7 @@ public sealed class RDDeathScreenSystem : EntitySystem
 
         if (ev.AudioPath != string.Empty)
         {
-            _source = _audio.CreateAudioSource(_resourceCache.GetResource<AudioResource>("/Audio/Effects/sadtrombone.ogg"));
+            _source = _audio.CreateAudioSource(_resourceCache.GetResource<AudioResource>(ev.AudioPath));
             if (_source is not null)
             {
                 _source.Global = true;

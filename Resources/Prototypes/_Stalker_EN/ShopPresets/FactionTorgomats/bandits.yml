@@ -235,8 +235,6 @@
         MagazineBox357Magnum: 600 # T2
         MagazineBox357MagnumAP: 1500 # T3
         MagazineBox357MagnumHP: 800 # Mutant
-        739HEBox: 2500
-        8mmRepulseBox: 1000
 
     - name: shop-category-medicine # 50% discount from stalkers
       priority: 4
@@ -291,7 +289,6 @@
         ClothingOuterArmorSevaBandit: 4000 # T3 - PVE
         STClothingOuterArmorRCBZ: 2000
         ClothingOuterArmorBandits: 13000 #T3
-        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -384,8 +381,6 @@
         STCameraFilm: 150
         EntrenchingTool: 1000
         STLoggingChainsaw: 1000
-        BoomboxPortable: 500
-        NitrogenTankFilled: 1000
 
     - name: shop-category-modules
       priority: 11

@@ -51,7 +51,7 @@
       volume: -5
       range: 4
       sound:
-        path: /Audio/_Stalker/Effects/gravi_idle00.ogg
+        path: /Audio/_Stalker/Effects/anomaly_gravy_idle.ogg
     - type: ZoneArtifactSpawner
       artifacts:
       - id: null
@@ -109,7 +109,7 @@
       volume: -5
       range: 8
       sound:
-        path: /Audio/_Stalker/Effects/gravi_idle01.ogg
+        path: /Audio/_Stalker/Effects/anomaly_gravy_idle.ogg
     - type: Fixtures
       fixtures:
         fix1:
@@ -161,7 +161,7 @@
       force: 40
       distance: 10
     - type: ZoneAnomalyEffectPlaySound
-      sound: /Audio/_Stalker/Effects/gravity_entrance.ogg
+      sound: /Audio/_Stalker/Effects/springboard_blowout.ogg
     - type: ZoneAnomalyEffectSpawn
       entry:
         - id: SpringboardActiveEffect
@@ -184,7 +184,7 @@
       volume: -2
       range: 8
       sound:
-        path: /Audio/_Stalker/Effects/gravi_rumble1.ogg
+        path: /Audio/_Stalker/Effects/anomaly_gravy_idle.ogg
     - type: ZoneArtifactSpawner
       artifacts:
         - id: null
@@ -222,7 +222,7 @@
       force: 100
       distance: 70
     - type: ZoneAnomalyEffectPlaySound
-      sound: /Audio/_Stalker/Effects/gravity_entrance.ogg
+      sound: /Audio/_Stalker/Effects/springboard_blowout.ogg
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
       idle: -1
@@ -237,7 +237,7 @@
       volume: -4
       range: 12
       sound:
-        path: /Audio/_Stalker/Effects/gravi_rumble1.ogg
+        path: /Audio/_Stalker/Effects/anomaly_gravy_idle.ogg
     - type: Sprite
       sprite: _Stalker/Objects/Anomalies/springobard.rsi
       layers:

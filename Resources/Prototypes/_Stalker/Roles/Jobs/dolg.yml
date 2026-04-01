@@ -1,6 +1,6 @@
 - type: job
   id: StalkerDolg
-  name: Ward Soldier
+  name: job-dolg
   icon: dolg1
   description: job-dolg-desc
   playTimeTracker: JobDolg
@@ -9,6 +9,10 @@
     # - !type:RoleTimeRequirement
     #   role: JobDolg
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
   startingGear: DolgGear
   supervisors: job-dolg-supervisor
   canBeAntag: false
@@ -40,7 +44,7 @@
 
 - type: job
   id: StalkerHeadDolg
-  name: Ward komendant
+  name: job-head-dolg
   icon: dolg2
   description: job-head-dolg-desc
   playTimeTracker: JobHeadDolg
@@ -49,6 +53,10 @@
     # - !type:RoleTimeRequirement
     #   role: JobHeadDolg
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
   startingGear: DolgGearHead # EN
   supervisors: job-head-dolg-supervisor
   canBeAntag: false

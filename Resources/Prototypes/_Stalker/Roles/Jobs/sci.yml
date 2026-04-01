@@ -1,6 +1,6 @@
 - type: job
   id: StalkerScientist
-  name: SIRCAA Scientist
+  name: job-scientist
   icon: sci
   description: job-scientist-desc
   playTimeTracker: JobStalkerSci
@@ -9,6 +9,10 @@
     # - !type:RoleTimeRequirement
     #   role: JobStalkerSci
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
   startingGear: SciGear
   supervisors: job-scientist-supervisor
   canBeAntag: false
@@ -40,7 +44,7 @@
 
 - type: job
   id: sci
-  name: SIRCAA Scientist
+  name: job-sci
   icon: sci
   description: job-sci-desc
   playTimeTracker: JobSci
@@ -49,6 +53,10 @@
     # - !type:RoleTimeRequirement
     #   role: JobSci
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
   startingGear: SciGear
   supervisors: job-scientist-supervisor
   canBeAntag: false
@@ -80,7 +88,7 @@
 
 - type: job
   id: sci_decan
-  name: SIRCAA Soldier
+  name: job-sci_decan
   icon: sci_decan
   description: job-sci_decan-desc
   playTimeTracker: Jobsci_decan
@@ -89,6 +97,10 @@
     # - !type:RoleTimeRequirement
     #   role: Jobsci_decan
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
   startingGear: SciGear2
   supervisors: job-scientist-supervisor
   canBeAntag: false
@@ -120,7 +132,7 @@
 
 - type: job
   id: sci_rector
-  name: SIRCAA Head
+  name: job-sci_rector
   icon: sci_rector
   description: job-sci_rector-desc
   playTimeTracker: JobSci_rector
@@ -129,6 +141,10 @@
     # - !type:RoleTimeRequirement
     #   role: JobSci_rector
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
   startingGear: SciGear3
   supervisors: job-scientist-supervisor
   canBeAntag: false

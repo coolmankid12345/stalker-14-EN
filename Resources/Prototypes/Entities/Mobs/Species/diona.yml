@@ -114,8 +114,6 @@
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
   - type: Rootable
-  - type: BlowoutTarget # stalker-changes
-  - type: ZoneAnomalyActivator
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -125,4 +123,10 @@
   - type: HumanoidAppearance
     species: Diona
   - type: Inventory
-    templateId: STMain
+    templateId: diona
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

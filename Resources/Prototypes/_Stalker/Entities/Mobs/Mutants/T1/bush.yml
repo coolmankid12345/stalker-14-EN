@@ -30,17 +30,6 @@
                 path: /Audio/_Stalker/Mutants/bush/dead.ogg
                 params:
                   volume: 5
-    - type: EmitSoundOnSpawn
-      sound:
-        path: /Audio/_Stalker/Mutants/bloodsucker_scream.ogg
-        params:
-          volume: 1
-          maxDistance: 20
-    - type: EmitSoundOnTrigger
-      sound:
-        path: /Audio/_Stalker/Mutants/bloodsucker_die_1.ogg
-        params:
-          variation: 0.125
     - type: Fixtures
       fixtures:
         fix1:
@@ -54,7 +43,9 @@
             - MobLayer
     - type: FootstepModifier
       footstepSoundCollection:
-        path: /Audio/_Stalker/Mutants/bloodsucker_breath2.ogg # this is so ass who decided to do this for bloodsuckers in the first place
+        collection: BushStep
+        params:
+          volume: 0
     - type: MobThresholds
       thresholds:
         0: Alive
@@ -76,10 +67,6 @@
       damage:
         types:
           Slash: 10
-    - type: Stealth
-    - type: StealthOnMove
-      passiveVisibilityRate: 0.8
-      movementVisibilityRate: -0.8
     - type: BonusMeleeDamage
       heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier

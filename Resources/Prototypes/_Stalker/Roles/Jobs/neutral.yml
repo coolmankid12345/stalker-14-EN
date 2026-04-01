@@ -1,7 +1,7 @@
 
 - type: job
   id: StalkerNeutral
-  name: Hostiles
+  name: job-neutral-stalker
   icon: ne
   description: job-neutral-stalker-desc
   playTimeTracker: JobNeutral
@@ -10,6 +10,10 @@
     # - !type:RoleTimeRequirement
     #   role: JobNeutral
     #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
   startingGear: NeutralGear
   supervisors: job-neutral-stalker-supervisor
   canBeAntag: false

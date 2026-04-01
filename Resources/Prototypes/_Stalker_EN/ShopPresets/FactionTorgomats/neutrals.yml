@@ -142,7 +142,6 @@
       # Snipers
       STWeaponSniperSKS: 1850 # T2
       STWeaponSniperMosin: 1500
-      STBoltACR: 10000
 
   - name: shop-category-magazines
     priority: 2
@@ -197,8 +196,6 @@
       45ACPLFMJBox: 250 # T1
       45ACPMFMJBox: 1550 # T2
       45ACPAPBox: 1950 # T3
-      739HEBox: 2500
-      8mmRepulseBox: 1000
 
   - name: shop-category-medicine
     priority: 4
@@ -343,7 +340,6 @@
       STCameraFilm: 150
       EntrenchingTool: 1000
       STLoggingChainsaw: 1000
-      NitrogenTankFilled: 1000
 
   - name: shop-category-paperwork
     priority: 11

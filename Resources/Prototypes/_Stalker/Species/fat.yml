@@ -1,7 +1,7 @@
 - type: species
   id: HumanFat
   name: species-name-fat-human
-  roundStart: true
+  roundStart: false
   prototype: MobHumanFat
   sprites: MobHumanFatSprites
   markingLimits: MobHumanMarkingLimits

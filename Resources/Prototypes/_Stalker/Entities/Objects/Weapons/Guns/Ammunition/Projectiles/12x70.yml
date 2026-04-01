@@ -85,25 +85,6 @@
     count: 8
     spread: 8
 
-# repulse slug
-- type: entity
-  id: BulletRepulseBuckshot
-  name: bullet (8.5mm repulse slug)
-  parent: STPellet85mm
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 3
-    damage:
-      types:
-        Piercing: 30
-  - type: RepulseAttractOnTrigger
-    speed: 35
-    range: 4
-  - type: TriggerOnCollide
-    fixtureID: projectile
-    maxTriggers: 1
-
 # flechette
 
 - type: entity

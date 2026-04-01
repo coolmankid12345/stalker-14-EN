@@ -174,7 +174,6 @@
       STMetroWeaponRifleVSV: 5000
       # Snipers
       STWeaponSniperVepr: 4000
-      STBoltACR: 5000
 
   - name: shop-category-magazines
     priority: 2
@@ -259,8 +258,6 @@
       MagazineBox357Magnum: 600 # T2
       MagazineBox357MagnumAP: 1500 # T3
       MagazineBox357MagnumHP: 800 # Mutant
-      739HEBox: 2500
-      8mmRepulseBox: 1000
 
   - name: shop-category-medicine
     priority: 4
@@ -317,7 +314,6 @@
       STClothingOuterArmorCN-4a: 3600 # Illusion of choice
       STClothingOuterArmorCN-4aResearcher: 4000 # Slightly better SEVA
       ClothingOuterArmorSevaClearSky: 15000 # T3 - ENV/PVP
-      ClothingOuterArmorExoskelet: 100000
 
   - name: shop-category-storage-and-containers
     priority: 7
@@ -422,7 +418,6 @@
       STCameraFilm: 150
       EntrenchingTool: 1000
       STLoggingChainsaw: 1000
-      NitrogenTankFilled: 1000
 
   - name: shop-category-modules
     priority: 11

@@ -56,8 +56,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: BlowoutTarget # stalker-changes
-  - type: ZoneAnomalyActivator
 
 
 - type: entity
@@ -68,4 +66,9 @@
   - type: HumanoidAppearance
     species: Gingerbread
   - type: Inventory
-    templateId: STMain
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

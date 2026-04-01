@@ -54,11 +54,3 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet739BP
-
-- type: entity
-  id: STCartridge739HE
-  name: Cartridge (7,62x39)HE
-  parent: BaseSTCartridge739
-  components:
-  - type: CartridgeAmmo
-    proto: Bullet739HE
