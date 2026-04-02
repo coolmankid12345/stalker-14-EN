@@ -300,7 +300,7 @@
   - name: shop-category-customization
     priority: 12
     items:
-      ClothingBandageStalkerRed: 5
+      ClothingBandageStalkerUk: 10
       ClothingHeadHatBeaniehat: 10
       ClothingMaskNeckFacemask: 10
       ClothingMaskNeckBalaklava1: 10

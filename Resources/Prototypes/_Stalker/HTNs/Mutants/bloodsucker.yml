@@ -3,12 +3,13 @@
   branches:
     - tasks:
       - !type:HTNCompoundTask
-        task: STBloodsuckerMeleeCombatCompound
-
+        task: STBloodsuckerMeleeCombatAliveCompound # EN
+    - tasks: # EN
+      - !type:HTNCompoundTask
+        task: STBloodsuckerMeleeCombatCritCompound
     - tasks:
       - !type:HTNCompoundTask
         task: STBloodsuckerRoarRestoreCompound
-
       - !type:HTNCompoundTask
         task: IdleCompound
 
@@ -19,10 +20,8 @@
       - !type:HTNPrimitiveTask
         operator: !type:UtilityOperator
           proto: NearbyMeleeTargets
-
       - !type:HTNCompoundTask
         task: STBloodsuckerRoarCompound
-
       - !type:HTNCompoundTask
         task: STBloodsuckerMeleeAttackTargetCompound
 
@@ -242,3 +241,103 @@
         operator: !type:SetBoolOperator
           targetKey: Roared
           value: false
+
+# EN
+- type: htnCompound
+  id: STBloodsuckerMeleeCombatAliveCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: STMeleeAliveTargets
+    - !type:HTNCompoundTask
+      task: STBloodsuckerRoarCompound
+    - !type:HTNCompoundTask
+      task: STBloodsuckerMeleeAttackAliveTargetCompound
+
+- type: htnCompound
+  id: STBloodsuckerMeleeAttackAliveTargetCompound
+  branches:
+  # Move to melee range and hit them
+  - tasks:
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      operator: !type:MoveToOperator
+        shutdownState: PlanFinished
+        pathfindInPlanning: true
+        removeKeyOnFinish: false
+        targetKey: TargetCoordinates
+        pathfindKey: TargetPathfind
+        rangeKey: MeleeRange
+    - !type:HTNPrimitiveTask
+      operator: !type:JukeOperator
+        jukeType: AdjacentTile
+    - !type:HTNPrimitiveTask
+      operator: !type:MeleeOperator
+        targetKey: Target
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      - !type:TargetInRangePrecondition
+        targetKey: Target
+        rangeKey: MeleeRange
+      - !type:KeyBoolEqualsPrecondition
+        key: Roared
+        value: true
+      services:
+      - !type:UtilityService
+        id: MeleeService
+        proto: STMeleeAliveTargets
+        key: Target
+
+- type: htnCompound
+  id: STBloodsuckerMeleeCombatCritCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: STMeleeCritTargets
+    - !type:HTNCompoundTask
+      task: STBloodsuckerRoarCompound
+    - !type:HTNCompoundTask
+      task: STBloodsuckerMeleeAttackCritTargetCompound
+
+- type: htnCompound
+  id: STBloodsuckerMeleeAttackCritTargetCompound
+  branches:
+  # Move to melee range and hit them
+  - tasks:
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      operator: !type:MoveToOperator
+        shutdownState: PlanFinished
+        pathfindInPlanning: true
+        removeKeyOnFinish: false
+        targetKey: TargetCoordinates
+        pathfindKey: TargetPathfind
+        rangeKey: MeleeRange
+    - !type:HTNPrimitiveTask
+      operator: !type:JukeOperator
+        jukeType: AdjacentTile
+    - !type:HTNPrimitiveTask
+      operator: !type:MeleeOperator
+        targetKey: Target
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      - !type:TargetInRangePrecondition
+        targetKey: Target
+        rangeKey: MeleeRange
+      - !type:KeyBoolEqualsPrecondition
+        key: Roared
+        value: true
+      services:
+      - !type:UtilityService
+        id: MeleeService
+        proto: STMeleeCritTargets
+        key: Target
+# end EN

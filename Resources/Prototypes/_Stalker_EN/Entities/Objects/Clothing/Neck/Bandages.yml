@@ -14,10 +14,10 @@
   parent: ClothingNeckBase
   id: ClothingBandageStalkerBand
   name: Bandit Armband
-  description: A scrap of cloth with a black skull patch sewn into it, made to be quickly identifiable.
+  description: An armband to represent Bandits.
   suffix: Stalker, Armband
   components:
   - type: Sprite
-    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_band.rsi
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_brown.rsi
   - type: Clothing
-    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_band.rsi
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_brown.rsi

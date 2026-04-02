@@ -7,12 +7,18 @@
           preconditions:
             - !type:PulledPrecondition
               isPulled: true
-    - tasks:
+    - tasks: # start EN changes
         - !type:HTNCompoundTask
-          task: STSimpleMeleeCombatCompound
+          task: STSimpleMeleeCombatAliveCompound
     - tasks:
         - !type:HTNCompoundTask
           task: FollowCompound
+    - tasks:
+      - !type:HTNCompoundTask
+        task: STSimpleMeleeCombatCritCompound
+    - tasks:
+      - !type:HTNCompoundTask
+        task: FollowCompound # end EN changes
     - tasks:
         - !type:HTNCompoundTask
           task: IdleCompound
@@ -56,3 +62,68 @@
               id: MeleeService
               proto: NearbyMeleeTargets
               key: Target
+
+# EN
+# TargetIsDeadCon might be unnecessary idk
+- type: utilityQuery
+  id: STMeleeAliveTargets
+  query:
+  - !type:NearbyHostilesQuery
+  considerations:
+    - !type:TargetIsAliveCon
+      curve: !type:BoolCurve
+    - !type:TargetIsDeadCon
+      curve: !type:InverseBoolCurve
+    - !type:TargetDistanceCon
+      curve: !type:PresetCurve
+        preset: TargetDistance
+    - !type:TargetHealthCon
+      curve: !type:PresetCurve
+        preset: TargetHealth
+    - !type:TargetAccessibleCon
+      curve: !type:BoolCurve
+    - !type:TargetInLOSOrCurrentCon
+      curve: !type:BoolCurve
+
+- type: utilityQuery
+  id: STMeleeCritTargets
+  query:
+  - !type:NearbyHostilesQuery
+  considerations:
+  - !type:TargetIsCritCon
+    curve: !type:BoolCurve
+  - !type:TargetIsDeadCon
+    curve: !type:InverseBoolCurve
+  - !type:TargetDistanceCon
+    curve: !type:PresetCurve
+      preset: TargetDistance
+  - !type:TargetHealthCon
+    curve: !type:PresetCurve
+      preset: TargetHealth
+  - !type:TargetAccessibleCon
+    curve: !type:BoolCurve
+  - !type:TargetInLOSOrCurrentCon
+    curve: !type:BoolCurve
+
+# look for a living target
+- type: htnCompound
+  id: STSimpleMeleeCombatAliveCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: STMeleeAliveTargets
+    - !type:HTNCompoundTask
+      task: STSimpleMeleeAttackTargetCompound
+
+# look for a crit target
+- type: htnCompound
+  id: STSimpleMeleeCombatCritCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: STMeleeCritTargets
+    - !type:HTNCompoundTask
+      task: STSimpleMeleeAttackTargetCompound
+# end EN

@@ -179,7 +179,7 @@
         BasePPSHMag: 250
         BizonMag: 1100
           # Other
-        STSTC96ClipEmpty: 120  
+        STSTC96ClipEmpty: 120
         M1911Mag7: 150
         Base556Mag10: 80
         556Mag20: 220

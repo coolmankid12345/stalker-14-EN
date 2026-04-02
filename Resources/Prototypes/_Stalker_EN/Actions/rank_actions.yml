@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseAction
+  id: ActionToggleRank
+  name: Hide/Show Rank
+  description: Hides or shows your current rank for the Zone to see.
+  components:
+  - type: Action
+    icon:
+      sprite: _Stalker_EN/Icons/Ranks/ranks.rsi
+      state: Legend
+  - type: InstantAction
+    event: !type:STCharacterRankToggleEvent

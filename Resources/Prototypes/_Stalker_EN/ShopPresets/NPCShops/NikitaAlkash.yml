@@ -1,4 +1,4 @@
-﻿- type: shopPreset
+- type: shopPreset
   id: NpcNikitaAlkashEN
   minSellPrice: 5
   itemsForSale:
@@ -31,7 +31,6 @@
   - name: Miscellaneous
     priority: 2
     items:
-      ClothingBandageStalkerRus: 40
       Matchbox: 15
       STPaperRolling: 6
       DrinkShotGlass: 10

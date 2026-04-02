@@ -3,12 +3,13 @@
   branches:
     - tasks:
       - !type:HTNCompoundTask
-        task: STBlindDogWhiteMeleeCombatCompound
-
+        task: STBlindDogWhiteMeleeCombatAliveCompound # EN
+    - tasks: # EN
+      - !type:HTNCompoundTask
+        task: STBlindDogWhiteMeleeCombatCritCompound
     - tasks:
       - !type:HTNCompoundTask
         task: STBlindDogWhiteRoarRestoreCompound
-
       - !type:HTNCompoundTask
         task: IdleCompound
 
@@ -20,10 +21,8 @@
       - !type:HTNPrimitiveTask
         operator: !type:UtilityOperator
           proto: NearbyMeleeTargets
-
       - !type:HTNCompoundTask
         task: STBlindDogWhiteRoarCompound
-
       - !type:HTNCompoundTask
         task: STBlindDogWhiteMeleeAttackTargetCompound
 
@@ -237,3 +236,97 @@
             id: MeleeService
             proto: NearbyMeleeTargets
             key: Target
+
+# EN
+- type: htnCompound
+  id: STBlindDogWhiteMeleeCombatAliveCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: STMeleeAliveTargets
+    - !type:HTNCompoundTask
+      task: STBlindDogWhiteRoarCompound
+    - !type:HTNCompoundTask
+      task: STBlindDogWhiteMeleeAttackAliveTargetCompound
+
+- type: htnCompound
+  id: STBlindDogWhiteMeleeAttackAliveTargetCompound
+  branches:
+  # Move to melee range and hit them
+  - tasks:
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      operator: !type:MoveToOperator
+        shutdownState: PlanFinished
+        pathfindInPlanning: true
+        removeKeyOnFinish: false
+        targetKey: TargetCoordinates
+        pathfindKey: TargetPathfind
+        rangeKey: MeleeRange
+    - !type:HTNPrimitiveTask
+      operator: !type:JukeOperator
+        jukeType: AdjacentTile
+    - !type:HTNPrimitiveTask
+      operator: !type:MeleeOperator
+        targetKey: Target
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      - !type:TargetInRangePrecondition
+        targetKey: Target
+        rangeKey: MeleeRange
+      services:
+      - !type:UtilityService
+        id: MeleeService
+        proto: STMeleeAliveTargets
+        key: Target
+
+- type: htnCompound
+  id: STBlindDogWhiteMeleeCombatCritCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: STMeleeCritTargets
+    - !type:HTNCompoundTask
+      task: STBlindDogWhiteRoarCompound
+    - !type:HTNCompoundTask
+      task: STBlindDogWhiteMeleeAttackCritTargetCompound
+
+- type: htnCompound
+  id: STBlindDogWhiteMeleeAttackCritTargetCompound
+  branches:
+  # Move to melee range and hit them
+  - tasks:
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      operator: !type:MoveToOperator
+        shutdownState: PlanFinished
+        pathfindInPlanning: true
+        removeKeyOnFinish: false
+        targetKey: TargetCoordinates
+        pathfindKey: TargetPathfind
+        rangeKey: MeleeRange
+    - !type:HTNPrimitiveTask
+      operator: !type:JukeOperator
+        jukeType: AdjacentTile
+    - !type:HTNPrimitiveTask
+      operator: !type:MeleeOperator
+        targetKey: Target
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      - !type:TargetInRangePrecondition
+        targetKey: Target
+        rangeKey: MeleeRange
+      services:
+      - !type:UtilityService
+        id: MeleeService
+        proto: STMeleeCritTargets
+        key: Target
+# end EN

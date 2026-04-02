@@ -30,7 +30,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
     /// Minimum damage state that the target has to be in for us to consider attacking.
     /// </summary>
     [DataField("targetState")]
-    public MobState TargetState = MobState.Alive;
+    public MobState TargetState = MobState.Critical;
 
     // Like movement we add a component and pass it off to the dedicated system.
 
@@ -78,7 +78,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
     public override void PlanShutdown(NPCBlackboard blackboard)
     {
         base.PlanShutdown(blackboard);
-        
+
         ConditionalShutdown(blackboard);
     }
 

@@ -34,4 +34,12 @@ public sealed partial class STCharacterRankComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan AccumulatedTime;
+
+    [DataField("action"), ViewVariables(VVAccess.ReadOnly)]
+    public string Action = "ActionToggleRank";
+
+    [DataField] public EntityUid? ActionEntity;
+
+    [AutoNetworkedField]
+    public bool Enabled = true;
 }

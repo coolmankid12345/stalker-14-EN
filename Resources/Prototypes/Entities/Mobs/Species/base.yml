@@ -38,9 +38,10 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
+    #- map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "belt" ] # stalker-changes - makes belt bags and carrier rigs visible over armor.
     - map: [ "cloak" ] # stalker-changes
     - map: [ "back" ]
     - map: [ "neck" ]

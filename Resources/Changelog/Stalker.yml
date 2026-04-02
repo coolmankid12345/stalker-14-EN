@@ -2044,5 +2044,28 @@
   id: 215
   time: '2026-03-31T20:56:50.327166+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/741
+- author: crocodilecarousel
+  changes:
+  - message: Mutant behavior has been updated to include crit targets
+    type: Tweak
+  id: 216
+  time: '2026-04-01T21:44:39.888662+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/745
+- author: Nox38
+  changes:
+  - message: Belts now render on top of armor.
+    type: Tweak
+  id: 217
+  time: '2026-04-01T21:47:26.800969+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/744
+- author: dallaszzz
+  changes:
+  - message: Faction armbands were made consistant and have explicit names
+    type: Tweak
+  - message: Took out all the flag armbands from all venders
+    type: Remove
+  id: 218
+  time: '2026-04-01T21:52:16.595317+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/739
 Name: Stalker
 Order: -1

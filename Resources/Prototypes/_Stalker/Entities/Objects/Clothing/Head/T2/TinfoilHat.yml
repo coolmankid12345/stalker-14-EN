@@ -16,7 +16,7 @@
   - type: Armor
     modifiers:
       coefficients:
-        Psy: 0.2
+        Psy: 0.8
   - type: HideLayerClothing
     slots:
     - Hair

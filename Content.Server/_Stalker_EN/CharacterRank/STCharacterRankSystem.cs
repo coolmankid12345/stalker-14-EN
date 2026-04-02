@@ -3,9 +3,11 @@ using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._Stalker_EN.CharacterRank;
+using Content.Shared.Actions;
 using Content.Shared.GameTicking;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Players.PlayTimeTracking;
 using Robust.Shared.Console;
 using Robust.Shared.Player;
@@ -24,6 +26,8 @@ public sealed class STCharacterRankSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playtime = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
 
     private static readonly ProtoId<STCharacterRankPrototype> DefaultConfig = "Default";
 
@@ -49,14 +53,34 @@ public sealed class STCharacterRankSystem : EntitySystem
         _config = _proto.Index(DefaultConfig);
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<STCharacterRankComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<STCharacterRankComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<STCharacterRankComponent, PlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<STCharacterRankComponent, ComponentRemove>(OnComponentRemove);
         SubscribeLocalEvent<STCharacterRankComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<STCharacterRankComponent, STCharacterRankToggleEvent>(OnToggleRank);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
         SubscribeLocalEvent<AFKEvent>(OnAfk);
         SubscribeLocalEvent<UnAFKEvent>(OnUnAfk);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+    }
+
+    private void OnComponentInit(EntityUid uid, STCharacterRankComponent comp, ComponentInit args)
+    {
+        _actions.AddAction(uid, ref comp.ActionEntity, comp.Action, uid);
+    }
+
+    private void OnToggleRank(EntityUid uid, STCharacterRankComponent comp, STCharacterRankToggleEvent args)
+    {
+        if (args.Handled || !_mobState.IsAlive(uid))
+            return;
+
+        comp.ActionEntity = args.Performer;
+
+        comp.Enabled = !comp.Enabled;
+        Dirty(uid, comp);
+
+        args.Handled = true;
     }
 
     public override void Update(float frameTime)
@@ -181,6 +205,8 @@ public sealed class STCharacterRankSystem : EntitySystem
 
     private void OnComponentRemove(EntityUid uid, STCharacterRankComponent comp, ComponentRemove args)
     {
+        _actions.RemoveAction(uid, comp.ActionEntity);
+
         if (_tracked.TryGetValue(uid, out var data))
         {
             FlushEntity(uid, data);
