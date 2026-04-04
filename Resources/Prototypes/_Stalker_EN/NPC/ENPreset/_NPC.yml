@@ -277,3 +277,43 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMolitChevronEN
+  name: Pleiades
+  description: Exchanges Monolith Chevrons for rare items.
+  suffix: ST, Chevron, EN-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Pleyad.rsi
+    state: pleyad
+  - type: Physics
+    bodyType: Static
+  - type: DatasetVocalizer
+    dataset: STNPCStalkerBarmenAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: ChevronMonolit
+    shopPresetId: NpcMolithChevronEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common

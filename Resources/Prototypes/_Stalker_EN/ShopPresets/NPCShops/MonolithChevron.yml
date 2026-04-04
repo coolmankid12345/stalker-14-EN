@@ -1,0 +1,66 @@
+# Main purpose of this NPC shop is to be able to reliably get value out of going to RF/Limansk and fighting Monolith,
+# Enabling an easier way to get into crafting and acquiring higher tier equipment, that is more reliant on skill, than RNG.
+# 1 Chevron = 1k or so?
+
+# Should add more items, such as T4 armor, more weapons, etc. through the wipe. As wipe is just happening, the inventory is limited on purpose.
+- type: shopPreset
+  id: NpcMolithChevronEN
+  minSellPrice: 1
+  itemsForSale:
+    ClothingNeckDogtagMonolith: 5
+
+  categories:
+  - name: shop-category-craftingmats
+    priority: 1
+    items:
+      STCraftHighPerformanceChipT4: 10
+      STCraftIndustrialThreadStaplesKitT4: 10
+      STCraftPolymerFabricT4: 10
+      STCraftSapphireCrystalT4: 10
+      STCraftYewPlankT4: 10
+      STCraftPlasticFittingT4: 10
+      STCraftSheetAluminumT4: 10
+      STCraftMultilayerPCBT3: 3
+      STCraftGlueKitT3: 3
+      STCraftSturdyHideT3: 3
+      STCraftQuartzCrystalT3: 3
+      STCraftOakPlankT3: 3
+      STCraftPlasticFittingT3: 3
+      STCraftSheetBrassT3: 3
+  - name: shop-category-weapons
+    priority: 2
+    items:
+      STWeaponShotgunProtecta: 15
+      STWeaponShotgunSaiga12: 20
+  - name: shop-category-magazines
+    priority: 3
+    items:
+      Saiga1270Mag10: 2
+  - name: shop-category-storage-and-containers
+    priority: 4
+    items:
+      ClothingBackpackDuffelMilitaryOlive: 20
+      ClothingBackpackDuffelSuperStalker: 30
+      ClothingBackpackDuffelSuperStalkerGray: 30
+  - name: shop-category-medicine
+    priority: 5
+    items:
+      MedkitScience: 1
+      MedkitElite: 1
+  - name: shop-category-research-equipment
+    priority: 6
+    items:
+      STPsyHelm2: 10
+      STBoltBagOliveGrayFilledGolden: 5
+      TrashDetectorTier4: 15
+  - name: shop-category-modules
+    priority: 7
+    items:
+      STModuleScopeRiflesT2Nato: 5
+      STModuleScopeRiflesT2Ru: 5
+      STModuleSMGGripT2: 5
+      STModuleSniperSightT2: 5
+      STModuleSilencerRiflesT2Nato: 5
+      STModuleSilencerRiflesT2Ru: 5
+      STModuleSilencerSMGT2: 5
+      STModuleSilencerSniperT2: 5

@@ -259,6 +259,7 @@
   - type: Currency
     price:
       PremiumSupplyTalons: 2
+      ChevronMonolit: 5
 
 - type: entity
   parent: ClothingNeckDogtagBaseEN

@@ -8,7 +8,7 @@ shop-category-research-equipment = Research Equipment
 shop-category-utilities = Utilities
 shop-category-provisions = Provisions
 shop-category-medicine = Medicine
-shop-category-modules = Modules
+shop-category-modules = Attachments
 shop-category-customization = Customization
 shop-category-entertainment = Entertainment
 shop-category-metal-detectors = Metal detectors
@@ -17,6 +17,7 @@ shop-category-grenades = Grenades
 shop-category-paperwork = Paperwork
 shop-category-what = Copter
 shop-category-tools = Tools
+shop-category-craftingmats = Crafting Materials
 
 shop-category-blueprints = Blueprints
 shop-category-blueprints-research-equipment = Blueprints - Anomaly and Artifact Detectors

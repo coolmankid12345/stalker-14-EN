@@ -60,6 +60,11 @@
       - !type:TriggerBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: Butcherable
+    spawned:
+      - id: ChevronMonolit
+        amount: 1
+        prob: 1
 
 - type: entity
   name: Неизвестный монолитовец
@@ -175,9 +180,3 @@
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy
     accuracyMultiplier: 1.2
-
-#  - type: Butcherable This will be added back later
-#    spawned:
-#      - id: ChevronMonolit
-#        amount: 1
-#        prob: 1
