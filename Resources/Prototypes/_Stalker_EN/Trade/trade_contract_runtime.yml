@@ -1,0 +1,54 @@
+- type: entity
+  id: TradeContractDropoffBeacon
+  name: unloading beacon
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Objects/Devices/station_beacon.rsi
+    layers:
+    - state: blink
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 1.8
+    color: "#4FA9FF"
+
+- type: entity
+  id: TradeContractGhostRoleRuntimeSpawner
+  name: contract ghost role runtime spawner
+  categories: [ HideSpawnMenu ]
+  save: false
+
+- type: entity
+  id: BoxCrateQests
+  name: box-crate
+  description: box-crate
+  components:
+  - type: Clickable
+  - type: Climbable
+  - type: InteractionOutline
+  - type: Pullable
+  - type: Physics
+    bodyType: Dynamic
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    sprite: /Textures/_Stalker/Objects/Decoration/boxes.rsi
+    state: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.375,-0.453125,0.375,0.453125"
+        density: 240
+        mask:
+        - TableMask
+        layer:
+        - LowImpassable

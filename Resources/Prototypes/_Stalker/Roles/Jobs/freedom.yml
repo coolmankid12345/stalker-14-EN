@@ -19,6 +19,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: NpcFactionMember
           factions:
           - Freedom
@@ -63,6 +64,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: NpcFactionMember
           factions:
           - Freedom
@@ -109,4 +111,3 @@
   hierarchy:
     1: StalkerFreedom
     2: StalkerHeadFreedom
-

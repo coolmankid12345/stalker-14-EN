@@ -47,6 +47,21 @@
   id: STArtifact
 
 - type: Tag
+  id: STArtifactTier1
+
+- type: Tag
+  id: STArtifactTier2
+
+- type: Tag
+  id: STArtifactTier3
+
+- type: Tag
+  id: STArtifactTier4
+
+- type: Tag
+  id: STArtifactTier5
+
+- type: Tag
   id: Vog25grenade
 
 - type: Tag

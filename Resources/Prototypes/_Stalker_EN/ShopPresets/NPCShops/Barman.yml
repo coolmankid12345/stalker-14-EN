@@ -312,6 +312,7 @@
         FoodSTOil: 100
         FoodBowlBig: 200
         Spoon: 75
+        HerculesBottleFull: 200
 
     - name: shop-category-drinks
       priority: 6

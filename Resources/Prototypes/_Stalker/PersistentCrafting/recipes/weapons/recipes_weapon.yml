@@ -1,0 +1,908 @@
+﻿- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeToz34T1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponShotgunTOZ34
+  branch: Weapon
+  tier: 1
+  requiredNode: PersistentCraftWeaponNodeToz34T1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: STWeaponShotgunTOZ34
+  category: weapons
+  subCategory: weapon-shotguns
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeObrezT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponShotgunSawedOf
+  branch: Weapon
+  tier: 1
+  requiredNode: PersistentCraftWeaponNodeObrezT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: STWeaponShotgunSawedOf
+  category: weapons
+  subCategory: weapon-shotguns
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeMP133T2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponShotgunMP133
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeMP133T2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponShotgunMP133
+  category: weapons
+  subCategory: weapon-shotguns
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeMossbergT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponShotgunMossbergM88
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeMossbergT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponShotgunMossbergM88
+  category: weapons
+  subCategory: weapon-shotguns
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeMP153T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponShotgunMP153
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeMP153T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponShotgunMP153
+  category: weapons
+  subCategory: weapon-shotguns
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeBenelliT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponShotgunBenelliM4Super90
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeBenelliT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponShotgunBenelliM4Super90
+  category: weapons
+  subCategory: weapon-shotguns
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeSpas12T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponShotgunSPAS
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeSpas12T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponShotgunSPAS
+  category: weapons
+  subCategory: weapon-shotguns
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeProtectaT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponShotgunProtecta
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeProtectaT4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STWeaponShotgunProtecta
+  category: weapons
+  subCategory: weapon-shotguns
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeSaiga12T45
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponShotgunSaiga12
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeSaiga12T45
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier4
+    amount: 1
+  results:
+  - proto: STWeaponShotgunSaiga12
+  category: weapons
+  subCategory: weapon-shotguns
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeAKS74UT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleAKS74U
+  branch: Weapon
+  tier: 1
+  requiredNode: PersistentCraftWeaponNodeAKS74UT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: STWeaponRifleAKS74U
+  category: weapons
+  subCategory: weapon-ar-soviet
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeVsvGlukharT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STMetroWeaponRifleVSV
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeVsvGlukharT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STMetroWeaponRifleVSV
+  category: weapons
+  subCategory: weapon-ar-soviet
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeAKS74T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleAKS74
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeAKS74T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponRifleAKS74
+  category: weapons
+  subCategory: weapon-ar-soviet
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeRPK74T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleStalkerRPK16
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeRPK74T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponRifleStalkerRPK16
+  category: weapons
+  subCategory: weapon-ar-soviet
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeA545T4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleA545
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeA545T4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STWeaponRifleA545
+  category: weapons
+  subCategory: weapon-ar-soviet
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeAK74MT45
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleAK74M
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeAK74MT45
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier4
+    amount: 1
+  results:
+  - proto: STWeaponRifleAK74M
+  category: weapons
+  subCategory: weapon-ar-soviet
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeSaiga762T15
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleSaiga739
+  branch: Weapon
+  tier: 1
+  requiredNode: PersistentCraftWeaponNodeSaiga762T15
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: STWeaponRifleSaiga739
+  category: weapons
+  subCategory: weapon-sniper-dmr
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeSKST2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSniperSKS
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeSKST2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponSniperSKS
+  category: weapons
+  subCategory: weapon-sniper-dmr
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeAKMCT35
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleAKMC
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeAKMCT35
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponRifleAKMC
+  category: weapons
+  subCategory: weapon-ar-soviet
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeAK103T45
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleAK103
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeAK103T45
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier4
+    amount: 1
+  results:
+  - proto: STWeaponRifleAK103
+  category: weapons
+  subCategory: weapon-ar-soviet
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeMosinT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSniperMosin
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeMosinT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponSniperMosin
+  category: weapons
+  subCategory: weapon-sniper-dmr
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeSVDST45
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSniperSVDS
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeSVDST45
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier4
+    amount: 1
+  results:
+  - proto: STWeaponSniperSVDS
+  category: weapons
+  subCategory: weapon-sniper-dmr
+
+# - type: persistentCraftRecipe
+#   id: PersistentCraftWeaponRecipeVSST5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STWeaponSniperVSS
+#   branch: Weapon
+#   tier: 5
+#   requiredNode: PersistentCraftWeaponNodeVSST5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STWeaponSniperVSS
+#   category: weapons
+#   subCategory: weapon-sniper-dmr
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeL85T1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleL85
+  branch: Weapon
+  tier: 1
+  requiredNode: PersistentCraftWeaponNodeL85T1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: STWeaponRifleL85
+  category: weapons
+  subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeM16T2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleM16
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeM16T2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponRifleM16
+  category: weapons
+  subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeSig550T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleSIG550
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeSig550T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponRifleSIG550
+  category: weapons
+  subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeM4T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleM4
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeM4T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponRifleM4
+  category: weapons
+  subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeScarLT35
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleSCARL
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeScarLT35
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponRifleSCARL
+  category: weapons
+  subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeLr300T4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleLR300v1
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeLr300T4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STWeaponRifleLR300v1
+  category: weapons
+  subCategory: weapon-ar-nato
+
+# - type: persistentCraftRecipe
+#   id: PersistentCraftWeaponRecipeGalilT5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STWeaponRifleGalil
+#   branch: Weapon
+#   tier: 5
+#   requiredNode: PersistentCraftWeaponNodeGalilT5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STWeaponRifleGalil
+#   category: weapons
+#   subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeFnFalT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleFAL
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeFnFalT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponRifleFAL
+  category: weapons
+  subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeGalatzT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleGalatz
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeGalatzT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponRifleGalatz
+  category: weapons
+  subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeScarHT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleSCARH
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeScarHT4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STWeaponRifleSCARH
+  category: weapons
+  subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeScarHCqcT45
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRifleFALo
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeScarHCqcT45
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier4
+    amount: 1
+  results:
+  - proto: STWeaponRifleFALo
+  category: weapons
+  subCategory: weapon-ar-nato
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeGlockT15
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: WeaponPistolStalkerGlock
+  branch: Weapon
+  tier: 1
+  requiredNode: PersistentCraftWeaponNodeGlockT15
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: WeaponPistolStalkerGlock
+  category: weapons
+  subCategory: weapon-pistols-revolvers
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeKedrT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGPP91
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeKedrT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponSMGPP91
+  category: weapons
+  subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeMp5T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGMP5
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeMp5T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponSMGMP5
+  category: weapons
+  subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeVereskT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGStalkerCP2Veresk
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeVereskT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponSMGStalkerCP2Veresk
+  category: weapons
+  subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeVityazT35
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGPP1901
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeVityazT35
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponSMGPP1901
+  category: weapons
+  subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeP90T45
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGFNP90
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeP90T45
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier4
+    amount: 1
+  results:
+  - proto: STWeaponSMGFNP90
+  category: weapons
+  subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeTaurusJudgeT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRevolverTaurusJudge
+  branch: Weapon
+  tier: 1
+  requiredNode: PersistentCraftWeaponNodeTaurusJudgeT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: STWeaponRevolverTaurusJudge
+  category: weapons
+  subCategory: weapon-pistols-revolvers
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeSW625T25
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRevolverSWModel625
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeSW625T25
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponRevolverSWModel625
+  category: weapons
+  subCategory: weapon-pistols-revolvers
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeChiappaT35
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRevolverChiappaRhino60DS
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeChiappaT35
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponRevolverChiappaRhino60DS
+  category: weapons
+  subCategory: weapon-pistols-revolvers
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeDanWessonT35
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRevolverDanWesson715
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeDanWessonT35
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponRevolverDanWesson715
+  category: weapons
+  subCategory: weapon-pistols-revolvers
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeRsh12T45
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponRevolverRH12
+  branch: Weapon
+  tier: 4
+  requiredNode: PersistentCraftWeaponNodeRsh12T45
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier4
+    amount: 1
+  results:
+  - proto: STWeaponRevolverRH12
+  category: weapons
+  subCategory: weapon-pistols-revolvers
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeApsT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: WeaponPistolStalkerAPS
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeApsT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: WeaponPistolStalkerAPS
+  category: weapons
+  subCategory: weapon-pistols-revolvers
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeBizonT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGPP19
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeBizonT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponSMGPP19
+  category: weapons
+  subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeVz61T2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGVZ61
+  branch: Weapon
+  tier: 2
+  requiredNode: PersistentCraftWeaponNodeVz61T2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STWeaponSMGVZ61
+  category: weapons
+  subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeVeresk921T35
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGStalkerCP2Veresk921
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeVeresk921T35
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponSMGStalkerCP2Veresk921
+  category: weapons
+  subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeBizon919T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGPP19919
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeBizon919T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponSMGPP19919
+  category: weapons
+  subCategory: weapon-smg-pdw
+

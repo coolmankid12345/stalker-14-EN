@@ -16,6 +16,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+      #- type: PersistentCraftAccess
       - type: Access
         tags:
           - Jaba
@@ -52,6 +53,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+      #- type: PersistentCraftAccess
       - type: Access
         tags:
           - Jaba
@@ -90,4 +92,3 @@
   hierarchy:
     1: StalkerJaba
     2: StalkerJabaAce
-

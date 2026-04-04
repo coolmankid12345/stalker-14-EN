@@ -41,6 +41,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+      #- type: PersistentCraftAccess
       - type: Access
         tags:
           - Stalker

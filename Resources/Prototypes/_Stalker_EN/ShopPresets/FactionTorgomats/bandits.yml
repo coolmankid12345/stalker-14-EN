@@ -269,6 +269,7 @@
         FoodSTEgg: 75
         FoodSTTomato: 75
         STDrinkJar: 300
+        HerculesBottleFull: 200
 
     - name: shop-category-armor
       priority: 6

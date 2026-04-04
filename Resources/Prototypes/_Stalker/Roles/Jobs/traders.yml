@@ -19,6 +19,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+      #- type: PersistentCraftAccess
       - type: Access
         tags:
           - Stalker
@@ -55,4 +56,3 @@
   managingRankId: 3
   hierarchy:
     1: StalkerTrader
-

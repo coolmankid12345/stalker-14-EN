@@ -1,0 +1,98 @@
+# Artifact breakdown recipes (separate materials branch)
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArtifactBreakdownRecipeT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ArtMedusa
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - tag: STArtifactTier1
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 14
+  category: artifact-breakdown
+  subCategory: tier-1
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArtifactBreakdownRecipeT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactAmoeba
+  branch: Materials
+  tier: 2
+  requiredNode: PersistentCraftMaterialsNodeT2
+  craftTime: 3
+  pointReward: 0
+  ingredients:
+  - tag: STArtifactTier2
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 24
+  category: artifact-breakdown
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArtifactBreakdownRecipeT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactFlower
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 4
+  pointReward: 0
+  ingredients:
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 34
+  category: artifact-breakdown
+  subCategory: tier-3
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArtifactBreakdownRecipeT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactNightStar
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 5
+  pointReward: 0
+  ingredients:
+  - tag: STArtifactTier4
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 68
+  category: artifact-breakdown
+  subCategory: tier-4
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArtifactBreakdownRecipeT5
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactGoldfish
+  branch: Materials
+  tier: 5
+  requiredNode: PersistentCraftMaterialsNodeT5
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - tag: STArtifactTier5
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 132
+  category: artifact-breakdown
+  subCategory: tier-5
+
+

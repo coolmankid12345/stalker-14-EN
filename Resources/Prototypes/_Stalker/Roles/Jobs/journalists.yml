@@ -20,6 +20,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: Access
           tags:
             - Journalist
@@ -60,4 +61,3 @@
   managingRankId: 3
   hierarchy:
     1: StalkerJournalist
-

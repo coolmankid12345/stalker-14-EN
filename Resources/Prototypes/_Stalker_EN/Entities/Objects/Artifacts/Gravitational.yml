@@ -29,6 +29,11 @@
     modifiers:
       coefficients:
         Compression: 0.75
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier2
 
 - type: entity
   parent: BaseArtifact
@@ -62,6 +67,11 @@
       coefficients:
         Compression: 0.85
         Psy: 1
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier1
 
 - type: entity
   parent: BaseArtifact
@@ -95,6 +105,11 @@
       coefficients:
         Compression: 0.75
         Psy: 1.25
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier2
 
 - type: entity
   parent: BaseArtifact
@@ -128,3 +143,8 @@
       coefficients:
         Compression: 0.65
         Psy: 1.45
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier3

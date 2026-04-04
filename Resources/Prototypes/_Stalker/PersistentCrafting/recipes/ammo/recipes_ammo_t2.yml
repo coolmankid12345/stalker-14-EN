@@ -1,0 +1,191 @@
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipe545FMJBoxCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: 545FMJBox
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: 545FMJBox
+    amount: 4
+  category: ammo
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipe918PSTBoxCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: 918PSTBox
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: 918PSTBox
+    amount: 4
+  category: ammo
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipe919PSTBoxCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: 919PSTBox
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: 919PSTBox
+    amount: 4
+  category: ammo
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipe556FMJBoxCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: 556FMJBox
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: 556FMJBox
+    amount: 4
+  category: ammo
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipe725PTBoxCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: 725PTBox
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: 725PTBox
+    amount: 4
+  category: ammo
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipe45ACPMFMJBoxCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: 45ACPMFMJBox
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: 45ACPMFMJBox
+    amount: 4
+  category: ammo
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipe939SP5BoxCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STBox9x39SP5
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: STBox9x39SP5
+    amount: 4
+  category: ammo
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipe1255TPCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: Ammobox1255TP
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: Ammobox1255TP
+    amount: 4
+  category: ammo
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipe8mmBuckshotBoxCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: 8mmBuckshotBox
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: 8mmBuckshotBox
+    amount: 6
+  category: ammo
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAmmo_newrecipeShotgunBulletBoxCink
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ShotgunBulletBox
+  branch: Ammo
+  tier: 2
+  requiredNode: PersistentCraftWeaponAmmoNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ShotgunBulletBox
+    amount: 6
+  category: ammo
+  subCategory: tier-2
+
+

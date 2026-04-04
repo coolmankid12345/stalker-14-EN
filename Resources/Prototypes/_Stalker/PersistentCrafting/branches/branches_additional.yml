@@ -1,0 +1,15 @@
+- type: persistentCraftBranch
+  id: Utility
+  name: persistent-craft-branch-utility
+  order: 5
+  defaultCategory: utility
+  accentColor: "#7b8b9a"
+  useTierSubcategories: true
+
+- type: persistentCraftBranch
+  id: Medicine
+  name: persistent-craft-branch-medicine
+  order: 6
+  defaultCategory: medicine
+  accentColor: "#8ea86a"
+  useTierSubcategories: true

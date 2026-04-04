@@ -1,0 +1,57 @@
+- type: persistentCraftNode
+  id: PersistentCraftWeaponAmmoNodeT1
+  name: Ammo I
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Ammo
+  cost: 0
+  displayProto: 7mmBuckshotBox
+  treeColumn: 0
+  treeRow: 0
+
+- type: persistentCraftNode
+  id: PersistentCraftWeaponAmmoNodeT2
+  name: Ammo II
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Ammo
+  cost: 0
+  displayProto: 545FMJBox
+  treeColumn: 1
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftWeaponAmmoNodeT1
+
+- type: persistentCraftNode
+  id: PersistentCraftWeaponAmmoNodeT3
+  name: Ammo III
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Ammo
+  cost: 0
+  displayProto: 739FMJBox
+  treeColumn: 2
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftWeaponAmmoNodeT2
+
+- type: persistentCraftNode
+  id: PersistentCraftWeaponAmmoNodeT4
+  name: Ammo IV
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Ammo
+  cost: 0
+  displayProto: 751M80Box
+  treeColumn: 3
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftWeaponAmmoNodeT3
+
+- type: persistentCraftNode
+  id: PersistentCraftWeaponAmmoNodeT5
+  name: Ammo V
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Ammo
+  cost: 0
+  displayProto: Ammobox1255PS12A
+  treeColumn: 4
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftWeaponAmmoNodeT4

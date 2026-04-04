@@ -2067,5 +2067,44 @@
   id: 218
   time: '2026-04-01T21:52:16.595317+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/739
+- author: CattyLucky
+  changes:
+  - message: New CraftSystems with metaprogresion
+    type: Add
+  id: 219
+  time: '2026-04-02T21:12:12.369584+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/748
+- author: CattyLucky
+  changes:
+  - message: Added new quests.
+    type: Add
+  id: 220
+  time: '2026-04-03T12:25:38.197112+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/749
+- author: stickycheZ101
+  changes:
+  - message: fixed bonfires being uncraftable
+    type: Fix
+  id: 221
+  time: '2026-04-03T16:26:44.153218+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/752
+- author: BELNAKBU
+  changes:
+  - message: Add hercules to shops
+    type: Add
+  id: 222
+  time: '2026-04-04T13:00:06.350856+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/753
+- author: dallaszzz
+  changes:
+  - message: Removes furry ears
+    type: Remove
+  - message: lowers freedom speakers volume
+    type: Tweak
+  - message: fixes mono trader prices and stock
+    type: Tweak
+  id: 223
+  time: '2026-04-04T13:01:41.783914+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/746
 Name: Stalker
 Order: -1

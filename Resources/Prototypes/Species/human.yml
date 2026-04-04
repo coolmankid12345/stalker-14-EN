@@ -55,7 +55,7 @@
       points: 0
       required: false
     HeadTop:
-      points: 1
+      points: 0 # EN change - removes furry ears
       required: false
     UndergarmentTop:
       points: 1

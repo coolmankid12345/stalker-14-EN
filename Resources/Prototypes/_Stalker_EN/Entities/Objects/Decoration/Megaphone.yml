@@ -60,7 +60,7 @@
     sprite: _Stalker/Objects/Decoration/Other/rupor.rsi
     state: base
   - type: AmbientSound
-    volume: -7
+    volume: -12
     range: 10
     enabled: true
     sound:

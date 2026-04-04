@@ -1,0 +1,19 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         HorizontalExpand="True">
+    <PanelContainer Name="RootPanel" HorizontalExpand="True">
+        <BoxContainer Name="Body"
+                      Orientation="Vertical"
+                      HorizontalExpand="True">
+            <Label Name="TitleLabel"/>
+            <Label Name="SummaryLabel"/>
+            <Control MinSize="1 5"/>
+            <ProgressBar Name="ProgressBar"
+                         MinSize="0 8"
+                         HorizontalExpand="True"/>
+            <Label Name="ProgressTextLabel"/>
+            <Control Name="FooterSpacer" MinSize="1 4"/>
+            <Label Name="FooterLabel"/>
+        </BoxContainer>
+    </PanelContainer>
+</Control>

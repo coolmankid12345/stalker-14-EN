@@ -1,0 +1,103 @@
+persistent-craft-station-title = Станок ремесленника
+persistent-craft-menu-title = Меню крафта
+persistent-craft-station-open-skills = Древо навыков
+persistent-craft-station-summary = Станция: {$station}. Это отдельный станок нового крафта. Потрачено очков: {$spent}.
+persistent-craft-station-summary-loading = Профиль персонажа ещё загружается. Навыки и доступные рецепты появятся автоматически.
+persistent-craft-menu-summary = Уровень крафта: {$level}. Опыт: {$experience}/{$next}. Открыто узлов: {$unlocked}. Потрачено очков: {$spent}. Материалы берутся из рук и инвентаря.
+persistent-craft-menu-summary-loading = Профиль персонажа ещё загружается. Рецепты и крафт появятся автоматически.
+persistent-craft-menu-material-note = Материалы берутся из рук и инвентаря.
+persistent-craft-station-no-recipes = В этой ветке пока нет открытых рецептов. Открой нужный подузел в древе навыков.
+
+persistent-craft-station-recipe-line = {$desc}\n[color=gray]Материалы: {$ingredients}[/color]\n[color=gray]Результат: {$results}[/color]\n[color=gray]Время: {$time} сек. Требование: {$requirement}. Статус: {$status}[/color]
+persistent-craft-station-requirement-tier = {$branch} T{$tier}
+persistent-craft-station-status-loading = загрузка
+persistent-craft-station-status-available = доступен
+persistent-craft-station-status-locked = требуется навык
+persistent-craft-station-status-missing-materials = не хватает материалов
+
+persistent-craft-recipe-ingredients = Материалы
+persistent-craft-recipe-results = Результат
+persistent-craft-recipe-time = Время
+persistent-craft-recipe-seconds = сек
+persistent-craft-recipe-experience = Опыт
+persistent-craft-recipe-points = Очки
+persistent-craft-recipe-requirement = Требование
+persistent-craft-recipe-status = Статус
+persistent-craft-recipes-short = Рецепты
+persistent-craft-craftable-short = Крафтимо
+persistent-craft-recipe-action = Крафтить
+persistent-craft-filter-all = Все
+persistent-craft-filter-craftable = Только крафтимое
+persistent-craft-search-placeholder = Поиск рецептов
+persistent-craft-search-empty = По вашему запросу рецепты не найдены.
+persistent-craft-empty-craftable = Для текущих фильтров нет доступных крафтимых рецептов.
+persistent-craft-search-empty-craftable = По вашему запросу не найдено крафтимых рецептов.
+persistent-craft-empty-detail = Выберите рецепт в списке, чтобы посмотреть детали.
+persistent-craft-search-empty-detail = Измените поиск или фильтр тира, чтобы увидеть детали рецепта.
+persistent-craft-empty-craftable-detail = Снимите фильтр крафтимого или соберите материалы, чтобы увидеть детали рецепта.
+persistent-craft-search-empty-craftable-detail = Измените поиск, фильтр тира или фильтр крафтимого, чтобы увидеть детали рецепта.
+
+persistent-craft-category-ammo = Патроны
+persistent-craft-category-magazines = Магазины
+persistent-craft-category-weapons = Оружие
+persistent-craft-category-armor = Броня
+persistent-craft-category-headgear = Шлемы и маски
+persistent-craft-category-bags = Сумки
+persistent-craft-category-medicine = Медицина
+persistent-craft-category-anomaly-detectors = Детекторы аномалий
+persistent-craft-category-artifact-detectors = Детекторы артефактов
+persistent-craft-category-containers = Контейнеры
+persistent-craft-category-special = Спецснаряжение
+
+persistent-craft-subcategory-caliber-545 = Калибр 5.45
+persistent-craft-subcategory-caliber-556 = Калибр 5.56
+persistent-craft-subcategory-helmets = Шлемы
+persistent-craft-subcategory-masks = Маски
+persistent-craft-subcategory-backpacks = Рюкзаки
+persistent-craft-subcategory-medkits = Аптечки
+persistent-craft-subcategory-scanner-line = Линия сканеров
+persistent-craft-subcategory-artifact-line = Линия артефактов
+persistent-craft-subcategory-containers-line = Линия контейнеров
+
+persistent-craft-station-popup-started = Начато изготовление: {$recipe}
+persistent-craft-station-popup-missing-items = Не хватает материалов для этого рецепта.
+persistent-craft-station-popup-skill-locked = Этот рецепт ещё не открыт в древе навыков.
+persistent-craft-station-popup-crafted = Изготовлено: {$recipe}
+
+persistent-craft-recipe-weapon-t1-name = Патроны 5.56 FMJ
+persistent-craft-recipe-weapon-t1-desc = Базовая оружейная сборка боеприпасов для отдельной оружейной ветки.
+persistent-craft-recipe-weapon-t2-name = Патроны 5.56 M855
+persistent-craft-recipe-weapon-t2-desc = Улучшенная партия бронебойных боеприпасов среднего тира.
+persistent-craft-recipe-weapon-t3-name = Патроны 5.56 M856
+persistent-craft-recipe-weapon-t3-desc = Продвинутый патрон с более дорогими компонентами и сложной сборкой.
+persistent-craft-recipe-weapon-t4-name = Патроны 5.45 M995
+persistent-craft-recipe-weapon-t4-desc = Высокотирный оружейный рецепт с дорогими металлическими заготовками.
+persistent-craft-recipe-weapon-t5-name = Патроны 5.56 SSA AP
+persistent-craft-recipe-weapon-t5-desc = Пиковый рецепт оружейной ветки для самых дорогих боеприпасов.
+
+persistent-craft-recipe-armor-t1-name = Пальто бандита
+persistent-craft-recipe-armor-t1-desc = Простая броневая работа с тканью и базовой фурнитурой.
+persistent-craft-recipe-armor-t2-name = Заря сталкера
+persistent-craft-recipe-armor-t2-desc = Средний тир броневой ветки с упором на шитьё и пластины.
+persistent-craft-recipe-armor-t3-name = СЕВА сталкера
+persistent-craft-recipe-armor-t3-desc = Продвинутый защитный комплект с усиленными материалами.
+persistent-craft-recipe-armor-t4-name = Боевой сталкерский бронекостюм
+persistent-craft-recipe-armor-t4-desc = Тяжёлый броневой рецепт с алюминием и полимерной тканью.
+persistent-craft-recipe-armor-t5-name = Тяжёлый Редут
+persistent-craft-recipe-armor-t5-desc = Максимальный тир броневой ветки с композитами и усиленными наборами.
+
+persistent-craft-recipe-anomaly-t1-name = Детектор аномалий AD-1
+persistent-craft-recipe-anomaly-t1-desc = Базовое устройство для старта аномальной ветки.
+persistent-craft-recipe-anomaly-t2-name = Детектор аномалий AD-2
+persistent-craft-recipe-anomaly-t2-desc = Улучшенный детектор на базе предыдущей модели и новых электронных компонентов.
+persistent-craft-recipe-anomaly-t3-name = Детектор артефактов «Ель»
+persistent-craft-recipe-anomaly-t3-desc = Первый серьёзный прибор артефактной ветки с многослойной электроникой.
+persistent-craft-recipe-anomaly-t4-name = Детектор артефактов «Медведь»
+persistent-craft-recipe-anomaly-t4-desc = Продвинутый прибор для глубокой аномальной работы.
+persistent-craft-recipe-anomaly-t5-name = Детектор артефактов «Волкодав»
+persistent-craft-recipe-anomaly-t5-desc = Пиковое устройство аномальной ветки с артефактом как частью сборки.
+persistent-craft-tag-STArtifactTier1 = Артефакт T1
+persistent-craft-tag-STArtifactTier2 = Артефакт T2
+persistent-craft-tag-STArtifactTier3 = Артефакт T3
+persistent-craft-tag-STArtifactTier4 = Артефакт T4
+persistent-craft-tag-STArtifactTier5 = Артефакт T5

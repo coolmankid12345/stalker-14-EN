@@ -1,0 +1,51 @@
+- type: persistentCraftCategory
+  id: utility
+  name: Equipment
+  order: 5
+
+- type: persistentCraftCategory
+  id: medicine
+  name: Medicine
+  order: 6
+
+- type: persistentCraftSubCategory
+  id: utility-backpacks
+  category: utility
+  name: Backpacks
+  order: 1
+
+- type: persistentCraftSubCategory
+  id: utility-belts
+  category: utility
+  name: Pouches
+  order: 2
+
+- type: persistentCraftSubCategory
+  id: utility-artifact-containers
+  category: utility
+  name: Artifact Containers
+  order: 3
+
+- type: persistentCraftSubCategory
+  id: utility-cases
+  category: utility
+  name: Cases
+  order: 4
+
+- type: persistentCraftSubCategory
+  id: medicine-basic
+  category: medicine
+  name: Basic Medicine
+  order: 1
+
+- type: persistentCraftSubCategory
+  id: medicine-medkits
+  category: medicine
+  name: Medkits
+  order: 2
+
+- type: persistentCraftSubCategory
+  id: medicine-drugs
+  category: medicine
+  name: Medications
+  order: 3

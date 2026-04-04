@@ -19,6 +19,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: Access
           tags:
             - ProjectPawn
@@ -72,6 +73,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: Psyonics
         - type: PsyonicsActionSmoke
         - type: PsyonicsActionGrab
@@ -120,4 +122,3 @@
   hierarchy:
     1: StalkerProjectPawn
     2: StalkerProjectOrchestrator
-

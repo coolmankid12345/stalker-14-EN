@@ -54,7 +54,8 @@ public sealed partial class MessengerUiFragment : BoxContainer
 
         SendMessage.OnPressed += ev =>
         {
-            OnSendMessage?.Invoke(new PdaMessage(InputTitle.Text, Rope.Collapse(ContentInput.TextRope), InputReciver.Text));
+            // bandId is not available on client UI, will be resolved on server
+            OnSendMessage?.Invoke(new PdaMessage(InputTitle.Text, Rope.Collapse(ContentInput.TextRope), InputReciver.Text, null));
         };
     }
 

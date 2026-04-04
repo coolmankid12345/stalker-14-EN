@@ -1,0 +1,14 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         HorizontalExpand="True">
+    <ContainerButton Name="RootButton"
+                     HorizontalExpand="True">
+        <BoxContainer Orientation="Horizontal"
+                      HorizontalExpand="True">
+            <Label Name="TitleLabel"
+                   HorizontalExpand="True"
+                   ClipText="True" />
+            <Label Name="CountLabel" />
+        </BoxContainer>
+    </ContainerButton>
+</Control>

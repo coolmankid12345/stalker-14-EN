@@ -1,0 +1,206 @@
+﻿- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT3
+  name: persistent-craft-recipe-anomaly-t3-name
+  description: persistent-craft-recipe-anomaly-t3-desc
+  displayProto: ZoneArtifactDetectorSpruce
+  branch: Anomaly
+  tier: 3
+  requiredNode: PersistentCraftAnomalyNodeSpruce
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ZoneArtifactDetectorSpruce
+  category: artifact-detectors
+  subCategory: tier-3
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT4
+  name: persistent-craft-recipe-anomaly-t4-name
+  description: persistent-craft-recipe-anomaly-t4-desc
+  displayProto: ZoneArtifactDetectorBear
+  branch: Anomaly
+  tier: 4
+  requiredNode: PersistentCraftAnomalyNodeBear
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: ZoneArtifactDetectorBear
+  category: artifact-detectors
+  subCategory: tier-4
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT4Alt
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: Veles
+  branch: Anomaly
+  tier: 3
+  requiredNode: PersistentCraftAnomalyNodeVeles
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: Veles
+  category: artifact-detectors
+  subCategory: tier-3
+
+# - type: persistentCraftRecipe
+#   id: PersistentCraftAnomalyRecipeT5
+#   name: persistent-craft-recipe-anomaly-t5-name
+#   description: persistent-craft-recipe-anomaly-t5-desc
+#   displayProto: ZoneArtifactDetectorWolfhound
+#   branch: Anomaly
+#   tier: 5
+#   requiredNode: PersistentCraftAnomalyNodeWolfhound
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: ZoneArtifactDetectorWolfhound
+#   category: artifact-detectors
+#   subCategory: tier-5
+
+# - type: persistentCraftRecipe
+#   id: PersistentCraftAnomalyRecipeT5Alt
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: Svarog
+#   branch: Anomaly
+#   tier: 5
+#   requiredNode: PersistentCraftAnomalyNodeSvarog
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: Svarog
+#   category: artifact-detectors
+#   subCategory: tier-5
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT1Pulse
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactDetectorPulse
+  branch: Anomaly
+  tier: 1
+  requiredNode: PersistentCraftAnomalyNodePulse
+  craftTime: 4
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ZoneArtifactDetectorPulse
+  category: artifact-detectors
+  subCategory: tier-1
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT1Hunter
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactDetectorHunter
+  branch: Anomaly
+  tier: 1
+  requiredNode: PersistentCraftAnomalyNodeHunter
+  craftTime: 4
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ZoneArtifactDetectorHunter
+  category: artifact-detectors
+  subCategory: tier-1
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT1Bush
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactDetectorBush
+  branch: Anomaly
+  tier: 1
+  requiredNode: PersistentCraftAnomalyNodeBush
+  craftTime: 4
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ZoneArtifactDetectorBush
+  category: artifact-detectors
+  subCategory: tier-1
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT2Response
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactDetectorResponse
+  branch: Anomaly
+  tier: 2
+  requiredNode: PersistentCraftAnomalyNodeResponse
+  craftTime: 5
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ZoneArtifactDetectorResponse
+  category: artifact-detectors
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT3Barracuda
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactDetectorBarracuda
+  branch: Anomaly
+  tier: 3
+  requiredNode: PersistentCraftAnomalyNodeBarracuda
+  craftTime: 6
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ZoneArtifactDetectorBarracuda
+  category: artifact-detectors
+  subCategory: tier-3
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT4SeaDevil
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactDetectorSeaDevil
+  branch: Anomaly
+  tier: 4
+  requiredNode: PersistentCraftAnomalyNodeSeaDevil
+  craftTime: 7
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: ZoneArtifactDetectorSeaDevil
+  category: artifact-detectors
+  subCategory: tier-4
+

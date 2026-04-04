@@ -1,0 +1,31 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         HorizontalExpand="True">
+    <BoxContainer Name="RootRow"
+                  Orientation="Horizontal"
+                  HorizontalExpand="True">
+        <BoxContainer Orientation="Vertical"
+                      MinSize="168 0">
+            <PanelContainer Name="IconPanel"
+                            MinSize="116 116" />
+            <Control MinSize="1 12" />
+            <Button Name="CraftButton"
+                    HorizontalExpand="True"
+                    MinSize="0 38" />
+            <Control MinSize="1 10" />
+            <RichTextLabel Name="InfoLabel"
+                           HorizontalExpand="True"
+                           MaxWidth="180" />
+        </BoxContainer>
+        <Control MinSize="18 1" />
+        <BoxContainer Orientation="Vertical"
+                      HorizontalExpand="True">
+            <Label Name="TitleLabel"
+                   ClipText="True" />
+            <Control MinSize="1 6" />
+            <BoxContainer Name="MetaHost"
+                          Orientation="Vertical"
+                          HorizontalExpand="True" />
+        </BoxContainer>
+    </BoxContainer>
+</Control>

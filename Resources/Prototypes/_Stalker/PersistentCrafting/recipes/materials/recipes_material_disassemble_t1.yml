@@ -1,0 +1,249 @@
+# Material disassemble recipes (tier 1)
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftSheetCopperT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftSheetCopperT1
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftSheetCopperT1
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftPinePlankT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftPinePlankT1
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftPinePlankT1
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftBasicPCBT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftBasicPCBT1
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftBasicPCBT1
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftPlasticFittingT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftPlasticFittingT1
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftPlasticFittingT1
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftGlassT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftGlassT1
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftGlassT1
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftCottonFabricT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftCottonFabricT1
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftCottonFabricT1
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftBasicThreadKitT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftBasicThreadKitT1
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftBasicThreadKitT1
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftBattery
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftBattery
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftBattery
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftCoil
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftCoil
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftCoil
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftCapacitor
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftCapacitor
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftCapacitor
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftTransformer
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftTransformer
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftTransformer
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftFurniture
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftFurniture
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftFurniture
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleCraftMaterialGunpowder
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: CraftMaterialGunpowder
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: CraftMaterialGunpowder
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 1
+  category: anomaly-dust
+  subCategory: material-disassemble
+

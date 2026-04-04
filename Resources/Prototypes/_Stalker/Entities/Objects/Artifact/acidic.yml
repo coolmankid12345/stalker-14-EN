@@ -36,6 +36,11 @@
         Poison: 0.95
         Caustic: 0.8
         Asphyxiation: 1.05
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier1
 
 
 - type: entity
@@ -77,6 +82,11 @@
         Poison: 0.85
         Caustic: 0.75
         Asphyxiation: 1.1
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier2
 
 - type: entity
   parent: BaseArtifact
@@ -132,6 +142,11 @@
         Poison: 0.75
         Caustic: 0.65
         Asphyxiation: 1.15
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier3
 
 - type: entity
   parent: BaseArtifact
@@ -172,6 +187,11 @@
         Slash: 1.1
 
 ## toxic bullet shit
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier1
 
 - type: entity
   id: STPelletToxicShard
@@ -245,6 +265,11 @@
     modifiers:
       coefficients:
         Psy: 0.9
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier2
 
 - type: entity
   parent: BaseArtifact
@@ -285,6 +310,11 @@
         Poison: 0.65
         Caustic: 0.6
         Asphyxiation: 1.2
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier4
 
 - type: entity
   parent: BaseArtifact
@@ -324,3 +354,8 @@
         Poison: 0.55
         Caustic: 0.5
         Asphyxiation: 1.25
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier4

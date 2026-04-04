@@ -20,6 +20,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: Access
           tags:
             - Poisk
@@ -51,4 +52,3 @@
   managingRankId: 3
   hierarchy:
     1: StalkerPoisk
-

@@ -1,0 +1,82 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                xmlns:controls="clr-namespace:Content.Client._NC.Trade.Controls"
+                HorizontalExpand="True"
+                RectClipContent="True"
+                Margin="0">
+
+    <PanelContainer.PanelOverride>
+        <graphics:StyleBoxFlat BackgroundColor="#141417E6"
+                               BorderColor="#B08D3B"
+                               BorderThickness="1"
+                               Padding="8 3 8 3"/>
+    </PanelContainer.PanelOverride>
+
+    <BoxContainer Orientation="Vertical"
+                  SeparationOverride="0"
+                  HorizontalExpand="True">
+
+        <Label Name="TitleLabel"
+               StyleClasses="LabelKeyText"
+               ClipText="True"
+               HorizontalExpand="True"
+               Margin="1 0 1 1"/>
+
+        <PanelContainer Name="TitleDivider"
+                        HorizontalExpand="True"
+                        MinSize="0 1"
+                        Margin="0 0 0 1">
+            <PanelContainer.PanelOverride>
+                <graphics:StyleBoxFlat BackgroundColor="#B08D3BCC"/>
+            </PanelContainer.PanelOverride>
+        </PanelContainer>
+
+        <BoxContainer Name="ContentRow" Orientation="Horizontal"
+                      SeparationOverride="0"
+                      HorizontalExpand="True"
+                      Margin="0">
+
+            <PanelContainer Name="IconSlotBackground"
+                            MinSize="72 72"
+                            MaxSize="72 72"
+                            Margin="0 0 4 0">
+                <EntityPrototypeView Name="IconView"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Top"
+                                     Margin="2"/>
+            </PanelContainer>
+
+            <PanelContainer Name="IconDivider"
+                            MinSize="1 0"
+                            VerticalExpand="True"
+                            Margin="0 0 0 0">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#B08D3BCC"/>
+                </PanelContainer.PanelOverride>
+            </PanelContainer>
+
+            <controls:NcListingDescriptionBox Name="DescriptionBox"
+                                              HorizontalExpand="True"
+                                              VerticalExpand="True"
+                                              Margin="2 0 6 0"/>
+
+            <BoxContainer Name="ActionColumn"
+                          Orientation="Vertical"
+                          SeparationOverride="2"
+                          HorizontalExpand="False"
+                          MinWidth="124"
+                          RectClipContent="True"
+                          Margin="0 0 0 0">
+
+                <controls:NcListingQuantityControl Name="QtyControl" />
+
+                <controls:NcListingPriceButtonControl Name="PriceButton" />
+
+                <controls:NcListingStockInfoControl Name="StockInfo" />
+            </BoxContainer>
+
+        </BoxContainer>
+
+    </BoxContainer>
+</PanelContainer>

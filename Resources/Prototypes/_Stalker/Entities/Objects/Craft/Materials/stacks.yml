@@ -296,3 +296,10 @@
   icon: { sprite: _Stalker/Structures/Furniture/carton_box.rsi, state: kb2 }
   spawn: STCraftFurniture
   maxCount: 5
+
+- type: stack
+  id: STAnomalyDust
+  name: stack-st-anomaly-dust
+  icon: { sprite: Structures/Specific/Anomalies/Cores/gravity_core.rsi, state: core }
+  spawn: STCraftAnomalyDust
+  maxCount: 200

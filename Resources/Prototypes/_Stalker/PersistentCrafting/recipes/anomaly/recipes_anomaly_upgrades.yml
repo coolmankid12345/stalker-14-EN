@@ -1,0 +1,35 @@
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT2ModifiedHunter
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactDetectorModifiedHunter
+  branch: Anomaly
+  tier: 2
+  requiredNode: PersistentCraftAnomalyNodeModifiedHunter
+  craftTime: 5
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ZoneArtifactDetectorModifiedHunter
+  category: upgrades
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT2ResponseCvoboda
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneArtifactDetectorResponseCvoboda
+  branch: Anomaly
+  tier: 2
+  requiredNode: PersistentCraftAnomalyNodeResponseCvoboda
+  craftTime: 5
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ZoneArtifactDetectorResponseCvoboda
+  category: upgrades
+  subCategory: tier-2

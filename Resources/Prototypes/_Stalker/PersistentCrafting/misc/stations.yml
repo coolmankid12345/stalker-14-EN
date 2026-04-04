@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseStructure
+  id: PersistentCraftWorkbench
+  name: old craftsman's workbench
+  description: Decorative object. The new crafting menu is now opened via Atom role's active skill.
+  suffix: Stalker, persistent craft
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Devices/workbench.rsi
+      state: icon
+    - type: Transform
+      noRot: true

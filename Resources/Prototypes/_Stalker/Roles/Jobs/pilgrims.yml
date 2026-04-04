@@ -19,6 +19,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: Psyonics
           psy: 50
         - type: PsyonicsActionLight
@@ -58,6 +59,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: Psyonics
           psy: 99
         - type: PsyonicsActionLight
@@ -108,4 +110,3 @@
   hierarchy:
     1: StalkerPostulant
     2: StalkerBishop
-

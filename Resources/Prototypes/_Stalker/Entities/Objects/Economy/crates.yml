@@ -1567,6 +1567,7 @@
         - id: STTourniquet
         - id: STGauze
         - id: Defibrillator # EN
+        - id: Bloodpack # EN
       sound:
         path: /Audio/Effects/unwrap.ogg
 

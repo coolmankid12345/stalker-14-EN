@@ -1,0 +1,118 @@
+# Markers for contract spawn zones and delivery points.
+
+- type: entity
+  id: MarkerTradeContractBounty
+  parent: MarkerBase
+  name: contract, hunt
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractHuntSpawn
+
+- type: entity
+  id: MarkerContractDeliveryBolotoEasy
+  parent: MarkerBase
+  name: contract, delivery, swamp, easy
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractDeliveryBolotoEasy
+
+- type: entity
+  id: MarkerContractHuntBoarLair
+  parent: MarkerBase
+  name: contract, hunt, boar lair, swamp, medium
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractHuntBoarLair
+
+- type: entity
+  id: MarkerContractHuntPseudodog
+  parent: MarkerBase
+  name: contract, hunt, pseudodog lair, swamp, medium
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractHuntPseudodog
+
+- type: entity
+  id: MarkerContractHuntMobMutantLeshiy
+  parent: MarkerBase
+  name: contract, hunt, Leshiy, swamp, medium
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractHuntMobMutantLeshiy
+
+- type: entity
+  id: MarkerContractHuntSTMobMutantBearT2Common
+  parent: MarkerBase
+  name: contract, hunt, bear, swamp, medium
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractHuntSTMobMutantBearT2Common
+
+- type: entity
+  id: MarkerContractHuntMobMutantPoltergeistIce
+  parent: MarkerBase
+  name: contract, hunt, poltergeist, swamp, hard
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractHuntMobMutantPoltergeistIce
+
+- type: entity
+  id: MarkerContractHuntSTMobMutantBloodsuckerUncommon
+  parent: MarkerBase
+  name: contract, hunt, bloodsucker, swamp, hard
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractHuntSTMobMutantBloodsuckerUncommon
+
+- type: entity
+  id: MarkerContractHuntSTMobMutantBearPsiUncommon
+  parent: MarkerBase
+  name: contract, hunt, psi bear, swamp, hard
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractHuntSTMobMutantBearPsiUncommon
+
+- type: Tag
+  id: TradeContractDeliveryBolotoEasy
+
+- type: Tag
+  id: TradeContractHuntBoarLair
+
+- type: Tag
+  id: TradeContractHuntPseudodog
+
+- type: Tag
+  id: TradeContractHuntSpawn
+
+- type: Tag
+  id: TradeContractHuntMobMutantLeshiy
+
+- type: Tag
+  id: TradeContractHuntSTMobMutantBearT2Common
+
+- type: Tag
+  id: TradeContractHuntSTMobMutantBearPsiUncommon
+
+- type: Tag
+  id: TradeContractHuntSTMobMutantBloodsuckerUncommon
+
+- type: Tag
+  id: TradeContractHuntMobMutantPoltergeistIce

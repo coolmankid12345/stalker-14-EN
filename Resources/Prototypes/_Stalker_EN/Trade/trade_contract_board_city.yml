@@ -1,0 +1,16 @@
+﻿- type: entity
+  id: TradeContractBoardCity
+  parent: Trademachine
+  name: Contract Board
+  description: A board with requests for deliveries, hunts, repairs, and special targets.
+  suffix: ST, QUESTS
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: Structures/Wallmounts/noticeboard.rsi
+    layers:
+    - state: noticeboard
+  - type: NcStore
+    contractPresets:
+    - TradeContractsCityPreset
+

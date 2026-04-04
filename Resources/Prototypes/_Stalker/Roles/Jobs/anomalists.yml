@@ -11,6 +11,7 @@
   special:
   - !type:AddComponentSpecial
     components:
+    #- type: PersistentCraftAccess
     - type: Access
       groups:
         - Anomalist
@@ -43,6 +44,7 @@
   special:
   - !type:AddComponentSpecial
     components:
+    #- type: PersistentCraftAccess
     - type: Psyonics
       psy: 75
     - type: PsyonicsActionMeditation
@@ -83,4 +85,3 @@
   hierarchy:
     1: StalkerAnomalist
     2: StalkerAnomalistGuardian
-

@@ -1,0 +1,109 @@
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT1
+  name: persistent-craft-recipe-anomaly-t1-name
+  description: persistent-craft-recipe-anomaly-t1-desc
+  displayProto: ZoneAnomalyDetectorAD1
+  branch: Anomaly
+  tier: 1
+  requiredNode: PersistentCraftAnomalyNodeAD1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ZoneAnomalyDetectorAD1
+  category: anomaly-detectors
+  subCategory: tier-1
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT1Alt
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneAnomalyDetectorUpgradeAD1
+  branch: Anomaly
+  tier: 1
+  requiredNode: PersistentCraftAnomalyNodeUpgradeAD1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ZoneAnomalyDetectorUpgradeAD1
+  category: anomaly-detectors
+  subCategory: tier-1
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT2
+  name: persistent-craft-recipe-anomaly-t2-name
+  description: persistent-craft-recipe-anomaly-t2-desc
+  displayProto: ZoneAnomalyDetectorAD2
+  branch: Anomaly
+  tier: 2
+  requiredNode: PersistentCraftAnomalyNodeAD2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ZoneAnomalyDetectorAD2
+  category: anomaly-detectors
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT2Alt
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneAnomalyDetectorUpgradeAD2
+  branch: Anomaly
+  tier: 2
+  requiredNode: PersistentCraftAnomalyNodeUpgradeAD2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ZoneAnomalyDetectorUpgradeAD2
+  category: anomaly-detectors
+  subCategory: tier-2
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT3Alt
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneAnomalyDetectorBMT12
+  branch: Anomaly
+  tier: 3
+  requiredNode: PersistentCraftAnomalyNodeBMT12
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ZoneAnomalyDetectorBMT12
+  category: anomaly-detectors
+  subCategory: tier-3
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyRecipeT5AD3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ZoneAnomalyDetectorAD3
+  branch: Anomaly
+  tier: 4
+  requiredNode: PersistentCraftAnomalyNodeAD3
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: ZoneAnomalyDetectorAD3
+  category: anomaly-detectors
+  subCategory: tier-4

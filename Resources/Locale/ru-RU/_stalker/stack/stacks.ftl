@@ -75,6 +75,7 @@ stack-st-craft-battery = battery
 stack-st-craft-coil = coil
 stack-st-craft-capacitor = capacitor
 stack-st-craft-transformer = transformer
+stack-st-anomaly-dust = аномальная эссенция
 stack-st-craft-furniture = мебель
 
 stack-psyblock = пси-блокада

@@ -1,0 +1,912 @@
+﻿- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeShitok2T2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterArmorLightPlateVestBaseStalker
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeShitok2T2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STClothingOuterArmorLightPlateVestBaseStalker
+  category: armor
+  subCategory: armor-body
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeKirasaT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterKirasa
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeKirasaT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STClothingOuterKirasa
+  category: armor
+  subCategory: armor-body
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipe6B2T2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmor6B2
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNode6B2T2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ClothingOuterArmor6B2
+  category: armor
+  subCategory: armor-body
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeStep4T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterArmorLightPlateVestBaseANAgreen
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeStep4T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STClothingOuterArmorLightPlateVestBaseANAgreen
+  category: armor
+  subCategory: armor-body
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeKoryndT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterKorynd
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeKoryndT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STClothingOuterKorynd
+  category: armor
+  subCategory: armor-body
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeSlickT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterSlickHaki
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeSlickT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STClothingOuterSlickHaki
+  category: armor
+  subCategory: armor-body
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipe6B13T4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmor6B13
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNode6B13T4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: ClothingOuterArmor6B13
+  category: armor
+  subCategory: armor-body
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeVaryag4T4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterArmorIOTVGreen
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodeVaryag4T4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STClothingOuterArmorIOTVGreen
+  category: armor
+  subCategory: armor-body
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeIotvT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterIOTV
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodeIotvT4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STClothingOuterIOTV
+  category: armor
+  subCategory: armor-body
+
+# - type: persistentCraftRecipe
+#   id: PersistentCraftArmorRecipeRedutT5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STClothingOuterHeavyRedut
+#   branch: Armor
+#   tier: 5
+#   requiredNode: PersistentCraftArmorNodeRedutT5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STClothingOuterHeavyRedut
+#   category: armor
+#   subCategory: armor-body
+
+# - type: persistentCraftRecipe
+#   id: PersistentCraftArmorRecipeRatnikT5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STClothingOuterArmorRatnik
+#   branch: Armor
+#   tier: 5
+#   requiredNode: PersistentCraftArmorNodeRatnikT5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STClothingOuterArmorRatnik
+#   category: armor
+#   subCategory: armor-body
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeChainJacketT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmourJacketStalker
+  branch: Armor
+  tier: 1
+  requiredNode: PersistentCraftArmorNodeChainJacketT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ClothingOuterArmourJacketStalker
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeUpgradeJacketT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterJacketStalkerUpgrade
+  branch: Armor
+  tier: 1
+  requiredNode: PersistentCraftArmorNodeUpgradeJacketT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ClothingOuterJacketStalkerUpgrade
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeAnomalyJacketT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterAnomalyStalkerJacket
+  branch: Armor
+  tier: 1
+  requiredNode: PersistentCraftArmorNodeAnomalyJacketT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ClothingOuterAnomalyStalkerJacket
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeRCBZT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterArmorRCBZ
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeRCBZT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STClothingOuterArmorRCBZ
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeUZK5T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorUzk5
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeUZK5T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ClothingOuterArmorUzk5
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipePSZ7T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterArmorLightPlateVestBasePSZ7
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodePSZ7T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STClothingOuterArmorLightPlateVestBasePSZ7
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeMercSuitT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorStalker
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeMercSuitT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ClothingOuterArmorStalker
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeSevaT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorSevaStalker
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeSevaT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ClothingOuterArmorSevaStalker
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeHazmatT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorHazmatRf
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodeHazmatT4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: ClothingOuterArmorHazmatRf
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeBerill5MT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterArmorBerill5M
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodeBerill5MT4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STClothingOuterArmorBerill5M
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipePioneerT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorStalkerCombat
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodePioneerT4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: ClothingOuterArmorStalkerCombat
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeZaryaT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorZaryaStalker
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeZaryaT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ClothingOuterArmorZaryaStalker
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeZarya3T2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorZaryaStalkerModifedType1
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeZarya3T2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ClothingOuterArmorZaryaStalkerModifedType1
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeZarya7T2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorZaryaStalkerModifedType2
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeZarya7T2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ClothingOuterArmorZaryaStalkerModifedType2
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeTouristT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorZaryaTourist
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeTouristT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ClothingOuterArmorZaryaTourist
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeKinologT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorZaryaHunter
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeKinologT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ClothingOuterArmorZaryaHunter
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeSparkT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorSpark
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeSparkT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ClothingOuterArmorSpark
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeTuzemecT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorAborigineStalker
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeTuzemecT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ClothingOuterArmorAborigineStalker
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeEgerT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterArmorYeger
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodeEgerT4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: ClothingOuterArmorYeger
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeKsn13T4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterArmorVeryHeavy
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodeKsn13T4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STClothingOuterArmorVeryHeavy
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeKsn13MT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingOuterArmorVeryHeavySci
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodeKsn13MT4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: STClothingOuterArmorVeryHeavySci
+  category: armor
+  subCategory: armor-special-suits
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeSh68T1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingHeadHelmetSH68
+  branch: Armor
+  tier: 1
+  requiredNode: PersistentCraftArmorNodeSh68T1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ClothingHeadHelmetSH68
+  category: armor
+  subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeCyclopT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingHeadHelmetMakeshiftTacticalT3
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeCyclopT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: STClothingHeadHelmetMakeshiftTacticalT3
+  category: armor
+  subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeSphere08T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingHeadHelmetBerill5MMilitary
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeSphere08T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ClothingHeadHelmetBerill5MMilitary
+  category: armor
+  subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeSphere12T45
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingHeadHelmetBulatMilitary
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodeSphere12T45
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier4
+    amount: 1
+  results:
+  - proto: ClothingHeadHelmetBulatMilitary
+  category: armor
+  subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeSitoT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingHeadHelmetLight
+  branch: Armor
+  tier: 1
+  requiredNode: PersistentCraftArmorNodeSitoT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ClothingHeadHelmetLight
+  category: armor
+  subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeVostokT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingHeadHelmetInfantry
+  branch: Armor
+  tier: 2
+  requiredNode: PersistentCraftArmorNodeVostokT2
+  craftTime: 6
+  pointReward: 3
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: ClothingHeadHelmetInfantry
+  category: armor
+  subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeVityazT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingHeadHelmetVityaz1C
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeVityazT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ClothingHeadHelmetVityaz1C
+  category: armor
+  subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeZenitT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingHeadAssaultHelmet
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeZenitT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ClothingHeadAssaultHelmet
+  category: armor
+  subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipe6B47T4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingHeadRatnik
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNode6B47T4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: ClothingHeadRatnik
+  category: armor
+  subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeUlachT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingHeadHelmetUlach
+  branch: Armor
+  tier: 4
+  requiredNode: PersistentCraftArmorNodeUlachT4
+  craftTime: 8
+  pointReward: 32
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: ClothingHeadHelmetUlach
+  category: armor
+  subCategory: armor-helmets
+
+# - type: persistentCraftRecipe
+#   id: PersistentCraftArmorRecipeFastT5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STClothingHeadHelmetFASTNeutralBlack
+#   branch: Armor
+#   tier: 5
+#   requiredNode: PersistentCraftArmorNodeFastT5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STClothingHeadHelmetFASTNeutralBlack
+#   category: armor
+#   subCategory: armor-helmets
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeDoshdevikT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterCoatDoshdevik
+  branch: Armor
+  tier: 1
+  requiredNode: PersistentCraftArmorNodeDoshdevikT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ClothingOuterCoatDoshdevik
+  category: armor
+  subCategory: armor-cloaks
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeSevaCloakT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STClothingCapeArmorChainmailSeva
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeSevaCloakT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STClothingCapeArmorChainmailSeva
+  category: armor
+  subCategory: armor-cloaks
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeLeatherCloakT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterCoatStalker
+  branch: Armor
+  tier: 1
+  requiredNode: PersistentCraftArmorNodeLeatherCloakT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ClothingOuterCoatStalker
+  category: armor
+  subCategory: armor-cloaks
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipePoiskCloakT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterCoatPoisk
+  branch: Armor
+  tier: 1
+  requiredNode: PersistentCraftArmorNodePoiskCloakT1
+  craftTime: 5
+  pointReward: 1
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: ClothingOuterCoatPoisk
+  category: armor
+  subCategory: armor-cloaks
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeKevlarCloakT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterCoatLoyalist
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeKevlarCloakT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ClothingOuterCoatLoyalist
+  category: armor
+  subCategory: armor-cloaks
+
+- type: persistentCraftRecipe
+  id: PersistentCraftArmorRecipeBolotniyCloakT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: ClothingOuterCoatBolotniy
+  branch: Armor
+  tier: 3
+  requiredNode: PersistentCraftArmorNodeBolotniyCloakT3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: ClothingOuterCoatBolotniy
+  category: armor
+  subCategory: armor-cloaks
+

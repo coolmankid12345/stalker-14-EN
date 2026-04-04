@@ -1,0 +1,578 @@
+# Armor branch nodes
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeShitok2T2
+  name: Shield-2 T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: STClothingOuterArmorLightPlateVestBaseStalker
+  treeColumn: 1
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftArmorNodeKirasaT2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeKirasaT2
+  name: Cuirass T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: STClothingOuterKirasa
+  treeColumn: 0
+  treeRow: 0
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNode6B2T2
+  name: 6B2 T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: ClothingOuterArmor6B2
+  treeColumn: 2
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftArmorNodeShitok2T2
+  - PersistentCraftArmorNodeChainJacketT1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeStep4T3
+  name: Steppe-4 T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: STClothingOuterArmorLightPlateVestBaseANAgreen
+  treeColumn: 1
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftArmorNodeSlickT3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeKoryndT3
+  name: Corundum T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: STClothingOuterKorynd
+  treeColumn: 0
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftArmorNodeStep4T3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeSlickT3
+  name: Slick T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: STClothingOuterSlickHaki
+  treeColumn: 2
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftArmorNode6B2T2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNode6B13T4
+  name: 6B13 T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: ClothingOuterArmor6B13
+  treeColumn: 2
+  treeRow: 2
+  prerequisites:
+  - PersistentCraftArmorNodeSlickT3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeVaryag4T4
+  name: Varyag-4 T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: STClothingOuterArmorIOTVGreen
+  treeColumn: 1
+  treeRow: 2
+  prerequisites:
+  - PersistentCraftArmorNode6B13T4
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeIotvT4
+  name: IOTV T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: STClothingOuterIOTV
+  treeColumn: 0
+  treeRow: 2
+  prerequisites:
+  - PersistentCraftArmorNodeVaryag4T4
+
+# - type: persistentCraftNode
+#   id: PersistentCraftArmorNodeRedutT5
+#   name: Redut T5
+#   description: persistent-craft-node-sub-recipe-desc
+#   branch: Armor
+#   cost: 320
+#   displayProto: STClothingOuterHeavyRedut
+#   treeColumn: 2
+#   treeRow: 3
+#   prerequisites:
+#   - PersistentCraftArmorNode6B13T4
+
+# - type: persistentCraftNode
+#   id: PersistentCraftArmorNodeRatnikT5
+#   name: Ratnik T5
+#   description: persistent-craft-node-sub-recipe-desc
+#   branch: Armor
+#   cost: 320
+#   displayProto: STClothingOuterArmorRatnik
+#   treeColumn: 1
+#   treeRow: 3
+#   prerequisites:
+#   - PersistentCraftArmorNodeRedutT5
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeChainJacketT1
+  name: Chainmail Jacket T1
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 5
+  displayProto: ClothingOuterArmourJacketStalker
+  treeColumn: 5
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftArmorNodeUpgradeJacketT1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeUpgradeJacketT1
+  name: Upg. Jacket T1
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 0
+  displayProto: ClothingOuterJacketStalkerUpgrade
+  treeColumn: 6
+  treeRow: 0
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeAnomalyJacketT1
+  name: Anomaly Jacket T1
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 5
+  displayProto: ClothingOuterAnomalyStalkerJacket
+  treeColumn: 7
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftArmorNodeUpgradeJacketT1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeRCBZT2
+  name: RCBZ T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: STClothingOuterArmorRCBZ
+  treeColumn: 6
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftArmorNodeUpgradeJacketT1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeUZK5T3
+  name: UZK-5 T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: ClothingOuterArmorUzk5
+  treeColumn: 7
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftArmorNodePSZ7T3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodePSZ7T3
+  name: PSZ-7 T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: STClothingOuterArmorLightPlateVestBasePSZ7
+  treeColumn: 8
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftArmorNodeTuzemecT3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeMercSuitT3
+  name: Merc Stalker Suit T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: ClothingOuterArmorStalker
+  treeColumn: 7
+  treeRow: 2
+  prerequisites:
+  - PersistentCraftArmorNodeUZK5T3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeSevaT3
+  name: SEVA T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: ClothingOuterArmorSevaStalker
+  treeColumn: 6
+  treeRow: 2
+  prerequisites:
+  - PersistentCraftArmorNodeRCBZT2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeHazmatT4
+  name: Hazmat T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: ClothingOuterArmorHazmatRf
+  treeColumn: 6
+  treeRow: 3
+  prerequisites:
+  - PersistentCraftArmorNodeSevaT3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeBerill5MT4
+  name: Beryl 5M T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: STClothingOuterArmorBerill5M
+  treeColumn: 7
+  treeRow: 3
+  prerequisites:
+  - PersistentCraftArmorNodePioneerT4
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodePioneerT4
+  name: Pioneer T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: ClothingOuterArmorStalkerCombat
+  treeColumn: 8
+  treeRow: 3
+  prerequisites:
+  - PersistentCraftArmorNodeEgerT4
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeZaryaT2
+  name: Zarya T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: ClothingOuterArmorZaryaStalker
+  treeColumn: 9
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftArmorNodeAnomalyJacketT1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeZarya3T2
+  name: Zarya-3 T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: ClothingOuterArmorZaryaStalkerModifedType1
+  treeColumn: 10
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftArmorNodeZaryaT2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeZarya7T2
+  name: Zarya-7 T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: ClothingOuterArmorZaryaStalkerModifedType2
+  treeColumn: 11
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftArmorNodeZarya3T2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeTouristT2
+  name: Tourist T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: ClothingOuterArmorZaryaTourist
+  treeColumn: 12
+  treeRow: 0
+  prerequisites:
+  - PersistentCraftArmorNodeZarya7T2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeKinologT2
+  name: Kynolog T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: ClothingOuterArmorZaryaHunter
+  treeColumn: 10
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftArmorNodeZaryaT2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeSparkT2
+  name: Iskra T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: ClothingOuterArmorSpark
+  treeColumn: 11
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftArmorNodeKinologT2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeTuzemecT3
+  name: Aborigine T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: ClothingOuterArmorAborigineStalker
+  treeColumn: 9
+  treeRow: 2
+  prerequisites:
+  - PersistentCraftArmorNodeZaryaT2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeEgerT4
+  name: Yeger T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: ClothingOuterArmorYeger
+  treeColumn: 9
+  treeRow: 3
+  prerequisites:
+  - PersistentCraftArmorNodeTuzemecT3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeKsn13T4
+  name: KSN-13 T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: STClothingOuterArmorVeryHeavy
+  treeColumn: 10
+  treeRow: 3
+  prerequisites:
+  - PersistentCraftArmorNodeEgerT4
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeKsn13MT4
+  name: KSN-13-M T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: STClothingOuterArmorVeryHeavySci
+  treeColumn: 11
+  treeRow: 3
+  prerequisites:
+  - PersistentCraftArmorNodeKsn13T4
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeSh68T1
+  name: SSH-68 T1
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 0
+  displayProto: ClothingHeadHelmetSH68
+  treeColumn: 0
+  treeRow: 6
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeCyclopT2
+  name: Cyclops T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: STClothingHeadHelmetMakeshiftTacticalT3
+  treeColumn: 0
+  treeRow: 7
+  prerequisites:
+  - PersistentCraftArmorNodeSh68T1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeSphere08T3
+  name: Sphere-08 T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: ClothingHeadHelmetBerill5MMilitary
+  treeColumn: 0
+  treeRow: 8
+  prerequisites:
+  - PersistentCraftArmorNodeCyclopT2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeSphere12T45
+  name: Sphere-12 T4.5
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: ClothingHeadHelmetBulatMilitary
+  treeColumn: 0
+  treeRow: 9
+  prerequisites:
+  - PersistentCraftArmorNodeSphere08T3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeSitoT1
+  name: Sieve T1
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 0
+  displayProto: ClothingHeadHelmetLight
+  treeColumn: 2
+  treeRow: 6
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeVostokT2
+  name: Vostok T2
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 15
+  displayProto: ClothingHeadHelmetInfantry
+  treeColumn: 2
+  treeRow: 7
+  prerequisites:
+  - PersistentCraftArmorNodeSitoT1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeVityazT3
+  name: Vityaz T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: ClothingHeadHelmetVityaz1C
+  treeColumn: 2
+  treeRow: 8
+  prerequisites:
+  - PersistentCraftArmorNodeVostokT2
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeZenitT3
+  name: Zenith T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: ClothingHeadAssaultHelmet
+  treeColumn: 3
+  treeRow: 8
+  prerequisites:
+  - PersistentCraftArmorNodeVityazT3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNode6B47T4
+  name: 6B47 T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: ClothingHeadRatnik
+  treeColumn: 2
+  treeRow: 9
+  prerequisites:
+  - PersistentCraftArmorNodeVityazT3
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeUlachT4
+  name: Ulach T4
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 160
+  displayProto: ClothingHeadHelmetUlach
+  treeColumn: 3
+  treeRow: 9
+  prerequisites:
+  - PersistentCraftArmorNode6B47T4
+
+# - type: persistentCraftNode
+#   id: PersistentCraftArmorNodeFastT5
+#   name: FAST T5
+#   description: persistent-craft-node-sub-recipe-desc
+#   branch: Armor
+#   cost: 320
+#   displayProto: STClothingHeadHelmetFASTNeutralBlack
+#   treeColumn: 2
+#   treeRow: 10
+#   prerequisites:
+#   - PersistentCraftArmorNode6B47T4
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeDoshdevikT1
+  name: Raincoat T1
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 0
+  displayProto: ClothingOuterCoatDoshdevik
+  treeColumn: 8
+  treeRow: 6
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeSevaCloakT3
+  name: SEVA Cloak T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: STClothingCapeArmorChainmailSeva
+  treeColumn: 8
+  treeRow: 7
+  prerequisites:
+  - PersistentCraftArmorNodeDoshdevikT1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeLeatherCloakT1
+  name: Leather Cloak T1
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 5
+  displayProto: ClothingOuterCoatStalker
+  treeColumn: 10
+  treeRow: 6
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodePoiskCloakT1
+  name: Researcher Cloak T1
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 5
+  displayProto: ClothingOuterCoatPoisk
+  treeColumn: 11
+  treeRow: 6
+  prerequisites:
+  - PersistentCraftArmorNodeLeatherCloakT1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeKevlarCloakT3
+  name: Kevlar Cloak T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: ClothingOuterCoatLoyalist
+  treeColumn: 10
+  treeRow: 7
+  prerequisites:
+  - PersistentCraftArmorNodeLeatherCloakT1
+
+- type: persistentCraftNode
+  id: PersistentCraftArmorNodeBolotniyCloakT3
+  name: Swamp Cloak T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Armor
+  cost: 80
+  displayProto: ClothingOuterCoatBolotniy
+  treeColumn: 11
+  treeRow: 7
+  prerequisites:
+  - PersistentCraftArmorNodeKevlarCloakT3

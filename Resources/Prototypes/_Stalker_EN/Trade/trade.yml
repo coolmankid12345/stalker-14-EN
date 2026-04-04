@@ -1,0 +1,54 @@
+- type: entity
+  id: Trademachine
+  abstract: true
+  name: City Trade Terminal
+  description: Need something urgently? It's right here. Choose, pay, and take it.
+  suffix: vendor, normal
+  components:
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: NcStoreStructuredBoundUi
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 300
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Stalker/NPC/CustomRadioPlayer.rsi
+    state: daniil
+  - type: PointLight
+    radius: 2.5
+    energy: 1
+    color: "#b34747"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+- type: entity
+  id: TrademachineCity
+  parent: Trademachine
+  name: Coyote
+  description: Issues contracts to stalkers.
+  suffix: ST, QUESTS
+  components:
+  - type: NcStore
+    contractPresets:
+    - TradeContractsCityPreset
+  - type: Sprite
+    sprite: _Stalker/NPC/CustomRadioPlayer.rsi
+    state: daniil

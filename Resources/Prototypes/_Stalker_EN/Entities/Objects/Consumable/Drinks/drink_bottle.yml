@@ -16,7 +16,6 @@
         reagents:
         - ReagentId: STHercules
           Quantity: 30
-
   - type: Label
     currentLabel: reagent-name-hercules
   - type: Sprite

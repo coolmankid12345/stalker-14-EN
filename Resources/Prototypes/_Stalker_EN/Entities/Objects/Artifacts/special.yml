@@ -30,6 +30,11 @@
       types:
         Radiation: 0.1
     interval: 1
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier1
 
 # dont choke on it
 - type: entity
@@ -70,6 +75,11 @@
         Heat: 1
       coefficients:
         Poison: 0.2
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier1
 
 #-PIVO-UPDATE-
 
@@ -122,3 +132,8 @@
   - type: Sealable
   - type: Trash
     time: 9999
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier1

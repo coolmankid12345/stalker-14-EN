@@ -1,0 +1,205 @@
+# Materials branch - tools and detectors
+
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeFishingRodMakeshiftT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: FishingRodMakeshift
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 5
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: FishingRodMakeshift
+  category: materials-tools
+  subCategory: materials-fishing-rods
+
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeFishingRodT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: FishingRod
+  branch: Materials
+  tier: 2
+  requiredNode: PersistentCraftMaterialsNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: FishingRod
+  category: materials-tools
+  subCategory: materials-fishing-rods
+
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeFishingRodGoonT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: FishingRodGoon
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 7
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: FishingRodGoon
+  category: materials-tools
+  subCategory: materials-fishing-rods
+
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeFishingRodGoldenT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: FishingRodGolden
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 8
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: FishingRodGolden
+  category: materials-tools
+  subCategory: materials-fishing-rods
+
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeTrashDetectorTier1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: TrashDetectorTier1
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 5
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: TrashDetectorTier1
+  category: materials-tools
+  subCategory: materials-trash-detectors
+
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeTrashDetectorTier2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: TrashDetectorTier2
+  branch: Materials
+  tier: 2
+  requiredNode: PersistentCraftMaterialsNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 6
+  results:
+  - proto: TrashDetectorTier2
+  category: materials-tools
+  subCategory: materials-trash-detectors
+
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeTrashDetectorTier3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: TrashDetectorTier3
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 7
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: TrashDetectorTier3
+  category: materials-tools
+  subCategory: materials-trash-detectors
+
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeTrashDetectorTier4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: TrashDetectorTier4
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 8
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 64
+  - tag: STArtifactTier3
+    amount: 1
+  results:
+  - proto: TrashDetectorTier4
+  category: materials-tools
+  subCategory: materials-trash-detectors
+
+# - type: persistentCraftRecipe
+#   id: PersistentCraftMaterialsRecipeTrashDetectorTier5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: TrashDetectorTier5
+#   branch: Materials
+#   tier: 5
+#   requiredNode: PersistentCraftMaterialsNodeT5
+#   craftTime: 10
+#   pointReward: 0
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: TrashDetectorTier5
+#   category: materials-tools
+#   subCategory: materials-trash-detectors
+# 
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeAaaaStalkerLopataT1
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: AAAAStalkerLopata
+  branch: Materials
+  tier: 1
+  requiredNode: PersistentCraftMaterialsNodeT1
+  craftTime: 4
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 2
+  results:
+  - proto: AAAAStalkerLopata
+  category: materials-tools
+  subCategory: materials-trash-detectors
+
+- type: persistentCraftRecipe
+  id: PersistentCraftMaterialsRecipeLongRangeMetalDetectorT2
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: longrangemetaldetector
+  branch: Materials
+  tier: 2
+  requiredNode: PersistentCraftMaterialsNodeT2
+  craftTime: 6
+  pointReward: 0
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 10
+  results:
+  - proto: longrangemetaldetector
+  category: materials-tools
+  subCategory: materials-trash-detectors

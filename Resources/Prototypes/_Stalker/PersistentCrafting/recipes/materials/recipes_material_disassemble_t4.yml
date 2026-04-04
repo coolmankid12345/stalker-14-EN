@@ -1,0 +1,135 @@
+# Material disassemble recipes (tier 4)
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftSheetAluminumT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftSheetAluminumT4
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftSheetAluminumT4
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 23
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftYewPlankT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftYewPlankT4
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftYewPlankT4
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 23
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftHighPerformanceChipT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftHighPerformanceChipT4
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftHighPerformanceChipT4
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 23
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftPlasticFittingT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftPlasticFittingT4
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftPlasticFittingT4
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 23
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftSapphireCrystalT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftSapphireCrystalT4
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftSapphireCrystalT4
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 23
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftPolymerFabricT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftPolymerFabricT4
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftPolymerFabricT4
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 23
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftIndustrialThreadStaplesKitT4
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftIndustrialThreadStaplesKitT4
+  branch: Materials
+  tier: 4
+  requiredNode: PersistentCraftMaterialsNodeT4
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftIndustrialThreadStaplesKitT4
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 23
+  category: anomaly-dust
+  subCategory: material-disassemble
+

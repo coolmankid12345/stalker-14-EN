@@ -1,0 +1,34 @@
+- type: entity
+  parent: PaperOffice
+  id: NcTradeContractProofRepairPhoto
+  name: "repair photo card"
+  description: "A small photo card marked as proof that the object was restored to working condition."
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: PaperOffice
+  id: NcTradeContractProofDeliveryReceipt
+  name: "delivery receipt"
+  description: "Confirmation that the contract cargo was delivered to the correct location and accepted on site."
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: PaperScrap
+  id: NcTradeContractProofGhoulTrophy
+  name: "mutant trophy tag"
+  description: "A bloodstained contract tag taken from a confirmed target."
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: BaseItem
+  id: NcTradeContractProofBoarHoof
+  name: "old boar hoof"
+  description: "A huge scar-covered hoof taken from the slain pack leader. A great trophy and solid contract proof."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/MutantParts/Old_boar_hoof.rsi
+    state: icon
+    scale: 1.2, 1.2
+  - type: Item
+    size: Small

@@ -1,0 +1,135 @@
+# Material disassemble recipes (tier 3)
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftSheetBrassT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftSheetBrassT3
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftSheetBrassT3
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 11
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftOakPlankT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftOakPlankT3
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftOakPlankT3
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 11
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftMultilayerPCBT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftMultilayerPCBT3
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftMultilayerPCBT3
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 11
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftPlasticFittingT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftPlasticFittingT3
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftPlasticFittingT3
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 11
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftQuartzCrystalT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftQuartzCrystalT3
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftQuartzCrystalT3
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 11
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftSturdyHideT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftSturdyHideT3
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftSturdyHideT3
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 11
+  category: anomaly-dust
+  subCategory: material-disassemble
+
+- type: persistentCraftRecipe
+  id: PersistentCraftAnomalyDustDisassembleSTCraftGlueKitT3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STCraftGlueKitT3
+  branch: Materials
+  tier: 3
+  requiredNode: PersistentCraftMaterialsNodeT3
+  craftTime: 2
+  pointReward: 0
+  ingredients:
+  - proto: STCraftGlueKitT3
+    amount: 1
+  results:
+  - proto: STCraftAnomalyDust
+    amount: 11
+  category: anomaly-dust
+  subCategory: material-disassemble
+

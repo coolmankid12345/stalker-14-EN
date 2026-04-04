@@ -1,0 +1,23 @@
+- type: persistentCraftSubCategory
+  id: armor-body
+  category: armor
+  name: Body Armor
+  order: 10
+
+- type: persistentCraftSubCategory
+  id: armor-helmets
+  category: armor
+  name: Helmets
+  order: 11
+
+- type: persistentCraftSubCategory
+  id: armor-cloaks
+  category: armor
+  name: Cloaks
+  order: 12
+
+- type: persistentCraftSubCategory
+  id: armor-special-suits
+  category: armor
+  name: Special Suits
+  order: 13

@@ -1,0 +1,29 @@
+- type: persistentCraftSubCategory
+  id: ammo-magazines
+  category: ammo
+  name: Magazines
+  order: 9
+
+- type: persistentCraftSubCategory
+  id: ammo-shotgun
+  category: ammo
+  name: Shotgun
+  order: 10
+
+- type: persistentCraftSubCategory
+  id: ammo-pistol
+  category: ammo
+  name: Pistol
+  order: 11
+
+- type: persistentCraftSubCategory
+  id: ammo-rifle
+  category: ammo
+  name: Rifle
+  order: 12
+
+- type: persistentCraftSubCategory
+  id: ammo-special
+  category: ammo
+  name: Special
+  order: 13

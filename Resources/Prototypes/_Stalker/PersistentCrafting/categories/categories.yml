@@ -1,0 +1,121 @@
+- type: persistentCraftCategory
+  id: weapons
+  name: Weapons
+  order: 0
+
+- type: persistentCraftCategory
+  id: ammo
+  name: Ammo
+  order: 1
+
+- type: persistentCraftCategory
+  id: armor
+  name: Armor
+  order: 2
+
+- type: persistentCraftCategory
+  id: anomaly
+  name: Anomalies
+  order: 3
+
+- type: persistentCraftCategory
+  id: anomaly-detectors
+  name: Anomaly Detectors
+  order: 0
+
+- type: persistentCraftCategory
+  id: artifact-detectors
+  name: Artifact Detectors
+  order: 1
+
+- type: persistentCraftCategory
+  id: artifact-breakdown
+  name: Artifact Breakdown
+  order: 2
+
+- type: persistentCraftCategory
+  id: anomaly-dust
+  name: Material Conversion
+  order: 3
+
+- type: persistentCraftCategory
+  id: materials-tools
+  name: Tools
+  order: 4
+
+- type: persistentCraftCategory
+  id: upgrades
+  name: Upgrades
+  order: 4
+
+- type: persistentCraftCategory
+  id: special
+  name: Misc
+  order: 99
+
+- type: persistentCraftSubCategory
+  id: starter
+  category: weapons
+  name: Basic
+  order: 0
+
+- type: persistentCraftSubCategory
+  id: upgrades
+  category: anomaly-detectors
+  name: Upgrades
+  order: 1
+
+- type: persistentCraftSubCategory
+  id: material-disassemble
+  category: anomaly-dust
+  name: Disassembly
+  order: 2
+
+- type: persistentCraftSubCategory
+  id: materials-fishing-rods
+  category: materials-tools
+  name: Fishing Rods
+  order: 1
+
+- type: persistentCraftSubCategory
+  id: materials-trash-detectors
+  category: materials-tools
+  name: Metal Detectors
+  order: 2
+
+- type: persistentCraftSubCategory
+  id: advanced
+  category: weapons
+  name: Advanced
+  order: 2
+
+- type: persistentCraftSubCategory
+  id: elite
+  category: weapons
+  name: Elite
+  order: 3
+
+- type: persistentCraftSubCategory
+  id: tier-1
+  name: Tier I
+  order: 1
+
+- type: persistentCraftSubCategory
+  id: tier-2
+  name: Tier II
+  order: 2
+
+- type: persistentCraftSubCategory
+  id: tier-3
+  name: Tier III
+  order: 3
+
+- type: persistentCraftSubCategory
+  id: tier-4
+  name: Tier IV
+  order: 4
+
+- type: persistentCraftSubCategory
+  id: tier-5
+  name: Tier V
+  order: 5

@@ -61,6 +61,7 @@ namespace Content.Server.Database
         public DbSet<StalkerNewsComment> StalkerNewsComments { get; set; } = null!; // stalker-en-changes
         public DbSet<StalkerNewsReaction> StalkerNewsReactions { get; set; } = null!; // stalker-en-changes
         public DbSet<StalkerCharacterRank> StalkerCharacterRanks { get; set; } = null!; // stalker-en-changes
+        public DbSet<StalkerPersistentCraftProfile> StalkerPersistentCraftProfiles { get; set; } = null!; // stalker-en-changes
         public DbSet<StalkerNewsArticlePhoto> StalkerNewsArticlePhotos { get; set; } = null!; // stalker-en-changes
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -418,6 +419,9 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<StalkerCharacterRank>()
                 .HasKey(r => new { r.UserId, r.CharacterName });
+
+            modelBuilder.Entity<StalkerPersistentCraftProfile>()
+                .HasKey(p => new { p.UserId, p.CharacterName });
             // stalker-en-changes-end
 
             // Changes for modern HWID integration
@@ -1781,6 +1785,22 @@ namespace Content.Server.Database
 
         [Required]
         public TimeSpan TimeSpent { get; set; }
+    }
+
+    /// <summary>
+    /// Stores a persistent, character-bound progression profile for the separate crafting system.
+    /// Composite key: (UserId, CharacterName).
+    /// </summary>
+    public sealed class StalkerPersistentCraftProfile
+    {
+        [Required]
+        public Guid UserId { get; set; }
+
+        [Required]
+        public string CharacterName { get; set; } = default!;
+
+        [Required]
+        public string ProfileJson { get; set; } = "{}";
     }
     // stalker-en-changes-end
 

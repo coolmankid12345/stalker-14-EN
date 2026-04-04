@@ -11,6 +11,7 @@ using Content.Shared._Stalker_EN.FactionRelations;
 using Content.Shared._Stalker_EN.BulletinBoard;
 using Content.Shared._Stalker_EN.News;
 using Content.Shared._Stalker_EN.PdaMessenger;
+using Content.Shared._Stalker.PdaMessenger;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
@@ -19,7 +20,9 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.PDA;
 using Content.Shared.PDA.Ringer;
+using Robust.Server.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -47,6 +50,7 @@ public sealed partial class STMessengerSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly RingerSystem _ringer = default!;
     [Dependency] private readonly SharedSTFactionResolutionSystem _factionResolution = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private const int MaxChannelMessages = 200;
     private const int MaxDmMessages = 100;
@@ -437,6 +441,14 @@ public sealed partial class STMessengerSystem : EntitySystem
                 }
             }
 
+            // Send pop-up notification to DM recipient
+            var bandIcon = GetBandIcon(server);
+            var dmEvent = new PdaDirectMessageEvent(senderName, content, bandIcon);
+            if (_playerManager.TryGetSessionById(new NetUserId(contactKey.UserId), out var recipientSession))
+            {
+                RaiseNetworkEvent(dmEvent, recipientSession);
+            }
+
             NotifyDmRecipient(contactKey, server);
         }
         else
@@ -447,9 +459,88 @@ public sealed partial class STMessengerSystem : EntitySystem
             }
 
             NotifyChannelRecipients(channelProto, server);
+
+            // Send pop-up notification for General channel (if not muted)
+            if (channelProto.ID == "STGeneral")
+            {
+                var bandIcon = GetBandIcon(server);
+
+                // Check if recipient has General channel muted
+                if (!server.MutedChannels.Contains(channelProto.ID))
+                {
+                    var generalEvent = new PdaGeneralMessageEvent(displayName, content, displayName, bandIcon);
+                    RaiseNetworkEvent(generalEvent);
+                }
+            }
         }
 
         BroadcastUiUpdate(chatId);
+    }
+
+    /// <summary>
+    /// Gets the band icon name for a player based on their band/faction.
+    /// Uses the mob holding the PDA (not the PDA entity itself).
+    /// Falls back to OwnerBand if mob is not available.
+    /// Clear Sky is disguised as Stalker for lore consistency.
+    /// </summary>
+    private string? GetBandIcon(STMessengerServerComponent server)
+    {
+        // Try 1: Get bandIcon from the mob holding the PDA
+        if (TryComp<TransformComponent>(server.Owner, out var xform))
+        {
+            var holder = xform.ParentUid;
+            if (holder.IsValid() && TryComp<BandsComponent>(holder, out var bands))
+            {
+                // Clear Sky is disguised as Loners on PDA (lore consistency)
+                if (bands.BandProto == ClearSkyBandId)
+                    return "stalker";
+
+                if (!string.IsNullOrEmpty(bands.BandStatusIcon))
+                    return bands.BandStatusIcon;
+            }
+        }
+
+        // Try 2: Fallback to OwnerBand and map to bandIcon
+        if (server.OwnerBand.HasValue)
+        {
+            // Clear Sky disguise
+            if (server.OwnerBand.Value == ClearSkyBandId)
+                return "stalker";
+
+            return GetBandIconForBandProto(server.OwnerBand.Value);
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Maps band prototype ID to bandIcon name.
+    /// </summary>
+    private static string? GetBandIconForBandProto(ProtoId<STBandPrototype> bandProtoId)
+    {
+        return bandProtoId.Id switch
+        {
+            "STFreedomBand" => "freedom",
+            "STDolgBand" => "Dolg",
+            "STBanditsBand" => "band",
+            "STRenegatsBand" => "rene",
+            "STMonolithBand" => "monolith",
+            "STClearSkyBand" => "cn",
+            "STStalkerBand" => "stalker",
+            "STMercenariesBand" => "merc",
+            "STMilitaryBand" => "army",
+            "STSciBand" => "sci",
+            "STMilitiaBand" => "militia",
+            "STAnomalistsBand" => "ecologists",
+            "STSeraphimsBand" => "seraphim",
+            "STCovenantBand" => "zavet",
+            "STGrehBand" => "greh",
+            "STSsuBand" => "sbu",
+            "STUNBand" => "un",
+            "STProjectBand" => "project-1",
+            "STToadsBand" => "jaba",
+            _ => "stalker" // Default
+        };
     }
 
     private string? FindReplySnippet(string chatId, bool isDm, STMessengerServerComponent server, uint replyId)

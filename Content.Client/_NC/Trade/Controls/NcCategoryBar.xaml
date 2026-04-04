@@ -1,0 +1,17 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                HorizontalExpand="True"
+                VerticalExpand="True">
+    <ScrollContainer Name="Scroll"
+                     HorizontalExpand="True"
+                     VerticalExpand="True"
+                     HScrollEnabled="False"
+                     ReserveScrollbarSpace="True">
+        <BoxContainer Name="List"
+                      Orientation="Vertical"
+                      HorizontalExpand="True"
+                      Margin="0 0 2 0" />
+    </ScrollContainer>
+</PanelContainer>
+
+

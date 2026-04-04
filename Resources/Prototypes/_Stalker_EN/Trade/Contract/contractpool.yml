@@ -1,0 +1,317 @@
+# Reward pool - Easy
+- type: ncContractRewardPool
+  id: ContractRewardEasy
+  entries:
+  - type: Item
+    id: MedkitAI2 # AI-2 medkit
+    amount: { min: 3, max: 6 }
+    weight: 3
+  - type: Item
+    id: MedkitMilitary # Military medkit
+    amount: { min: 2, max: 5 }
+    weight: 2
+  - type: Item
+    id: MedkitScience # Scientific medkit
+    amount: { min: 1, max: 2 }
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorZaryaStalkerModifedType2 # "Zarya" armor (modified type 2)
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorZaryaStalkerModifedType1 # "Zarya" armor (modified type 1)
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorZaryaStalker # "Zarya" armor
+    weight: 1
+  - type: Item
+    id: SetZaryaStalkerBuyableCrate # "Zarya" set (crate)
+    weight: 1
+  - type: Item
+    id: ClothingBeltWebbingHolsterStalkerZarya # "Zarya" holster
+    weight: 1
+  - type: Item
+    id: ClothingBackpackStalkerZaryaGreen # "Zarya" backpack (green)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackStalkerZaryaBlack # "Zarya" backpack (black)
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunMP133 # MP-133 shotgun
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunMossbergM88 # Mossberg M88 shotgun
+    weight: 1
+  - type: Item
+    id: ZoneArtifactDetectorResponse # "Response" detector
+    weight: 1
+  - type: Item
+    id: LgbtKnife # knife
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSSP24Topaz # Topaz
+    weight: 1
+  - type: Item
+    id: GrenadeVOG25 # VOG-25 grenade
+    weight: 1
+  - type: Item
+    id: GrenadeVOG25gvozd # VOG-25 "Nail" grenade
+    weight: 1
+  - type: Item
+    id: GrenadeVOG25P # VOG-25P grenade
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSpark # "Spark" armor
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmor6B2 # 6B2 armored vest
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorZN1 # ZN-1 armor
+    weight: 1
+  - type: Item
+    id: 545Mag45 # 5.45x39 magazine (45)
+    weight: 1
+  - type: Item
+    id: 556Mag45 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunBenelliM4Super90 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunCompact # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSniperSKS # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ArmyProvisionCrate # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ArmyMedkitMilitaryCrate # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelCommonStalker # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: SanitarCrate # 5.56 NATO magazine (45)
+    weight: 1
+
+# Reward pool - Medium
+- type: ncContractRewardPool
+  id: ContractRewardMedium
+  entries:
+  - type: Item
+    id: MedkitAI2 # AI-2 medkit
+    amount: { min: 3, max: 6 }
+    weight: 3
+  - type: Item
+    id: MedkitMilitary # Military medkit
+    amount: { min: 3, max: 6 }
+    weight: 2
+  - type: Item
+    id: MedkitScience # Scientific medkit
+    amount: { min: 2, max: 3 }
+    weight: 1
+  - type: Item
+    id: ZoneArtifactDetectorSpruce # Spruce detector
+    weight: 1
+  - type: Item
+    id: BoxArtcont # artifact container
+    amount: { min: 1, max: 3 }
+    weight: 2
+  - type: Item
+    id: ClothingBackpackDuffelBlackTacticStalker # tactical backpack (black)
+    weight: 1
+  - type: Item
+    id: STWeaponRifleSaiga739 # Saiga 739
+    weight: 1
+  - type: Item
+    id: STWeaponRifleGalatz # Galatz
+    weight: 1
+  - type: Item
+    id: 6mmBuckshotBoxCink # buckshot ammo can
+    amount: { min: 1, max: 2 }
+    weight: 2
+  - type: Item
+    id: LgbtKnife # knife
+    weight: 1
+  - type: Item
+    id: STWeaponSMGMP5 # SMG MP5
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSSP24Topaz # Topaz
+    weight: 2
+  - type: Item
+    id: GrenadeVOG25 # VOG-25 grenade
+    weight: 1
+  - type: Item
+    id: GrenadeVOG25gvozd # VOG-25 "Nail" grenade
+    weight: 1
+  - type: Item
+    id: GrenadeVOG25P # VOG-25P grenade
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSpark # "Spark" armor
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorMilitarySpark # military "Spark" armor
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorZN1 # ZN-1 armor
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunSPAS # SPAS-12 shotgun
+    weight: 1
+  - type: Item
+    id: STWeaponRifleAKS74 # AKS-74
+    weight: 1
+  - type: Item
+    id: 545Mag45
+    amount: { min: 2, max: 3 }
+    weight: 1
+  - type: Item
+    id: 556Mag45
+    amount: { min: 2, max: 3 }
+    weight: 1
+  - type: Item
+    id: STWeaponRifleAKM # AKS-74
+    weight: 1
+  - type: Item
+    id: STWeaponRifleAKMC # AKS-74
+    weight: 1
+  - type: Item
+    id: STClothingOuterKorynd # AKS-74
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunBenelliM4Super90 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP19919 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGStalkerCP2Veresk # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGStalkerCP2Veresk921 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP1901 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorAborigineStalker # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: Veles # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP2000 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelSuperStalker # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelSuperStalkerGray # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSSP99 # 5.56 NATO magazine (45)
+    weight: 1
+
+
+
+# Reward pool - Hard
+- type: ncContractRewardPool
+  id: ContractRewardHard
+  entries:
+  - type: Item
+    id: STCraftSheetBrassT3 # T3 brass sheets
+    amount: { min: 2, max: 5 }
+    weight: 2
+  - type: Item
+    id: ClothingOuterArmorSSP24Topaz # Topaz
+    weight: 2
+  - type: Item
+    id: ClothingOuterArmorSevaStalker # "SEVA" armored suit
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorMilitarySpark # military "Spark" armor
+    weight: 1
+  - type: Item
+    id: STClothingOuterArmorLightPlateVestBaseANAgreen # light ANA plate carrier (green)
+    weight: 1
+  - type: Item
+    id: STClothingOuterArmorLightPlateVestBaseANAgray # light ANA plate carrier (gray)
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunSPAS # SPAS-12 shotgun
+    weight: 1
+  - type: Item
+    id: STWeaponRifleAKS74 # AKS-74
+    weight: 1
+  - type: Item
+    id: Dollar # dollars
+    amount: { min: 10, max: 20 }
+    weight: 2
+  - type: Item
+    id: MedkitElite # dollars
+    amount: { min: 4, max: 8 }
+    weight: 1
+  - type: Item
+    id: STWeaponRifleG36 # AKS-74
+    weight: 1
+  - type: Item
+    id: STWeaponRifleG36Alt # AKS-74
+    weight: 1
+  - type: Item
+    id: STClothingOuterKorynd # AKS-74
+    weight: 1
+  - type: Item
+    id: STClothingOuterIOTVGEN4 # AKS-74
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunSaiga12 # AKS-74
+    weight: 1
+  - type: Item
+    id: STWeaponSniperVepr # AKS-74
+    weight: 1
+  - type: Item
+    id: STClothingOuterArmorLightPlateVestBasePSZ7 # AKS-74
+    weight: 1
+  - type: Item
+    id: STWeaponRifleM14 # AKS-74
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunBenelliM4Super90 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP19919 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGStalkerCP2Veresk # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGStalkerCP2Veresk921 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP1901 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: Veles # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ZoneArtifactDetectorBarracuda # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: STZoneArtifactDetectorBarracudaBlueprint # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelSuperStalker # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelSuperStalkerGray # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSSP99 # 5.56 NATO magazine (45)
+    weight: 1
+  - type: Item
+    id: StalkerMedBandShopCrate # 5.56 NATO magazine (45)
+    weight: 1

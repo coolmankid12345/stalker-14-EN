@@ -1,0 +1,379 @@
+# City contract board set for supported execution modes.
+
+- type: storeContractPack
+  id: TradeContractsCityPack
+  contracts:
+  - id: trade_contract_ZoneArtifactVyvert
+    weight: 100
+    cooldownMinutes: 1
+  - id: trade_contract_ArtMedusa
+    weight: 100
+    cooldownMinutes: 2
+  - id: trade_contract_MutantPartFleshEye
+    weight: 100
+    cooldownMinutes: 3
+  - id: trade_contract_MutantPartBlindDogTail
+    weight: 100
+    cooldownMinutes: 4
+  - id: trade_contract_delivery_BoxCrate
+    weight: 100
+    cooldownMinutes: 5
+  - id: trade_contract_recovery_BoxCrate
+    weight: 100
+    cooldownMinutes: 6
+  - id: trade_contract_hunt_old_boar
+    weight: 100
+    cooldownMinutes: 7
+  - id: trade_contract_delivery_TechCardCalibrationDosimeter
+    weight: 100
+    cooldownMinutes: 8
+  - id: trade_contract_delivery_STMobMutantBearPsiUncommon
+    weight: 100
+    cooldownMinutes: 9
+  - id: trade_contract_delivery_STMobMutantBloodsuckerUncommon
+    weight: 100
+    cooldownMinutes: 10
+  - id: trade_contract_delivery_MobMutantPoltergeistIce
+    weight: 100
+    cooldownMinutes: 1
+  - id: trade_contract_delivery_STMobMutantBearT2Common
+    weight: 100
+    cooldownMinutes: 2
+  - id: trade_contract_delivery_STMobMutantPseudodogLegendary
+    weight: 100
+    cooldownMinutes: 3
+  - id: trade_contract_delivery_MobMutantLeshiy
+    weight: 100
+    cooldownMinutes: 4
+
+- type: storeContractsPreset
+  id: TradeContractsCityPreset
+  limits:
+    Easy: 3
+    Medium: 2
+    Hard: 1
+  packs:
+  - id: TradeContractsCityPack
+    weight: 1
+
+# ----------------------------
+# Regular delivery
+# ----------------------------
+
+- type: storeContract
+  id: trade_contract_ZoneArtifactVyvert
+  name: "Retrieve a Vyvert"
+  description: "Need a Vyvert for ointment. Respected Zhaba's back is acting up."
+  difficulty: Easy
+  targets:
+  - id: ZoneArtifactVyvert
+    required: 1
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardEasy
+
+- type: storeContract
+  id: trade_contract_ArtMedusa
+  name: "Retrieve a Medusa"
+  description: "Need a Medusa for a necklace. Don't forget to wear your Zarya."
+  difficulty: Easy
+  targets:
+  - id: ArtMedusa
+    required: 1
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardEasy
+
+- type: storeContract
+  id: trade_contract_MutantPartFleshEye
+  name: "Flesh Eyes"
+  description: "Flesh eyes for borscht. Finger-licking good."
+  difficulty: Easy
+  targets:
+  - id: MutantPartFleshEye
+    required: { min: 2, max: 4 }
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardEasy
+
+- type: storeContract
+  id: trade_contract_MutantPartBlindDogTail
+  name: "Blind Dog Tails"
+  description: "Dog tails for medicine."
+  difficulty: Easy
+  targets:
+  - id: MutantPartBlindDogTail
+    required: { min: 2, max: 4 }
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardEasy
+
+- type: storeContract
+  id: trade_contract_delivery_BoxCrate
+  name: "Deliver a Crate to the Buyer"
+  description: "Bring the crate to the buyer. Don't ask questions."
+  difficulty: Easy
+  repeatable: true
+  objectiveType: Delivery
+  runtime:
+    targetPrototype: BoxCrateQests
+    proofPrototype: NcTradeContractProofDeliveryReceipt
+    spawnAtStore: true
+    dropoffPointTag: TradeContractDeliveryBolotoEasy
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  targets:
+  - id: BoxCrateQests
+    required: 1
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardEasy
+
+- type: storeContract
+  id: trade_contract_recovery_BoxCrate
+  name: "Recover a Crate from the Swamp"
+  description: "The client never picked up the cargo, and now a pack of seasoned boars roams there. Head to the site, deal with the boars, and bring the crate back to the machine."
+  difficulty: Easy
+  repeatable: true
+  objectiveType: Delivery
+  runtime:
+    spawnPointTag: TradeContractDeliveryBolotoEasy
+    targetPrototype: BoxCrateQests
+    allowStoreWorldTurnIn: true
+    guardPrototype: MobMutantOldBoar
+    guardCount: 3
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  targets:
+  - id: BoxCrateQests
+    required: 1
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardEasy
+
+- type: storeContract
+  id: trade_contract_delivery_TechCardCalibrationDosimeter
+  name: "Important Card"
+  description: "The calibration card is missing and I need it urgently... Watch out, pseudodogs are around."
+  difficulty: Medium
+  repeatable: true
+  objectiveType: Delivery
+  runtime:
+    spawnPointTag: TradeContractHuntPseudodog
+    targetPrototype: TechCardCalibrationDosimeter
+    guardPrototype: STMobMutantPseudodogUncommon
+    guardCount: 2
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  targets:
+  - id: TechCardCalibrationDosimeter
+    required: 1
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1500, max: 2000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardMedium
+
+- type: storeContract
+  id: trade_contract_hunt_old_boar
+  name: "Boar"
+  description: "Kill the boar."
+  difficulty: Medium
+  repeatable: true
+  objectiveType: Hunt
+  runtime:
+    spawnPointTag: TradeContractHuntBoarLair
+    targetPrototype: STMobMutantBoarLegendary
+    guardPrototype: STMobMutantBoarUncommon
+    guardCount: 2
+    proofPrototype: NcTradeContractProofGhoulTrophy
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1500, max: 2000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardMedium
+
+- type: storeContract
+  id: trade_contract_delivery_STMobMutantPseudodogLegendary
+  name: "Dangerous Pseudodog"
+  description: "IT ATE DANILA. KILL THE BEAST AND BRING PROOF."
+  difficulty: Medium
+  repeatable: true
+  objectiveType: Hunt
+  runtime:
+    spawnPointTag: TradeContractHuntPseudodog
+    targetPrototype: STMobMutantPseudodogLegendary
+    proofPrototype: NcTradeContractProofGhoulTrophy
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1500, max: 2000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardMedium
+
+- type: storeContract
+  id: trade_contract_delivery_MobMutantLeshiy
+  name: "Leshiy"
+  description: "Leshiy is driving me insane... stole my bucket of mushrooms!!!"
+  difficulty: Medium
+  repeatable: true
+  objectiveType: Hunt
+  runtime:
+    spawnPointTag: TradeContractHuntMobMutantLeshiy
+    targetPrototype: MobMutantLeshiy
+    proofPrototype: NcTradeContractProofGhoulTrophy
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1500, max: 2000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardMedium
+
+- type: storeContract
+  id: trade_contract_delivery_STMobMutantBearT2Common
+  name: "Bear"
+  description: "Kill the bear... it ate my honey."
+  difficulty: Medium
+  repeatable: true
+  objectiveType: Hunt
+  runtime:
+    spawnPointTag: TradeContractHuntSTMobMutantBearT2Common
+    targetPrototype: STMobMutantBearT2Common
+    proofPrototype: NcTradeContractProofGhoulTrophy
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1500, max: 2000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardMedium
+
+
+- type: storeContract
+  id: trade_contract_delivery_MobMutantPoltergeistIce
+  name: "Poltergeist"
+  description: "Some strange creature settled in there."
+  difficulty: Hard
+  repeatable: true
+  objectiveType: Hunt
+  runtime:
+    spawnPointTag: TradeContractHuntMobMutantPoltergeistIce
+    targetPrototype: MobMutantPoltergeistIce
+    proofPrototype: NcTradeContractProofGhoulTrophy
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1500, max: 2000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardHard
+
+- type: storeContract
+  id: trade_contract_delivery_STMobMutantBloodsuckerUncommon
+  name: "Bloodsucker"
+  description: "Lethally dangerous... don't go alone."
+  difficulty: Hard
+  repeatable: true
+  objectiveType: Hunt
+  runtime:
+    spawnPointTag: TradeContractHuntSTMobMutantBloodsuckerUncommon
+    targetPrototype: STMobMutantBloodsuckerUncommon
+    proofPrototype: NcTradeContractProofGhoulTrophy
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 2000, max: 2500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardHard
+
+- type: storeContract
+  id: trade_contract_delivery_STMobMutantBearPsiUncommon
+  name: "Huge Dangerous Bear"
+  description: "Very dangerous, don't go alone."
+  difficulty: Hard
+  repeatable: true
+  objectiveType: Hunt
+  runtime:
+    spawnPointTag: TradeContractHuntSTMobMutantBearPsiUncommon
+    targetPrototype: STMobMutantBearPsiUncommon
+    proofPrototype: NcTradeContractProofGhoulTrophy
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 2000, max: 2500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardHard

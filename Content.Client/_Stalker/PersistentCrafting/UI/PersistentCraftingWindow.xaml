@@ -1,0 +1,28 @@
+<windows:PersistentCraftingWindow
+    xmlns="https://spacestation14.io"
+    xmlns:windows="clr-namespace:Content.Client._Stalker.PersistentCrafting.UI"
+    Title="{Loc 'persistent-craft-window-title'}"
+    SetSize="1860 1080"
+    Resizable="True"
+    MinWidth="1620"
+    MinHeight="940">
+    <BoxContainer Orientation="Vertical" Margin="12 12 12 12">
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <Label
+                Name="TreeControlsHint"
+                Text="RMB: pan tree | Wheel: zoom"
+                HorizontalExpand="True" />
+            <Button Name="TreeZoomOutButton" Text="-" MinSize="34 28" />
+            <Control MinSize="6 1" />
+            <Button Name="TreeZoomResetButton" Text="100%" MinSize="56 28" />
+            <Control MinSize="6 1" />
+            <Button Name="TreeZoomInButton" Text="+" MinSize="34 28" />
+            <Control MinSize="6 1" />
+            <Button Name="TreeFitSelectedButton" Text="Focus Node" MinSize="96 28" />
+            <Control MinSize="10 1" />
+            <Button Name="CloseTreeWindowButton" Text="Close" MinSize="100 28" />
+        </BoxContainer>
+        <Control MinSize="1 8" />
+        <TabContainer Name="Branches" Access="Public" HorizontalExpand="True" VerticalExpand="True" />
+    </BoxContainer>
+</windows:PersistentCraftingWindow>

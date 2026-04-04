@@ -18,6 +18,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: Access
           tags:
             - MilitiaAccess # Stalker-TOD: Before it was "PoliceOfficer" and was marked as group but it doesn't exist!
@@ -45,4 +46,3 @@
   managingRankId: 3
   hierarchy:
     1: Police
-

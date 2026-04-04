@@ -19,6 +19,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: NpcFactionMember
           factions:
           - Duty
@@ -63,6 +64,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: NpcFactionMember
           factions:
           - Duty
@@ -109,4 +111,3 @@
   hierarchy:
     1: StalkerDolg
     2: StalkerHeadDolg
-

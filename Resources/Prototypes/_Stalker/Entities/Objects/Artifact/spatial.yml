@@ -40,6 +40,11 @@
           Heat: 0.5
           Shock: 0.5
           Cold: 0.5
+    - type: Tag
+      tags:
+      - Khabar
+      - STArtifact
+      - STArtifactTier5
 
 - type: entity
   parent: BaseArtifact
@@ -77,6 +82,11 @@
       modifiers:
         flatReductions:
           Psy: 1 # you can have ONE
+    - type: Tag
+      tags:
+      - Khabar
+      - STArtifact
+      - STArtifactTier1
 
 - type: entity
   parent: BaseArtifactStorage
@@ -112,6 +122,11 @@
       spread: 340
 
 # t4 so i think its fine. maybe.
+    - type: Tag
+      tags:
+      - Khabar
+      - STArtifact
+      - STArtifactTier2
 - type: entity
   parent: BaseArtifactStorage
   id: ZoneArtifactCompass
@@ -153,6 +168,11 @@
       spread: 340
 
 # not sure what to do with this one but its t5 so it doesnt matter yet
+    - type: Tag
+      tags:
+      - Khabar
+      - STArtifact
+      - STArtifactTier4
 - type: entity
   name: Распятие
   parent: BaseArtifact
@@ -187,6 +207,11 @@
         Shock: 0.7
   - type: STWeight
     self: -5
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier2
 
 - type: entity
   parent: BaseArtifact
@@ -229,6 +254,11 @@
     transferAmount: 5
   - type: ExaminableSolution
     solution: pen
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier2
 
 - type: entity
   parent: BaseArtifactStorage
@@ -268,6 +298,11 @@
         - STArtifact
     - type: STWeight
       self: -30
+    - type: Tag
+      tags:
+      - Khabar
+      - STArtifact
+      - STArtifactTier4
 
 - type: entity
   parent: BaseArtifact
@@ -312,3 +347,8 @@
     availableModes:
     - FullAuto
     soundGunshot: /Audio/Effects/Lightning/lightningbolt.ogg
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier2

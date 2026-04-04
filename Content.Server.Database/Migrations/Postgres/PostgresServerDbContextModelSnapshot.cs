@@ -1741,6 +1741,27 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("stalker_news_reactions", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.StalkerPersistentCraftProfile", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("user_id");
+
+                    b.Property<string>("CharacterName")
+                        .HasColumnType("text")
+                        .HasColumnName("character_name");
+
+                    b.Property<string>("ProfileJson")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("profile_json");
+
+                    b.HasKey("UserId", "CharacterName")
+                        .HasName("PK_stalker_persistent_craft_profiles");
+
+                    b.ToTable("stalker_persistent_craft_profiles", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.StalkerPdaPassword", b =>
                 {
                     b.Property<string>("CharacterName")

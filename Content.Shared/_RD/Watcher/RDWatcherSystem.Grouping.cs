@@ -8,6 +8,7 @@ public sealed partial class RDWatcherSystem
     [Dependency] private readonly SharedTransformSystem _transform = null!;
 
     private readonly List<TargetEntity> _targets = new(150);
+    private readonly HashSet<EntityUid> _liveTargetUids = new();
 
     private void InitializeGrouping()
     {
@@ -17,12 +18,16 @@ public sealed partial class RDWatcherSystem
     private void UpdateWatchers()
     {
         _targets.Clear();
+        _liveTargetUids.Clear();
 
         var query = EntityQueryEnumerator<RDWatcherTargetComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out _, out var transform))
         {
             _targets.Add(new TargetEntity(uid, _transform.GetWorldPosition(transform), _transform.GetMapId((uid, transform))));
+            _liveTargetUids.Add(uid);
         }
+
+        PruneWatcherTargets(_liveTargetUids);
 
         var visited = new HashSet<EntityUid>();
         foreach (var entity in _targets)

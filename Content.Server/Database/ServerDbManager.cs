@@ -464,6 +464,12 @@ namespace Content.Server.Database
         Task<StalkerCharacterRank?> GetStalkerCharacterRankAsync(Guid userId, string characterName);
         Task UpdateStalkerCharacterRankTimesAsync(IReadOnlyCollection<(Guid UserId, string CharacterName, TimeSpan Time)> updates);
         // stalker-en-changes-end
+
+        // stalker-en-changes-start: Persistent craft profile persistence
+        Task<StalkerPersistentCraftProfile?> GetStalkerPersistentCraftProfileAsync(Guid userId, string characterName);
+        Task SetStalkerPersistentCraftProfileAsync(Guid userId, string characterName, string profileJson);
+        Task DeleteAllStalkerPersistentCraftProfilesAsync();
+        // stalker-en-changes-end
         #endregion
     }
     /// <summary>
@@ -1416,6 +1422,26 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.UpdateStalkerCharacterRankTimesAsync(updates));
+        }
+        // stalker-en-changes-end
+
+        // stalker-en-changes-start: Persistent craft profile persistence
+        public Task<StalkerPersistentCraftProfile?> GetStalkerPersistentCraftProfileAsync(Guid userId, string characterName)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetStalkerPersistentCraftProfileAsync(userId, characterName));
+        }
+
+        public Task SetStalkerPersistentCraftProfileAsync(Guid userId, string characterName, string profileJson)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetStalkerPersistentCraftProfileAsync(userId, characterName, profileJson));
+        }
+
+        public Task DeleteAllStalkerPersistentCraftProfilesAsync()
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.DeleteAllStalkerPersistentCraftProfilesAsync());
         }
         // stalker-en-changes-end
 

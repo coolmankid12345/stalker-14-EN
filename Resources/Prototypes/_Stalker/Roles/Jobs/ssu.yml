@@ -19,6 +19,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+        #- type: PersistentCraftAccess
         - type: Access
           groups:
             - MilitaryHead
@@ -44,4 +45,3 @@
   managingRankId: 3
   hierarchy:
     1: StalkerSBU
-

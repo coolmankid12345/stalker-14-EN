@@ -1,0 +1,39 @@
+<controls:PanelContainer
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Robust.Client.UserInterface.Controls;assembly=Robust.Client"
+    Name="RootPanel"
+    StyleClasses="BackgroundDark"
+    HorizontalExpand="False"
+    VerticalExpand="True"
+    MinWidth="650"
+    MaxWidth="650"
+    MaxHeight="300">
+
+    <BoxContainer Orientation="Horizontal" Margin="8 6">
+        <!-- Faction icon on the left -->
+        <TextureRect Name="FactionIcon"
+                      Access="Public"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      MinSize="64 64"
+                      MaxSize="64 64"
+                      Stretch="KeepAspectCentered"
+                      Visible="False"/>
+
+        <!-- Text content on the right -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="6 0 0 0">
+            <!-- Title (sender name) -->
+            <controls:Label Name="TitleLabel"
+                            StyleClasses="LabelSmall"
+                            ClipText="True"
+                            Text="Sender Name"/>
+
+            <!-- Message content - RichTextLabel supports word wrap! -->
+            <controls:RichTextLabel Name="ContentLabel"
+                                    Access="Public"
+                                    StyleClasses="LabelSmall"
+                                    Text="Message content" />
+        </BoxContainer>
+    </BoxContainer>
+
+</controls:PanelContainer>

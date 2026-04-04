@@ -2531,6 +2531,45 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         }
         // stalker-en-changes-end
 
+        // stalker-en-changes-start: Persistent craft profile persistence
+        public async Task<StalkerPersistentCraftProfile?> GetStalkerPersistentCraftProfileAsync(Guid userId, string characterName)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.StalkerPersistentCraftProfiles
+                .FirstOrDefaultAsync(p => p.UserId == userId && p.CharacterName == characterName);
+        }
+
+        public async Task SetStalkerPersistentCraftProfileAsync(Guid userId, string characterName, string profileJson)
+        {
+            await using var db = await GetDb();
+
+            var existing = await db.DbContext.StalkerPersistentCraftProfiles
+                .FirstOrDefaultAsync(p => p.UserId == userId && p.CharacterName == characterName);
+
+            if (existing is null)
+            {
+                db.DbContext.StalkerPersistentCraftProfiles.Add(new StalkerPersistentCraftProfile
+                {
+                    UserId = userId,
+                    CharacterName = characterName,
+                    ProfileJson = profileJson,
+                });
+            }
+            else
+            {
+                existing.ProfileJson = profileJson;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteAllStalkerPersistentCraftProfilesAsync()
+        {
+            await using var db = await GetDb();
+            await db.DbContext.StalkerPersistentCraftProfiles.ExecuteDeleteAsync();
+        }
+        // stalker-en-changes-end
+
         #endregion
         #region Job Whitelists
 

@@ -21,6 +21,8 @@
     MonolithCrate556M855: 10
     MonolithCrate762FMJ: 10
     MonolithCrate739Mag30: 10
+    MonolithCrate919Mag30: 10
+    MonolithCrate919PBM: 10
     FoldedFlagMono: 20
     StalkerMonolithAltarKit: 10
     BoxZiptie: 10
@@ -32,7 +34,6 @@
     Matchbox: 5
     MonolithInventoryRestockEN: 1
     Screwdriver: 1
-    Bloodpack: 10
 
 - type: entity
   parent: BaseItem
@@ -118,20 +119,20 @@
   - name: shop-category-weapons
     priority: 1
     items:
-      STWeaponRifleStalkerAK12en: 10 # replace with mono ver later
+      STWeaponRifleStalkerAK12en: 18 # replace with mono ver later
       STWeaponSMGStalkerCP2Veresk: 8
       #STWeaponRifleAK103: 16 # Give them an RPK later instead
-      STWeaponRifleStalkerAbakan: 14
-      STWeaponShotgunProtecta: 8
+      STWeaponRifleStalkerAbakan: 24
+      STWeaponShotgunProtecta: 10
       #STSeraKnife: 3 # removed until oilman lets me add it
       STWeaponPistolUSP: 2
 
   - name: shop-category-armor
     priority: 4
     items:
-      ClothingOuterArmorSevaMonolithPriest: 10
-      ClothingHeadHelmetBerill5MMonolith: 7
-      ClothingOuterArmorBerill5MMonolith: 25
+      ClothingOuterArmorSevaMonolithPriest: 15
+      ClothingHeadHelmetBerill5MMonolith: 8
+      ClothingOuterArmorBerill5MMonolith: 30
 
   - name: shop-category-medicine
     priority: 4

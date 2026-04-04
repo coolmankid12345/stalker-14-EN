@@ -1,0 +1,35 @@
+- type: persistentCraftSubCategory
+  id: weapon-shotguns
+  category: weapons
+  name: Shotguns
+  order: 10
+
+- type: persistentCraftSubCategory
+  id: weapon-ar-soviet
+  category: weapons
+  name: Assault Rifles (USSR)
+  order: 11
+
+- type: persistentCraftSubCategory
+  id: weapon-ar-nato
+  category: weapons
+  name: Assault Rifles (NATO)
+  order: 12
+
+- type: persistentCraftSubCategory
+  id: weapon-smg-pdw
+  category: weapons
+  name: SMGs and PDWs
+  order: 13
+
+- type: persistentCraftSubCategory
+  id: weapon-sniper-dmr
+  category: weapons
+  name: Sniper Rifles and DMRs
+  order: 14
+
+- type: persistentCraftSubCategory
+  id: weapon-pistols-revolvers
+  category: weapons
+  name: Pistols and Revolvers
+  order: 15

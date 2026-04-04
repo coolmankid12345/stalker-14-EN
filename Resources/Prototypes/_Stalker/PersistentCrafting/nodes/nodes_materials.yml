@@ -1,0 +1,57 @@
+- type: persistentCraftNode
+  id: PersistentCraftMaterialsNodeT1
+  name: persistent-craft-node-materials-t1-name
+  description: persistent-craft-node-materials-t1-desc
+  branch: Materials
+  cost: 0
+  displayProto: STCraftAnomalyDust
+  treeColumn: 1
+  treeRow: 0
+
+- type: persistentCraftNode
+  id: PersistentCraftMaterialsNodeT2
+  name: persistent-craft-node-materials-t2-name
+  description: persistent-craft-node-materials-t2-desc
+  branch: Materials
+  cost: 0
+  displayProto: STCraftSheetIronT2
+  treeColumn: 1
+  treeRow: 1
+  prerequisites:
+  - PersistentCraftMaterialsNodeT1
+
+- type: persistentCraftNode
+  id: PersistentCraftMaterialsNodeT3
+  name: persistent-craft-node-materials-t3-name
+  description: persistent-craft-node-materials-t3-desc
+  branch: Materials
+  cost: 0
+  displayProto: STCraftSheetBrassT3
+  treeColumn: 1
+  treeRow: 2
+  prerequisites:
+  - PersistentCraftMaterialsNodeT2
+
+- type: persistentCraftNode
+  id: PersistentCraftMaterialsNodeT4
+  name: persistent-craft-node-materials-t4-name
+  description: persistent-craft-node-materials-t4-desc
+  branch: Materials
+  cost: 0
+  displayProto: STCraftSheetAluminumT4
+  treeColumn: 1
+  treeRow: 3
+  prerequisites:
+  - PersistentCraftMaterialsNodeT3
+
+- type: persistentCraftNode
+  id: PersistentCraftMaterialsNodeT5
+  name: persistent-craft-node-materials-t5-name
+  description: persistent-craft-node-materials-t5-desc
+  branch: Materials
+  cost: 0
+  displayProto: STCraftSheetSteelT5
+  treeColumn: 1
+  treeRow: 4
+  prerequisites:
+  - PersistentCraftMaterialsNodeT4

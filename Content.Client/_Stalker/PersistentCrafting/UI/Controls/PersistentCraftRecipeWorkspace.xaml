@@ -1,0 +1,55 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         HorizontalExpand="True"
+         VerticalExpand="True">
+    <SplitContainer Name="ContentSplit"
+                    Orientation="Horizontal"
+                    HorizontalExpand="True"
+                    VerticalExpand="True"
+                    MinSize="0 720">
+        <PanelContainer Name="ListPanel"
+                        MinSize="560 720"
+                        HorizontalExpand="True"
+                        VerticalExpand="True">
+            <BoxContainer Name="ListBody"
+                          Orientation="Vertical"
+                          HorizontalExpand="True"
+                          VerticalExpand="True">
+                <BoxContainer Name="FilterHost"
+                              Orientation="Vertical"
+                              HorizontalExpand="True" />
+                <Control MinSize="1 10" />
+                <BoxContainer Name="TierFilterHost"
+                              Orientation="Vertical"
+                              HorizontalExpand="True" />
+                <Control MinSize="1 10" />
+                <BoxContainer Name="SummaryHost"
+                              Orientation="Vertical"
+                              HorizontalExpand="True" />
+                <Control MinSize="1 10" />
+                <ScrollContainer Name="ListScroll"
+                                 HorizontalExpand="True"
+                                 VerticalExpand="True"
+                                 HScrollEnabled="False">
+                    <BoxContainer Name="ListHost"
+                                  Orientation="Vertical"
+                                  HorizontalExpand="True" />
+                </ScrollContainer>
+            </BoxContainer>
+        </PanelContainer>
+        <PanelContainer Name="DetailPanel"
+                        MinSize="780 720"
+                        HorizontalExpand="True"
+                        VerticalExpand="True">
+            <ScrollContainer Name="DetailScroll"
+                             HorizontalExpand="True"
+                             VerticalExpand="True"
+                             HScrollEnabled="False">
+                <BoxContainer Name="DetailHost"
+                              Orientation="Vertical"
+                              HorizontalExpand="True"
+                              VerticalExpand="True" />
+            </ScrollContainer>
+        </PanelContainer>
+    </SplitContainer>
+</Control>

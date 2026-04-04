@@ -1,0 +1,16 @@
+<windows:PersistentCraftStationWindow
+    xmlns="https://spacestation14.io"
+    xmlns:windows="clr-namespace:Content.Client._Stalker.PersistentCrafting.UI"
+    Title="{Loc 'persistent-craft-menu-title'}"
+    SetSize="1740 1040"
+    Resizable="True"
+    MinWidth="1480"
+    MinHeight="920">
+    <BoxContainer Orientation="Vertical" Margin="12 12 12 12">
+        <BoxContainer Orientation="Horizontal" Margin="0 0 0 8">
+            <Control HorizontalExpand="True" />
+            <Button Name="OpenSkillsButton" Access="Public" Text="{Loc 'persistent-craft-station-open-skills'}" />
+        </BoxContainer>
+        <TabContainer Name="Branches" Access="Public" VerticalExpand="True" />
+    </BoxContainer>
+</windows:PersistentCraftStationWindow>
