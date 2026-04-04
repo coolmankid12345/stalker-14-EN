@@ -46,9 +46,8 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         if (Deleted(target))
             return;
 
-        // CRITICAL: Mark the event as handled so SharedProjectileSystem.ProjectileCollide
-        // skips its own ChangeDamage call. Without this, damage is applied twice:
-        // once here and once in ProjectileCollide after RaiseLocalEvent returns.
+        // CRITICAL: Mark as handled so SharedProjectileSystem.ProjectileCollide skips
+        // its own ChangeDamage call — prevents double damage application.
         args.Handled = true;
 
         TryComp<DamageableComponent>(target, out var damageableComp);
@@ -130,8 +129,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
     {
-        // With gun prediction active, damage is handled entirely via ProjectileHitEvent
-        // raised by the prediction system → OnProjectileHit above handles all damage.
+        // With gun prediction active, damage is handled entirely via ProjectileHitEvent.
         if (_guns.GunPrediction)
             return;
 
@@ -149,8 +147,8 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             return;
         }
 
-        // Raise ProjectileHitEvent — OnProjectileHit above handles all damage
-        // and sets args.Handled = true, so ProjectileCollide skips its own ChangeDamage.
+        // Raise ProjectileHitEvent — OnProjectileHit handles damage and sets Handled=true
+        // so SharedProjectileSystem.ProjectileCollide skips its own ChangeDamage call.
         var ev = new ProjectileHitEvent(component.Damage * _damageableSystem.UniversalProjectileDamageModifier, target, component.Shooter);
         RaiseLocalEvent(uid, ref ev);
 
