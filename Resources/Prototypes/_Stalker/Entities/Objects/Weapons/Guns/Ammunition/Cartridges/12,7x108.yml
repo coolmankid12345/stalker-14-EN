@@ -1,3 +1,5 @@
+# 12,7x108
+# STALKER-14-EN START
 - type: entity
   id: BaseSTCartridge13x108
   name: cartridge (12,7x108 rifle)
@@ -23,24 +25,26 @@
 
 - type: entity
   id: STCartridge13x108FMJ
-  name: Патрон (12,7x108)FMJ
+  name: Cartridge (12,7x108)FMJ
   parent: BaseSTCartridge13x108
   components:
     - type: CartridgeAmmo
       proto: Bullet13x108FMJ
 
 - type: entity
+  id: STCartridge13x108HPBT
+  name: Cartridge (12,7x108)HP
+  parent: BaseSTCartridge13x108
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet13x108HPBT
+
+- type: entity
   id: STCartridge13x108PC
-  name: Патрон (12,7x108)ПС
+  name: Cartridge (12,7x108)AP
   parent: BaseSTCartridge13x108
   components:
   - type: CartridgeAmmo
     proto: Bullet13x108PC
 
-- type: entity
-  id: STCartridge13x108HPBT
-  name: Патрон (12,7x108)HP BT
-  parent: BaseSTCartridge13x108
-  components:
-  - type: CartridgeAmmo
-    proto: Bullet13x108HPBT
+# STALKER-14-EN END

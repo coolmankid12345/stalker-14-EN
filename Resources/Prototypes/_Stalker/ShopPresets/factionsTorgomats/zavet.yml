@@ -127,7 +127,6 @@
         754FMJBox: 1200
         # .45
         45ACPLFMJBox: 100
-        45ACPMFMJBox: 550
         45ACPAPBox: 1000
         45ACPRIPBox: 400
     - name: shop-category-armor

@@ -1,4 +1,13 @@
-# Stalker EN Changes - Falloff increased
+# Stalker EN Changes - Falloff retuned for meaningful range-damage decay
+#
+# Design targets (from base damage):
+#   ~25% loss at "medium" range for each class
+#   ~60% loss at "long" range for each class
+#   15% floor (MinRemainingDamageModifier) ensures bullets are never harmless
+#
+# All falloff values are damage lost PER TILE in that band.
+# MinRemainingDamageModifier defaults to 0.15 in STProjectileDamageFalloffComponent.
+
 - type: entity
   abstract: true
   parent: STBaseEntity
@@ -42,11 +51,17 @@
         - range: 1
           falloff: 0.03
     - type: STProjectileDamageFalloff
+      # Base bullet: generic falloff, medium effective range
+      # ~25% loss at 10t, floor around 16t
       thresholds:
+        - range: 0
+          falloff: 0.0
         - range: 4
-          falloff: 0.2       # Gentle base falloff
-        - range: 20
-          falloff: 0.8       # Moderate drop
+          falloff: 2.0       # -2.0/tile from 4t onward
+        - range: 10
+          falloff: 3.5       # -3.5/tile from 10t onward (steeper)
+        - range: 16
+          falloff: 5.0       # floor zone
     - type: LagCompensation
 
 - type: entity
@@ -82,11 +97,15 @@
         - range: 1
           falloff: 0.1
     - type: STProjectileDamageFalloff
+      # Beanbag / melee-range: drops off extremely fast
+      # ~50% loss at 4t, floor around 6t
       thresholds:
+        - range: 0
+          falloff: 0.0
         - range: 1
-          falloff: 0.6       # Gentle falloff for beanbag/melee
+          falloff: 4.0       # -4.0/tile from 1t — very short effective range
         - range: 4
-          falloff: 1.5       # Still drops off quickly but not extreme
+          falloff: 8.0       # -8.0/tile from 4t — floor reached almost immediately
 
 - type: entity
   abstract: true
@@ -99,11 +118,17 @@
         - range: 5
           falloff: 0.05
     - type: STProjectileDamageFalloff
+      # Pistol: effective to ~6t, noticeable drop by 10t, floor around 14t
+      # Example: 24 damage (9x18) → ~18 at 8t, ~10 at 12t, floor ~4 at 14t+
       thresholds:
-        - range: 2
-          falloff: 0.4       # Gentle falloff (was 0.6)
+        - range: 0
+          falloff: 0.0
+        - range: 3
+          falloff: 1.8       # -1.8/tile from 3t (~25% loss at 6t for 24dmg bullet)
         - range: 8
-          falloff: 1.2       # Moderate drop (was 1.8)
+          falloff: 3.2       # -3.2/tile from 8t (steeper drop)
+        - range: 13
+          falloff: 5.0       # floor zone
 
 - type: entity
   abstract: true
@@ -116,11 +141,17 @@
         - range: 5
           falloff: 0.05
     - type: STProjectileDamageFalloff
+      # Light rifle (5.45x39, 5.56x45): effective to ~8t, 25% loss at 12t, floor ~18t
+      # Example: 56 damage → ~42 at 12t, ~22 at 17t, floor ~8 at 19t+
       thresholds:
-        - range: 4
-          falloff: 0.35      # Light rifle falloff
-        - range: 15
-          falloff: 1.0       # Moderate drop
+        - range: 0
+          falloff: 0.0
+        - range: 5
+          falloff: 2.3       # -2.3/tile from 5t (~25% loss at 12t for 56dmg)
+        - range: 12
+          falloff: 4.0       # -4.0/tile from 12t (steeper)
+        - range: 18
+          falloff: 6.0       # floor zone
 
 - type: entity
   abstract: true
@@ -133,11 +164,17 @@
         - range: 5
           falloff: 0.04
     - type: STProjectileDamageFalloff
+      # Medium rifle (7.62x39): effective to ~10t, 25% loss at 15t, floor ~22t
+      # Example: 80 damage → ~60 at 15t, ~30 at 20t, floor ~12 at 22t+
       thresholds:
-        - range: 4
-          falloff: 0.25      # Medium rifle falloff
-        - range: 20
-          falloff: 0.8       # Balanced drop
+        - range: 0
+          falloff: 0.0
+        - range: 6
+          falloff: 3.0       # -3.0/tile from 6t (~25% loss at 15t for 80dmg)
+        - range: 15
+          falloff: 5.0       # -5.0/tile from 15t
+        - range: 21
+          falloff: 7.0       # floor zone
 
 - type: entity
   abstract: true
@@ -150,11 +187,17 @@
         - range: 5
           falloff: 0.02
     - type: STProjectileDamageFalloff
+      # Heavy rifle (7.62x51, 7.62x54): effective to ~15t, 25% loss at 22t, floor ~30t
+      # Example: 80 damage → ~60 at 22t, ~30 at 27t, floor ~12 at 30t+
       thresholds:
-        - range: 4
-          falloff: 0.15      # Light falloff for heavy rifles
-        - range: 30
-          falloff: 0.6       # Gradual drop
+        - range: 0
+          falloff: 0.0
+        - range: 8
+          falloff: 2.5       # -2.5/tile from 8t (~25% loss at 22t for 80dmg)
+        - range: 22
+          falloff: 4.5       # -4.5/tile from 22t
+        - range: 29
+          falloff: 6.0       # floor zone
 
 - type: entity
   abstract: true
@@ -167,11 +210,17 @@
         - range: 5
           falloff: 0.001
     - type: STProjectileDamageFalloff
+      # Super heavy rifle (12.7x55, 12.7x108): effective to ~25t, barely drops until 35t
+      # Example: 140 damage → ~105 at 35t, ~55 at 45t, floor ~21 at 50t+
       thresholds:
-        - range: 8
-          falloff: 0.1       # Very light falloff
-        - range: 45
-          falloff: 0.5       # Long range effectiveness
+        - range: 0
+          falloff: 0.0
+        - range: 15
+          falloff: 2.0       # -2.0/tile from 15t (very gradual early)
+        - range: 35
+          falloff: 5.0       # -5.0/tile from 35t
+        - range: 48
+          falloff: 8.0       # floor zone — even snipers have a max effective range
 
 - type: entity
   abstract: true
@@ -184,11 +233,18 @@
         - range: 5
           falloff: 0.08
     - type: STProjectileDamageFalloff
+      # Subsonic / special (9x39): short effective range like a pistol but heavier
+      # Very effective up close, drops off fast beyond 8t
+      # Example: 45 damage → ~34 at 8t, ~16 at 12t, floor ~7 at 14t+
       thresholds:
-        - range: 2
-          falloff: 0.35      # Gentle falloff for subsonic
-        - range: 15
-          falloff: 1.2       # Moderate drop
+        - range: 0
+          falloff: 0.0
+        - range: 3
+          falloff: 1.5       # -1.5/tile from 3t
+        - range: 8
+          falloff: 3.5       # -3.5/tile from 8t
+        - range: 13
+          falloff: 5.5       # floor zone
 
 - type: entity
   abstract: true
@@ -201,11 +257,18 @@
         - range: 5
           falloff: 0.03
     - type: STProjectileDamageFalloff
+      # .45 ACP: heavy but slow, similar to pistol but slightly better retention
+      # Effective to ~6t, noticeable drop by 10t
+      # Example: 40 damage → ~30 at 9t, ~15 at 13t, floor ~6 at 15t+
       thresholds:
-        - range: 5
-          falloff: 0.4       # Gentle falloff for .45 ACP
-        - range: 12
-          falloff: 1.2       # Moderate drop
+        - range: 0
+          falloff: 0.0
+        - range: 4
+          falloff: 1.6       # -1.6/tile from 4t
+        - range: 9
+          falloff: 3.0       # -3.0/tile from 9t
+        - range: 14
+          falloff: 5.0       # floor zone
 
 # stalker EN change - used for revolvers
 - type: entity
@@ -219,8 +282,15 @@
         - range: 5
           falloff: 0.03
     - type: STProjectileDamageFalloff
+      # Revolver (.44 Magnum): better range than pistol, similar to light rifle
+      # Effective to ~7t, 25% loss at 11t, floor ~17t
+      # Example: 50 damage → ~37 at 11t, ~20 at 14t, floor ~7 at 17t+
       thresholds:
-        - range: 2
-          falloff: 0.3       # Gentle revolver falloff
-        - range: 8
-          falloff: 0.8       # Moderate drop
+        - range: 0
+          falloff: 0.0
+        - range: 4
+          falloff: 2.0       # -2.0/tile from 4t
+        - range: 10
+          falloff: 3.8       # -3.8/tile from 10t
+        - range: 16
+          falloff: 5.5       # floor zone

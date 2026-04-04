@@ -1,0 +1,151 @@
+# 5.56x45 — FMJ / HP / AP + vendor/map cink aliases
+
+- type: entity
+  parent: BaseAmmoBoxStalker
+  id: 556FMJBox
+  name: Коробка патронов (5,56x45) FMJ
+  description: Для штурмовых винтовок, 30 штук. Обеспечивает пробитие 3 класса брони.
+  suffix: Stalker
+  components:
+  - type: MagazineVisuals
+    magState: 556ammo
+  - type: BallisticAmmoProvider
+    proto: Cartridge556FMJ
+    capacity: 30
+    whitelist:
+      tags:
+      - STCartridge556
+  - type: Sprite
+    layers:
+    - state: 556
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 556ammo-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: 556FMJBox
+  id: 556WarmagBox
+  name: Коробка патронов (5,56x45) HP
+  description: Для штурмовых винтовок, 30 штук. Бесполезно против брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556Warmag
+  - type: Sprite
+    layers:
+    - state: 556
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 556ammo-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: exp
+
+- type: entity
+  parent: 556FMJBox
+  id: 556M855Box
+  name: Коробка патронов (5,56x45) AP
+  description: Для штурмовых винтовок, 30 штук. Обеспечивает пробитие 6 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556SSAAP
+  - type: Sprite
+    layers:
+    - state: 556
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 556ammo-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: antiarmor
+
+- type: entity
+  parent: 556FMJBox
+  id: 556M856Box
+  name: Коробка патронов (5,56x45) AP
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556SSAAP
+
+- type: entity
+  parent: 556FMJBox
+  id: 556SSAAPBox
+  name: Коробка патронов (5,56x45) AP
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556SSAAP
+
+- type: entity
+  parent: 556FMJBox
+  id: 545M995Box
+  name: Коробка патронов (5,56x45) AP
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556SSAAP
+
+- type: entity
+  parent: BaseAmmoCinkBoxStalker
+  id: 556FMJBoxCink
+  name: Ящик патронов (5,56x45) FMJ
+  description: Для штурмовых винтовок, 300 штук. Обеспечивает пробитие 3 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556FMJ
+    capacity: 300
+    whitelist:
+      tags:
+      - STCartridge556
+  - type: Sprite
+    layers:
+    - state: cink
+      map: ["enum.GunVisualLayers.Base"]
+    - state: cink
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: 556FMJBoxCink
+  id: 556WarmagBoxCink
+  name: Ящик патронов (5,56x45) HP
+  description: Для штурмовых винтовок, 300 штук. Бесполезно против брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556Warmag
+
+- type: entity
+  parent: 556FMJBoxCink
+  id: 556M855BoxCink
+  name: Ящик патронов (5,56x45) AP
+  description: Для штурмовых винтовок, 300 штук. Обеспечивает пробитие 6 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556SSAAP
+
+- type: entity
+  parent: 556FMJBoxCink
+  id: 556M856BoxCink
+  name: Ящик патронов (5,56x45) AP
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556SSAAP
+
+- type: entity
+  parent: 556FMJBoxCink
+  id: 556SSAAPBoxCink
+  name: Ящик патронов (5,56x45) AP
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556SSAAP
+
+- type: entity
+  parent: 556FMJBoxCink
+  id: 545M995BoxCink
+  name: Ящик патронов (5,56x45) AP
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge556SSAAP

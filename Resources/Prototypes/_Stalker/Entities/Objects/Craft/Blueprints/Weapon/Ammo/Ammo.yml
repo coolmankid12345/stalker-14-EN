@@ -1,470 +1,693 @@
-- type: entity
-  parent: STBaseBlueprint
-  id: ST7mmBuckshotBoxCinkBluePrint
-  name: Рецепт ящик картечи 7мм
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe7mmBuckshotBoxCink
+######################### Shotguns ammo #########################
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST6mmBuckshotBoxCinkBluePrint
-  name: Рецепт ящика картечи 6.5мм "Экспресс"
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe6mmBuckshotBoxCink
+- type: craftRecipe
+  id: newrecipe7mmBuckshotBoxCink
+  resultProtos:
+  - 7mmBuckshotBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST7mmBuckshotBoxCinkBluePrint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 1
+    STCraftSheetIronT2:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST8mmBuckshotBoxCinkBlueprint
-  name: Рецепт ящик картечи 8.5мм "Магнум"
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe8mmBuckshotBoxCink
+- type: craftRecipe
+  id: newrecipe6mmBuckshotBoxCink
+  resultProtos:
+  - 6mmBuckshotBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST6mmBuckshotBoxCinkBluePrint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 2
+    STCraftSheetIronT2:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: STShotgunFlechetteCinkBlueprint
-  name: Рецепт ящик флешетта (12x70)
-  components:
-    - type: STBlueprint
-      blueprint: newrecipeShotgunFlechetteCink
+- type: craftRecipe
+  id: newrecipe8mmBuckshotBoxCink
+  resultProtos:
+  - 8mmBuckshotBoxCink
+  - 8mmBuckshotBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST8mmBuckshotBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 4
 
-- type: entity
-  parent: STBaseBlueprint
-  id: STShotgunBulletUnlethalBoxCinkBlueprint
-  name: Рецепт ящик нелетальных пуль (12х70)
-  components:
-    - type: STBlueprint
-      blueprint: newrecipeShotgunBulletUnlethalBoxCink
+- type: craftRecipe
+  id: newrecipeShotgunFlechetteCink
+  resultProtos:
+  - ShotgunFlechetteCink
+  - ShotgunFlechetteCink
+  - ShotgunFlechetteCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    STShotgunFlechetteCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetAluminumT4:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: STShotgunBulletBoxCinkBlueprint
-  name: Рецепт ящик пуль (12x70)
-  components:
-    - type: STBlueprint
-      blueprint: newrecipeShotgunBulletBoxCink
+- type: craftRecipe
+  id: newrecipeShotgunBulletUnlethalBoxCink
+  resultProtos:
+  - ShotgunBulletUnlethalBoxCink
+  - ShotgunBulletUnlethalBoxCink
+  - ShotgunBulletUnlethalBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    STShotgunBulletUnlethalBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 1
+    STCraftPlasticFittingT2:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: STShotgunBulletBoxRIPCinkBlueprint
-  name: Рецепт ящик пуль (12х70) RIP
-  components:
-    - type: STBlueprint
-      blueprint: newrecipeShotgunBulletBoxRIPCink
+- type: craftRecipe
+  id: newrecipeShotgunBulletBoxCink
+  resultProtos:
+  - ShotgunBulletBoxCink
+  - ShotgunBulletBoxCink
+  - ShotgunBulletBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    STShotgunBulletBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: STShotgunDarttBoxCinkBlueprint
-  name: Рецепт ящик дротиков (12х70)
-  components:
-    - type: STBlueprint
-      blueprint: newrecipeShotgunDarttBoxCink
+- type: craftRecipe
+  id: newrecipeShotgunBulletBoxRIPCink
+  resultProtos:
+  - ShotgunBulletBoxRIPCink
+  - ShotgunBulletBoxRIPCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    STShotgunBulletBoxRIPCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 2
+    STCraftSheetIronT2:
+      amount: 5
 
-###################################################################### 5,45x39
+- type: craftRecipe
+  id: newrecipeShotgunDarttBoxCink
+  resultProtos:
+  - ShotgunDarttBoxCink
+  - ShotgunDarttBoxCink
+  - ShotgunDarttBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    STShotgunDarttBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetAluminumT4:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST545FMJBoxCinkBlueprint
-  name: Рецепт ящик пуль 5,45x39 FMJ # FMJ = T2
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe545FMJBoxCink
+###################################################################### 5.45x39
+# 3 types: FMJ / HP / AP
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST545PCBoxCinkBlueprint
-  name: Рецепт ящик пуль 5,45x39 ПС  # PC = T3
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe545PCBoxCink
+- type: craftRecipe
+  id: newrecipe545FMJBoxCink
+  resultProtos:
+  - 545FMJBoxCink
+  - 545FMJBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST545FMJBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 2
+    STCraftSheetIronT2:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST545HPBoxCinkBlueprint
-  name: Рецепт ящик пуль 5,45x39 HP # НР = T3
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe545HPBoxCink
+- type: craftRecipe
+  id: newrecipe545HPBoxCink
+  resultProtos:
+  - 545HPBoxCink
+  - 545HPBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST545HPBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetBrassT3:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST545BPBoxCinkBlueprint
-  name: Рецепт ящик пуль 5,45x39 БП # БП = T4
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe545BPBoxCink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST545BSBoxCinkBlueprint
-  name: Рецепт ящик пуль 5,45x39 БC # БC = T5
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe545BSBoxCink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST545NCBoxCinkBlueprint
-  name: Рецепт ящик пуль 5,45x39 Игольники
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe545NCBoxCink
+- type: craftRecipe
+  id: newrecipe545PCBoxCink
+  resultProtos:
+  - 545PCBoxCink
+  - 545PCBoxCink
+  - 545PCBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST545PCBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 5
+    STCraftSheetSteelT5:
+      amount: 5
 
 ################################################################################ 9x18
+# 3 types: FMJ / HP / AP
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST918PGJBoxCinkBlueprint
-  name: Рецепт ящик пуль 9х18 П гж
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe918PGJBoxCink
+- type: craftRecipe
+  id: newrecipe918PGJBoxCink
+  resultProtos:
+  - 918PGJBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST918PGJBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 1
+    STCraftSheetIronT2:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST918PSTBoxCinkBlueprint
-  name: Рецепт ящик пуль 9х18 ПСТ гж
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe918PSTBoxCink
+- type: craftRecipe
+  id: newrecipe918SP7BoxCink
+  resultProtos:
+  - 918SP7BoxCink
+  - 918SP7BoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST918SP7BoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetBrassT3:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST918SP7BoxCinkBlueprint
-  name: Рецепт ящик пуль 9х18 СП7 гж
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe918SP7BoxCink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST918PBMBoxCinkBlueprint
-  name: Рецепт ящик пуль 9х18 ПБМ гж
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe918PBMBoxCink
+- type: craftRecipe
+  id: newrecipe918PBMBoxCink
+  resultProtos:
+  - 918PBMBoxCink
+  - 918PBMBoxCink
+  - 918PBMBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST918PBMBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 5
 
 ############################################################################# 9x19
+# 3 types: FMJ / HP / AP
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST919PSOGJBoxCinkBlueprint
-  name: Рецепт ящик пуль 9х19 ПСО гж
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe919PSOGJBoxCink
+- type: craftRecipe
+  id: newrecipe919PSOGJBoxCink
+  resultProtos:
+  - 919PSOGJBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST919PSOGJBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 1
+    STCraftSheetIronT2:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST919PSTBoxCinkBlueprint
-  name: Рецепт ящик пуль 9х19 ПСТ гж
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe919PSTBoxCink
+- type: craftRecipe
+  id: newrecipe919RIPBoxCink
+  resultProtos:
+  - 919RIPBoxCink
+  - 919RIPBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST919RIPBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetBrassT3:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST919RIPBoxCinkBlueprint
-  name: Рецепт ящик пуль 9х19 RIP
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe919RIPBoxCink
+- type: craftRecipe
+  id: newrecipe919PBMBoxCink
+  resultProtos:
+  - 919PBMBoxCink
+  - 919PBMBoxCink
+  - 919PBMBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST919PBMBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST919PBMBoxCinkBlueprint
-  name: Рецепт ящик пуль 9х19 ПБМ гж
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe919PBMBoxCink
+########### 5.56x45
+# 3 types: FMJ / HP / AP
 
-################################################## 7,62x54
+- type: craftRecipe
+  id: newrecipe556FMJBoxCink
+  resultProtos:
+  - 556FMJBoxCink
+  - 556FMJBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST556FMJBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 2
+    STCraftSheetIronT2:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST754FMJBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x54 FMJ
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe754FMJBoxCink
+- type: craftRecipe
+  id: newrecipe556WarmagBoxCink
+  resultProtos:
+  - 556WarmagBoxCink
+  - 556WarmagBoxCink
+  craftTime: 35
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST556WarmagBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetBrassT3:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST754PCBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x54 ПС
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe754PCBoxCink
+- type: craftRecipe
+  id: newrecipe556M855BoxCink
+  resultProtos:
+  - 556M855BoxCink
+  - 556M855BoxCink
+  - 556M855BoxCink
+  - 556M855BoxCink
+  craftTime: 35
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST556M855BoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 6
+    STCraftSheetSteelT5:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST754HPBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x54 HP BT
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe754HPBoxCink
+################ 7.62x25
+# 3 types: FMJ / HP / AP
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST754BTBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x54 БТ
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe754BTBoxCink
+- type: craftRecipe
+  id: newrecipe725PBoxCink
+  resultProtos:
+  - 725PBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST725PBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 1
+    STCraftSheetIronT2:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST754SNBBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x54 СНБ
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe754SNBBoxCink
+- type: craftRecipe
+  id: newrecipe725LRNPCBoxCink
+  resultProtos:
+  - 725LRNPCBoxCink
+  - 725LRNPCBoxCink
+  - 725LRNPCBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST725LRNPCBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetBrassT3:
+      amount: 3
 
-########### 5,56
+- type: craftRecipe
+  id: newrecipe725PSTBoxCink
+  resultProtos:
+  - 725PSTBoxCink
+  - 725PSTBoxCink
+  - 725PSTBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST725PSTBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST556FMJBoxCinkBlueprint
-  name: Рецепт ящик пуль 5,56 FMJ
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe556FMJBoxCink
+############### 7.62x39
+# 3 types: FMJ / HP / AP
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST556M855BoxCinkBlueprint
-  name: Рецепт ящик пуль 5,56 M855
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe556M855BoxCink
+- type: craftRecipe
+  id: newrecipe739FMJBoxCink
+  resultProtos:
+  - 739FMJBoxCink
+  - 739FMJBoxCink
+  - 739FMJBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST739FMJBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST556WarmagBoxCinkBlueprint
-  name: Рецепт ящик пуль 5,56 Warmag
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe556WarmagBoxCink
+- type: craftRecipe
+  id: newrecipe739HPBoxCink
+  resultProtos:
+  - 739HPBoxCink
+  - 739HPBoxCink
+  - 739HPBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST739HPBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetBrassT3:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST556M856BoxCinkBlueprint
-  name: Рецепт ящик пуль 5,56 M856
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe556M856BoxCink
+- type: craftRecipe
+  id: newrecipe739PCBoxCink
+  resultProtos:
+  - 739PCBoxCink
+  - 739PCBoxCink
+  - 739PCBoxCink
+  - 739PCBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST739PCBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 5
+    STCraftSheetSteelT5:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST545M995BoxCinkBlueprint
-  name: Рецепт ящик пуль 5,56 M995
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe545M995BoxCink
+###################### 7.62x51
+# 3 types: FMJ / HP / AP
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST556SSAAPBoxCinkBlueprint
-  name: Рецепт ящик пуль 5,56 SSA AP
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe556SSAAPBoxCink
+- type: craftRecipe
+  id: newrecipe751M80BoxCink
+  resultProtos:
+  - 751M80BoxCink
+  - 751M80BoxCink
+  - 751M80BoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST751M80BoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 3
 
-################## 7,62x25
+- type: craftRecipe
+  id: newrecipe751UNBoxCink
+  resultProtos:
+  - 751UNBoxCink
+  - 751UNBoxCink
+  - 751UNBoxCink
+  craftTime: 60
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST751UNBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetBrassT3:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST725PBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x25 П гл
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe725PBoxCink
+- type: craftRecipe
+  id: newrecipe751M61BoxCink
+  resultProtos:
+  - 751M61BoxCink
+  - 751M61BoxCink
+  - 751M61BoxCink
+  - 751M61BoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST751M61BoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 5
+    STCraftSheetSteelT5:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST725PTBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x25 ПТ гж
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe725PTBoxCink
+###################### .45 ACP
+# 3 types: FMJ / HP / AP
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST725LRNPCBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x25 LRNPC
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe725LRNPCBoxCink
+- type: craftRecipe
+  id: newrecipe45ACPLFMJBoxCink
+  resultProtos:
+  - 45ACPLFMJBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST45ACPLFMJBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 1
+    STCraftSheetIronT2:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST725PSTBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x25 Пст гж
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe725PSTBoxCink
+- type: craftRecipe
+  id: newrecipe45ACPRIPBoxCink
+  resultProtos:
+  - 45ACPRIPBoxCink
+  - 45ACPRIPBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST45ACPRIPBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 3
 
-####################### 7,62x39
+- type: craftRecipe
+  id: newrecipe45ACPAPBoxCink
+  resultProtos:
+  - 45ACPAPBoxCink
+  - 45ACPAPBoxCink
+  - 45ACPAPBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST45ACPAPBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST739FMJBoxCinkBlueprint
-  name: Рецепт ящик патронов (7,62x39) FMJ
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe739FMJBoxCink
+########## 9x39
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST739PCBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x39 ПС
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe739PCBoxCink
+- type: craftRecipe
+  id: newrecipe939SP5BoxCink
+  resultProtos:
+  - 939SP5BoxCink
+  - 939SP5BoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST939SP5BoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 2
+    STCraftSheetIronT2:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST739HPBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x39 HP
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe739HPBoxCink
+- type: craftRecipe
+  id: newrecipe939BPBoxCink
+  resultProtos:
+  - 939BPBoxCink
+  - 939BPBoxCink
+  - 939BPBoxCink
+  - 939BPBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST939BPBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetAluminumT4:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST739BPBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x39 БП
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe739BPBoxCink
+############## 12.7x55
+# 3 types: FMJ / HP / AP
 
-########################## 7,62x51
+- type: craftRecipe
+  id: newrecipe1255PS12ACink
+  resultProtos:
+  - Ammobox1255PS12ACink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST1255PS12ACinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 1
+    STCraftSheetCopperT1:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST751M80BoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x51 М80
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe751M80BoxCink
+- type: craftRecipe
+  id: newrecipe1255TPCink
+  resultProtos:
+  - Ammobox1255TPCink
+  - Ammobox1255TPCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST1255TPCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 2
+    STCraftSheetIronT2:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST751UNBoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x51 Ultra Noiser
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe751UNBoxCink
+- type: craftRecipe
+  id: newrecipe1255BPCink
+  resultProtos:
+  - Ammobox1255BPCink
+  - Ammobox1255BPCink
+  - Ammobox1255BPCink
+  - Ammobox1255BPCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST1255BPCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 4
+    STCraftSheetAluminumT4:
+      amount: 5
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST751M61BoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x51 M61
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe751M61BoxCink
+###################### 7.62x54
+# 3 types: FMJ / HP / AP
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST751M993BoxCinkBlueprint
-  name: Рецепт ящик пуль 7,62x51 M993
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe751M993BoxCink
+- type: craftRecipe
+  id: newrecipe754FMJBoxCink
+  resultProtos:
+  - 754FMJBoxCink
+  - 754FMJBoxCink
+  - 754FMJBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST754FMJBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 5
 
-############################## .45 ACP
+- type: craftRecipe
+  id: newrecipe754HPBoxCink
+  resultProtos:
+  - 754HPBoxCink
+  - 754HPBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST754HPBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 3
+    STCraftSheetBrassT3:
+      amount: 3
 
-- type: entity
-  parent: STBaseBlueprint
-  id: ST45ACPLFMJBoxCinkBlueprint
-  name: Рецепт ящик пуль .45 ACP Lasermatch FMJ
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe45ACPLFMJBoxCink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST45ACPMFMJBoxCinkBlueprint
-  name: Рецепт ящик пуль .45 ACP Match FMJ
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe45ACPMFMJBoxCink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST45ACPHydroshockBoxCinkBlueprint
-  name: Рецепт ящик пуль .45 ACP Hydro-shock
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe45ACPHydroshockBoxCink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST45ACPRIPBoxCinkBlueprint
-  name: Рецепт ящик пуль .45 ACP RIP
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe45ACPRIPBoxCink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST45ACPAPBoxCinkBlueprint
-  name: Рецепт ящик пуль .45 ACP AP
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe45ACPAPBoxCink
-
-######################### 9x39
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST939SP5BoxCinkBlueprint
-  name: Рецепт ящик пуль 9x39 СП-5
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe939SP5BoxCink
-
-#- type: entity
-#  parent: STBaseBlueprint
-#  id: ST939SP6BoxCinkBlueprint
-#  name: Рецепт ящик пуль 9x39 СП-6
-#  components:
-#    - type: STBlueprint
-#      blueprint: newrecipe939SP6BoxCink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST939BPBoxCinkBlueprint
-  name: Рецепт ящик пуль 9x39 БП
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe939BPBoxCink
-
-######################33 12,7x55
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST1255PS12ACinkBlueprint
-  name: Рецепт ящик пуль 12,7x55 ПС12А
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe1255PS12ACink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST1255TPCinkBlueprint
-  name: Рецепт ящик пуль 12,7x55 ТП
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe1255TPCink
-
-- type: entity
-  parent: STBaseBlueprint
-  id: ST1255BPCinkBlueprint
-  name: Рецепт ящик пуль 12,7x55 БП
-  components:
-    - type: STBlueprint
-      blueprint: newrecipe1255BPCink
-
+- type: craftRecipe
+  id: newrecipe754PCBoxCink
+  resultProtos:
+  - 754PCBoxCink
+  - 754PCBoxCink
+  - 754PCBoxCink
+  - 754PCBoxCink
+  craftTime: 30
+  requiredWorkbench: StalkerWorktable1
+  items:
+    ST754PCBoxCinkBlueprint:
+      amount: 1
+      catalyzer: true
+    CraftMaterialGunpowder:
+      amount: 5
+    STCraftSheetSteelT5:
+      amount: 5

@@ -1,5 +1,5 @@
 # 7.62x25
-
+# STALKER-14-EN START
 - type: entity
   id: BaseSTCartridge725
   name: cartridge (7,62x25 rifle)
@@ -25,7 +25,7 @@
 
 - type: entity
   id: STCartridge725PGL
-  name: Патрон (7,62x25)П гл
+  name: Cartridge (7,62x25) FMJ
   parent: BaseSTCartridge725
   components:
   - type: CartridgeAmmo
@@ -33,7 +33,7 @@
 
 - type: entity
   id: STCartridge725PTGJ
-  name: Патрон (7,62x25)ПТ гж
+  name: Cartridge (7,62x25) HP
   parent: BaseSTCartridge725
   components:
   - type: CartridgeAmmo
@@ -41,16 +41,18 @@
 
 - type: entity
   id: STCartridge725LRNPC
-  name: Патрон (7,62x25)LRNPC
+  name: Cartridge (7,62x25) AP
   parent: BaseSTCartridge725
   components:
   - type: CartridgeAmmo
     proto: Bullet725LRNPC
 
-- type: entity
-  id: STCartridge725PSTGJ
-  name: Патрон (7,62x25)Пст гж
-  parent: BaseSTCartridge725
-  components:
-  - type: CartridgeAmmo
-    proto: Bullet725PSTGJ
+#- type: entity
+#  id: STCartridge725PSTGJ
+#  name: Патрон (7,62x25)Пст гж
+#  parent: BaseSTCartridge725
+#  components:
+#  - type: CartridgeAmmo
+#    proto: Bullet725PSTGJ
+
+# STALKER-14-EN END

@@ -151,15 +151,15 @@
         # 9.18
         918PGJBox: 80
         918SP7Box: 200
-        918PSTBox: 400
+        918PBMBox: 400
         # 9.19
         919PSOGJBox: 100
         919RIPBox: 200
-        919PSTBox: 400
+        919PBMBox: 1200
         # 7.25
         725PBox: 100
         725LRNPCBox: 50
-        725PTBox: 465
+        725PSTBox: 465
         # 7.51
         751M80Box: 1600
         #45

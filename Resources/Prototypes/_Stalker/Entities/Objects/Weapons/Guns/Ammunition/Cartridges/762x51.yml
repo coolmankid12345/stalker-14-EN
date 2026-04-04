@@ -1,5 +1,5 @@
 # 7.62x51
-
+# STALKER-14-EN START
 - type: entity
   id: BaseCartridge751
   name: cartridge (7,62x51 rifle)
@@ -25,7 +25,7 @@
 
 - type: entity
   id: Cartridge751M80
-  name: Патрон (7,62x51)M80
+  name: Cartridge (7,62x51)FMJ
   parent: BaseCartridge751
   components:
   - type: CartridgeAmmo
@@ -33,7 +33,7 @@
 
 - type: entity
   id: Cartridge751Noiser
-  name: Патрон (7,62x51)Ultra Noiser
+  name: Cartridge (7,62x51) HP
   parent: BaseCartridge751
   components:
   - type: CartridgeAmmo
@@ -41,16 +41,18 @@
 
 - type: entity
   id: Cartridge751M61
-  name: Патрон (7,62x51)M61
+  name: Cartridge (7,62x51) AP
   parent: BaseCartridge751
   components:
   - type: CartridgeAmmo
     proto: Bullet751M61
 
-- type: entity
-  id: Cartridge751M993
-  name: Патрон (7,62x51)M993
-  parent: BaseCartridge751
-  components:
-  - type: CartridgeAmmo
-    proto: Bullet751M993
+#- type: entity
+#  id: Cartridge751M993
+#  name: Патрон (7,62x51)M993
+#  parent: BaseCartridge751
+#  components:
+#  - type: CartridgeAmmo
+#    proto: Bullet751M993
+
+# STALKER-14-EN END

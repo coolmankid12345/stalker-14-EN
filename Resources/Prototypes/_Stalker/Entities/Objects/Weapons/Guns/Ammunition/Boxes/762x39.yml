@@ -1,47 +1,32 @@
+# 7.62x39 — FMJ / HP / AP
+
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 739FMJBox
   name: Коробка патронов (7,62x39) FMJ
-  description: Для некоторых моделей автомата Калашникова, в коробке 30 штук. Обеспечивает пробитие 3 класса брони.
+  description: Для автоматов Калашникова, 30 штук. Обеспечивает пробитие 4 класса брони.
   suffix: Stalker
   components:
   - type: MagazineVisuals
     magState: 76239ammo
   - type: BallisticAmmoProvider
-    capacity: 30
     proto: STCartridge739FMJ
+    capacity: 30
     whitelist:
       tags:
-        - STCartridge739
+      - STCartridge739
   - type: Sprite
     layers:
     - state: 76239
       map: ["enum.GunVisualLayers.Base"]
     - state: 76239ammo-1
       map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  parent: 739FMJBox
-  id: 739PCBox
-  name: Коробка патронов (7,62x39) ПС
-  description: Для некоторых моделей автомата Калашникова, в коробке 30 штук. Обеспечивает пробитие 4 класса брони.
-  suffix: Stalker
-  components:
-  - type: BallisticAmmoProvider
-    proto: STCartridge739PC
-  - type: Sprite
-    layers:
-    - state: 76239
-      map: ["enum.GunVisualLayers.Base"]
-    - state: 76239ammo-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: t3
 
 - type: entity
   parent: 739FMJBox
   id: 739HPBox
   name: Коробка патронов (7,62x39) HP
-  description: Для некоторых моделей автомата Калашникова, в коробке 30 штук. Бесполезно против брони.
+  description: Для автоматов Калашникова, 30 штук. Бесполезно против брони, но наносит сильный урон небронированным целям.
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
@@ -56,13 +41,13 @@
 
 - type: entity
   parent: 739FMJBox
-  id: 739BPBox
-  name: Коробка патронов (7,62x39) БП
-  description: Для некоторых моделей автомата Калашникова, в коробке 30 штук. Обеспечивает пробитие 5 класса брони.
+  id: 739PCBox
+  name: Коробка патронов (7,62x39) AP
+  description: Для автоматов Калашникова, 30 штук. Обеспечивает пробитие 5 класса брони.
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
-    proto: STCartridge739BP
+    proto: STCartridge739PC
   - type: Sprite
     layers:
     - state: 76239
@@ -71,35 +56,29 @@
       map: ["enum.GunVisualLayers.Mag"]
     - state: antiarmor
 
+# Vendor alias — same ammo as AP
 - type: entity
-  parent: BaseAmmoCinkBoxStalker
-  id: 739FMJBoxCink
-  name: ящик патронов (7,62x39) FMJ
-  description: Для некоторых моделей автомата Калашникова, в коробке 300 штук. Обеспечивает пробитие 3 класса брони.
-  suffix: Stalker
-  components:
-  - type: BallisticAmmoProvider
-    capacity: 300
-    proto: STCartridge739FMJ
-    whitelist:
-      tags:
-        - STCartridge739
-  - type: Sprite
-    layers:
-    - state: cink
-      map: ["enum.GunVisualLayers.Base"]
-    - state: cink
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  parent: 739FMJBoxCink
-  id: 739PCBoxCink
-  name: ящик патронов (7,62x39) ПС
-  description: Для некоторых моделей автомата Калашникова, в коробке 300 штук. Обеспечивает пробитие 4 класса брони.
+  parent: 739FMJBox
+  id: 739BPBox
+  name: Коробка патронов (7,62x39) AP
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
     proto: STCartridge739PC
+
+- type: entity
+  parent: BaseAmmoCinkBoxStalker
+  id: 739FMJBoxCink
+  name: Ящик патронов (7,62x39) FMJ
+  description: Для автоматов Калашникова, 300 штук. Обеспечивает пробитие 4 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: STCartridge739FMJ
+    capacity: 300
+    whitelist:
+      tags:
+      - STCartridge739
   - type: Sprite
     layers:
     - state: cink
@@ -110,31 +89,37 @@
 - type: entity
   parent: 739FMJBoxCink
   id: 739HPBoxCink
-  name: ящик патронов (7,62x39) HP
-  description: Для некоторых моделей автомата Калашникова, в коробке 300 штук. Бесполезно против брони.
+  name: Ящик патронов (7,62x39) HP
+  description: Для автоматов Калашникова, 300 штук. Бесполезно против брони.
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
     proto: STCartridge739HP
-  - type: Sprite
-    layers:
-    - state: cink
-      map: ["enum.GunVisualLayers.Base"]
-    - state: cink
-      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: 739FMJBoxCink
+  id: 739PCBoxCink
+  name: Ящик патронов (7,62x39) AP
+  description: Для автоматов Калашникова, 300 штук. Обеспечивает пробитие 5 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: STCartridge739PC
 
 - type: entity
   parent: 739FMJBoxCink
   id: 739BPBoxCink
-  name: ящик патронов (7,62x39) БП
-  description: Для некоторых мoделей автомата Калашникова, в коробке 300 штук. Обеспечивает пробитие 5 класса брони.
+  name: Ящик патронов (7,62x39) AP
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
-    proto: STCartridge739BP
-  - type: Sprite
-    layers:
-    - state: cink
-      map: ["enum.GunVisualLayers.Base"]
-    - state: cink
-      map: ["enum.GunVisualLayers.Mag"]
+    proto: STCartridge739PC
+
+- type: entity
+  parent: 739FMJBoxCink
+  id: 739BPBoxCink
+  name: Ящик патронов (7,62x39) AP
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: STCartridge739PC

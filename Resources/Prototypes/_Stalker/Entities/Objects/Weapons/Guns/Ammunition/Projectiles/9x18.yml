@@ -1,59 +1,74 @@
 #9x18
-
+# STALKER-14-EN START
 - type: entity
   id: Bullet918PGJ
-  name: bullet (9х18 auto)
+  name: bullet (9х18) FMJ
   parent: STBasePistolBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
+  - type: STArmorPenetration
+    penetrationClass: 1
   - type: Projectile
     projectileClass: 1
     damage:
       types:
-        Piercing: 22
+        Piercing: 12
+        Blunt: 12
   - type: StaminaDamageOnCollide
     damage: 1
 
 - type: entity
   id: Bullet918PST
-  name: bullet (9х18 auto)
+  name: bullet (9х18) HP
   parent: Bullet918PGJ
   categories: [ HideSpawnMenu ]
   components:
+  - type: STArmorPenetration
+    penetrationClass: 0
   - type: Projectile
-    projectileClass: 2
+    projectileClass: 1
     damage:
       types:
-        Piercing: 25
+        Piercing: 4
+        Blunt: 6
+        Slash: 8
+        Mutant: 15
+  - type: StaminaDamageOnCollide
+    damage: 2
 
 - type: entity
   id: Bullet918SP7
-  name: bullet (9х18 auto)
+  name: bullet (9х18) AP
   parent: Bullet918PGJ
   categories: [ HideSpawnMenu ]
   components:
+  - type: STArmorPenetration
+    penetrationClass: 2
   - type: Projectile
-    projectileClass: 0
+    projectileClass: 1
     damage:
       types:
-        Mutant: 35
-        Piercing: 5
-        Blunt: 5
-        Slash: 5
+        Piercing: 11
+        Blunt: 10
+  - type: StaminaDamageOnCollide
+    damage: 1
 
-- type: entity
-  id: Bullet918PBM
-  name: bullet (9х18 auto)
-  parent: Bullet918PGJ
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 3
-    damage:
-      types:
-        Piercing: 25
+#- type: entity
+#  id: Bullet918PBM
+#  name: bullet (9х18 auto)
+#  parent: Bullet918PGJ
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Projectile
+#    projectileClass: 2
+#    damage:
+#      types:
+#        Piercing: 11
+#        Blunt: 10
+
+# STALKER-14-EN END
 
 # Anomaly
 
@@ -169,3 +184,5 @@
 #           Quantity: 70
 #   - type: SolutionTransfer
 #     maxTransferAmount: 70
+
+# STALKER-14-EN END

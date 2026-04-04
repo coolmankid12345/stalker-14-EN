@@ -1,12 +1,12 @@
 # 12.7x55
-
+# STALKER-14-EN START
 - type: entity
   id: STCartridge1255PS12A
-  name: Патрон (12,7x55) ПС12А
+  name: Cartridge (12,7x55) FMJ
   parent: BaseCartridgeCaselessRifle
   components:
   - type: CartridgeAmmo
-    proto: Bullet1255PS12A
+    proto: Bullet1255FMJ
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -22,19 +22,19 @@
 
 - type: entity
   id: STCartridge1255TP
-  name: Патрон (12,7x55) ТП
+  name: Cartridge (12,7x55) HP
   parent: STCartridge1255PS12A
   components:
   - type: CartridgeAmmo
-    proto: Bullet1255TP
+    proto: Bullet1255HP
 
 
 - type: entity
   id: STCartridge1255BP
-  name: Патрон (12,7x55) БП
+  name: Cartridge (12,7x55) AP
   parent: STCartridge1255PS12A
   components:
   - type: CartridgeAmmo
-    proto: Bullet1255BP
+    proto: Bullet1255AP
 
-
+# STALKER-14-EN END
