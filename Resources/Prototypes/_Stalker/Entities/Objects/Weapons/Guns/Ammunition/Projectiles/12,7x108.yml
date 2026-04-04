@@ -1,44 +1,58 @@
+# 12,7x108
+# STALKER-14-EN START
 - type: entity
   parent: STBaseSHRBullet
-  id: Bullet13x108HPBT
-  name: bullet (12,7x108 rifle)
+  id: Bullet13x108FMJ
+  name: bullet (12,7x108 FMJ)
   categories: [ HideSpawnMenu ]
   components:
+  - type: TimedDespawn
+    lifetime: 10
+  - type: STArmorPenetration
+    penetrationClass: 6
   - type: Projectile
-    projectileClass: 0
+    projectileClass: 6
     damage:
       types:
-        Mutant: 300
-        Piercing: 20
-        Blunt: 20
-        Slash: 20
+        Piercing: 70
+        Blunt: 70
   - type: StaminaDamageOnCollide
     damage: 20
 
 - type: entity
   parent: STBaseSHRBullet
-  id: Bullet13x108FMJ
-  name: bullet (12,7x108 rifle)
+  id: Bullet13x108HPBT
+  name: bullet (12,7x108 HP)
   categories: [ HideSpawnMenu ]
   components:
+  - type: STArmorPenetration
+    penetrationClass: 5
   - type: Projectile
-    projectileClass: 4
+    projectileClass: 6
     damage:
       types:
-        Piercing: 114
+        Mutant: 200
+        Piercing: 40
+        Blunt: 40
+        Slash: 50
   - type: StaminaDamageOnCollide
-    damage: 20
+    damage: 22
 
 - type: entity
   parent: STBaseSHRBullet
   id: Bullet13x108PC
-  name: bullet (12,7x108 rifle)
+  name: bullet (12,7x108 AP)
   categories: [ HideSpawnMenu ]
   components:
+  - type: STArmorPenetration
+    penetrationClass: 7
   - type: Projectile
-    projectileClass: 5
+    projectileClass: 6
     damage:
       types:
-        Piercing: 118
+        Piercing: 70
+        Blunt: 70
   - type: StaminaDamageOnCollide
-    damage: 20
+    damage: 18
+
+# STALKER-14-EN END

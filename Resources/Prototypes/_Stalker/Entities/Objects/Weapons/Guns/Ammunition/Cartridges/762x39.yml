@@ -1,5 +1,5 @@
 # 7.62x39
-
+# STALKER-14-EN START
 - type: entity
   id: BaseSTCartridge739
   name: cartridge (7,62x39 rifle)
@@ -25,7 +25,7 @@
 
 - type: entity
   id: STCartridge739FMJ
-  name: Патрон (7,62x39)FMJ
+  name: Cartridge (7,62x39)FMJ
   parent: BaseSTCartridge739
   components:
   - type: CartridgeAmmo
@@ -33,7 +33,7 @@
 
 - type: entity
   id: STCartridge739HP
-  name: Патрон (7,62x39)HP
+  name: Cartridge (7,62x39)HP
   parent: BaseSTCartridge739
   components:
   - type: CartridgeAmmo
@@ -41,16 +41,18 @@
 
 - type: entity
   id: STCartridge739PC
-  name: Патрон (7,62x39)ПС
+  name: Cartridge (7,62x39)AP
   parent: BaseSTCartridge739
   components:
   - type: CartridgeAmmo
     proto: Bullet739PC
 
-- type: entity
-  id: STCartridge739BP
-  name: Патрон (7,62x39)БП
-  parent: BaseSTCartridge739
-  components:
-  - type: CartridgeAmmo
-    proto: Bullet739BP
+#- type: entity
+#  id: STCartridge739BP
+#  name: Патрон (7,62x39)БП
+#  parent: BaseSTCartridge739
+#  components:
+#  - type: CartridgeAmmo
+#    proto: Bullet739BP
+
+# STALKER-14-EN END

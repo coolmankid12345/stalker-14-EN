@@ -1,82 +1,58 @@
 #5.56
-
+# STALKER-14-EN START
 - type: entity
   id: Bullet556FMJ
-  name: bullet (5,56x45 rifle)
+  name: bullet (5,56x45 FMJ)
   parent: STBaseLRBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 4
+    lifetime: 3
+  - type: STArmorPenetration
+    penetrationClass: 3
   - type: Projectile
-    projectileClass: 2
+    projectileClass: 3
     damage:
       types:
-        Piercing: 27
+        Piercing: 30
+        Blunt: 30
   - type: StaminaDamageOnCollide
     damage: 2
 
 - type: entity
   id: Bullet556M855
-  name: bullet (5,56x45 rifle)
+  name: bullet (5,56x45 HP)
   parent: Bullet556FMJ
   categories: [ HideSpawnMenu ]
   components:
+  - type: STArmorPenetration
+    penetrationClass: 1
   - type: Projectile
     projectileClass: 3
     damage:
       types:
-        Piercing: 29
+        Mutant: 50
+        Piercing: 14
+        Blunt: 15
+        Slash: 18
+  - type: StaminaDamageOnCollide
+    damage: 2.5
 
 - type: entity
   id: Bullet556M856
-  name: bullet (5,56x45 rifle)
+  name: bullet (5,56x45 AP)
   parent: Bullet556FMJ
   categories: [ HideSpawnMenu ]
   components:
+  - type: STArmorPenetration
+    penetrationClass: 4
   - type: Projectile
-    projectileClass: 4
+    projectileClass: 3
     damage:
       types:
         Piercing: 27
-
-- type: entity
-  id: Bullet556Warmag
-  name: bullet (5,56x45 rifle)
-  parent: Bullet556FMJ
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 0
-    damage:
-      types:
-        Mutant: 55
-        Piercing: 10
-        Blunt: 10
-        Slash: 10
-
-- type: entity
-  id: Bullet556M995
-  name: bullet (5,56x45 rifle)
-  parent: Bullet556FMJ
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 5
-    damage:
-      types:
-        Piercing: 25
-
-- type: entity
-  id: Bullet556SSAAP
-  name: bullet (5,56x45 rifle)
-  parent: Bullet556FMJ
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 6
-    damage:
-      types:
-        Piercing: 18
+        Blunt: 26
   - type: StaminaDamageOnCollide
     damage: 0
+
+# STALKER-14-EN END

@@ -1,18 +1,23 @@
+#23x75R
+# STALKER-14-EN START
 - type: entity
   id: STPelletShrapnel25
-  name: pellet shrapnel25
+  name: shell (23x75)
   parent: STBasePellet
   components:
+  - type: STArmorPenetration
+    penetrationClass: 3
   - type: Projectile
-    projectileClass: 1
+    projectileClass: 3
     damage:
       types:
-        Piercing: 27
-        Mutant: 30
+        Piercing: 8
+        Blunt: 12
+        Mutant: 15
 
 - type: entity
   id: BulletShrapnel25Buckshot
-  name: bullet (shrapnel-25)
+  name: shell (23x75) Flechette
   parent: STPellet7mm
   categories: [ HideSpawnMenu ]
   components:
@@ -20,36 +25,48 @@
     proto: STPelletShrapnel25
     count: 8
     spread: 12
-
-
-- type: entity
-  id: BulletShotgunBarricada
-  name: bullet Barricada (Bullet)
-  parent: STBaseSPBullet
-  categories: [ HideSpawnMenu ]
-  components:
   - type: Projectile
     projectileClass: 3
     damage:
       types:
-        Piercing: 65
-        Blunt: 15
+        Piercing: 9
+        Blunt: 20
+        Mutant: 20
   - type: StaminaDamageOnCollide
-    damage: 35
+    damage: 10
+
 
 - type: entity
-  id: BulletShotgunVolnaR
-  name: bullet VolnaR (Bullet)
+  id: BulletShotgunBarricada
+  name: shell (23x75) Slug
   parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
+  - type: STArmorPenetration
+    penetrationClass: 4
   - type: Projectile
-    projectileClass: 1
+    projectileClass: 3
     damage:
       types:
-        Blunt: 35
+        Piercing: 50
+        Blunt: 40
+        Mutant: 150
   - type: StaminaDamageOnCollide
-    damage: 90
+    damage: 35
+
+#- type: entity
+#  id: BulletShotgunVolnaR
+#  name: bullet VolnaR (Bullet)
+#  parent: STBaseSPBullet
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Projectile
+#    projectileClass: 1
+#    damage:
+#      types:
+#        Blunt: 35
+#  - type: StaminaDamageOnCollide
+#    damage: 90
 
 #- type: entity
 #  id: BulletShotgunZvezda
@@ -71,3 +88,5 @@
 #  - type: EmitSoundOnTrigger
 #    sound:
 #      path: "/Audio/Effects/flash_bang.ogg"
+
+# STALKER-14-EN END
