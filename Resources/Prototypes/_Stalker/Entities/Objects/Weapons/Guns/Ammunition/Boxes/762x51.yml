@@ -104,12 +104,3 @@
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge751M61
-
-- type: entity
-  parent: 751M80BoxCink
-  id: 751M993BoxCink
-  name: Ящик патронов (7,62x51) AP
-  suffix: Stalker
-  components:
-  - type: BallisticAmmoProvider
-    proto: Cartridge751M61

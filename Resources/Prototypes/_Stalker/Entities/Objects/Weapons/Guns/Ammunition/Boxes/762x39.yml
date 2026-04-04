@@ -114,12 +114,3 @@
   components:
   - type: BallisticAmmoProvider
     proto: STCartridge739PC
-
-- type: entity
-  parent: 739FMJBoxCink
-  id: 739BPBoxCink
-  name: Ящик патронов (7,62x39) AP
-  suffix: Stalker
-  components:
-  - type: BallisticAmmoProvider
-    proto: STCartridge739PC

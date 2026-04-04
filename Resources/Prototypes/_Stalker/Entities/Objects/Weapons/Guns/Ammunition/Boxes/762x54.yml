@@ -133,20 +133,3 @@
   - type: BallisticAmmoProvider
     proto: STCartridge754SAPB
 
-- type: entity
-  parent: 754FMJBoxCink
-  id: 754BTBoxCink
-  name: Ящик патронов (7,62x54) AP
-  suffix: Stalker
-  components:
-  - type: BallisticAmmoProvider
-    proto: STCartridge754SAPB
-
-- type: entity
-  parent: 754FMJBoxCink
-  id: 754SNBBoxCink
-  name: Ящик патронов (7,62x54) AP
-  suffix: Stalker
-  components:
-  - type: BallisticAmmoProvider
-    proto: STCartridge754SAPB
