@@ -1,6 +1,7 @@
 ﻿using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared._Stalker.Random;
 using Content.Shared._Stalker.Weapon.Evasion;
+using Content.Shared._Stalker.Weapons.Ranged;
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
@@ -16,9 +17,13 @@ public sealed class STProjectileSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly STEvasionSystem _evasion = default!;
 
+    private ISawmill _sawmill = default!;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        _sawmill = Logger.GetSawmill("st.projectile");
 
         SubscribeLocalEvent<STProjectileDamageFalloffComponent, MapInitEvent>(OnFalloffProjectileMapInit);
         SubscribeLocalEvent<STProjectileDamageFalloffComponent, ComponentStartup>(OnFalloffProjectileStartup);
@@ -51,6 +56,14 @@ public sealed class STProjectileSystem : EntitySystem
             accuracyComp.StartCoordinates = startCoords;
             Dirty(projectile, accuracyComp);
         }
+    }
+
+    public void SetPredictedProjectileOrigin(EntityUid projectile, EntityCoordinates origin)
+    {
+        var predictedHit = EnsureComp<PredictedProjectileHitComponent>(projectile);
+        predictedHit.Origin = origin;
+        Dirty(projectile, predictedHit);
+        _sawmill.Info($"Set PredictedProjectileHitComponent.Origin for {projectile} to {origin}");
     }
 
     private void OnFalloffProjectileStartup(Entity<STProjectileDamageFalloffComponent> ent, ref ComponentStartup args)
@@ -93,15 +106,18 @@ public sealed class STProjectileSystem : EntitySystem
 
     private void OnFalloffProjectileHit(Entity<STProjectileDamageFalloffComponent> ent, ref ProjectileHitEvent args)
     {
+        _sawmill.Info($"=== FALLOFF HIT FIRED === projectile={ent.Owner} target={args.Target}");
         EntityCoordinates? startCoords = null;
 
         if (TryComp<PredictedProjectileHitComponent>(ent, out var predictedHit))
         {
             startCoords = predictedHit.Origin;
+            _sawmill.Info($"=== FALLOFF DEBUG === Using PredictedProjectileHitComponent.Origin: {startCoords}");
         }
         else
         {
             startCoords = ent.Comp.StartCoordinates;
+            _sawmill.Info($"Using component StartCoordinates: {startCoords}");
         }
 
         if (startCoords is null || ent.Comp.MinRemainingDamageModifier < 0)
@@ -114,47 +130,41 @@ public sealed class STProjectileSystem : EntitySystem
             return;
 
         var distance = (targetMapPos.Position - startMapPos.Position).Length();
-        var minDamage = args.Damage.GetTotal() * ent.Comp.MinRemainingDamageModifier;
+        _sawmill.Info($"Distance: {distance:F2} units");
 
+        // Apply distance-based damage falloff.
+        // Each threshold defines the START of a band and the falloff rate for
+        // that band. We iterate pairs (i, i+1) so segment [i].Range → [i+1].Range
+        // correctly uses [i].Falloff — not [i+1].Falloff as the old loop did.
+        var minDamage = args.Damage.GetTotal() * ent.Comp.MinRemainingDamageModifier;
         var totalFalloff = 0f;
         var sortedThresholds = ent.Comp.Thresholds.OrderBy(t => t.Range).ToList();
-        float previousRange = 0;
-        int processedCount = 0;
 
-        foreach (var threshold in sortedThresholds)
+        for (var i = 0; i < sortedThresholds.Count; i++)
         {
-            if (distance <= threshold.Range)
+            var current = sortedThresholds[i];
+
+            float segmentEnd;
+            if (i + 1 < sortedThresholds.Count)
             {
-                var rangeInSegment = distance - previousRange;
-                if (rangeInSegment > 0)
-                {
-                    var extraModifier = threshold.IgnoreModifiers ? 1 : ent.Comp.WeaponModifier;
-                    totalFalloff += rangeInSegment * threshold.Falloff * extraModifier;
-                }
-                processedCount++;
+                var next = sortedThresholds[i + 1];
+                segmentEnd = distance <= next.Range ? distance : next.Range;
+            }
+            else
+            {
+                // Final unbounded band — runs until wherever the shot hit.
+                segmentEnd = distance;
+            }
+
+            var rangeInSegment = segmentEnd - current.Range;
+            if (rangeInSegment > 0 && current.Falloff > 0)
+            {
+                var extraModifier = current.IgnoreModifiers ? 1f : ent.Comp.WeaponModifier;
+                totalFalloff += rangeInSegment * current.Falloff * extraModifier;
+            }
+
+            if (segmentEnd >= distance)
                 break;
-            }
-
-            var fullRangeInSegment = threshold.Range - previousRange;
-            if (fullRangeInSegment > 0)
-            {
-                var extraModifier = threshold.IgnoreModifiers ? 1 : ent.Comp.WeaponModifier;
-                totalFalloff += fullRangeInSegment * threshold.Falloff * extraModifier;
-            }
-
-            previousRange = threshold.Range;
-            processedCount++;
-        }
-
-        if (processedCount >= sortedThresholds.Count && distance > previousRange)
-        {
-            var lastThreshold = sortedThresholds.Last();
-            var rangeInSegment = distance - previousRange;
-            if (rangeInSegment > 0)
-            {
-                var extraModifier = lastThreshold.IgnoreModifiers ? 1 : ent.Comp.WeaponModifier;
-                totalFalloff += rangeInSegment * lastThreshold.Falloff * extraModifier;
-            }
         }
 
         var totalDamage = args.Damage.GetTotal();
@@ -163,6 +173,9 @@ public sealed class STProjectileSystem : EntitySystem
 
         var minModifier = FixedPoint2.Min(minDamage / totalDamage, 1);
         var damageMultiplier = FixedPoint2.Clamp((totalDamage - totalFalloff) / totalDamage, minModifier, 1);
+
+        _sawmill.Info($"Falloff: {totalFalloff:F2}  Multiplier: {damageMultiplier:F2}  Final: {totalDamage * damageMultiplier:F2}");
+
         args.Damage *= damageMultiplier;
     }
 

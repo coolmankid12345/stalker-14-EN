@@ -12,34 +12,38 @@ namespace Content.Shared.Armor;
 public sealed partial class ArmorComponent : Component
 {
     /// <summary>
-    /// The base damage reduction
+    /// The base damage reduction (coefficients and flat reductions from YAML)
     /// </summary>
-    [DataField("modifiers", required: true)]  // Stalker-Changes
-    public DamageModifierSet BaseModifiers = default!;  // Stalker-Changes
+    [DataField("modifiers", required: true)]
+    public DamageModifierSet BaseModifiers = default!;
 
     /// <summary>
     /// The current damage reduction, after applying armor levels
     /// </summary>
     [ViewVariables]
-    public DamageModifierSet?Modifiers = default!;
+    public DamageModifierSet? Modifiers = default!;
 
     /// <summary>
     /// The armor levels that modify the base modifiers
     /// </summary>
-    [DataField("armorLevels")] // Stalker-Changes
-    public STArmorLevels? STArmorLevels = default!; // Stalker-Changes
+    [DataField("armorLevels")]
+    public STArmorLevels? STArmorLevels = default!;
 
-    [DataField("armorClass", required: false)] // Stalker-Changes
-    public int? ArmorClass; // Stalker-Changes
-
-    [DataField("hidden")] // Stalker-Changes
-    public bool Hidden; // Stalker-Changes
-
-    [DataField("hiddenExamine")] // Stalker-Changes
-    public bool HiddenExamine;  // Stalker-Changes
     /// <summary>
-    /// A multiplier applied to the calculated point value
-    /// to determine the monetary value of the armor
+    /// The armor's penetration class (1-10). Used for bullet penetration calculation.
+    /// Higher value = better protection against bullets.
+    /// </summary>
+    [DataField("armorClass", required: false)]
+    public int? ArmorClass;
+
+    [DataField("hidden")]
+    public bool Hidden;
+
+    [DataField("hiddenExamine")]
+    public bool HiddenExamine;
+
+    /// <summary>
+    /// A multiplier applied to the calculated point value to determine the monetary value of the armor
     /// </summary>
     [DataField]
     public float PriceMultiplier = 1;
@@ -54,7 +58,6 @@ public sealed partial class ArmorComponent : Component
 /// <summary>
 /// Event raised on an armor entity to get additional examine text relating to its armor.
 /// </summary>
-/// <param name="Msg"></param>
 [ByRefEvent]
 public record struct ArmorExamineEvent(FormattedMessage Msg);
 
@@ -63,14 +66,7 @@ public record struct ArmorExamineEvent(FormattedMessage Msg);
 /// </summary>
 public sealed class CoefficientQueryEvent : EntityEventArgs, IInventoryRelayEvent
 {
-    /// <summary>
-    /// All slots to relay to
-    /// </summary>
     public SlotFlags TargetSlots { get; set; }
-
-    /// <summary>
-    /// The Total of all Coefficients.
-    /// </summary>
     public DamageModifierSet DamageModifiers { get; set; } = new DamageModifierSet();
 
     public CoefficientQueryEvent(SlotFlags slots)

@@ -220,27 +220,30 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
             if (GetEntity(netEnt) is not { Valid: true } hit)
                 continue;
 
-            if (!_lagCompensationQuery.TryComp(hit, out var otherLagComp) ||
-                !_fixturesQuery.TryComp(hit, out var otherFixtures) ||
-                !_physicsQuery.TryComp(hit, out var otherPhysics) ||
-                !_transformQuery.TryComp(hit, out var otherTransform))
+            if (_lagCompensationQuery.TryComp(hit, out var otherLagComp) &&
+                _fixturesQuery.TryComp(hit, out var otherFixtures) &&
+                _physicsQuery.TryComp(hit, out var otherPhysics) &&
+                _transformQuery.TryComp(hit, out var otherTransform))
             {
-                continue;
-            }
+                if (!Collides(
+                        (projectile, predictedProjectile, projectilePhysics),
+                        (hit, otherLagComp, otherFixtures, otherPhysics, otherTransform),
+                        clientPos))
+                {
+                    if (_logHits)
+                        Log.Info("missed");
 
-            if (!Collides(
-                    (projectile, predictedProjectile, projectilePhysics),
-                    (hit, otherLagComp, otherFixtures, otherPhysics, otherTransform),
-                    clientPos))
+                    continue;
+                }
+
+                if (_logHits)
+                    Log.Info("hit");
+            }
+            else
             {
                 if (_logHits)
-                    Log.Info("missed");
-
-                continue;
+                    Log.Info("hit (no lag comp, trusting client)");
             }
-
-            if (_logHits)
-                Log.Info("hit");
 
             _projectile.ProjectileCollide((projectile, projectileComp, projectilePhysics), hit, true);
         }
@@ -265,8 +268,9 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         {
             var origin = hit.Origin;
             var coordinates = xform.Coordinates;
-            if (!origin.TryDistance(EntityManager, _transform, coordinates, out var distance) ||
-                distance >= hit.Distance)
+            if (hit.Distance > 0 &&
+                (!origin.TryDistance(EntityManager, _transform, coordinates, out var distance) ||
+                 distance >= hit.Distance))
             {
                 QueueDel(uid);
             }

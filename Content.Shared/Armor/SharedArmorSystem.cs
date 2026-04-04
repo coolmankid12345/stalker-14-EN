@@ -1,3 +1,4 @@
+using Content.Shared._Stalker.Weapons.Ranged;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
@@ -7,10 +8,11 @@ using Content.Shared.Silicons.Borgs;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 using System.Linq;
-using Robust.Shared.Containers; // stalker-changes
-using Content.Shared.Tag; // stalker-changes
+using Robust.Shared.Containers;
+using Content.Shared.Tag;
 using Content.Shared._Stalker_EN.Clothing;
-using Content.Shared._Stalker_EN.Clothing.Components; // stalker-changes
+using Content.Shared._Stalker_EN.Clothing.Components;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared.Armor;
 
@@ -20,16 +22,20 @@ namespace Content.Shared.Armor;
 public abstract partial class SharedArmorSystem : EntitySystem
 {
     [Dependency] private readonly ExamineSystemShared _examine = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!; // stalker-changes
-    [Dependency] private readonly InventorySystem _inventory = default!; // stalker-changes
-    [Dependency] private readonly TagSystem _tag = default!; // stalker-changes
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
+
+    private ISawmill _sawmill = default!;
 
     /// <inheritdoc />
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ArmorComponent, MapInitEvent>(OnArmorMapInit); // stalker-changes
+        _sawmill = Logger.GetSawmill("st.armor");
+
+        SubscribeLocalEvent<ArmorComponent, MapInitEvent>(OnArmorMapInit);
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<CoefficientQueryEvent>>(OnCoefficientQuery);
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnDamageModify);
         SubscribeLocalEvent<ArmorComponent, BorgModuleRelayedEvent<DamageModifyEvent>>(OnBorgDamageModify);
@@ -37,26 +43,23 @@ public abstract partial class SharedArmorSystem : EntitySystem
         SubscribeLocalEvent<ArmorComponent, VisorToggledEvent>(OnVisorToggled);
     }
 
-    /// <summary>
-    /// Get the total Damage reduction value of all equipment caught by the relay.
-    /// </summary>
-    /// <param name="ent">The item that's being relayed to</param>
-    /// <param name="args">The event, contains the running count of armor percentage as a coefficient</param>
     private void OnCoefficientQuery(Entity<ArmorComponent> ent, ref InventoryRelayedEvent<CoefficientQueryEvent> args)
     {
         if (TryComp<MaskComponent>(ent, out var mask) && mask.IsToggled)
             return;
 
-
-        if (!IsArtifactAllowed(ent.Owner)) // Stalker-changes
+        if (!IsArtifactAllowed(ent.Owner))
             return;
 
-        if (ent.Comp.Modifiers == null) // Stalker-changes
+        if (ent.Comp.Modifiers == null)
             return;
 
         foreach (var armorCoefficient in ent.Comp.Modifiers.Coefficients)
         {
-            args.Args.DamageModifiers.Coefficients[armorCoefficient.Key] = args.Args.DamageModifiers.Coefficients.TryGetValue(armorCoefficient.Key, out var coefficient) ? coefficient * armorCoefficient.Value : armorCoefficient.Value;
+            args.Args.DamageModifiers.Coefficients[armorCoefficient.Key] =
+                args.Args.DamageModifiers.Coefficients.TryGetValue(armorCoefficient.Key, out var coefficient)
+                    ? coefficient * armorCoefficient.Value
+                    : armorCoefficient.Value;
         }
     }
 
@@ -65,37 +68,105 @@ public abstract partial class SharedArmorSystem : EntitySystem
         if (TryComp<MaskComponent>(uid, out var mask) && mask.IsToggled)
             return;
 
-
-        if (!IsArtifactAllowed(uid)) // Stalker-changes
+        if (!IsArtifactAllowed(uid))
             return;
 
-        // stalker-changes-start
+        if (component.Modifiers == null)
+            return;
+
+        // Legacy binary bypass: this armor piece's coefficients are fully ignored.
         if (args.Args.IgnoreResistors.Contains(uid))
         {
-            if (component.Modifiers == null)
-                return;
-
             var modifiedModifiers = new DamageModifierSet
             {
                 Coefficients = new Dictionary<string, float>(component.Modifiers.Coefficients),
                 FlatReduction = new Dictionary<string, float>(component.Modifiers.FlatReduction)
             };
-
             foreach (var key in modifiedModifiers.Coefficients.Keys.ToList())
-            {
                 modifiedModifiers.Coefficients[key] = 1f;
+            args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, modifiedModifiers);
+            return;
+        }
+
+        // NIJ penetration system:
+        // Walk up the parent chain to find the entity with STIncomingPenetrationComponent.
+        // Armor pieces are inside inventory containers, not directly parented to the player,
+        // so we must walk until we find the component on the actual wearer.
+        var wearer = EntityUid.Invalid;
+        var current = Transform(uid).ParentUid;
+        while (current.IsValid())
+        {
+            if (TryComp<STIncomingPenetrationComponent>(current, out _))
+            {
+                wearer = current;
+                break;
+            }
+            current = Transform(current).ParentUid;
+        }
+
+        if (wearer.IsValid() && TryComp<STIncomingPenetrationComponent>(wearer, out var incomingPen))
+        {
+            var armorClass = component.ArmorClass ?? 0;
+            var piercingBypass = incomingPen.CalculatePiercingBypass(armorClass);
+            var bluntBypass = incomingPen.CalculateBluntBypass(armorClass);
+
+            _sawmill.Info($"[ArmorPen] Armor={uid} armorClass={armorClass} penClass={incomingPen.PenetrationClass} piercingBypass={piercingBypass:F2} bluntBypass={bluntBypass:F2}");
+
+            // Build weakened modifier set per damage type.
+            //
+            // bypass=0 → armor fully effective (low bypass = bullet stopped)
+            // bypass=1 → armor fully bypassed (high bypass = bullet penetrates)
+            //
+            // Piercing = bullet puncture, most affected by penetration.
+            // Blunt = stopping power, partially absorbed regardless of penetration.
+            // All other types (Slash, Compression, etc.) = full armor modifiers.
+            var weakened = new DamageModifierSet
+            {
+                Coefficients = new Dictionary<string, float>(),
+                FlatReduction = new Dictionary<string, float>()
+            };
+
+            foreach (var (type, coeff) in component.Modifiers.Coefficients)
+            {
+                weakened.Coefficients[type] = type switch
+                {
+                    "Piercing" => coeff + (1f - coeff) * piercingBypass,
+                    "Blunt"    => coeff + (1f - coeff) * bluntBypass,
+                    _          => coeff
+                };
             }
 
-            args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, modifiedModifiers);
+            foreach (var (type, flat) in component.Modifiers.FlatReduction)
+            {
+                weakened.FlatReduction[type] = type switch
+                {
+                    "Piercing" => flat * (1f - piercingBypass),
+                    "Blunt"    => flat * (1f - bluntBypass),
+                    _          => flat
+                };
+            }
+
+            args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, weakened);
+
+            // Minimum damage floor: armor can never reduce a bullet hit below 5% of the
+            // original incoming damage. Prevents armor from completely negating hits and
+            // ensures players always take some damage to feel the impact.
+            var originalTotal = (float) args.Args.OriginalDamage.GetTotal();
+            var currentTotal  = (float) args.Args.Damage.GetTotal();
+            var minDamage = originalTotal * 0.05f;
+
+            if (originalTotal > 0f && currentTotal < minDamage)
+            {
+                var scale = minDamage / currentTotal;
+                foreach (var key in args.Args.Damage.DamageDict.Keys.ToList())
+                    args.Args.Damage.DamageDict[key] *= (FixedPoint2) scale;
+            }
 
             return;
         }
 
-        if (component.Modifiers == null)
-            return;
-
+        // Default: no penetration component present, apply full armor modifiers.
         args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, component.Modifiers);
-        // stalker-changes-end
     }
 
     private void OnBorgDamageModify(EntityUid uid, ArmorComponent component,
@@ -104,11 +175,9 @@ public abstract partial class SharedArmorSystem : EntitySystem
         if (TryComp<MaskComponent>(uid, out var mask) && mask.IsToggled)
             return;
 
-
-        if (!IsArtifactAllowed(uid)) // Stalker-changes
+        if (!IsArtifactAllowed(uid))
             return;
 
-        // stalker-changes-start
         if (args.Args.IgnoreResistors.Contains(uid))
         {
             if (component.Modifiers == null)
@@ -119,14 +188,10 @@ public abstract partial class SharedArmorSystem : EntitySystem
                 Coefficients = new Dictionary<string, float>(component.Modifiers.Coefficients),
                 FlatReduction = component.Modifiers.FlatReduction
             };
-
             foreach (var key in modifiedModifiers.Coefficients.Keys.ToList())
-            {
                 modifiedModifiers.Coefficients[key] = 1f;
-            }
 
             args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, modifiedModifiers);
-
             return;
         }
 
@@ -134,15 +199,14 @@ public abstract partial class SharedArmorSystem : EntitySystem
             return;
 
         args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, component.Modifiers);
-        // stalker-changes-end
     }
 
     private void OnArmorVerbExamine(EntityUid uid, ArmorComponent component, GetVerbsEvent<ExamineVerb> args)
     {
-        if (!args.CanInteract || !args.CanAccess || !component.ShowArmorOnExamine || component.Hidden || component.HiddenExamine) // Stalker-Changes
+        if (!args.CanInteract || !args.CanAccess || !component.ShowArmorOnExamine || component.Hidden || component.HiddenExamine)
             return;
 
-        var examineMarkup = GetArmorExamine(component.Modifiers ?? component.BaseModifiers, component); // Stalker-Changes
+        var examineMarkup = GetArmorExamine(component.Modifiers ?? component.BaseModifiers, component);
 
         var ev = new ArmorExamineEvent(examineMarkup);
         RaiseLocalEvent(uid, ref ev);
@@ -152,18 +216,17 @@ public abstract partial class SharedArmorSystem : EntitySystem
             Loc.GetString("armor-examinable-verb-message"));
     }
 
-    private FormattedMessage GetArmorExamine(DamageModifierSet armorModifiers, ArmorComponent comp)  // Stalker-Changes
+    private FormattedMessage GetArmorExamine(DamageModifierSet armorModifiers, ArmorComponent comp)
     {
         var msg = new FormattedMessage();
         msg.AddMarkupOrThrow(Loc.GetString("armor-examine"));
 
-        msg.PushNewline(); // Stalker-Changes
-        msg.AddMarkup(Loc.GetString("armor-class-value", ("value", comp.ArmorClass ?? 0))); // Stalker-Changes
+        msg.PushNewline();
+        msg.AddMarkup(Loc.GetString("armor-class-value", ("value", comp.ArmorClass ?? 0)));
 
         foreach (var coefficientArmor in armorModifiers.Coefficients)
         {
             msg.PushNewline();
-
             var armorType = Loc.GetString("armor-damage-type-" + coefficientArmor.Key.ToLower());
             msg.AddMarkupOrThrow(Loc.GetString("armor-coefficient-value",
                 ("type", armorType),
@@ -174,7 +237,6 @@ public abstract partial class SharedArmorSystem : EntitySystem
         foreach (var flatArmor in armorModifiers.FlatReduction)
         {
             msg.PushNewline();
-
             var armorType = Loc.GetString("armor-damage-type-" + flatArmor.Key.ToLower());
             msg.AddMarkupOrThrow(Loc.GetString("armor-reduction-value",
                 ("type", armorType),
@@ -184,13 +246,11 @@ public abstract partial class SharedArmorSystem : EntitySystem
 
         return msg;
     }
-  // stalker-changes-start
+
     private bool IsArtifactAllowed(EntityUid uid)
     {
-
         if (!TryComp<TagComponent>(uid, out var tagComp) || !_tag.HasTag(tagComp, "STArtifact"))
             return true;
-
 
         if (!TryComp<TransformComponent>(uid, out var xform) || !TryComp<MetaDataComponent>(uid, out var meta))
             return false;
@@ -211,4 +271,3 @@ public abstract partial class SharedArmorSystem : EntitySystem
         Dirty(ent);
     }
 }
-  // stalker-changes-end

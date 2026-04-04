@@ -6,7 +6,6 @@ namespace Content.Shared.Armor;
 [DataDefinition, Serializable, NetSerializable, Virtual]
 public partial class STArmorLevels
 {
-    // stalker-en-changes-start
     private static readonly string[] NonPvPPhysicalTypes = ["Blunt", "Slash"];
     private static readonly string[] PiercingTypes = ["Piercing"];
     private static readonly string[] RadiationTypes = ["Radiation"];
@@ -18,7 +17,6 @@ public partial class STArmorLevels
 
     private const float CoefficientAdjustPerLevel = -0.025f;
     private const float FlatReductionScalePerLevel = 0.5f;
-    // stalker-en-changes-end
 
     // Generic
     [DataField("nonPvPPhysical")]
@@ -46,11 +44,16 @@ public partial class STArmorLevels
     [DataField("psy")]
     public int PsyAdjust = 0;
 
-    // stalker-en-changes-start
+    /// <summary>
+    /// The armor's penetration class (1-10). Used for bullet penetration.
+    /// Higher value = better protection.
+    /// </summary>
+    [DataField("armorClass")]
+    public int ArmorClass = 0;
+
     /// <summary>
     /// Applies armor level adjustments to a base modifier set, returning a new set.
     /// The original <paramref name="baseModifiers"/> is not mutated.
-    /// Generic adjustments are applied first, then exact type adjustments stack additively on top.
     /// </summary>
     public DamageModifierSet ApplyLevels(DamageModifierSet baseModifiers)
     {
@@ -71,6 +74,7 @@ public partial class STArmorLevels
         ApplyLevelToGroup(newModifiers, CausticAdjust, CausticTypes);
         ApplyLevelToGroup(newModifiers, ShockAdjust, ShockTypes);
         ApplyLevelToGroup(newModifiers, PsyAdjust, PsyTypes);
+
         return newModifiers;
     }
 
@@ -92,5 +96,4 @@ public partial class STArmorLevels
             }
         }
     }
-    // stalker-en-changes-end
 }

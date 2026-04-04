@@ -219,12 +219,19 @@ public record struct BeforeDamageChangedEvent(DamageSpecifier Damage, EntityUid?
 public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, List<EntityUid>? ignoreResistors = null)
     : EntityEventArgs, IInventoryRelayEvent
 {
-    // Whenever locational damage is a thing, this should just check only that bit of armour.
     public SlotFlags TargetSlots => ~SlotFlags.POCKET;
 
     public readonly DamageSpecifier OriginalDamage = damage;
     public DamageSpecifier Damage = damage;
-    public List<EntityUid> IgnoreResistors = ignoreResistors ?? new List<EntityUid>();  // stalker-changes
+    public List<EntityUid> IgnoreResistors = ignoreResistors ?? new List<EntityUid>();
+
+    /// <summary>
+    /// Penetration bypass fraction [0,1] for bullet vs armor interaction.
+    /// 0 = armor fully effective, 1 = armor fully bypassed.
+    /// Only affects Piercing damage coefficients and flat reductions.
+    /// Set by STProjectileSystem before the inventory relay fires.
+    /// </summary>
+    public float PenetrationBypass = 0f;
 }
 
 public sealed class DamageChangedEvent : EntityEventArgs

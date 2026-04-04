@@ -9,10 +9,12 @@ public abstract partial class SharedArmorSystem : EntitySystem
         ApplyLevels(component);
     }
 
-    // stalker-en-changes-start
     /// <summary>
-    /// Computes effective damage modifiers by applying armor level adjustments to the base modifiers.
-    /// If no armor levels are defined, copies the base modifiers directly.
+    /// Sets component.Modifiers from BaseModifiers.
+    /// YAML modifiers are the final balanced values — no scaling is applied on top.
+    /// ArmorClass only controls bullet penetration bypass in OnDamageModify.
+    /// STArmorLevels is still supported for environmental/radiation adjustments
+    /// if present, but physical damage types are NOT scaled by it.
     /// </summary>
     public void ApplyLevels(ArmorComponent component)
     {
@@ -29,5 +31,4 @@ public abstract partial class SharedArmorSystem : EntitySystem
             };
         }
     }
-    // stalker-en-changes-end
 }

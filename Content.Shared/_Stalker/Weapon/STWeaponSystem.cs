@@ -21,9 +21,13 @@ public sealed class STWeaponSystem : EntitySystem
     [Dependency] private readonly STProjectileSystem _projectile = default!;
     [Dependency] private readonly RDStatusEffectSystem _statusEffect = default!;
 
+    private ISawmill _sawmill = default!;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        _sawmill = Logger.GetSawmill("st.weapon");
 
         SubscribeLocalEvent<STDeaferGunfireComponent, GunShotEvent>(OnGunShoot);
 
@@ -49,7 +53,14 @@ public sealed class STWeaponSystem : EntitySystem
 
     private void OnWeaponDamageFalloffShot(Entity<STWeaponDamageFalloffComponent> weapon, ref AmmoShotEvent args)
     {
-        var gunCoords = new EntityCoordinates(weapon.Owner, Vector2.Zero);
+        var gunCoords = _transform.GetMoverCoordinates(weapon.Owner);
+        var gunMapCoords = _transform.GetMapCoordinates(weapon.Owner);
+
+        _sawmill.Info($"=== WEAPON SHOT DEBUG ===");
+        _sawmill.Info($"Gun: {weapon.Owner}");
+        _sawmill.Info($"GunCoords: {gunCoords}");
+        _sawmill.Info($"Gun MapCoords: {gunMapCoords}");
+        _sawmill.Info($"Projectile count: {args.FiredProjectiles.Count}");
 
         foreach (var projectile in args.FiredProjectiles)
         {
@@ -58,6 +69,9 @@ public sealed class STWeaponSystem : EntitySystem
 
             _projectile.SetProjectileFalloffWeaponModifier((projectile, falloffComponent), weapon.Comp.ModifiedFalloffMultiplier);
             _projectile.SetFalloffStartCoordinates(projectile, gunCoords);
+            _projectile.SetPredictedProjectileOrigin(projectile, gunCoords);
+
+            _sawmill.Info($"Set origin for projectile {projectile} to {gunCoords}");
         }
     }
 
@@ -96,7 +110,13 @@ public sealed class STWeaponSystem : EntitySystem
 
     private void OnWeaponAccuracyShot(Entity<STWeaponAccuracyComponent> weapon, ref AmmoShotEvent args)
     {
-        var gunCoords = new EntityCoordinates(weapon.Owner, Vector2.Zero);
+        var gunCoords = _transform.GetMoverCoordinates(weapon.Owner);
+        var gunMapCoords = _transform.GetMapCoordinates(weapon.Owner);
+
+        _sawmill.Info($"=== WEAPON ACCURACY SHOT DEBUG ===");
+        _sawmill.Info($"Gun: {weapon.Owner}");
+        _sawmill.Info($"GunCoords: {gunCoords}");
+        _sawmill.Info($"Gun MapCoords: {gunMapCoords}");
 
         var netId = GetNetEntity(weapon.Owner).Id;
         for (var t = 0; t < args.FiredProjectiles.Count; ++t)
@@ -109,6 +129,9 @@ public sealed class STWeaponSystem : EntitySystem
 
             Dirty<STProjectileAccuracyComponent>((args.FiredProjectiles[t], accuracyComponent));
             _projectile.SetAccuracyStartCoordinates(args.FiredProjectiles[t], gunCoords);
+            _projectile.SetPredictedProjectileOrigin(args.FiredProjectiles[t], gunCoords);
+
+            _sawmill.Info($"Set origin for projectile {args.FiredProjectiles[t]} to {gunCoords}");
         }
     }
 }

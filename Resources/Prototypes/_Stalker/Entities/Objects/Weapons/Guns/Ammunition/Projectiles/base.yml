@@ -1,75 +1,75 @@
-# Stalker EN Changes - Falloff adjusted
+# Stalker EN Changes - Falloff increased
 - type: entity
   abstract: true
   parent: STBaseEntity
   id: STBaseBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: Reflective
-  - type: FlyBySound
-  - type: Clickable
-  - type: Sprite
-    noRot: false
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-    - state: bullet
-      shader: unshaded
-  - type: Physics
-    bodyType: Dynamic
-    linearDamping: 0
-    angularDamping: 0
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.1,0.1,0.1"
-        hard: false
-        mask:
-        - Impassable
-        - BulletImpassable
-  - type: Projectile
-    impactEffect: BulletImpactEffect
-    damage:
-      types:
-        Piercing: 14
-    soundHit:
-      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
-  - type: TimedDespawn
-    lifetime: 10
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 1
-      falloff: 0.03
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 4
-      falloff: 0.15      # Gentle base falloff
-    - range: 20
-      falloff: 0.6       # Moderate drop
-  - type: LagCompensation
+    - type: Reflective
+    - type: FlyBySound
+    - type: Clickable
+    - type: Sprite
+      noRot: false
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+      layers:
+        - state: bullet
+          shader: unshaded
+    - type: Physics
+      bodyType: Dynamic
+      linearDamping: 0
+      angularDamping: 0
+    - type: Fixtures
+      fixtures:
+        projectile:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.1,-0.1,0.1,0.1"
+          hard: false
+          mask:
+            - Impassable
+            - BulletImpassable
+    - type: Projectile
+      impactEffect: BulletImpactEffect
+      damage:
+        types:
+          Piercing: 14
+      soundHit:
+        path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+    - type: TimedDespawn
+      lifetime: 10
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 1
+          falloff: 0.03
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 4
+          falloff: 0.2       # Gentle base falloff
+        - range: 20
+          falloff: 0.8       # Moderate drop
+    - type: LagCompensation
 
 - type: entity
   parent: STBaseBullet
   id: STBaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
-  - type: TriggerOnCollide
-    fixtureID: projectile
-  - type: Projectile
-    damage:
-      types:
-        Blunt: 7
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.15,-0.45,0.15,0.15"
-        hard: false
-        mask:
-        - Impassable
-        - BulletImpassable
+    - type: TriggerOnCollide
+      fixtureID: projectile
+    - type: Projectile
+      damage:
+        types:
+          Blunt: 7
+    - type: Fixtures
+      fixtures:
+        projectile:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.15,-0.45,0.15,0.15"
+          hard: false
+          mask:
+            - Impassable
+            - BulletImpassable
 
 - type: entity
   abstract: true
@@ -77,135 +77,135 @@
   id: STBaseBean #Low range, almost melee
   categories: [ HideSpawnMenu ]
   components:
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 1
-      falloff: 0.1
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 1
-      falloff: 0.6
-    - range: 4
-      falloff: 1.5
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 1
+          falloff: 0.1
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 1
+          falloff: 0.6       # Gentle falloff for beanbag/melee
+        - range: 4
+          falloff: 1.5       # Still drops off quickly but not extreme
 
 - type: entity
   abstract: true
   parent: STBaseBullet
-  id: STBasePistolBullet #Low range - SMGs and Pistols (Aggressive)
+  id: STBasePistolBullet #Low range
   categories: [ HideSpawnMenu ]
   components:
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 5
-      falloff: 0.05
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 2
-      falloff: 0.4
-    - range: 8
-      falloff: 1.2
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 5
+          falloff: 0.05
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 2
+          falloff: 0.4       # Gentle falloff (was 0.6)
+        - range: 8
+          falloff: 1.2       # Moderate drop (was 1.8)
 
 - type: entity
   abstract: true
   parent: STBaseBullet
-  id: STBaseLRBullet #Medium range, light rifle (5.45, 5.56)
+  id: STBaseLRBullet #Medium range, light rifle
   categories: [ HideSpawnMenu ]
   components:
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 5
-      falloff: 0.05
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 6
-      falloff: 0.2       # Light falloff (was 0.35)
-    - range: 20
-      falloff: 0.6       # Moderate drop (was 1.0)
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 5
+          falloff: 0.05
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 4
+          falloff: 0.35      # Light rifle falloff
+        - range: 15
+          falloff: 1.0       # Moderate drop
 
 - type: entity
   abstract: true
   parent: STBaseBullet
-  id: STBaseMRBullet #Medium to high range, medium rifle (7.62x39)
+  id: STBaseMRBullet #Medium to high range, medium rifle
   categories: [ HideSpawnMenu ]
   components:
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 5
-      falloff: 0.04
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 6
-      falloff: 0.15      # Light falloff (was 0.25)
-    - range: 25
-      falloff: 0.5       # Balanced drop (was 0.8)
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 5
+          falloff: 0.04
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 4
+          falloff: 0.25      # Medium rifle falloff
+        - range: 20
+          falloff: 0.8       # Balanced drop
 
 - type: entity
   abstract: true
   parent: STBaseBullet
-  id: STBaseHRBullet #High range, heavy rifle (7.62x54, .308)
+  id: STBaseHRBullet #High range, heavy rifle
   categories: [ HideSpawnMenu ]
   components:
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 5
-      falloff: 0.02
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 8
-      falloff: 0.1       # Very light falloff (was 0.15)
-    - range: 35
-      falloff: 0.4       # Gradual drop (was 0.6)
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 5
+          falloff: 0.02
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 4
+          falloff: 0.15      # Light falloff for heavy rifles
+        - range: 30
+          falloff: 0.6       # Gradual drop
 
 - type: entity
   abstract: true
   parent: STBaseBullet
-  id: STBaseSHRBullet #Super High range, sniper rifles
+  id: STBaseSHRBullet #Super High range, super heavy rifle
   categories: [ HideSpawnMenu ]
   components:
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 5
-      falloff: 0.001
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 10
-      falloff: 0.05      # Minimal falloff
-    - range: 50
-      falloff: 0.3       # Long range effectiveness (was 0.5)
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 5
+          falloff: 0.001
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 8
+          falloff: 0.1       # Very light falloff
+        - range: 45
+          falloff: 0.5       # Long range effectiveness
 
 - type: entity
   abstract: true
   parent: STBaseBullet
-  id: STBaseSPBullet #Special ammo like 9x39 or .300 blackout
+  id: STBaseSPBullet #Spacial ammo like 9x39 or .300 blackout
   categories: [ HideSpawnMenu ]
   components:
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 5
-      falloff: 0.08
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 3
-      falloff: 0.3       # Moderate falloff for subsonic
-    - range: 18
-      falloff: 0.8       # Moderate drop
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 5
+          falloff: 0.08
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 2
+          falloff: 0.35      # Gentle falloff for subsonic
+        - range: 15
+          falloff: 1.2       # Moderate drop
 
 - type: entity
   abstract: true
   parent: STBaseBullet
-  id: STBase45ACP #.45 ACP
+  id: STBase45ACP #Low range
   categories: [ HideSpawnMenu ]
   components:
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 5
-      falloff: 0.03
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 5
-      falloff: 0.4
-    - range: 12
-      falloff: 1.2
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 5
+          falloff: 0.03
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 5
+          falloff: 0.4       # Gentle falloff for .45 ACP
+        - range: 12
+          falloff: 1.2       # Moderate drop
 
 # stalker EN change - used for revolvers
 - type: entity
@@ -214,13 +214,13 @@
   id: STBaseRevolverBullet # longer range
   categories: [ HideSpawnMenu ]
   components:
-  - type: STProjectileAccuracy
-    thresholds:
-    - range: 5
-      falloff: 0.03
-  - type: STProjectileDamageFalloff
-    thresholds:
-    - range: 2
-      falloff: 0.3
-    - range: 8
-      falloff: 0.8
+    - type: STProjectileAccuracy
+      thresholds:
+        - range: 5
+          falloff: 0.03
+    - type: STProjectileDamageFalloff
+      thresholds:
+        - range: 2
+          falloff: 0.3       # Gentle revolver falloff
+        - range: 8
+          falloff: 0.8       # Moderate drop
