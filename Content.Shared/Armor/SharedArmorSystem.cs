@@ -26,10 +26,14 @@ public abstract partial class SharedArmorSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly TagSystem _tag = default!;
 
+    private ISawmill _sawmill = default!;
+
     /// <inheritdoc />
     public override void Initialize()
     {
         base.Initialize();
+
+        _sawmill = Logger.GetSawmill("st.armor");
 
         SubscribeLocalEvent<ArmorComponent, MapInitEvent>(OnArmorMapInit);
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<CoefficientQueryEvent>>(OnCoefficientQuery);
@@ -84,9 +88,10 @@ public abstract partial class SharedArmorSystem : EntitySystem
             return;
         }
 
-        // NIJ penetration system: walk up the parent chain to find the entity with
-        // STIncomingPenetrationComponent (placed by OnProjectileHit before TryChangeDamage).
-        // Armor pieces are inside inventory containers so we must walk until we find it.
+        // NIJ penetration system:
+        // Walk up the parent chain to find the entity with STIncomingPenetrationComponent.
+        // Armor pieces are inside inventory containers, not directly parented to the player,
+        // so we must walk until we find the component on the actual wearer.
         var wearer = EntityUid.Invalid;
         var current = Transform(uid).ParentUid;
         while (current.IsValid())
@@ -105,10 +110,16 @@ public abstract partial class SharedArmorSystem : EntitySystem
             var piercingBypass = incomingPen.CalculatePiercingBypass(armorClass);
             var bluntBypass = incomingPen.CalculateBluntBypass(armorClass);
 
-            // Build weakened modifier set:
-            // LOW bypass = armor effective (bullet stopped).
-            // HIGH bypass = armor bypassed (bullet penetrates).
-            // Piercing and Blunt are affected by penetration; all other types use full modifiers.
+            _sawmill.Info($"[ArmorPen] Armor={uid} armorClass={armorClass} penClass={incomingPen.PenetrationClass} piercingBypass={piercingBypass:F2} bluntBypass={bluntBypass:F2}");
+
+            // Build weakened modifier set per damage type.
+            //
+            // bypass=0 → armor fully effective (low bypass = bullet stopped)
+            // bypass=1 → armor fully bypassed (high bypass = bullet penetrates)
+            //
+            // Piercing = bullet puncture, most affected by penetration.
+            // Blunt = stopping power, partially absorbed regardless of penetration.
+            // All other types (Slash, Compression, etc.) = full armor modifiers.
             var weakened = new DamageModifierSet
             {
                 Coefficients = new Dictionary<string, float>(),
@@ -138,7 +149,8 @@ public abstract partial class SharedArmorSystem : EntitySystem
             args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, weakened);
 
             // Minimum damage floor: armor can never reduce a bullet hit below 5% of the
-            // original incoming damage. Prevents armor from completely negating hits.
+            // original incoming damage. Prevents armor from completely negating hits and
+            // ensures players always take some damage to feel the impact.
             var originalTotal = (float) args.Args.OriginalDamage.GetTotal();
             var currentTotal  = (float) args.Args.Damage.GetTotal();
             var minDamage = originalTotal * 0.05f;
