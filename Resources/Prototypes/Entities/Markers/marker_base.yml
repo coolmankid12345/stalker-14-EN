@@ -6,7 +6,7 @@
   components:
   - type: Transform
     anchored: true
-  #- type: IgnorePredictionHide # Temporarily commented for build fixing
+  - type: IgnorePredictionHit # Stalker EN
   - type: Marker
   - type: Clickable
   - type: InteractionOutline
@@ -16,6 +16,3 @@
   - type: Sprite
     drawdepth: Overdoors
     sprite: Markers/cross.rsi
-# If serialization was cool this would work.
-#    layers:
-#      - state: blue

@@ -1,0 +1,48 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponModule
+  id: STBaseModuleSilencerPistol
+  name: silencer
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Pistols/Modules/silencer.rsi
+    scale: 0.6, 0.6
+  - type: Icon
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Pistols/Modules/silencer.rsi
+    scale: 0.6, 0.6
+
+- type: entity
+  parent: STBaseModuleSilencerPistol
+  id: STModuleSilencerPistolT1
+  name: makeshift pistol silencer
+  suffix: ST, silencer, T1
+  components:
+  - type: Tag
+    tags:
+    - STWeaponModulePistolSilencer
+  - type: STWeaponModule
+    effect:
+      soundGunshotVolumeAddition: -5
+      farshotSoundDecrease: 0.4
+  - type: Sprite
+    state: silencer_T1_pistol
+  - type: Icon
+    state: silencer_T1_pistol
+
+- type: entity
+  parent: STBaseModuleSilencerPistol
+  id: STModuleSilencerPistolT2
+  name: professional pistol silencer
+  suffix: ST, silencer, T2
+  components:
+  - type: Tag
+    tags:
+    - STWeaponModulePistolSilencer
+  - type: STWeaponModule
+    effect:
+      soundGunshotVolumeAddition: -10
+      farshotSoundDecrease: 0.2
+  - type: Sprite
+    state: silencer_T2_pistol
+  - type: Icon
+    state: silencer_T2_pistol

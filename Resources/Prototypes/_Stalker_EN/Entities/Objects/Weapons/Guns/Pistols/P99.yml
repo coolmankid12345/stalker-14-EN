@@ -34,6 +34,12 @@
         whitelist:
           tags:
           - MagazineP99
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModulePistolSilencer    
       gun_auto_sear:
         name: Insides
         priority: 2

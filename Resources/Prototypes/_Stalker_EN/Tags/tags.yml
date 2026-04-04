@@ -98,4 +98,7 @@
   id: STSugar
 
 - type: Tag
+  id: STWeaponModulePistolSilencer  
+
+- type: Tag
   id: STYeast

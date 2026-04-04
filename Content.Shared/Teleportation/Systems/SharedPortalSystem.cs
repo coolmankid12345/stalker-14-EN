@@ -1,9 +1,11 @@
 ﻿using System.Linq;
+using Content.Shared._Stalker_EN.NoobDenyer;
 using Content.Shared.Access.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Ghost;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
+using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Teleportation.Components;
@@ -36,6 +38,7 @@ public abstract class SharedPortalSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly AccessReaderSystem _access = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly ISharedPlaytimeManager _playTimeTrackingShared = default!;
 
     private const string PortalFixture = "portalFixture";
     private const string ProjectileFixture = "projectile";
@@ -144,6 +147,26 @@ public abstract class SharedPortalSystem : EntitySystem
                     Transform(subject).Coordinates,
                     subject,
                     PopupType.Medium);
+                return;
+            }
+        }
+
+        if (HasComp<NoobDenyerComponent>(ent) && TryComp<ActorComponent>(subject, out var actorComponent))
+        {
+            if (_netMan.IsServer)
+            {
+                var session = actorComponent.PlayerSession;
+                var playtimes = _playTimeTrackingShared.GetPlayTimes(session);
+                var playtime = playtimes.GetValueOrDefault(PlayTimeTrackingShared.TrackerOverall).TotalHours;
+
+                if (playtime < 10)
+                {
+                    _popup.PopupEntity("As a Rookie, you cannot teleport to Bar yet. Follow the arrows on the floor to Rookie Village.", subject);
+                    return;
+                }
+            }
+            else
+            {
                 return;
             }
         }

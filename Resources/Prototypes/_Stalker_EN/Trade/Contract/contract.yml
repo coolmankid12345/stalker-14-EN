@@ -15,10 +15,16 @@
   - id: trade_contract_MutantPartBlindDogTail
     weight: 100
     cooldownMinutes: 4
-  - id: trade_contract_delivery_BoxCrate
+#  - id: trade_contract_delivery_BoxCrate
+#    weight: 100
+#    cooldownMinutes: 5
+#  - id: trade_contract_recovery_BoxCrate
+#    weight: 100
+#    cooldownMinutes: 6
+  - id: trade_contract_delivery_BoxCrateCordon
     weight: 100
     cooldownMinutes: 5
-  - id: trade_contract_recovery_BoxCrate
+  - id: trade_contract_recovery_BoxCrateCordon
     weight: 100
     cooldownMinutes: 6
   - id: trade_contract_hunt_old_boar
@@ -160,6 +166,33 @@
       id: ContractRewardEasy
 
 - type: storeContract
+  id: trade_contract_delivery_BoxCrateCordon
+  name: "Deliver a Crate to the Buyer"
+  description: "Bring the crate to the buyer. Don't ask questions."
+  difficulty: Easy
+  repeatable: true
+  objectiveType: Delivery
+  runtime:
+    targetPrototype: BoxCrateQests
+    proofPrototype: NcTradeContractProofDeliveryReceipt
+    spawnAtStore: true
+    dropoffPointTag: TradeContractDeliveryCordonEasy
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  targets:
+  - id: BoxCrateQests
+    required: 1
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardEasy
+
+- type: storeContract
   id: trade_contract_recovery_BoxCrate
   name: "Recover a Crate from the Swamp"
   description: "The client never picked up the cargo, and now a pack of seasoned boars roams there. Head to the site, deal with the boars, and bring the crate back to the machine."
@@ -168,6 +201,34 @@
   objectiveType: Delivery
   runtime:
     spawnPointTag: TradeContractDeliveryBolotoEasy
+    targetPrototype: BoxCrateQests
+    allowStoreWorldTurnIn: true
+    guardPrototype: MobMutantOldBoar
+    guardCount: 3
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  targets:
+  - id: BoxCrateQests
+    required: 1
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardEasy
+
+- type: storeContract
+  id: trade_contract_recovery_BoxCrateCordon
+  name: "Recover a Crate from Cordon"
+  description: "The client never picked up the cargo, and now a pack of seasoned boars roams there. Head to the site, deal with the boars, and bring the crate back to the machine."
+  difficulty: Easy
+  repeatable: true
+  objectiveType: Delivery
+  runtime:
+    spawnPointTag: TradeContractDeliveryCordonEasy
     targetPrototype: BoxCrateQests
     allowStoreWorldTurnIn: true
     guardPrototype: MobMutantOldBoar

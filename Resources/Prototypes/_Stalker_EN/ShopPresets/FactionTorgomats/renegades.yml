@@ -338,6 +338,7 @@
     items:
       STModuleScopeRiflesT1Ru: 600
       STModuleSilencerRiflesT1Ru: 400
+      STModuleSilencerPistolT1: 400
       STModuleShotgunChokeT1: 200
       STModuleSMGGripT1: 600
       STModuleSniperSightT1: 600

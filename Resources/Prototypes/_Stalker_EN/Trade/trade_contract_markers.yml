@@ -9,6 +9,9 @@
   - type: Tag
     tags:
     - TradeContractHuntSpawn
+  - type: Sprite
+    layers:
+    - state: blue
 
 - type: entity
   id: MarkerContractDeliveryBolotoEasy
@@ -19,79 +22,119 @@
   - type: Tag
     tags:
     - TradeContractDeliveryBolotoEasy
+  - type: Sprite
+    layers:
+    - state: blue
+
+- type: entity
+  id: MarkerContractDeliveryCordonEasy
+  parent: MarkerBase
+  name: contract, delivery, cordon, easy
+  suffix: ST, QUESTS
+  components:
+  - type: Tag
+    tags:
+    - TradeContractDeliveryCordonEasy
+  - type: Sprite
+    layers:
+    - state: blue
 
 - type: entity
   id: MarkerContractHuntBoarLair
   parent: MarkerBase
-  name: contract, hunt, boar lair, swamp, medium
+  name: contract, hunt, boar lair, medium
   suffix: ST, QUESTS
   components:
   - type: Tag
     tags:
     - TradeContractHuntBoarLair
+  - type: Sprite
+    layers:
+    - state: blue
 
 - type: entity
   id: MarkerContractHuntPseudodog
   parent: MarkerBase
-  name: contract, hunt, pseudodog lair, swamp, medium
+  name: contract, hunt, pseudodog lair, medium
   suffix: ST, QUESTS
   components:
   - type: Tag
     tags:
     - TradeContractHuntPseudodog
+  - type: Sprite
+    layers:
+    - state: blue
 
 - type: entity
   id: MarkerContractHuntMobMutantLeshiy
   parent: MarkerBase
-  name: contract, hunt, Leshiy, swamp, medium
+  name: contract, hunt, Leshiy, medium
   suffix: ST, QUESTS
   components:
   - type: Tag
     tags:
     - TradeContractHuntMobMutantLeshiy
+  - type: Sprite
+    layers:
+    - state: blue
 
 - type: entity
   id: MarkerContractHuntSTMobMutantBearT2Common
   parent: MarkerBase
-  name: contract, hunt, bear, swamp, medium
+  name: contract, hunt, bear, medium
   suffix: ST, QUESTS
   components:
   - type: Tag
     tags:
     - TradeContractHuntSTMobMutantBearT2Common
+  - type: Sprite
+    layers:
+    - state: blue
 
 - type: entity
   id: MarkerContractHuntMobMutantPoltergeistIce
   parent: MarkerBase
-  name: contract, hunt, poltergeist, swamp, hard
+  name: contract, hunt, poltergeist, hard
   suffix: ST, QUESTS
   components:
   - type: Tag
     tags:
     - TradeContractHuntMobMutantPoltergeistIce
+  - type: Sprite
+    layers:
+    - state: blue
 
 - type: entity
   id: MarkerContractHuntSTMobMutantBloodsuckerUncommon
   parent: MarkerBase
-  name: contract, hunt, bloodsucker, swamp, hard
+  name: contract, hunt, bloodsucker, hard
   suffix: ST, QUESTS
   components:
   - type: Tag
     tags:
     - TradeContractHuntSTMobMutantBloodsuckerUncommon
+  - type: Sprite
+    layers:
+    - state: blue
 
 - type: entity
   id: MarkerContractHuntSTMobMutantBearPsiUncommon
   parent: MarkerBase
-  name: contract, hunt, psi bear, swamp, hard
+  name: contract, hunt, psi bear, hard
   suffix: ST, QUESTS
   components:
   - type: Tag
     tags:
     - TradeContractHuntSTMobMutantBearPsiUncommon
+  - type: Sprite
+    layers:
+    - state: blue
 
 - type: Tag
   id: TradeContractDeliveryBolotoEasy
+
+- type: Tag
+  id: TradeContractDeliveryCordonEasy
 
 - type: Tag
   id: TradeContractHuntBoarLair

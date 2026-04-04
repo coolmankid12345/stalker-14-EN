@@ -20,8 +20,6 @@
   id: Bar-BarStalker
   name: Bar-BarStalker
   components:
-  - type: AccessReader
-    access: [["Stalker"]]
   - type: NoobDenyer
 
 - type: entity

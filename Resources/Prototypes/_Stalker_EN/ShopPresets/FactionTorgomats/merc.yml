@@ -316,6 +316,7 @@
       items:
         STModuleScopeRiflesT1Nato: 600
         STModuleSilencerRiflesT1Nato: 400
+        STModuleSilencerPistolT1: 400
         STModuleSMGGripT1: 600
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600

@@ -46,6 +46,12 @@
           whitelist:
             tags:
               - STModuleAutoSear
+        gun_module_muzzle:
+          name: Muzzle
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModulePistolSilencer      
         gun_chamber:
           name: Chamber
           startingItem:

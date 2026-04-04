@@ -166,9 +166,9 @@
       # Rifles
       STWeaponRifleL85Forecaster: 2100
       STWeaponRifleFAL: 1500
-      STWeaponRifleM4: 2800
+      STWeaponRifleM4: 3000
       STWeaponRifleM14: 3750
-      STWeaponRifleAKS74: 3500
+      STWeaponRifleAKS74: 2800
       STWeaponRifleAKM: 3500
       STWeaponRifleStalkerAK105SwampThing: 4000
       STMetroWeaponRifleVSV: 5000
@@ -424,6 +424,7 @@
     items:
       STModuleScopeRiflesT1Ru: 600
       STModuleScopeRiflesT1Nato: 600
+      STModuleSilencerPistolT1: 400
       STModuleSilencerRiflesT1Ru: 400
       STModuleSilencerRiflesT1Nato: 400
       STModuleShotgunChokeT1: 200
@@ -432,6 +433,7 @@
       STModuleSniperSightT1: 600
       STModuleSilencerSniperT1: 600
       STModuleSilencerRiflesT2Ru: 2800
+      STModuleSilencerPistolT2: 2800
       STModuleSilencerRiflesT2Nato: 2800
       STModuleSilencerSniperT2: 2800
       STModuleSilencerSMGT2: 2800

@@ -2106,5 +2106,17 @@
   id: 223
   time: '2026-04-04T13:01:41.783914+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/746
+- author: Noguchi47
+  changes:
+  - message: added 2 new pistol suppressors
+    type: Add
+  - message: the pistol suppressors are now in various of vendors! Find out IC as
+      always :3
+    type: Add
+  - message: updated all of T2 gun's module names to a better one
+    type: Tweak
+  id: 224
+  time: '2026-04-04T16:49:32.077543+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/754
 Name: Stalker
 Order: -1
