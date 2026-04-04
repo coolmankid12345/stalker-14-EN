@@ -106,26 +106,32 @@
       items:
         7mmBuckshotBox: 50
         6mmBuckshotBox: 100
-        545HPBox: 200
+        #45
         45ACPRIPBox: 300
         45ACPLFMJBox: 250
         45ACPAPBox: 1400
+        # 7.25
         725PBox: 100
         725LRNPCBox: 50
-        725PTBox: 465
+        725PSTBox: 465
+        # 7.39
         739FMJBox: 2100
-        754FMJBox: 2000
-        725PSTBox: 1200
+        739HPBox: 400
+        # 9.18
         918PGJBox: 80
         918SP7Box: 200
-        918PBMBox: 1200
+        918PBMBox: 850
+        # 9.19
         919PSOGJBox: 100
         919RIPBox: 400
         919PBMBox: 1200
+        # 5.45
         545FMJBox: 500
+        545HPBox: 200
         545PCBox: 1800
+        # 7.54
         754HPBox: 500
-        739HPBox: 400
+        754FMJBox: 2000
     - name: shop-category-armor
       priority: 4
       items:

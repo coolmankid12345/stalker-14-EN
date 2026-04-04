@@ -1,4 +1,5 @@
-#12x70
+# 12x70
+# STALKER-14-EN START
 - type: entity
   abstract: True
   id: STBasePellet
@@ -19,10 +20,12 @@
   parent: STBasePellet
   components:
   - type: Projectile
+    projectileClass: 1
     damage:
       types:
-        Piercing: 9
-        Mutant: 4
+        Piercing: 4
+        Blunt: 8
+        Mutant: 10
 
 - type: entity
   id: Bullet7mmBuckshot
@@ -46,8 +49,9 @@
     projectileClass: 1
     damage:
       types:
-        Piercing: 14
-        Mutant: 8
+        Piercing: 5
+        Blunt: 10
+        Mutant: 12
 
 - type: entity
   id: Bullet6mmBuckshot
@@ -68,10 +72,11 @@
   parent: STBasePellet
   components:
   - type: Projectile
-    projectileClass: 2
+    projectileClass: 1
     damage:
       types:
-        Piercing: 15
+        Piercing: 6
+        Blunt: 15
         Mutant: 16
 
 - type: entity
@@ -86,89 +91,91 @@
     spread: 8
 
 # flechette
-
-- type: entity
-  id: STPelletFlechetta
-  name: pellet flechetta
-  parent: STBasePellet
-  components:
-  - type: Projectile
-    projectileClass: 3
-    damage:
-      types:
-        Piercing: 6
-        Mutant: 18
-
-- type: entity
-  id: BulletShotgunFlechette
-  name: bullet (Flechette)
-  parent: STPelletFlechetta
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ProjectileSpread
-    proto: STPelletFlechetta
-    count: 8
-    spread: 12
+#
+#- type: entity
+#  id: STPelletFlechetta
+#  name: pellet flechetta
+#  parent: STBasePellet
+#  components:
+#  - type: Projectile
+#    projectileClass: 3
+#    damage:
+#      types:
+#        Piercing: 6
+#        Mutant: 18
+#
+#- type: entity
+#  id: BulletShotgunFlechette
+#  name: bullet (Flechette)
+#  parent: STPelletFlechetta
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: ProjectileSpread
+#    proto: STPelletFlechetta
+#    count: 8
+#    spread: 12
 
 # bullets
 
-- type: entity
-  id: BulletShotgunBullet
-  name: bullet (Bullet)
-  parent: STBaseSPBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 2
-    damage:
-      types:
-        Piercing: 40
-  - type: StaminaDamageOnCollide
-    damage: 20
+#- type: entity
+#  id: BulletShotgunBullet
+#  name: bullet (Bullet)
+#  parent: STBaseSPBullet
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Projectile
+#    projectileClass: 2
+#    damage:
+#      types:
+#        Piercing: 40
+#  - type: StaminaDamageOnCollide
+#    damage: 20
+#
+#
+#- type: entity
+#  id: BulletShotgunRIP
+#  name: bullet (Bullet)
+#  parent: STBaseSPBullet
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Projectile
+#    projectileClass: 0
+#    damage:
+#      types:
+#        Blunt: 10
+#        Slash: 10
+#        Mutant: 100
+#  - type: StaminaDamageOnCollide
+#    damage: 20
+#
+#- type: entity
+#  id: BulletShotgunDart
+#  name: bullet (Dart)
+#  parent: STBaseSPBullet
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Projectile
+#    projectileClass: 3
+#    damage:
+#      types:
+#        Piercing: 35
+#  - type: StaminaDamageOnCollide
+#    damage: 20
+#
+#- type: entity
+#  id: PelletShotgunBeanbagStalker
+#  name: beanbag (.50)
+#  categories: [ HideSpawnMenu ]
+#  parent: STBaseSPBullet
+#  components:
+#    - type: Sprite
+#      sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+#      state: buckshot
+#    - type: Projectile
+#      damage:
+#        types:
+#          Blunt: 10
+#    - type: StaminaDamageOnCollide
+#      damage: 80 # 3 hits to stun
 
-
-- type: entity
-  id: BulletShotgunRIP
-  name: bullet (Bullet)
-  parent: STBaseSPBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 0
-    damage:
-      types:
-        Blunt: 10
-        Slash: 10
-        Mutant: 100
-  - type: StaminaDamageOnCollide
-    damage: 20
-
-- type: entity
-  id: BulletShotgunDart
-  name: bullet (Dart)
-  parent: STBaseSPBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 3
-    damage:
-      types:
-        Piercing: 35
-  - type: StaminaDamageOnCollide
-    damage: 20
-
-- type: entity
-  id: PelletShotgunBeanbagStalker
-  name: beanbag (.50)
-  categories: [ HideSpawnMenu ]
-  parent: STBaseSPBullet
-  components:
-    - type: Sprite
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-      state: buckshot
-    - type: Projectile
-      damage:
-        types:
-          Blunt: 10
-    - type: StaminaDamageOnCollide
-      damage: 80 # 3 hits to stun
+# STALKER-14-EN END

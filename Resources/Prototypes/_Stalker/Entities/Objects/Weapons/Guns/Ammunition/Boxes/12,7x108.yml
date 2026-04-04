@@ -1,15 +1,18 @@
+# 12.7x108 Ammo Boxes
+# FMJ / HP / AP — small box (10 rounds) + large crate (100 rounds)
+
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 13x108FMJBox
-  name: коробка патронов (12,7x108) FMJ
-  description: Для винтовки OSV-96, в коробке 10 штук. Обеспечивает пробитие 4 класса брони.
+  name: Коробка патронов (12,7x108) FMJ
+  description: Для винтовки OSV-96, в коробке 10 штук. Обеспечивает пробитие 6 класса брони.
   suffix: Stalker
   components:
   - type: MagazineVisuals
     magState: 76254ammo
   - type: BallisticAmmoProvider
-    capacity: 10
     proto: STCartridge13x108FMJ
+    capacity: 10
     whitelist:
       tags:
         - STCartridge13x108
@@ -21,41 +24,87 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  parent: BaseAmmoBoxStalker
-  id: 13x108PCBox
-  name: коробка патронов (12,7x108) ПС
-  description: Для винтовки OSV-96, в коробке 10 штук. Обеспечивает пробитие 5 класса брони.
+  parent: 13x108FMJBox
+  id: 13x108HPBox
+  name: Коробка патронов (12,7x108) HP
+  description: Для винтовки OSV-96, в коробке 10 штук. Бесполезно против брони, но наносит ужасный урон небронированным целям.
   suffix: Stalker
   components:
-    - type: MagazineVisuals
-      magState: 76254ammo
-    - type: BallisticAmmoProvider
-      capacity: 10
-      proto: STCartridge13x108PC
-      whitelist:
-        tags:
-          - STCartridge13x108
-    - type: Sprite
-      layers:
-        - state: 13108
-          map: ["enum.GunVisualLayers.Base"]
-        - state: 76239ammo-1
-          map: ["enum.GunVisualLayers.Mag"]
-        - state: t3
+  - type: BallisticAmmoProvider
+    proto: STCartridge13x108HPBT
+  - type: Sprite
+    layers:
+    - state: 13108
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 76239ammo-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: exp
 
 - type: entity
-  parent: 13x108PCBox
-  id: 13x108HPBox
-  name: коробка патронов (12,7x108) HP BT
-  description: Для винтовки OSV-96, в коробке 10 штук. Бесполезно против брони.
+  parent: 13x108FMJBox
+  id: 13x108APBox
+  name: Коробка патронов (12,7x108) AP
+  description: Для винтовки OSV-96, в коробке 10 штук. Обеспечивает пробитие 7 класса брони.
   suffix: Stalker
   components:
-    - type: BallisticAmmoProvider
-      proto: STCartridge13x108HPBT
-    - type: Sprite
-      layers:
-        - state: 13108
-          map: ["enum.GunVisualLayers.Base"]
-        - state: 76239ammo-1
-          map: ["enum.GunVisualLayers.Mag"]
-        - state: exp
+  - type: BallisticAmmoProvider
+    proto: STCartridge13x108PC
+  - type: Sprite
+    layers:
+    - state: 13108
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 76239ammo-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: t3
+
+- type: entity
+  parent: BaseAmmoCinkBoxStalker
+  id: 13x108FMJBoxCink
+  name: Ящик патронов (12,7x108) FMJ
+  description: Для винтовки OSV-96, в коробке 100 штук. Обеспечивает пробитие 6 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: STCartridge13x108FMJ
+    capacity: 100
+    whitelist:
+      tags:
+        - STCartridge13x108
+  - type: Sprite
+    layers:
+    - state: cink
+      map: ["enum.GunVisualLayers.Base"]
+    - state: cink
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: 13x108FMJBoxCink
+  id: 13x108HPBoxCink
+  name: Ящик патронов (12,7x108) HP
+  description: Для винтовки OSV-96, в коробке 100 штук. Бесполезно против брони, но наносит ужасный урон небронированным целям.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: STCartridge13x108HPBT
+  - type: Sprite
+    layers:
+    - state: cink
+      map: ["enum.GunVisualLayers.Base"]
+    - state: cink
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: 13x108FMJBoxCink
+  id: 13x108APBoxCink
+  name: Ящик патронов (12,7x108) AP
+  description: Для винтовки OSV-96, в коробке 100 штук. Обеспечивает пробитие 7 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: STCartridge13x108PC
+  - type: Sprite
+    layers:
+    - state: cink
+      map: ["enum.GunVisualLayers.Base"]
+    - state: cink
+      map: ["enum.GunVisualLayers.Mag"]

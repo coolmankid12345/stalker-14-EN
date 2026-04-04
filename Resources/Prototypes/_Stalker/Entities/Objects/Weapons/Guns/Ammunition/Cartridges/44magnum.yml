@@ -1,3 +1,5 @@
+# .44 Magnum
+# STALKER-14-EN START
 - type: entity
   parent: BaseCartridge
   id: BaseCartridgeRemingtonMagnum
@@ -23,7 +25,7 @@
 - type: entity
   parent: BaseCartridgeRemingtonMagnum
   id: CartridgeRemingtonMagnum
-  name: cartridge (.44 remington magnum)
+  name: cartridge (.44 remington magnum)FMJ
   suffix: Stalker
   components:
   - type: CartridgeAmmo
@@ -31,9 +33,20 @@
 
 - type: entity
   parent: BaseCartridgeRemingtonMagnum
+  id: CartridgeRemingtonMagnumHP
+  name: cartridge (.44 remington magnum)HP
+  suffix: Stalker
+  components:
+    - type: CartridgeAmmo
+      proto: BulletRemingtonMagnumHP
+
+- type: entity
+  parent: BaseCartridgeRemingtonMagnum
   id: CartridgeRemingtonMagnumAP
-  name: cartridge (.44 remington magnum armor-piercing)
+  name: cartridge (.44 remington magnum)AP
   suffix: Stalker
   components:
   - type: CartridgeAmmo
     proto: BulletRemingtonMagnumAP
+
+# STALKER-14-EN END

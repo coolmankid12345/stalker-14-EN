@@ -1,29 +1,61 @@
+# .44 Magnum
+# STALKER-14-EN START
 - type: entity
   parent: STBaseLRBullet
   id: BulletRemingtonMagnum
-  name: bullet (.44 remington magnum)
+  name: bullet (.44 remington magnum FMJ)
   suffix: Stalker
   categories: [ HideSpawnMenu ]
   components:
+  - type: TimedDespawn
+    lifetime: 6
+  - type: STArmorPenetration
+    penetrationClass: 2
   - type: Projectile
     projectileClass: 2
     damage:
       types:
-        Piercing: 30
+        Piercing: 20
+        Blunt: 30
+  - type: StaminaDamageOnCollide
+    damage: 8
+
+- type: entity
+  parent: STBaseLRBullet
+  id: BulletRemingtonMagnumHP
+  name: bullet (.44 remington magnum HP)
+  suffix: Stalker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STArmorPenetration
+    penetrationClass: 1
+  - type: Projectile
+    projectileClass: 2
+    damage:
+      types:
+        Mutant: 30
+        Piercing: 8
+        Blunt: 13
+        SlasH: 20
   - type: StaminaDamageOnCollide
     damage: 10
 
 - type: entity
   parent: STBaseLRBullet
   id: BulletRemingtonMagnumAP
-  name: bullet (.44 remington magnum armor-piercing)
+  name: bullet (.44 remington magnum AP)
   suffix: Stalker
   categories: [ HideSpawnMenu ]
   components:
-  - type: Projectile
-    projectileClass: 3
-    damage:
-      types:
-        Piercing: 35
-  - type: StaminaDamageOnCollide
-    damage: 15
+    - type: STArmorPenetration
+      penetrationClass: 3
+    - type: Projectile
+      projectileClass: 2
+      damage:
+        types:
+          Piercing: 18
+          Blunt: 27
+    - type: StaminaDamageOnCollide
+      damage: 6
+
+# STALKER-14-EN END

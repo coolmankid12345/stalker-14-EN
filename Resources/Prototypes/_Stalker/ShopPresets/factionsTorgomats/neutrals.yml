@@ -128,22 +128,18 @@
       # 9.18
       918PGJBox: 40
       918SP7Box: 200
-      918PSTBox: 450
-      918PBMBox: 1000
+      918PBMBox: 450
       # 9.19
       919PSOGJBox: 100
       919RIPBox: 300
       919PBMBox: 1500
-      919PSTBox: 450
       # 7.25
       725PBox: 100
       725LRNPCBox: 50
-      725PTBox: 465
-      725PSTBox: 3000
+      725PSTBox: 465
       #45
       45ACPRIPBox: 450
       45ACPLFMJBox: 250
-      45ACPMFMJBox: 1550
       45ACPAPBox: 2500
   - name: shop-category-armor
     priority: 4

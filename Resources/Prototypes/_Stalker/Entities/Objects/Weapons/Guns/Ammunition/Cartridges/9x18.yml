@@ -1,5 +1,5 @@
 # 9x18
-
+# STALKER-14-EN START
 - type: entity
   id: BaseSTCartridge918
   name: cartridge (9х18 auto)
@@ -20,7 +20,7 @@
 
 - type: entity
   id: STCartridge918PGJ
-  name: Патрон (9х18)П гж
+  name: Cartridge (9x18 FMJ)
   parent: BaseSTCartridge918
   components:
   - type: Sprite
@@ -35,7 +35,7 @@
 
 - type: entity
   id: STCartridge918PST
-  name: Патрон (9х18)ПСТ
+  name: Cartridge (9x18 HP)
   parent: BaseSTCartridge918
   components:
   - type: Sprite
@@ -49,23 +49,8 @@
     state: "base"
 
 - type: entity
-  id: STCartridge918SP7
-  name: Патрон (9х18)СП7 гж
-  parent: BaseSTCartridge918
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
-    layers:
-    - state: base
-      map: ["enum.AmmoVisualLayers.Base"]
-  - type: CartridgeAmmo
-    proto: Bullet918SP7
-  - type: SpentAmmoVisuals
-    state: "base"
-
-- type: entity
   id: STCartridge918PBM
-  name: Патрон (9х18)ПБМ
+  name: Cartridge (9x18 AP)
   parent: BaseSTCartridge918
   components:
   - type: Sprite
@@ -78,3 +63,19 @@
   - type: SpentAmmoVisuals
     state: "base"
 
+#- type: entity
+#  id: STCartridge918PBM
+#  name: Патрон (9х18)ПБМ
+#  parent: BaseSTCartridge918
+#  components:
+#  - type: Sprite
+#    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+#    layers:
+#    - state: base
+#      map: ["enum.AmmoVisualLayers.Base"]
+#  - type: CartridgeAmmo
+#    proto: Bullet918PBM
+#  - type: SpentAmmoVisuals
+#    state: "base"
+
+# STALKER-14-EN END

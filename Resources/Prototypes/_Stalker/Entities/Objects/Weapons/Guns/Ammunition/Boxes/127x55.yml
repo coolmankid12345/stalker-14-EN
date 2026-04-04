@@ -1,17 +1,20 @@
+# 12.7x55 — FMJ / HP / AP
+
 - type: entity
   parent: BaseAmmoBoxStalker
   id: Ammobox1255PS12A
-  name: Коробка 12,7x55 ПС12А
-  description: Для РШ и АШ-12, 1й класс пробития, 20 штук
+  name: Коробка 12,7x55 FMJ
+  description: Для РШ и АШ-12, в коробке 20 штук.
+  suffix: Stalker
   components:
   - type: MagazineVisuals
     magState: 1270red
   - type: BallisticAmmoProvider
-    capacity: 20
     proto: STCartridge1255PS12A
+    capacity: 20
     whitelist:
       tags:
-      - STCartridge1255
+        - STCartridge1255
   - type: Sprite
     layers:
     - state: 1270
@@ -20,59 +23,52 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  parent: BaseAmmoBoxStalker
+  parent: Ammobox1255PS12A
   id: Ammobox1255TP
-  name: Коробка 12,7x55 ТП
-  description: Для РШ и АШ-12, 2й класс пробития, 20 штук
+  name: Коробка 12,7x55 HP
+  description: Для РШ и АШ-12, в коробке 20 штук. Бесполезно против брони.
+  suffix: Stalker
   components:
-  - type: MagazineVisuals
-    magState: 1270red
   - type: BallisticAmmoProvider
-    capacity: 20
     proto: STCartridge1255TP
-    whitelist:
-      tags:
-      - STCartridge1255
   - type: Sprite
     layers:
     - state: 1270
       map: ["enum.GunVisualLayers.Base"]
     - state: 1270red-1
       map: ["enum.GunVisualLayers.Mag"]
+    - state: exp
 
 - type: entity
-  parent: BaseAmmoBoxStalker
+  parent: Ammobox1255PS12A
   id: Ammobox1255BP
-  name: Коробка 12,7x55 БП
-  description: Для РШ и АШ-12, 4й класс пробития, 20 штук
+  name: Коробка 12,7x55 AP
+  description: Для РШ и АШ-12, в коробке 20 штук. Обеспечивает пробитие 4 класса брони.
+  suffix: Stalker
   components:
-  - type: MagazineVisuals
-    magState: 1270red
   - type: BallisticAmmoProvider
-    capacity: 20
     proto: STCartridge1255BP
-    whitelist:
-      tags:
-      - STCartridge1255
   - type: Sprite
     layers:
     - state: 1270
       map: ["enum.GunVisualLayers.Base"]
     - state: 1270red-1
       map: ["enum.GunVisualLayers.Mag"]
+    - state: antiarmor
 
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: Ammobox1255PS12ACink
-  name: ящик 12,7x55 ПС12А
-  description: Для РШ и АШ-12, 1й класс пробития, 200 штук
+  name: Ящик 12,7x55 FMJ
+  description: Для РШ и АШ-12, в коробке 200 штук.
+  suffix: Stalker
   components:
   - type: BallisticAmmoProvider
-    capacity: 200
     proto: STCartridge1255PS12A
+    capacity: 200
     whitelist:
       tags:
-      - STCartridge1255
+        - STCartridge1255
   - type: Sprite
     layers:
     - state: cink
@@ -81,39 +77,19 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  parent: BaseAmmoCinkBoxStalker
+  parent: Ammobox1255PS12ACink
   id: Ammobox1255TPCink
-  name: ящик 12,7x55 ТП
-  description: Для РШ и АШ-12, 2й класс пробития, 200 штук
+  name: Ящик 12,7x55 HP
+  suffix: Stalker
   components:
   - type: BallisticAmmoProvider
-    capacity: 200
     proto: STCartridge1255TP
-    whitelist:
-      tags:
-      - STCartridge1255
-  - type: Sprite
-    layers:
-    - state: cink
-      map: ["enum.GunVisualLayers.Base"]
-    - state: cink
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  parent: BaseAmmoCinkBoxStalker
+  parent: Ammobox1255PS12ACink
   id: Ammobox1255BPCink
-  name: ящик 12,7x55 БП
-  description: Для РШ и АШ-12, 4й класс пробития, 200 штук
+  name: Ящик 12,7x55 AP
+  suffix: Stalker
   components:
   - type: BallisticAmmoProvider
-    capacity: 200
     proto: STCartridge1255BP
-    whitelist:
-      tags:
-      - STCartridge1255
-  - type: Sprite
-    layers:
-    - state: cink
-      map: ["enum.GunVisualLayers.Base"]
-    - state: cink
-      map: ["enum.GunVisualLayers.Mag"]

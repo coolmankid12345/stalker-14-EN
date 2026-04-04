@@ -1,5 +1,5 @@
 # 5.56x45
-
+# STALKER-14-EN START
 - type: entity
   id: BaseCartridge556
   name: cartridge (5,56x45 rifle)
@@ -25,48 +25,50 @@
 
 - type: entity
   id: Cartridge556FMJ
-  name: Патрон (5,56x45)FMJ
+  name: Cartridge (5,56x45) FMJ
   parent: BaseCartridge556
   components:
   - type: CartridgeAmmo
     proto: Bullet556FMJ
 
 - type: entity
-  id: Cartridge556M855
-  name: Патрон (5,56x45)M855
-  parent: BaseCartridge556
-  components:
-  - type: CartridgeAmmo
-    proto: Bullet556M855
-
-- type: entity
-  id: Cartridge556M856
-  name: Патрон (5,56x45)M856
-  parent: BaseCartridge556
-  components:
-  - type: CartridgeAmmo
-    proto: Bullet556M856
-
-- type: entity
   id: Cartridge556Warmag
-  name: Патрон (5,56x45)Warmag
+  name: Cartridge (5,56x45) HP
   parent: BaseCartridge556
   components:
   - type: CartridgeAmmo
     proto: Bullet556Warmag
 
 - type: entity
-  id: Cartridge556M995
-  name: Патрон (5,56x45)M995
-  parent: BaseCartridge556
-  components:
-  - type: CartridgeAmmo
-    proto: Bullet556M995
-
-- type: entity
   id: Cartridge556SSAAP
-  name: Патрон (5,56x45)SSA AP
+  name: Cartridge (5,56x45) AP
   parent: BaseCartridge556
   components:
   - type: CartridgeAmmo
     proto: Bullet556SSAAP
+
+#- type: entity
+#  id: Cartridge556Warmag
+#  name: Патрон (5,56x45)Warmag
+#  parent: BaseCartridge556
+#  components:
+#  - type: CartridgeAmmo
+#    proto: Bullet556Warmag
+#
+#- type: entity
+#  id: Cartridge556M995
+#  name: Патрон (5,56x45)M995
+#  parent: BaseCartridge556
+#  components:
+#  - type: CartridgeAmmo
+#    proto: Bullet556M995
+#
+#- type: entity
+#  id: Cartridge556SSAAP
+#  name: Патрон (5,56x45)SSA AP
+#  parent: BaseCartridge556
+#  components:
+#  - type: CartridgeAmmo
+#    proto: Bullet556SSAAP
+
+# STALKER-14-EN END

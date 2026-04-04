@@ -1,206 +1,131 @@
+# .45 ACP — FMJ / HP / AP + all vendor alias IDs
+
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 45ACPLFMJBox
-  name: Коробка патронов (.45 ACP) Lasermatch FMJ
-  description: Для некоторых пистолетов и револьверов, в коробке 30 штук. Обеспечивает пробитие только 1 класса брони.
+  name: Коробка патронов (.45 ACP) FMJ
+  description: В коробке 30 штук. Обеспечивает пробитие 1 класса брони.
   suffix: Stalker
   components:
-    - type: MagazineVisuals
-      magState: 45ammo
-    - type: BallisticAmmoProvider
-      capacity: 30
-      proto: Cartridge45ACPLFMJ
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: 45(1)
-        map: ["enum.GunVisualLayers.Base"]
-      - state: 45ammo-1
-        map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  parent: 45ACPLFMJBox
-  id: 45ACPMFMJBox
-  name: Коробка патронов (.45 ACP) Match FMJ
-  description: Для некоторых пистолетов и револьверов, в коробке 30 штук. Обеспечивает пробитие 2 класса брони.
-  suffix: Stalker
-  components:
-    - type: MagazineVisuals
-      magState: 45ammo1
-    - type: BallisticAmmoProvider
-      capacity: 30
-      proto: Cartridge45ACPMFMJ
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: 45(1)
-        map: ["enum.GunVisualLayers.Base"]
-      - state: 45ammo1-1
-        map: ["enum.GunVisualLayers.Mag"]
-      - state: t2_small
-
-- type: entity
-  parent: 45ACPLFMJBox
-  id: 45ACPHydroshockBox
-  name: Коробка патронов (.45 ACP) Hydro-shock
-  description: Для некоторых пистолетов и револьверов, в коробке 30 штук. Обеспечивает пробитие 1 класса брони.
-  suffix: Stalker
-  components:
-    - type: MagazineVisuals
-      magState: 45ammo2
-    - type: BallisticAmmoProvider
-      capacity: 30
-      proto: Cartridge45ACPHydroshock
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: 45(2)
-        map: ["enum.GunVisualLayers.Base"]
-      - state: 45ammo2-1
-        map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: 45ammo
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPLFMJ
+    capacity: 30
+    whitelist:
+      tags:
+        - Cartridge45ACP
+  - type: Sprite
+    layers:
+    - state: 45(1)
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 45ammo-1
+      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   parent: 45ACPLFMJBox
   id: 45ACPRIPBox
-  name: Коробка патронов (.45 ACP) RIP
-  description: Для некоторых пистолетов и револьверов, в коробке 30 штук. Бесполезно против брони.
+  name: Коробка патронов (.45 ACP) HP
+  description: В коробке 30 штук. Бесполезно против брони.
   suffix: Stalker
   components:
-    - type: BallisticAmmoProvider
-      capacity: 30
-      proto: Cartridge45ACPRIP
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: 45(3)
-        map: ["enum.GunVisualLayers.Base"]
-      - state: 45ammo-1
-        map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPHydroshock
+  - type: Sprite
+    layers:
+    - state: 45(2)
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 45ammo2-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+# Alias — old mid FMJ variant
+- type: entity
+  parent: 45ACPLFMJBox
+  id: 45ACPMFMJBox
+  name: Коробка патронов (.45 ACP) FMJ Match
+  description: В коробке 30 штук.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPLFMJ
+
+- type: entity
+  parent: 45ACPLFMJBox
+  id: 45ACPHydroshockBox
+  name: Коробка патронов (.45 ACP) HP Hydro
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPHydroshock
 
 - type: entity
   parent: 45ACPLFMJBox
   id: 45ACPAPBox
   name: Коробка патронов (.45 ACP) AP
-  description: Для некоторых пистолетов и револьверов, в коробке 30 штук. Обеспечивает пробитие 3 класса брони.
+  description: В коробке 30 штук. Обеспечивает пробитие 3 класса брони.
   suffix: Stalker
   components:
-    - type: BallisticAmmoProvider
-      capacity: 30
-      proto: Cartridge45ACPAP
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: 45(4)
-        map: ["enum.GunVisualLayers.Base"]
-      - state: 45ammo-1
-        map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPMFMJ
+  - type: Sprite
+    layers:
+    - state: 45(4)
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 45ammo-1
+      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 45ACPLFMJBoxCink
-  name: ящик патронов (.45 ACP) Lasermatch FMJ
-  description: Для некоторых пистолетов и револьверов, в коробке 30 штук. Обеспечивает пробитие только 1 класса брони.
+  name: Ящик патронов (.45 ACP) FMJ
+  description: В коробке 300 штук.
   suffix: Stalker
   components:
-    - type: BallisticAmmoProvider
-      capacity: 300
-      proto: Cartridge45ACPLFMJ
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: cink
-        map: ["enum.GunVisualLayers.Base"]
-      - state: cink
-        map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPLFMJ
+    capacity: 300
+    whitelist:
+      tags:
+        - Cartridge45ACP
+  - type: Sprite
+    layers:
+    - state: cink
+      map: ["enum.GunVisualLayers.Base"]
+    - state: cink
+      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   parent: 45ACPLFMJBoxCink
   id: 45ACPMFMJBoxCink
-  name: ящик патронов (.45 ACP) Match FMJ
-  description: Для некоторых пистолетов и револьверов, в коробке 300 штук. Обеспечивает пробитие 2 класса брони.
+  name: Ящик патронов (.45 ACP) FMJ Match
   suffix: Stalker
   components:
-    - type: BallisticAmmoProvider
-      capacity: 300
-      proto: Cartridge45ACPMFMJ
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: cink
-        map: ["enum.GunVisualLayers.Base"]
-      - state: cink
-        map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPLFMJ
 
 - type: entity
   parent: 45ACPLFMJBoxCink
   id: 45ACPHydroshockBoxCink
-  name: ящик патронов (.45 ACP) Hydro-shock
-  description: Для некоторых пистолетов и револьверов, в коробке 300 штук. Обеспечивает пробитие 1 класса брони.
+  name: Ящик патронов (.45 ACP) HP
   suffix: Stalker
   components:
-    - type: BallisticAmmoProvider
-      capacity: 300
-      proto: Cartridge45ACPHydroshock
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: cink
-        map: ["enum.GunVisualLayers.Base"]
-      - state: cink
-        map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPHydroshock
 
 - type: entity
   parent: 45ACPLFMJBoxCink
   id: 45ACPRIPBoxCink
-  name: ящик патронов (.45 ACP) RIP
-  description: Для некоторых пистолетов и револьверов, в коробке 300 штук. Бесполезно против брони.
+  name: Ящик патронов (.45 ACP) HP RIP
   suffix: Stalker
   components:
-    - type: BallisticAmmoProvider
-      capacity: 300
-      proto: Cartridge45ACPRIP
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: cink
-        map: ["enum.GunVisualLayers.Base"]
-      - state: cink
-        map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPHydroshock
 
 - type: entity
   parent: 45ACPLFMJBoxCink
   id: 45ACPAPBoxCink
-  name: ящик патронов (.45 ACP) AP
-  description: Для некоторых пистолетов и револьверов, в коробке 30 штук. Обеспечивает пробитие 3 класса брони.
+  name: Ящик патронов (.45 ACP) AP
   suffix: Stalker
   components:
-    - type: BallisticAmmoProvider
-      capacity: 30
-      proto: Cartridge45ACPAP
-      whitelist:
-        tags:
-          - Cartridge45ACP
-    - type: Sprite
-      layers:
-      - state: cink
-        map: ["enum.GunVisualLayers.Base"]
-      - state: cink
-        map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto: Cartridge45ACPMFMJ

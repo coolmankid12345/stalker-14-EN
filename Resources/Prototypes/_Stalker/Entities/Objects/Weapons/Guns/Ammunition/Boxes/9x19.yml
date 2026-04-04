@@ -1,14 +1,12 @@
+# 9x19 — FMJ / HP / AP + all vendor alias IDs
+
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 919PSOGJBox
-  name: Коробка патронов (9х19) ПСО гж
-  description: Для МП-5 Гадюка, в коробке 30 штук. Обеспечивает пробитие только 1 класса брони.
+  name: Коробка патронов (9х19) FMJ
+  description: Для МП-5 Гадюка, в коробке 30 штук. Обеспечивает пробитие 1 класса брони.
   suffix: Stalker
   components:
-  - type: Item
-    size: Small
-    shape:
-      - 0,0,1,0
   - type: MagazineVisuals
     magState: 919ammo
   - type: BallisticAmmoProvider
@@ -27,25 +25,18 @@
 - type: entity
   parent: 919PSOGJBox
   id: 919PSTBox
-  name: Коробка патронов (9х19) ПСТ гж
-  description: Для МП-5 Гадюка, в коробке 30 штук. Обеспечивает пробитие только 2 класса брони.
+  name: Коробка патронов (9х19) FMJ ПСТ
+  description: Для МП-5 Гадюка, в коробке 30 штук.
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
-    proto: STCartridge919PST
-  - type: Sprite
-    layers:
-    - state: 919
-      map: ["enum.GunVisualLayers.Base"]
-    - state: 919ammo-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: t2_large
+    proto: STCartridge919PSOGJ
 
 - type: entity
   parent: 919PSOGJBox
   id: 919RIPBox
-  name: Коробка патронов (9х19) RIP
-  description: Экспансивные боеприпасы для ПП и пистолетов НАТО. Ничего не пробьют, но нанесут огромный урон по целям со слабой бронёй или без неё.
+  name: Коробка патронов (9х19) HP
+  description: Для МП-5 Гадюка, в коробке 30 штук. Бесполезно против брони.
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
@@ -61,26 +52,25 @@
 - type: entity
   parent: 919PSOGJBox
   id: 919PBMBox
-  name: Коробка патронов (9х19) ПБМ гж
-  description: Для МП-5 Гадюка, в коробке 30 штук. Обеспечивает пробитие только 3 класса брони.
+  name: Коробка патронов (9х19) AP
+  description: Для МП-5 Гадюка, в коробке 30 штук. Обеспечивает пробитие 3 класса брони.
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
-    proto: STCartridge919PBM
+    proto: STCartridge919PST
   - type: Sprite
     layers:
     - state: 919
       map: ["enum.GunVisualLayers.Base"]
     - state: 919ammo-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: t4
     - state: antiarmor_large
 
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 919PSOGJBoxCink
-  name: ящик патронов (9х19) ПСО гж
-  description: Для МП-5 Гадюка, в коробке 300 штук. Обеспечивает пробитие только 1 класса брони.
+  name: Ящик патронов (9х19) FMJ
+  description: Для МП-5 Гадюка, в коробке 300 штук.
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
@@ -99,47 +89,26 @@
 - type: entity
   parent: 919PSOGJBoxCink
   id: 919PSTBoxCink
-  name: ящик патронов (9х19) ПСТ гж
-  description: Для МП-5 Гадюка, в коробке 300 штук. Обеспечивает пробитие только 2 класса брони.
+  name: Ящик патронов (9х19) FMJ ПСТ
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
-    proto: STCartridge919PST
-  - type: Sprite
-    layers:
-    - state: cink
-      map: ["enum.GunVisualLayers.Base"]
-    - state: cink
-      map: ["enum.GunVisualLayers.Mag"]
+    proto: STCartridge919PSOGJ
 
 - type: entity
   parent: 919PSOGJBoxCink
   id: 919RIPBoxCink
-  name: ящик патронов (9х19) RIP
-  description: Экспансивные боеприпасы для ПП и пистолетов НАТО. Ничего не пробьют, но нанесут огромный урон по целям со слабой бронёй или без неё.
+  name: Ящик патронов (9х19) HP
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
     proto: STCartridge919RIP
-  - type: Sprite
-    layers:
-    - state: cink
-      map: ["enum.GunVisualLayers.Base"]
-    - state: cink
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   parent: 919PSOGJBoxCink
   id: 919PBMBoxCink
-  name: ящик патронов (9х19) ПБМ гж
-  description: Для МП-5 Гадюка, в коробке 300 штук. Обеспечивает пробитие только 3 класса брони.
+  name: Ящик патронов (9х19) AP
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
-    proto: STCartridge919PBM
-  - type: Sprite
-    layers:
-    - state: cink
-      map: ["enum.GunVisualLayers.Base"]
-    - state: cink
-      map: ["enum.GunVisualLayers.Mag"]
+    proto: STCartridge919PST
