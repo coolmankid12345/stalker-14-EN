@@ -1,23 +1,18 @@
-#23x75R
-# STALKER-14-EN START
 - type: entity
   id: STPelletShrapnel25
-  name: shell (23x75)
+  name: pellet shrapnel25
   parent: STBasePellet
   components:
-  - type: STArmorPenetration
-    penetrationClass: 3
   - type: Projectile
-    projectileClass: 3
+    projectileClass: 1
     damage:
       types:
-        Piercing: 8
-        Blunt: 12
-        Mutant: 15
+        Piercing: 27
+        Mutant: 30
 
 - type: entity
   id: BulletShrapnel25Buckshot
-  name: shell (23x75) Flechette
+  name: bullet (shrapnel-25)
   parent: STPellet7mm
   categories: [ HideSpawnMenu ]
   components:
@@ -25,48 +20,36 @@
     proto: STPelletShrapnel25
     count: 8
     spread: 12
-  - type: Projectile
-    projectileClass: 3
-    damage:
-      types:
-        Piercing: 9
-        Blunt: 20
-        Mutant: 20
-  - type: StaminaDamageOnCollide
-    damage: 10
 
 
 - type: entity
   id: BulletShotgunBarricada
-  name: shell (23x75) Slug
+  name: bullet Barricada (Bullet)
   parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 4
   - type: Projectile
     projectileClass: 3
     damage:
       types:
-        Piercing: 50
-        Blunt: 40
-        Mutant: 150
+        Piercing: 65
+        Blunt: 15
   - type: StaminaDamageOnCollide
     damage: 35
 
-#- type: entity
-#  id: BulletShotgunVolnaR
-#  name: bullet VolnaR (Bullet)
-#  parent: STBaseSPBullet
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: Projectile
-#    projectileClass: 1
-#    damage:
-#      types:
-#        Blunt: 35
-#  - type: StaminaDamageOnCollide
-#    damage: 90
+- type: entity
+  id: BulletShotgunVolnaR
+  name: bullet VolnaR (Bullet)
+  parent: STBaseSPBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 1
+    damage:
+      types:
+        Blunt: 35
+  - type: StaminaDamageOnCollide
+    damage: 90
 
 #- type: entity
 #  id: BulletShotgunZvezda
@@ -88,5 +71,3 @@
 #  - type: EmitSoundOnTrigger
 #    sound:
 #      path: "/Audio/Effects/flash_bang.ogg"
-
-# STALKER-14-EN END

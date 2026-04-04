@@ -1,70 +1,56 @@
 #9x19
-# STALKER-14-EN START
+
 - type: entity
   id: Bullet919PSOGJ
-  name: bullet (9х19 FMJ)
+  name: bullet (9х19 auto)
   parent: STBasePistolBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
-  - type: STArmorPenetration
-    penetrationClass: 1
   - type: Projectile
     projectileClass: 1
     damage:
       types:
-        Piercing: 13
-        Blunt: 13
+        Piercing: 23
   - type: StaminaDamageOnCollide
     damage: 1
 
 - type: entity
   id: Bullet919PST
-  name: bullet (9х19 HP)
+  name: bullet (9х19 auto)
   parent: Bullet919PSOGJ
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 0
   - type: Projectile
-    projectileClass: 1
+    projectileClass: 2
     damage:
       types:
-        Piercing: 5
-        Blunt: 7
-        Slash: 9
-        Mutant: 16
-  - type: StaminaDamageOnCollide
-    damage: 2
+        Piercing: 24
 
 - type: entity
   id: Bullet919RIP
-  name: bullet (9х18 AP)
+  name: bullet (9х18 auto)
   parent: Bullet919PSOGJ
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 2
   - type: Projectile
-    projectileClass: 1
+    projectileClass: 0
     damage:
       types:
-        Piercing: 12
-        Blunt: 11
-  - type: StaminaDamageOnCollide
-    damage: 1
+        Mutant: 40
+        Piercing: 5
+        Blunt: 5
+        Slash: 5
 
-#- type: entity
-#  id: Bullet919PBM
-#  name: bullet (9х19 auto)
-#  parent: Bullet919PSOGJ
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: Projectile
-#    projectileClass: 3
-#    damage:
-#      types:
-#        Piercing: 26
-
-# STALKER-14-EN END
+- type: entity
+  id: Bullet919PBM
+  name: bullet (9х19 auto)
+  parent: Bullet919PSOGJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 3
+    damage:
+      types:
+        Piercing: 26

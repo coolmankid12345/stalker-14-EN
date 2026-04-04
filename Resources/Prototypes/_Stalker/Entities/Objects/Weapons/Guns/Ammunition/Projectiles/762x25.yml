@@ -1,70 +1,56 @@
-# 7.62x25
-# STALKER-14-EN START
+#7.62x25
+
 - type: entity
   id: Bullet725PGL
-  name: bullet (7.62х25 FMJ)
+  name: bullet (7.62х25 rifle)
   parent: STBasePistolBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
-  - type: STArmorPenetration
-    penetrationClass: 1
   - type: Projectile
     projectileClass: 1
     damage:
       types:
-        Piercing: 13
-        Blunt: 13
+        Piercing: 20
   - type: StaminaDamageOnCollide
     damage: 1
 
 - type: entity
   id: Bullet725PTGJ
-  name: bullet (7.62х25 HP)
+  name: bullet (7.62х25 rifle)
   parent: STBasePistolBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 0
   - type: Projectile
-    projectileClass: 1
+    projectileClass: 2
     damage:
       types:
-        Mutant: 15
-        Piercing: 5
-        Blunt: 7
-        Slash: 9
-  - type: StaminaDamageOnCollide
-    damage: 1.5
+        Piercing: 22
 
 - type: entity
   id: Bullet725LRNPC
-  name: bullet (7.62х25 AP)
+  name: bullet (7.62х25 rifle)
   parent: STBasePistolBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 2
   - type: Projectile
-    projectileClass: 1
+    projectileClass: 0
     damage:
       types:
-        Piercing: 11
+        Mutant: 35
+        Piercing: 10
         Blunt: 10
-  - type: StaminaDamageOnCollide
-    damage: 0.5
+        Slash: 10
 
-#- type: entity
-#  id: Bullet725PSTGJ
-#  name: bullet (7.62х25 rifle)
-#  parent: STBasePistolBullet
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: Projectile
-#    projectileClass: 3
-#    damage:
-#      types:
-#        Piercing: 24
-
-# STALKER-14-EN END
+- type: entity
+  id: Bullet725PSTGJ
+  name: bullet (7.62х25 rifle)
+  parent: STBasePistolBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 3
+    damage:
+      types:
+        Piercing: 24

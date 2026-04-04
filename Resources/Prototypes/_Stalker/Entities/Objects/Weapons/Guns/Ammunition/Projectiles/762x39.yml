@@ -1,71 +1,56 @@
 #7.62x39
-# STALKER-14-EN START
+
 - type: entity
   id: Bullet739FMJ
-  name: bullet (7.62х39 FMJ)
+  name: bullet (7.62х39 rifle)
   parent: STBaseMRBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 7
-  - type: STArmorPenetration
-    penetrationClass: 4
+    lifetime: 6
   - type: Projectile
-    projectileClass: 4
+    projectileClass: 3
     damage:
       types:
-        Piercing: 40
-        Blunt: 40
+        Piercing: 34
   - type: StaminaDamageOnCollide
-    damage: 5
+    damage: 4
 
 - type: entity
   id: Bullet739HP
-  name: bullet (7.62х39 HP)
+  name: bullet (7.62х39 rifle)
   parent: Bullet739FMJ
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 3
   - type: Projectile
-    projectileClass: 4
+    projectileClass: 0
     damage:
       types:
-        Mutant: 80
-        Piercing: 15
-        Blunt: 16
-        Slash: 19
-  - type: StaminaDamageOnCollide
-    damage: 5.5
+        Mutant: 85
+        Piercing: 10
+        Blunt: 10
+        Slash: 10
 
 - type: entity
   id: Bullet739PC
-  name: bullet (7.62х39 AP)
+  name: bullet (7.62х39 rifle)
   parent: Bullet739FMJ
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 5
   - type: Projectile
     projectileClass: 4
     damage:
       types:
-        Piercing: 38
-        Blunt: 37
-  - type: StaminaDamageOnCollide
-    damage: 4.5
+        Piercing: 35
 
-#- type: entity
-#  id: Bullet739BP
-#  name: bullet (7.62х39 rifle)
-#  parent: Bullet739FMJ
-#  categories: [ HideSpawnMenu ]
-#  components:
-  
-#  - type: Projectile
-#    projectileClass: 5
-#    damage:
-#      types:
-#        Piercing: 30
-
-# STALKER-14-EN END
+- type: entity
+  id: Bullet739BP
+  name: bullet (7.62х39 rifle)
+  parent: Bullet739FMJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 5
+    damage:
+      types:
+        Piercing: 30

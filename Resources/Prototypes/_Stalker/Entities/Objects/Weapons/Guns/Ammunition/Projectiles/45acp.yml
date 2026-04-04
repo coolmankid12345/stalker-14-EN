@@ -1,86 +1,68 @@
-# 45 ACP
-# STALKER-14-EN START
+
 - type: entity
   id: Bullet45ACPLFMJ
-  name: bullet (.45 ACP FMJ)
+  name: bullet (.45 ACP Lasermatch FMJ)
   parent: STBase45ACP
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 4
-  - type: STArmorPenetration
-    penetrationClass: 1
+    lifetime: 2
   - type: Projectile
     projectileClass: 1
     damage:
       types:
-        Piercing: 15
-        Blunt: 25
-  - type: StaminaDamageOnCollide
-    damage: 5
-
-- type: entity
-  id: Bullet45ACPHydroshock
-  name: bullet (.45 ACP HP)
-  parent: Bullet45ACPLFMJ
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: STArmorPenetration
-    penetrationClass: 0
-  - type: Projectile
-    projectileClass: 1
-    damage:
-      types:
-        Mutant: 25
-        Piercing: 5
-        Blunt: 8
-        Slash: 14
-  - type: StaminaDamageOnCollide
-    damage: 6
+        Piercing: 24
 
 - type: entity
   id: Bullet45ACPMFMJ
+  name: bullet (.45 ACP Match FMJ)
+  parent: Bullet45ACPLFMJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 2
+    damage:
+      types:
+        Piercing: 25
+
+- type: entity
+  id: Bullet45ACPHydroshock
+  name: bullet (.45 ACP Hydra-Shok)
+  parent: Bullet45ACPLFMJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 1
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 30
+        Mutant: 20
+
+- type: entity
+  id: Bullet45ACPRIP
+  name: bullet (.45 ACP RIP)
+  parent: Bullet45ACPLFMJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Mutant: 45
+        Piercing: 7
+        Blunt: 7
+        Slash: 7
+
+- type: entity
+  id: Bullet45ACPAP
   name: bullet (.45 ACP AP)
   parent: Bullet45ACPLFMJ
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 2
   - type: Projectile
-    projectileClass: 1
+    projectileClass: 3
     damage:
       types:
-        Piercing: 14
-        Blunt: 23
-  - type: StaminaDamageOnCollide
-    damage: 4.5
-
-#- type: entity
-#  id: Bullet45ACPRIP
-#  name: bullet (.45 ACP RIP)
-#  parent: Bullet45ACPLFMJ
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: Projectile
-#    projectileClass: 1
-#    damage:
-#      types:
-#        Mutant: 25
-#        Piercing: 5
-#        Blunt: 12
-#        Slash: 15
-
-#- type: entity
-#  id: Bullet45ACPAP
-#  name: bullet (.45 ACP AP)
-#  parent: Bullet45ACPLFMJ
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: Projectile
-#    projectileClass: 2
-#    damage:
-#      types:
-#        Piercing: 14
-#        Blunt: 23
-
-# STALKER-14-EN END
+        Piercing: 28

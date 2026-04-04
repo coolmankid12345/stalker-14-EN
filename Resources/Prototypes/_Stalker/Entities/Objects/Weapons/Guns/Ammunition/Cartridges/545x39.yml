@@ -1,5 +1,5 @@
 # 5.45x39
-# STALKER-14-EN START
+
 - type: entity
   id: BaseSTCartridge545
   name: cartridge (5,45x39)
@@ -25,50 +25,48 @@
 
 - type: entity
   id: STCartridge545FMJ
-  name: Cartridge (5,45x39)FMJ
+  name: Патрон (5,45x39)FMJ
   parent: BaseSTCartridge545
   components:
   - type: CartridgeAmmo
     proto: Bullet545FMJ
 
 - type: entity
+  id: STCartridge545PC
+  name: Патрон (5,45x39)ПС
+  parent: BaseSTCartridge545
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet545PC
+
+- type: entity
   id: STCartridge545HP
-  name: Cartridge (5,45x39) HP
+  name: Патрон (5,45x39)HP
   parent: BaseSTCartridge545
   components:
   - type: CartridgeAmmo
     proto: Bullet545HP
 
 - type: entity
-  id: STCartridge545PC
-  name: Cartridge (5,45x39)AP
+  id: STCartridge545BP
+  name: Патрон (5,45x39)БП
   parent: BaseSTCartridge545
   components:
   - type: CartridgeAmmo
-    proto: Bullet545PC
+    proto: Bullet545BP
 
-#- type: entity
-#  id: STCartridge545HP
-#  name: Cartridge (5,45x39)HP
-#  parent: BaseSTCartridge545
-#  components:
-#  - type: CartridgeAmmo
-#    proto: Bullet545HP
+- type: entity
+  id: STCartridge545BS
+  name: Патрон (5,45x39)БС
+  parent: BaseSTCartridge545
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet545BS
 
-#- type: entity
-#  id: STCartridge545BS
-#  name: Патрон (5,45x39)БС
-#  parent: BaseSTCartridge545
-#  components:
-#  - type: CartridgeAmmo
-#    proto: Bullet545BS
-#
-#- type: entity
-#  id: STCartridge545NE
-#  name: Патрон (5,45x39)"Игольник"
-#  parent: BaseSTCartridge545
-#  components:
-#  - type: CartridgeAmmo
-#    proto: Bullet545NE
-
-# STALKER-14-EN END
+- type: entity
+  id: STCartridge545NE
+  name: Патрон (5,45x39)"Игольник"
+  parent: BaseSTCartridge545
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet545NE

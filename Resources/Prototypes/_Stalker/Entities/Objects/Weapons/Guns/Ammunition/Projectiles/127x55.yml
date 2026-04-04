@@ -1,59 +1,53 @@
-# 12.7x55
-# STALKER-14-EN START
+# 12,7x55
 - type: entity
   id: Bullet1255PS12A
-  name: bullet (12,7x55 FMJ)
+  name: bullet (12,7x55)
   parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 12
-  - type: STArmorPenetration
-    penetrationClass: 5
+    lifetime: 4
   - type: Projectile
-    projectileClass: 5
+    projectileClass: 1
     damage:
       types:
-        Piercing: 70
-        Blunt: 70
+        Blunt: 6
+        Slash: 6
+        Piercing: 44.5
   - type: StaminaDamageOnCollide
-    damage: 20
+    damage: 5
 
 - type: entity
   id: Bullet1255TP
-  name: bullet (12,7x55 HP)
+  name: bullet (12,7x55)
   parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 4
+  - type: TimedDespawn
+    lifetime: 4
   - type: Projectile
-    projectileClass: 5
+    projectileClass: 2
     damage:
       types:
-        Mutant: 200
-        Piercing: 40
-        Blunt: 40
-        Slash: 50
+        Blunt: 6.5
+        Slash: 6.5
+        Piercing: 54
   - type: StaminaDamageOnCollide
-    damage: 22
+    damage: 5
 
 
 - type: entity
   id: Bullet1255BP
-  name: bullet (12,7x55 AP)
+  name: bullet (12,7x55)
   parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: STArmorPenetration
-    penetrationClass: 6
+  - type: TimedDespawn
+    lifetime: 4
   - type: Projectile
-    projectileClass: 5
+    projectileClass: 4
     damage:
       types:
-        Piercing: 70
-        Blunt: 70
+        Piercing: 65
   - type: StaminaDamageOnCollide
-    damage: 18
-
-# STALKER-14-EN END
+    damage: 5
