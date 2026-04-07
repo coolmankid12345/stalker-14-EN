@@ -60,30 +60,25 @@
     - { factionA: Loners, factionB: Bandits, relation: Hostile }
     - { factionA: Loners, factionB: Renegades, relation: Hostile }
     # Freedom relations
-    - { factionA: Freedom, factionB: Duty, relation: War }
+    - { factionA: Freedom, factionB: Duty, relation: Hostile }
     - { factionA: Freedom, factionB: Renegades, relation: Hostile }
     # Bandits relations
-    - { factionA: Bandits, factionB: Duty, relation: War }
+    - { factionA: Bandits, factionB: Duty, relation: Hostile }
     - { factionA: Bandits, factionB: Ecologist, relation: Hostile }
-    - { factionA: Bandits, factionB: Military, relation: War }
-    - { factionA: Bandits, factionB: ClearSky, relation: War }
+    - { factionA: Bandits, factionB: Military, relation: Hostile }
+    - { factionA: Bandits, factionB: ClearSky, relation: Hostile }
     - { factionA: Bandits, factionB: Renegades, relation: Hostile }
     # Duty relations
-    - { factionA: Duty, factionB: Ecologist, relation: Hostile }
-    - { factionA: Duty, factionB: Mercenaries, relation: Hostile }
     - { factionA: Duty, factionB: Military, relation: Hostile }
     - { factionA: Duty, factionB: ClearSky, relation: Hostile }
-    - { factionA: Duty, factionB: Renegades, relation: War }
+    - { factionA: Duty, factionB: Renegades, relation: Hostile }
     # Ecologist relations
-    - { factionA: Ecologist, factionB: Mercenaries, relation: Hostile }
     - { factionA: Ecologist, factionB: Military, relation: Alliance }
     - { factionA: Ecologist, factionB: Renegades, relation: Hostile }
     # Mercenaries relations
     - { factionA: Mercenaries, factionB: Military, relation: Hostile }
-    - { factionA: Mercenaries, factionB: ClearSky, relation: Hostile }
     - { factionA: Mercenaries, factionB: Renegades, relation: Hostile }
     # Military relations
-    - { factionA: Military, factionB: ClearSky, relation: Hostile }
-    - { factionA: Military, factionB: Renegades, relation: War }
+    - { factionA: Military, factionB: Renegades, relation: Hostile }
     # ClearSky relations
-    - { factionA: ClearSky, factionB: Renegades, relation: War }
+    - { factionA: ClearSky, factionB: Renegades, relation: Hostile }
