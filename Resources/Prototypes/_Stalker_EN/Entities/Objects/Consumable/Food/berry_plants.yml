@@ -1,0 +1,600 @@
+﻿- type: seed
+  id: STbarberryGrow
+  name: barberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: barberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodBarbaris
+  productPrototypes:
+  - StalkerFoodBarbaris
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilBarbaris:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STgojiGrow
+  name: goji bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: goji bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodGoji
+  productPrototypes:
+  - StalkerFoodGoji
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilGoji:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STirgaGrow
+  name: irga bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: irga bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodIrga
+  productPrototypes:
+  - StalkerFoodIrga
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilIrga:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STcranberryGrow
+  name: cranberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: cranberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodKlukva
+  productPrototypes:
+  - StalkerFoodKlukva
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilKlukva:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STgooseberryGrow
+  name: gooseberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: gooseberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodKrijovnik
+  productPrototypes:
+  - StalkerFoodKrijovnik
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilKrijovnik:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STraspberryGrow
+  name: raspberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: raspberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodMalina
+  productPrototypes:
+  - StalkerFoodMalina
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilMalina:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STcloudberryGrow
+  name: cloudberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: cloudberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodMoroshka
+  productPrototypes:
+  - StalkerFoodMoroshka
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilMoroshka:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STseabuckthornGrow
+  name: sea buckthorn bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: sea buckthorn bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodOblepixa
+  productPrototypes:
+  - StalkerFoodOblepixa
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilOblepixa:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STlingonberryGrow
+  name: lingonberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: lingonberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodBrusnika
+  productPrototypes:
+  - StalkerFoodBrusnika
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerJuiceBrusnika:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STblueberryGrow
+  name: blueberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: blueberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodGolubika
+  productPrototypes:
+  - StalkerFoodGolubika
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerJuiceGolubika:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STgrapeGrow
+  name: grape vine
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: grape vine
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodVinograd
+  productPrototypes:
+  - StalkerFoodVinograd
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerJuiceVinograd:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STcherryGrow
+  name: cherry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: cherry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodVishna
+  productPrototypes:
+  - StalkerFoodVishna
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerJuiceVishna:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STblackberryGrow
+  name: blackberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: blackberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodEjevika
+  productPrototypes:
+  - StalkerFoodEjevika
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerJuiceEjevika:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STstrawberryGrow
+  name: strawberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: strawberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodKlubnika
+  productPrototypes:
+  - StalkerFoodKlubnika
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerJuiceKlubnika:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STcurrantGrow
+  name: currant bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: currant bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodSmorodina
+  productPrototypes:
+  - StalkerFoodSmorodina
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerJuiceSmorodini:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STcherry2Grow
+  name: wild cherry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: wild cherry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodChereshna
+  productPrototypes:
+  - StalkerFoodChereshna
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerJuiceChereshna:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STvolkGrow
+  name: wolfberry bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: wolfberry bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodVolk
+  productPrototypes:
+  - StalkerFoodVolk
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerToxin1:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STbaneberryGrow
+  name: voronets bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: voronets bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodVoronec
+  productPrototypes:
+  - StalkerFoodVoronec
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerToxin2:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STlilyGrow
+  name: lily of the valley flower
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: lily of the valley flower
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodLandish
+  productPrototypes:
+  - StalkerFoodLandish
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerToxin3:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STochankaGrow
+  name: eyebright officinalis bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: eyebright officinalis bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodOchanka
+  productPrototypes:
+  - StalkerFoodOchanka
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilGrass1:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STlapchatkaGrow
+  name: white cinquefoil bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: white cinquefoil bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodlapchatka
+  productPrototypes:
+  - StalkerFoodlapchatka
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilGrass2:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STcalamusGrow
+  name: calamus bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: calamus bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodAir
+  productPrototypes:
+  - StalkerFoodAir
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilGrass3:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: STlindenGrow
+  name: heart-shaped linden tree
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: heart-shaped linden tree
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodLipa
+  productPrototypes:
+  - StalkerFoodLipa
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilGrass4:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: SThawthornGrow
+  name: spotted orchid bush
+  #suffix: ST, Stalker, ботаника # This field does not exist!
+  displayName: spotted orchid bush
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: StalkerFoodYatrishnik
+  productPrototypes:
+  - StalkerFoodYatrishnik
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    StalkerOilGrass5:
+      Min: 10
+      Max: 10
+      PotencyDivisor: 10
+

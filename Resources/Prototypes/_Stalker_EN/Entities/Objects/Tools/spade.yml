@@ -1,0 +1,31 @@
+﻿- type: entity
+  name: spade
+  parent: BaseItem
+  id: STToolSpade
+  suffix: stalker
+  description: A small tool for digging and moving dirt.
+  components:
+  - type: Tag
+    tags:
+    - BotanyShovel
+  - type: Sprite
+    sprite: Objects/Tools/Hydroponics/spade.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 8
+        Piercing: 2 # I guess you can stab it into them?
+    soundHit:
+      collection: MetalThud
+  - type: Item
+    sprite: Objects/Tools/Hydroponics/spade.rsi
+    storedRotation: -45
+  - type: Shovel
+    speedModifier: 0.75 # slower at digging than a full-sized shovel
+  - type: StalkerShovel
+    canPlow: True
+    canMakeGrave: False
+  - type: RepositoryItem # stalker-en change
+    categoryName: repository-tools-category

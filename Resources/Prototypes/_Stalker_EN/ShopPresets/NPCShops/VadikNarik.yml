@@ -20,6 +20,7 @@
       CannabisSeedsStalker: 70
       HydroponicsToolMiniHoe: 70
       Bucket: 60
+      STToolSpade: 500
   - name: Miscellaneous
     priority: 3
     items:

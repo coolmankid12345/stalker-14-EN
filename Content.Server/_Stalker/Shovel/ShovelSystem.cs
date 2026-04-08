@@ -96,7 +96,7 @@ public sealed class ShovelSystem : EntitySystem
         }
         else
         {
-            _popup.PopupEntity("Место уже занято", args.User, PopupType.Large);
+            _popup.PopupEntity("Tile Obstructed", args.User, PopupType.Large);
         }
     }
 
@@ -162,10 +162,10 @@ public sealed class ShovelSystem : EntitySystem
 
         ActivationVerb verb = new()
         {
-            Text = Loc.GetString("Выкопать грядку"),
+            Text = Loc.GetString("Dig garden plot"),
             Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/light.svg.192dpi.png")),
 
-            Act = () => PlowGround(@event.User, ent,"hydroponicsSoil",30)
+            Act = () => PlowGround(@event.User, ent,"SoilStalker",30)
         };
         if (ent.Comp.CanPlow)
         {
@@ -174,7 +174,7 @@ public sealed class ShovelSystem : EntitySystem
 
         ActivationVerb verb2 = new()
         {
-            Text = Loc.GetString("Выкопать могилу"),
+            Text = Loc.GetString("Dig grave"),
             Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/light.svg.192dpi.png")),
 
             Act = () => PlowGround(@event.User, ent,"CrateStoneGrave",60)
@@ -208,7 +208,7 @@ public sealed class ShovelSystem : EntitySystem
         }
         else
         {
-            _popup.PopupEntity("Не подходящая местность", eventUser, PopupType.Large);
+            _popup.PopupEntity("Unsuitable terrain", eventUser, PopupType.Large);
         }
     }
 }

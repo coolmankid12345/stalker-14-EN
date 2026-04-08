@@ -30,6 +30,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STbarberryGrow
 
 - type: ore
   id: StalkerOreBerries1
@@ -108,6 +110,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STgojiGrow
 
 - type: ore
   id: StalkerOreBerries2
@@ -186,6 +190,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STirgaGrow
 
 - type: ore
   id: StalkerOreBerries3
@@ -264,6 +270,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STcranberryGrow
 
 - type: ore
   id: StalkerOreBerries4
@@ -342,6 +350,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STgooseberryGrow
 
 - type: ore
   id: StalkerOreBerries5
@@ -420,6 +430,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STraspberryGrow
 
 - type: ore
   id: StalkerOreBerries6
@@ -498,6 +510,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STcloudberryGrow
 
 - type: ore
   id: StalkerOreBerries7
@@ -576,6 +590,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STseabuckthornGrow
 
 - type: ore
   id: StalkerOreBerries8
@@ -654,6 +670,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STlingonberryGrow
 
 - type: ore
   id: StalkerOreBerries9
@@ -732,6 +750,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STblueberryGrow
 
 - type: ore
   id: StalkerOreBerries10
@@ -810,6 +830,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STgrapeGrow
 
 - type: ore
   id: StalkerOreBerries11
@@ -888,6 +910,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STcherryGrow
 
 - type: ore
   id: StalkerOreBerries12
@@ -966,6 +990,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STblackberryGrow
 
 - type: ore
   id: StalkerOreBerries13
@@ -1044,6 +1070,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STstrawberryGrow
 
 - type: ore
   id: StalkerOreBerries14
@@ -1122,6 +1150,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STcurrantGrow
 
 - type: ore
   id: StalkerOreBerries15
@@ -1200,6 +1230,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STcherry2Grow
 
 - type: ore
   id: StalkerOreBerries16
@@ -1276,6 +1308,8 @@
   - type: Tag
     tags:
     - Fruit
+  - type: Seed
+    seedId: STvolkGrow
 
 - type: ore
   id: StalkerOreBerries17
@@ -1357,6 +1391,8 @@
     - type: Tag
       tags:
       - Fruit
+    - type: Seed
+      seedId: STbaneberryGrow
 
 - type: ore
   id: StalkerOreBerries18
@@ -1438,6 +1474,8 @@
     - type: Tag
       tags:
       - Fruit
+    - type: Seed
+      seedId: STlilyGrow
 
 - type: ore
   id: StalkerOreBerries19
@@ -1521,6 +1559,8 @@
     - type: Tag
       tags:
       - Fruit
+    - type: Seed
+      seedId: STochankaGrow
 
 - type: ore
   id: StalkerOreBerries20
@@ -1604,6 +1644,8 @@
     - type: Tag
       tags:
       - Fruit
+    - type: Seed
+      seedId: STlapchatkaGrow
 
 - type: ore
   id: StalkerOreBerries21
@@ -1687,6 +1729,8 @@
     - type: Tag
       tags:
       - Fruit
+    - type: Seed
+      seedId: STcalamusGrow
 
 - type: ore
   id: StalkerOreBerries22
@@ -1770,6 +1814,8 @@
     - type: Tag
       tags:
       - Fruit
+    - type: Seed
+      seedId: STlindenGrow
 
 - type: ore
   id: StalkerOreBerries23
@@ -1853,6 +1899,8 @@
     - type: Tag
       tags:
       - Fruit
+    - type: Seed
+      seedId: SThawthornGrow
 
 - type: ore
   id: StalkerOreBerries24
