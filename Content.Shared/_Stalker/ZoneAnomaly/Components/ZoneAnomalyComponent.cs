@@ -17,34 +17,36 @@ public sealed partial class ZoneAnomalyComponent : Component
     [DataField, AutoNetworkedField]
     public ZoneAnomalyState State = ZoneAnomalyState.Idle;
 
-    [DataField, AutoNetworkedField]
+    //stalker-en-change-start: deleted all AutoNetworkedField cause those fields are Server only
+    [DataField]
     public TimeSpan PreparingDelay = TimeSpan.FromSeconds(2);
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public TimeSpan PreparingTime;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public TimeSpan ActivationDelay = TimeSpan.FromSeconds(2);
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public TimeSpan ActivationTime;
 
-    [DataField("chargeTime"), AutoNetworkedField]
+    [DataField("chargeTime")]
     public TimeSpan ChargingDelay = TimeSpan.FromSeconds(2);
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public TimeSpan ChargingTime;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public HashSet<EntityUid> Triggers = new();
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public HashSet<EntityUid> InAnomaly = new();
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public EntityWhitelist CollisionWhitelist = new();
 
-    [DataField, AutoNetworkedField]
+    [DataField]
+    //stalker-en-change-end
     public EntityWhitelist CollisionBlacklist = new();
 }
 

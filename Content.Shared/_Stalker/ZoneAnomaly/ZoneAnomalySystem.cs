@@ -12,6 +12,14 @@ public sealed class ZoneAnomalySystem : SharedZoneAnomalySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
+    /// <summary>
+    /// How often to check anomaly state machines. State transitions use timers of 2-5 seconds,
+    /// so per-tick checks (30/sec) are wasteful. 5 checks/sec is enough.
+    /// </summary>
+    private const float StateCheckInterval = 0.2f;
+
+    private float _stateCheckAccumulator;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -23,6 +31,12 @@ public sealed class ZoneAnomalySystem : SharedZoneAnomalySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        _stateCheckAccumulator += frameTime;
+        if (_stateCheckAccumulator < StateCheckInterval)
+            return;
+
+        _stateCheckAccumulator -= StateCheckInterval;
 
         var query = EntityQueryEnumerator<ZoneAnomalyComponent>();
         while (query.MoveNext(out var uid, out var anomaly))
@@ -134,6 +148,9 @@ public sealed class ZoneAnomalySystem : SharedZoneAnomalySystem
     private void SetState(Entity<ZoneAnomalyComponent> anomaly, ZoneAnomalyState state)
     {
         var previous = anomaly.Comp.State;
+        if (previous == state)
+            return; // Avoid redundant appearance updates and event spam
+
         anomaly.Comp.State = state;
 
         var ev = new ZoneAnomalyChangedState(anomaly, state, previous);

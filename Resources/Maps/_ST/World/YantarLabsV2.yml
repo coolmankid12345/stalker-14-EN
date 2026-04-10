@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/30/2026 09:54:36
-  entityCount: 3136
+  time: 04/09/2026 09:07:47
+  entityCount: 3174
 maps:
 - 1
 grids:
@@ -23,6 +23,7 @@ tilemap:
   147: Plating
   150: PlatingDamaged
   1: STFloorCaveDrought
+  2: STFloorDirt
   160: STFloorGrayConcrete
   162: STFloorGrayConcreteSmooth
 entities:
@@ -116,7 +117,7 @@ entities:
           version: 7
         1,5:
           ind: 1,5
-          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAACgAAAAAAAAXgAAAAAAAF4AAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKIAAAAAAACgAAAAAAAAogAAAAAAAKIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAoAAAAAAAAKIAAAAAAABeAAAAAAAAogAAAAAAAKIAAAAAAACgAAAAAAAAogAAAAAAAKIAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAogAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAACiAAAAAAAAogAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAogAAAAAAAKIAAAAAAACgAAAAAAAAoAAAAAAAAKIAAAAAAACiAAAAAAAAogAAAAAAAKIAAAAAAACgAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKwAAAAAAAKIAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAogAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAogAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKIAAAAAAACgAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAF4AAAAAAABeAAAAAAAAXgAAAAAAAKIAAAAAAABeAAAAAAAAXgAAAAAAAF4AAAAAAACiAAAAAAAAogAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+          tiles: GgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAGgAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAACgAAAAAAAAXgAAAAAAAF4AAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKIAAAAAAACgAAAAAAAAogAAAAAAAKIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAoAAAAAAAAKIAAAAAAABeAAAAAAAAogAAAAAAAKIAAAAAAACgAAAAAAAAogAAAAAAAKIAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAogAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAACiAAAAAAAAogAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAogAAAAAAAKIAAAAAAACgAAAAAAAAoAAAAAAAAKIAAAAAAACiAAAAAAAAogAAAAAAAKIAAAAAAACgAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKwAAAAAAAKIAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACiAAAAAAAAogAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAogAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKAAAAAAAACgAAAAAAAAoAAAAAAAAKIAAAAAAACgAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAF4AAAAAAABeAAAAAAAAXgAAAAAAAKIAAAAAAABeAAAAAAAAXgAAAAAAAF4AAAAAAACiAAAAAAAAogAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
           version: 7
         1,6:
           ind: 1,6
@@ -214,6 +215,10 @@ entities:
           ind: 3,3
           tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
           version: 7
+        0,5:
+          ind: 0,5
+          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgAAAAAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAGgAAAAAAAAIAAAAAAAACAAAAAAAAAgAAAAAAAAIAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgAAAAAAAAIAAAAAAAACAAAAAAAAAgAAAAAAAAIAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoAAAAAAAACAAAAAAAAAgAAAAAAAAIAAAAAAAACAAAAAAAAGgAAAAAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAGgAAAAAAAAIAAAAAAAACAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAABoAAAAAAAAaAAAAAAAAGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+          version: 7
     - type: SpreaderGrid
     - type: GridPathfinding
     - type: Gravity
@@ -242,6 +247,7 @@ entities:
             662: 30.332981,167.03012
             663: 3.904346,169.18637
             871: 49.30114,56.156815
+            923: 11.18989,86.144424
         - node:
             color: '#FFFFFFFF'
             id: Basalt3
@@ -251,6 +257,7 @@ entities:
             665: -5.237007,169.91293
             863: 38.650394,53.080833
             864: 43.267582,52.16677
+            924: 11.830515,84.3163
         - node:
             color: '#FFFFFFFF'
             id: Basalt5
@@ -268,6 +275,7 @@ entities:
             865: 41.087894,53.737083
             866: 40.00977,54.088646
             867: 47.181644,52.07302
+            925: 12.268015,84.59755
         - node:
             angle: 1.5707963267948966 rad
             color: '#9A000093'
@@ -305,6 +313,8 @@ entities:
             697: 32.82536,159.47731
             698: 33.95036,157.95387
             699: 29.986801,167.6385
+            926: 12.424265,83.9413
+            927: 9.361765,83.769424
         - node:
             angle: 1.5707963267948966 rad
             color: '#9A000093'
@@ -329,6 +339,40 @@ entities:
             868: 48.517582,51.088646
             869: 39.658207,53.31521
             870: 50.121666,53.461502
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#889295FF'
+            id: BetonFour
+          decals:
+            921: 11.455515,86.0976
+            922: 12.31489,84.4101
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#889295FF'
+            id: BetonThree
+          decals:
+            920: 11.393015,85.25385
+        - node:
+            color: '#889295FF'
+            id: BetonThree
+          decals:
+            919: 10.268015,87.20698
+        - node:
+            color: '#452D268D'
+            id: Damaged
+          decals:
+            929: 9.270401,86.28932
+            930: 8.317276,85.8987
+            931: 8.254776,85.44557
+            932: 9.629776,85.2737
+            933: 10.020401,85.44557
+            934: 9.129776,84.7737
+            935: 8.567276,84.0862
+            936: 8.911026,83.88307
+            937: 9.223526,85.55495
+            938: 9.426651,87.17995
+            939: 7.676651,85.69557
+            940: 10.489151,85.55495
         - node:
             color: '#48433FA2'
             id: Damaged
@@ -1063,6 +1107,11 @@ entities:
           decals:
             700: 0.9307735,170.93225
         - node:
+            color: '#FFFFFFFF'
+            id: bar2
+          decals:
+            928: 12.036026,86.445755
+        - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
             id: bar2
@@ -1262,251 +1311,251 @@ entities:
       loadedMarkers: {}
       pendingMarkers: {}
       loadedChunks:
-      - 32,32
-      - 32,24
-      - 32,16
-      - 32,8
-      - 32,0
-      - 32,-8
-      - 32,-16
-      - 32,-24
-      - 32,-32
-      - 24,32
-      - 24,24
-      - 24,16
-      - 24,8
-      - 24,0
-      - 24,-8
-      - 24,-16
-      - 24,-24
-      - 24,-32
-      - 16,32
-      - 16,24
-      - 16,16
-      - 16,8
-      - 16,0
-      - 16,-8
-      - 16,-16
-      - 16,-24
-      - 16,-32
-      - 8,32
-      - 8,24
-      - 8,16
-      - 8,8
-      - 8,0
-      - 8,-8
-      - 8,-16
-      - 8,-24
-      - 8,-32
-      - 0,32
-      - 0,24
-      - 0,16
-      - 0,8
-      - 0,0
-      - 0,-8
-      - 0,-16
-      - 0,-24
-      - 0,-32
-      - -8,32
-      - -8,24
-      - -8,16
-      - -8,8
-      - -8,0
-      - -8,-8
-      - -8,-16
-      - -8,-24
-      - -8,-32
-      - -16,32
-      - -16,24
-      - -16,16
-      - -16,8
-      - -16,0
-      - -16,-8
-      - -16,-16
-      - -16,-24
-      - -16,-32
-      - -24,32
-      - -24,24
-      - -24,16
-      - -24,8
-      - -24,0
-      - -24,-8
-      - -24,-16
-      - -24,-24
-      - -24,-32
-      - -32,32
-      - -32,24
-      - -32,16
-      - -32,8
-      - -32,0
-      - -32,-8
-      - -32,-16
-      - -32,-24
-      - -32,-32
+      - 16,64
+      - 16,56
+      - 8,64
+      - 24,64
+      - 0,64
+      - 16,48
+      - -8,64
+      - 24,72
+      - 40,96
+      - 16,72
+      - 32,88
+      - 40,112
+      - 32,72
+      - 32,96
+      - 24,96
+      - 24,56
+      - 32,80
+      - 24,80
+      - 16,96
+      - 16,80
+      - -16,64
+      - 40,88
+      - 24,88
+      - 8,80
+      - 24,48
+      - 16,88
+      - 40,104
+      - 0,80
+      - 40,80
+      - 40,72
+      - 8,88
+      - 0,88
+      - 32,64
+      - 32,56
+      - 32,48
+      - 8,72
+      - 32,112
+      - 8,96
+      - -8,80
+      - 32,104
+      - 40,64
+      - 24,104
+      - 8,56
+      - 0,56
+      - 0,96
+      - -8,88
+      - 24,112
+      - 8,48
+      - -24,112
+      - 0,48
+      - 16,104
+      - -16,80
+      - -8,48
+      - 40,56
+      - 16,112
+      - -16,88
+      - 8,104
+      - 0,72
+      - -8,72
+      - -24,104
+      - -24,96
+      - 8,112
+      - 0,104
+      - 40,48
+      - -24,88
+      - -24,80
+      - 0,112
+      - -8,104
+      - -8,112
+      - -16,72
+      - -16,56
+      - -16,48
+      - -16,112
+      - -24,72
+      - -16,104
+      - -24,64
+      - -24,56
+      - -8,96
+      - -24,48
+      - -8,56
+      - -16,96
       entities:
-        32,32: {}
-        32,24: {}
-        32,16: {}
-        32,8: {}
-        32,0: {}
-        32,-8: {}
-        32,-16: {}
-        32,-24: {}
-        32,-32: {}
-        24,32: {}
-        24,24: {}
-        24,16: {}
-        24,8: {}
-        24,0: {}
-        24,-8: {}
-        24,-16: {}
-        24,-24: {}
-        24,-32: {}
-        16,32: {}
-        16,24: {}
-        16,16: {}
-        16,8: {}
-        16,0: {}
-        16,-8: {}
-        16,-16: {}
-        16,-24: {}
-        16,-32: {}
-        8,32: {}
-        8,24: {}
-        8,16: {}
-        8,8: {}
-        8,0: {}
-        8,-8: {}
-        8,-16: {}
-        8,-24: {}
-        8,-32: {}
-        0,32: {}
-        0,24: {}
-        0,16: {}
-        0,8: {}
-        0,0: {}
-        0,-8: {}
-        0,-16: {}
-        0,-24: {}
-        0,-32: {}
-        -8,32: {}
-        -8,24: {}
-        -8,16: {}
-        -8,8: {}
-        -8,0: {}
-        -8,-8: {}
-        -8,-16: {}
-        -8,-24: {}
-        -8,-32: {}
-        -16,32: {}
-        -16,24: {}
-        -16,16: {}
-        -16,8: {}
-        -16,0: {}
-        -16,-8: {}
-        -16,-16: {}
-        -16,-24: {}
-        -16,-32: {}
-        -24,32: {}
-        -24,24: {}
-        -24,16: {}
-        -24,8: {}
-        -24,0: {}
-        -24,-8: {}
-        -24,-16: {}
-        -24,-24: {}
-        -24,-32: {}
-        -32,32: {}
-        -32,24: {}
-        -32,16: {}
-        -32,8: {}
-        -32,0: {}
-        -32,-8: {}
-        -32,-16: {}
-        -32,-24: {}
-        -32,-32: {}
+        16,64: {}
+        16,56: {}
+        8,64: {}
+        24,64: {}
+        0,64: {}
+        16,48: {}
+        -8,64: {}
+        24,72: {}
+        40,96: {}
+        16,72: {}
+        32,88: {}
+        40,112: {}
+        32,72: {}
+        32,96: {}
+        24,96: {}
+        24,56: {}
+        32,80: {}
+        24,80: {}
+        16,96: {}
+        16,80: {}
+        -16,64: {}
+        40,88: {}
+        24,88: {}
+        8,80: {}
+        24,48: {}
+        16,88: {}
+        40,104: {}
+        0,80: {}
+        40,80: {}
+        40,72: {}
+        8,88: {}
+        0,88: {}
+        32,64: {}
+        32,56: {}
+        32,48: {}
+        8,72: {}
+        32,112: {}
+        8,96: {}
+        -8,80: {}
+        32,104: {}
+        40,64: {}
+        24,104: {}
+        8,56: {}
+        0,56: {}
+        0,96: {}
+        -8,88: {}
+        24,112: {}
+        8,48: {}
+        -24,112: {}
+        0,48: {}
+        16,104: {}
+        -16,80: {}
+        -8,48: {}
+        40,56: {}
+        16,112: {}
+        -16,88: {}
+        8,104: {}
+        0,72: {}
+        -8,72: {}
+        -24,104: {}
+        -24,96: {}
+        8,112: {}
+        0,104: {}
+        40,48: {}
+        -24,88: {}
+        -24,80: {}
+        0,112: {}
+        -8,104: {}
+        -8,112: {}
+        -16,72: {}
+        -16,56: {}
+        -16,48: {}
+        -16,112: {}
+        -24,72: {}
+        -16,104: {}
+        -24,64: {}
+        -24,56: {}
+        -8,96: {}
+        -24,48: {}
+        -8,56: {}
+        -16,96: {}
       decals:
-        32,32: {}
-        32,24: {}
-        32,16: {}
-        32,8: {}
-        32,0: {}
-        32,-8: {}
-        32,-16: {}
-        32,-24: {}
-        32,-32: {}
-        24,32: {}
-        24,24: {}
-        24,16: {}
-        24,8: {}
-        24,0: {}
-        24,-8: {}
-        24,-16: {}
-        24,-24: {}
-        24,-32: {}
-        16,32: {}
-        16,24: {}
-        16,16: {}
-        16,8: {}
-        16,0: {}
-        16,-8: {}
-        16,-16: {}
-        16,-24: {}
-        16,-32: {}
-        8,32: {}
-        8,24: {}
-        8,16: {}
-        8,8: {}
-        8,0: {}
-        8,-8: {}
-        8,-16: {}
-        8,-24: {}
-        8,-32: {}
-        0,32: {}
-        0,24: {}
-        0,16: {}
-        0,8: {}
-        0,0: {}
-        0,-8: {}
-        0,-16: {}
-        0,-24: {}
-        0,-32: {}
-        -8,32: {}
-        -8,24: {}
-        -8,16: {}
-        -8,8: {}
-        -8,0: {}
-        -8,-8: {}
-        -8,-16: {}
-        -8,-24: {}
-        -8,-32: {}
-        -16,32: {}
-        -16,24: {}
-        -16,16: {}
-        -16,8: {}
-        -16,0: {}
-        -16,-8: {}
-        -16,-16: {}
-        -16,-24: {}
-        -16,-32: {}
-        -24,32: {}
-        -24,24: {}
-        -24,16: {}
-        -24,8: {}
-        -24,0: {}
-        -24,-8: {}
-        -24,-16: {}
-        -24,-24: {}
-        -24,-32: {}
-        -32,32: {}
-        -32,24: {}
-        -32,16: {}
-        -32,8: {}
-        -32,0: {}
-        -32,-8: {}
-        -32,-16: {}
-        -32,-24: {}
-        -32,-32: {}
+        16,64: {}
+        16,56: {}
+        8,64: {}
+        24,64: {}
+        0,64: {}
+        16,48: {}
+        -8,64: {}
+        24,72: {}
+        40,96: {}
+        16,72: {}
+        32,88: {}
+        40,112: {}
+        32,72: {}
+        32,96: {}
+        24,96: {}
+        24,56: {}
+        32,80: {}
+        24,80: {}
+        16,96: {}
+        16,80: {}
+        -16,64: {}
+        40,88: {}
+        24,88: {}
+        8,80: {}
+        24,48: {}
+        16,88: {}
+        40,104: {}
+        0,80: {}
+        40,80: {}
+        40,72: {}
+        8,88: {}
+        0,88: {}
+        32,64: {}
+        32,56: {}
+        32,48: {}
+        8,72: {}
+        32,112: {}
+        8,96: {}
+        -8,80: {}
+        32,104: {}
+        40,64: {}
+        24,104: {}
+        8,56: {}
+        0,56: {}
+        0,96: {}
+        -8,88: {}
+        24,112: {}
+        8,48: {}
+        -24,112: {}
+        0,48: {}
+        16,104: {}
+        -16,80: {}
+        -8,48: {}
+        40,56: {}
+        16,112: {}
+        -16,88: {}
+        8,104: {}
+        0,72: {}
+        -8,72: {}
+        -24,104: {}
+        -24,96: {}
+        8,112: {}
+        0,104: {}
+        40,48: {}
+        -24,88: {}
+        -24,80: {}
+        0,112: {}
+        -8,104: {}
+        -8,112: {}
+        -16,72: {}
+        -16,56: {}
+        -16,48: {}
+        -16,112: {}
+        -24,72: {}
+        -16,104: {}
+        -24,64: {}
+        -24,56: {}
+        -8,96: {}
+        -24,48: {}
+        -8,56: {}
+        -16,96: {}
       modifiedTiles:
         -32,-32:
         - -32,-32
@@ -42504,6 +42553,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 12.5,140.5
       parent: 1
+- proto: MetalDoorFalloutMonolithClosed
+  entities:
+  - uid: 605
+    components:
+    - type: Transform
+      pos: 15.5,79.5
+      parent: 1
 - proto: MetalGrateDoorFallout
   entities:
   - uid: 85
@@ -42766,6 +42822,16 @@ entities:
       rot: 3.141592653589793 rad
       pos: 23.5,127.5
       parent: 1
+- proto: Pickaxe
+  entities:
+  - uid: 3056
+    components:
+    - type: Transform
+      pos: 12.03002,86.60724
+      parent: 1
+    missingComponents:
+    - Item
+    - Pullable
 - proto: pipeStalker
   entities:
   - uid: 225
@@ -43387,6 +43453,17 @@ entities:
     - type: Transform
       pos: -15.5,28.5
       parent: 1
+- proto: Shovel
+  entities:
+  - uid: 3057
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 9.06127,85.15411
+      parent: 1
+    missingComponents:
+    - Item
+    - Pullable
 - proto: SinkEmpty
   entities:
   - uid: 356
@@ -44161,6 +44238,13 @@ entities:
     - type: Transform
       pos: 47.5,154.5
       parent: 1
+- proto: STAlwaysPoweredLantern
+  entities:
+  - uid: 3055
+    components:
+    - type: Transform
+      pos: 11.389395,87.13849
+      parent: 1
 - proto: STBarricade
   entities:
   - uid: 1963
@@ -44317,6 +44401,11 @@ entities:
     components:
     - type: Transform
       pos: 15.404549,144.3667
+      parent: 1
+  - uid: 3054
+    components:
+    - type: Transform
+      pos: 9.451895,86.45099
       parent: 1
 - proto: SteelBench
   entities:
@@ -45792,6 +45881,171 @@ entities:
     components:
     - type: Transform
       pos: 46.5,53.5
+      parent: 1
+  - uid: 3020
+    components:
+    - type: Transform
+      pos: 16.5,80.5
+      parent: 1
+  - uid: 3021
+    components:
+    - type: Transform
+      pos: 16.5,81.5
+      parent: 1
+  - uid: 3022
+    components:
+    - type: Transform
+      pos: 16.5,82.5
+      parent: 1
+  - uid: 3023
+    components:
+    - type: Transform
+      pos: 16.5,83.5
+      parent: 1
+  - uid: 3024
+    components:
+    - type: Transform
+      pos: 16.5,84.5
+      parent: 1
+  - uid: 3025
+    components:
+    - type: Transform
+      pos: 15.5,84.5
+      parent: 1
+  - uid: 3026
+    components:
+    - type: Transform
+      pos: 15.5,85.5
+      parent: 1
+  - uid: 3027
+    components:
+    - type: Transform
+      pos: 14.5,85.5
+      parent: 1
+  - uid: 3028
+    components:
+    - type: Transform
+      pos: 13.5,85.5
+      parent: 1
+  - uid: 3029
+    components:
+    - type: Transform
+      pos: 14.5,80.5
+      parent: 1
+  - uid: 3030
+    components:
+    - type: Transform
+      pos: 14.5,81.5
+      parent: 1
+  - uid: 3031
+    components:
+    - type: Transform
+      pos: 14.5,82.5
+      parent: 1
+  - uid: 3032
+    components:
+    - type: Transform
+      pos: 13.5,82.5
+      parent: 1
+  - uid: 3033
+    components:
+    - type: Transform
+      pos: 13.5,83.5
+      parent: 1
+  - uid: 3034
+    components:
+    - type: Transform
+      pos: 12.5,83.5
+      parent: 1
+  - uid: 3035
+    components:
+    - type: Transform
+      pos: 11.5,83.5
+      parent: 1
+  - uid: 3036
+    components:
+    - type: Transform
+      pos: 10.5,83.5
+      parent: 1
+  - uid: 3037
+    components:
+    - type: Transform
+      pos: 9.5,83.5
+      parent: 1
+  - uid: 3038
+    components:
+    - type: Transform
+      pos: 8.5,83.5
+      parent: 1
+  - uid: 3039
+    components:
+    - type: Transform
+      pos: 8.5,84.5
+      parent: 1
+  - uid: 3040
+    components:
+    - type: Transform
+      pos: 7.5,84.5
+      parent: 1
+  - uid: 3041
+    components:
+    - type: Transform
+      pos: 7.5,85.5
+      parent: 1
+  - uid: 3042
+    components:
+    - type: Transform
+      pos: 7.5,86.5
+      parent: 1
+  - uid: 3043
+    components:
+    - type: Transform
+      pos: 7.5,87.5
+      parent: 1
+  - uid: 3044
+    components:
+    - type: Transform
+      pos: 8.5,87.5
+      parent: 1
+  - uid: 3045
+    components:
+    - type: Transform
+      pos: 8.5,88.5
+      parent: 1
+  - uid: 3046
+    components:
+    - type: Transform
+      pos: 9.5,88.5
+      parent: 1
+  - uid: 3047
+    components:
+    - type: Transform
+      pos: 10.5,88.5
+      parent: 1
+  - uid: 3048
+    components:
+    - type: Transform
+      pos: 11.5,88.5
+      parent: 1
+  - uid: 3049
+    components:
+    - type: Transform
+      pos: 12.5,88.5
+      parent: 1
+  - uid: 3050
+    components:
+    - type: Transform
+      pos: 13.5,88.5
+      parent: 1
+  - uid: 3051
+    components:
+    - type: Transform
+      pos: 13.5,87.5
+      parent: 1
+  - uid: 3053
+    components:
+    - type: Transform
+      pos: 13.5,86.5
       parent: 1
 - proto: TeslaGenerator
   entities:
@@ -48191,12 +48445,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 14.5,79.5
-      parent: 1
-  - uid: 605
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 15.5,79.5
       parent: 1
   - uid: 606
     components:
@@ -54093,6 +54341,9 @@ entities:
     - type: Transform
       pos: 15.5,144.5
       parent: 1
+    - type: LinkedEntity
+      linkedEntities:
+      - 2795
 - proto: Yantar-Lab3
   entities:
   - uid: 2731
@@ -54107,6 +54358,16 @@ entities:
     - type: Transform
       pos: -29.5,169.5
       parent: 1
+    - type: LinkedEntity
+      linkedEntities:
+      - 2730
+- proto: Yantar-YantarLabMono
+  entities:
+  - uid: 3052
+    components:
+    - type: Transform
+      pos: 9.5,86.5
+      parent: 1
 - proto: YantarLabLadder
   entities:
   - uid: 2826
@@ -54114,6 +54375,9 @@ entities:
     - type: Transform
       pos: 7.5,10.5
       parent: 1
+    - type: LinkedEntity
+      linkedEntities:
+      - 2992
 - proto: YantarLabLadderUncollide
   entities:
   - uid: 2992
@@ -54121,6 +54385,9 @@ entities:
     - type: Transform
       pos: 7.5,19.5
       parent: 1
+    - type: LinkedEntity
+      linkedEntities:
+      - 2826
 - proto: Zerkalo
   entities:
   - uid: 359

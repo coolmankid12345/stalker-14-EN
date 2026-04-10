@@ -2225,5 +2225,50 @@
   id: 235
   time: '2026-04-07T22:48:13.969231+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/770
+- author: BELNAKBU
+  changes:
+  - message: Now theres no ninja flesh
+    type: Add
+  id: 236
+  time: '2026-04-08T15:21:55.836311+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/773
+- author: dallaszzz & @TheOverwatchVoice
+  changes:
+  - message: A new map that can be accessed somewhere in Red Forest.
+    type: Add
+  id: 237
+  time: '2026-04-08T23:25:25.739543+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/779
+- author: nathan736
+  changes:
+  - message: you can now modify bizon mags into moded bizon mags using the same easy
+      craft method as the bizon.
+    type: Add
+  id: 238
+  time: '2026-04-08T23:56:39.705735+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/622
+- author: crocodilecarousel
+  changes:
+  - message: Karambit knife for Neutrals
+    type: Add
+  - message: Price adjustments for Neutral shop
+    type: Tweak
+  id: 239
+  time: '2026-04-09T00:00:33.100464+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/781
+- author: BELNAKBU
+  changes:
+  - message: Optimization fix
+    type: Add
+  id: 240
+  time: '2026-04-09T21:41:17.750310+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/778
+- author: crocodilecarousel
+  changes:
+  - message: Adjusted artifacts for use with limited artifact slots
+    type: Tweak
+  id: 241
+  time: '2026-04-09T22:18:22.972729+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/763
 Name: Stalker
 Order: -1

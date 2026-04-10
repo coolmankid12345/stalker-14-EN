@@ -376,6 +376,7 @@
     - !type:IsOnSpecificMapRule
       maps:
         - "Рыжий лес"
+        - "JupiterPlant"
 
 - type: rules
   id: AmbianceRedForestNight
@@ -386,6 +387,7 @@
     - !type:IsOnSpecificMapRule
       maps:
         - "Рыжий лес"
+        - "JupiterPlant"
 
 # Limansk
 - type: rules

@@ -1,10 +1,10 @@
 - type: shopPreset
-  id: NeutralsShopPresetZoneEN # Sidorovich Prices
+  id: NeutralsShopPresetZoneEN # Sidorovich Prices, higher t1 sell prices
   minSellPrice: 5
   itemsForSale:
 
     # Thermal group - 1
-    ZoneArtifactFireball: 405
+    ZoneArtifactFireball: 500
     ZoneArtifactEye: 610
     ZoneArtifactFlame: 1215
     ZoneArtifactBunch: 1420
@@ -16,7 +16,7 @@
     ZoneArtifactCristall: 2430
     ZoneArtifactLithosphere: 4860
     # Electrical group - 1
-    ZoneArtifactSparkler: 405
+    ZoneArtifactSparkler: 500
     ZoneArtifactBattery: 475
     ZoneArtifactFlash: 1215
     ZoneArtifactAccumulator: 1215
@@ -26,7 +26,7 @@
     ZoneArtifactTesla: 3645
     ZoneArtifactIce: 4860
     # Gravity group - 1
-    ArtMedusa: 405
+    ArtMedusa: 500
     ZoneArtifactFlower: 610
     ZoneArtifactNightStar: 2430
     ZoneArtifactWhirlwind: 550
@@ -35,7 +35,7 @@
     ZoneArtifactStoneCube: 850
     ZoneArtifactDarkCube: 3645
     # Gravity group - 2
-    ZoneArtifactVyvert: 405
+    ZoneArtifactVyvert: 500
     ZoneArtifactAmoeba: 610
     ZoneArtifactFloodlight: 610
     ZoneArtifactGravi: 1215
@@ -58,24 +58,24 @@
     ZoneArtifactKolobok: 3645
     ZoneArtifactBeer: 600
     # Acidic group - 2
-    ZoneArtifactPellicle: 405
+    ZoneArtifactPellicle: 500
     ZoneArtifactBaloon: 3645
 
     # Mutant parts
 
     #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 130 # T1
+    MutantPartBoarHoof: 155 # T1
     MutantPartSeasonedBoarHoof: 255 # T2
     MutantPartOldBoarHoof: 385 # T3
 
     #Bears ---------
-    MutantPartBearClaw: 245
+    MutantPartBearClaw: 325
     MutantPartBearPaw: 390
     MutantPartBearEye: 590
     ClothingHeadBear: 700
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 90
+    MutantPartBlindDogTail: 105
     MutantPartFleshEye: 190
     FoodMeatSpiderLeg: 30
     MutantPartCatGland: 290
@@ -85,7 +85,7 @@
     MutantPartPseudodogTail: 285
     MutantPartSnorkFoot: 475
     MutantPartPsiDogTail: 400
-    MutantPartFrogLeg: 200
+    MutantPartFrogLeg: 300
 
     #T3 -------- Health * 3 Modified by Oracle
     MutantPartBloodsuckerTentacles: 1375
@@ -113,8 +113,8 @@
     items:
       # Pistols
       STWeaponPistolM1911: 1200
-      WeaponPistolStalkerTT: 75 # T1
-      WeaponPistolStalkerPM: 75 # T1
+      WeaponPistolStalkerTT: 50 # T1
+      WeaponPistolStalkerPM: 50 # T1
       STWeaponRevolverSWModel325: 500
       STWeaponRevolverSWPC325TR: 1000
       WeaponPistolStalkerAPS: 900 # T2
@@ -124,8 +124,8 @@
       STWeaponShotgunMossbergM88: 650
       # SMGs
       STWeaponSMGMP40: 1000
-      STWeaponSMGPPSh41: 2750
-      STWeaponSMGPP91: 4000
+      STWeaponSMGPPSh41: 2250
+      STWeaponSMGPP91: 2850
       # Rifles
       STWeaponRifleSaiga545: 1750 # T3
       STWeaponRifleAKS74U: 2000
@@ -140,7 +140,7 @@
       Base739Mag10: 250 #T1
       # 5,45x39
       Base545Mag10: 80 #T1
-      545Mag20: 260 #T2
+      545Mag20: 250 #T2
       # Other
       M1911Mag7: 150
       BasePMMag: 12
@@ -155,52 +155,52 @@
     priority: 3
     items:
       7mmBuckshotBox: 30 # T0
-      6mmBuckshotBox: 300 # T2
+      6mmBuckshotBox: 275 # T2
       # 5.45
       545FMJBox: 700 # T2
-      545HPBox: 500 # Mutant
+      545HPBox: 425 # Mutant
       545PCBox: 1650 # T3
       # 7.39
       739HPBox: 700 # Mutant
       739FMJBox: 1950 # T3
       # 7.54
-      754HPBox: 1250 # Mutant
+      754HPBox: 775 # Mutant
       754FMJBox: 2500 # T3
       # 9.18
-      918PGJBox: 80 # T1
-      918SP7Box: 625 # Mutant
+      918PGJBox: 65 # T1
+      918SP7Box: 595 # Mutant
       918PSTBox: 450 # T2
       918PBMBox: 1450 # T3
       # 9.19
-      919PSOGJBox: 100 # T1
-      919RIPBox: 625 # Mutant
+      919PSOGJBox: 65 # T1
+      919RIPBox: 595 # Mutant
       919PBMBox: 1450 # T3
       919PSTBox: 450 # T2
       # 7.25
-      725PBox: 100 # T1
-      725LRNPCBox: 625 # Mutant
+      725PBox: 75 # T1
+      725LRNPCBox: 595 # Mutant
       725PTBox: 465 # T2
       725PSTBox: 1450 # T3
       #45
-      45ACPRIPBox: 850 # Mutant
-      45ACPLFMJBox: 250 # T1
+      45ACPRIPBox: 625 # Mutant
+      45ACPLFMJBox: 100 # T1
       45ACPMFMJBox: 1550 # T2
       45ACPAPBox: 1950 # T3
 
   - name: shop-category-medicine
     priority: 4
     items:
-      STPillboxAntirad: 350
-      STGauze: 65
-      STOintment: 75
-      STBrutepack: 65
+      STPillboxAntirad: 250
+      STGauze: 45
+      STOintment: 55
+      STBrutepack: 45
       Bloodpack: 550
-      MedkitAI2: 135
+      MedkitAI2: 75
       Defibrillator: 1000
       AntiRadMedipen: 300
       STPillboxProbud: 500
       WakeUpMedipen: 400
-      MedkitMilitary: 400
+      MedkitMilitary: 355
       MedkitScience: 450
       MedkitElite: 1500
       MedkitLAR: 3200
@@ -301,6 +301,7 @@
     priority: 10
     items:
       STCombatKnife: 25
+      STKarambit: 100
       BoxZiptie: 50
       BoxSafebox: 300
       CheapLighter: 5
@@ -335,6 +336,8 @@
     priority: 11
     items:
       BookStalkerEN: 1
+      BookHydroStalker: 25
+      BookCookingStalkerGuide: 25
       Paper: 2
       Pen: 5
 

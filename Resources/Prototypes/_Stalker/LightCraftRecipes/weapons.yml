@@ -47,3 +47,23 @@
     secondIngredient: STWeaponSMGPP19
     keepFirst: true
     time: 5
+
+- type: lightCraftingRecipe #stalker14en start
+  id: LightCraftBizonMag919
+  results:
+  - BizonMag919
+  steps:
+    firstIngredient: ToolkitTearTwo
+    secondIngredient: BizonMag
+    keepFirst: true
+    time: 3
+
+- type: lightCraftingRecipe 
+  id: LightCraftBizonMag
+  results:
+  - BizonMag
+  steps:
+    firstIngredient: ToolkitTearTwo
+    secondIngredient: BizonMag919
+    keepFirst: true
+    time: 3
