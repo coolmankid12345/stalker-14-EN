@@ -466,6 +466,10 @@
         ClothingShoesBootsMerc: 30
         ClothingShoesSwat: 35
         ClothingShoesBootsCombat: 30
+        # SKIRTS
+        ClothingLegsSkirtShort: 50
+        ClothingLegsSkirtMedium: 50
+        ClothingLegsSkirtLong: 50
 
     - name: shop-category-entertainment
       priority: 14

@@ -1,0 +1,39 @@
+﻿- type: entity
+  parent: BaseClothingLegs
+  id: ClothingLegsSkirtShort
+  name: short black skirt
+  description: The favoured clothing of a certain Pahanka, legend has it she outran a military patrol bike while wearing these. Now in short form!
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Legs/short_skirt.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/Legs/short_skirt.rsi
+  - type: Trash
+    time: 900
+
+- type: entity
+  parent: BaseClothingLegs
+  id: ClothingLegsSkirtMedium
+  name: medium black skirt
+  description: The favoured clothing of a certain Pahanka, legend has it she outran a military patrol bike while wearing these. Now in medium form!
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Legs/medium_skirt.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/Legs/medium_skirt.rsi
+  - type: Trash
+    time: 900
+
+- type: entity
+  parent: BaseClothingLegs
+  id: ClothingLegsSkirtLong
+  name: long black skirt
+  description: The favoured clothing of a certain Pahanka, legend has it she outran a military patrol bike while wearing these. Now in long form!
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Legs/long_skirt.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/Legs/long_skirt.rsi
+  - type: Trash
+    time: 900
+
