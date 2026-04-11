@@ -1,0 +1,14 @@
+  {
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by sayanything (delays) for StalkerEN",
+  "size": {
+    "x": 160,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "idle"
+    }
+  ]
+}
