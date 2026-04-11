@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: STClothingBackBase
   id: ClothingBackpackForestryRig
   name: stalker forestry satchel
@@ -10,7 +10,7 @@
     color: "orange"
   - type: Storage #40 клеток преимущественно мелкими квадратами под ношение артов  ##i like your funny words, magic man
     grid:
-    - 0,0,10,5
+    - 0,0,9,5
     whitelist:
       tags:
       - Lumber
@@ -37,7 +37,7 @@
     color: "lightgreen"
   - type: Storage #40 клеток преимущественно мелкими квадратами под ношение артов  ##i like your funny words, magic man
     grid:
-    - 0,0,15,8
+    - 0,0,11,7
     whitelist:
       tags:
       - Produce
@@ -54,12 +54,3 @@
     - Back
     - Back2
     - SuitStorage
-
-- type: Tag
-  id: BerryBook
-
-- type: Tag
-  id: Produce
-
-- type: Tag
-  id: Seed
