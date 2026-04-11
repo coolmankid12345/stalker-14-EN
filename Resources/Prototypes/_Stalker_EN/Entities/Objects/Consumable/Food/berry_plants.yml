@@ -1,4 +1,4 @@
-﻿- type: seed
+- type: seed
   id: STbarberryGrow
   name: barberry bush
   #suffix: ST, Stalker, ботаника # This field does not exist!
@@ -109,7 +109,7 @@
   - StalkerFoodKrijovnik
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 12
   production: 12
   yield: 2
   potency: 20
@@ -134,7 +134,7 @@
   - StalkerFoodMalina
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 12
   production: 12
   yield: 2
   potency: 20
@@ -209,7 +209,7 @@
   - StalkerFoodBrusnika
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 10
   production: 12
   yield: 2
   potency: 20
@@ -284,7 +284,7 @@
   - StalkerFoodVishna
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 12
   production: 12
   yield: 2
   potency: 20
@@ -334,7 +334,7 @@
   - StalkerFoodKlubnika
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 12
   production: 12
   yield: 2
   potency: 20
@@ -409,7 +409,7 @@
   - StalkerFoodVolk
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 10
   production: 12
   yield: 2
   potency: 20
@@ -434,7 +434,7 @@
   - StalkerFoodVoronec
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 16
   production: 12
   yield: 2
   potency: 20
@@ -509,7 +509,7 @@
   - StalkerFoodlapchatka
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 12
   production: 12
   yield: 2
   potency: 20
@@ -534,7 +534,7 @@
   - StalkerFoodAir
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 12
   production: 12
   yield: 2
   potency: 20
@@ -559,7 +559,7 @@
   - StalkerFoodLipa
   harvestRepeat: Repeat
   lifespan: 75
-  maturation: 8
+  maturation: 12
   production: 12
   yield: 2
   potency: 20
