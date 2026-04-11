@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: spade
   parent: BaseItem
   id: STToolSpade
@@ -24,8 +24,5 @@
     storedRotation: -45
   - type: Shovel
     speedModifier: 0.75 # slower at digging than a full-sized shovel
-  - type: StalkerShovel
-    canPlow: True
-    canMakeGrave: False
   - type: RepositoryItem # stalker-en change
     categoryName: repository-tools-category
