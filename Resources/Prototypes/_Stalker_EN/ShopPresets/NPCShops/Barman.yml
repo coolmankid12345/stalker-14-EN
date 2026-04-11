@@ -364,6 +364,9 @@
         ClothingBeltWebbingHolsterStalkerZarya: 1000
         ClothingBeltWebbingDoubleStalkerZaryaSmall: 1500
         ClothingBeltCrafterStalker: 3000
+        # Other
+        ClothingBackpackForestryRig: 500
+        ClothingBackpackForagingRig: 500
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 9

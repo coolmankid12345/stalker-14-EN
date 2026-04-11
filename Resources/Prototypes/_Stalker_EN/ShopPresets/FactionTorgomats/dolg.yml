@@ -178,6 +178,9 @@
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltWebbingHolsterDolgPS5M: 700 # t3 belt
+        # Other
+        ClothingBackpackForestryRig: 500
+        ClothingBackpackForagingRig: 500
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8

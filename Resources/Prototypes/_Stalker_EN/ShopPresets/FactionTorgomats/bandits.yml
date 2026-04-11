@@ -297,6 +297,9 @@
         ClothingBeltBandolierStalker: 20 # T1 - PvE
         ClothingBeltTarzanBlack: 200 # T1 - PvP
         ClothingBeltWebbingHolsterMercBandit: 700
+        # Other
+        ClothingBackpackForestryRig: 500
+        ClothingBackpackForagingRig: 500
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8

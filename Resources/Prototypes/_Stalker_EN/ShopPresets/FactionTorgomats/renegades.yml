@@ -249,6 +249,9 @@
       # Containers
       MedkitCMSStalker: 400 # T1
       MedkitGrizzlyStalker: 1000 # T2
+      # Other
+      ClothingBackpackForestryRig: 500
+      ClothingBackpackForagingRig: 500
 
   - name: shop-category-raincoats-and-gasmasks
     priority: 8

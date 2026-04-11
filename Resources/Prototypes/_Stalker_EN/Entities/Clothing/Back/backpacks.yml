@@ -1,13 +1,13 @@
 ﻿- type: entity
   parent: STClothingBackBase
   id: ClothingBackpackForestryRig
-  name: stalker forestry rig
-  description: A hefty backpack replacement used to store a hatchet and many logs. Useful for deforesting the cordon.
+  name: stalker forestry satchel
+  description: A hefty satchel used to store a hatchet and many logs. Useful for deforesting the cordon.
   suffix: ST
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Other/backpackblue.rsi
-    color: "#ffaa99"
+    sprite: Clothing/Back/Satchels/satchel.rsi
+    color: "orange"
   - type: Storage #40 клеток преимущественно мелкими квадратами под ношение артов  ##i like your funny words, magic man
     grid:
     - 0,0,10,5
@@ -18,3 +18,48 @@
     tags:
     - STClothingBackpackT4
     - BlockBack
+  - type: Clothing
+    equipDelay: 0.2
+    slots:
+    - Back
+    - Back2
+    - SuitStorage
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackForagingRig
+  name: stalker foraging satchel
+  description: A hefty satchel used to store a forager's guide and many berries. Useful for making industrial quantities of jam and potions.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/satchel.rsi
+    color: "lightgreen"
+  - type: Storage #40 клеток преимущественно мелкими квадратами под ношение артов  ##i like your funny words, magic man
+    grid:
+    - 0,0,15,8
+    whitelist:
+      tags:
+      - Produce
+      - Seed
+      - Fruit
+      - BerryBook
+  - type: Tag
+    tags:
+    - STClothingBackpackT4
+    - BlockBack
+  - type: Clothing
+    equipDelay: 0.2
+    slots:
+    - Back
+    - Back2
+    - SuitStorage
+
+- type: Tag
+  id: BerryBook
+
+- type: Tag
+  id: Produce
+
+- type: Tag
+  id: Seed

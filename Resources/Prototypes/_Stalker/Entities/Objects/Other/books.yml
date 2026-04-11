@@ -11,6 +11,9 @@
     - state: book_hydroponics_pod_people
   - type: RepositoryItem # stalker-en change
     categoryName: repository-miscellaneous-category
+  - type: Tag # ST EN change
+    tags:
+    - BerryBook
   - type: Paper
     content: 'Botanical Reference Book.
 The handbook describes the properties of oils obtained from plants.

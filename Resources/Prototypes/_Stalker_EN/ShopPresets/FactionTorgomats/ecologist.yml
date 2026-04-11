@@ -244,6 +244,9 @@
           # Belts
         ClothingBeltBandolierStalker: 50
         ClothingBeltMedicalStalker: 75
+        # Other
+        ClothingBackpackForestryRig: 500
+        ClothingBackpackForagingRig: 500
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8
