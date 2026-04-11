@@ -4,6 +4,9 @@
   id: ArtifactShards
 
 - type: Tag
+  id: BerryBook
+
+- type: Tag
   id: FoldedFlagBand
 
 - type: Tag
@@ -53,6 +56,12 @@
 
 - type: Tag
   id: Plate
+
+- type: Tag
+  id: Produce
+
+- type: Tag
+  id: Seed
 
 - type: Tag
   id: STCookingRecipe
