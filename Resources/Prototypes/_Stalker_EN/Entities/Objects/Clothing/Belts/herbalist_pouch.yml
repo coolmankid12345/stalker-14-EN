@@ -24,6 +24,7 @@
       components:
         - Produce
         - Seed
+      tags:
         - Fruit
   - type: RepositoryItem # stalker-en change
     categoryName: repository-equipment-category
