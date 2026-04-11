@@ -9,6 +9,13 @@ public sealed class ZoneAnomalyTriggerCollideSystem : EntitySystem
     [Dependency] private readonly ZoneAnomalySystem _anomaly = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
+    /// <summary>
+    /// How often to poll trigger colliders in Update. 5 checks/sec is sufficient.
+    /// </summary>
+    private const float TriggerCheckInterval = 0.2f;
+
+    private float _triggerCheckAccumulator;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -23,6 +30,12 @@ public sealed class ZoneAnomalyTriggerCollideSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        _triggerCheckAccumulator += frameTime;
+        if (_triggerCheckAccumulator < TriggerCheckInterval)
+            return;
+
+        _triggerCheckAccumulator -= TriggerCheckInterval;
 
         var query = EntityQueryEnumerator<ZoneAnomalyComponent, ZoneAnomalyUpdateTriggerCollideComponent>();
         while (query.MoveNext(out var uid, out var anomaly, out var trigger))

@@ -70,6 +70,12 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 3.4
       baseSprintSpeed: 4.2
+    - type: FootstepModifier
+      footstepSoundCollection:
+        path: /Audio/_Stalker/Mutants/hoof_hard2.ogg
+        params:
+          volume: 0
+          variation: 0.3
     - type: Sprite
       layers:
         - map: ["enum.DamageStateVisualLayers.Base"]
@@ -95,9 +101,10 @@
       interactSuccessSound:
         path: /Audio/Animals/pig_oink.ogg
     # Stalker-EN start
-    - type: Tag # ST14-EN: Ritual chasm
+    - type: Tag # ST14-EN: Ritual chasm + FootstepSound (overridden from BaseMobMutant)
       tags:
       - STFleshRelated
+      - FootstepSound
     - type: STMobVariantConfig
       variants:
       - chance: 0.08
@@ -208,6 +215,12 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 3.4
       baseSprintSpeed: 4.2
+    - type: FootstepModifier
+      footstepSoundCollection:
+        path: /Audio/_Stalker/Mutants/hoof_hard2.ogg
+        params:
+          volume: 0
+          variation: 0.3
     - type: HTN
       rootTask:
         task: SimpleRangedHostileCompound
@@ -233,9 +246,10 @@
       interactSuccessSound:
         path: /Audio/Animals/pig_oink.ogg
     # Stalker-EN start
-    - type: Tag # ST14-EN: Ritual chasm
+    - type: Tag # ST14-EN: Ritual chasm + FootstepSound (overridden from BaseMobMutant)
       tags:
       - STFleshRelated
+      - FootstepSound
     - type: STMobVariantConfig
       variants:
       - chance: 0.08

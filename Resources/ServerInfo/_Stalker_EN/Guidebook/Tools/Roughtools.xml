@@ -1,0 +1,85 @@
+<Document>
+  # Rough Tools
+
+  <Box>
+    <GuideEntityEmbed Entity="ToolkitTearOne" Caption="Rough tools"/>
+  </Box>
+
+  These tools can be used to modify certain weapons.
+  See the table below.
+
+  ## Details
+  - Once a modification is done, it cannot be reversed or removed
+  - Additional recipes and instructions for using Rough Tools can be found throughout the zone
+
+  ## Weapon Modification Recipes
+<Table Columns="3">
+  <ColorBox Color="#994444">
+    <Box>
+      Weapon
+    </Box>
+  </ColorBox>
+  <ColorBox Color="#449944">
+    <Box>
+      effect
+    </Box>
+  </ColorBox>
+  <ColorBox Color="#444499">
+    <Box>
+      Modifications made
+    </Box>
+  </ColorBox>
+  
+  <ColorBox>
+    <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      <GuideEntityEmbed Entity="STWeaponShotgunSaiga12" Caption="Saiga12"/>
+    </Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Enables fully automatic fire
+    </Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Illegal modification made to firing assembly allowing rapid fire
+    </Box>
+  </ColorBox>
+  
+
+  <ColorBox>
+    <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      <GuideEntityEmbed Entity="STWeaponRifleSaiga545" Caption="Saiga54"/>
+    </Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Enables fully automatic fire
+    </Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Illegal modification made to firing assembly allowing rapid fire boasting a 50% improvement
+    </Box>
+  </ColorBox>
+
+  
+  <ColorBox>
+    <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      <GuideEntityEmbed Entity="STWeaponRifleSaiga739" Caption="Saiga739"/>
+    </Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Enables fully automatic fire
+    </Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Illegal modification made to firing assembly allowing rapid fire boasting a 50% improvement 
+    </Box>
+  </ColorBox>
+
+
+</Table>
+</Document>

@@ -1,0 +1,52 @@
+- type: entity
+  id: StalkerGateDuty
+  name: Gate
+  parent: STBaseMaterialDoor
+  description: A rigid frame that is made of a square pipe. The cladding is a metal corrugated sheeting covered with a polymer coating. It is well preserved for its age.
+  suffix: ST, mapping, Left, Duty
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Doors/Gate/Gate.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    closeTimeOne: 0.2
+    closeTimeTwo: 0.6
+    openTimeOne: 0.6
+    openTimeTwo: 0.2
+    openSound:
+      path: /Audio/_Stalker/Effects/door_metal_open.ogg
+    closeSound:
+      path: /Audio/_Stalker/Effects/door_metal_close.ogg
+  - type: AccessReader
+    access: [[ "Dolg" ]]
+
+
+- type: entity
+  id: StalkerGaterDuty
+  name: Gate
+  parent: STBaseMaterialDoor
+  description: A rigid frame that is made of a square pipe. The cladding is a metal corrugated sheeting covered with a polymer coating. It is well preserved for its age.
+  suffix: ST, mapping, Right, Duty
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Doors/Gate/Gater.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    closeTimeOne: 0.2
+    closeTimeTwo: 0.6
+    openTimeOne: 0.6
+    openTimeTwo: 0.2
+    openSound:
+      path: /Audio/_Stalker/Effects/door_metal_open.ogg
+    closeSound:
+      path: /Audio/_Stalker/Effects/door_metal_close.ogg
+  - type: AccessReader
+    access: [[ "Dolg" ]]

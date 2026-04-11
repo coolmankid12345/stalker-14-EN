@@ -103,3 +103,29 @@
     butcherDelayModifier: 2
   - type: Trash
     time: 300
+
+- type: entity
+  name: karambit
+  parent: STCombatKnife
+  id: STKarambit
+  description: A curved blade that's good for clearing plants out of the way, though it's a bit lacking for self defense.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Melee/karambit.rsi
+    state: icon
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Melee/karambit.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.3
+    damage:
+      types:
+        Slash: 19
+        Structural: 10
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 17
+  - type: DisarmMalus
+    malus: 0.35
