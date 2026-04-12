@@ -33,7 +33,7 @@
   group: Narcotics
   desc: reagent-desc-st-taurine
   physicalDesc: reagent-physical-desc-fizzy
-  flavor: soda
+  #flavor: soda ## ST EN change
   color: "#ffffbf"
   boilingPoint: 212.0
   meltingPoint: 170.0

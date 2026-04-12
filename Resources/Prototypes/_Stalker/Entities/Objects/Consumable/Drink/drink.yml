@@ -9,6 +9,9 @@
     time: 300
   - type: STWeight
     self: 0.8
+  - type: FlavorProfile # ST EN change
+    flavors:
+    - soda
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -34,18 +37,7 @@
   - type: Item
     sprite: _Stalker/Objects/Counsumable/Drinks/baltic.yml
 
-- type: entity
-  parent: STEnergyDrink
-  id: STEnergyDrinkMonster
-  name: Энергетик Монстер
-  description: Освободи зверя
-  components:
-  - type: Trash
-    time: 300
-  - type: Sprite
-    sprite: _Stalker/Objects/Counsumable/Drinks/monster.yml
-  - type: Item
-    sprite: _Stalker/Objects/Counsumable/Drinks/monster.yml
+### STEnergyDrinkMonster moved to _Stalker_EN/Entities/Objects/Consumable/Drinks/monster.yml
 
 - type: entity
   parent: STEnergyDrink

@@ -3,7 +3,5 @@ ent-STEnergyDrink = energy drink
     .suffix = ST
 ent-STDrinkBeerCanBaltic = Baltika beer
     .desc = Taste of Childhood
-ent-STEnergyDrinkMonster = Energy Monster
-    .desc = Free the beast
 ent-STEnergyDrinkRevo = Energy Revo
     .desc = Energy for your hangout!

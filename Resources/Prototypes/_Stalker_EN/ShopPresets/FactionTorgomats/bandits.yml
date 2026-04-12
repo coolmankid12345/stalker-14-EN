@@ -260,6 +260,7 @@
         FoodSTTomato: 75
         STDrinkJar: 300
         HerculesBottleFull: 200
+        STEnergyDrinkMonsterPink: 150
 
     - name: shop-category-armor
       priority: 6

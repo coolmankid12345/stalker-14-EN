@@ -1,0 +1,89 @@
+﻿- type: entity
+  parent: DrinkCanBaseFull
+  id: STEnergyDrinkMonster
+  name: Monster Energy Original
+  description: Free the beast. Holding this can makes you feel powerful, like the monster is inside you.
+  components:
+  - type: Trash
+    time: 300
+  - type: STWeight
+    self: 0.8
+  - type: FlavorProfile
+    flavors:
+    - monsterblack
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: STTaurine
+          Quantity: 30
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Drinks/monster.yml
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Drinks/monster.yml
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: STEnergyDrinkMonsterWhite
+  name: Monster Energy White
+  description: Free the beast. Holding this can makes you feel at the peak of humanity, in touch with your true self. With it, anything is possible.
+  components:
+  - type: Trash
+    time: 300
+  - type: STWeight
+    self: 0.8
+  - type: FlavorProfile
+    flavors:
+    - monsterwhite
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: STTaurine
+          Quantity: 30
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Drinks/monster/whitemonster.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Consumable/Drinks/monster/whitemonster.rsi
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: STEnergyDrinkMonsterPink
+  name: Monster Energy Pink
+  description: Free the beast. Holding this can makes you feel oddly connected with your feminine side.
+  components:
+  - type: Trash
+    time: 300
+  - type: STWeight
+    self: 0.8
+  - type: FlavorProfile
+    flavors:
+    - monsterpink
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: STTaurine
+          Quantity: 30
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Drinks/monster/pinkmonster.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Consumable/Drinks/monster/pinkmonster.rsi
+
+- type: flavor
+  id: monsterblack
+  flavorType: Complex
+  description: like liquid power
+
+- type: flavor
+  id: monsterwhite
+  flavorType: Complex
+  description: like raw electric charge
+
+- type: flavor
+  id: monsterpink
+  flavorType: Complex
+  description: like flowers boiled in pure energy
