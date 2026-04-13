@@ -17,18 +17,12 @@
 
 - type: reagent
   id: MonsterEnergy
-  name: Monster Energy
+  name: reagent-name-monster
   parent: BaseDrink
-  desc: The drink of champions.
+  desc: reagent-desc-monster
   physicalDesc: reagent-physical-desc-strong-smelling
   color: "#009B20"
   recognizable: true
-  metamorphicSprite:
-    sprite: _Stalker/Objects/Counsumable/Drinks/monster.rsi
-    state: icon_open
-  metamorphicMaxFillLevels: 4
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
