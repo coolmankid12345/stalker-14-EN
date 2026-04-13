@@ -37,7 +37,36 @@
   - type: Item
     sprite: _Stalker/Objects/Counsumable/Drinks/baltic.yml
 
-### STEnergyDrinkMonster moved to _Stalker_EN/Entities/Objects/Consumable/Drinks/monster.yml
+### most of STE////////nergyDrinkMonster has been changed by ST EN
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: STEnergyDrinkMonster
+  name: Monster Energy Original
+  description: Free the beast. Holding this can makes you feel powerful, like the monster is inside you.
+  components:
+  - type: Trash
+    time: 300
+  - type: STWeight
+    self: 0.8
+  - type: FlavorProfile
+    flavors:
+    - monsterblack
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: STTaurine
+          Quantity: 15
+        - ReagentId: MonsterEnergy
+          Quantity: 15
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Drinks/monster.yml
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Drinks/monster.yml
+
+### most of STEnergyDrinkMonster has been changed by ST EN
 
 - type: entity
   parent: STEnergyDrink
