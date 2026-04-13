@@ -42,8 +42,8 @@
 - type: entity
   parent: DrinkCanBaseFull
   id: STEnergyDrinkMonster
-  name: Monster Energy Original
-  description: Free the beast. Holding this can makes you feel powerful, like the monster is inside you.
+  name: Энергетик Монстер
+  description: Освободи зверя
   components:
   - type: Trash
     time: 300
