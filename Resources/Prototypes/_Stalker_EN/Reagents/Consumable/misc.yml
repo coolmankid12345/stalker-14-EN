@@ -1,4 +1,4 @@
-﻿- type: reagent
+- type: reagent
   id: STPiss
   name: reagent-name-stpiss
   parent: Toxin
@@ -24,7 +24,7 @@
   color: "#009B20"
   recognizable: true
   metamorphicSprite:
-    sprite: _Stalker/Objects/Counsumable/Drinks/monster.yml
+    sprite: _Stalker/Objects/Counsumable/Drinks/monster.rsi
     state: icon_open
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
