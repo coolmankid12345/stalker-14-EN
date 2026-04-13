@@ -169,28 +169,6 @@ namespace Content.Client.Inventory
                 EntitySlotUpdate?.Invoke(newData);
         }
 
-        // Stalker-En-Changes: Check if an artifact slot is currently blocked (inactive)
-        public bool IsArtifactSlotBlocked(EntityUid owner, string slotName)
-        {
-            if (TryComp<InventorySlotsComponent>(owner, out var slots) &&
-                slots.SlotData.TryGetValue(slotName, out var data))
-            {
-                return data.Blocked;
-            }
-            return false;
-        }
-
-        // Stalker-En-Changes: Get SlotDefinition for a slot by name
-        public SlotDefinition? GetSlotDefinition(EntityUid owner, string slotName)
-        {
-            if (TryComp<InventorySlotsComponent>(owner, out var slots) &&
-                slots.SlotData.TryGetValue(slotName, out var data))
-            {
-                return data.SlotDef;
-            }
-            return null;
-        }
-
         public bool TryAddSlotData(Entity<InventorySlotsComponent> ent, SlotData newSlotData)
         {
             if (!ent.Comp.SlotData.TryAdd(newSlotData.SlotName, newSlotData))

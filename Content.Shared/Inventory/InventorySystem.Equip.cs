@@ -376,21 +376,6 @@ public abstract partial class InventorySystem
             return false;
         }
 
-        // Stalker-Changes: Block equipping artifacts to inactive slots
-        if (slotDefinition.SlotFlags.HasFlag(SlotFlags.ARTIFACT))
-        {
-            var artifactSlots = _artifactSlots.GetArtifactSlotsSorted(inventory);
-            var index = artifactSlots.IndexOf(slot);
-            var activeCount = _artifactSlots.GetActiveCount(target);
-
-            if (index < 0 || index >= activeCount)
-            {
-                reason = "inventory-component-can-equip-slot-inactive";
-                return false;
-            }
-        }
-        // End Stalker-Changes
-
         var attemptEvent = new IsEquippingAttemptEvent(actor, target, itemUid, slotDefinition);
         RaiseLocalEvent(actor, attemptEvent, true);
 
