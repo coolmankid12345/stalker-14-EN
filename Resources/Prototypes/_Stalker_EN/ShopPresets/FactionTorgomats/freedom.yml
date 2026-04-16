@@ -210,7 +210,8 @@
         ClothingOuterJacketFreedom: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseFreedom: 1000 # T2 - PvP
         ClothingOuterArmorRCBZFreedom: 1700 # T2 - ENV
-        ClothingOuterArmorFreedomWind: 2000 # T2
+        ClothingOuterArmorFreedomWind: 2000
+        SetFreedomVeterBuyableCrate: 3200 # T2 Bundle
         SetFreedomDefenderBuyableCrate: 12000 # T3
         ClothingOuterArmorAborigineFreedom: 8500 # T3
         ClothingOuterArmorSevaFreedom: 3200 # T3 - ENV
@@ -228,6 +229,7 @@
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltWebbingHolsterFreedomDefender: 600
+        ClothingBeltWebbingDoubleFreedomVeterSmall: 1000
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8

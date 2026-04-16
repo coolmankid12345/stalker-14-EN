@@ -212,7 +212,7 @@
       items:
         #20gauge
         62mmBuckshotBox: 30 #T0
-        75mmBuckshotBox: 200 #T1
+        75mmBuckshotBox: 200 #T1     
         #7mm
         7mmBuckshotBox: 50 # T0
         6mmBuckshotBox: 275 # T1
@@ -317,6 +317,7 @@
         ClothingBeltTarzanGreen: 200 # T1 - PVP
         ClothingBeltTarzanOrange: 200 # T1 - PVP
         ClothingBeltWebbingHolsterStalkerZarya: 1000
+        ClothingBeltWebbingDoubleStalkerZaryaSmall: 1500
           # Containers
         MedkitCMSStalker: 250 # T1
         MedkitGrizzlyStalker: 850 # T2

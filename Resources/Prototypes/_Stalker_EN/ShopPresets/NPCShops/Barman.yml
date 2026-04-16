@@ -368,6 +368,7 @@
         ClothingBeltPocketPouch: 450
         ClothingBeltHerbalistPouch: 450
         ClothingBeltWebbingHolsterStalkerZarya: 1000
+        ClothingBeltWebbingDoubleStalkerZaryaSmall: 1500
         ClothingBeltCrafterStalker: 3000
 
     - name: shop-category-raincoats-and-gasmasks
