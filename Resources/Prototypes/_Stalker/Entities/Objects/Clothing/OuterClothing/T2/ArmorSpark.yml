@@ -21,14 +21,16 @@
             Blunt: 2
             Slash: 2
             Piercing: 2
-            Radiation: 2
+            Radiation: 1
         coefficients:
             Blunt: 0.8
             Slash: 0.8
             Heat: 0.7
             Piercing: 0.9
             Caustic: 0.8
-            Shock: 0.65
+            Shock: 0.6
+    - type: GrantsArtifactSlots
+      slots: 3 # EN
     - type: ClothingSpeedModifier
       walkModifier: 1
       sprintModifier: 1
@@ -64,7 +66,7 @@
       armorClass: 1
       modifiers:
         flatReductions:
-          Radiation: 1
+          Radiation: 3
           Caustic: 1
 
 - type: entity
@@ -88,6 +90,8 @@
       damage:
         types:
           Radiation: -0.25
+    - type: GrantsArtifactSlots
+      slots: 2 # EN
     - type: Storage
       maxItemSize: Large
       grid:

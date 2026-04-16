@@ -10,7 +10,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/Interceptor_OTV.rsi
   - type: STWeight
-    self: 5
+    self: 4.5
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -36,5 +36,7 @@
         Blunt: 0.8
         Slash: 0.8
         Piercing: 0.8
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.90

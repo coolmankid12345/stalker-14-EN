@@ -108,6 +108,8 @@
       SledgehammerRenegats: 500
       StalkerBallBat: 120
         # Guns
+      #20gauge
+      STBaseWeaponShotgunTOZ106: 500 # T1
       # 7mm
       STWeaponShotgunMP155T: 45 #T0.5
       STWeaponShotgunTOZ34: 200 # T1
@@ -140,6 +142,8 @@
       MP40Mag: 100 #T1
       BaseMP5Mag: 160
       # Other
+      Base2070Mag: 30
+      TOZ106Mag5: 100
       SpeedLoaderRemingtonMagnumEmpty: 150
       BaseTEC9Mag: 60
       STSpeedLoader45ACPEmpty: 150
@@ -150,6 +154,9 @@
   - name: shop-category-ammunition
     priority: 3
     items:
+      #20gauge
+      62mmBuckshotBox: 30 #T0
+      75mmBuckshotBox: 250 #T1
       # 7mm
       6mmBuckshotBox: 320 # T1
       7mmBuckshotBox: 75 # T0
@@ -245,7 +252,6 @@
       ClothingBeltBandolierStalker: 20 # T1 - PVE
       ClothingBeltTarzanOrange: 200 # T1 - PVP
       ClothingBeltWebbingHolsterStalkerZarya: 500
-      ClothingBeltWebbingDoubleStalkerZaryaSmall: 1000
       # Containers
       MedkitCMSStalker: 400 # T1
       MedkitGrizzlyStalker: 1000 # T2
@@ -314,9 +320,9 @@
       ClothingHeatBagStalker: 100
       CasseteTwentyDonateRadio: 500
       CasseteRenegade: 500
-      STElasticRubberRed: 50
-      STElasticRubberGreen: 50
-      STElasticRubberBlue: 50
+      STElasticRubberRed: 1
+      STElasticRubberGreen: 1
+      STElasticRubberBlue: 1
       FoldedFlagRene: 250
       STRag: 10
       # Cameras

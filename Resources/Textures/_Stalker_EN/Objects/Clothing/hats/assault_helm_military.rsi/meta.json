@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "copyright": "Stalker14 CLA",
+  "copyright": "Stalker14 CLA - resprited by Mooringt",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +9,14 @@
     {
       "name": "equipped-HELMET",
       "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions":4
+    },
+    {
+      "name": "inhand-right",
+      "directions":4
     },
     {
       "name": "icon"

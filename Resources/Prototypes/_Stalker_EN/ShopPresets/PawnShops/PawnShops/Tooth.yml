@@ -270,7 +270,6 @@
       ClothingBeltPocketPouch: 350
       ClothingBeltHerbalistPouch: 350
       ClothingBeltWebbingHolsterStalkerZarya: 1350
-      ClothingBeltWebbingDoubleStalkerZaryaSmall: 2000
       ClothingBeltCrafterStalker: 4000
 
   - name: shop-category-raincoats-and-gasmasks
@@ -438,7 +437,8 @@
     items:
       ToolkitTearOne: 6000
       ToolkitTearTwo: 12000
-      CraftGunpowderBank: 120
+      CraftGunpowderBank: 500
+      CraftMaterialGunpowder: 100
 
   sponsorCategories:
     SponsorBacker:

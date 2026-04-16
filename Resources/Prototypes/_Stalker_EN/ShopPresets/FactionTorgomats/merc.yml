@@ -132,9 +132,8 @@
         P99Mag15: 120
         BaseMP5Mag: 260
         BaseTEC9Mag: 120
-        BaseGlockMag10: 100
-        GlockMag24: 200
-        GlockMag33: 300
+        GlockMag17: 150
+        GlockMag33: 600
         # 7.51
         Base751Mag10: 200
         751Mag20: 400
@@ -291,9 +290,9 @@
         STRadioHeadset: 150
         ClothingHeatBagStalker: 100
         STSkinsKitMercenary: 500
-        STElasticRubberRed: 50
-        STElasticRubberGreen: 50
-        STElasticRubberBlue: 50
+        STElasticRubberRed: 1
+        STElasticRubberGreen: 1
+        STElasticRubberBlue: 1
         STFlashlightSeclite: 50
         PowerCellHyper: 50
         BoxFlare: 60
@@ -316,6 +315,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
+        STModuleGlockSwitch: 200
 
     - name: shop-category-paperwork
       priority: 12
@@ -342,6 +342,7 @@
         # faction
         ClothingHeadBandSkull: 30
         ClothingHeadCapMerc: 50
+        ClothingHeadBeretMerc: 50
         # EYES
         ClothingEyesGlasses: 50
         # faction
@@ -352,6 +353,7 @@
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         # NECK
+        ClothingBandageStalkerKrest: 10
         ClothingNeckScarfGray: 100
         # faction
         ClothingBandageStalkerMerc: 10
@@ -375,6 +377,8 @@
         ClothingTorsoTurtlenecksMatrosska: 50
         # HANDS
         ClothingHandsGlovesFingerless: 30
+        ClothingHandsGlovesNitrile: 35
+        ClothingHandsGlovesLatex: 35
         ClothingHandsGlovesMercFingerless: 60
         # OUTERCLOTHING
         # CLOAK

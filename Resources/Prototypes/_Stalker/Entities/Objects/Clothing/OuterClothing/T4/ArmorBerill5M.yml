@@ -33,16 +33,18 @@
       flatReductions:
         Blunt: 6
         Slash: 6
-        Piercing: 8
+        Piercing: 7
         Radiation: 2
       coefficients:
         Blunt: 0.5
         Slash: 0.5
-        Piercing: 0.7
+        Piercing: 0.75
         Caustic: 0.6
-        Heat: 0.7
-        Compression: 0.7
+        Heat: 0.75
+        Compression: 0.75
         Shock: 0.75
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: Craftable
@@ -59,13 +61,18 @@
     armorClass: 4
     modifiers:
       flatReductions:
-        Blunt: 2
-        Slash: 2
-        Piercing: 6
+        Blunt: 6
+        Slash: 6
+        Piercing: 7
+        Radiation: 2
       coefficients:
-        Blunt: 0.80
-        Slash: 0.80
-        Piercing: 0.55
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.75
+        Caustic: 0.6
+        Heat: 0.75
+        Compression: 0.75
+        Shock: 0.75
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/berill5m_military.rsi
   - type: Clothing
@@ -87,6 +94,8 @@
     damage:
       types:
         Radiation: 18.01
+  - type: GrantsArtifactSlots
+    slots: 5 # EN
 
 # Neutral
 

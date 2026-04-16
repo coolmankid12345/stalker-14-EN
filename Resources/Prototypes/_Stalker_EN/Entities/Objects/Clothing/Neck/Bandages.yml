@@ -12,6 +12,42 @@
 
 - type: entity
   parent: ClothingNeckBase
+  id: ClothingBandageStalkerChina
+  name: China Armband
+  description: A piece of cloth with the Chinese flag.
+  suffix: Stalker, Armband
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_china.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_china.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingBandageStalkerSerbia
+  name: Serbia Armband
+  description: A piece of cloth with the Serbian flag.
+  suffix: Stalker, Armband
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_serb.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_serb.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingBandageStalkerUSA
+  name: USA Armband
+  description: A piece of cloth with the flag of the United States of America.
+  suffix: Stalker, Armband
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_usa.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_usa.rsi
+
+- type: entity
+  parent: ClothingNeckBase
   id: ClothingBandageStalkerBand
   name: Bandit Armband
   description: An armband to represent Bandits.

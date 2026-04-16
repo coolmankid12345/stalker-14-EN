@@ -194,8 +194,8 @@
       P99Mag15: 140
       M1911Mag7: 120
       USPMag12: 200
-      BaseGlockMag10: 100
-      GlockMag17: 200
+      GlockMag17: 150
+      GlockMag33: 600
       TTMag: 75
       BaseAPSMag: 100
       STSpeedLoader45ACPEmpty: 120
@@ -319,7 +319,6 @@
       ClothingBeltBandolierStalker: 20 # T1 - PVE
       STClothingBeltThrowingKnifes: 350
       ClothingBeltWebbingHolsterStalkerZarya: 500
-      ClothingBeltWebbingDoubleStalkerZaryaSmall: 1000
       # Containers
       MedkitCMSStalker: 450 # T1
       MedkitGrizzlyStalker: 850 # T2
@@ -402,9 +401,9 @@
       CasseteSevenRadio: 500
       ClothingHeatBagStalker: 100
       ClothingNeckDogtagLoner: 250
-      STElasticRubberRed: 50
-      STElasticRubberGreen: 50
-      STElasticRubberBlue: 50
+      STElasticRubberRed: 1
+      STElasticRubberGreen: 1
+      STElasticRubberBlue: 1
       FoldedFlagCS: 250
       # Cameras
       STCamera: 750
@@ -431,6 +430,7 @@
       STModuleSilencerRiflesT2Nato: 2800
       STModuleSilencerSniperT2: 2800
       STModuleSilencerSMGT2: 2800
+      STModuleGlockSwitch: 200
 
   - name: shop-category-customization
     priority: 12
@@ -452,6 +452,7 @@
       ClothingMaskNeckBalaklava2: 10
       ClothingMaskNeckBalaklava3: 10
       # NECK
+      ClothingBandageStalkerKrest: 10
       ClothingNeckScarfBrown: 100
       ClothingNeckScarfGray: 100
       # faction

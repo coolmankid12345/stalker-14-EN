@@ -14,12 +14,14 @@
     modifiers:
       flatReductions:
         Blunt: 5
-        Slash: 5
-        Piercing: 7
+        Slash: 9
+        Piercing: 9
       coefficients:
         Blunt: 0.7
         Slash: 0.7
         Piercing: 0.6
+  - type: GrantsArtifactSlots
+    slots: 2 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: Sprite
@@ -59,6 +61,8 @@
     damage:
       types:
         Radiation: 18.01
+  - type: GrantsArtifactSlots
+    slots: 5 # EN
 
 - type: entity
   parent: STClothingOuterArmorVeryHeavy
@@ -135,3 +139,5 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/heavy_duty_armor.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/heavy_duty_armor.rsi
+  - type: GrantsArtifactSlots
+    slots: 0 # EN

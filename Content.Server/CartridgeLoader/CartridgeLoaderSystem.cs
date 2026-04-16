@@ -10,6 +10,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Robust.Shared.Timing;
 
 namespace Content.Server.CartridgeLoader;
 
@@ -18,6 +19,10 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
     [Dependency] private readonly PdaSystem _pda = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+
+    private readonly Dictionary<EntityUid, TimeSpan> _lastCartridgeUiUpdate = new();
+    private static readonly TimeSpan CartridgeUiUpdateDebounce = TimeSpan.FromMilliseconds(50);
 
     public override void Initialize()
     {
@@ -128,8 +133,19 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
         if (!Resolve(loaderUid, ref loader))
             return;
 
-        if (_userInterfaceSystem.HasUi(loaderUid, loader.UiKey))
-            _userInterfaceSystem.SetUiState(loaderUid, loader.UiKey, state);
+        if (!_userInterfaceSystem.HasUi(loaderUid, loader.UiKey))
+            return;
+
+        // Debounce UI updates to prevent excessive network traffic
+        var currentTime = _timing.CurTime;
+        if (_lastCartridgeUiUpdate.TryGetValue(loaderUid, out var lastUpdate) &&
+            currentTime - lastUpdate < CartridgeUiUpdateDebounce)
+        {
+            return;
+        }
+
+        _lastCartridgeUiUpdate[loaderUid] = currentTime;
+        _userInterfaceSystem.SetUiState(loaderUid, loader.UiKey, state);
     }
 
     /// <summary>

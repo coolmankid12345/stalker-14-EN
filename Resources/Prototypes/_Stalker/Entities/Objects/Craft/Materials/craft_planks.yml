@@ -17,7 +17,7 @@
       count: 1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: repository-crafting-category
+      categoryName: repository-materials-category
     - type: Tag
       tags:
       - Lumber
@@ -40,7 +40,7 @@
       count: 1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: repository-crafting-category
+      categoryName: repository-materials-category
     - type: Tag
       tags:
       - Lumber
@@ -63,7 +63,7 @@
       count: 1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: repository-crafting-category
+      categoryName: repository-materials-category
     - type: Tag
       tags:
       - Lumber
@@ -86,7 +86,7 @@
       count: 1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: repository-crafting-category
+      categoryName: repository-materials-category
     - type: Tag
       tags:
       - Lumber

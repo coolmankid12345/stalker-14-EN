@@ -1,0 +1,106 @@
+#By Noguchi.47
+- type: entity
+  id: Base2070Mag
+  name: TOZ-106 Magazine (2)
+  description: A magazine for TOZ-106. Can only holds 2 shells. They sell empty.
+  parent: Base545Mag10
+  suffix: Stalker
+  components:
+  - type: STWeight
+    self: 0.2
+  - type: Tag
+    tags:
+      - MagazineTOZ106
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - ShellTOZ106
+    capacity: 2
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,0,0
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+      storagebase: !type:Container
+        ents: []
+      item_slot: !type:ContainerSlot {}
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/2070/2.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_toz_106:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_toz_106:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_toz_106:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/2070/elastic_rubber.rsi
+
+- type: entity
+  id: TOZ106Mag5
+  name: TOZ-106 Magazine (5)
+  description: A magazine for TOZ-106. Can only holds 5 shells. They sell empty.
+  parent: Base2070Mag
+  suffix: Stalker
+  components:
+  - type: STWeight
+    self: 0.4
+  - type: BallisticAmmoProvider
+    capacity: 5
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,0,1
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/2070/5.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemMapper
+    mapLayers:
+      red_toz_106:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_toz_106:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_toz_106:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/2070/elastic_rubber.rsi

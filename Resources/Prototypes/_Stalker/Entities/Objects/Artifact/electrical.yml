@@ -267,7 +267,7 @@
     staminaDamage: -4
     damage:
       types:
-        Compression: 0.5
+        Compression: -0.1
     interval: 1
     ignoreResistances: true # EN
   - type: Armor

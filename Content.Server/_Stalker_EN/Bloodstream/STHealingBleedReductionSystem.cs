@@ -1,3 +1,4 @@
+using Content.Shared._Stalker.Damage.Systems;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
@@ -25,6 +26,7 @@ public sealed class STHealingBleedReductionSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private readonly STDamageAlertSystem _stDamageAlert = default!;
 
     public override void Initialize()
     {
@@ -34,6 +36,8 @@ public sealed class STHealingBleedReductionSystem : EntitySystem
 
     private void OnDamageChanged(Entity<DamageableComponent> ent, ref DamageChangedEvent args)
     {
+        _stDamageAlert.RefreshAlerts(ent.Owner, args.Damageable); // Stalker EN Changes: Had to put here because of upstream alert shit
+
         if (_timing.ApplyingState)
             return;
 

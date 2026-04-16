@@ -491,7 +491,7 @@
     - type: STAnomalyTipsViewing
     - type: AutoImplant
       implants:
-      - STSeraBombImplant
+      - STMonoBombImplant
     - type: IntrinsicRadioReceiver # Stalker EN change start
     - type: IntrinsicRadioTransmitter
       channels:

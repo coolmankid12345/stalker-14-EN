@@ -1,0 +1,56 @@
+﻿- type: entity
+  parent: STClothingHeadBase
+  id: ClothingHeadBeretBase
+  abstract: true
+  suffix: Stalker
+  components:
+  - type: PullDoAfter
+    pullTime: 0.1
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+
+- type: entity
+  parent: ClothingHeadBeretBase
+  id: ClothingHeadBeretBandit
+  name: Bandit beret
+  description: A grey and white beret worn by Bandits.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret_bandit.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret_bandit.rsi
+
+- type: entity
+  parent: ClothingHeadBeretBase
+  id: ClothingHeadBeretMerc
+  name: Mercenary beret
+  description: A blue beret worn by Mercenaries.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret_merc.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret_merc.rsi
+
+- type: entity
+  parent: ClothingHeadBeretBase
+  id: ClothingHeadBeretNeutral
+  name: Neutral beret
+  description: A yellow beret worn by Neutrals.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret-Neutral.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret-Neutral.rsi
+
+- type: entity
+  parent: ClothingHeadBeretBase
+  id: ClothingHeadBeretSvoboda
+  name: Freedom beret
+  description: A green beret worn by Freedom fighters.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret_svoboda.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/beret_svoboda.rsi

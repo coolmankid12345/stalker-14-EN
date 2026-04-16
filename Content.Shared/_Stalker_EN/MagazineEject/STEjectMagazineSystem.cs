@@ -43,6 +43,9 @@ public sealed class STEjectMagazineSystem : EntitySystem
         if (!_hands.TryGetActiveItem(user, out var held))
             return;
 
+        if (!HasComp<ItemSlotsComponent>(held.Value))
+            return;
+
         if (!_actionBlocker.CanInteract(user, null))
             return;
 

@@ -5,7 +5,7 @@
   abstract: true
   components:
   - type: STWeight
-    self: 5.4
+    self: 2.5
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/base_armor.rsi
   - type: Clothing
@@ -14,13 +14,16 @@
     armorClass: 2
     modifiers:
       flatReductions:
-        Blunt: 4
-        Slash: 4
-        Piercing: 4
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 1
       coefficients:
         Blunt: 0.80
         Slash: 0.80
         Piercing: 0.75
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: Craftable

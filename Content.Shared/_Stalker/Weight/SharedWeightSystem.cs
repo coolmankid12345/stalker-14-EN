@@ -39,9 +39,17 @@ public sealed partial class STWeightSystem : EntitySystem
 
         weight.Comp.InsideWeight = ev.Inside;
 
-        // Update movement speed
-        var speedModifier = Math.Clamp(1 - (weight.Comp.Total - weight.Comp.Overload) / (weight.Comp.TotalMaximum - weight.Comp.TotalOverload), 0f, 1f);
+        var speedModifier = Math.Clamp(
+            1 - (weight.Comp.Total - weight.Comp.Overload) / (weight.Comp.TotalMaximum - weight.Comp.TotalOverload),
+            0f,
+            1f);
+
         SetMovementSpeedModifiers(weight, speedModifier);
+
+        RaiseLocalEvent(weight, new STWeightChangedEvent(
+            weight.Comp.Total,
+            weight.Comp.TotalOverload,
+            weight.Comp.TotalMaximum));
     }
 
     private void UpdateWeight(Entity<STWeightComponent> weight)

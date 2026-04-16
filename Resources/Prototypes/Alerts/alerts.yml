@@ -24,6 +24,10 @@
     - category: Temperature
     - category: Hunger
     - category: Thirst
+    - alertType: StalkerAcid
+    - alertType: StalkerRad
+    - alertType: StalkerPsy
+    - alertType: StalkerWeight
     - alertType: Magboots
     - alertType: Rooted
     - alertType: Pacified
@@ -504,3 +508,39 @@
     state: critical
   name: Debug6
   description: Debug
+
+- type: alert
+  id: StalkerAcid
+  icons:
+    - /Textures/_Stalker/Interface/Alerts/Acid/acid1.png
+    - /Textures/_Stalker/Interface/Alerts/Acid/acid2.png
+  maxSeverity: 2
+  name: stalker-alert-acid-name
+  description: stalker-alert-acid-desc
+
+- type: alert
+  id: StalkerRad
+  icons:
+    - /Textures/_Stalker/Interface/Alerts/Rad/rad1.png
+    - /Textures/_Stalker/Interface/Alerts/Rad/rad2.png
+  maxSeverity: 2
+  name: stalker-alert-rad-name
+  description: stalker-alert-rad-desc
+
+- type: alert
+  id: StalkerPsy
+  icons:
+    - /Textures/_Stalker/Interface/Alerts/Psy/psy1.png
+    - /Textures/_Stalker/Interface/Alerts/Psy/psy2.png
+  maxSeverity: 2
+  name: stalker-alert-psy-name
+  description: stalker-alert-psy-desc
+
+- type: alert
+  id: StalkerWeight
+  icons:
+    - /Textures/_Stalker/Interface/Alerts/Weight/weight1.png
+    - /Textures/_Stalker/Interface/Alerts/Weight/weight2.png
+  maxSeverity: 2
+  name: stalker-alert-weight-name
+  description: stalker-alert-weight-desc

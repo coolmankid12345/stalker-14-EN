@@ -1,0 +1,39 @@
+#By Noguchi.47
+- type: entity
+  parent: BaseAmmoBoxStalker
+  suffix: ST
+  id: 62mmBuckshotBox
+  name: box of 20/70 gauge shells loaded with 6.2mm buckshot.
+  description: Only for TOZ-106 and come with 10 shells. Can't penetrate any body armours.
+  components:
+  - type: MagazineVisuals
+    magState: 20ammo
+  - type: BallisticAmmoProvider
+    capacity: 10
+    proto: Cartridge62mmBuckshot
+    whitelist:
+      tags:
+        - ShellTOZ106
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/AmmoBoxes/20g.rsi
+    layers:
+    - state: 20gT0
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 20ammo-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: 62mmBuckshotBox
+  suffix: ST
+  id: 75mmBuckshotBox
+  name: box of 20/70 gauge shells loaded with 7.5mm buckshot.
+  description: Only for TOZ-106 and come with 10 shells. Can penetrate T1 body armours.
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge75mmBuckshot
+  - type: Sprite
+    layers:
+    - state: 20gT1
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 20ammo-1
+      map: ["enum.GunVisualLayers.Mag"]

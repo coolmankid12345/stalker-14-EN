@@ -1451,11 +1451,19 @@ namespace Content.Server.Database
         /// </summary>
         public string? Loadouts { get; set; }
 
-        public Stalker(string storage, string login, string? loadouts = null)
+        /// <summary>
+        /// JSON-serialized crash recovery data (stash snapshot + equipped items).
+        /// Non-null means the player has items to recover after a server crash.
+        /// Cleared on normal round end or after recovery.
+        /// </summary>
+        public string? CrashRecovery { get; set; }
+
+        public Stalker(string storage, string login, string? loadouts = null, string? crashRecovery = null)
         {
             Storage = storage;
             Login = login;
             Loadouts = loadouts;
+            CrashRecovery = crashRecovery;
         }
     }
 

@@ -34,16 +34,18 @@
       flatReductions:
         Blunt: 5
         Slash: 5
-        Piercing: 6
+        Piercing: 4
       coefficients:
-        Blunt: 0.60
+        Blunt: 0.70
         Slash: 0.60
-        Piercing: 0.7
-        Compression: 0.85
+        Piercing: 0.8
+        Compression: 0.8
         Radiation: 0.90
         Heat: 0.75
         Caustic: 0.80
         Shock: 0.75
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.8
   - type: Craftable
@@ -165,7 +167,7 @@
       flatReductions:
         Blunt: 2
         Slash: 2
-        Piercing: 7
+        Piercing: 6
       coefficients:
         Blunt: 0.85
         Slash: 0.85
@@ -307,12 +309,23 @@
         Blunt: 3
         Slash: 6
         Piercing: 6
+        Radiation: 8 # EN
       coefficients:
         Blunt: 0.70
         Slash: 0.55
-        Piercing: 0.65
-        Radiation: 0.95
+        Piercing: 0.7
+        Radiation: 0.85
         Heat: 0.85
+        Shock: 0.85
+        Compression: 0.7
+  - type: PersonalDamage # EN
+    staminaDamage: -2 # EN same as a sparkler
+    interval: 1
+    damage:
+      types:
+        Radiation: -0.15
+  - type: GrantsArtifactSlots
+    slots: 0 # EN
   - type: Storage
     maxItemSize: Large
     blacklist:
@@ -358,17 +371,17 @@
       flatReductions:
         Blunt: 5
         Slash: 6
-        Piercing: 5
+        Piercing: 4
         Radiation: 1
       coefficients:
         Blunt: 0.60
         Slash: 0.65
-        Piercing: 0.7
-        Compression: 0.65
+        Piercing: 0.8
+        Compression: 0.85
         Radiation: 0.80
-        Heat: 0.65
+        Heat: 0.85
         Caustic: 0.70
-        Shock: 0.65
+        Shock: 0.5
   - type: Storage
     maxItemSize: Large
     blacklist:
@@ -425,7 +438,7 @@
     modifiers:
       flatReductions:
         Blunt: 3
-        Slash: 6
+        Slash: 5
         Piercing: 2
         Radiation: 1
         Heat: 1
@@ -433,11 +446,13 @@
         Blunt: 0.7
         Slash: 0.65
         Radiation: 0.8
-        Compression: 0.65
+        Compression: 0.85
         Piercing: 0.9
-        Heat: 0.7
+        Heat: 0.8
         Caustic: 0.75
-        Shock: 0.8
+        Shock: 0.85
+  - type: GrantsArtifactSlots
+    slots: 2 # EN
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
@@ -490,7 +505,7 @@
     modifiers:
       flatReductions:
         Blunt: 3
-        Slash: 6.5
+        Slash: 4
         Piercing: 4
         Radiation: 2
         Heat: 1
@@ -500,7 +515,7 @@
         Blunt: 0.60
         Slash: 0.55
         Piercing: 0.85
-        Compression: 0.65
+        Compression: 0.7
         Radiation: 0.75
         Heat: 0.75
         Caustic: 0.70
@@ -528,6 +543,24 @@
       - 2,2,2,3
       - 4,2,4,3
       - 6,2,6,3
+  - type: Armor # EN
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.60
+        Piercing: 0.70
+        Compression: 0.8
+        Radiation: 0.90
+        Heat: 0.75
+        Caustic: 0.80
+        Shock: 0.75
+  - type: GrantsArtifactSlots
+    slots: 5 # EN
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHatMonolith
     slot: head

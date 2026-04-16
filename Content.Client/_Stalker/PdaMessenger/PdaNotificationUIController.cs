@@ -8,6 +8,7 @@ using Content.Client.UserInterface.Systems.Hotbar.Widgets;
 using Content.Shared._Stalker.PdaMessenger;
 using Content.Shared._Stalker_EN.PdaMessenger;
 using Content.Shared._Stalker.CCCCVars;
+using Content.Shared.GameTicking;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
@@ -36,7 +37,7 @@ public sealed class PdaNotificationUIController : UIController, IOnStateEntered<
     // Limit constants
     private const int MaxNotifications = 5;
     private const float MaxTotalHeight = 650f;
-    private const int MaxContentLength = 300;
+    private const int MaxContentLength = 450;
     private const float NotificationPanelHeight = 120f;
     private const float NotificationPanelWidth = 650f;
     private const float NotificationMaxHeight = 300f;
@@ -62,7 +63,7 @@ public sealed class PdaNotificationUIController : UIController, IOnStateEntered<
 
         SubscribeNetworkEvent<PdaGeneralMessageEvent>(OnGeneralMessage);
         SubscribeNetworkEvent<PdaDirectMessageEvent>(OnDirectMessage);
-
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
     }
 
     private void OnNotificationsEnabledChanged(bool enabled)
@@ -72,38 +73,49 @@ public sealed class PdaNotificationUIController : UIController, IOnStateEntered<
 
     /// <summary>
     /// Ensures the notification container is attached to the current active screen.
-    /// Recreates it if it was detached (fixes the "missing popups until relog" bug).
+    /// Recreates it if detached or attached to a stale screen's ViewportContainer.
     /// </summary>
     private void EnsureContainerAttached()
     {
-        if (_notificationContainer == null || !_notificationContainer.IsInsideTree)
+        var activeScreen = UIManager.ActiveScreen;
+        var viewportContainer = activeScreen?.FindControl<Control>("ViewportContainer")
+            ?? (Control?) activeScreen;
+
+        if (_notificationContainer != null
+            && _notificationContainer.IsInsideTree
+            && _notificationContainer.Parent == viewportContainer)
+            return;
+
+        _notificationContainer?.Orphan();
+        _notificationContainer = new LayoutContainer
         {
-            _notificationContainer?.Orphan();
-            _notificationContainer = new LayoutContainer
-            {
-                Name = "PdaNotificationContainer",
-                HorizontalExpand = true,
-                VerticalExpand = true
-            };
+            Name = "PdaNotificationContainer",
+            HorizontalExpand = true,
+            VerticalExpand = true
+        };
 
-            var viewportContainer = UIManager.ActiveScreen?.FindControl<Control>("ViewportContainer");
-            if (viewportContainer != null)
-            {
-                viewportContainer.AddChild(_notificationContainer);
-                _notificationContainer.SetPositionLast();
-            }
-            else if (UIManager.ActiveScreen != null)
-            {
-                UIManager.ActiveScreen.AddChild(_notificationContainer);
-            }
-
-            _lastHotbarHeight = GetHotbarHeight();
+        if (viewportContainer != null)
+        {
+            viewportContainer.AddChild(_notificationContainer);
+            _notificationContainer.SetPositionLast();
         }
+
+        _lastHotbarHeight = GetHotbarHeight();
+    }
+
+    private void OnRoundRestart(RoundRestartCleanupEvent ev)
+    {
+        foreach (var entry in _activeNotifications)
+            entry.Panel.Dispose();
+
+        _activeNotifications.Clear();
+        _notificationContainer?.Orphan();
+        _notificationContainer = null;
     }
 
     private void OnGeneralMessage(PdaGeneralMessageEvent ev, EntitySessionEventArgs args)
     {
-        if (!_notificationsEnabled || _notificationContainer == null)
+        if (!_notificationsEnabled)
             return;
 
         AddNotification(ev.Title, ev.Content, ev.Sender, ev.BandIcon);
@@ -185,7 +197,7 @@ public sealed class PdaNotificationUIController : UIController, IOnStateEntered<
         while (_activeNotifications.Count > MaxNotifications || GetTotalHeight() + hotbarHeight > MaxTotalHeight)
         {
             var oldest = _activeNotifications.First();
-            oldest.Panel.Orphan();
+            oldest.Panel.Dispose();
             _activeNotifications.RemoveAt(0);
 
             if (_activeNotifications.Count == 0)
@@ -223,7 +235,7 @@ public sealed class PdaNotificationUIController : UIController, IOnStateEntered<
                 if (elapsed >= NotificationTotalLifetime)
                 {
                     // Notification lifetime ended, remove it
-                    entry.Panel.Orphan();
+                    entry.Panel.Dispose();
                     toRemove.Add(entry);
                     needsPositionUpdate = true;
                 }

@@ -1843,6 +1843,61 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
+        public async Task SetCrashRecovery(string login, string? jsonItems)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.Stalkers.SingleOrDefaultAsync(s => s.Login == login);
+            if (record is null)
+                return;
+
+            record.CrashRecovery = jsonItems;
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<string?> GetCrashRecovery(string login)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.Stalkers.SingleOrDefaultAsync(s => s.Login == login);
+            return record?.CrashRecovery;
+        }
+
+        public async Task ClearAllCrashRecovery()
+        {
+            await using var db = await GetDb();
+
+            await db.DbContext.Stalkers
+                .Where(s => s.CrashRecovery != null)
+                .ExecuteUpdateAsync(s => s.SetProperty(r => r.CrashRecovery, (string?) null));
+        }
+
+        public async Task<List<string>> GetAllCrashRecoveryLogins()
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.Stalkers
+                .Where(s => s.CrashRecovery != null && s.Login != null)
+                .Select(s => s.Login!)
+                .ToListAsync();
+        }
+
+        public async Task SetCrashRecoveryBatch(Dictionary<string, string> loginToJson)
+        {
+            await using var db = await GetDb();
+
+            foreach (var (login, json) in loginToJson)
+            {
+                var record = await db.DbContext.Stalkers.SingleOrDefaultAsync(s => s.Login == login);
+                if (record is null)
+                    continue;
+
+                record.CrashRecovery = json;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
         public async Task SetStalkerStatsAsync(string login, CharacteristicType characteristic, float value, DateTime? trainTime)
         {
             await using var db = await GetDb();

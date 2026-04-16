@@ -3,6 +3,7 @@ using Content.Client._Stalker.Shop.Ui;
 using Content.Client._Stalker_EN.Loadout;
 using Content.Shared._Stalker.Shop;
 using Content.Shared._Stalker.StalkerRepository;
+using Content.Shared._Stalker_EN.CrashRecovery;
 using Content.Shared._Stalker_EN.Loadout;
 using JetBrains.Annotations;
 
@@ -47,6 +48,7 @@ public sealed class StalkerRepositoryBoundUserInterface : BoundUserInterface
 
         // Loadout button handler - opens separate window
         _menu.OpenLoadoutsPressed += OpenLoadoutMenu;
+        _menu.CrashRecoveryPressed += () => SendMessage(new CrashRecoveryClaimMessage());
     }
 
     private void OpenLoadoutMenu()
@@ -113,6 +115,7 @@ public sealed class StalkerRepositoryBoundUserInterface : BoundUserInterface
                 SendMessage(new RepositoryEjectMessage(item, count));
             };
             _menu.OpenLoadoutsPressed += OpenLoadoutMenu;
+            _menu.CrashRecoveryPressed += () => SendMessage(new CrashRecoveryClaimMessage());
         }
 
         if (!_menu.IsOpen)
@@ -132,6 +135,10 @@ public sealed class StalkerRepositoryBoundUserInterface : BoundUserInterface
                 // Update menu if it exists and is not disposed
                 if (_loadoutMenu is { Disposed: false })
                     _loadoutMenu.UpdateLoadouts(loadoutState.Loadouts);
+                break;
+            // stalker-en-changes
+            case CrashRecoveryUpdateState recoveryState:
+                _menu.UpdateCrashRecovery(recoveryState.HasRecoveryData, recoveryState.ItemCount);
                 break;
         }
     }

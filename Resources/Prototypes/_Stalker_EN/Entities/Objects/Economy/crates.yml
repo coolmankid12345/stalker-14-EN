@@ -181,7 +181,7 @@
     - id: Zipties
     - id: PowerCellHyper
     - id: STClothingOuterArmorLightPlateVestBasePSZ7
-    - id: STWeaponRifleAKS74
+    - id: STWeaponRifleAK74M
     - id: ClothingHeadBeretMilitary
     - id: ClothingBeltWebbingOfficerStalker
     - id: ClothingBackpackTacticOliveStalker
@@ -224,6 +224,7 @@
     - id: STFlashlightSeclite
     - id: STBoltBagFilled
     - id: BaseRadio
+    - id: STRadioHeadset
     - id: Binocularus1
     sound:
       path: /Audio/Effects/unwrap.ogg
@@ -250,7 +251,7 @@
     - id: Zipties
     - id: PowerCellHyper
     - id: ClothingHeadHatMilitary
-    - id: STWeaponRifleAKS74
+    - id: STWeaponRifleAK74M
     - id: ClothingBeltGreenWebbingStalker
     - id: ClothingBackpackTacticOliveStalker
     - id: DrinkMREFlask
@@ -287,6 +288,7 @@
     - id: STFlashlightSeclite
     - id: STBoltBagFilled
     - id: BaseRadio
+    - id: STRadioHeadset
     - id: Binocularus1
     sound:
       path: /Audio/Effects/unwrap.ogg
@@ -350,6 +352,7 @@
     - id: STFlashlightSeclite
     - id: STBoltBagFilled
     - id: BaseRadio
+    - id: STRadioHeadset
     - id: Binocularus1
     sound:
       path: /Audio/Effects/unwrap.ogg
@@ -376,7 +379,7 @@
     - id: Zipties
     - id: PowerCellHyper
     - id: ClothingHeadHatMilitary
-    - id: STWeaponRifleAKS74U
+    - id: STWeaponRifleAKS74
     - id: ClothingBeltGreenWebbingStalker
     - id: ClothingBackpackTacticOliveStalker
     - id: DrinkMREFlask
@@ -411,6 +414,7 @@
     - id: STFlashlightSeclite
     - id: STBoltBagFilled
     - id: BaseRadio
+    - id: STRadioHeadset
     - id: Binocularus1
     sound:
       path: /Audio/Effects/unwrap.ogg
@@ -468,6 +472,7 @@
     - id: STFlashlightSeclite
     - id: STBoltBagFilled
     - id: BaseRadio
+    - id: STRadioHeadset
     - id: Binocularus1
     sound:
       path: /Audio/Effects/unwrap.ogg
@@ -494,7 +499,7 @@
     - id: Zipties
     - id: PowerCellHyper
     - id: ClothingHeadHatMilitary
-    - id: STWeaponRifleAKS74U
+    - id: STWeaponRifleAKS74
     - id: ClothingBeltGreenWebbingStalker
     - id: ClothingBackpackTacticOliveStalker
     - id: DrinkMREFlask
@@ -537,6 +542,7 @@
     - id: STFlashlightSeclite
     - id: STBoltBagFilled
     - id: BaseRadio
+    - id: STRadioHeadset
     - id: Binocularus1
     sound:
       path: /Audio/Effects/unwrap.ogg
@@ -589,6 +595,7 @@
     - id: STFlashlightSeclite
     - id: STBoltBagFilled
     - id: BaseRadio
+    - id: STRadioHeadset
     - id: Binocularus1
     sound:
       path: /Audio/Effects/unwrap.ogg

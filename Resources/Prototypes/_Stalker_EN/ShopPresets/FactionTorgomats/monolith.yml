@@ -119,10 +119,10 @@
   - name: shop-category-weapons
     priority: 1
     items:
-      STWeaponRifleStalkerAK12en: 18 # replace with mono ver later
+      STWeaponRifleStalkerAK12en: 24 # replace with mono ver later
       STWeaponSMGStalkerCP2Veresk: 8
       #STWeaponRifleAK103: 16 # Give them an RPK later instead
-      STWeaponRifleStalkerAbakan: 24
+      STWeaponRifleStalkerAbakan: 32
       STWeaponShotgunProtecta: 10
       #STSeraKnife: 3 # removed until oilman lets me add it
       STWeaponPistolUSP: 2

@@ -52,7 +52,7 @@
     materialComposition:
       Meaterial: 300
   - type: Trash
-    time: 600
+    time: 930
   - type: RepositoryItem # stalker-en change
     categoryName: repository-consumables-category
 

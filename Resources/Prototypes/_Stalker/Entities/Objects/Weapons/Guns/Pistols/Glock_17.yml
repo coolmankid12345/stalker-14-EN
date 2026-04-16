@@ -28,7 +28,8 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: BaseGlockMag10
+          #startingItem: BaseGlockMag10 - replaced with realistic 17-round magazine. Stalker EN change
+          startingItem: GlockMag17
           insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
           priority: 3
@@ -40,13 +41,14 @@
           priority: 3
           whitelist:
             tags:
-              - STWeaponModulePistolSilencer      
+              - STWeaponModulePistolSilencer
         gun_auto_sear:
           name: Insides
           priority: 2
           whitelist:
             tags:
-              - STModuleAutoSear
+              #- STModuleAutoSear
+              - STModuleGlockSwitch # Special auto sear exclusive to the Glock. Stalker EN change
         gun_chamber:
           name: Chamber
           startingItem: STCartridge919PSOGJ

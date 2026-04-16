@@ -36,6 +36,15 @@
             </BoxContainer>
         </BoxContainer>
 
+        <!-- stalker-en-changes: Crash Recovery Banner (hidden by default) -->
+        <PanelContainer Name="CrashRecoveryBanner" Visible="False" HorizontalExpand="True" Margin="4 2 4 2">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="4">
+                <Label Name="CrashRecoveryLabel" HorizontalExpand="True" FontColorOverride="#FFAA00"/>
+                <Button Name="CrashRecoveryButton" Text="{Loc 'crash-recovery-claim'}" MinWidth="140"/>
+            </BoxContainer>
+        </PanelContainer>
+        <!-- stalker-en-changes-end -->
+
         <!-- Loadouts Button -->
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="4 4 4 4">
             <Control HorizontalExpand="True"/>

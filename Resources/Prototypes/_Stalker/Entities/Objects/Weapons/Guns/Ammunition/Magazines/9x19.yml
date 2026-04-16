@@ -259,6 +259,10 @@
         tags:
           - STCartridge919
       capacity: 33
+    - type: Item # Made the 33-round Glock magazine 1x2, to match other extended pistol mags. Stalker EN change
+      size: Small
+      shape:
+      - 0,0,0,1
     - type: Sprite
       scale: 0.8, 0.8
       sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/glock/33.rsi

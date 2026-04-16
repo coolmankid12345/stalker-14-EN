@@ -26,13 +26,13 @@ public sealed partial class MessengerUi : UIFragment
         {
             var msg = new CartridgeUiMessage(new MessengerUiMessageEvent(message));
             _sawmill.Info($"[PDA Client] Sending message: Title={message.Title}, Receiver={message.Receiver}");
-            userInterface.SendMessage(msg);
-            _sawmill.Info($"[PDA Client] Message sent via SendMessage()");
+            userInterface.SendPredictedMessage(msg);
+            _sawmill.Info($"[PDA Client] Message sent via SendPredictedMessage()");
         };
 
         _fragment.OnLogin += owner =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(new MessengerUiSetLoginEvent(owner)));
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(new MessengerUiSetLoginEvent(owner)));
         };
     }
 

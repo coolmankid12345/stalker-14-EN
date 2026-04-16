@@ -37,6 +37,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server._Stalker.Sponsors.SponsorManager; // Stalker-Using
+using Content.Shared._Stalker_EN.CCVar;
 
 namespace Content.Server.Entry
 {
@@ -215,6 +216,19 @@ namespace Content.Server.Entry
 
         protected override void Dispose(bool disposing)
         {
+            // Clear crash recovery data on graceful shutdown.
+            // On real crashes the process dies without reaching Dispose(),
+            // so snapshot data persists correctly for the next round.
+            try
+            {
+                if (_cfg.GetCVar(STCCVars.CrashRecoveryEnabled))
+                    _dbManager.ClearAllCrashRecovery().GetAwaiter().GetResult();
+            }
+            catch (Exception e)
+            {
+                _log.GetSawmill("crash-recovery").Error($"Failed to clear crash recovery on shutdown: {e}");
+            }
+
             var dest = _cfg.GetCVar(CCVars.DestinationFile);
             if (!string.IsNullOrEmpty(dest))
             {

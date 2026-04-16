@@ -23,6 +23,7 @@ using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Server.PDA
@@ -39,6 +40,10 @@ namespace Content.Server.PDA
         [Dependency] private readonly UnpoweredFlashlightSystem _unpoweredFlashlight = default!;
         [Dependency] private readonly ContainerSystem _containerSystem = default!;
         [Dependency] private readonly IdCardSystem _idCard = default!;
+        [Dependency] private readonly IGameTiming _timing = default!;
+
+        private readonly Dictionary<EntityUid, TimeSpan> _lastPdaUiUpdate = new();
+        private static readonly TimeSpan PdaUiUpdateDebounce = TimeSpan.FromMilliseconds(100);
 
         public override void Initialize()
         {
@@ -186,6 +191,16 @@ namespace Content.Server.PDA
 
             if (!_ui.HasUi(uid, PdaUiKey.Key))
                 return;
+
+            // Debounce UI updates to prevent excessive network traffic
+            var currentTime = _timing.CurTime;
+            if (_lastPdaUiUpdate.TryGetValue(uid, out var lastUpdate) &&
+                currentTime - lastUpdate < PdaUiUpdateDebounce)
+            {
+                return;
+            }
+
+            _lastPdaUiUpdate[uid] = currentTime;
 
             var address = GetDeviceNetAddress(uid);
             var hasInstrument = HasComp<InstrumentComponent>(uid);

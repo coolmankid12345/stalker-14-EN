@@ -237,9 +237,9 @@
       HatchetStalker: 150
       CraftBag: 10
       CasseteArstotzka1984: 500
-      STElasticRubberRed: 50
-      STElasticRubberGreen: 50
-      STElasticRubberBlue: 50
+      STElasticRubberRed: 1
+      STElasticRubberGreen: 1
+      STElasticRubberBlue: 1
       # Cameras
       STCamera: 750
       STCameraVintage: 1200
@@ -722,9 +722,9 @@
       STSkinsKitMilitary: 500
       AccordionInstrument: 500
       FoldedFlagMili: 250
-      STElasticRubberRed: 50
-      STElasticRubberGreen: 50
-      STElasticRubberBlue: 50
+      STElasticRubberRed: 1
+      STElasticRubberGreen: 1
+      STElasticRubberBlue: 1
       # Cameras
       STCamera: 750
       STCameraVintage: 1200
@@ -898,6 +898,8 @@
       ClothingMaskNeckBalaklava3: 10
       # Gloves
       ClothingHandsGlovesFingerless: 30
+      ClothingHandsGlovesNitrile: 35
+      ClothingHandsGlovesLatex: 35
       ClothingHandsGlovesMercFingerless: 60
       # Neck
       ClothingNeckScarfArmy: 100

@@ -42,6 +42,8 @@
         Shock: 0.70
         Radiation: 0.60
         Compression: 0.60
+  - type: GrantsArtifactSlots
+    slots: 4 # EN
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95

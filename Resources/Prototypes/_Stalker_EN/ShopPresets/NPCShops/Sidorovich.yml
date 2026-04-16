@@ -165,6 +165,7 @@
         StalkerBallBat: 50
         STThrowingknifeBlue: 250
         # Shotguns
+        STBaseWeaponShotgunTOZ106: 800 # T1
         STWeaponShotgunTOZ34: 250 # T1
         STWeaponShotgunMP133: 500 # T2
         STWeaponShotgunMP153: 1700 # T2
@@ -196,6 +197,8 @@
         545Mag20: 250
         545Mag30: 500
         # Other
+        Base2070Mag: 30
+        TOZ106Mag5: 100
         BasePMMag: 12
         BasePPSHMag: 350
         TTMag: 15
@@ -207,6 +210,9 @@
     - name: shop-category-ammunition
       priority: 3
       items:
+        #20gauge
+        62mmBuckshotBox: 30 #T0
+        75mmBuckshotBox: 200 #T1
         #7mm
         7mmBuckshotBox: 50 # T0
         6mmBuckshotBox: 275 # T1
@@ -311,7 +317,6 @@
         ClothingBeltTarzanGreen: 200 # T1 - PVP
         ClothingBeltTarzanOrange: 200 # T1 - PVP
         ClothingBeltWebbingHolsterStalkerZarya: 1000
-        ClothingBeltWebbingDoubleStalkerZaryaSmall: 1500
           # Containers
         MedkitCMSStalker: 250 # T1
         MedkitGrizzlyStalker: 850 # T2

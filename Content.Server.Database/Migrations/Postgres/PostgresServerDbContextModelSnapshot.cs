@@ -1380,6 +1380,10 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CrashRecovery")
+                        .HasColumnType("text")
+                        .HasColumnName("crash_recovery");
+
                     b.Property<string>("Loadouts")
                         .HasColumnType("text")
                         .HasColumnName("loadouts");
@@ -1741,6 +1745,23 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("stalker_news_reactions", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.StalkerPdaPassword", b =>
+                {
+                    b.Property<string>("CharacterName")
+                        .HasColumnType("text")
+                        .HasColumnName("character_name");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("password");
+
+                    b.HasKey("CharacterName")
+                        .HasName("PK_stalker_pda_passwords");
+
+                    b.ToTable("stalker_pda_passwords", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.StalkerPersistentCraftProfile", b =>
                 {
                     b.Property<Guid>("UserId")
@@ -1760,23 +1781,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasName("PK_stalker_persistent_craft_profiles");
 
                     b.ToTable("stalker_persistent_craft_profiles", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.StalkerPdaPassword", b =>
-                {
-                    b.Property<string>("CharacterName")
-                        .HasColumnType("text")
-                        .HasColumnName("character_name");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("password");
-
-                    b.HasKey("CharacterName")
-                        .HasName("PK_stalker_pda_passwords");
-
-                    b.ToTable("stalker_pda_passwords", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.StalkerStats", b =>

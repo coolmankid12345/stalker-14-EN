@@ -1,0 +1,58 @@
+#By Noguchi.47
+- type: entity
+  id: BaseShotgunBullet20g
+  name: shell (.50)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: STWeight
+    self: 0.05
+  - type: Tag
+    tags:
+    - Cartridge
+    - ShellTOZ106
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    soundEject:
+      collection: ShellEject
+  - type: Sprite
+    drawdepth: Items
+  - type: Appearance
+
+- type: entity
+  id: Cartridge62mmBuckshot
+  name: 20/70 6.2mm Buckshot
+  parent: BaseShotgunBullet20g
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet62mmBuckshot
+  - type: Tag
+    tags:
+    - Cartridge
+    - ShellTOZ106
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: 20g-T0
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "20g-T0"
+
+- type: entity
+  id: Cartridge75mmBuckshot
+  name: 20/70 7.5mm Buckshot
+  parent: BaseShotgunBullet20g
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet75mmBuckshot
+  - type: Tag
+    tags:
+    - Cartridge
+    - ShellTOZ106  
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: 20g-T1
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "20g-T1"

@@ -25,6 +25,7 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
     public event Action<RepositoryItemInfo, int>? RepositoryButtonPutPressed;
     public event Action<RepositoryItemInfo, int>? RepositoryButtonGetPressed;
     public event Action? OpenLoadoutsPressed;
+    public event Action? CrashRecoveryPressed;
 
     private (string, int) _currentCategory;
     private List<RepositoryItemInfo>? _curItems;
@@ -55,7 +56,23 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
 
         // Loadout button opens separate window
         OpenLoadoutsButton.OnPressed += _ => OpenLoadoutsPressed?.Invoke();
+
+        // stalker-en-changes: Crash recovery button (hide banner immediately to prevent double-clicks)
+        CrashRecoveryButton.OnPressed += _ =>
+        {
+            CrashRecoveryBanner.Visible = false;
+            CrashRecoveryPressed?.Invoke();
+        };
     }
+
+    // stalker-en-changes
+    public void UpdateCrashRecovery(bool available, int itemCount)
+    {
+        CrashRecoveryBanner.Visible = available;
+        if (available)
+            CrashRecoveryLabel.Text = Loc.GetString("crash-recovery-available", ("count", itemCount));
+    }
+    // stalker-en-changes-end
 
     private void OnTextChanged(LineEdit.LineEditEventArgs args)
     {

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Wassuy (Peter Poley) for EN server",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "20g-T0"
+    },
+    {
+      "name": "20g-T0-spent"
+    },
+    {
+      "name": "20g-T1"
+    },
+    {
+      "name": "20g-T1-spent"
+    }  
+  ]
+}

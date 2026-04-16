@@ -87,7 +87,8 @@
 
      #Weapons and armour ---- min cost / 2
 
-    #12x70
+    #12x70 & 20x70
+    STBaseWeaponShotgunTOZ106: 250
     STWeaponShotgunMP155T: 20
     STWeaponShotgunTOZ34: 100
     STWeaponShotgunMP133: 170
@@ -140,7 +141,7 @@
     #9x18 9x19
     STWeaponPistolC96: 300
     STWeaponPistolHiPower: 300
-    STWeaponPistolP99: 300 
+    STWeaponPistolP99: 300
     WeaponPistolStalkerGlock: 100
     WeaponStalkerPistolTec9: 100
     WeaponPistolStalkerAPS: 350
@@ -184,7 +185,8 @@
             # Melee
         StalkerBallBat: 70
             # Guns
-        # 7mm
+        # 7mm & 20gauge
+        STBaseWeaponShotgunTOZ106: 1000 #T1 this gun is giga chad killer
         STWeaponShotgunSPAS: 3500 # T3
         STWeaponShotgunBenelliM4Super90: 6500 #i dont think its actually that good
         # Smg
@@ -211,12 +213,14 @@
         BasePPSHMag: 350
         VityazMag: 400
           # Other
-        STSTC96ClipEmpty: 300  
+        STSTC96ClipEmpty: 300
         USPMag12: 500
         TTMag: 100
         STSpeedLoader45ACPEmpty: 300
         STSpeedLoader357MagnumEmpty: 330
         BaseAPSMag: 100
+        GlockMag17: 75
+        GlockMag33: 500
     - name: shop-category-ammunition
       priority: 3
       items:
@@ -362,3 +366,4 @@
         STModuleSilencerRiflesT2Nato: 4600
         STModuleSilencerSniperT2: 4600
         STModuleSilencerSMGT2: 4800
+        STModuleGlockSwitch: 200

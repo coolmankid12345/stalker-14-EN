@@ -155,6 +155,7 @@
           # Helmets #
         ClothingHeadHelmetDolg: 200 # T1 - PVE
         ClothingHeadHelmetInfantryDolg: 750 # T2 - PVP
+        ClothingHeadHelmetBerill5MDolg: 2500 #T3
         ClothingHeadHelmetVityaz1M: 3000 #T3
         ClothingHeadAssaultHelmetDolg: 3500 #T3
           # OuterClothing #
@@ -245,9 +246,9 @@
         Matchbox: 10
         HatchetStalker: 150
         CasseteDuty: 500
-        STElasticRubberRed: 50
-        STElasticRubberGreen: 50
-        STElasticRubberBlue: 50
+        STElasticRubberRed: 1
+        STElasticRubberGreen: 1
+        STElasticRubberBlue: 1
         FoldedFlagDuty: 250
         # Cameras
         STCamera: 750
@@ -294,6 +295,7 @@
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         # NECK
+        ClothingBandageStalkerKrest: 10
         ClothingNeckScarfGray: 100
         # faction
         ClothingBandageStalkerRed: 10
@@ -316,6 +318,8 @@
         ClothingTorsoTurtlenecksMatrosska: 50
         # HANDS
         ClothingHandsGlovesFingerless: 30
+        ClothingHandsGlovesNitrile: 35
+        ClothingHandsGlovesLatex: 35
         ClothingHandsGlovesMercFingerless: 60
         # OUTERCLOTHING
         # CLOAK

@@ -48,6 +48,8 @@
         Radiation: 0.5
         Psy: 0.80
         Compression: 0.50
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetReinger
     slot: head

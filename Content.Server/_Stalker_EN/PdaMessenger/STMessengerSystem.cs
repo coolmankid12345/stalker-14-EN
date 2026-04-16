@@ -446,7 +446,9 @@ public sealed partial class STMessengerSystem : EntitySystem
             // Send pop-up notification to DM recipient
             var bandIcon = GetBandIcon(server);
             var dmEvent = new PdaDirectMessageEvent(senderName, content, bandIcon);
-            if (_playerManager.TryGetSessionById(new NetUserId(contactKey.UserId), out var recipientSession))
+            if (_playerManager.TryGetSessionById(new NetUserId(contactKey.UserId), out var recipientSession) &&
+            recipientSession.AttachedEntity is { } currentMob &&
+            MetaData(currentMob).EntityName == contactEntry.CharacterName)
             {
                 RaiseNetworkEvent(dmEvent, recipientSession);
             }
@@ -470,18 +472,14 @@ public sealed partial class STMessengerSystem : EntitySystem
 
                 foreach (var (pdaUid, (cartridgeUid, _)) in _messengerPdas)
                 {
-                    // 1. Skip if the channel is muted
-                    if (!TryComp(cartridgeUid, out STMessengerServerComponent? recipientServer) ||
-                        recipientServer.MutedChannels.Contains(channelProto.ID))
-                        continue;
 
-                    // 2. Check for PDA and its owner (mob)
+                    // 1. Check for PDA and its owner (mob)
                     if (!TryComp(pdaUid, out PdaComponent? pdaComp) || !pdaComp.PdaOwner.HasValue)
                         continue;
 
                     var mobUid = pdaComp.PdaOwner.Value;
 
-                    // 3. Find the mob's Mind to get the player's UserId
+                    // 2. Find the mob's Mind to get the player's UserId
                     if (_mind.TryGetMind(mobUid, out var _, out var mindComp))
                     {
                         // 4. Find the session by UserId
@@ -1154,6 +1152,9 @@ public sealed partial class STMessengerSystem : EntitySystem
             return null;
 
         if (!TryComp<BandsComponent>(mob, out var bands))
+            return null;
+
+        if (MetaData(mob).EntityName != contactKey.CharName)
             return null;
 
         // Only Clear Sky is disguised as Loners on PDA

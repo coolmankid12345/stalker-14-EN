@@ -897,7 +897,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         return JsonSerializer.Serialize(inputAllStorageInventory);
     }
 
-    private static AllStorageInventory InventoryFromJson(string jsonText)
+    public static AllStorageInventory InventoryFromJson(string jsonText)
     {
         var playerInventory = new AllStorageInventory();
         var parsed = JsonNode.Parse(jsonText);

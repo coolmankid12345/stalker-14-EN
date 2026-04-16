@@ -27,6 +27,8 @@
         Caustic: 0.85
         Shock: 0.85
         Compression: 0.85
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: Craftable

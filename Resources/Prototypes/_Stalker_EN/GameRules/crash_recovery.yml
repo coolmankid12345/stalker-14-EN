@@ -1,0 +1,6 @@
+- type: entity
+  parent: BaseGameRule
+  id: STCrashRecovery
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: CrashRecoveryRule

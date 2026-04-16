@@ -174,6 +174,7 @@
         STWeaponRevolverSWModel625: 1450
         STWeaponRevolverSWPC325TR: 350
         # Shotguns
+        STBaseWeaponShotgunTOZ106: 800 # T1
         STWeaponShotgunMossbergM88: 600
         STWeaponShotgunSPAS: 2100
         # SMGs
@@ -191,11 +192,13 @@
     - name: shop-category-magazines
       priority: 2
       items:
+        Base2070Mag: 30
+        TOZ106Mag5: 100
         HiPowerMag13: 140
         M1911Mag7: 140
         P99Mag15: 150
         TTMag: 120
-        BaseGlockMag10: 135
+        GlockMag17: 200
         BaseGSH-18Mag10: 135
         BaseAPSMag: 225
         STSpeedLoader45ACPEmpty: 120
@@ -215,6 +218,9 @@
     - name: shop-category-ammunition
       priority: 3
       items:
+        #20gauge
+        62mmBuckshotBox: 30 #T0
+        75mmBuckshotBox: 200 #T1
         # 7mm
         7mmBuckshotBox: 65 # T0
         6mmBuckshotBox: 375 # T1
@@ -362,7 +368,6 @@
         ClothingBeltPocketPouch: 450
         ClothingBeltHerbalistPouch: 450
         ClothingBeltWebbingHolsterStalkerZarya: 1000
-        ClothingBeltWebbingDoubleStalkerZaryaSmall: 1500
         ClothingBeltCrafterStalker: 3000
         # Other
         ClothingBackpackForestryRig: 500
@@ -467,6 +472,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 400
+        STModuleGlockSwitch: 500
 
     - name: shop-category-customization
       priority: 13
@@ -573,7 +579,8 @@
         ToolkitTearOne: 5000
         ToolkitTearTwo: 10000
         ToolkitTearThree: 15000
-        CraftGunpowderBank: 100
+        CraftGunpowderBank: 500
+        CraftMaterialGunpowder: 100
 
     - name: Smokables #explained using D&D lifestyle expenses
       priority: 16
