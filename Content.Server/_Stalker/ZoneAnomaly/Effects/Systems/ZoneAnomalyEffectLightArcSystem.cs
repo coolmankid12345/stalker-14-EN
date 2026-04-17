@@ -24,9 +24,11 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
         SubscribeLocalEvent<ZoneAnomalyEffectLightArcComponent, ZoneAnomalyActivateEvent>(OnActivate);
     }
 
+    // stalker-en We no longer have to validate recursively, because we are just filtering
     private void OnActivate(Entity<ZoneAnomalyEffectLightArcComponent> effect, ref ZoneAnomalyActivateEvent args)
     {
         var i = 0;
+        // Stalker-en - filter for uncontained items
         var entities = _lookup.GetEntitiesInRange(Transform(effect).Coordinates, effect.Comp.Distance, LookupFlags.Uncontained);
         foreach (var entity in entities)
         {
@@ -46,6 +48,7 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
 
     private void TryRecharge(Entity<ZoneAnomalyEffectLightArcComponent> effect, Entity<PredictedBatteryComponent?> target)
     {
+        // stalker-en - changed from trycomp to resolve for minor performance
         if (!Resolve(target, ref target.Comp))
             return;
 
