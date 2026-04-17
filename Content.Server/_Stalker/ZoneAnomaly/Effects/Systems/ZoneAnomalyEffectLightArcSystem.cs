@@ -1,12 +1,11 @@
+using System.Linq; // Stalker-EN
 using Content.Server.Lightning;
-using Content.Server.Power.Components;
-using Content.Server.Power.EntitySystems;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Whitelist;
-using Robust.Shared.Map.Components;
+using Robust.Shared.Random;
 
 namespace Content.Server._Stalker.ZoneAnomaly.Effects.Systems;
 
@@ -18,50 +17,34 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly LightningSystem _lightning = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Stalker-EN changes
 
     public override void Initialize()
     {
         SubscribeLocalEvent<ZoneAnomalyEffectLightArcComponent, ZoneAnomalyActivateEvent>(OnActivate);
     }
 
+    // Stalker-EN changes - We rewrote everything below here, dont take upstream changes
     private void OnActivate(Entity<ZoneAnomalyEffectLightArcComponent> effect, ref ZoneAnomalyActivateEvent args)
     {
-        var i = 0;
-        var entities = _lookup.GetEntitiesInRange(Transform(effect).Coordinates, effect.Comp.Distance);
-        foreach (var entity in entities)
+        var entities = _lookup.GetEntitiesInRange(Transform(effect).Coordinates, effect.Comp.Distance, flags: LookupFlags.Uncontained)
+            .Where(x => _whitelistSystem.IsWhitelistPass(effect.Comp.Whitelist, x))
+            .ToList();
+
+        for (var i = 0; i < MaxIterations; i++)
         {
-            if (i > MaxIterations)
-                break;
-
-            // We don't need to shoot all the entities
-            if(!_whitelistSystem.IsWhitelistPass(effect.Comp.Whitelist, entity))
-                continue;
-
-            // Fixes 10 million shots being fired at one entity due to it containing targets
-            if (IsValidRecursively(effect, entity))
-                continue;
-
-            TryRecharge(effect, entity);
-            _lightning.ShootLightning(effect, entity, effect.Comp.Lighting);
-
-            i++;
+            var target = _random.PickAndTake(entities);
+            TryRecharge(effect, target);
+            _lightning.ShootLightning(effect, target, effect.Comp.Lighting);
         }
     }
 
-    private void TryRecharge(Entity<ZoneAnomalyEffectLightArcComponent> effect, EntityUid target)
+    private void TryRecharge(Entity<ZoneAnomalyEffectLightArcComponent> effect, Entity<PredictedBatteryComponent?> target)
     {
-        if (!TryComp<PredictedBatteryComponent>(target, out var battery))
+        if(!Resolve(target, ref target.Comp, false))
             return;
 
-        _battery.SetCharge((target, battery), battery.LastCharge + battery.MaxCharge * effect.Comp.ChargePercent);
+        _battery.SetCharge(target, target.Comp.LastCharge + target.Comp.MaxCharge * effect.Comp.ChargePercent);
     }
-
-    private bool IsValidRecursively(Entity<ZoneAnomalyEffectLightArcComponent> effect, EntityUid uid)
-    {
-        var parent = Transform(uid).ParentUid;
-        if (HasComp<MapComponent>(parent) || HasComp<MapGridComponent>(parent))
-            return false;
-
-        return _whitelistSystem.IsWhitelistPass(effect.Comp.Whitelist, parent) || IsValidRecursively(effect, parent);
-    }
+    // stalker-en-end
 }
