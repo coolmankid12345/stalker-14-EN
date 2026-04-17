@@ -5,6 +5,7 @@ using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Whitelist;
+using NetCord;
 using Robust.Shared.Random;
 
 namespace Content.Server._Stalker.ZoneAnomaly.Effects.Systems;
@@ -27,16 +28,22 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
     // Stalker-EN changes - We rewrote everything below here, dont take upstream changes
     private void OnActivate(Entity<ZoneAnomalyEffectLightArcComponent> effect, ref ZoneAnomalyActivateEvent args)
     {
-        var entities = _lookup.GetEntitiesInRange(Transform(effect).Coordinates, effect.Comp.Distance, flags: LookupFlags.Uncontained)
-            .Where(x => _whitelistSystem.IsWhitelistPass(effect.Comp.Whitelist, x))
-            .ToList();
+        var entities = _lookup.GetEntitiesInRange(Transform(effect).Coordinates,
+            effect.Comp.Distance,
+            flags: LookupFlags.Uncontained);
 
-        _random.Shuffle(entities);
-
-        for (var i = 0; i < MaxIterations; i++)
+        var i = 0;
+        foreach (var entity in entities)
         {
-            TryRecharge(effect, entities[i]);
-            _lightning.ShootLightning(effect, entities[i], effect.Comp.Lighting);
+            if (i >= MaxIterations)
+                break;
+
+            if (!_whitelistSystem.IsWhitelistPass(effect.Comp.Whitelist, entity))
+                continue;
+
+            TryRecharge(effect, entity);
+            _lightning.ShootLightning(effect, entity, effect.Comp.Lighting);
+            i++;
         }
     }
 
