@@ -31,11 +31,12 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
             .Where(x => _whitelistSystem.IsWhitelistPass(effect.Comp.Whitelist, x))
             .ToList();
 
+        _random.Shuffle(entities);
+
         for (var i = 0; i < MaxIterations; i++)
         {
-            var target = _random.PickAndTake(entities);
-            TryRecharge(effect, target);
-            _lightning.ShootLightning(effect, target, effect.Comp.Lighting);
+            TryRecharge(effect, entities[i]);
+            _lightning.ShootLightning(effect, entities[i], effect.Comp.Lighting);
         }
     }
 
