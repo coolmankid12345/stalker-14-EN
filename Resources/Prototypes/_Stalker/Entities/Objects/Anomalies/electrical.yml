@@ -146,7 +146,7 @@
   components:
     - type: Tag
       tags:
-        - AnomalyGarlandActivationTarget
+        #- AnomalyGarlandActivationTarget # stalker-en - disable self-activation for performance
         - HideContextMenu
     - type: ZoneAnomalyTriggerStartCollide
     - type: ZoneAnomalyTriggerEndCollide
