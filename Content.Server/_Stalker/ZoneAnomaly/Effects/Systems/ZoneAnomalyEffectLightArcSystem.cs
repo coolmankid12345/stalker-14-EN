@@ -49,7 +49,7 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
     private void TryRecharge(Entity<ZoneAnomalyEffectLightArcComponent> effect, Entity<PredictedBatteryComponent?> target)
     {
         // stalker-en - changed from trycomp to resolve for minor performance
-        if (!Resolve(target, ref target.Comp))
+        if (!Resolve(target, ref target.Comp, false))
             return;
 
         _battery.SetCharge((target, target.Comp), target.Comp.LastCharge + target.Comp.MaxCharge * effect.Comp.ChargePercent);
