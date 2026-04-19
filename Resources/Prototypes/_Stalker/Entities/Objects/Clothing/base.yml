@@ -298,10 +298,12 @@
   name: база плащей
   components:
   - type: Storage
-    maxItemSize: Medium
+    maxItemSize: Small
     grid:
-      - 0,0,0,3,1
-      - 2,0,2,3,1
+    - 0,0,0,1
+    - 2,0,2,1
+    - 4,0,4,1
+    - 6,0,6,1
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
