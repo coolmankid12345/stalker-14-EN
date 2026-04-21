@@ -27,7 +27,7 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
-      - !type:Jitter
+      - !type:Jitter #STALKER EN CHANGESS
       - !type:ModifyStatusEffect
         effectProto: StatusEffectClusmy # stalker en change
         time: 3

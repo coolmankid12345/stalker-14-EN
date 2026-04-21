@@ -6,7 +6,7 @@
   suffix: Stalker
   description: A Syringe of meth
   components:
-  - type: sprite
+  - type: Sprite
     sprite: Resources\Textures\Objects\Specific\Chemistry\syringe.rsi
     state: syringe_base0
   - type: SolutionContainerManager
@@ -123,7 +123,7 @@
   suffix: Stalker
   description: Stalker, I laced your shit.
   components:
-  - type: sprite
+  - type: Sprite
     sprite: Resources\Textures\Objects\Specific\Chemistry\syringe.rsi
     state: syringe_base0
   - type: SolutionContainerManager
