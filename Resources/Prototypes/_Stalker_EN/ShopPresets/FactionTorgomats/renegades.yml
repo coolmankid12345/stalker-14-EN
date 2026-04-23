@@ -457,7 +457,7 @@
       STWeaponSMGPPSh41: 5
       STWeaponSMGMP5: 4
       # 7,62x39
-      STWeaponRifleAKMC: 10 # Worse AKM version for cheaper
+      STWeaponRifleAKM: 10 
       STWeaponSniperSKS: 3
   - name: shop-category-magazines
     priority: 2
