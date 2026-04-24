@@ -6,4 +6,6 @@ namespace Content.Shared.Weapons.Ranged.Events;
 public sealed class AmmoShotEvent : EntityEventArgs
 {
     public List<EntityUid> FiredProjectiles = default!;
+
+    public Angle Angle = default!; // EN
 }

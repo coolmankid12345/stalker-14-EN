@@ -46,3 +46,10 @@ st-messenger-char-counter = {$remaining}/{$max}
 # Mute
 st-messenger-mute-button = Заглушить
 st-messenger-unmute-button = Включить звук
+
+# Settings
+st-messenger-settings-header = НАСТРОЙКИ
+st-messenger-random-name-when-not-disguised = Случайное имя без маскировки
+
+# Emission
+st-messenger-emission-warning = ВЫБРОС АКТИВЕН - СВЯЗЬ ПОТЕРЯНА

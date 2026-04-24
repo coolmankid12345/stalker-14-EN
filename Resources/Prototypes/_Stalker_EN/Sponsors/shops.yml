@@ -16,3 +16,12 @@
       Svarog: 25000
       ClothingBackpackDuffelSuperStalkerGray: 3000
       STWeaponShotgunProtecta: 4000
+
+- type: personalShop
+  id: PersonalBababoyShop
+  username: Bababoy
+  categories:
+  - name: Contributor
+    items:
+      ClothingBackpackDuffelOliveTacticStalker: 2500
+      STWeaponRifleGalil: 8000

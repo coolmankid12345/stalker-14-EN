@@ -44,10 +44,12 @@
       castShadows: true
       enabled: false
     - type: AmbientSound
-      volume: -16
-      range: 8
+      volume: -3 # EN
+      range: 4 # EN
       sound:
-        path: /Audio/_Stalker/Effects/fireball_idle.ogg
+        path: /Audio/_Stalker_EN/Effects/Anomalies/fire_idle.ogg # EN
+    - type: ZoneAnomalyEffectPlaySound # EN
+      sound: /Audio/_Stalker_EN/Effects/Anomalies/fireball_blow.ogg # EN
     - type: GenericVisualizer
       visuals:
         enum.ZoneAnomalyVisuals.Layer:
@@ -159,10 +161,12 @@
       castShadows: true
       enabled: false
     - type: AmbientSound
-      volume: -16
-      range: 8
+      volume: -3 # EN
+      range: 4 # EN
       sound:
-        path: /Audio/_Stalker/Effects/fireball_idle.ogg
+        path: /Audio/_Stalker_EN/Effects/Anomalies/fire_idle.ogg # EN
+    - type: ZoneAnomalyEffectPlaySound # EN
+      sound: /Audio/_Stalker_EN/Effects/Anomalies/fireball_blow.ogg # EN
     - type: GenericVisualizer
       visuals:
         enum.ZoneAnomalyVisuals.Layer:
@@ -214,8 +218,21 @@
     - type: ZoneAnomaly
       detectedLevel: 0
       preparingDelay: 0
-      activationDelay: 4
+      activationDelay: 9 # EN
       chargeTime: 0
+    - type: AmbientSound # EN start
+      volume: -3
+      range: 4
+      sound:
+        path: /Audio/_Stalker_EN/Effects/Anomalies/steam.ogg
+    - type: ZoneAnomalyEffectPlaySound
+      sound: /Audio/_Stalker_EN/Effects/Anomalies/steam_blowout.ogg
+    - type: PointLight
+      radius: 10
+      energy: 12
+      color: "#f9d9c2"
+      castShadows: true
+      enabled: false # EN end
     - type: Stealth
     - type: Sprite
       sprite: _Stalker/Objects/Anomalies/steam.rsi
@@ -463,10 +480,12 @@
       castShadows: true
       enabled: false
     - type: AmbientSound
-      volume: -16
-      range: 8
+      volume: -3 # EN
+      range: 4 # EN
       sound:
-        path: /Audio/_Stalker/Effects/fireball_idle.ogg
+        path: /Audio/_Stalker_EN/Effects/Anomalies/fire_idle.ogg # EN
+    - type: ZoneAnomalyEffectPlaySound # EN
+      sound: /Audio/_Stalker_EN/Effects/Anomalies/fireball_blow.ogg # EN
     - type: GenericVisualizer
       visuals:
         enum.ZoneAnomalyVisuals.Layer:

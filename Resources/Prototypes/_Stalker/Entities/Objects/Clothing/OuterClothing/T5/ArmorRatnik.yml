@@ -15,12 +15,14 @@
     modifiers:
       flatReductions:
         Piercing: 8
-        Blunt: 5
+        Blunt: 10
         Slash: 5
       coefficients:
         Piercing: 0.6
         Blunt: 0.6
         Slash: 0.6
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.5
 

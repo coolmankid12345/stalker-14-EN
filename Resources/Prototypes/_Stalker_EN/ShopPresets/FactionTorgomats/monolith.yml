@@ -11,9 +11,8 @@
     ClothingNeckScarfWhite: 10
     MonolithCrateMedkit: 10
     STWeaponRifleAKM: 10
-    STWeaponRifleAKS74Winter: 10
-    STWeaponRifleAKS74UWhite: 10
-    STWeaponRifleL85: 10
+    STWeaponRifleAKS74WinterMono: 10
+    STWeaponRifleAKS74UWhiteMono: 10
     STWeaponRifleLR300v1: 10
     MonolithCrate545Mag30: 10
     MonolithCrate545PC: 10
@@ -119,13 +118,15 @@
   - name: shop-category-weapons
     priority: 1
     items:
-      STWeaponRifleStalkerAK12en: 18 # replace with mono ver later
+      STWeaponRifleG36Mono: 30
+      STWeaponRifleStalkerAK12Mono: 20
       STWeaponSMGStalkerCP2Veresk: 8
-      #STWeaponRifleAK103: 16 # Give them an RPK later instead
-      STWeaponRifleStalkerAbakan: 24
+      STWeaponRifleAK103Mono: 24 # higher because its technically a faction weapon
+      STWeaponRifleStalkerAbakan: 32
       STWeaponShotgunProtecta: 10
       #STSeraKnife: 3 # removed until oilman lets me add it
       STWeaponPistolUSP: 2
+      #STWeaponSniperSVDMono: 85 # not yet
 
   - name: shop-category-armor
     priority: 4

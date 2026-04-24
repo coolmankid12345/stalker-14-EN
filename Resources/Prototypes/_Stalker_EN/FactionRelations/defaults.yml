@@ -45,6 +45,33 @@
     - UN
   displayNames:
     ClearSky: Clear Sky
+  # Pairwise relation transitions players cannot initiate. Pair order is ignored.
+  # Admin commands bypass these restrictions.
+  # Note: if a faction is also in `restrictedFactions`, that all-or-nothing lock wins;
+  # these entries act as self-documentation and a fallback if the faction is removed
+  # from `restrictedFactions` later.
+  relationRestrictions:
+    # Monolith zealots do not negotiate: only War is a legal relation with them.
+    - { factionA: Monolith, factionB: Loners,      forbidden: [Alliance, Neutral, Hostile] }
+    - { factionA: Monolith, factionB: Freedom,     forbidden: [Alliance, Neutral, Hostile] }
+    - { factionA: Monolith, factionB: Bandits,     forbidden: [Alliance, Neutral, Hostile] }
+    - { factionA: Monolith, factionB: Duty,        forbidden: [Alliance, Neutral, Hostile] }
+    - { factionA: Monolith, factionB: Ecologist,   forbidden: [Alliance, Neutral, Hostile] }
+    - { factionA: Monolith, factionB: Mercenaries, forbidden: [Alliance, Neutral, Hostile] }
+    - { factionA: Monolith, factionB: Military,    forbidden: [Alliance, Neutral, Hostile] }
+    - { factionA: Monolith, factionB: ClearSky,    forbidden: [Alliance, Neutral, Hostile] }
+    - { factionA: Monolith, factionB: Renegades,   forbidden: [Alliance, Neutral, Hostile] }
+    # Bandits!
+    - { factionA: Bandits, factionB: Military,   forbidden: [ Alliance, Neutral, Hostile ] }
+    - { factionA: Bandits, factionB: Ecologist,   forbidden: [ Alliance, Neutral ] }
+    - { factionA: Bandits, factionB: Duty,   forbidden: [ Alliance, Neutral, Hostile ] }
+    # Renegades
+    - { factionA: Renegades, factionB: Duty, forbidden: [ Alliance, Neutral, Hostile ] }
+    - { factionA: Renegades, factionB: Ecologist, forbidden: [ Alliance, Neutral ] }
+    - { factionA: Renegades, factionB: ClearSky, forbidden: [ Alliance, Neutral, Hostile ] }
+    - { factionA: Renegades, factionB: Military, forbidden: [ Alliance, Neutral, Hostile ] }
+    # Duty
+    - { factionA: Duty, factionB: Freedom, forbidden: [ Alliance, Neutral, Hostile ] }
   relations:
     # MONOLITH
     - { factionA: Monolith, factionB: Loners, relation: War }

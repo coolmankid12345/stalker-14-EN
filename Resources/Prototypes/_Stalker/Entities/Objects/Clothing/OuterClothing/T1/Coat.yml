@@ -14,20 +14,24 @@
     clothingPrototype: STClothingHeadHatHoodBase
     slot: head
   - type: STWeight
-    self: 3.5
+    self: 3
   - type: Armor
     armorClass: 1
     modifiers:
       flatReductions:
-        Blunt: 1
+        Blunt: 2
         Slash: 3
         Piercing: 1
+        Caustic: 1
+        Radiation: 1
       coefficients:
-        Blunt: 0.95
+        Blunt: 0.90
         Slash: 0.65
         Piercing: 0.95
         Heat: 0.95
         Radiation: 0.9
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: Storage
     maxItemSize: Normal
     blacklist:

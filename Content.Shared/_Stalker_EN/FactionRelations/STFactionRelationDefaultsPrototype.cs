@@ -65,6 +65,13 @@ public sealed class STFactionRelationDefaultsPrototype : IPrototype
     /// </summary>
     [DataField]
     public Dictionary<string, string> DisplayNames { get; } = new();
+
+    /// <summary>
+    /// Pairwise relation restrictions. Blocks players from setting the listed relations
+    /// between the given pair. Pair order does not matter. Admin commands bypass these.
+    /// </summary>
+    [DataField]
+    public List<STFactionRelationRestriction> RelationRestrictions { get; } = new();
 }
 
 /// <summary>
@@ -81,4 +88,21 @@ public sealed partial class STFactionRelationDefault
 
     [DataField(required: true)]
     public STFactionRelationType Relation { get; set; }
+}
+
+/// <summary>
+/// A pair-specific set of relation transitions that players cannot initiate.
+/// </summary>
+[DataDefinition]
+public sealed partial class STFactionRelationRestriction
+{
+    [DataField(required: true)]
+    public string FactionA { get; set; } = string.Empty;
+
+    [DataField(required: true)]
+    public string FactionB { get; set; } = string.Empty;
+
+    /// <summary>Relation states that cannot be set between this pair.</summary>
+    [DataField(required: true)]
+    public List<STFactionRelationType> Forbidden { get; set; } = new();
 }

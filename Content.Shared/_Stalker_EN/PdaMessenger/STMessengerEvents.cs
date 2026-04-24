@@ -137,3 +137,18 @@ public sealed class STMessengerNavigateToNewsEvent : CartridgeMessageEvent
         ArticleId = articleId;
     }
 }
+
+/// <summary>
+/// Toggle the random name setting for messages when not disguised.
+/// Only available for players who can disguise (have AltBand and CanChange).
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class STMessengerToggleRandomNameEvent : CartridgeMessageEvent
+{
+    public readonly bool RandomNameWhenNotDisguised;
+
+    public STMessengerToggleRandomNameEvent(bool randomNameWhenNotDisguised)
+    {
+        RandomNameWhenNotDisguised = randomNameWhenNotDisguised;
+    }
+}

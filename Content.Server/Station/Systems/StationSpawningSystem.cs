@@ -12,6 +12,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.PDA;
+using Content.Shared._Stalker_EN.Portraits;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
@@ -25,6 +26,7 @@ using Robust.Shared.Utility;
 using System;
 using System.Security.Cryptography;
 using System.Text;
+using System.Linq;
 
 namespace Content.Server.Station.Systems;
 
@@ -45,6 +47,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly PdaSystem _pdaSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
+    [Dependency] private readonly CharacterPortraitSystem _portraitSystem = default!;
 
     /// <summary>
     /// Attempts to spawn a player character onto the given station.
@@ -139,6 +142,54 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             _humanoidSystem.LoadProfile(entity.Value, profile);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
 
+            // stalker-en-start
+            // Apply job-specific appearance for Zombified
+            if (prototype != null && prototype.ID == "StalkerZombified")
+            {
+                _humanoidSystem.ApplyZombifiedAppearance(entity.Value, profile.Name);
+            }
+            //stalker-en-end
+
+            // stalker-en-start
+            // Set character portrait for PDA notifications.
+            // Portrait resolution flow:
+            // 1. Set PortraitJobId from job prototype (used as fallback if BandsComponent not available).
+            // 2. If player selected a portrait, validate and use it directly.
+            // 3. BandsComponent ComponentAdd will resolve portrait with proper band context after DoJobSpecials.
+            var portraitComp = EnsureComp<CharacterPortraitComponent>(entity.Value);
+
+            // Set PortraitJobId from job prototype for proper portrait resolution.
+            // This is used as fallback when BandsComponent is not available or as context for portrait selection.
+            if (prototype != null)
+            {
+                portraitComp.PortraitJobId = prototype.ID;
+                Dirty(entity.Value, portraitComp);
+            }
+
+            // If player selected a portrait, validate and use it directly.
+            // Player-selected portraits are preserved and not re-resolved by BandsComponent ComponentAdd.
+            if (!string.IsNullOrEmpty(profile.SelectedPortraitId))
+            {
+                if (ValidatePortraitPath(profile.SelectedPortraitId))
+                {
+                    portraitComp.PortraitTexturePath = profile.SelectedPortraitId;
+                    portraitComp.ExplicitlySelected = true;
+                    Dirty(entity.Value, portraitComp);
+                }
+            }
+
+            // Set disguise portrait for factions that can disguise (e.g., Clear Sky).
+            // DisguisePortraitId stores the texture path directly, not a ProtoId.
+            if (!string.IsNullOrEmpty(profile.DisguisePortraitId))
+            {
+                if (ValidatePortraitPath(profile.DisguisePortraitId))
+                {
+                    portraitComp.DisguisedPortraitPath = profile.DisguisePortraitId;
+                    Dirty(entity.Value, portraitComp);
+                }
+            }
+            // stalker-en-end
+
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
             {
                 AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
@@ -195,6 +246,20 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             jobSpecial.AfterEquip(entity);
         }
     }
+
+    // stalker-en-start
+    /// <summary>
+    /// Validates that a portrait texture path exists in any portrait prototype.
+    /// Checks SpriteSpecifier.Texture directly.
+    /// </summary>
+    /// <param name="path">The portrait texture path to validate.</param>
+    /// <returns>True if the path exists in any portrait prototype, false otherwise.</returns>
+    private bool ValidatePortraitPath(string path)
+    {
+        var portraits = _prototypeManager.EnumeratePrototypes<CharacterPortraitPrototype>();
+        return portraits.Any(p => p.Textures.Any(t => t is SpriteSpecifier.Texture tex && tex.TexturePath.ToString() == path));
+    }
+    // stalker-en-end
 
     /// <summary>
     /// Sets the ID card and PDA name, job, and access data.

@@ -299,6 +299,7 @@
   factionId: MilitaryStalker
   maxMembers: 6
   managingRankId: 2
+  disguiseTargetJobId: Stalker # stalker EN change
   hierarchy:
     1: MilitaryStalker
     2: HeadMilitaryStalker

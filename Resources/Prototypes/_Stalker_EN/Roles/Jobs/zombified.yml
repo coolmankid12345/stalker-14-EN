@@ -1,0 +1,71 @@
+- type: job
+  id: StalkerZombified
+  name: job-zombified
+  icon: zombieEN
+  description: job-zombified-desc
+  playTimeTracker: JobZombified
+  whitelisted: true
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: StalkerZombifiedGear
+  supervisors: job-zombified-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: Destructible
+          thresholds:
+            - trigger:
+                !type:DamageTrigger
+                damage: 200
+              behaviors:
+                - !type:PlaySoundBehavior
+                  sound:
+                    collection: STZombieDeath # stalker EN change
+        - type: Access
+          tags:
+            - Stalker
+            - Zombified
+        - type: ApproachEmitter
+          enabled: false
+        - type: Bands
+          band: Stalker
+          bandIcon: zombieEN
+          bandProto: STZombiefiedBand
+          bandRankId: 1
+        - type: NpcFactionMember
+          factions:
+            - Mutated
+        - type: Hunger
+          baseDecayRate: 0
+        - type: Thirst
+          baseDecayRate: 0
+        - type: Speech
+          speechSounds: STZombie
+        - type: PersonalDamageBlock
+        - type: Damageable
+          damageContainer: Biological
+          damageModifierSet: Monolith
+        - type: PsyEffectImmune
+        - type: StutteringAccent
+
+- type: startingGear
+  id: StalkerZombifiedGear
+  equipment:
+    id: OldPDA
+    torso: ClothingTorsoSweaterStalkerGreen
+    legs: ClothingLegsJeansBlue
+    shoes: ClothingShoesNovice
+    mask: ClothingMaskGasMarlyaRuined
+
+- type: stBand
+  id: STZombiefiedBand
+  name: Zombiefied
+  factionId: Mutated
+  maxMembers: 10
+  managingRankId: 1
+  hierarchy:
+    1: StalkerZombified

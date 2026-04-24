@@ -3,6 +3,7 @@
          xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
+         xmlns:portrait="clr-namespace:Content.Client._Stalker_EN.Portraits"
          HorizontalExpand="True">
         <!-- Left side -->
         <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -152,6 +153,19 @@
                     <ScrollContainer VerticalExpand="True">
                         <humanoid:MarkingPicker Name="Markings" IgnoreCategories="Hair,FacialHair" />
                     </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Name="Portraits" Orientation="Vertical" Margin="10" HorizontalExpand="True" VerticalExpand="True">
+                    <!-- Portrait -->
+                    <Label Text="{Loc 'st-portrait-tab'}" StyleClasses="labelHeading" />
+                    <Control MinHeight="5" />
+                    <portrait:PortraitSelector Name="PortraitSelector" HorizontalExpand="True" VerticalExpand="True" />
+
+                    <!-- Disguise Portrait (only for Clear Sky) -->
+                    <BoxContainer Name="DisguisePortraitBox" Orientation="Vertical" Visible="False" Margin="0 15 0 0">
+                        <Label Text="{Loc 'st-disguise-portrait-tab'}" StyleClasses="labelHeading" />
+                        <Control MinHeight="5" />
+                        <portrait:PortraitSelector Name="DisguisePortraitSelector" HorizontalExpand="True" VerticalExpand="True" />
+                    </BoxContainer>
                 </BoxContainer>
             </TabContainer>
         </BoxContainer>

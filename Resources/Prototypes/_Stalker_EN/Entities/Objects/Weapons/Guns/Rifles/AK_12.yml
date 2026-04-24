@@ -55,3 +55,37 @@
     accuracyMultiplier: 1.2
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
+
+- type: entity
+  parent: STWeaponRifleStalkerAK12en
+  id: STWeaponRifleStalkerAK12Mono
+  name: AK-12 (Winter)
+  suffix: ST, Weapon, Radioactive
+  description: This model represents the pinnacle of AK system development and differs from previous generations in its thoughtful ergonomics, adaptation to round-the-clock use, and increased accuracy and consistency of fire.
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monoak_12.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monoak_12.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monoak_12.rsi
+    scale: 0.7, 0.7
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 6.65
+
+- type: entity
+  parent: STWeaponRifleStalkerAK12en
+  id: STWeaponRifleStalkerAK12MonoClean
+  name: AK-12 (Winter)
+  suffix: ST, Weapon
+  description: This model represents the pinnacle of AK system development and differs from previous generations in its thoughtful ergonomics, adaptation to round-the-clock use, and increased accuracy and consistency of fire. A small strip of tape marks the stock to denote that it's been chemically cleaned and is safe to handle.
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monoak_12.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monoak_12.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monoak_12.rsi
+    scale: 0.7, 0.7

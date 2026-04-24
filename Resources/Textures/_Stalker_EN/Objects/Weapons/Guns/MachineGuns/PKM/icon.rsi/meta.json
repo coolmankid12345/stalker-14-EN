@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by thebimmer231, chermaity and dallaszzz",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "bolt-open"
+    },
+    {
+      "name": "icon"
+    },
+    {
+      "name": "icon-0"
+    },
+    {
+      "name": "mag-0"
+    },
+    {
+      "name": "base-scope"
+    },
+    {
+      "name": "base-scope-open"
+    }
+  ]
+}

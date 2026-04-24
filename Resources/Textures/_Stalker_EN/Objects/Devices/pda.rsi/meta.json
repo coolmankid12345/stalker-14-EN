@@ -5,7 +5,7 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "merc and rugged pda modified from stalker pda by carousel, military pda modified from Stalker pda by Texas Peach",
+    "copyright": "merc and rugged pda modified from stalker pda by carousel, military pda modified from Stalker pda by Texas Peach, old_pda made by wassuythefourth_47721",
     "states": [
         {
             "name": "merc_on"
@@ -38,6 +38,9 @@
         },
         {
             "name": "rugged_off"
+        },
+        {
+            "name": "old_pda"
         }
     ]
 }

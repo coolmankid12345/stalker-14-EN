@@ -27,3 +27,15 @@
     sprite: _Stalker_EN/Objects/Clothing/hats/seva_helm_bandit.rsi
   - type: Clothing
     sprite: _Stalker_EN/Objects/Clothing/hats/seva_helm_bandit.rsi
+
+- type: entity
+  parent: ClothingOuterArmorSevaMonolith
+  id: ClothingOuterArmorSevaMonolithClean
+  name: костюм "Сева" монолита
+  description: Научный костюм, вариант «СЕВЫ», производимый монолитовцами.
+  suffix: ST, T2, Env
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0

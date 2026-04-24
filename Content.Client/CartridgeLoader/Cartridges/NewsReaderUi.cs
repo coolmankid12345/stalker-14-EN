@@ -49,6 +49,6 @@ public sealed partial class NewsReaderUi : UIFragment
     {
         var newsMessage = new NewsReaderUiMessageEvent(action);
         var message = new CartridgeUiMessage(newsMessage);
-        userInterface.SendMessage(message);
+        userInterface.SendPredictedMessage(message);
     }
 }

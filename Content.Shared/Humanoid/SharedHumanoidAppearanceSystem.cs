@@ -603,4 +603,26 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         return Loc.GetString("identity-age-old");
     }
+
+    // stalker-en-start
+    /// <summary>
+    /// Applies Zombified-specific appearance (skin/eye colors and name prefix).
+    /// </summary>
+    public void ApplyZombifiedAppearance(EntityUid entity, string originalName)
+    {
+        if (TryComp<HumanoidAppearanceComponent>(entity, out var humanoidAppearance))
+        {
+            humanoidAppearance.SkinColor = Color.FromHex("#9C9794FF");
+            humanoidAppearance.EyeColor = Color.FromHex("#EBEBEB");
+            Dirty(entity, humanoidAppearance);
+        }
+
+        if (TryComp<MetaDataComponent>(entity, out var metaData))
+        {
+            var metaSystem = EntityManager.System<MetaDataSystem>();
+            metaSystem.SetEntityName(entity, $"Zombified {originalName}");
+        }
+    }
+    // stalker-en-end
+
 }

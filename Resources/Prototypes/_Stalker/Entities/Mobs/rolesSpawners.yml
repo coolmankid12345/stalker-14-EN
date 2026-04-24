@@ -31,6 +31,7 @@
         - Military
     - type: Loadout
       prototypes: [ MilitaryGear ]
+    - type: CharacterPortrait # Stalker EN change
 
 - type: entity
   name: кукла ОКСОП глава (переименуй меня)
@@ -50,6 +51,7 @@
         - MilitaryOfficer
     - type: Loadout
       prototypes: [ MilitaryGearHead ]
+    - type: CharacterPortrait # Stalker EN change
 
 - type: entity
   name: кукла Ополчение (переименуй меня)
@@ -106,6 +108,7 @@
     - type: NpcFactionMember
       factions:
       - Bandit
+    - type: CharacterPortrait # Stalker EN change
 
 - type: entity
   name: кукла свободовец (переименуй меня)
@@ -123,6 +126,7 @@
       bandRankId: 1
     - type: Loadout
       prototypes: [ FreedomGear ]
+    - type: CharacterPortrait # Stalker EN change
 
 - type: entity
   name: кукла Долговец (переименуй меня)
@@ -140,6 +144,7 @@
       bandRankId: 1
     - type: Loadout
       prototypes: [ DolgGear ]
+    - type: CharacterPortrait # Stalker EN change
 
 - type: entity
   name: кукла учёный (переименуй меня)
@@ -160,6 +165,7 @@
     - type: NpcFactionMember
       factions:
       - Scientists
+    - type: CharacterPortrait # Stalker EN change
 
 - type: entity
   name: кукла декан (переименуй меня)
@@ -220,6 +226,7 @@
       - Bandit
     - type: Loadout
       prototypes: [ BandGear ]
+    - type: CharacterPortrait # Stalker EN change
 
 - type: entity
   name: кукла жаба (переименуй меня)
@@ -290,9 +297,11 @@
       bandIcon: cn
       bandProto: STClearSkyBand
       bandRankId: 1
-      altBand: stalker
+      altBand: stalker # Stalker EN change
+      canChange: true # Stalker EN change
     - type: Loadout
       prototypes: [ StalkerClearSkyGear ]
+    - type: CharacterPortrait # Stalker EN change
 
 - type: entity
   name: кукла член проекта (переименуй меня)
@@ -347,6 +356,7 @@
       altBand: stalker
     - type: Loadout
       prototypes: [ StalkerMercenaryGear ]
+    - type: CharacterPortrait # Stalker EN change
 
 - type: entity
   name: кукла аномалист (переименуй меня)
@@ -443,7 +453,9 @@
         - Stalker
     - type: Loadout
       prototypes: [ StalkerGear ]
+    - type: CharacterPortrait # Stalker EN change
 
+# Stalker EN change start
 - type: entity
   name: кукла Новичка (переименуй меня)
   suffix: Stalker, пешка с нашивкой
@@ -454,12 +466,15 @@
       band: Stalker
       bandIcon: rookie
       bandProto: STStalkerBand
-      bandRankId: 1
     - type: Access
       tags:
         - Rookie
     - type: Loadout
       prototypes: [ RookieGear ]
+    - type: CharacterPortrait
+      portraitJobId: StalkerRookie
+
+# Stalker EN change end
 
 - type: entity
   name: кукла Монолита (переименуй меня)
@@ -491,7 +506,7 @@
     - type: STAnomalyTipsViewing
     - type: AutoImplant
       implants:
-      - STSeraBombImplant
+      - STMonoBombImplant
     - type: IntrinsicRadioReceiver # Stalker EN change start
     - type: IntrinsicRadioTransmitter
       channels:
@@ -501,6 +516,8 @@
       - Monolith
       # Stalker EN change end
     - type: PsyEffectImmune
+    - type: CharacterPortrait # Stalker EN change
+
 
 - type: entity
   name: кукла СБУ (переименуй меня)
@@ -521,6 +538,7 @@
     - type: Loadout
       prototypes: [ SBUGear ]
 
+# Stalker EN change start
 - type: entity
   name: кукла зомбированного (переименуй меня)
   suffix: Stalker, пешка с нашивкой
@@ -534,23 +552,33 @@
     skinColor: "#9C9794FF"
     hasCustomSkinColor: true # Stalker-EN-Change: preserve custom skin color from YAML
   - type: Bands
-    band: Zombie
+    band: Stalker
     bandIcon: zombieEN
+    bandProto: STZombiefiedBand
+    bandRankId: 1
   - type: Access
     tags:
       - Stalker
+      - Zombified
   - type: NpcFactionMember
     factions:
       - Mutated
+  - type: Loadout
+    prototypes: [ StalkerZombifiedGear ]
   - type: Hunger
     baseDecayRate: 0
   - type: Thirst
     baseDecayRate: 0
+  - type: Speech
+    speechSounds: STZombie
   - type: PersonalDamageBlock
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Monolith
   - type: PsyEffectImmune
+  - type: StutteringAccent
+  - type: CharacterPortrait
+# Stalker EN change end
 
 - type: startingGear
   id: StalkerGearT4
@@ -577,8 +605,10 @@
     shoes: STClothingShoesBootsCombatFilled
     pocket1: PassportSBU
 
+# Stalker EN change start
 - type: startingGear
   id: RookieGear
   equipment:
     id: StalkerPDA
-    dogtag: ClothingNeckDogtagRookie # EN
+    dogtag: ClothingNeckDogtagRookie
+# Stalker EN change end

@@ -32,6 +32,10 @@ public sealed class ShovelSystem : EntitySystem
         SubscribeLocalEvent<StalkerShovelComponent, PlowGroundDoAfterEvent>(OnDoAfterPlowGround);
         _tileForPlowGround.Add("FloorPlanetGreenGrass");
         _tileForPlowGround.Add("FloorPlanetYellowGrass");
+        _tileForPlowGround.Add("FloorPlanetRedGrass"); // ST EN
+        _tileForPlowGround.Add("STFloorPlanetDirt"); // ST EN
+        _tileForPlowGround.Add("STFloorDirt"); // ST EN
+        _tileForPlowGround.Add("FloorDirt"); // ST EN
         for (var i = 0; i <= 6; i++)
         {
             _shovelSounds.Add(new SoundPathSpecifier("/Audio/_Stalker/Effects/LopataSound/Lopata"+i+".ogg"));
@@ -96,7 +100,7 @@ public sealed class ShovelSystem : EntitySystem
         }
         else
         {
-            _popup.PopupEntity("Место уже занято", args.User, PopupType.Large);
+            _popup.PopupEntity("Tile Obstructed", args.User, PopupType.Large); // ST EN translate
         }
     }
 
@@ -162,10 +166,10 @@ public sealed class ShovelSystem : EntitySystem
 
         ActivationVerb verb = new()
         {
-            Text = Loc.GetString("Выкопать грядку"),
+            Text = Loc.GetString("Dig garden plot"), // ST EN translate
             Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/light.svg.192dpi.png")),
 
-            Act = () => PlowGround(@event.User, ent,"hydroponicsSoil",30)
+            Act = () => PlowGround(@event.User, ent,"SoilStalker",15) // ST EN change (wrong prototype)
         };
         if (ent.Comp.CanPlow)
         {
@@ -174,10 +178,10 @@ public sealed class ShovelSystem : EntitySystem
 
         ActivationVerb verb2 = new()
         {
-            Text = Loc.GetString("Выкопать могилу"),
+            Text = Loc.GetString("Dig grave"), // ST EN translate
             Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/light.svg.192dpi.png")),
 
-            Act = () => PlowGround(@event.User, ent,"CrateStoneGrave",60)
+            Act = () => PlowGround(@event.User, ent,"CrateStoneGrave",30) // ST EN change
         };
         if (ent.Comp.CanMakeGrave)
         {
@@ -208,7 +212,7 @@ public sealed class ShovelSystem : EntitySystem
         }
         else
         {
-            _popup.PopupEntity("Не подходящая местность", eventUser, PopupType.Large);
+            _popup.PopupEntity("Unsuitable terrain", eventUser, PopupType.Large); // ST EN translate
         }
     }
 }

@@ -1,0 +1,159 @@
+﻿- type: lightCraftingRecipe
+  id: ChemCleaningKitAKS74Winter
+  results:
+  - STWeaponRifleAKS74Winter
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: STWeaponRifleAKS74WinterMono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitAKS74UWhite
+  results:
+  - STWeaponRifleAKS74UWhite
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: STWeaponRifleAKS74UWhiteMono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitAK103Mono
+  results:
+  - STWeaponRifleAK103MonoClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: STWeaponRifleAK103Mono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitAK12Mono
+  results:
+  - STWeaponRifleStalkerAK12MonoClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: STWeaponRifleStalkerAK12Mono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitG36Mono
+  results:
+  - STWeaponRifleG36MonoClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: STWeaponRifleG36Mono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitSVDMono
+  results:
+  - STWeaponSniperSVDMonoClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: STWeaponSniperSVDMono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitArmorMonolith
+  results:
+  - ClothingOuterArmorMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingOuterArmorMonolith
+    keepFirst: true
+    time: 15
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitAPSBare
+  results:
+  - WeaponPistolStalkerAPSBare
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: WeaponPistolStalkerAPSBareMono
+    keepFirst: true
+    time: 5
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitWebbingHolsterMonolith
+  results:
+  - ClothingBeltWebbingHolsterMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingBeltWebbingHolsterMonolith
+    keepFirst: true
+    time: 12
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitSevaMonolith
+  results:
+  - ClothingOuterArmorSevaMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingOuterArmorSevaMonolith
+    keepFirst: true
+    time: 15
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitKevlarMonolith
+  results:
+  - ClothingOuterCoatKevlarMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingOuterCoatKevlarMonolith
+    keepFirst: true
+    time: 12
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitLightPlateVestBaseMonolith
+  results:
+  - STClothingOuterArmorLightPlateVestBaseMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: STClothingOuterArmorLightPlateVestBaseMonolith
+    keepFirst: true
+    time: 15
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitZaryaMonolith
+  results:
+  - ClothingOuterArmorZaryaMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingOuterArmorZaryaMonolith
+    keepFirst: true
+    time: 15
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitBerill5MMonolith
+  results:
+  - ClothingOuterArmorBerill5MMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingOuterArmorBerill5MMonolith
+    keepFirst: true
+    time: 15
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitJacketMonolith
+  results:
+  - ClothingOuterJacketMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingOuterJacketMonolith
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitBeretMonolith
+  results:
+  - ClothingHeadBeretMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingHeadBeretMonolith
+    keepFirst: true
+    time: 5

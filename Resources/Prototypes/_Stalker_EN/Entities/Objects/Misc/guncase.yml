@@ -1,0 +1,113 @@
+﻿- type: entity
+  parent: [ BaseStorageItem, BaseBagOpenClose ]
+  id: StalkerGunCaseBase
+  name: gun case
+  description: A sturdy case for storing large firearms. The lining has been modified for use in the zone and is highly radiation resistant.
+  abstract: true
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Other/Storage/guncase_standard.rsi
+    layers:
+    - state: icon
+      map: ["closedLayer"]
+    - state: icon-open
+      map: ["openLayer"]
+      visible: false
+  - type: Appearance
+  - type: STWeight
+    self: 1
+  - type: Storage
+    maxItemSize: Large
+    grid:
+    - 0,0,7,1
+    - 0,3,7,4
+    whitelist:
+      components:
+        - Gun
+        - BallisticAmmoProvider
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,1
+  - type: PersonalDamageBlock
+  - type: RadiationBlockingContainer
+    resistance: 99
+  - type: RepositoryItem
+    categoryName: repository-equipment-category
+
+- type: entity
+  parent: StalkerGunCaseBase
+  id: StalkerGunCaseStandard
+  name: gun case
+
+- type: entity
+  parent: StalkerGunCaseBase
+  id: StalkerGunCaseDouble
+  name: large gun case
+  description: A large case capable of comfortably storing three large guns. The modified lining blocks radiation both internally and externally.
+  components:
+  - type: Storage
+    maxItemSize: Large
+    grid:
+    - 0,0,7,1
+    - 0,3,7,4
+    - 0,6,7,7
+    whitelist:
+      components:
+        - Gun
+        - BallisticAmmoProvider
+
+- type: entity
+  parent: StalkerGunCaseBase
+  id: StalkerGunCaseMilitary
+  name: military grade gun case
+  description: A large gun case issued by the Ukrainian government. It has extra pockets to store magazine and is lined with material to block radiation.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Other/Storage/guncase_military.rsi
+    layers:
+    - state: icon
+      map: [ "closedLayer" ]
+    - state: icon-open
+      map: [ "openLayer" ]
+      visible: false
+  - type: Storage
+    maxItemSize: Large
+    grid:
+    - 0,0,0,7
+    - 2,0,9,1
+    - 2,3,9,4
+    - 2,6,9,7
+    - 11,0,11,7
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+
+- type: entity
+  parent: StalkerGunCaseBase
+  id: StalkerGunCaseMercenary
+  name: mercenary gun case
+  description: An understated and practical gun case for transporting weapons through the zone. It's been lined with material to block radiation.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Other/Storage/guncase_merc.rsi
+    layers:
+    - state: icon
+      map: [ "closedLayer" ]
+    - state: icon-open
+      map: [ "openLayer" ]
+      visible: false
+  - type: Storage
+    maxItemSize: Large
+    grid:
+    - 0,0,0,7
+    - 2,0,9,1
+    - 2,3,9,4
+    - 2,6,9,7
+    - 11,0,11,7
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider

@@ -1,80 +1,4 @@
 # i think some of this is redundant so if someone else wants to clean it up go ahead
-- type: entity
-  id: BaseDEMag
-  name: Desert Eagle Magazine
-  description: A magazine for .45ACP, fitted for use with desert eagle handguns. They sell empty.
-  parent: BaseItem
-  suffix: Stalker
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: STWeight
-    self: 0.5
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/deserteagle/8.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: Tag
-    tags:
-    - MagazineDesertEagle
-  - type: Item
-    size: Small
-    shape:
-    - 0,0,0,1
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-  - type: MagazineVisuals
-    magState: mag
-    steps: 2
-    zeroVisible: false
-  - type: Appearance
-  - type: RepositoryItem
-    categoryName: repository-magazines-category
-
-- type: entity
-  id: DEMag8
-  name: Desert Eagle Magazine (8)
-  parent: BaseDEMag
-  suffix: Stalker
-  components:
-  - type: BallisticAmmoProvider
-    proto:
-    mayTransfer: true
-    whitelist:
-      tags:
-        - Cartridge45ACP
-    capacity: 8
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/deserteagle/8.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  id: DEMag15
-  name: Desert Eagle Magazine (15)
-  parent: BaseDEMag
-  suffix: Stalker
-  components:
-  - type: BallisticAmmoProvider
-    proto:
-    mayTransfer: true
-    whitelist:
-      tags:
-        - Cartridge45ACP
-    capacity: 15
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/deserteagle/15.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 # Noguchi47 was here :3
 - type: entity
@@ -239,3 +163,86 @@
           tags:
             - STElasticRubberBlue
     sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/elastic_rubber.rsi    
+
+- type: entity
+  id: BaseUMPMag
+  name: HK UMP Magazine
+  description: 25-round .45 ACP magazine for UMP. They sell empty.
+  parent: BaseItem
+  suffix: Stalker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STWeight
+    self: 0.3
+  - type: Sprite
+    scale: 0.85, 0.85
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/ump/25.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazineUMP
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: RepositoryItem
+    categoryName: repository-magazines-category
+
+- type: entity
+  id: UMPMag25
+  name: HK UMP Magazine (25)
+  parent: BaseUMPMag
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge45ACP
+    capacity: 25
+  - type: Sprite
+    scale: 0.85, 0.85
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/ump/25.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_ump45_25:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_ump45_25:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_ump45_25:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/elastic_rubber.rsi

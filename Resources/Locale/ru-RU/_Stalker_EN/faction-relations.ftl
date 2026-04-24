@@ -167,3 +167,6 @@ bands-managing-window-relation-declare-button = Объявить
 bands-managing-window-relation-propose-button = Предложить
 bands-managing-window-relation-confirm-free = Подтвердить?
 bands-managing-window-relation-broadcast = Предложение радиовещания
+
+# Error feedback (reserved for future UI hookup)
+st-faction-relations-error-restricted-relation = Эта фракция не может установить такие отношения с выбранной стороной.

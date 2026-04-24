@@ -99,7 +99,7 @@
   id: STMilitiaBand
   name: militia
   factionId: Stalker
-  maxMembers: 10
+  maxMembers: 16
   managingRankId: 2
   hierarchy:
     1: StalkerMilitia

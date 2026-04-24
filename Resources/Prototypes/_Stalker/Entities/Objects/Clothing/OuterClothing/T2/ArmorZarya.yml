@@ -28,6 +28,8 @@
         Heat: 0.8
         Caustic: 0.85
         Shock: 0.9
+  - type: GrantsArtifactSlots
+    slots: 2 # EN
   - type: Craftable
   - type: Tag
     tags:
@@ -227,14 +229,23 @@
     armorClass: 2
     modifiers:
       flatReductions:
-        Blunt: 4
-        Slash: 7
+        Blunt: 5
+        Slash: 8
         Piercing: 3
+        Radiation: 6 # as much as 3 lead plates
       coefficients:
         Blunt: 0.7
         Slash: 0.6
-        Compression: 0.7
+        Compression: 0.6
         Piercing: 0.8
+  - type: PersonalDamage
+    staminaDamage: -1 # EN
+    interval: 1
+    damage:
+      types:
+        Radiation: -0.2
+  - type: GrantsArtifactSlots
+    slots: 0 # EN
 
 - type: entity
   parent: STClothingHeadHatBase

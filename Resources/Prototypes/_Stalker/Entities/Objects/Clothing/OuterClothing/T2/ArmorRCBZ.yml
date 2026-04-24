@@ -26,6 +26,8 @@
         Radiation: 0.6
         Caustic: 0.6
         Shock: 0.7
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
@@ -84,6 +86,22 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/rcbz-dolg.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHelmRCBZDolg
+  - type: Armor # EN
+    armorClass: 1
+    modifiers:
+      flatReductions:
+        Radiation: 6
+        Caustic: 3
+        Heat: 1
+        Cold: 1
+        Shock: 1
+      coefficients:
+        Heat: 0.7
+        Radiation: 0.6
+        Caustic: 0.6
+        Shock: 0.7
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
 
 - type: entity
   parent: ClothingHelmRCBZ

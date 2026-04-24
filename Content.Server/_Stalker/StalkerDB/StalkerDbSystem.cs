@@ -18,6 +18,11 @@ public sealed class StalkerDbSystem : EntitySystem
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly StalkerStorageSystem _stalkerStorageSystem = default!;
 
+    // stalker-en-changes-start: track fire-and-forget DB writes so shutdown can drain them
+    private readonly ConcurrentBag<Task> _pendingDbWrites = new();
+    private ISawmill _sawmill = default!;
+    // stalker-en-changes-end
+
     public const string DefaultStalkerItems =
 """
 {
@@ -50,10 +55,63 @@ public sealed class StalkerDbSystem : EntitySystem
     {
         base.Initialize();
 
+        _sawmill = Logger.GetSawmill("stalker.db"); // stalker-en-changes
         InitializeGroupRecords();
         LoadPrototypes();
         SubscribeLocalEvent<PlayerBeforeSpawnEvent>(BeforeSpawn);
     }
+
+    // stalker-en-changes-start: drain orphaned DB writes so shutdown isn't racing the Npgsql pool
+    public override void Shutdown()
+    {
+        base.Shutdown();
+        // Safety net; EntryPoint.Shutdown drained earlier, but writes may have occurred since.
+        FlushPendingWrites(TimeSpan.FromSeconds(5));
+    }
+
+    /// <summary>
+    /// Call BEFORE EntryPoint.Dispose so the Npgsql pool isn't saturated when it runs ClearAllCrashRecovery.
+    /// </summary>
+    public bool FlushPendingWrites(TimeSpan timeout)
+    {
+        var pending = _pendingDbWrites.ToArray();
+        if (pending.Length == 0)
+        {
+            _sawmill.Info("[shutdown] StalkerDbSystem: no pending writes");
+            return true;
+        }
+
+        _sawmill.Info($"[shutdown] StalkerDbSystem flushing {pending.Length} pending write(s)");
+        var sw = System.Diagnostics.Stopwatch.StartNew();
+        var completed = false;
+        try
+        {
+            completed = Task.WhenAll(pending).Wait(timeout);
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"[shutdown] StalkerDbSystem error awaiting writes: {e}");
+        }
+        sw.Stop();
+        _sawmill.Info($"[shutdown] StalkerDbSystem flush {(completed ? "completed" : "TIMED OUT")} after {sw.ElapsedMilliseconds}ms");
+        return completed;
+    }
+
+    private void TrackDbWrite(Func<Task> dbCall, string label)
+    {
+        _pendingDbWrites.Add(Task.Run(async () =>
+        {
+            try
+            {
+                await dbCall();
+            }
+            catch (Exception e)
+            {
+                _sawmill.Error($"{label}: {e}");
+            }
+        }));
+    }
+    // stalker-en-changes-end
 
     #region InventoryOperations
 
@@ -84,17 +142,17 @@ public sealed class StalkerDbSystem : EntitySystem
     public void SetInventoryJson(string login, string inputInventoryJson)
     {
         Stalkers[login] = inputInventoryJson;
-        _dbManager.SetLoginItems(login, inputInventoryJson);
+        TrackDbWrite(() => _dbManager.SetLoginItems(login, inputInventoryJson), $"SetLoginItems({login})"); // stalker-en-changes
     }
 
     public void ClearAllRepositories(string login)
     {
-        _dbManager.SetAllLoginItems(login, DefaultStalkerItems);
+        TrackDbWrite(() => _dbManager.SetAllLoginItems(login, DefaultStalkerItems), $"SetAllLoginItems({login})"); // stalker-en-changes
     }
 
     public void ClearInventoryJson(string login)
     {
-       _dbManager.SetLoginItems(login, DefaultStalkerItems);
+        TrackDbWrite(() => _dbManager.SetLoginItems(login, DefaultStalkerItems), $"ClearInventoryJson({login})"); // stalker-en-changes
     }
 
     private async Task LoadPlayer(string login, bool loadSymbols = true)

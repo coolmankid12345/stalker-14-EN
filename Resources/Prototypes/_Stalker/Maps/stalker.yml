@@ -17,6 +17,7 @@
             StalkerRene: [ 0, -1 ]
             StalkerHeadRene: [ 0, -1 ]
             StalkerGreh: [ 0, -1 ]
+            StalkerZombified: [ 0, -1 ] # stalker-en-change
             StalkerMonolith: [ 0, -1 ]
             StalkerHeadMonolith: [ 0, -1 ]
             StalkerClearSky: [ 0, -1 ]

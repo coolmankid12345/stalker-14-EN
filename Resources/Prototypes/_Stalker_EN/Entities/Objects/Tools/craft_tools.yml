@@ -1,0 +1,20 @@
+﻿- type: entity
+  parent: BaseItem
+  id: CraftChemicalCleaningKit
+  name: chemical cleaning kit
+  description: Various industrial strength chemical cleaners made to isolate and remove radioactive grime. Be sure to wear proper safety gear while handling it.
+  suffix: Stalker, Craft
+  components:
+  - type: STWeight
+    self: 2.5
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,2
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Tools/chemcleaningkit.rsi
+    state: icon
+    scale: 0.8,0.8
+  - type: Craftable
+  - type: RepositoryItem
+    categoryName: repository-tools-category

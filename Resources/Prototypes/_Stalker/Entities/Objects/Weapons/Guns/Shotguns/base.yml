@@ -44,6 +44,9 @@
           - STWeaponModuleShotgunChoke
   - type: STWeaponAccuracy
     accuracyMultiplier: 1.15
+  - type: ParticleOnGunShot # EN start
+    effect: MuzzleSmoke
+    inheritAngle: true # EN end
 
 - type: entity
   abstract: true

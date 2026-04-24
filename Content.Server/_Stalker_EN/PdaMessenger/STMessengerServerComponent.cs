@@ -96,6 +96,13 @@ public sealed partial class STMessengerServerComponent : Component
     /// </summary>
     [ViewVariables]
     public ProtoId<STBandPrototype>? OwnerBand;
+
+    /// <summary>
+    /// If true, the player's name will be randomized in messages when not disguised.
+    /// Only applies to players who can disguise (have AltBand and CanChange).
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool RandomNameWhenNotDisguised;
 }
 
 /// <summary>

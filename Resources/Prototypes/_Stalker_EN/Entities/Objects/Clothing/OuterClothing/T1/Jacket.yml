@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: ClothingOuterJacketMonolith
+  id: ClothingOuterJacketMonolithClean
+  name: куртка монолита
+  description: Куртка в светло-сером пиксельном камуфляже, используемая монолитом, имеет наплечники, но они защитят вас лишь от скучного внешнего вида.
+  suffix: ST, T0, Universal
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0

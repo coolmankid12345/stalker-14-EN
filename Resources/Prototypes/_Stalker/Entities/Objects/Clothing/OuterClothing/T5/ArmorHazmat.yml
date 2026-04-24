@@ -21,7 +21,7 @@
           Blunt: 5
           Slash: 5
           Piercing: 4
-          Radiation: 6
+          Radiation: 4
           Caustic: 6
         coefficients:
           Blunt: 0.7
@@ -31,6 +31,8 @@
           Caustic: 0.5
           Shock: 0.5
           Compression: 0.5
+    - type: GrantsArtifactSlots
+      slots: 3 # EN
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -57,7 +59,7 @@
       modifiers:
         flatReductions:
           Heat: 4
-          Radiation: 1
+          Radiation: 3
           Psy: 1
         coefficients:
           Heat: 0.9

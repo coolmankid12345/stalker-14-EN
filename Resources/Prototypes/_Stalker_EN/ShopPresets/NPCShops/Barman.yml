@@ -1,5 +1,5 @@
 - type: shopPreset
-  id: STNPCBarmanPresetEN # 1x Standard - Pending Economy Change
+  id: STNPCBarmanPresetEN # 1x Standard
   minSellPrice: 5
   itemsForSale:
 
@@ -29,7 +29,7 @@
     ArtMedusa: 540
     ZoneArtifactFlower: 810
     ZoneArtifactNightStar: 3240
-    ZoneArtifactWhirlwind: 500
+    ZoneArtifactWhirlwind: 810
     ZoneArtifactPebble: 540
     ZoneArtifactRosin: 810
     ZoneArtifactStoneCube: 1215
@@ -60,36 +60,36 @@
     ZoneArtifactPellicle: 535
     ZoneArtifactBaloon: 4800
 
-    # Mutant parts
+    # Mutant parts - 1x price
 
-    #Boars -------- PENDING REWORK
+    #Boars
     MutantPartBoarHoof: 155 # T1
     MutantPartSeasonedBoarHoof: 310 # T2
     MutantPartOldBoarHoof: 465 # T3
 
-    #Bears --------- PENDING REWORK
+    #Bears
     MutantPartBearClaw: 325
     MutantPartBearPaw: 475
     MutantPartBearEye: 690
     ClothingHeadBear: 750
 
-    #T1 -------- PENDING REWORK
+    #T1
     MutantPartBlindDogTail: 105
     MutantPartFleshEye: 230
     FoodMeatSpiderLeg: 50
     MutantPartCatGland: 320
 
-    #T2 -------- PENDING REWORK
+    #T2
     MutantPartLeshiyRoot: 630
     MutantPartPseudodogTail: 345
     MutantPartSnorkFoot: 575
     MutantPartPsiDogTail: 475
     MutantPartFrogLeg: 300
 
-    #T3 -------- PENDING REWORK Modified by Oracle
+    #T3
     MutantPartBloodsuckerTentacles: 2750
     MutantPartOraculeEye: 1800
-    MutantPartZombieHand: 1000
+    MutantPartZombieHand: 750
     MutantPartPseudogiantHeart: 9050
     ClothingMaskChimera: 1
     MutantPartChimeraTooth: 1
@@ -98,25 +98,26 @@
     MutantPartControllerBrain: 3500
 
     # Meat
-    STFoodMeatSalo: 95
+    STFoodMeatSalo: 100
+    STFoodMeatSpiderCooked: 50
     FoodMeatBoar: 55
     FoodMeatDog: 25
     FoodMeatSTBear: 65
-    FoodMeatBoarCooked: 80
-    FoodMeatDogCooked: 70
-    FoodMeatSTBearCooked: 140
-    FoodMeatSTFishFilletRaw: 20
-    FoodMeatSTFishSteakRaw: 50
-    FoodMeatSTEelRaw: 90
-    FoodMeatSTFishFilletCooked: 75
-    FoodMeatSTFishSteakCooked: 125
+    FoodMeatBoarCooked: 150
+    FoodMeatDogCooked: 100
+    FoodMeatSTBearCooked: 300
+    FoodMeatSTFishFilletRaw: 50
+    FoodMeatSTFishSteakRaw: 100
+    FoodMeatSTEelRaw: 100
+    FoodMeatSTFishFilletCooked: 100
+    FoodMeatSTFishSteakCooked: 150
     FoodMeatSTEelCooked: 250
-    STFoodMeatCvarci: 10
-    FoodMeatSTRatCooked: 1
-    FoodMeatSTRatJerked: 2 # 2x the profit!!!
-    FoodMeatSTDogJerkedSingle: 65
-    FoodMeatSTBoarJerkedSingle: 100
-    FoodMeatSTBearJerkedSingle: 205 # 615 per bear but thats what youre paying in ammo costs anyway
+    STFoodMeatCvarci: 40
+    FoodMeatSTRatCooked: 10
+    FoodMeatSTRatJerked: 20 # 2x the profit!!!
+    FoodMeatSTDogJerkedSingle: 150
+    FoodMeatSTBoarJerkedSingle: 200
+    FoodMeatSTBearJerkedSingle: 350
     FoodMeatSTSuckerJerkedSingle: 900
 
     # Cooking
@@ -161,44 +162,58 @@
       priority: 1
       items:
         # Melee
+        StalkerBallBat: 50
+        STThrowingknifeBlue: 250
         STThrowingknifeYellow: 500
+        # Shotguns
+        STBaseWeaponShotgunTOZ106: 800 # T1
+        STWeaponShotgunMP133: 500 # T2
+        STWeaponShotgunMossbergM88: 600 # T2
+        STWeaponShotgunMP153: 1700 # T2
+        STWeaponShotgunSPAS: 2100
         # Pistols
+        WeaponPistolStalkerPM: 50 #T1
+        WeaponPistolStalkerTT: 50 #T1
+        STWeaponRevolverSWModel325: 500
         STWeaponPistolHiPower: 600
         STWeaponPistolM1911: 1500
         STWeaponPistolP99: 700
         WeaponPistolStalkerAPS: 800
         WeaponPistolGSH18: 500
-        WeaponPistolStalkerTT: 125
         WeaponPistolStalkerGlock: 300
-        STWeaponRevolverSWModel325: 1000
         STWeaponRevolverSWModel625: 1450
         STWeaponRevolverSWPC325TR: 350
-        # Shotguns
-        STWeaponShotgunMossbergM88: 600
-        STWeaponShotgunSPAS: 2100
         # SMGs
+        STWeaponSMGUMP: 1900
+        STWeaponSMGMP40: 1000
+        STWeaponSMGPPSh41: 2500
         STWeaponSMGPPS43: 1750
         STWeaponSMGMP5: 2600
         STWeaponSMGPP19: 3300
         STWeaponSMGPP1901: 2000
         # Rifles
-        STWeaponRifleAKS74U: 3000
-        STWeaponRifleAKS74: 5500
+        STWeaponRifleSaiga545: 1750
+        STWeaponRifleAKS74U: 2000
+        STWeaponRifleAKS74: 4200
         STWeaponRifleL85: 2250
         STWeaponRifleAKM: 6700
         STWeaponRifleFAL: 3000
+        # Snipers
+        STWeaponSniperSKS: 1850 # T2
+        STWeaponSniperMosin: 1500
 
     - name: shop-category-magazines
       priority: 2
       items:
+        UMPMag25: 200
+        Base2070Mag: 30
+        TOZ106Mag5: 100
         HiPowerMag13: 140
         M1911Mag7: 140
         P99Mag15: 150
-        TTMag: 120
-        BaseGlockMag10: 135
+        GlockMag17: 200
         BaseGSH-18Mag10: 135
         BaseAPSMag: 225
-        STSpeedLoader45ACPEmpty: 120
         STSpeedLoader357MagnumEmpty: 160
         545Mag20: 250
         545Mag30: 500
@@ -211,65 +226,75 @@
         VityazMag: 240
         BasePPSMag: 300
         751Mag20: 650
+        BasePMMag: 12
+        BasePPSHMag: 350
+        TTMag: 15
+        MP40Mag: 150
+        STSpeedLoader45ACPEmpty: 100
+        PP91Mag: 200
 
     - name: shop-category-ammunition
       priority: 3
       items:
+        #20gauge
+        62mmBuckshotBox: 30 #T0
+        75mmBuckshotBox: 200 #T1
         # 7mm
-        7mmBuckshotBox: 65 # T0
-        6mmBuckshotBox: 375 # T1
+        7mmBuckshotBox: 50 # T0
+        6mmBuckshotBox: 275 # T1
         8mmBuckshotBox: 825 # T2
         # .45
         45ACPLFMJBox: 100 # T1
-        45ACPMFMJBox: 590 # T2
-        45ACPRIPBox: 750 # Mutant
-        45ACPAPBox: 1600 # T3
+        45ACPMFMJBox: 300 # T2
+        45ACPRIPBox: 625 # Mutant
+        45ACPAPBox: 1450 # T3
         # 7.25
-        725PBox: 130 # T1
+        725PBox: 100 # T1
         725PTBox: 300 # T2
         725LRNPCBox: 625 # Mutant
         725PSTBox: 1450 # T3
         # 9.19
-        919PSOGJBox: 80 # T1
-        919PSTBox: 560 # T2
+        919PSOGJBox: 100 # T1
+        919PSTBox: 300 # T2
         919RIPBox: 625 # Mutant
         919PBMBox: 1450 # T3
         # 9.18
-        918PGJBox: 80 # T1
-        918PSTBox: 560 # T2
+        918PGJBox: 100 # T1
+        918PSTBox: 300 # T2
         918SP7Box: 625 # Mutant
-        918PBMBox: 1425 # T3
+        918PBMBox: 1450 # T3
         # 5.45
         545FMJBox: 650 # T2
-        545HPBox: 725 # Mutant
+        545HPBox: 500 # Mutant
         545PCBox: 1650 # T3
         # 5.56
         556FMJBox: 650 # T2
         556M855Box: 1650 # T3
-        556WarmagBox: 725 # Mutant
+        556WarmagBox: 500 # Mutant
         # 7.62
         739FMJBox: 1950 # T3
-        739HPBox: 850 # Mutant
-        751UNBox: 850 # Mutant
+        739HPBox: 750 # Mutant
+        751UNBox: 750 # Mutant
+        754HPBox: 850 # Mutant
         # .357
         MagazineBox357Magnum: 600 # T2
         MagazineBox357MagnumAP: 1500 # T3
-        MagazineBox357MagnumHP: 800 # Mutant
+        MagazineBox357MagnumHP: 625 # Mutant
 
     - name: shop-category-medicine
       priority: 4
       items:
         STPillboxAntirad: 250
-        STGauze: 85
-        STOintment: 95
-        STBrutepack: 85
-        Bloodpack: 950
-        MedkitAI2: 320
-        Defibrillator: 1800
-        AntiRadMedipen: 200
-        STPillboxProbud: 400
-        MedkitMilitary: 450
-        MedkitScience: 350
+        STGauze: 65
+        STOintment: 75
+        STBrutepack: 65
+        Bloodpack: 550
+        MedkitAI2: 135
+        Defibrillator: 1000
+        AntiRadMedipen: 300
+        STPillboxProbud: 500
+        MedkitMilitary: 400
+        MedkitScience: 450
         MedkitElite: 650
         MedkitLAR: 720
         STOintmentGood: 400
@@ -283,9 +308,9 @@
         STEnergyDrinkRevo: 150
         STFoodBreadPlain: 20
         DrinkFlaskOld: 30
-        DrinkWaterBottleFull: 50
+        DrinkWaterBottleFull: 45
         FoodTinMRE: 100
-        DrinkLemonadehBottleFull: 75
+        DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 125
         FoodSTTomato: 70
         FoodSTCarrot: 55
@@ -341,29 +366,38 @@
         SetZaryaStalkerBuyableCrate: 2250 # T2 - PVE
         ClothingOuterArmorStalker: 14000 # T3 - PvP
         ClothingOuterArmorAborigineStalker: 10000 # T3 - PvE
-        ClothingOuterArmor6B2: 2250 # T2
+        ClothingOuterArmor6B2: 2000 # T2 - PvP
+        STClothingOuterArmorRCBZ: 1800 # T2 - ENV
+        STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
         # Helmet
         ClothingHeadHelmetVityaz1C: 3500 # T3 - PvP
         ClothingHeadHelmetInfantry: 500 # T2
         STClothingHeadHelmetMakeshiftTacticalT3: 1000 # T2
-        # Belt
-        ClothingBeltBandolierStalker: 75
-        ClothingBeltTarzanOrange: 200
+        ClothingHeadHelmetSH68: 250 # T1 - PVP
+        ClothingHeadHelmetLight: 300 # T1 - uni
 
     - name: shop-category-storage-and-containers
       priority: 8
       items:
+        # Backpacks
         ClothingBackpackTacticOliveStalker: 557
         ClothingBackpackTacticBeigeStalker: 568
-        ClothingBackpackStalkerZaryaGreen: 1059
+        ClothingBackpackStalkerZaryaGreen: 1000
+        ClothingBackpackMercStalker: 750
         ClothingBackpackTownBlackStalker: 185
         ClothingBackpackTownWhiteStalker: 190
+        # Belts
         STClothingBeltThrowingKnifes: 200
+        ClothingBeltBandolierStalker: 20 # T1 - PVE
+        ClothingBeltTarzanOrange: 200 # T1 - PVP
+        ClothingBeltTarzanGreen: 200 # T1 - PVP
+        ClothingBeltWebbingHolsterStalkerZarya: 1000
+        # Containers
         ClothingBeltPocketPouch: 450
         ClothingBeltHerbalistPouch: 450
-        ClothingBeltWebbingHolsterStalkerZarya: 1000
-        ClothingBeltWebbingDoubleStalkerZaryaSmall: 1500
         ClothingBeltCrafterStalker: 3000
+        StalkerGunCaseStandard: 1200 # im really not sure what a fair price is for these
+        #StalkerGunCaseDouble: 2550
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 9
@@ -394,19 +428,19 @@
         STBoltBagFilled: 50
         STBoltBagOliveGrayFilled: 50
         # Artifact containers
-        BoxArtcont: 500
-        BoxArtcontBlack: 500
-        BoxArtcontBlue: 500
-        BoxArtcontYellow: 500
-        BoxArtcontOrange: 500
+        BoxArtcont: 400
+        BoxArtcontBlack: 400
+        BoxArtcontBlue: 400
+        BoxArtcontYellow: 400
+        BoxArtcontOrange: 400
         longrangemetaldetector: 3000
         # Anomaly detectors
-        ZoneAnomalyDetectorAD1: 450
-        ZoneAnomalyDetectorAD2: 1050
+        ZoneAnomalyDetectorAD1: 50
+        ZoneAnomalyDetectorAD2: 500
         # Artifact detectors
-        ZoneArtifactDetectorPulse: 200
-        ZoneArtifactDetectorHunter: 700
-        ZoneArtifactDetectorResponse: 2100
+        ZoneArtifactDetectorPulse: 100
+        ZoneArtifactDetectorHunter: 500
+        ZoneArtifactDetectorResponse: 1500
         ZoneArtifactDetectorSpruce: 6575 #T3
         Veles: 8000 # T3
         TrashDetectorTier1: 200
@@ -417,18 +451,18 @@
       items:
         HuntingKnife: 1200
         STCombatKnife: 25
-        BoxZiptie: 100
+        BoxZiptie: 50
         BoxSafebox: 50
-        CheapLighter: 25
-        GeigerCounter: 100
-        BaseRadio: 100
-        STRadioHeadset: 300
-        STFlashlightSeclite: 150
-        PowerCellHyper: 125
-        HandheldGPSBasic: 100
+        CheapLighter: 5
+        GeigerCounter: 50
+        BaseRadio: 50
+        STRadioHeadset: 150
+        STFlashlightSeclite: 50
+        PowerCellHyper: 50
+        HandheldGPSBasic: 50
         Paper: 2
         Pen: 5
-        Binocularus1: 1000
+        Binocularus1: 800
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         Beaker: 40
@@ -443,7 +477,7 @@
         STElasticRubberBlue: 50
         AAAAStalkerLopata: 2000
         BookCookingStalkerGuide: 200
-        BookCookingStalkerHomemade: 800
+        BookCookingStalkerHomemade: 600
         STRag: 10
         # Cameras
         STCamera: 750
@@ -464,6 +498,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 400
+        STModuleGlockSwitch: 500
 
     - name: shop-category-customization
       priority: 13
@@ -550,8 +585,7 @@
         AcousticGuitarInstrument: 500
         AccordionInstrument: 500
         HarmonicaInstrument: 500
-        CardBin: 100
-        PokerCardBin: 150
+        CardDeckBlack: 100
 
     - name: shop-category-blueprints
       priority: 15
@@ -562,6 +596,17 @@
         STCookingCakePlain: 3500
         STCookingFrogLegs: 2000
         STCookingPickledCherries: 2000
+        STDetectorAD1Blueprint: 2000
+        STZoneArtifactDetectorBushBlueprint: 4000
+        STZoneArtifactDetectorResponseBlueprint: 8000
+        DetectorVelesBlueprint: 12000
+        STClothingOuterJacketStalkerUpgradeBlueprint: 2000
+        ClothingOuterAnomalyStalkerJacketBlueprint: 2000
+        STCookingRice: 2000
+        STCookingDeruny: 2000
+        STCookingHrechanyky: 2000
+        STCookingKebabMeat: 2000
+        STCookingPickledSausage: 2000
 
     - name: shop-category-tools
       priority: 16
@@ -570,7 +615,8 @@
         ToolkitTearOne: 5000
         ToolkitTearTwo: 10000
         ToolkitTearThree: 15000
-        CraftGunpowderBank: 100
+        CraftGunpowderBank: 500
+        CraftMaterialGunpowder: 100
 
     - name: Smokables #explained using D&D lifestyle expenses
       priority: 16
@@ -587,12 +633,15 @@
     SponsorBacker:
     - name: sponsor
       items:
-        STWeaponRifleAKS74UWhite: 650
-        STWeaponRifleAKMC: 5000
+        STWeaponRifleAKS74UWhite: 1350
+        STWeaponRifleAKMC: 4300
+        STHatchetSponsor: 150
+        STSpanishKnife: 100
     SponsorOMind:
     - name: О-сознание
       items:
         STWeaponRifleSVDSWood: 800
+        Base754Mag5: 400
   contributorCategories:
   - name: contributor
     items:

@@ -15,12 +15,14 @@
     armorClass: 4
     modifiers:
       flatReductions:
-        Blunt: 2
+        Blunt: 7
         Slash: 2
-        Piercing: 6
+        Piercing: 10
       coefficients:
         Blunt: 0.80
         Slash: 0.80
         Piercing: 0.55
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.65

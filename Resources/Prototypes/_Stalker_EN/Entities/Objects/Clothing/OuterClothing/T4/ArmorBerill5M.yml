@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: ClothingOuterArmorBerill5MMonolith
+  id: ClothingOuterArmorBerill5MMonolithClean
+  name: бронекостюм «Берилл-5М» монолита
+  description: Бронекостюм, пренадлежащий группировке фанатиков. Обеспечивает отличную защиту по всем показателям, но делает из вас живую мишень.
+  suffix: ST, T4, Universal
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0

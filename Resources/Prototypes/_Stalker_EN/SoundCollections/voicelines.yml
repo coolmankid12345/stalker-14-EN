@@ -22,12 +22,12 @@
 - type: soundCollection
   id: LonerBackup
   files:
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_1.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_2.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_3.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_4.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_5.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_6.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Loners/EmoteBackup/backup_1.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Loners/EmoteBackup/backup_2.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Loners/EmoteBackup/backup_3.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Loners/EmoteBackup/backup_4.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Loners/EmoteBackup/backup_5.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Loners/EmoteBackup/backup_6.ogg
 
 - type: soundCollection
   id: LonerCover
@@ -117,12 +117,12 @@
 - type: soundCollection
   id: BanditBackup
   files:
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_1.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_2.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_3.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_4.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_5.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_6.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Bandit/EmoteBackup/backup_1.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Bandit/EmoteBackup/backup_2.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Bandit/EmoteBackup/backup_3.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Bandit/EmoteBackup/backup_4.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Bandit/EmoteBackup/backup_5.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Bandit/EmoteBackup/backup_6.ogg
 
 - type: soundCollection
   id: BanditCover
@@ -221,12 +221,12 @@
 - type: soundCollection
   id: DutyBackup
   files:
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_1.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_2.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_3.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_4.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_5.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_6.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Duty/EmoteBackup/backup_1.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Duty/EmoteBackup/backup_2.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Duty/EmoteBackup/backup_3.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Duty/EmoteBackup/backup_4.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Duty/EmoteBackup/backup_5.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Duty/EmoteBackup/backup_6.ogg
 
 - type: soundCollection
   id: DutyCover
@@ -305,12 +305,12 @@
 - type: soundCollection
   id: EcologistsBackup
   files:
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_1.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_2.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_3.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_4.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_5.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_6.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Ecologists/EmoteBackup/backup_1.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Ecologists/EmoteBackup/backup_2.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Ecologists/EmoteBackup/backup_3.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Ecologists/EmoteBackup/backup_4.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Ecologists/EmoteBackup/backup_5.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Ecologists/EmoteBackup/backup_6.ogg
 
 - type: soundCollection
   id: EcologistsCover
@@ -404,11 +404,11 @@
 - type: soundCollection
   id: FreedomBackup
   files:
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_1.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_2.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_3.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_4.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_5.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Freedom/EmoteBackup/backup_1.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Freedom/EmoteBackup/backup_2.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Freedom/EmoteBackup/backup_3.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Freedom/EmoteBackup/backup_4.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Freedom/EmoteBackup/backup_5.ogg
 
 - type: soundCollection
   id: FreedomCover
@@ -494,10 +494,10 @@
 - type: soundCollection
   id: MercBackup
   files:
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_1.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_2.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_3.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_4.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Merc/EmoteBackup/backup_1.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Merc/EmoteBackup/backup_2.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Merc/EmoteBackup/backup_3.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Merc/EmoteBackup/backup_4.ogg
 
 - type: soundCollection
   id: MercCover
@@ -584,11 +584,11 @@
 - type: soundCollection
   id: MilitaryBackup
   files:
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_1.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_2.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_3.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_4.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_5.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Military/EmoteBackup/backup_1.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Military/EmoteBackup/backup_2.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Military/EmoteBackup/backup_3.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Military/EmoteBackup/backup_4.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Military/EmoteBackup/backup_5.ogg
 
 - type: soundCollection
   id: MilitaryCover
@@ -681,12 +681,12 @@
 - type: soundCollection
   id: MonolithBackup
   files:
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_1.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_2.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_3.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_4.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_5.ogg
-  - /Audio/_Stalker_EN/VoiceLines/Loners/backup/backup_6.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Monolith/EmoteBackup/backup_1.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Monolith/EmoteBackup/backup_2.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Monolith/EmoteBackup/backup_3.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Monolith/EmoteBackup/backup_4.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Monolith/EmoteBackup/backup_5.ogg
+  - /Audio/_Stalker_EN/VoiceLines/Monolith/EmoteBackup/backup_6.ogg
 
 - type: soundCollection
   id: MonolithCover

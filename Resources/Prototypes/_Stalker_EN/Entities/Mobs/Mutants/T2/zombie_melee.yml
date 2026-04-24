@@ -46,8 +46,17 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Critical
+      110: Critical
       160: Dead
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 160
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: STZombieDeath
   - type: PassiveDamage
     damageCap: 250
     damage:
@@ -66,10 +75,10 @@
     wideAnimation: WeaponArcFist
     damage:
       types:
-        Blunt: 20
+        Blunt: 30
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.5
-    baseSprintSpeed: 2.0
+    baseWalkSpeed: 1.7
+    baseSprintSpeed: 2.3
   - type: StaminaDamageOnHit
     damage: 10 
   - type: Armor
@@ -80,7 +89,7 @@
     spawned:
       - id: MutantPartZombieHand
         maxAmount: 1
-        prob: 1
+        prob: 0.5
   # Stalker-EN start
   - type: EmitSoundOnTrigger
     sound:

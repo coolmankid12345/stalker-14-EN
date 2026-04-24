@@ -1,0 +1,18 @@
+# Special auto sear exclusive to the Glock, sold at most faction vendors.
+- type: entity
+  parent: STBaseWeaponModule
+  id: STModuleGlockSwitch
+  name: Glock switch
+  description: A attachment for a Glock pistol, allowing it to fire in full-automatic. Not compatible with other weapons.
+  suffix: ST, module
+  components:
+  - type: Tag
+    tags:
+    - STModuleGlockSwitch
+  - type: STWeaponModule
+    effect:
+      additionalAvailableModes:
+      - FullAuto
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Modules/autosear.rsi
+    scale: 0.6, 0.6

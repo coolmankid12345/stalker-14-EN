@@ -126,6 +126,6 @@
   description: Эта модель является модификацией армейского шлема Сфера-08, для группировки Свобода. Обеспечивает защиту 3 класса, позволяя выдерживать тупые удары, осколки и в какой-то мере пули 1 и 2 класса пробития. Надёжный шлем, по достойной цене.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/aborigine_stalker.rsi
+    sprite: _Stalker_EN/Objects/Clothing/hats/berill5m_helm_svoboda.rsi # Stalker EN change - gave it a new sprite and made it obtainable.
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/aborigine_stalker.rsi
+    sprite: _Stalker_EN/Objects/Clothing/hats/berill5m_helm_svoboda.rsi # Stalker EN change - gave it a new sprite and made it obtainable.

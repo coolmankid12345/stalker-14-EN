@@ -1,9 +1,12 @@
 using Content.Client.UserInterface.Fragments;
+using Content.Shared._Stalker.PdaMessenger;
 using Content.Shared._Stalker_EN.PdaMessenger;
 using Content.Shared.CartridgeLoader;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
+using Robust.Shared.Maths;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Timing;
 
 namespace Content.Client._Stalker_EN.PdaMessenger;
 
@@ -62,6 +65,7 @@ public sealed partial class STMessengerUi : UIFragment
         _root.AddChild(_channelPage);
         _root.AddChild(_composePage);
 
+
         _channelPage.Visible = false;
         _composePage.Visible = false;
 
@@ -70,17 +74,22 @@ public sealed partial class STMessengerUi : UIFragment
 
         _mainPage.OnAddContact += messengerId =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(new STMessengerAddContactEvent(messengerId)));
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(new STMessengerAddContactEvent(messengerId)));
         };
 
         _mainPage.OnRemoveContact += contactMessengerId =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(new STMessengerRemoveContactEvent(contactMessengerId)));
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(new STMessengerRemoveContactEvent(contactMessengerId)));
         };
 
         _mainPage.OnToggleMute += channelId =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(new STMessengerToggleMuteEvent(channelId)));
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(new STMessengerToggleMuteEvent(channelId)));
+        };
+
+        _mainPage.OnToggleRandomName += randomName =>
+        {
+            userInterface.SendMessage(new CartridgeUiMessage(new STMessengerToggleRandomNameEvent(randomName)));
         };
 
         _channelPage.OnBack += () => NavigateToMain();
@@ -101,18 +110,20 @@ public sealed partial class STMessengerUi : UIFragment
 
         _channelPage.OnOfferLinkClicked += offerId =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(
                 new STMessengerNavigateToOfferEvent(offerId)));
         };
 
         _channelPage.OnNewsLinkClicked += articleId =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(
                 new STMessengerNavigateToNewsEvent(articleId)));
         };
 
         _composePage.OnBack += () =>
         {
+            _replyToId = null;
+            _replySnippet = null;
             _composePage.Visible = false;
             _channelPage!.Visible = true;
         };
@@ -125,7 +136,7 @@ public sealed partial class STMessengerUi : UIFragment
 
         _composePage.OnSend += (chatId, content, isAnonymous) =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(
                 new STMessengerSendEvent(chatId, content, _replyToId, isAnonymous)));
 
             _replyToId = null;
@@ -172,6 +183,10 @@ public sealed partial class STMessengerUi : UIFragment
 
         _mainPage?.UpdateState(messengerState);
 
+        // Update emission state in compose page
+        _composePage?.SetEmissionActive(messengerState.IsEmissionActive);
+
+
         if (_currentChatId is not null && _channelPage is { Visible: true })
         {
             var chat = FindChat(messengerState, _currentChatId);
@@ -182,6 +197,8 @@ public sealed partial class STMessengerUi : UIFragment
 
     private void NavigateToChat(string chatId)
     {
+        _replyToId = null;
+        _replySnippet = null;
         _currentChatId = chatId;
 
         // Tell server which chat we're viewing (for lazy message loading)
@@ -195,6 +212,8 @@ public sealed partial class STMessengerUi : UIFragment
 
     private void NavigateToMain()
     {
+        _replyToId = null;
+        _replySnippet = null;
         _currentChatId = null;
         _channelPage!.Visible = false;
         _composePage!.Visible = false;

@@ -10,10 +10,12 @@
       castShadows: false
     - type: AmbientSound
       enabled: true
-      volume: -18
-      range: 10
+      volume: -15 # EN start
+      range: 4
       sound:
-        path: /Audio/_Stalker/Effects/acidic_idle.ogg
+        path: /Audio/_Stalker_EN/Effects/Anomalies/buzz_idle.ogg
+    - type: ZoneAnomalyEffectPlaySound
+      sound: /Audio/_Stalker_EN/Effects/Anomalies/buzz_hit.ogg # EN end
     - type: STAnomalyTips
       icon:
         sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
@@ -28,7 +30,7 @@
     - type: ZoneAnomalyEffectDamage
       damage:
         types:
-          Caustic: 10
+          Caustic: 20 # EN
     - type: ZoneAnomalyEffectDestroy
       whitelist:
         tags:
@@ -37,7 +39,7 @@
       detectedLevel: 0
       preparingDelay: 0
       activationDelay: 0
-      chargeTime: 0.05
+      chargeTime: 1.6 # EN
     - type: Sprite
       sprite: _Stalker/Objects/Other/Anomalys/kissel.rsi
       layers:
@@ -81,8 +83,8 @@
       entry:
         - id: GazirovkaActiveEffect
           amount: 3
-    - type: ZoneAnomalyEffectPlaySound
-      sound: /Audio/_Stalker/Effects/acidic_active.ogg
+    #- type: ZoneAnomalyEffectPlaySound # EN
+    #  sound: /Audio/_Stalker/Effects/acidic_active.ogg # EN
     - type: ZoneAnomaly
       detectedLevel: 3
       activationDelay: 0

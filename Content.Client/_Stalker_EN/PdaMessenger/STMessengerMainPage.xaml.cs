@@ -27,6 +27,9 @@ public sealed partial class STMessengerMainPage : BoxContainer
     /// <summary>Raised when the user toggles mute on a channel; arg is the channel prototype ID.</summary>
     public event Action<ProtoId<STMessengerChannelPrototype>>? OnToggleMute;
 
+    /// <summary>Raised when the user toggles random name setting; arg is the new value.</summary>
+    public event Action<bool>? OnToggleRandomName;
+
     public STMessengerMainPage()
     {
         RobustXamlLoader.Load(this);
@@ -40,11 +43,19 @@ public sealed partial class STMessengerMainPage : BoxContainer
                 AddContactInput.Text = string.Empty;
             }
         };
+
+        RandomNameCheckbox.OnPressed += _ =>
+        {
+            OnToggleRandomName?.Invoke(RandomNameCheckbox.Pressed);
+        };
     }
 
     public void UpdateState(STMessengerUiState state)
     {
         MessengerIdLabel.Text = Loc.GetString("st-messenger-id-label", ("id", state.MessengerId));
+
+        // Show emission warning
+        EmissionWarningLabel.Visible = state.IsEmissionActive;
 
         ChannelList.RemoveAllChildren();
         foreach (var channel in state.Channels)
@@ -87,5 +98,9 @@ public sealed partial class STMessengerMainPage : BoxContainer
             };
             ContactList.AddChild(row);
         }
+
+        // Show settings only for players who can disguise (have AltBand and CanChange)
+        SettingsContainer.Visible = state.CanDisguise;
+        RandomNameCheckbox.Pressed = state.RandomNameWhenNotDisguised;
     }
 }

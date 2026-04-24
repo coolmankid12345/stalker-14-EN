@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: STBaseWeaponRifleAK103
+  id: STWeaponRifleAK103Mono
+  name: AK-103 "Winter"
+  suffix: ST, Weapon, Radioactive
+  description: Carefully modified AK-103 with improved characteristics. Shows signs of numerous customizations - clearly a weapon of an experienced stalker.
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/mono103.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/mono103.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/mono103.rsi
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 6.65
+
+- type: entity
+  parent: STBaseWeaponRifleAK103
+  id: STWeaponRifleAK103MonoClean
+  name: AK-103 "Winter"
+  suffix: ST, Weapon
+  description: Carefully modified AK-103 with improved characteristics. Shows signs of numerous customizations - clearly a weapon of an experienced stalker. A small strip of tape marks the stock to denote that it's been chemically cleaned and is safe to handle.
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/mono103.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/mono103.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/mono103.rsi

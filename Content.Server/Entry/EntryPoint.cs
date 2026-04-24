@@ -37,6 +37,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server._Stalker.Sponsors.SponsorManager; // Stalker-Using
+using Content.Shared._Stalker_EN.CCVar;
 
 namespace Content.Server.Entry
 {
@@ -191,6 +192,39 @@ namespace Content.Server.Entry
             // Stalker-Changes-End
         }
 
+        // stalker-en-changes-start: drain fire-and-forget DB writes before Dispose runs ClearAllCrashRecovery,
+        // so the Npgsql pool isn't saturated when Dispose needs it.
+        public override void Shutdown()
+        {
+            var shutdownLog = _log.GetSawmill("entrypoint");
+            shutdownLog.Info("[shutdown] EntryPoint.Shutdown entry — draining pending DB writes before Dispose");
+
+            try
+            {
+                if (_entSys.TryGetEntitySystem<_Stalker.StalkerDB.StalkerDbSystem>(out var dbSys))
+                    dbSys.FlushPendingWrites(TimeSpan.FromSeconds(10));
+            }
+            catch (Exception e)
+            {
+                shutdownLog.Error($"[shutdown] Failed to flush StalkerDbSystem: {e}");
+            }
+
+            try
+            {
+                if (_entSys.TryGetEntitySystem<_Stalker_EN.CrashRecovery.CrashRecoverySystem>(out var crSys))
+                    crSys.FlushPendingWrites(TimeSpan.FromSeconds(5));
+            }
+            catch (Exception e)
+            {
+                shutdownLog.Error($"[shutdown] Failed to flush CrashRecoverySystem: {e}");
+            }
+
+            shutdownLog.Info("[shutdown] EntryPoint.Shutdown exit");
+
+            base.Shutdown();
+        }
+        // stalker-en-changes-end
+
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
         {
             base.Update(level, frameEventArgs);
@@ -215,19 +249,52 @@ namespace Content.Server.Entry
 
         protected override void Dispose(bool disposing)
         {
+            // stalker-en-changes-start: breadcrumbs + bounded wait on ClearAllCrashRecovery
+            var shutdownLog = _log.GetSawmill("entrypoint");
+            shutdownLog.Info("[shutdown] EntryPoint.Dispose entry");
+            // stalker-en-changes-end
+
+            // On real crashes the process dies before Dispose runs, so snapshot data survives.
+            // Bounded wait — a stuck DB call would deadlock modLoader.Shutdown. // stalker-en-changes
+            try
+            {
+                if (_cfg.GetCVar(STCCVars.CrashRecoveryEnabled))
+                {
+                    // stalker-en-changes-start
+                    shutdownLog.Info("[shutdown] Clearing crash recovery (bounded 5s)");
+                    var sw = System.Diagnostics.Stopwatch.StartNew();
+                    var completed = System.Threading.Tasks.Task.Run(() => _dbManager.ClearAllCrashRecovery())
+                        .Wait(TimeSpan.FromSeconds(5));
+                    sw.Stop();
+                    shutdownLog.Info($"[shutdown] Crash recovery clear {(completed ? "completed" : "TIMED OUT")} after {sw.ElapsedMilliseconds}ms");
+                    // stalker-en-changes-end
+                }
+            }
+            catch (Exception e)
+            {
+                _log.GetSawmill("crash-recovery").Error($"Failed to clear crash recovery on shutdown: {e}");
+            }
+
             var dest = _cfg.GetCVar(CCVars.DestinationFile);
             if (!string.IsNullOrEmpty(dest))
             {
+                shutdownLog.Info("[shutdown] PlayTimeTracking+DbManager shutdown (DestinationFile set)"); // stalker-en-changes
                 _playTimeTracking.Shutdown();
                 _dbManager.Shutdown();
             }
 
+            shutdownLog.Info("[shutdown] ServerApi.Shutdown"); // stalker-en-changes
             _serverApi.Shutdown();
+            shutdownLog.Info("[shutdown] StalkerServerApi.Shutdown"); // stalker-en-changes
             _stalkerServerApi.Shutdown(); // Stalker-Changes - Stalker Server API
 
             // TODO Should this be awaited?
+            shutdownLog.Info("[shutdown] DiscordLink.Shutdown"); // stalker-en-changes
             _discordLink.Shutdown();
+            shutdownLog.Info("[shutdown] DiscordChatLink.Shutdown"); // stalker-en-changes
             _discordChatLink.Shutdown();
+
+            shutdownLog.Info("[shutdown] EntryPoint.Dispose exit"); // stalker-en-changes
         }
 
         private static void LoadConfigPresets(IConfigurationManager cfg, IResourceManager res, ISawmill sawmill)

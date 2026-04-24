@@ -370,7 +370,7 @@
   id: ClothingBeltWebbingHolsterMonolith
   name: поясная сумка с кобурой «Монолита»
   description: Поясной сумка из комплекта «Монолита» с пистолетной кобурой.
-  suffix: ST
+  suffix: ST, Radioactive
   components:
     - type: STWeight
       self: 3
@@ -385,6 +385,8 @@
       state: icon
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/belt/belt_monolith_holster.rsi
+    - type: Contraband # EN
+      severity: Monolith
     - type: PersonalDamage
       damage:
         types:

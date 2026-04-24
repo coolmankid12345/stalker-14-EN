@@ -46,13 +46,45 @@ public sealed class STMessengerUiState : BoundUserInterfaceState
     /// </summary>
     public readonly string? DraftMessage;
 
+    /// <summary>
+    /// If true, Clear Sky disguise mode is active (PDA icon shows Stalker).
+    /// </summary>
+    public readonly bool IsDisguised;
+
+    /// <summary>
+    /// Band prototype ID of the owner (e.g. "STClearSkyBand"). Used to show/hide disguise button.
+    /// </summary>
+    public readonly string? OwnerBand;
+
+    /// <summary>
+    /// If true, the player can disguise (has AltBand and CanChange in BandsComponent).
+    /// Used to show/hide random name setting.
+    /// </summary>
+    public readonly bool CanDisguise;
+
+    /// <summary>
+    /// If true, the player's name will be randomized in messages when not disguised.
+    /// Only applies to players who can disguise (have AltBand and CanChange).
+    /// </summary>
+    public readonly bool RandomNameWhenNotDisguised;
+
+    /// <summary>
+    /// If true, emission is currently active and STMessenger is disabled.
+    /// </summary>
+    public readonly bool IsEmissionActive;
+
     public STMessengerUiState(
         string messengerId,
         List<STMessengerChat> channels,
         List<STMessengerChat> directMessages,
         List<STMessengerContactInfo> contacts,
         string? navigateToChatId = null,
-        string? draftMessage = null)
+        string? draftMessage = null,
+        bool isDisguised = false,
+        string? ownerBand = null,
+        bool canDisguise = false,
+        bool randomNameWhenNotDisguised = false,
+        bool isEmissionActive = false)
     {
         MessengerId = messengerId;
         Channels = channels;
@@ -60,5 +92,10 @@ public sealed class STMessengerUiState : BoundUserInterfaceState
         Contacts = contacts;
         NavigateToChatId = navigateToChatId;
         DraftMessage = draftMessage;
+        IsDisguised = isDisguised;
+        OwnerBand = ownerBand;
+        CanDisguise = canDisguise;
+        RandomNameWhenNotDisguised = randomNameWhenNotDisguised;
+        IsEmissionActive = isEmissionActive;
     }
 }

@@ -46,6 +46,13 @@ public sealed partial class STMessengerChannelPage : BoxContainer, IOfferLinkCli
 
     public void SetChatId(string chatId)
     {
+        if (chatId != _chatId)
+        {
+            MessageList.DisposeAllChildren();
+            _lastMessageCount = 0;
+            _lastChatId = string.Empty;
+            ChatTitle.Text = string.Empty;
+        }
         _chatId = chatId;
     }
 
@@ -61,11 +68,15 @@ public sealed partial class STMessengerChannelPage : BoxContainer, IOfferLinkCli
             _lastChatId = chat.Id;
         }
 
+        // Bind each reply handler to the chat the message was rendered under, so a
+        // stale entry from a previous chat can't fire OnReply with the current _chatId.
+        var renderedChatId = chat.Id;
+
         // Append only new messages
         for (var i = _lastMessageCount; i < chat.Messages.Count; i++)
         {
             var entry = new STMessengerMessageEntry(chat.Messages[i]);
-            entry.OnReply += (msgId, snippet) => OnReply?.Invoke(_chatId, msgId, snippet);
+            entry.OnReply += (msgId, snippet) => OnReply?.Invoke(renderedChatId, msgId, snippet);
             MessageList.AddChild(entry);
         }
 

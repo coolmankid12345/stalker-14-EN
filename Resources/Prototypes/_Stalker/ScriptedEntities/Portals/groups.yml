@@ -478,3 +478,25 @@
     linkString: Lobby-Kordon-SciBase
   - type: AccessReader
     access: [["SciBase"]]
+
+#stalker-en-change-start
+#################################### Зомбированные
+
+- type: entity
+  parent: MapTeleportBase
+  id: Cordon-RedForestZombified
+  name: Cordon-RedForestZombified
+  components:
+  - type: AccessReader
+    access: [["Zombified"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Cordon-RedForestZombifiedUncollide
+  name: Cordon-RedForestZombifiedUncollide
+  components:
+  - type: LinkByString
+    linkString: Cordon-RedForestZombified
+  - type: AccessReader
+    access: [["Zombified"]]
+#stalker-en-change-end

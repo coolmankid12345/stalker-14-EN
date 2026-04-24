@@ -4,6 +4,8 @@
   id: newrecipe7mmBuckshotBoxCink
   resultProtos:
     - 7mmBuckshotBoxCink
+    - 7mmBuckshotBoxCink
+    - 7mmBuckshotBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -19,6 +21,8 @@
   id: newrecipe6mmBuckshotBoxCink
   resultProtos:
     - 6mmBuckshotBoxCink
+    - 6mmBuckshotBoxCink
+    - 6mmBuckshotBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -33,6 +37,7 @@
 - type: craftRecipe
   id: newrecipe8mmBuckshotBoxCink
   resultProtos:
+    - 8mmBuckshotBoxCink
     - 8mmBuckshotBoxCink
     - 8mmBuckshotBoxCink
   craftTime: 30
@@ -102,6 +107,7 @@
   resultProtos:
     - ShotgunBulletBoxRIPCink
     - ShotgunBulletBoxRIPCink
+    - ShotgunBulletBoxRIPCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -137,6 +143,7 @@
   resultProtos:
     - 545FMJBoxCink
     - 545FMJBoxCink
+    - 545FMJBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -163,11 +170,12 @@
     CraftMaterialGunpowder:
       amount: 3
     STCraftSheetBrassT3:
-      amount: 5
+      amount: 4
 
 - type: craftRecipe
   id: newrecipe545HPBoxCink
   resultProtos:
+    - 545HPBoxCink
     - 545HPBoxCink
     - 545HPBoxCink
   craftTime: 30
@@ -179,7 +187,7 @@
     CraftMaterialGunpowder:
       amount: 4
     STCraftSheetBrassT3:
-      amount: 3
+      amount: 2
 
 - type: craftRecipe
   id: newrecipe545BPBoxCink
@@ -242,6 +250,8 @@
   id: newrecipe918PGJBoxCink
   resultProtos:
     - 918PGJBoxCink
+    - 918PGJBoxCink
+    - 918PGJBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -256,6 +266,7 @@
 - type: craftRecipe
   id: newrecipe918PSTBoxCink
   resultProtos:
+    - 918PSTBoxCink
     - 918PSTBoxCink
     - 918PSTBoxCink
   craftTime: 30
@@ -274,6 +285,7 @@
   resultProtos:
     - 918SP7BoxCink
     - 918SP7BoxCink
+    - 918SP7BoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -283,7 +295,7 @@
     CraftMaterialGunpowder:
       amount: 4
     STCraftSheetBrassT3:
-      amount: 3
+      amount: 2
 
 - type: craftRecipe
   id: newrecipe918PBMBoxCink
@@ -300,13 +312,15 @@
     CraftMaterialGunpowder:
       amount: 3
     STCraftSheetBrassT3:
-      amount: 5
+      amount: 4
 
 ############################################################################# 9x19
 
 - type: craftRecipe
   id: newrecipe919PSOGJBoxCink
   resultProtos:
+    - 919PSOGJBoxCink
+    - 919PSOGJBoxCink
     - 919PSOGJBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
@@ -322,6 +336,7 @@
 - type: craftRecipe
   id: newrecipe919PSTBoxCink
   resultProtos:
+    - 919PSTBoxCink
     - 919PSTBoxCink
     - 919PSTBoxCink
   craftTime: 30
@@ -340,6 +355,7 @@
   resultProtos:
     - 919RIPBoxCink
     - 919RIPBoxCink
+    - 919RIPBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -349,7 +365,7 @@
     CraftMaterialGunpowder:
       amount: 4
     STCraftSheetBrassT3:
-      amount: 3
+      amount: 2
 
 - type: craftRecipe
   id: newrecipe919PBMBoxCink
@@ -366,13 +382,14 @@
     CraftMaterialGunpowder:
       amount: 3
     STCraftSheetBrassT3:
-      amount: 5
+      amount: 4
 
 ########### 5,56
 
 - type: craftRecipe
   id: newrecipe556FMJBoxCink
   resultProtos:
+    - 556FMJBoxCink
     - 556FMJBoxCink
     - 556FMJBoxCink
   craftTime: 30
@@ -401,11 +418,12 @@
     CraftMaterialGunpowder:
       amount: 3
     STCraftSheetBrassT3:
-      amount: 5
+      amount: 4
 
 - type: craftRecipe
   id: newrecipe556WarmagBoxCink
   resultProtos:
+    - 556WarmagBoxCink
     - 556WarmagBoxCink
     - 556WarmagBoxCink
   craftTime: 35
@@ -417,7 +435,7 @@
     CraftMaterialGunpowder:
       amount: 4
     STCraftSheetBrassT3:
-      amount: 3
+      amount: 2
 
 - type: craftRecipe
   id: newrecipe556M856BoxCink
@@ -479,6 +497,7 @@
   id: newrecipe725PBoxCink
   resultProtos:
     - 725PBoxCink
+    - 725PBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -509,7 +528,6 @@
 - type: craftRecipe
   id: newrecipe725LRNPCBoxCink
   resultProtos:
-    - 725LRNPCBoxCink
     - 725LRNPCBoxCink
     - 725LRNPCBoxCink
   craftTime: 30
@@ -545,7 +563,6 @@
 - type: craftRecipe
   id: newrecipe739FMJBoxCink
   resultProtos:
-    - 739FMJBoxCink
     - 739FMJBoxCink
     - 739FMJBoxCink
   craftTime: 30
@@ -620,7 +637,6 @@
   resultProtos:
     - 751M80BoxCink
     - 751M80BoxCink
-    - 751M80BoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -635,7 +651,6 @@
 - type: craftRecipe
   id: newrecipe751UNBoxCink
   resultProtos:
-    - 751UNBoxCink
     - 751UNBoxCink
     - 751UNBoxCink
   craftTime: 60
@@ -692,6 +707,8 @@
   id: newrecipe45ACPLFMJBoxCink
   resultProtos:
     - 45ACPLFMJBoxCink
+    - 45ACPLFMJBoxCink
+    - 45ACPLFMJBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -706,6 +723,7 @@
 - type: craftRecipe
   id: newrecipe45ACPMFMJBoxCink
   resultProtos:
+    - 45ACPMFMJBoxCink
     - 45ACPMFMJBoxCink
     - 45ACPMFMJBoxCink
   craftTime: 30
@@ -724,6 +742,7 @@
   resultProtos:
     - 45ACPHydroshockBoxCink
     - 45ACPHydroshockBoxCink
+    - 45ACPHydroshockBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -740,6 +759,7 @@
   resultProtos:
     - 45ACPRIPBoxCink
     - 45ACPRIPBoxCink
+    - 45ACPRIPBoxCink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -749,7 +769,7 @@
     CraftMaterialGunpowder:
       amount: 3
     STCraftSheetBrassT3:
-      amount: 3
+      amount: 2
 
 - type: craftRecipe
   id: newrecipe45ACPAPBoxCink
@@ -766,13 +786,14 @@
     CraftMaterialGunpowder:
       amount: 3
     STCraftSheetBrassT3:
-      amount: 5
+      amount: 4
 
 ########## 9x39
 
 - type: craftRecipe
   id: newrecipe939SP5BoxCink
   resultProtos:
+    - 939SP5BoxCink
     - 939SP5BoxCink
     - 939SP5BoxCink
   craftTime: 30
@@ -810,6 +831,8 @@
   id: newrecipe1255PS12ACink
   resultProtos:
     - Ammobox1255PS12ACink
+    - Ammobox1255PS12ACink
+    - Ammobox1255PS12ACink
   craftTime: 30
   requiredWorkbench: StalkerWorktable1
   items:
@@ -824,6 +847,7 @@
 - type: craftRecipe
   id: newrecipe1255TPCink
   resultProtos:
+    - Ammobox1255TPCink
     - Ammobox1255TPCink
     - Ammobox1255TPCink
   craftTime: 30

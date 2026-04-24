@@ -7,7 +7,7 @@
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: STWeight
-    self: 5
+    self: 2.5
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -37,6 +37,8 @@
         Blunt: 0.8
         Slash: 0.8
         Piercing: 0.8
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: Craftable
@@ -101,6 +103,20 @@
     sprite: _Stalker_EN/Objects/Clothing/outerClothing/DOLG_T2_Plate_armor.rsi
   - type: Clothing
     sprite: _Stalker_EN/Objects/Clothing/outerClothing/DOLG_T2_Plate_armor.rsi
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 4
+        Radiation: 3
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+  - type: GrantsArtifactSlots
+    slots: 0 # EN
 
 # Military - 4
 
@@ -246,6 +262,7 @@
   id: STClothingOuterArmorLightPlateVestBaseMonolith
   name: бронежилет «Щиток-2» монолита
   description: Лёгкий бронежилет второго класса защиты, основа основ.
+  suffix: ST, T2, PvP, Radioactive # EN
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_monolit.rsi
@@ -255,6 +272,10 @@
     damage:
       types:
         Radiation: 18.01
+  - type: Contraband # EN
+    severity: Monolith
+  - type: GrantsArtifactSlots
+    slots: 4 # EN
 
 
 - type: entity

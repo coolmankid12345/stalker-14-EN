@@ -1,6 +1,6 @@
 
 - type: entity
-  parent: BaseItem
+  parent: BaseStorageItem # EN
   id: CraftGunpowderBank
   name: баночка с порохом
   description:  Предназначенна для хранения пороха, используемого в огнестрельном оружии или пиротехнических устройства. В частом случае создания боеприпасов.
@@ -16,25 +16,32 @@
     sprite: _Stalker/Objects/Tools/Craft/32.rsi
     state: gunpowder_bank_null
     scale: 0.9, 0.9
-  - type: ContainerFill
-    containers:
-      item:
-      - CraftMaterialGunpowder
+#  - type: ContainerFill
+#    containers:
+#      item:
+#      - CraftMaterialGunpowder
   - type: Tag
     tags:
     - CraftMaterialGunpowder
-  - type: ContainerContainer
-    containers:
-      item: !type:ContainerSlot {}
-  - type: ItemSlots
-    slots:
-      item:
-        name: порох
-        insertVerbText: засыпать порох
-        ejectVerbText: высыпать порох
-        whitelist:
-          tags:
-          - CraftMaterialGunpowder
+#  - type: ContainerContainer
+#    containers:
+#      item: !type:ContainerSlot {}
+#  - type: ItemSlots
+#    slots:
+#      item:
+#        name: порох
+#        insertVerbText: засыпать порох
+#        ejectVerbText: высыпать порох
+#        whitelist:
+#          tags:
+#          - CraftMaterialGunpowder
+  - type: Storage # EN
+    maxItemSize: Small
+    whitelist:
+      tags:
+      - CraftMaterialGunpowder
+    grid:
+    - 0,0,1,1
   - type: ItemMapper
     mapLayers:
       gunpowder_bank:
@@ -122,7 +129,7 @@
     - type: Item
       size: Normal
       shape:
-        - 0,0,2,2
+        - 0,0,1,1 #ST EN change
     - type: Material
     - type: StaticPrice
       price: 0
@@ -344,7 +351,7 @@
     - type: Item
       size: Normal
       shape:
-        - 0,0,2,2
+        - 0,0,1,1
     - type: Material
     - type: StaticPrice
       price: 0

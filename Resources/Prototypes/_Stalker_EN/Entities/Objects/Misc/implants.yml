@@ -17,6 +17,11 @@
       - type: ExplodeOnTrigger
         keysIn:
         - stageTwo
+      - type: GibOnTrigger # EN
+        targetUser: true
+        deleteItems: false
+        keysIn:
+        - stageTwo
     - type: EmitSoundOnTrigger
       sound: /Audio/Effects/chopstickbreak.ogg
       positional: true

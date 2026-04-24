@@ -140,7 +140,7 @@ public sealed class PdaMessengerSystem : EntitySystem
             UpdateUiState(messenger, GetEntity(args.LoaderUid), messenger.Comp);
 
             // Send pop-up notification event to all clients EXCEPT the sender
-            var generalEvent = new PdaGeneralMessageEvent(message.Message.Title, message.Message.Content, senderName, message.Message.BandId);
+            var generalEvent = new PdaGeneralMessageEvent(message.Message.Title, message.Message.Content, message.Message.BandId, isDisguised: false);
             RaiseNetworkEvent(generalEvent, Filter.PvsExcept(user));
             _sawmill.Info($"[PDA Notify] Sent PdaGeneralMessageEvent to all clients except sender");
 
@@ -219,7 +219,8 @@ public sealed class PdaMessengerSystem : EntitySystem
         // Send DM notification event to the recipient only
         if (recipientEntity.HasValue)
         {
-            var dmEvent = new PdaDirectMessageEvent(senderName, message.Message.Content, message.Message.BandId);
+            // Old system doesn't support disguise detection, default to false
+            var dmEvent = new PdaDirectMessageEvent(senderName, message.Message.Content, message.Message.BandId, isDisguised: false);
             RaiseNetworkEvent(dmEvent, recipientEntity.Value);
             _sawmill.Info($"[PDA Notify] Sent PdaDirectMessageEvent to recipient {recipientEntity.Value}");
         }

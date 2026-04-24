@@ -1,0 +1,34 @@
+﻿- type: entity
+  parent: STBaseWeaponRifleAKS74
+  id: STWeaponRifleAKS74WinterMono
+  name: AKS-74 (Winter)
+  description: Variant with white winter camouflage finish. Ideal for operations in snow-covered areas of the Zone.
+  suffix: ST, Weapon, Radioactive
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/_Skins/aks74-winter.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/_Skins/aks74-winter.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Rifles/_Skins/aks74-winter.rsi
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 6.65
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74U
+  id: STWeaponRifleAKS74UWhiteMono
+  name: AKS-74U (Winter)
+  suffix: ST, Weapon, Radioactive
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 6.65

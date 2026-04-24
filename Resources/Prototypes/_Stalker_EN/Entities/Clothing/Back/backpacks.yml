@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: STClothingBackBase
   id: ClothingBackpackForestryRig
   name: stalker forestry rig
@@ -18,3 +18,20 @@
     tags:
     - STClothingBackpackT4
     - BlockBack
+
+
+- type: entity
+  parent: ClothingBackpackSatchelHolding
+  id: ClothingBackpackSatchelAdminAreaInsert
+  name: satchel of administration Super
+  suffix: Admin, AreaInsert
+  description: If you are somehow seeing this, no you're not. This bag can suck up things on the floor just click the floor near the stuff. its also SUPER BIG like WOW...
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: Storage
+    areaInsert: true
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,50,40
+

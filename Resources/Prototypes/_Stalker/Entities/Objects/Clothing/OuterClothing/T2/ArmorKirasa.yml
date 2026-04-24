@@ -10,17 +10,19 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/Kirasa.rsi
   - type: STWeight
-    self: 4.5
+    self: 3.5
   - type: Armor
     armorClass: 2
     modifiers:
       flatReductions:
         Blunt: 1
         Slash: 1
-        Piercing: 5
+        Piercing: 6
       coefficients:
         Blunt: 0.9
         Slash: 0.95
         Piercing: 0.95
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.90

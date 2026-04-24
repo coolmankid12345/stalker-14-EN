@@ -12,10 +12,10 @@ public sealed class CardSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CardComponent, AppearanceChangeEvent>(OnAppearanceChange);
+        SubscribeLocalEvent<ShitCardComponent, AppearanceChangeEvent>(OnAppearanceChange);
     }
 
-    private void OnAppearanceChange(EntityUid uid, CardComponent component, ref AppearanceChangeEvent args)
+    private void OnAppearanceChange(EntityUid uid, ShitCardComponent component, ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null)
             return;

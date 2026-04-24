@@ -35,3 +35,6 @@
       gun_module_muzzle: !type:ContainerSlot {}
       gun_module_scope: !type:ContainerSlot {}
       gun_chamber: !type:ContainerSlot {}
+  - type: ParticleOnGunShot # EN start
+    effect: MuzzleSmoke
+    inheritAngle: true # EN end

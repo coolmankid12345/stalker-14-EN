@@ -31,6 +31,7 @@ public sealed partial class STMessengerComposePage : BoxContainer
 
     private int _maxLength;
     private string _chatId = string.Empty;
+    private bool _isEmissionActive = false;
 
     public STMessengerComposePage()
     {
@@ -63,8 +64,20 @@ public sealed partial class STMessengerComposePage : BoxContainer
             CharCounter.Text = Loc.GetString("st-messenger-char-counter",
                 ("remaining", remaining), ("max", _maxLength));
             CharCounter.FontColorOverride = remaining < 0 ? Color.Red : null;
-            SendButton.Disabled = remaining < 0;
+            UpdateSendButtonState(remaining < 0);
         };
+    }
+
+    public void SetEmissionActive(bool isActive)
+    {
+        _isEmissionActive = isActive;
+        var contentLength = (int) Rope.CalcTotalLength(ContentInput.TextRope);
+        UpdateSendButtonState(contentLength > _maxLength);
+    }
+
+    private void UpdateSendButtonState(bool overLimit)
+    {
+        SendButton.Disabled = overLimit || _isEmissionActive;
     }
 
     public void Setup(string chatId, uint? replyToId, string? replySnippet, string? displayName = null, string? initialContent = null)
@@ -80,7 +93,7 @@ public sealed partial class STMessengerComposePage : BoxContainer
         CharCounter.Text = Loc.GetString("st-messenger-char-counter",
             ("remaining", remaining), ("max", _maxLength));
         CharCounter.FontColorOverride = remaining < 0 ? Color.Red : null;
-        SendButton.Disabled = remaining < 0;
+        UpdateSendButtonState(remaining < 0);
 
         if (isDmChat)
         {

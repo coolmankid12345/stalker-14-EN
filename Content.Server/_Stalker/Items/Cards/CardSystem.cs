@@ -15,10 +15,10 @@ public sealed class CardSystem : SharedCardSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CardComponent, GetVerbsEvent<AlternativeVerb>>(OnSetTransferVerbs);
-        SubscribeLocalEvent<CardComponent, UseInHandEvent>(OnAfterInteract);
+        SubscribeLocalEvent<ShitCardComponent, GetVerbsEvent<AlternativeVerb>>(OnSetTransferVerbs);
+        SubscribeLocalEvent<ShitCardComponent, UseInHandEvent>(OnAfterInteract);
     }
-    private void OnSetTransferVerbs(EntityUid uid, CardComponent component, GetVerbsEvent<AlternativeVerb> args)
+    private void OnSetTransferVerbs(EntityUid uid, ShitCardComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
 
         if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
@@ -38,7 +38,7 @@ public sealed class CardSystem : SharedCardSystem
             });
         }
     }
-    private void OnAfterInteract(EntityUid uid, CardComponent component, UseInHandEvent args)
+    private void OnAfterInteract(EntityUid uid, ShitCardComponent component, UseInHandEvent args)
     {
         TurnOver(uid, component);
     }

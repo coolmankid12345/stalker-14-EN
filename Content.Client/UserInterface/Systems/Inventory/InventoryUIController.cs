@@ -259,6 +259,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         _inventorySystem.OnLinkInventorySlots += LoadSlots;
         _inventorySystem.OnUnlinkInventory += UnloadSlots;
         _inventorySystem.OnSpriteUpdate += SpriteUpdated;
+        _inventorySystem.EntitySlotUpdate += EntitySlotUpdated;
     }
 
     // Neuron Deactivation
@@ -269,6 +270,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         _inventorySystem.OnLinkInventorySlots -= LoadSlots;
         _inventorySystem.OnUnlinkInventory -= UnloadSlots;
         _inventorySystem.OnSpriteUpdate -= SpriteUpdated;
+        _inventorySystem.EntitySlotUpdate -= EntitySlotUpdated;
     }
 
     private void ItemPressed(GUIBoundKeyEventArgs args, SlotControl control)
@@ -374,6 +376,9 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
 
         var button = CreateSlotButton(data);
         slotGroup.AddButton(button);
+
+        // Apply artifact slot blocked visuals on creation
+        UpdateArtifactSlotVisuals(button, data);
     }
 
     private void RemoveSlot(SlotData data)
@@ -443,6 +448,40 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
             button.SetEntity(entity);
             button.Blocked = false;
             button.StorageButton.Visible = showStorage;
+        }
+
+        // Re-apply artifact slot blocked state after sprite update overwrites it
+        if (_playerUid.HasValue && _inventorySystem.GetSlotDefinition(_playerUid.Value, name) is { } slotDef &&
+            slotDef.SlotFlags.HasFlag(Shared.Inventory.SlotFlags.ARTIFACT))
+        {
+            var blocked = _inventorySystem.IsArtifactSlotBlocked(_playerUid.Value, name);
+            button.Blocked = blocked;
+        }
+    }
+
+    // Update blocked overlay for artifact slots when slot data changes
+    private void EntitySlotUpdated(SlotData data)
+    {
+        if (!data.SlotDef.SlotFlags.HasFlag(Shared.Inventory.SlotFlags.ARTIFACT))
+            return;
+
+        if (_strippingWindow?.InventoryButtons.GetButton(data.SlotName) is { } stripButton)
+        {
+            UpdateArtifactSlotVisuals(stripButton, data);
+        }
+
+        if (_slotGroups.GetValueOrDefault(data.SlotGroup)?.GetButton(data.SlotName) is { } slotButton)
+        {
+            UpdateArtifactSlotVisuals(slotButton, data);
+        }
+    }
+
+    // Show/hide blocked overlay for artifact slots
+    private void UpdateArtifactSlotVisuals(SlotControl button, SlotData data)
+    {
+        if (data.SlotDef.SlotFlags.HasFlag(Shared.Inventory.SlotFlags.ARTIFACT))
+        {
+            button.Blocked = data.Blocked;
         }
     }
 

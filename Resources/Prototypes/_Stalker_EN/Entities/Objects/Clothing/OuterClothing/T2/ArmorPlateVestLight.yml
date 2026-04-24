@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: STClothingOuterArmorLightPlateVestBaseMonolith
+  id: STClothingOuterArmorLightPlateVestBaseMonolithClean
+  name: бронежилет «Щиток-2» монолита
+  description: Лёгкий бронежилет второго класса защиты, основа основ.
+  suffix: ST, T2, PvP
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0

@@ -14,6 +14,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodCoatBanditBrown
     slot: head
+  - type: STWeight
+    self: 3.5
   - type: Armor
     armorClass: 2
     modifiers:
@@ -21,6 +23,7 @@
         Blunt: 3
         Slash: 4
         Piercing: 3
+        Radiation: 1
       coefficients:
         Blunt: 0.75
         Slash: 0.50
@@ -49,6 +52,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodCoatBanditBlack
     slot: head
+  - type: STWeight
+    self: 3.5
   - type: Armor
     armorClass: 2
     modifiers:
@@ -56,6 +61,7 @@
         Blunt: 3
         Slash: 4
         Piercing: 3
+        Radiation: 1
       coefficients:
         Blunt: 0.75
         Slash: 0.50

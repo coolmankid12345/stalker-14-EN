@@ -1,9 +1,9 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadBeretMonolith
-  name: monoltih beret
+  name: monolith beret
   description: A white beret with a Monolith patch sown onto it.
-  suffix: ST
+  suffix: ST, Radioactive
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/hats/beret-monolith.rsi
@@ -16,3 +16,18 @@
     damage:
       types:
         Radiation: 18.01
+  - type: Contraband
+    severity: Monolith
+  - type: Craftable
+
+- type: entity
+  parent: ClothingHeadBeretMonolith
+  id: ClothingHeadBeretMonolithClean
+  name: monolith beret
+  description: A white beret with a Monolith patch sown onto it.
+  suffix: ST
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0

@@ -151,8 +151,9 @@
   id: STMonolithBand
   name: Monolith
   factionId: Monolith
-  maxMembers: 11
+  maxMembers: 16
   managingRankId: 2
+  disguiseTargetJobId: Stalker # stalker EN change
   hierarchy:
     1: StalkerMonolith
     2: StalkerHeadMonolith

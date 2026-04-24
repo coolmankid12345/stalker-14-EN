@@ -7,6 +7,7 @@ chat-emote-name-st-medkit = Medkit
 
 chat-emote-name-st-cheekibreeki = Cheeki-Breeki
 chat-emote-name-st-psyvoice = Psy-Voices
+chat-emote-name-st-svoboda = Svoboda
 
 chat-emote-msg-st-attack = calls for attack!
 chat-emote-msg-st-backup = shouts for backup!
@@ -16,3 +17,4 @@ chat-emote-msg-st-grenade = shouts grenade!
 chat-emote-msg-st-medkit = asks for help!
 
 chat-emote-msg-st-cheekibreeki = goes CHEEKI BREEKI!!
+chat-emote-msg-st-svoboda = yells SVOBODAAAA!!

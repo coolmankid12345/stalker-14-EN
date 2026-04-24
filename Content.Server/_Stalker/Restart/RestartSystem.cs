@@ -56,7 +56,9 @@ public partial class RestartSystem : EntitySystem
 
         if (data.Comp.Time <= _timing.CurTime)
         {
+            _sawmill.Info("[shutdown] Restart timer elapsed — calling _server.Shutdown()"); // stalker-en-changes
             _server.Shutdown(null);
+            _sawmill.Info("[shutdown] _server.Shutdown() returned"); // stalker-en-changes
             return;
         }
 

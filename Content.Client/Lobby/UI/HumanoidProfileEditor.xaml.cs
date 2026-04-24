@@ -5,6 +5,7 @@ using Content.Client._Stalker.Sponsors;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
+using Content.Client._Stalker_EN.Portraits; // stalker-en-changes
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
@@ -17,6 +18,7 @@ using Content.Shared.Guidebook;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared._Stalker_EN.Portraits; // stalker-en-changes
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
@@ -97,6 +99,14 @@ namespace Content.Client.Lobby.UI
 
         private List<SpeciesPrototype> _species = new();
 
+        // stalker-en-changes: portrait picker
+        private string? _currentJobId;
+        private Action<string>? _portraitSelectedHandler;
+        private Action<string>? _disguisePortraitSelectedHandler;
+
+        // Cache for portrait prototypes by jobId to avoid re-filtering
+        private Dictionary<string, List<CharacterPortraitPrototype>> _portraitCache = new();
+
         private List<(string, RequirementsSelector)> _jobPriorities = new();
 
         private readonly Dictionary<string, BoxContainer> _jobCategories;
@@ -152,12 +162,15 @@ namespace Content.Client.Lobby.UI
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
 
+            // Invalidate portrait cache when prototypes are reloaded
+            _prototypeManager.PrototypesReloaded += OnPrototypesReloaded;
+
             ImportButton.Disabled = false;
 
             // Stalker-TODO: Add a command to control this. After that, uncomment this block
             ImportButton.OnPressed += args =>
             {
-                 ImportProfile();
+                ImportProfile();
             };
 
             ExportButton.OnPressed += args =>
@@ -177,7 +190,7 @@ namespace Content.Client.Lobby.UI
 
             ResetButton.OnPressed += args =>
             {
-                SetProfile((HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, _preferencesManager.Preferences?.SelectedCharacterIndex);
+                SetProfile((HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, _preferencesManager.Preferences?.SelectedCharacterIndex);
             };
 
             SaveButton.OnPressed += args =>
@@ -213,7 +226,7 @@ namespace Content.Client.Lobby.UI
             SexButton.OnItemSelected += args =>
             {
                 SexButton.SelectId(args.Id);
-                SetSex((Sex) args.Id);
+                SetSex((Sex)args.Id);
             };
 
             #endregion Sex
@@ -232,15 +245,15 @@ namespace Content.Client.Lobby.UI
 
             #region Gender
 
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int) Gender.Male);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int) Gender.Female);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int) Gender.Epicene);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int) Gender.Neuter);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int)Gender.Male);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int)Gender.Female);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int)Gender.Epicene);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int)Gender.Neuter);
 
             PronounsButton.OnItemSelected += args =>
             {
                 PronounsButton.SelectId(args.Id);
-                SetGender((Gender) args.Id);
+                SetGender((Gender)args.Id);
             };
 
             #endregion Gender
@@ -335,7 +348,7 @@ namespace Content.Client.Lobby.UI
                 ReloadPreview();
             };
 
-            HairStylePicker.OnSlotAdd += delegate()
+            HairStylePicker.OnSlotAdd += delegate ()
             {
                 if (Profile is null)
                     return;
@@ -355,7 +368,7 @@ namespace Content.Client.Lobby.UI
                 ReloadPreview();
             };
 
-            FacialHairPicker.OnSlotAdd += delegate()
+            FacialHairPicker.OnSlotAdd += delegate ()
             {
                 if (Profile is null)
                     return;
@@ -381,13 +394,13 @@ namespace Content.Client.Lobby.UI
 
             foreach (var value in Enum.GetValues<SpawnPriorityPreference>())
             {
-                SpawnPriorityButton.AddItem(Loc.GetString($"humanoid-profile-editor-preference-spawn-priority-{value.ToString().ToLower()}"), (int) value);
+                SpawnPriorityButton.AddItem(Loc.GetString($"humanoid-profile-editor-preference-spawn-priority-{value.ToString().ToLower()}"), (int)value);
             }
 
             SpawnPriorityButton.OnItemSelected += args =>
             {
                 SpawnPriorityButton.SelectId(args.Id);
-                SetSpawnPriority((SpawnPriorityPreference) args.Id);
+                SetSpawnPriority((SpawnPriorityPreference)args.Id);
             };
 
             #endregion SpawnPriority
@@ -414,16 +427,16 @@ namespace Content.Client.Lobby.UI
 
             PreferenceUnavailableButton.AddItem(
                 Loc.GetString("humanoid-profile-editor-preference-unavailable-stay-in-lobby-button"),
-                (int) PreferenceUnavailableMode.StayInLobby);
+                (int)PreferenceUnavailableMode.StayInLobby);
             PreferenceUnavailableButton.AddItem(
                 Loc.GetString("humanoid-profile-editor-preference-unavailable-spawn-as-overflow-button",
                               ("overflowJob", Loc.GetString(SharedGameTicker.FallbackOverflowJobName))),
-                (int) PreferenceUnavailableMode.SpawnAsOverflow);
+                (int)PreferenceUnavailableMode.SpawnAsOverflow);
 
             PreferenceUnavailableButton.OnItemSelected += args =>
             {
                 PreferenceUnavailableButton.SelectId(args.Id);
-                Profile = Profile?.WithPreferenceUnavailable((PreferenceUnavailableMode) args.Id);
+                Profile = Profile?.WithPreferenceUnavailable((PreferenceUnavailableMode)args.Id);
                 SetDirty();
             };
 
@@ -508,6 +521,140 @@ namespace Content.Client.Lobby.UI
                 _flavorTextEdit = null;
                 _flavorText = null;
             }
+        }
+
+        /// <summary>
+        /// Refreshes the portrait picker based on the current highest priority job.
+        /// </summary>
+        public void RefreshPortraits()
+        {
+            // Unsubscribe from old events to prevent memory leak
+            if (_portraitSelectedHandler != null)
+            {
+                PortraitSelector.OnPortraitSelected -= _portraitSelectedHandler;
+                _portraitSelectedHandler = null;
+            }
+            if (_disguisePortraitSelectedHandler != null)
+            {
+                DisguisePortraitSelector.OnPortraitSelected -= _disguisePortraitSelectedHandler;
+                _disguisePortraitSelectedHandler = null;
+            }
+
+            _currentJobId = GetHighestPriorityJobId();
+
+            List<CharacterPortraitPrototype> portraits = new();
+
+            // Use cache for portraits by jobId
+            if (!string.IsNullOrEmpty(_currentJobId))
+            {
+                if (_portraitCache.TryGetValue(_currentJobId, out var cachedPortraits))
+                {
+                    portraits = cachedPortraits;
+                }
+                else
+                {
+                    portraits = new List<CharacterPortraitPrototype>();
+                    foreach (var portrait in _prototypeManager.EnumeratePrototypes<CharacterPortraitPrototype>())
+                    {
+                        // Filter only by jobId - portraits with empty jobId are for NPC fallback only
+                        if (portrait.JobId == _currentJobId)
+                            portraits.Add(portrait);
+                    }
+                    _portraitCache[_currentJobId] = portraits;
+                }
+            }
+
+            PortraitSelector.Setup(portraits, Profile?.SelectedPortraitId, _prototypeManager);
+            _portraitSelectedHandler = id =>
+            {
+                Profile = Profile?.WithSelectedPortrait(id);
+                SetDirty();
+            };
+            PortraitSelector.OnPortraitSelected += _portraitSelectedHandler;
+
+            // Validate current SelectedPortraitId - if it doesn't exist in available portraits, clear it
+            if (!string.IsNullOrEmpty(Profile?.SelectedPortraitId))
+            {
+                var textureExists = portraits.Any(p => p.Textures.Any(t => t is SpriteSpecifier.Texture tex && tex.TexturePath.ToString() == Profile.SelectedPortraitId));
+                if (!textureExists)
+                {
+                    Profile = Profile.WithSelectedPortrait(string.Empty);
+                    SetDirty();
+                }
+            }
+
+            // stalker-en-start
+            // Check if current job can disguise by finding STBandPrototype through Hierarchy
+            string? disguiseJobId = null;
+
+            if (!string.IsNullOrEmpty(_currentJobId))
+            {
+                foreach (var bandProto in _prototypeManager.EnumeratePrototypes<Content.Shared._Stalker.Bands.STBandPrototype>())
+                {
+                    // Check if current job is in this band's hierarchy
+                    if (bandProto.Hierarchy.Values.Any(jobId => jobId.ToString() == _currentJobId))
+                    {
+                        // This band has the current job, check for disguise capability
+                        if (bandProto.DisguiseTargetJobId != null)
+                        {
+                            disguiseJobId = bandProto.DisguiseTargetJobId.ToString();
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(disguiseJobId))
+            {
+                DisguisePortraitBox.Visible = true;
+
+                // Use cache for disguise portraits
+                if (!_portraitCache.TryGetValue(disguiseJobId, out var disguisePortraits))
+                {
+                    disguisePortraits = new List<CharacterPortraitPrototype>();
+                    foreach (var portrait in _prototypeManager.EnumeratePrototypes<CharacterPortraitPrototype>())
+                    {
+                        if (portrait.JobId == disguiseJobId)
+                            disguisePortraits.Add(portrait);
+                    }
+                    _portraitCache[disguiseJobId] = disguisePortraits;
+                }
+
+                DisguisePortraitSelector.Setup(disguisePortraits, Profile?.DisguisePortraitId, _prototypeManager);
+                _disguisePortraitSelectedHandler = id =>
+                {
+                    Profile = Profile?.WithDisguisePortrait(id);
+                    SetDirty();
+                };
+                DisguisePortraitSelector.OnPortraitSelected += _disguisePortraitSelectedHandler;
+
+                // Validate current DisguisePortraitId - if it doesn't exist in available portraits, clear it
+                if (!string.IsNullOrEmpty(Profile?.DisguisePortraitId))
+                {
+                    var textureExists = disguisePortraits.Any(p => p.Textures.Any(t => t is SpriteSpecifier.Texture tex && tex.TexturePath.ToString() == Profile.DisguisePortraitId));
+                    if (!textureExists)
+                    {
+                        Profile = Profile.WithDisguisePortrait(string.Empty);
+                        SetDirty();
+                    }
+                }
+            }
+            else
+            {
+                DisguisePortraitBox.Visible = false;
+            }
+            // stalker-en-end
+        }
+
+        private string? GetHighestPriorityJobId()
+        {
+            if (Profile == null || Profile.JobPriorities.Count == 0)
+                return null;
+
+            return Profile.JobPriorities
+                .OrderByDescending(x => x.Value)
+                .ThenByDescending(x => _prototypeManager.TryIndex(x.Key, out var j) ? j.Weight : 0)
+                .FirstOrDefault().Key;
         }
 
         /// <summary>
@@ -601,7 +748,7 @@ namespace Content.Client.Lobby.UI
                 {
                     TraitsList.AddChild(new Label
                     {
-                        Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount) ,("max", category.MaxTraitPoints)),
+                        Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount), ("max", category.MaxTraitPoints)),
                         FontColorOverride = Color.Gray
                     });
                 }
@@ -777,7 +924,7 @@ namespace Content.Client.Lobby.UI
         public void ResetToDefault()
         {
             SetProfile(
-                (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
+                (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter,
                 _preferencesManager.Preferences?.SelectedCharacterIndex);
         }
 
@@ -810,13 +957,14 @@ namespace Content.Client.Lobby.UI
             RefreshLoadouts();
             RefreshSpecies();
             RefreshTraits();
+            RefreshPortraits(); // stalker-en-changes
             RefreshFlavorText();
             UpdateAliasControls(); // stalker-en-changes
             ReloadPreview();
 
             if (Profile != null)
             {
-                PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
+                PreferenceUnavailableButton.SelectId((int)Profile.PreferenceUnavailable);
             }
         }
 
@@ -852,7 +1000,7 @@ namespace Content.Client.Lobby.UI
                 var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
                 dict.Add(DefaultSpeciesGuidebook, guideRoot);
                 //TODO: Don't close the guidebook if its already open, just go to the correct page
-                guidebookController.OpenGuidebook(dict, includeChildren:true, selected: page);
+                guidebookController.OpenGuidebook(dict, includeChildren: true, selected: page);
             }
         }
 
@@ -914,7 +1062,7 @@ namespace Content.Client.Lobby.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
+                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
                         Children =
                         {
                             new Label
@@ -971,7 +1119,7 @@ namespace Content.Client.Lobby.UI
 
                     selector.OnSelected += selectedPrio =>
                     {
-                        var selectedJobPrio = (JobPriority) selectedPrio;
+                        var selectedJobPrio = (JobPriority)selectedPrio;
                         Profile = Profile?.WithJobPriority(job.ID, selectedJobPrio);
 
                         foreach (var (jobId, other) in _jobPriorities)
@@ -983,7 +1131,7 @@ namespace Content.Client.Lobby.UI
                                 continue;
                             }
 
-                            if (selectedJobPrio != JobPriority.High || (JobPriority) other.Selected != JobPriority.High)
+                            if (selectedJobPrio != JobPriority.High || (JobPriority)other.Selected != JobPriority.High)
                                 continue;
 
                             // Lower any other high priorities to medium.
@@ -1133,35 +1281,35 @@ namespace Content.Client.Lobby.UI
             switch (strategy.InputType)
             {
                 case SkinColorationStrategyInput.Unary:
-                {
-                    if (!Skin.Visible)
                     {
-                        Skin.Visible = true;
-                        RgbSkinColorContainer.Visible = false;
+                        if (!Skin.Visible)
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                        }
+
+                        var color = strategy.FromUnary(Skin.Value);
+
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                        break;
                     }
-
-                    var color = strategy.FromUnary(Skin.Value);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-
-                    break;
-                }
                 case SkinColorationStrategyInput.Color:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        var color = strategy.ClosestSkinColor(_rgbSkinColorSelector.Color);
+
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                        break;
                     }
-
-                    var color = strategy.ClosestSkinColor(_rgbSkinColorSelector.Color);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-
-                    break;
-                }
             }
 
             ReloadProfilePreview();
@@ -1295,8 +1443,24 @@ namespace Content.Client.Lobby.UI
             foreach (var (jobId, prioritySelector) in _jobPriorities)
             {
                 var priority = Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
-                prioritySelector.Select((int) priority);
+                prioritySelector.Select((int)priority);
             }
+
+            // Refresh portraits when job priority changes
+            RefreshPortraits();
+
+            // stalker-en-start: Apply job-specific appearance for Zombified
+            var currentJobId = GetHighestPriorityJobId();
+            if (currentJobId == "StalkerZombified" && Profile != null)
+            {
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance
+                    .WithEyeColor(Color.FromHex("#EBEBEB"))
+                    .WithSkinColor(Color.FromHex("#9C9794FF")));
+                UpdateSkinColor();
+                UpdateEyePickers();
+                SetDirty();
+            }
+            // stalker-en-end
         }
 
         private void UpdateSexControls()
@@ -1324,13 +1488,13 @@ namespace Content.Client.Lobby.UI
             // add button for each sex
             foreach (var sex in sexes)
             {
-                SexButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
+                SexButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int)sex);
             }
 
             if (sexes.Contains(Profile.Sex))
-                SexButton.SelectId((int) Profile.Sex);
+                SexButton.SelectId((int)Profile.Sex);
             else
-                SexButton.SelectId((int) sexes[0]);
+                SexButton.SelectId((int)sexes[0]);
         }
 
         private void UpdateSkinColor()
@@ -1344,29 +1508,29 @@ namespace Content.Client.Lobby.UI
             switch (strategy.InputType)
             {
                 case SkinColorationStrategyInput.Unary:
-                {
-                    if (!Skin.Visible)
                     {
-                        Skin.Visible = true;
-                        RgbSkinColorContainer.Visible = false;
+                        if (!Skin.Visible)
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                        }
+
+                        Skin.Value = strategy.ToUnary(Profile.Appearance.SkinColor);
+
+                        break;
                     }
-
-                    Skin.Value = strategy.ToUnary(Profile.Appearance.SkinColor);
-
-                    break;
-                }
                 case SkinColorationStrategyInput.Color:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        _rgbSkinColorSelector.Color = strategy.ClosestSkinColor(Profile.Appearance.SkinColor);
+
+                        break;
                     }
-
-                    _rgbSkinColorSelector.Color = strategy.ClosestSkinColor(Profile.Appearance.SkinColor);
-
-                    break;
-                }
             }
         }
 
@@ -1408,7 +1572,7 @@ namespace Content.Client.Lobby.UI
                 return;
             }
 
-            PronounsButton.SelectId((int) Profile.Gender);
+            PronounsButton.SelectId((int)Profile.Gender);
         }
 
         private void UpdateSpawnPriorityControls()
@@ -1418,7 +1582,7 @@ namespace Content.Client.Lobby.UI
                 return;
             }
 
-            SpawnPriorityButton.SelectId((int) Profile.SpawnPriority);
+            SpawnPriorityButton.SelectId((int)Profile.SpawnPriority);
         }
 
         private void UpdateHairPickers()
@@ -1454,7 +1618,7 @@ namespace Content.Client.Lobby.UI
 
             // hair color
             Color? hairColor = null;
-            if ( Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
+            if (Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.HairStyleId, out var hairProto)
             )
             {
@@ -1472,7 +1636,7 @@ namespace Content.Client.Lobby.UI
             }
             if (hairColor != null)
             {
-                Markings.HairMarking = new (Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
+                Markings.HairMarking = new(Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
             }
             else
             {
@@ -1489,7 +1653,7 @@ namespace Content.Client.Lobby.UI
 
             // facial hair color
             Color? facialHairColor = null;
-            if ( Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
+            if (Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.FacialHairStyleId, out var facialHairProto))
             {
                 if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, facialHairProto, _prototypeManager))
@@ -1506,7 +1670,7 @@ namespace Content.Client.Lobby.UI
             }
             if (facialHairColor != null)
             {
-                Markings.FacialHairMarking = new (Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
+                Markings.FacialHairMarking = new(Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
             }
             else
             {
@@ -1546,7 +1710,7 @@ namespace Content.Client.Lobby.UI
 
         private void SetPreviewRotation(Direction direction)
         {
-            SpriteView.OverrideDirection = (Direction) ((int) direction % 4 * 2);
+            SpriteView.OverrideDirection = (Direction)((int)direction % 4 * 2);
         }
 
         private void RandomizeEverything()
@@ -1772,14 +1936,16 @@ namespace Content.Client.Lobby.UI
                 for (var i = 0; i < _aliasColors.Count; i++)
                 {
                     if (_aliasColors[i].Hex == Profile.STAliasColor)
-                    {
                         colorIdx = i + 1;
-                        break;
-                    }
                 }
             }
             AliasColorButton.SelectId(colorIdx);
         }
         // stalker-en-changes-end
+        private void OnPrototypesReloaded(PrototypesReloadedEventArgs obj)
+        {
+            // Invalidate portrait cache when prototypes are reloaded
+            _portraitCache.Clear();
+        }
     }
 }

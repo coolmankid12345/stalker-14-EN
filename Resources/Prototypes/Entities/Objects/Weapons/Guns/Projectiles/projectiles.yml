@@ -9,8 +9,8 @@
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
-      state: muzzle_bullet
+      sprite: _Stalker_EN/Effects/muzzleflash.rsi # EN
+      state: flash # EN
   - type: EffectVisuals
   - type: Tag
     tags:

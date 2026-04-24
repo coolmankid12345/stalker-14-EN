@@ -1,4 +1,4 @@
-﻿using Content.Shared._Stalker.ZoneAnomaly.Components;
+using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Robust.Shared.Random;
 

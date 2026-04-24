@@ -54,3 +54,8 @@
   tags:
     - SeraphimsHead
     - Seraphims
+
+- type: accessGroup
+  id: Zombified
+  tags:
+    - Zombified

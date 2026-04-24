@@ -6,19 +6,21 @@
   description: Армейский бронежилет серии ПСЗ-7 (персональная система защиты) обеспечивает уровень защиты, достаточный для проведения боевых операций против легковооружённого противника. Защита от аномальной активности отсутствует. Офицерский вариант, в раскраске вудланд.
   components:
     - type: STWeight
-      self: 10
+      self: 9.5
     - type: Armor
       armorClass: 3
       modifiers:
         flatReductions:
           Blunt: 3
-          Slash: 3
+          Slash: 6
           Piercing: 6
         coefficients:
           Blunt: 0.80
           Slash: 0.80
           Piercing: 0.6
           Heat: 0.9
+    - type: GrantsArtifactSlots
+      slots: 2 # EN
     - type: ExplosionResistance
       damageCoefficient: 0.65
     - type: Sprite

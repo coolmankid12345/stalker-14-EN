@@ -594,6 +594,7 @@ public abstract partial class SharedGunSystem : EntitySystem
                             RaiseLocalEvent(ent!.Value, new AmmoShotEvent()
                             {
                                 FiredProjectiles = shotProjectiles,
+                                Angle = mapAngle, // EN
                             });
 
                             SetCartridgeSpent(ent.Value, cartridge, true);
@@ -786,6 +787,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         RaiseLocalEvent(gunUid, new AmmoShotEvent()
         {
             FiredProjectiles = shotProjectiles,
+            Angle = mapAngle, // EN
         });
 
         void CreateAndFireProjectiles(EntityUid ammoEnt, AmmoComponent ammoComp)

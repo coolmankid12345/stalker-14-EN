@@ -35,6 +35,8 @@
     icon:
       sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
       state: unknown
+  - type: ZoneAnomalyEffectPlaySound # EN
+    sound: /Audio/_Stalker_EN/Effects/Anomalies/inv_drop.ogg # EN
 
 - type: entity
   parent: ZoneAnomalyBaseSpatial

@@ -28,7 +28,7 @@
     ArtMedusa: 810
     ZoneArtifactFlower: 1215
     ZoneArtifactNightStar: 4860
-    ZoneArtifactWhirlwind: 1000
+    ZoneArtifactWhirlwind: 1215
     ZoneArtifactPebble: 810
     ZoneArtifactRosin: 1215
     ZoneArtifactStoneCube: 1825
@@ -97,10 +97,9 @@
         STWeaponSMGMP5: 1800 # T3
         STWeaponSMGThompson: 3800
         # Nato Rifles
-        STWeaponRifleL85: 2100 # T2
+        STWeaponRifleM16: 2500 # T2
+        STWeaponRifleM16M203: 3500 # T2
         STWeaponRifleSCARH: 6000 # T3
-        STWeaponRifleM16: 4000 # T2
-        STWeaponRifleM16M203: 5000 # T2
         STWeaponRifleFAL: 1750 # T3
         STWeaponRifleFALo: 8000 # T3
         STWeaponRifleGalil: 7000 # T3
@@ -118,9 +117,8 @@
         556Mag20: 220
         556Mag30: 400
         BaseMP5Mag: 260
-        BaseGlockMag10: 100
-        GlockMag24: 350
-        GlockMag33: 950
+        GlockMag17: 150
+        GlockMag33: 600
         STSpeedLoader45ACPEmpty: 100
         Base751Mag10: 200
         751Mag20: 400
@@ -205,14 +203,14 @@
       items:
           # Helmets #
         ClothingHeadHelmetInfantry: 600 # T2 - PVP
+        ClothingHeadHelmetAborigine: 2500 # T3
         ClothingHeadHelmetVityazKushch: 3000 # T3
         ClothingHeadAssaultHelmetFreedom: 3500 # T3
           # OuterClothing #
         ClothingOuterJacketFreedom: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseFreedom: 1000 # T2 - PvP
         ClothingOuterArmorRCBZFreedom: 1700 # T2 - ENV
-        ClothingOuterArmorFreedomWind: 2000
-        SetFreedomVeterBuyableCrate: 3200 # T2 Bundle
+        ClothingOuterArmorFreedomWind: 2000 # T2
         SetFreedomDefenderBuyableCrate: 12000 # T3
         ClothingOuterArmorAborigineFreedom: 8500 # T3
         ClothingOuterArmorSevaFreedom: 3200 # T3 - ENV
@@ -230,7 +228,6 @@
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltWebbingHolsterFreedomDefender: 600
-        ClothingBeltWebbingDoubleFreedomVeterSmall: 1000
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8
@@ -298,9 +295,9 @@
         STOxygenTanksFractionalFreedom2: 500
         Matchbox: 10
         HatchetStalker: 150
-        STElasticRubberRed: 50
-        STElasticRubberGreen: 50
-        STElasticRubberBlue: 50
+        STElasticRubberRed: 1
+        STElasticRubberGreen: 1
+        STElasticRubberBlue: 1
         FoldedFlagFree: 250
         # Cameras
         STCamera: 750
@@ -321,6 +318,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
+        STModuleGlockSwitch: 200
 
     - name: shop-category-grenades
       priority: 12
@@ -346,9 +344,11 @@
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         # NECK
+        ClothingBandageStalkerKrest: 10
         ClothingNeckScarfBrown: 100
         # faction
         ClothingBandageStalkerGreen: 10
+        ClothingHeadBeretSvoboda: 50
         ClothingNeckScarfFreedom: 100
         # TORSO
         ClothingTorsoTShirtPivozavr: 30
@@ -368,6 +368,8 @@
         ClothingTorsoTurtlenecksMatrosska: 50
         # HANDS
         ClothingHandsGlovesFingerless: 30
+        ClothingHandsGlovesNitrile: 35
+        ClothingHandsGlovesLatex: 35
         ClothingHandsGlovesMercFingerless: 60
         # OUTERCLOTHING
         # CLOAK

@@ -30,6 +30,8 @@
         Shock: 0.65
         Psy: 0.8
         Compression: 0.8
+  - type: GrantsArtifactSlots
+    slots: 2 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.90
   # bonus
@@ -94,6 +96,8 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/cn1.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCN1
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
 
 - type: entity
   parent: ClothingHeadHelmetZN1

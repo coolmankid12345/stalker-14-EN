@@ -98,21 +98,21 @@
     MutantPartControllerBrain: 2625
 
     # Meat
-    FoodMeatDogCooked: 70
-    STFoodMeatSpiderCooked: 35
-    FoodMeatBoarCooked: 110
-    FoodMeatSTBearCooked: 200
-    FoodMeatSTFishFilletCooked: 25
-    FoodMeatSTFishSteakCooked: 75
-    FoodMeatSTEelCooked: 150
-    STFoodMeatCvarci: 22
+    FoodMeatDogCooked: 75
+    STFoodMeatSpiderCooked: 40
+    FoodMeatBoarCooked: 115
+    FoodMeatSTBearCooked: 225
+    FoodMeatSTFishFilletCooked: 75
+    FoodMeatSTFishSteakCooked: 115
+    FoodMeatSTEelCooked: 190
+    STFoodMeatCvarci: 30
     FoodMeatSTRatCooked: 5 # whatever
     FoodMeatSTRatJerked: 10
-    FoodMeatSTDogJerkedSingle: 75
-    FoodMeatSTBoarJerkedSingle: 125
-    FoodMeatSTBearJerkedSingle: 245
-    FoodMeatSTSuckerJerkedSingle: 600
-    STFoodMeatSalo: 35
+    FoodMeatSTDogJerkedSingle: 115
+    FoodMeatSTBoarJerkedSingle: 150
+    FoodMeatSTBearJerkedSingle: 265
+    FoodMeatSTSuckerJerkedSingle: 675
+    STFoodMeatSalo: 50
 
 # Cooking
     FoodSTFreshCheese: 100
@@ -165,6 +165,7 @@
         StalkerBallBat: 50
         STThrowingknifeBlue: 250
         # Shotguns
+        STBaseWeaponShotgunTOZ106: 800 # T1
         STWeaponShotgunTOZ34: 250 # T1
         STWeaponShotgunMP133: 500 # T2
         STWeaponShotgunMP153: 1700 # T2
@@ -196,6 +197,8 @@
         545Mag20: 250
         545Mag30: 500
         # Other
+        Base2070Mag: 30
+        TOZ106Mag5: 100
         BasePMMag: 12
         BasePPSHMag: 350
         TTMag: 15
@@ -207,6 +210,9 @@
     - name: shop-category-ammunition
       priority: 3
       items:
+        #20gauge
+        62mmBuckshotBox: 30 #T0
+        75mmBuckshotBox: 200 #T1
         #7mm
         7mmBuckshotBox: 50 # T0
         6mmBuckshotBox: 275 # T1
@@ -218,21 +224,21 @@
         # 7.54
         754HPBox: 850 # Mutant
         # 9.18
-        918PGJBox: 80 # T1
-        918PSTBox: 245 # T2
+        918PGJBox: 100 # T1
+        918PSTBox: 300 # T2
         918SP7Box: 625 # Mutant
         # 9.19
         919PSOGJBox: 100 # T1
-        919PSTBox: 265 # T2
+        919PSTBox: 300 # T2
         919RIPBox: 625 # Mutant
         # 7.25
         725PBox: 100 # T1
         725LRNPCBox: 625 # Mutant
-        725PTBox: 465 # T2
+        725PTBox: 300 # T2
         # .45
         45ACPLFMJBox: 100 # T1
         45ACPRIPBox: 675 # Mutant
-        45ACPMFMJBox: 275 # T2
+        45ACPMFMJBox: 300 # T2
 
     - name: shop-category-medicine
       priority: 4
@@ -288,11 +294,11 @@
         STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
         SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
         SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
-        ClothingOuterArmor6B2: 2000
+        ClothingOuterArmor6B2: 2000 # T2 - PvP
         STClothingOuterArmorRCBZ: 1800 # T2 - ENV
         ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
         SetZaryaStalkerBuyableCrate: 3300 # T2 - ENV
-        ClothingOuterArmorSevaStalker: 5000 # T3 - ENV
+        ClothingOuterArmorSevaStalker: 7000 # T3 - ENV
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -305,13 +311,13 @@
         ClothingBackpackTacticBeigeStalker: 498 # T2
         ##-------------------------------------------
         ClothingBackpackMercStalker: 899 # T3 |pve backpack
+        ClothingBackpackStalkerZaryaGreen: 1250 #T3 |pvp backpack
         ##-------------------------------------------
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanGreen: 200 # T1 - PVP
         ClothingBeltTarzanOrange: 200 # T1 - PVP
         ClothingBeltWebbingHolsterStalkerZarya: 1000
-        ClothingBeltWebbingDoubleStalkerZaryaSmall: 1500
           # Containers
         MedkitCMSStalker: 250 # T1
         MedkitGrizzlyStalker: 850 # T2
@@ -336,6 +342,7 @@
         ClothingOuterCoatStalker: 1000
         ClothingOuterCoatLoyalistLight: 2500
         ClothingOuterCoatLoyalist: 3000
+        STClothingCapeArmorChainmailSeva: 2000
           # Gasmasks
         ClothingMaskGasZarya: 775 # T1
         ClothingMaskGasZaryaMono: 775 # T1
@@ -480,6 +487,7 @@
         AcousticGuitarInstrument: 500
         AccordionInstrument: 500
         HarmonicaInstrument: 500
+        CardDeckBlack: 100
 
     - name: shop-category-blueprints
       priority: 13

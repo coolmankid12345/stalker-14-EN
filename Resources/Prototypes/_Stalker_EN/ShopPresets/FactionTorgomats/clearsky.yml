@@ -90,7 +90,7 @@
     MutantPartBloodsuckerTentacles: 2750
     MutantPartOraculeEye: 1800
     MutantPartPseudogiantHeart: 9050
-    MutantPartZombieHand: 1000
+    MutantPartZombieHand: 750
     ClothingMaskChimera: 1
     MutantPartChimeraTooth: 1
     MutantPartIzlomArm: 1650
@@ -151,6 +151,7 @@
       STWeaponShotgunMossbergM88: 630 # T2
       STWeaponShotgunSPAS: 1300 # T3
       # SMGs
+      STWeaponSMGUMP: 1800
       STWeaponSMGPP19: 2000
       STWeaponSMGMP5: 2000
       # Rifles
@@ -186,6 +187,7 @@
       Base751Mag10: 200
       751Mag20: 400
       # Smg
+      UMPMag25: 140
       BaseMP5Mag: 160
       BizonMag: 750
       BizonMag919: 800
@@ -194,8 +196,8 @@
       P99Mag15: 140
       M1911Mag7: 120
       USPMag12: 200
-      BaseGlockMag10: 100
-      GlockMag17: 200
+      GlockMag17: 150
+      GlockMag33: 600
       TTMag: 75
       BaseAPSMag: 100
       STSpeedLoader45ACPEmpty: 120
@@ -313,13 +315,13 @@
       ClothingBackpackDuffelGreenStalker: 30 # T1
       ClothingBackpackTacticGreenStalker: 450 # T2
       ClothingBackpackMercStalker: 550 # T3
+      ClothingBackpackDuffelCommonStalker: 750 # T3
       ClothingBackpackDuffelHikingVSRF: 1150 # T4
       ClothingBackpackDuffelMilitaryOlive: 1300 # T4
       # Belts
       ClothingBeltBandolierStalker: 20 # T1 - PVE
       STClothingBeltThrowingKnifes: 350
       ClothingBeltWebbingHolsterStalkerZarya: 500
-      ClothingBeltWebbingDoubleStalkerZaryaSmall: 1000
       # Containers
       MedkitCMSStalker: 450 # T1
       MedkitGrizzlyStalker: 850 # T2
@@ -399,9 +401,9 @@
       CasseteSevenRadio: 500
       ClothingHeatBagStalker: 100
       ClothingNeckDogtagLoner: 250
-      STElasticRubberRed: 50
-      STElasticRubberGreen: 50
-      STElasticRubberBlue: 50
+      STElasticRubberRed: 1
+      STElasticRubberGreen: 1
+      STElasticRubberBlue: 1
       FoldedFlagCS: 250
       # Cameras
       STCamera: 750
@@ -428,6 +430,7 @@
       STModuleSilencerRiflesT2Nato: 2800
       STModuleSilencerSniperT2: 2800
       STModuleSilencerSMGT2: 2800
+      STModuleGlockSwitch: 200
 
   - name: shop-category-customization
     priority: 12
@@ -449,6 +452,7 @@
       ClothingMaskNeckBalaklava2: 10
       ClothingMaskNeckBalaklava3: 10
       # NECK
+      ClothingBandageStalkerKrest: 10
       ClothingNeckScarfBrown: 100
       ClothingNeckScarfGray: 100
       # faction
@@ -517,8 +521,13 @@
       DetectorVelesBlueprint: 6500
       DetectorSvarogBlueprint: 20000
 
-  - name: Smokables #explained using D&D lifestyle expenses
+  - name: shop-category-tools
     priority: 14
+    items:
+      CraftChemicalCleaningKit: 10000
+
+  - name: Smokables #explained using D&D lifestyle expenses
+    priority: 15
     items:
       CigPackBub: 250 #comfortable
       CigPackGreen: 150 #poor

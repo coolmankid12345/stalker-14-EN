@@ -83,6 +83,24 @@
   - type: AccessReader
     access: [ [ "MilitaryBarraks" ] ]
 
+- type: entity
+  parent: MapTeleportBase
+  id: Yantar-MBase
+  name: Yantar-MBase
+  components:
+  - type: AccessReader
+    access: [["MilitaryBarraks"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Yantar-MBaseUncollide
+  name: Yantar-MBaseUncollide
+  components:
+  - type: LinkByString
+    linkString: Yantar-MBase
+  - type: AccessReader
+    access: [ [ "MilitaryBarraks" ] ]
+
 # Red Forest / Limansk
 
 - type: entity
@@ -224,6 +242,14 @@
   - type: Portal
     cooldown: 5
 
+- type: entity
+  parent: MapTeleportBase
+  id: Yantar-YantarLabMono
+  name: Yantar-YantarLabMono
+  components:
+  - type: Portal
+    cooldown: 10
+
 # JupiterPlant
 
 - type: entity
@@ -251,6 +277,22 @@
   components:
   - type: LinkByString
     linkString: Mono-Yantar
+
+- type: entity
+  parent: MapTeleportBase
+  id: Yantar-Mono
+  name: Yantar-Mono
+  components:
+  - type: AccessReader
+    access: [["Monolith"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Yantar-MonoUncollide
+  name: Yantar-MonoUncollide
+  components:
+  - type: LinkByString
+    linkString: Yantar-Mono
 
 # Merc
 

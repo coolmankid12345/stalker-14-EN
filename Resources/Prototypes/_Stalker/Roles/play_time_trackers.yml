@@ -204,3 +204,5 @@
   id: JobHeadMilitaryStalker
 - type: playTimeTracker
   id: JobStalkerRookie
+- type: playTimeTracker
+  id: JobZombified

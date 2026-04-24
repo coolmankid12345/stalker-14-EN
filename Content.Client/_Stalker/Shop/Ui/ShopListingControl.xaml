@@ -1,16 +1,29 @@
-﻿<Control xmlns="https://spacestation14.io">
-    <BoxContainer Margin="8,8,8,8" Orientation="Vertical">
+<Control xmlns="https://spacestation14.io">
+    <!--<BoxContainer Margin="8,8,8,8" Orientation="Vertical"> stalker-en-change: Why not-->
+    <BoxContainer Orientation="Vertical" VerticalExpand="True">
+        <PanelContainer StyleClasses="HighDivider" />
         <BoxContainer Orientation="Horizontal">
             <Label Name="ShopItemName" HorizontalExpand="True" />
             <Label Name="ShopItemPrice" HorizontalExpand="True" HorizontalAlignment="Right" />
             <Control MinSize="8 0"/>
+            <!--stalker-en-change-start-->
+            <Button
+                Name="CompareStatsButton"
+                MinWidth="40"
+                Text="Compare"
+                Visible="False"
+                HorizontalAlignment="Right"
+                Access="Public" />
+            <Control MinSize="4 0"/>
+            <!--stalker-en-change-end-->
             <Button
                 Name="ShopItemButton"
                 MinWidth="64"
                 HorizontalAlignment="Right"
                 Access="Public" />
         </BoxContainer>
-        <PanelContainer StyleClasses="HighDivider" />
+        <!--stalker-en-change-start-->
+        <PanelContainer StyleClasses="LowDivider"/>
         <BoxContainer HorizontalExpand="True" Orientation="Horizontal">
             <TextureRect
                 Name="ShopItemTexture"

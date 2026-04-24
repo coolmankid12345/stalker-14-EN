@@ -52,4 +52,9 @@ public enum STFactionRelationChangeResult : byte
     /// The target faction is restricted and can only be changed by admins.
     /// </summary>
     RestrictedFaction,
+
+    /// <summary>
+    /// The proposed relation is forbidden for this pair by YAML configuration.
+    /// </summary>
+    RestrictedRelation,
 }

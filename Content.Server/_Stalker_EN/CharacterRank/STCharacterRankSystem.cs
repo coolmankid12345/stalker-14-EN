@@ -75,8 +75,6 @@ public sealed class STCharacterRankSystem : EntitySystem
         if (args.Handled || !_mobState.IsAlive(uid))
             return;
 
-        comp.ActionEntity = args.Performer;
-
         comp.Enabled = !comp.Enabled;
         Dirty(uid, comp);
 
@@ -205,7 +203,8 @@ public sealed class STCharacterRankSystem : EntitySystem
 
     private void OnComponentRemove(EntityUid uid, STCharacterRankComponent comp, ComponentRemove args)
     {
-        _actions.RemoveAction(uid, comp.ActionEntity);
+        if (comp.ActionEntity.HasValue)
+            _actions.RemoveAction(uid, comp.ActionEntity.Value);
 
         if (_tracked.TryGetValue(uid, out var data))
         {

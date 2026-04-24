@@ -3,7 +3,7 @@
   parent: STBaseWeaponPistol
   suffix: ST
   id: STWeaponPistolDesertEagle
-  description: A hefty magnum pistol produced in America. Using .45 ACP, it's a heavy hitter for its size.
+  description: A hefty magnum pistol produced in America. Using .357 Magnum, it's a heavy hitter for its size.
   components:
   - type: STWeight
     self: 2
@@ -14,7 +14,7 @@
     - state: base
       map: ["enum.GunVisualLayers.Base"]
   - type: Gun
-    projectileSpeed: 40
+    projectileSpeed: 60
     minAngle: 5
     maxAngle: 35
     angleIncrease: 1

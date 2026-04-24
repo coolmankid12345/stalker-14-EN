@@ -112,6 +112,7 @@
         STWeaponRevolverSWPC325TR: 350
         STWeaponRevolverRugerRedhawk: 650
         # SMGs
+        STWeaponSMGUMP: 1900
         STWeaponSMGMP5: 2200
         # Rifles
         STWeaponRifleL85: 2200 # T2
@@ -132,14 +133,14 @@
         P99Mag15: 120
         BaseMP5Mag: 260
         BaseTEC9Mag: 120
-        BaseGlockMag10: 100
-        GlockMag24: 200
-        GlockMag33: 300
+        GlockMag17: 150
+        GlockMag33: 600
         # 7.51
         Base751Mag10: 200
         751Mag20: 400
         751Mag30: 500
         # .45
+        UMPMag25: 190
         USPMag12: 170
         M1911Mag7: 100
         STSpeedLoader45ACPEmpty: 90
@@ -238,6 +239,8 @@
         # Medical Storage
         MedkitCMSStalker: 450
         MedkitGrizzlyStalker: 850
+        # Other
+        StalkerGunCaseMercenary: 1800
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8
@@ -288,9 +291,9 @@
         STRadioHeadset: 150
         ClothingHeatBagStalker: 100
         STSkinsKitMercenary: 500
-        STElasticRubberRed: 50
-        STElasticRubberGreen: 50
-        STElasticRubberBlue: 50
+        STElasticRubberRed: 1
+        STElasticRubberGreen: 1
+        STElasticRubberBlue: 1
         STFlashlightSeclite: 50
         PowerCellHyper: 50
         BoxFlare: 60
@@ -313,6 +316,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
+        STModuleGlockSwitch: 200
 
     - name: shop-category-paperwork
       priority: 12
@@ -339,6 +343,7 @@
         # faction
         ClothingHeadBandSkull: 30
         ClothingHeadCapMerc: 50
+        ClothingHeadBeretMerc: 50
         # EYES
         ClothingEyesGlasses: 50
         # faction
@@ -349,6 +354,7 @@
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         # NECK
+        ClothingBandageStalkerKrest: 10
         ClothingNeckScarfGray: 100
         # faction
         ClothingBandageStalkerMerc: 10
@@ -372,6 +378,8 @@
         ClothingTorsoTurtlenecksMatrosska: 50
         # HANDS
         ClothingHandsGlovesFingerless: 30
+        ClothingHandsGlovesNitrile: 35
+        ClothingHandsGlovesLatex: 35
         ClothingHandsGlovesMercFingerless: 60
         # OUTERCLOTHING
         # CLOAK

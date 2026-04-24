@@ -306,3 +306,32 @@
       ClothingBeltTarzanGreen: 200
       ClothingBeltTarzanOrange: 200
       ClothingBeltTarzanBlack: 200
+
+# arm bands
+- type: shopPreset
+  id: STFlea6Preset
+  minSellPrice: 5
+  #  itemsForSale:
+  #    Entry: 000
+  categories:
+  - name: Clothing
+    priority: 1
+    items:
+      ClothingBandageStalkerRus: 25
+      ClothingBandageStalkerUk: 25
+      ClothingBandageStalkerBelarus: 25
+      ClothingBandageStalkerEstonia: 25
+      ClothingBandageStalkerAustria: 25
+      ClothingBandageStalkerGermany: 25
+      ClothingBandageStalkerMoldova: 25
+      ClothingBandageStalkerTransnistria: 25
+      ClothingBandageStalkerPoland: 25
+      ClothingBandageStalkerArgentina: 25
+      ClothingBandageStalkerChina: 25
+      ClothingBandageStalkerSerbia: 25
+      ClothingBandageStalkerUSA: 25
+      ClothingBandageStalkerPeace: 50
+  - name: Food
+    priority: 2
+    items:
+      FoodSnackSemki: 50

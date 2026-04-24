@@ -132,6 +132,10 @@ job-sin = Sin
 job-sin-desc = FOR THE GLORY OF THE MOTHER!
 job-sin-supervisor = Defend the oasis in the name of the Zone Mother
 
+job-zombified = Zombified
+job-zombified-desc = Former stalkers who lost their minds in the Zone but retained their human appearance.
+job-zombified-supervisor = You obey the instincts of the Zone.
+
 job-sbu = SBU Fighter
 job-sbu-desc = Member of the Security Service of Ukraine.
 job-sbu-supervisor = your superiors

@@ -188,7 +188,7 @@
   id: STSciBand
   name: Scientists
   factionId: Scientists
-  maxMembers: 11
+  maxMembers: 16
   managingRankId: 2
   hierarchy:
     1: sci

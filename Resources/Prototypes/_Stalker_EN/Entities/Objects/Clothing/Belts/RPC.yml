@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: ClothingBeltWebbingHolsterMonolith
+  id: ClothingBeltWebbingHolsterMonolithClean
+  name: поясная сумка с кобурой «Монолита»
+  description: Поясной сумка из комплекта «Монолита» с пистолетной кобурой.
+  suffix: ST
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0

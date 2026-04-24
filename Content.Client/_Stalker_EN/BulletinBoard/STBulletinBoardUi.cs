@@ -61,19 +61,19 @@ public sealed partial class STBulletinBoardUi : UIFragment
 
         _mainPage.OnMuteToggled += () =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(
                 new STBulletinToggleMuteEvent()));
         };
 
         _mainPage.OnWithdrawPressed += offerId =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(
                 new STBulletinWithdrawOfferEvent(offerId)));
         };
 
         _mainPage.OnContactPressed += (posterMessengerId, offerId) =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(
                 new STBulletinContactPosterEvent(posterMessengerId, offerId)));
         };
 
@@ -85,7 +85,7 @@ public sealed partial class STBulletinBoardUi : UIFragment
 
         _postPage.OnSubmit += (category, description) =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(
+            userInterface.SendPredictedMessage(new CartridgeUiMessage(
                 new STBulletinPostOfferEvent(category, description)));
 
             _postPage.Visible = false;

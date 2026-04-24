@@ -1,0 +1,14 @@
+﻿ent-ClothingOuterArmorMonolithClean = "Chernobyl" Armored Coveralls
+    .desc = Reinforced jumpsuit produced by the Artisans of the Monolith Group. A strip of tape around the wrist indicates that it's been chemically cleaned and is safe to handle.
+ent-ClothingBeltWebbingHolsterMonolithClean = "Monolith" Belt Pouch with Holster
+    .desc = Belt pouch from the "Monolith" set with pistol holster. A strip of tape around the belt marks that it's been chemically cleaned and is safe to handle.
+ent-ClothingOuterArmorSevaMonolithClean = Monolith Seva suit
+    .desc = Scientific suit, a variant of "CHEVA" produced by the Monoliths. A strip of tape around the wrist marks that it's been chemically cleaned and is safe to handle.
+ent-ClothingOuterCoatKevlarMonolithClean = Kevlar Monolith Cloak
+    .desc = The raincoat, made in the conditions of the zone, is surprisingly high-quality workmanship, made of high-quality leather and stitched with Kevlar, armor plates inserted here and there, painted in unusual camouflage. A strip of tape around the wrist marks that it's been chemically cleaned and is safe to handle.
+ent-STClothingOuterArmorLightPlateVestBaseMonolithClean = Monolith Shield-2 body armor
+    .desc = Light body armor of the second class of protection, the basis of the basics. A strip of tape on the chest marks that it's been chemically cleaned and is safe to handle.
+ent-ClothingOuterArmorBerill5MMonolithClean = Monolith's Beryl-5M armored suit
+    .desc = Armored suit belonging to a group of fanatics. Provides excellent protection in all respects, but makes you a living target. A strip of tape around the wrist marks that it's been chemically cleaned and is safe to handle.
+ent-ClothingOuterJacketMonolithClean = Monolith Jacket
+    .desc = The Monolith's light gray pixel camouflage jacket has shoulder pads, but they only protect you from a boring appearance. A strip of tape around the wrist marks that it's been chemically cleaned and is safe to handle.

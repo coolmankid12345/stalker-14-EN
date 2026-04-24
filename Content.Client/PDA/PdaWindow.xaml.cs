@@ -52,6 +52,23 @@ public partial class PdaWindow : BaseWindow
 
     protected override DragMode GetDragModeFor(Vector2 relativeMousePos)
     {
-        return DragMode.Move;
+        const int resizeMargin = 10;
+        var mode = DragMode.None;
+
+        // Check for move (title bar area approximation)
+        if (relativeMousePos.Y < 30 && relativeMousePos.X < Size.X - 40)
+            mode |= DragMode.Move;
+
+        // Check for resize handles
+        if (relativeMousePos.X < resizeMargin)
+            mode |= DragMode.Left;
+        if (relativeMousePos.X > Size.X - resizeMargin)
+            mode |= DragMode.Right;
+        if (relativeMousePos.Y < resizeMargin)
+            mode |= DragMode.Top;
+        if (relativeMousePos.Y > Size.Y - resizeMargin)
+            mode |= DragMode.Bottom;
+
+        return mode;
     }
 }

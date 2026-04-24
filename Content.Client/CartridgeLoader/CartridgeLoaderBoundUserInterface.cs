@@ -46,14 +46,19 @@ public abstract class CartridgeLoaderBoundUserInterface : BoundUserInterface
         var comp = RetrieveCartridgeComponent(activeUI);
         var control = ui?.GetUIFragmentRoot();
 
-        //Prevent the same UI fragment from getting disposed and attached multiple times
-        // stalker-changes: compare UIFragment instances, not root control types,
-        // so cartridges with the same root Control type (e.g. BoxContainer) can switch properly
-        if (_activeCartridgeUI == ui)
+        // Skip if the same fragment is already attached.
+        if (_activeCartridgeUI == ui && _activeUiFragment is not null)
             return;
 
         if (_activeUiFragment is not null)
             DetachCartridgeUI(_activeUiFragment);
+
+        if (ui is null)
+        {
+            _activeCartridgeUI = null;
+            _activeUiFragment = null;
+            return;
+        }
 
         if (control is not null && _activeProgram.HasValue)
         {
@@ -69,7 +74,7 @@ public abstract class CartridgeLoaderBoundUserInterface : BoundUserInterface
     protected void ActivateCartridge(EntityUid cartridgeUid)
     {
         var message = new CartridgeLoaderUiMessage(_entManager.GetNetEntity(cartridgeUid), CartridgeUiMessageAction.Activate);
-        SendMessage(message);
+        SendPredictedMessage(message);
     }
 
     protected void DeactivateActiveCartridge()
@@ -78,19 +83,19 @@ public abstract class CartridgeLoaderBoundUserInterface : BoundUserInterface
             return;
 
         var message = new CartridgeLoaderUiMessage(_entManager.GetNetEntity(_activeProgram.Value), CartridgeUiMessageAction.Deactivate);
-        SendMessage(message);
+        SendPredictedMessage(message);
     }
 
     protected void InstallCartridge(EntityUid cartridgeUid)
     {
         var message = new CartridgeLoaderUiMessage(_entManager.GetNetEntity(cartridgeUid), CartridgeUiMessageAction.Install);
-        SendMessage(message);
+        SendPredictedMessage(message);
     }
 
     protected void UninstallCartridge(EntityUid cartridgeUid)
     {
         var message = new CartridgeLoaderUiMessage(_entManager.GetNetEntity(cartridgeUid), CartridgeUiMessageAction.Uninstall);
-        SendMessage(message);
+        SendPredictedMessage(message);
     }
 
     private List<(EntityUid, CartridgeComponent)> GetCartridgeComponents(List<EntityUid> programs)

@@ -61,11 +61,13 @@
         Psy: 30
   - type: ZoneAnomalyEffectSpawn
     entry:
-      - id: EffectEmpPulse
+      - id: EffectRiftEnter # EN
   - type: ZoneAnomalyEffectStealth
     idle: 0
     activated: -0.6
   - type: ZoneAnomalyEffectRandomTeleport
+    outputSpawnEntity: # EN
+      - id: EffectRiftExit # EN
   - type: ZoneAnomaly
     detectedLevel: 4
     preparingDelay: 0
@@ -97,3 +99,8 @@
       state: unknown
   - type: AddOrDelOnCollideSafeZone
     MustAdd: false
+  - type: AmbientSound # EN start
+    volume: -4
+    range: 4
+    sound:
+      path: /Audio/_Stalker_EN/Effects/Anomalies/teleport_idle.ogg # EN end

@@ -236,6 +236,7 @@
       ClothingOuterArmorZaryaNeutral: 2000 # T2 - PVE
       STSkinsKitNeutral: 500
       STClothingOuterArmorSevaNeutral: 4500
+      STClothingOuterArmorLepestokNeutralEN: 14000
 
   - name: shop-category-storage-and-containers
     priority: 7
@@ -250,6 +251,7 @@
       ClothingBackpackMercStalker: 899 # T3 |pve backpack
       ClothingBackpackStalkerZaryaBlack: 1200 # T3 |pvp backpack
       ClothingBackpackStalkerZaryaGreen: 1200 # T3 |pvp backpack
+      ClothingBackpackDuffelCommonStalker: 1500 #T3 |pvp backpack
       ##-------------------------------------------
       # Belts
       ClothingBeltBandolierStalker: 20 # T1 - PVE
@@ -321,9 +323,9 @@
       TrashDetectorTier1: 200
       Matchbox: 10
       HatchetStalker: 150
-      STElasticRubberRed: 50
-      STElasticRubberGreen: 50
-      STElasticRubberBlue: 50
+      STElasticRubberRed: 1
+      STElasticRubberGreen: 1
+      STElasticRubberBlue: 1
       FoldedFlagHelper: 250
       # Cameras
       STCamera: 750
@@ -362,6 +364,7 @@
       ClothingMaskNeckBalaklava2: 10
       ClothingMaskNeckBalaklava3: 10
       # NECK
+      ClothingBandageStalkerKrest: 10
       ClothingNeckScarfBrown: 100
       ClothingNeckScarfGray: 100
       ClothingBandageStalkerUk: 10
@@ -388,6 +391,8 @@
       ClothingTorsoTurtlenecksMatrosska: 50
       # HANDS
       ClothingHandsGlovesFingerless: 30
+      ClothingHandsGlovesNitrile: 35
+      ClothingHandsGlovesLatex: 35
       ClothingHandsGlovesMercFingerless: 60
       # OUTERCLOTHING
       # CLOAK

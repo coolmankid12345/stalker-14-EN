@@ -6,7 +6,7 @@
   description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины в модном болотно-зелёном цвете.
   components:
   - type: STWeight
-    self: 8.5
+    self: 5.5
   - type: Storage
     maxItemSize: Large
     blacklist:
@@ -31,13 +31,15 @@
     armorClass: 3
     modifiers:
       flatReductions:
-        Blunt: 3
-        Slash: 3
-        Piercing: 6
+        Blunt: 5
+        Slash: 5
+        Piercing: 8
       coefficients:
         Blunt: 0.8
         Slash: 0.8
         Piercing: 0.7
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: Craftable
@@ -112,6 +114,8 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Blue.rsi
   - type: Craftable
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen

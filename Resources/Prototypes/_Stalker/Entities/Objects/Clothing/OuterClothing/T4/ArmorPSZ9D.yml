@@ -16,13 +16,16 @@
     modifiers:
       flatReductions:
         Blunt: 3
-        Slash: 8
+        Slash: 10
         Piercing: 8
+        Radiation: 8
       coefficients:
         Blunt: 0.9
         Slash: 0.5
-        Piercing: 0.7
-        Compression: 0.9
+        Piercing: 0.8
+        Compression: 0.75
+  - type: GrantsArtifactSlots
+    slots: 2 # EN
 
 - type: entity
   parent: ClothingOuterArmorPSZ9D

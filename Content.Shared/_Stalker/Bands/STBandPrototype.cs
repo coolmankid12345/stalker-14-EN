@@ -14,7 +14,7 @@ public sealed class STBandPrototype : IPrototype
     public string ID { get; } = string.Empty;
 
     /// <summary>
-    /// Band name. Realted to the band where playein in. Example: Freedom, Dolg, Military, etc. 
+    /// Band name. Realted to the band where playein in. Example: Freedom, Dolg, Military, etc.
     /// </summary>
     [DataField]
     public string Name { get; set; } = string.Empty;
@@ -44,5 +44,12 @@ public sealed class STBandPrototype : IPrototype
     /// </summary>
     [DataField]
     public int? ManagingRankId { get; set; } = null;
+
+    /// <summary>
+    /// Target job ID for disguise portraits. Used to select which portrait set to use when disguised.
+    /// For example, Clear Sky uses "Stalker" to use Stalker portraits when disguised.
+    /// </summary>
+    [DataField]
+    public ProtoId<JobPrototype>? DisguiseTargetJobId { get; set; }
 
 }

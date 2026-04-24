@@ -810,7 +810,6 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
     //Сохранить инвентарь
     public void SaveStorage(StalkerRepositoryComponent _stalkerRepositoryComponent)
     {
-        Console.WriteLine("SaveStorage");
         var inventory = new AllStorageInventory();
         foreach (var item in _stalkerRepositoryComponent.ContainedItems)
         {
@@ -897,7 +896,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         return JsonSerializer.Serialize(inputAllStorageInventory);
     }
 
-    private static AllStorageInventory InventoryFromJson(string jsonText)
+    public static AllStorageInventory InventoryFromJson(string jsonText)
     {
         var playerInventory = new AllStorageInventory();
         var parsed = JsonNode.Parse(jsonText);

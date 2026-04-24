@@ -87,11 +87,15 @@ namespace Content.Server.Speech.EntitySystems
                     // second expression here is weird--its specifically for single-word capitalization for I or A
                     // dwarf expands I -> Ah, without that it would transform I -> AH
                     // so that second case will only fully-uppercase if the replacement length is also 1
+                    /* stalker-en-changes
+                    // don't auto caps the abbreviations, because people use the capitalized versions for locations
                     if (!match.Value.Any(char.IsLower) && (match.Length > 1 || replacement.Length == 1))
                     {
                         replacement = replacement.ToUpperInvariant();
                     }
-                    else if (match.Length >= 1 && replacement.Length >= 1 && char.IsUpper(match.Value[0]))
+                    else */
+                    // Stalker-en-changes-end
+                    if (match.Length >= 1 && replacement.Length >= 1 && char.IsUpper(match.Value[0]))
                     {
                         replacement = replacement[0].ToString().ToUpper() + replacement[1..];
                     }

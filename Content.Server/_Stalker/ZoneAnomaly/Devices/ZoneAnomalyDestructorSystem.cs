@@ -1,4 +1,4 @@
-﻿using Content.Server.DoAfter;
+using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Server._Stalker.ZoneAnomaly.Devices;
 using Content.Shared.DoAfter;
@@ -76,13 +76,32 @@ public sealed class ZoneAnomalyDestructorSystem : EntitySystem
         if (!Exists(user))
             return;
 
-        //_popup.PopupEntity("It works", uid);
-
         //starting delete logic
         var coords = _transform.GetMapCoordinates(Transform(uid));
         var deletedAny = false;
 
-        // Destroy ALL anomalies in range — no filtering by type
+
+        bool Inherits(EntityPrototype proto, string target)
+        {
+            if (proto.Parents == null)
+                return false;
+
+            if (Array.IndexOf(proto.Parents, target) != -1)
+                return true;
+
+            foreach (var parent in proto.Parents)
+            {
+                if (!_protoManager.TryIndex(parent, out var parentProto))
+                    continue;
+
+                if (Inherits(parentProto, target))
+                    return true;
+            }
+
+            return false;
+        }
+
+        // Destroy anomalies in range that inherit from the target prototype
         foreach (var ent in _lookup.GetEntitiesInRange(coords, 1.3f))
         {
             if (!HasComp<ZoneAnomalyComponent>(ent))
@@ -93,7 +112,7 @@ public sealed class ZoneAnomalyDestructorSystem : EntitySystem
 
             var proto = meta.EntityPrototype;
 
-            if (proto.Parents == null || Array.IndexOf(proto.Parents, component.TargetPrototype) == -1)
+            if (!Inherits(proto, component.TargetPrototype))
                 continue;
 
             QueueDel(ent);
@@ -104,6 +123,7 @@ public sealed class ZoneAnomalyDestructorSystem : EntitySystem
         {
             _popup.PopupEntity("Anomaly neutralized.", uid);
             // Might hate me for this but uh I don't want scientists going around destroying the whole map
+
             QueueDel(uid);
         }
         else

@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: STBaseWeaponRifleSVDS
+  id: STWeaponSniperSVDMono
+  name: SVDS "Winter" Sniper Rifle
+  suffix: ST, Weapon, Radioactive
+  description: A carefully modified SVDS with camouflage netting and minor tuning for maximum concealment in the Zone's wilderness. The 7.62x54mmR rounds ensure no mutant walks away from a well-placed shot.
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monosvd.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monosvd.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monosvd.rsi
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 6.65
+
+- type: entity
+  parent: STBaseWeaponRifleSVDS
+  id: STWeaponSniperSVDMonoClean
+  name: SVDS "Winter" Sniper Rifle
+  suffix: ST, Weapon
+  description: A carefully modified SVDS with camouflage netting and minor tuning for maximum concealment in the Zone's wilderness. The 7.62x54mmR rounds ensure no mutant walks away from a well-placed shot. A small strip of tape marks the stock to denote that it's been chemically cleaned and is safe to handle.
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monosvd.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monosvd.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monosvd.rsi

@@ -23,7 +23,7 @@
         tags:
           - STBolt
     - type: ZoneAnomalyEffectPlaySound
-      sound: /Audio/_Stalker/Effects/electra_blast.ogg
+      sound: /Audio/_Stalker_EN/Effects/Anomalies/electra_hit1.ogg # EN
     - type: ZoneAnomaly
       detectedLevel: 0
       preparingDelay: 0
@@ -236,7 +236,7 @@
       chargePercent: 1
       distance: 6
     - type: ZoneAnomalyEffectPlaySound
-      sound: /Audio/_Stalker/Effects/electra_blast.ogg
+      sound: /Audio/_Stalker_EN/Effects/Anomalies/electra_blast.ogg # EN
     - type: ZoneAnomaly
       detectedLevel: 1
       preparingDelay: 0

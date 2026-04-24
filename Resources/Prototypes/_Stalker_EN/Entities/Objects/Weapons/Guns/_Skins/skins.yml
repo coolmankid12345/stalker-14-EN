@@ -35,7 +35,7 @@
   parent: WeaponPistolStalkerAPS
   id: WeaponPistolStalkerAPSBare
   name: APS "Bare"
-  description: An APS pistol chambered in 9x18mm ammunition. The unfinished metal is wrapped in white cloth tape.
+  description: An APS pistol chambered in 9x18mm ammunition. The unfinished metal is wrapped in white cloth tape and one fresh strip stands out, denoting that it's been chemically cleaned and is safe to handle.
   suffix: ST
   components:
   - type: Clothing
@@ -44,6 +44,18 @@
     sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/aps_bare.rsi
   - type: Sprite
     sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/aps_bare.rsi
+
+- type: entity
+  parent: WeaponPistolStalkerAPSBare
+  id: WeaponPistolStalkerAPSBareMono
+  name: APS "Bare"
+  description: An APS pistol chambered in 9x18mm ammunition. The unfinished metal is wrapped in white cloth tape.
+  suffix: ST
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 6.65
 
 # SHOTGUNS
 # spas

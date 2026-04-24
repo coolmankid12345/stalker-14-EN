@@ -57,6 +57,8 @@
     Army6mmbuckshotCrate: 6
     STBoltBagFilled: 10
     BaseRadio: 10
+    STRadioHeadset: 10
+    STWeaponShotgunMP153: 10 # For gun confiscation replacements!
 
 # OKSOP Officers - Restock on RU's Vendor File
 
@@ -111,3 +113,5 @@
     ClothingBandageStalkerSopTwo: 10
     STBoltBagFilled: 10
     BaseRadio: 10
+    STRadioHeadset: 10
+    STWeaponShotgunMP153: 10 # For gun confiscation replacements!

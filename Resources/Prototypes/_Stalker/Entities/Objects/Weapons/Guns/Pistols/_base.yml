@@ -73,3 +73,6 @@
   - type: STWeaponAccuracy
     accuracyMultiplierUnwielded: 1.2
     modifiedAccuracyMultiplier: 1.2
+  - type: ParticleOnGunShot # EN start
+    effect: MuzzleSmoke
+    inheritAngle: true # EN end

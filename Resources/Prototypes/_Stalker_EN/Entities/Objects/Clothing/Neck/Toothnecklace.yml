@@ -8,13 +8,22 @@
     sprite: _Stalker_EN/Objects/Clothing/Neck/Toothnecklace.rsi
   - type: Clothing
     sprite: _Stalker_EN/Objects/Clothing/Neck/Toothnecklace.rsi
-  - type: BallisticAmmoProvider
-    mayTransfer: true
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,8,1
+    quickInsert: true
+    areaInsert: true
     whitelist:
       tags:
       - Stalkertooth
-    capacity: 9
-  - type: MagazineVisuals
-    magState: mag
-    steps: 5
-    zeroVisible: false
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: RepositoryItem
+    categoryName: repository-clothing-category

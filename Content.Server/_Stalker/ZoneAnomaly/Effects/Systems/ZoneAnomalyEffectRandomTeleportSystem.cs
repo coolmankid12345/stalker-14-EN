@@ -2,6 +2,7 @@ using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Systems;
+using Microsoft.CodeAnalysis.Elfie.Diagnostics;
 using Robust.Shared.Random;
 
 namespace Content.Server._Stalker.ZoneAnomaly.Effects.Systems;
@@ -53,6 +54,8 @@ public sealed class ZoneAnomalyEffectRandomTeleportSystem : SharedZoneAnomalyEff
                         _anomaly.TryRecharge((uid, comp));
 
                     TeleportEntity(trigger, destination);
+                    if (effect.Comp.OutputSpawnEntity.Count != 0) // EN
+                        Spawn(_random.Pick(effect.Comp.OutputSpawnEntity).PrototypeId, destination); // EN
                     break;
                 }
 

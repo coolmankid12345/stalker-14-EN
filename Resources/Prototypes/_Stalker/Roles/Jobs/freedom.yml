@@ -41,7 +41,8 @@
           sounds:
             Male: MaleHumanFreedom
             Female: FemaleHumanFreedom
-            Unsexed: MaleHumanFreedom # stalker EN change end
+            Unsexed: MaleHumanFreedom
+        - type: SvobodaEmote # stalker EN change end
 
 - type: job
   id: StalkerHeadFreedom
@@ -88,7 +89,8 @@
           sounds:
             Male: MaleHumanFreedom
             Female: FemaleHumanFreedom
-            Unsexed: MaleHumanFreedom # stalker EN change end
+            Unsexed: MaleHumanFreedom
+        - type: SvobodaEmote # stalker EN change end
 
 - type: startingGear
   id: FreedomGear

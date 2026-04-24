@@ -39,7 +39,7 @@
     - name: FAMINE
       priority: 2
       items:
-        FoodSnackSemki: 3
-        ClothingHeadHatCowboyGrey: 15
-        PlushieSharkGrey: 20
-        STWeaponPistolDesertEagle: 150
+        FoodMeatHuman: 3
+        TrashDetectorTier3: 25
+        RadioStalkerPlayer: 12
+        STWeaponPistolC96RE: 65

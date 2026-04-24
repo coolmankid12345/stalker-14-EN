@@ -1,0 +1,32 @@
+﻿- type: entity
+  parent: STBaseWeaponRifleG36
+  id: STWeaponRifleG36Mono
+  name: HK G-36 "Winter"
+  description: An assault rifle of German manufacture, which is a first-class example of a modern weapon - light, reliable and ergonomic.
+  suffix: ST, Weapon, Radioactive
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monog36.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monog36.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monog36.rsi
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 6.65
+
+- type: entity
+  parent: STBaseWeaponRifleG36
+  id: STWeaponRifleG36MonoClean
+  name: HK G-36 "Winter"
+  description: An assault rifle of German manufacture, which is a first-class example of a modern weapon - light, reliable and ergonomic. A small strip of tape marks the stock to denote that it's been chemically cleaned and is safe to handle.
+  suffix: ST, Weapon
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monog36.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monog36.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/monog36.rsi
+

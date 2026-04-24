@@ -144,3 +144,15 @@
       toggleable-clothing: !type:ContainerSlot {}
       storagebase: !type:Container
         ents: []
+
+- type: entity
+  parent: ClothingOuterCoatKevlarMonolith
+  id: ClothingOuterCoatKevlarMonolithClean
+  name: кевларовый плащ монолита
+  description: Плащ, сделанный в условиях зоны, на удивление качественная работа, сделан из качественной кожи и прошит кевларом,кое-где вставлены бронепластины, окрашен в необычный камуфляж.
+  suffix: ST, T2
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0

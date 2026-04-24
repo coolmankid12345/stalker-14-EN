@@ -179,6 +179,15 @@
     moneyId: Roubles
     shopPresetId: STFlea5Preset
 
+- type: entity
+  parent: NPCFleaBase
+  id: NPCFlea6
+  suffix: ST, EN-TRADER, Clothing
+  components:
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: STFlea6Preset
+
 # spawner
 - type: entity
   id: STFleaMarketSpawner
@@ -199,5 +208,6 @@
     - NPCFlea3
     - NPCFlea4
     - NPCFlea5
+    - NPCFlea6
     chance: 1
     offset: 0.0

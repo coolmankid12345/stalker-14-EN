@@ -6,10 +6,10 @@
     ZoneArtifactFireball: 680
     ZoneArtifactEye: 1020
     ZoneArtifactFlame: 2040
-    ZoneArtifactBunch: 1775
+    ZoneArtifactBunch: 2375
     ZoneArtifactRock: 2040
     ZoneArtifactSun: 2760
-    ZoneArtifactRoot: 3800
+    ZoneArtifactRoot: 4080
     ZoneArtifactConflagration: 1020
     # Thermal group - 2
     ZoneArtifactCristall: 4080
@@ -19,14 +19,14 @@
     ZoneArtifactBattery: 1020
     ZoneArtifactFlash: 2040
     ZoneArtifactAccumulator: 2040
-    ZoneArtifactDiamond: 2760
+    ZoneArtifactDiamond: 3690
     ZoneArtifactCharger: 1020
     ArtMoon: 4080
     ZoneArtifactTesla: 6120
     ZoneArtifactIce: 8160
     # Gravity group - 1
     ArtMedusa: 680
-    ZoneArtifactWhirlwind: 900
+    ZoneArtifactWhirlwind: 1020
     ZoneArtifactFlower: 1020
     ZoneArtifactNightStar: 4080
     ZoneArtifactPebble: 680
@@ -39,15 +39,15 @@
     ZoneArtifactFloodlight: 1020
     ZoneArtifactGravi: 2040
     ZoneArtifactGoldfish: 8160
-    ZoneArtifactSpring: 6120
+    ZoneArtifactSpring: 4500
     ZoneArtifactFocus: 6120
     ZoneArtifactStuntman: 8160
     ZoneArtifactDistorter: 8160
     ZoneArtifactSoul: 6120
-    ZoneArtifactCompass: 3375
-    ZoneArtifactCrucifix: 3990
-    ZoneArtifactThorn: 2390
-    ZoneArtifactArf: 2390
+    ZoneArtifactCompass: 4500
+    ZoneArtifactCrucifix: 5250
+    ZoneArtifactThorn: 3200
+    ZoneArtifactArf: 3200
     # Acidic group - 1
     ZoneArtifactToxic: 610
     ZoneArtifactCytoplasm: 2040
@@ -69,7 +69,6 @@
     MutantPartBearClaw: 405
     MutantPartBearPaw: 575
     MutantPartBearEye: 900
-    ClothingHeadBear: 600
     # T1 -------- Health * 1
     MutantPartBlindDogTail: 155
     MutantPartFleshEye: 340
@@ -81,16 +80,15 @@
     MutantPartPseudodogTail: 510
     MutantPartSnorkFoot: 850
     MutantPartFrogLeg: 325
-    # T3 -------- Health * 3 Modified by Oracle
-    MutantPartZombieHand: 1520
-    MutantPartBloodsuckerTentacles: 3275
-    MutantPartOraculeEye: 2720
-    MutantPartPseudogiantHeart: 12800
-    MutantPartChimeraTooth: 1500
-    ClothingMaskChimera: 1 # its gross why would they want it
-    MutantPartIzlomArm: 2550
-    MutantPartBurerBrain: 2800
-    MutantPartControllerBrain: 5875
+    # T3 -------- Health - same as duty prices for now
+    MutantPartBloodsuckerTentacles: 4125
+    MutantPartOraculeEye: 2700
+    MutantPartPseudogiantHeart: 13575
+    MutantPartZombieHand: 1125
+    ClothingHeadBear: 1125
+    MutantPartIzlomArm: 2475
+    MutantPartBurerBrain: 3000
+    MutantPartControllerBrain: 5250
 
     #Fish -------- Unc * 1.5
     #Only anomalous fish
@@ -136,9 +134,8 @@
     - name: shop-category-magazines
       priority: 2
       items:
-        BaseGlockMag10: 100
-        GlockMag17: 200
-        GlockMag24: 400
+        GlockMag17: 150
+        GlockMag33: 600
         STSpeedLoader45ACPEmpty: 75
         Base545Mag10: 50 #T1
         545Mag20: 100 #T2
@@ -237,6 +234,7 @@
         ClothingBackpackDuffelGreenStalker: 30 # T1
         ClothingBackpackTacticGreenStalker: 450 # T2
         ClothingBackpackMercStalker: 650 # T3
+        ClothingBackpackDuffelCommonStalker: 750 #T3
         ClothingBackpackDuffelMilitaryBlue: 1200
           # Containers
         MedkitCMSStalker: 450 # T1
@@ -330,9 +328,9 @@
         CigPackBlack: 100
         CigarCase: 500
         CigarGoldCase: 1000
-        STElasticRubberRed: 50
-        STElasticRubberGreen: 50
-        STElasticRubberBlue: 50
+        STElasticRubberRed: 1
+        STElasticRubberGreen: 1
+        STElasticRubberBlue: 1
         FoldedFlagMili: 250
         # Cameras
         STCamera: 750
@@ -362,11 +360,11 @@
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         # NECK
+        ClothingBandageStalkerKrest: 10
         ClothingNeckScarfBrown: 100
         ClothingNeckScarfGray: 100
         # faction
         ClothingBandageStalkerPurple: 10
-        ClothingBandageStalkerKrest: 10
         ClothingNeckScarfSci: 100
         ClothingNeckScarfUkraine: 100
         # TORSO
@@ -445,8 +443,13 @@
         STZoneArtifactDetectorBearBlueprint: 25000
         # STZoneArtifactDetectorWolfhoundBlueprint: 40000 Disabled for now
 
-    - name: shop-category-entertainment
+    - name: shop-category-tools
       priority: 13
+      items:
+        CraftChemicalCleaningKit: 12000
+
+    - name: shop-category-entertainment
+      priority: 14
       items:
         # Dices
         DiceBag: 20
@@ -461,9 +464,8 @@
         CardBin: 100
         PokerCardBin: 150
 
-
     - name: Smokables #explained using D&D lifestyle expenses
-      priority: 14
+      priority: 15
       items:
         CigPackBub: 250 #comfortable
         CigPackGreen: 150 #poor
@@ -475,7 +477,7 @@
         CigPackKosmos: 100 #squalid
 
     - name: Gardening
-      priority: 15
+      priority: 16
       items:
         HydroponicsToolScythe: 200
         HydroponicsToolMiniHoe: 70

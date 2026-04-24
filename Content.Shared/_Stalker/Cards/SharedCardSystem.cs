@@ -7,7 +7,7 @@ public abstract class SharedCardSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
-    public void TurnOver(EntityUid uid, CardComponent component)
+    public void TurnOver(EntityUid uid, ShitCardComponent component)
     {
         if (component.IsReserve)
         {

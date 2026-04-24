@@ -10,7 +10,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/Slick/Black.rsi
   - type: STWeight
-    self: 10.5
+    self: 7.5
   - type: Armor
     armorClass: 3
     modifiers:
@@ -21,7 +21,9 @@
       coefficients:
         Blunt: 0.9
         Slash: 0.9
-        Piercing: 0.75
+        Piercing: 0.7
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.80
 

@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.CartridgeLoader;
 using Content.Server.Database;
@@ -6,6 +7,9 @@ using Content.Server.Mind;
 using Content.Server.PDA;
 using Content.Server.PDA.Ringer;
 using Content.Shared._Stalker.Bands;
+using Content.Shared._Stalker.PdaMessenger;
+using Content.Shared._Stalker_EN.Emission;
+using Content.Shared._Stalker_EN.Portraits;
 using Content.Shared._Stalker_EN.CCVar;
 using Content.Shared._Stalker_EN.CharacterRank;
 using Content.Shared._Stalker_EN.FactionRelations;
@@ -21,6 +25,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.PDA;
 using Content.Shared.PDA.Ringer;
+using Content.Shared.Players;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
@@ -137,6 +142,11 @@ public sealed partial class STMessengerSystem : EntitySystem
 
     private WebhookIdentifier? _webhookIdentifier;
 
+    /// <summary>
+    /// Flag indicating if emission is active. When true, STMessenger is disabled.
+    /// </summary>
+    private bool _isEmissionActive = false;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -151,6 +161,7 @@ public sealed partial class STMessengerSystem : EntitySystem
         SubscribeLocalEvent<PdaComponent, GotEquippedHandEvent>(OnPdaPickedUp);
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawned);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+        SubscribeLocalEvent<EmissionStateChangedEvent>(OnEmissionStateChanged);
 
         CacheSortedChannels();
 
@@ -176,6 +187,43 @@ public sealed partial class STMessengerSystem : EntitySystem
             _discord.GetWebhook(value, data => _webhookIdentifier = data.ToIdentifier());
         else
             _webhookIdentifier = null;
+    }
+
+    private void OnEmissionStateChanged(ref EmissionStateChangedEvent args)
+    {
+        _isEmissionActive = args.IsActive;
+
+        const string communicationCenterIcon = "/Textures/_Stalker_EN/Portraits/communication_center.png";
+        const string sender = "Communication Center";
+
+        if (args.IsActive)
+        {
+            // Emission started - send notification about connection loss
+            var notification = new PdaGeneralMessageEvent(
+                sender,
+                "Connection lost...",
+                bandIcon: communicationCenterIcon,
+                portraitId: communicationCenterIcon);
+
+            foreach (var session in _playerManager.Sessions)
+            {
+                RaiseNetworkEvent(notification, session);
+            }
+        }
+        else
+        {
+            // Emission ended - send notification about connection restored
+            var notification = new PdaGeneralMessageEvent(
+                sender,
+                "Connection established...",
+                bandIcon: communicationCenterIcon,
+                portraitId: communicationCenterIcon);
+
+            foreach (var session in _playerManager.Sessions)
+            {
+                RaiseNetworkEvent(notification, session);
+            }
+        }
     }
 
     #region Cartridge Events
@@ -238,6 +286,9 @@ public sealed partial class STMessengerSystem : EntitySystem
             case STMessengerToggleMuteEvent mute:
                 OnToggleMute(ent, server, mute, args);
                 break;
+            case STMessengerToggleRandomNameEvent randomName:
+                OnToggleRandomName(ent, server, randomName, args);
+                break;
             case STMessengerMarkReadEvent markRead:
                 OnMarkRead(server, markRead);
                 break;
@@ -264,6 +315,10 @@ public sealed partial class STMessengerSystem : EntitySystem
         CartridgeMessageEvent args)
     {
         if (server.NextSendTime > _timing.CurTime)
+            return;
+
+        // Block message sending during emission
+        if (_isEmissionActive)
             return;
 
         server.NextSendTime = _timing.CurTime + server.SendCooldown;
@@ -309,10 +364,36 @@ public sealed partial class STMessengerSystem : EntitySystem
             ? GetOrCreatePseudonym(senderKey)
             : senderName;
 
+        // If not disguised and random name setting is enabled, use random name
+        if (!isAnonymous && server.RandomNameWhenNotDisguised)
+        {
+            // Check if player is disguised
+            bool isDisguised = false;
+            if (TryComp<TransformComponent>(loaderUid, out var xform))
+            {
+                var holder = xform.ParentUid;
+                if (holder.IsValid() && TryComp<CharacterPortraitComponent>(holder, out var portraitComp))
+                {
+                    isDisguised = portraitComp.IsDisguised;
+                }
+            }
+
+            if (!isDisguised)
+            {
+                displayName = GetOrCreatePseudonym(senderKey);
+            }
+        }
+
         string? replySnippet = null;
+        uint? effectiveReplyToId = null;
         if (replyToId is { } replyId)
         {
             replySnippet = FindReplySnippet(chatId, isDm, server, replyId);
+            // Drop the reply attribution if the referenced message doesn't exist in the target chat.
+            // This prevents a stale client-side replyToId (from a different chat, where message IDs
+            // can collide) from landing on an unrelated post.
+            if (replySnippet is not null)
+                effectiveReplyToId = replyId;
         }
 
         List<STMessengerMessage> chatMessages;
@@ -387,7 +468,7 @@ public sealed partial class STMessengerSystem : EntitySystem
             displayName,
             content,
             _timing.CurTime,
-            replyToId,
+            effectiveReplyToId,
             replySnippet,
             senderFaction,
             senderRankIcon);
@@ -445,8 +526,12 @@ public sealed partial class STMessengerSystem : EntitySystem
 
             // Send pop-up notification to DM recipient
             var bandIcon = GetBandIcon(server);
-            var dmEvent = new PdaDirectMessageEvent(senderName, content, bandIcon);
-            if (_playerManager.TryGetSessionById(new NetUserId(contactKey.UserId), out var recipientSession))
+            var portraitId = GetPortraitId(server);
+            var isDisguised = GetIsDisguised(server);
+            var dmEvent = new PdaDirectMessageEvent(displayName, content, bandIcon, portraitId, isDisguised);
+            if (_playerManager.TryGetSessionById(new NetUserId(contactKey.UserId), out var recipientSession) &&
+            recipientSession.AttachedEntity is { } currentMob &&
+            MetaData(currentMob).EntityName == contactEntry.CharacterName)
             {
                 RaiseNetworkEvent(dmEvent, recipientSession);
             }
@@ -466,30 +551,28 @@ public sealed partial class STMessengerSystem : EntitySystem
             if (channelProto.ID == "STGeneral")
             {
                 var bandIcon = GetBandIcon(server);
-                var generalEvent = new PdaGeneralMessageEvent(displayName, content, displayName, bandIcon);
+                var portraitId = GetPortraitId(server);
+                var isDisguised = GetIsDisguised(server);
+                var generalEvent = new PdaGeneralMessageEvent(displayName, content, bandIcon, portraitId, isDisguised);
+
+                var notifiedSessions = new HashSet<ICommonSession>();
 
                 foreach (var (pdaUid, (cartridgeUid, _)) in _messengerPdas)
                 {
-                    // 1. Skip if the channel is muted
-                    if (!TryComp(cartridgeUid, out STMessengerServerComponent? recipientServer) ||
-                        recipientServer.MutedChannels.Contains(channelProto.ID))
+                    if (!TryComp<STMessengerServerComponent>(cartridgeUid, out var recipientServer))
                         continue;
 
-                    // 2. Check for PDA and its owner (mob)
-                    if (!TryComp(pdaUid, out PdaComponent? pdaComp) || !pdaComp.PdaOwner.HasValue)
+                    if (!_playerManager.TryGetSessionById(new NetUserId(recipientServer.OwnerUserId), out var session))
                         continue;
 
-                    var mobUid = pdaComp.PdaOwner.Value;
+                    if (session.AttachedEntity is null)
+                        continue;
 
-                    // 3. Find the mob's Mind to get the player's UserId
-                    if (_mind.TryGetMind(mobUid, out var _, out var mindComp))
-                    {
-                        // 4. Find the session by UserId
-                        if (_playerManager.TryGetSessionById(mindComp.UserId, out var session))
-                        {
-                            RaiseNetworkEvent(generalEvent, session!);
-                        }
-                    }
+                    //Twice pop up check
+                    if (!notifiedSessions.Add(session))
+                        continue;
+
+                    RaiseNetworkEvent(generalEvent, session);
                 }
             }
         }
@@ -500,67 +583,123 @@ public sealed partial class STMessengerSystem : EntitySystem
     /// <summary>
     /// Gets the band icon name for a player based on their band/faction.
     /// Uses the mob holding the PDA (not the PDA entity itself).
-    /// Falls back to OwnerBand if mob is not available.
-    /// Clear Sky is disguised as Stalker for lore consistency.
+    /// Returns BandStatusIcon from BandsComponent
     /// </summary>
     private string? GetBandIcon(STMessengerServerComponent server)
     {
-        // Try 1: Get bandIcon from the mob holding the PDA
+        // Try 1: Get BandStatusIcon from BandsComponent on the mob
         if (TryComp<TransformComponent>(server.Owner, out var xform))
         {
-            var holder = xform.ParentUid;
-            if (holder.IsValid() && TryComp<BandsComponent>(holder, out var bands))
+            var current = xform.ParentUid;
+
+            while (current.IsValid())
             {
-                // Clear Sky is disguised as Loners on PDA (lore consistency)
-                if (bands.BandProto == ClearSkyBandId)
-                    return "stalker";
+                if (TryComp<BandsComponent>(current, out var bands))
+                {
+                    if (!string.IsNullOrEmpty(bands.BandStatusIcon))
+                        return bands.BandStatusIcon;
+                }
 
-                if (!string.IsNullOrEmpty(bands.BandStatusIcon))
-                    return bands.BandStatusIcon;
+                var parentXform = CompOrNull<TransformComponent>(current);
+                if (parentXform == null)
+                    break;
+
+                current = parentXform.ParentUid;
             }
-        }
-
-        // Try 2: Fallback to OwnerBand and map to bandIcon
-        if (server.OwnerBand.HasValue)
-        {
-            // Clear Sky disguise
-            if (server.OwnerBand.Value == ClearSkyBandId)
-                return "stalker";
-
-            return GetBandIconForBandProto(server.OwnerBand.Value);
         }
 
         return null;
     }
 
     /// <summary>
-    /// Maps band prototype ID to bandIcon name.
+    /// Gets the selected character portrait texture path for the player who owns the PDA.
+    /// Walks up the transform hierarchy to find the mob entity.
+    /// Uses CharacterPortraitComponent.IsDisguised to determine which portrait to use.
     /// </summary>
-    private static string? GetBandIconForBandProto(ProtoId<STBandPrototype> bandProtoId)
+    private string? GetPortraitId(STMessengerServerComponent server)
     {
-        return bandProtoId.Id switch
+        if (TryComp<TransformComponent>(server.Owner, out var xform))
         {
-            "STFreedomBand" => "freedom",
-            "STDolgBand" => "Dolg",
-            "STBanditsBand" => "band",
-            "STRenegatsBand" => "rene",
-            "STMonolithBand" => "monolith",
-            "STClearSkyBand" => "cn",
-            "STStalkerBand" => "stalker",
-            "STMercenariesBand" => "merc",
-            "STMilitaryBand" => "army",
-            "STSciBand" => "sci",
-            "STMilitiaBand" => "militia",
-            "STAnomalistsBand" => "ecologists",
-            "STSeraphimsBand" => "seraphim",
-            "STCovenantBand" => "zavet",
-            "STGrehBand" => "greh",
-            "STSsuBand" => "sbu",
-            "STUNBand" => "un",
-            "STProjectBand" => "project-1",
-            "STToadsBand" => "jaba",
-            _ => "stalker" // Default
-        };
+            var current = xform.ParentUid;
+
+            while (current.IsValid())
+            {
+                if (TryComp<CharacterPortraitComponent>(current, out var portraitComp))
+                {
+                    // If disguised and has a disguise path — use it
+                    if (portraitComp.IsDisguised && !string.IsNullOrEmpty(portraitComp.DisguisedPortraitPath))
+                        return portraitComp.DisguisedPortraitPath;
+
+                    // Otherwise use normal portrait
+                    if (!string.IsNullOrEmpty(portraitComp.PortraitTexturePath))
+                        return portraitComp.PortraitTexturePath;
+                }
+
+                var parentXform = CompOrNull<TransformComponent>(current);
+                if (parentXform == null)
+                    break;
+
+                current = parentXform.ParentUid;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Gets whether the player can disguise (has AltBand and CanChange).
+    /// Checks the BandsComponent.AltBand and BandsComponent.CanChange fields.
+    /// </summary>
+    private bool GetCanDisguise(STMessengerServerComponent server)
+    {
+        if (TryComp<TransformComponent>(server.Owner, out var xform))
+        {
+            var current = xform.ParentUid;
+
+            while (current.IsValid())
+            {
+                if (TryComp<BandsComponent>(current, out var bandsComp))
+                {
+                    return bandsComp.AltBand is not null && bandsComp.CanChange;
+                }
+
+                var parentXform = CompOrNull<TransformComponent>(current);
+                if (parentXform == null)
+                    break;
+
+                current = parentXform.ParentUid;
+            }
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Gets whether the player is disguised (using alternative patch).
+    /// Checks the BandsComponent.IsDisguised field.
+    /// </summary>
+    private bool GetIsDisguised(STMessengerServerComponent server)
+    {
+        if (TryComp<TransformComponent>(server.Owner, out var xform))
+        {
+            var current = xform.ParentUid;
+
+            while (current.IsValid())
+            {
+                if (TryComp<BandsComponent>(current, out var bandsComp))
+                {
+                    return bandsComp.IsDisguised;
+                }
+
+                var parentXform = CompOrNull<TransformComponent>(current);
+                if (parentXform == null)
+                    break;
+
+                current = parentXform.ParentUid;
+            }
+        }
+
+        return false;
     }
 
     private string? FindReplySnippet(string chatId, bool isDm, STMessengerServerComponent server, uint replyId)
@@ -725,6 +864,18 @@ public sealed partial class STMessengerSystem : EntitySystem
         UpdateUiState(ent, loaderUid, server);
     }
 
+    private void OnToggleRandomName(
+        Entity<STMessengerComponent> ent,
+        STMessengerServerComponent server,
+        STMessengerToggleRandomNameEvent randomName,
+        CartridgeMessageEvent args)
+    {
+        server.RandomNameWhenNotDisguised = randomName.RandomNameWhenNotDisguised;
+
+        var loaderUid = GetEntity(args.LoaderUid);
+        UpdateUiState(ent, loaderUid, server);
+    }
+
     private void OnMarkRead(STMessengerServerComponent server, STMessengerMarkReadEvent markRead)
     {
         server.LastSeenMessageId[markRead.ChatId] = markRead.LastSeenMessageId;
@@ -827,6 +978,17 @@ public sealed partial class STMessengerSystem : EntitySystem
     {
         _viewedChat.TryGetValue(loaderUid, out var viewedChatId);
 
+        // Get IsDisguised from CharacterPortraitComponent on the mob (single source of truth)
+        bool isDisguised = false;
+        if (TryComp<TransformComponent>(loaderUid, out var xform))
+        {
+            var holder = xform.ParentUid;
+            if (holder.IsValid() && TryComp<CharacterPortraitComponent>(holder, out var portraitComp))
+            {
+                isDisguised = portraitComp.IsDisguised;
+            }
+        }
+
         // Use pre-sorted channel cache to avoid per-call prototype lookups and sorting
         var channels = new List<STMessengerChat>(_sortedChannels.Count);
         foreach (var proto in _sortedChannels)
@@ -899,7 +1061,12 @@ public sealed partial class STMessengerSystem : EntitySystem
             directMessages,
             contactInfos,
             navigateToChatId,
-            draftMessage);
+            draftMessage,
+            isDisguised,
+            server.OwnerBand,
+            GetCanDisguise(server),
+            server.RandomNameWhenNotDisguised,
+            _isEmissionActive);
     }
 
     private int CountUnread(string chatId, List<STMessengerMessage>? channelMessages, STMessengerServerComponent server)
@@ -1156,9 +1323,12 @@ public sealed partial class STMessengerSystem : EntitySystem
         if (!TryComp<BandsComponent>(mob, out var bands))
             return null;
 
-        // Only Clear Sky is disguised as Loners on PDA
+        if (MetaData(mob).EntityName != contactKey.CharName)
+            return null;
+
+        // Clear Sky always shows as Loners (stalker patch) on PDA
         if (bands.BandProto == ClearSkyBandId)
-            return _factionResolution.GetBandFactionName(bands.BandName);
+            return _factionResolution.GetBandFactionName("Stalker");
 
         if (bands.BandProto is not { } bandProtoId)
             return null;
@@ -1207,14 +1377,9 @@ public sealed partial class STMessengerSystem : EntitySystem
 
         // Fallback: use charName hash; bitwise AND avoids OverflowException on int.MinValue
         var hashSuffix = (identity.CharName.GetHashCode() & 0x7FFFFFFF) % (MaxPseudonymSuffix + 1);
-        var fallback = $"{AnonymousName}-{hashSuffix}";
-
-        while (_usedPseudonyms.Contains(fallback))
-            fallback += "X";
-
-        _usedPseudonyms.Add(fallback);
-        _anonymousPseudonyms[identity] = fallback;
-        return fallback;
+        var fallbackPseudonym = $"{AnonymousName}-{hashSuffix}";
+        _anonymousPseudonyms[identity] = fallbackPseudonym;
+        return fallbackPseudonym;
     }
 
     /// <summary>

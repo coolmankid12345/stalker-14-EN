@@ -106,6 +106,9 @@ public sealed class STFactionRelationCommand : IConsoleCommand
             return;
         }
 
+        if (system.IsRelationRestricted(factionA, factionB, relation))
+            shell.WriteLine($"Note: {relation} is YAML-forbidden for {factionA} <-> {factionB}. Overriding as admin.");
+
         system.SetRelation(factionA, factionB, relation, broadcast: broadcast);
         shell.WriteLine($"Set relation {factionA} <-> {factionB} to {relation}{(broadcast ? " (announced)" : " (silent)")}");
     }

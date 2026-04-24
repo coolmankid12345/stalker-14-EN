@@ -449,6 +449,13 @@
     chatsan-word-66: chatsan-replacement-66
     chatsan-word-67: chatsan-replacement-67
     chatsan-word-68: chatsan-replacement-68
+    # stalker-en-changes - Stalker chat sanitization
+    st-en-chatsan-word-1: st-en-chatsan-replacement-1
+    st-en-chatsan-word-2: st-en-chatsan-replacement-2
+    st-en-chatsan-word-3: st-en-chatsan-replacement-3
+    st-en-chatsan-word-4: st-en-chatsan-replacement-4
+    st-en-chatsan-word-5: st-en-chatsan-replacement-5
+    # stalker-en-changes-end
 
 - type: accent
   id: liar

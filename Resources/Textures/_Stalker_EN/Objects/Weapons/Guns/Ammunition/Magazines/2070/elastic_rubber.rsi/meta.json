@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Wassuy (Peter Poley) for EN server",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "red_toz_106"
+    },
+    {
+      "name": "green_toz_106"
+    },
+    {
+      "name": "blue_toz_106"
+    }
+  ]
+}

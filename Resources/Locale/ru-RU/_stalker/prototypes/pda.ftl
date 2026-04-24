@@ -25,3 +25,6 @@ ent-MonolithPDA = КПК бойца «Монолита»
     .desc = { ent-StalkerPDA.desc }
 ent-JabaPDA = КПК Жаб
     .desc = { ent-StalkerPDA.desc }
+ent-OldPDA = Старый КПК Сталкера
+    .desc = Изношенный, окровавленный КПК с трещинами, очень пыльный, тут и там грязь. Работает ли он вообще?
+    .suffix = ST, Zombified

@@ -1,129 +1,155 @@
 - type: shopPreset
-  id: BandsShopPresetEN # Pending Economy Change
+  id: BandsShopPresetEN # bandaid, sid rates, pending econ rework
   minSellPrice: 5
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 310
-    ZoneArtifactEye: 510
-    ZoneArtifactFlame: 1000
-    ZoneArtifactBunch: 1100
-    ZoneArtifactRock: 1000
-    ZoneArtifactSun: 2000
-    ZoneArtifactRoot: 2100
-    ZoneArtifactConflagration: 510
+    ZoneArtifactFireball: 405
+    ZoneArtifactEye: 610
+    ZoneArtifactFlame: 1215
+    ZoneArtifactBunch: 1420
+    ZoneArtifactRock: 1215
+    ZoneArtifactSun: 2210
+    ZoneArtifactRoot: 2430
+    ZoneArtifactConflagration: 610
     # Thermal group - 2
-    ZoneArtifactCristall: 2300
-    ZoneArtifactLithosphere: 4700
+    ZoneArtifactCristall: 2430
+    ZoneArtifactLithosphere: 4860
     # Electrical group - 1
-    ZoneArtifactSparkler: 280
-    ZoneArtifactBattery: 350
-    ZoneArtifactFlash: 1220
-    ZoneArtifactAccumulator: 1220
-    ZoneArtifactDiamond: 2000
-    ZoneArtifactCharger: 350
-    ArtMoon: 2100
-    ZoneArtifactTesla: 3200
-    ZoneArtifactIce: 4200
+    ZoneArtifactSparkler: 405
+    ZoneArtifactBattery: 475
+    ZoneArtifactFlash: 1215
+    ZoneArtifactAccumulator: 1215
+    ZoneArtifactDiamond: 2210
+    ZoneArtifactCharger: 475
+    ArtMoon: 2430
+    ZoneArtifactTesla: 3645
+    ZoneArtifactIce: 4860
     # Gravity group - 1
-    ArtMedusa: 180
-    ZoneArtifactFlower: 510
-    ZoneArtifactNightStar: 2100
-    ZoneArtifactWhirlwind: 400
-    ZoneArtifactPebble: 510
-    ZoneArtifactRosin: 1000
-    ZoneArtifactStoneCube: 700
-    ZoneArtifactDarkCube: 3400
+    ArtMedusa: 405
+    ZoneArtifactFlower: 610
+    ZoneArtifactNightStar: 2430
+    ZoneArtifactWhirlwind: 550
+    ZoneArtifactPebble: 405
+    ZoneArtifactRosin: 610
+    ZoneArtifactStoneCube: 850
+    ZoneArtifactDarkCube: 3645
     # Gravity group - 2
-    ZoneArtifactVyvert: 260
-    ZoneArtifactAmoeba: 450
-    ZoneArtifactFloodlight: 450
-    ZoneArtifactGravi: 1000
-    ZoneArtifactGoldfish: 4300
-    ZoneArtifactSpring: 2300
-    ZoneArtifactFocus: 3100
-    ZoneArtifactStuntman: 4200
-    ZoneArtifactDistorter: 4200
-    ZoneArtifactSoul: 2900
-    ZoneArtifactCompass: 2300
-    ZoneArtifactCrucifix: 3000
-    ZoneArtifactThorn: 1800
-    ZoneArtifactArf: 1800
-    # Acidic group - 1
-    ZoneArtifactToxic: 400
-    ZoneArtifactCytoplasm: 1520
-    ZoneArtifactBlood: 1520
-    ZoneArtifactMeat: 3140
-    ZoneArtifactKolobok: 4760
-    ZoneArtifactBeer: 475
-    # Acidic group - 2
-    ZoneArtifactPellicle: 440
-    ZoneArtifactBaloon: 3300
+    ZoneArtifactVyvert: 405
+    ZoneArtifactAmoeba: 610
+    ZoneArtifactFloodlight: 610
+    ZoneArtifactGravi: 1215
+    ZoneArtifactGoldfish: 4860
+    ZoneArtifactSpring: 2700
+    ZoneArtifactFocus: 3645
+    ZoneArtifactStuntman: 4860
+    ZoneArtifactDistorter: 4860
+    ZoneArtifactSoul: 3645
+    ZoneArtifactCompass: 2700
+    ZoneArtifactCrucifix: 3190
+    ZoneArtifactThorn: 1910
+    ZoneArtifactArf: 1910
 
-     # Mutant parts
+    # Acidic group - 1
+    ZoneArtifactToxic: 490
+    ZoneArtifactCytoplasm: 1215
+    ZoneArtifactBlood: 1215
+    ZoneArtifactMeat: 2430
+    ZoneArtifactKolobok: 3645
+    ZoneArtifactBeer: 450
+    # Acidic group - 2
+    ZoneArtifactPellicle: 405
+    ZoneArtifactBaloon: 3645
+
+    # Mutant parts
 
     #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 100 # T1
-    MutantPartSeasonedBoarHoof: 200 # T2
-    MutantPartOldBoarHoof: 350 # T3
+    MutantPartBoarHoof: 130 # T1
+    MutantPartSeasonedBoarHoof: 255 # T2
+    MutantPartOldBoarHoof: 385 # T3
 
     #Bears ---------
-    MutantPartBearClaw: 190
-    MutantPartBearPaw: 350
-    MutantPartBearEye: 480
-    ClothingHeadBear: 650
+    MutantPartBearClaw: 245
+    MutantPartBearPaw: 390
+    MutantPartBearEye: 590
+    ClothingHeadBear: 700
 
     #T1 -------- Health * 1
     MutantPartBlindDogTail: 90
-    MutantPartFleshEye: 125
+    MutantPartFleshEye: 190
     FoodMeatSpiderLeg: 30
+    MutantPartCatGland: 290
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 305
-    MutantPartPseudodogTail: 170
-    MutantPartSnorkFoot: 375
-    MutantPartPsiDogTail: 300
-    MutantPartFrogLeg: 150
+    MutantPartLeshiyRoot: 515
+    MutantPartPseudodogTail: 285
+    MutantPartSnorkFoot: 475
+    MutantPartPsiDogTail: 400
+    MutantPartFrogLeg: 200
 
-    #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 800
-    MutantPartOraculeEye: 1000
-    MutantPartPseudogiantHeart: 6400
-    MutantPartZombieHand: 650
-    MutantPartIzlomArm: 945
+    #T3 -------- Health * 3 Modified by Oracle
+    MutantPartBloodsuckerTentacles: 1375
+    MutantPartOraculeEye: 1050
+    MutantPartZombieHand: 570
+    MutantPartPseudogiantHeart: 6800
+    ClothingMaskChimera: 1
+    MutantPartChimeraTooth: 1
+    MutantPartIzlomArm: 815
     MutantPartBurerBrain: 1500
-    MutantPartControllerBrain: 2500
+    MutantPartControllerBrain: 2625
 
-    #Value
-    STJewelrySilver: 400
-    STJewelryGold: 600
+    # Meat
+    FoodMeatDogCooked: 75
+    STFoodMeatSpiderCooked: 40
+    FoodMeatBoarCooked: 115
+    FoodMeatSTBearCooked: 225
+    FoodMeatSTFishFilletCooked: 75
+    FoodMeatSTFishSteakCooked: 115
+    FoodMeatSTEelCooked: 190
+    STFoodMeatCvarci: 30
+    FoodMeatSTRatCooked: 5 # whatever
+    FoodMeatSTRatJerked: 10
+    FoodMeatSTDogJerkedSingle: 115
+    FoodMeatSTBoarJerkedSingle: 150
+    FoodMeatSTBearJerkedSingle: 265
+    FoodMeatSTSuckerJerkedSingle: 675
+    STFoodMeatSalo: 50
+
+    #Value - x2 of Erjan Alimov/Jury Izvorotin
+    STJewelrySilver: 800
+    STJewelryGold: 1200
     TreasureCoinIron: 100
     TreasureCoinSilver: 200
     TreasureCoinGold: 300
-    STWristwatchGold: 1750
+    STWristwatchGold: 3000
     Wristwatch: 300
-    STGoldRingBigDiamond: 2250
+    STGoldRingBigDiamond: 4000
     IngotSilver1: 700
     IngotGold1: 1000
     MaterialDiamond1: 1500
 
-    #Misc
+    #Misc - Eco Price / 2
     ZoneAnomalyDetectorAD1: 50
     ZoneAnomalyDetectorUpgradeAD1: 50
-    ZoneAnomalyDetectorAD2: 225
-    ZoneAnomalyDetectorUpgradeAD2: 225
-    ZoneAnomalyDetectorAD3: 550
-    ZoneArtifactDetectorPulse: 20
-    ZoneArtifactDetectorHunter: 30
-    ZoneArtifactDetectorModifiedHunter: 30
+    ZoneAnomalyDetectorAD2: 500
+    ZoneAnomalyDetectorUpgradeAD2: 500
+    ZoneAnomalyDetectorAD3: 1200
+    ZoneArtifactDetectorPulse: 25
+    ZoneArtifactDetectorHunter: 50
+    ZoneArtifactDetectorModifiedHunter: 50
     ZoneArtifactDetectorBush: 50
-    ZoneArtifactDetectorResponse: 150
-    ZoneArtifactDetectorSpruce: 500
-    ZoneArtifactDetectorBarracuda: 750
-    ZoneArtifactDetectorSeaDevil: 750
-    ZoneArtifactDetectorBear: 2000
-    ZoneArtifactDetectorWolfhound: 5000
-    longrangemetaldetector: 900
-    Binocularus1: 200
+    ZoneArtifactDetectorResponse: 350
+    ZoneArtifactDetectorSpruce: 1100
+    ZoneArtifactDetectorBarracuda: 1750
+    ZoneArtifactDetectorSeaDevil: 750 # ???
+    Veles: 2250
+    ZoneArtifactDetectorBear: 4000
+    ZoneArtifactDetectorWolfhound: 10000
+    longrangemetaldetector: 1500
+    Binocularus1: 375
+
+  # (Barman's price * 0.85[Faction decrease]) * 0.75[Antag rate] = Price, rounded up
+  # Bandits are going to get murdered, so a lower rate is applied to them compared to Bar
+
 
   categories:
     - name: shop-category-weapons
@@ -132,115 +158,126 @@
         # Melee
         StalkerBallBat: 50
         # Pistols
-        STWeaponPistolC96: 1200
-        STWeaponPistolM1911Chrome: 1500
-        WeaponPistolStalkerTT: 250
+        STWeaponPistolC96: 400 # literally a worse HiPower :skull:
+        STWeaponPistolM1911Chrome: 1000
+        WeaponPistolStalkerTT: 50
+        WeaponPistolStalkerPM: 50
+        STWeaponPistolHiPower: 400
         WeaponPistolStalkerAPS: 500
-        STWeaponRevolverSWPC325TR: 700
+        STWeaponRevolverSWPC325TR: 210
         # Shotguns
+        STBaseWeaponShotgunTOZ106: 550 # T1
         STWeaponShotgunTOZ34: 100 # T2
-        STWeaponShotgunMossbergM88: 500 # T2
-        STWeaponShotgunMP153: 1000 # T3
+        STWeaponShotgunMossbergM88: 400 # T2
+        STWeaponShotgunMP153: 1100 # T3
         # Rifles
-        STWeaponRifleSaiga545: 1200
-        STWeaponRifleAKS74U: 2000
-        STWeaponRifleL85: 3000
-        STWeaponRifleAKS74: 3000
+        STWeaponRifleSaiga545: 1150
+        STWeaponRifleAKS74U: 1300
+        STWeaponRifleL85: 1500
+        STWeaponRifleAKS74: 2700
         # SMGs
-        STWeaponSMGMP5: 2000
-        STWeaponSMGPPSh41Band: 1250
-        STWeaponSMGMP40: 500
-        STWeaponSMGPP19: 3000
+        STWeaponSMGMP5: 1700
+        STWeaponSMGPPSh41Band: 1600
+        STWeaponSMGMP40: 650
+        STWeaponSMGPP19: 2200
         # Snipers
         STWeaponSniperMosin: 1000
-        STWeaponSniperSKS: 1500
+        STWeaponSniperSKS: 1200
 
     - name: shop-category-magazines
       priority: 2
       items:
           # 5,45x39
         Base545Mag10: 50 #T1
-        545Mag20: 220 #T2
-        545Mag30: 400 #T3
+        545Mag20: 160 #T2
+        545Mag30: 320 #T3
+          # 5,56x45
+        Base556Mag10: 50
+        556Mag20: 160
+        556Mag30: 320
           # Smg
         MP40Mag: 100
-        BaseMP5Mag: 200
-        PPSHDrum: 1000
-        BasePPSHMag: 250
-        BizonMag: 1100
+        BaseMP5Mag: 175
+        PPSHDrum: 1275
+        BasePPSHMag: 230
+        BizonMag: 1070
           # Other
-        STSTC96ClipEmpty: 120
-        M1911Mag7: 150
-        Base556Mag10: 80
-        556Mag20: 220
-        556Mag30: 400
-        TTMag: 100
-        STSpeedLoader45ACPEmpty: 150
-        STSpeedLoader357MagnumEmpty: 160
-        BaseAPSMag: 100
-        Base751Mag10: 200
+        BasePMMag: 10
+        HiPowerMag13: 90
+        Base2070Mag: 20
+        TOZ106Mag5: 65
+        STSTC96ClipEmpty: 90
+        M1911Mag7: 90
+        TTMag: 10
+        STSpeedLoader45ACPEmpty: 65
+        STSpeedLoader357MagnumEmpty: 105
+        BaseAPSMag: 150
+        Base751Mag10: 415
 
-    - name: shop-category-ammunition
+    - name: shop-category-ammunition # Slapping Barman's ammo prices on this
       priority: 3
       items:
+        #20gauge
+        62mmBuckshotBox: 30 #T0
+        75mmBuckshotBox: 200 #T1
         # 7mm
-        6mmBuckshotBox: 320 # T1
-        7mmBuckshotBox: 75 # T0
-        8mmBuckshotBox: 800 # T2
+        6mmBuckshotBox: 275 # T1
+        7mmBuckshotBox: 50 # T0
+        8mmBuckshotBox: 825 # T2
         # 7.25
-        725PBox: 90 # T1
+        725PBox: 100 # T1
         725LRNPCBox: 625 # Mutant
-        725PTBox: 200 # T2
+        725PTBox: 300 # T2
         725PSTBox: 1450 # T3
         # 9.19
         919PSOGJBox: 100 # T1
-        919PSTBox: 500 # T2
+        919PSTBox: 300 # T2
         919PBMBox: 1450 # T3
         919RIPBox: 625 # Mutant
         # 9.18
         918PGJBox: 100 # T1
-        918PSTBox: 500 # T2
+        918PSTBox: 300 # T2
         918PBMBox: 1450 # T3
         918SP7Box: 625 # Mutant
         # 5.45
-        545FMJBox: 500 # T2
-        545HPBox: 725 # Mutant
+        545FMJBox: 650 # T2
+        545HPBox: 500 # Mutant
         545PCBox: 1650 # T3
         # 5.56
-        556FMJBox: 500 # T2
-        556WarmagBox: 725 # Mutant
+        556FMJBox: 650 # T2
+        556WarmagBox: 500 # Mutant
         556M855Box: 1650 # T3
         # 7.39
         739HPBox: 850 # Mutant
         739FMJBox: 1950 # T3
         # 7.54
-        754FMJBox: 2500 # T3
-        754HPBox: 1350 # Mutant
+        754FMJBox: 2500 # T3 barman doesnt sell this one so left it as it was
+        754HPBox: 850 # Mutant
         # .45
-        45ACPLFMJBox: 110 # T1
-        45ACPMFMJBox: 550 # T2
-        45ACPAPBox: 1550 # T3
-        45ACPRIPBox: 750 # Mutant
+        45ACPLFMJBox: 100 # T1
+        45ACPMFMJBox: 300 # T2
+        45ACPAPBox: 1450 # T3
+        45ACPRIPBox: 625 # Mutant
         # .357
         MagazineBox357Magnum: 600 # T2
         MagazineBox357MagnumAP: 1500 # T3
-        MagazineBox357MagnumHP: 800 # Mutant
+        MagazineBox357MagnumHP: 625 # Mutant
 
-    - name: shop-category-medicine # 50% discount from stalkers
+    - name: shop-category-medicine # back to standard rates
       priority: 4
       items:
         STPillboxAntirad: 150
-        STGauze: 15
-        STOintment: 95
-        STBrutepack: 30
-        Bloodpack: 800
-        MedkitAI2: 175
-        Defibrillator: 1000
-        AntiRadMedipen: 300
-        STPillboxProbud: 400
-        MedkitMilitary: 400
-        MedkitScience: 650
-        STPillboxShiza: 15000
+        STGauze: 40
+        STOintment: 50
+        STBrutepack: 40
+        Bloodpack: 350
+        MedkitAI2: 90
+        Defibrillator: 650
+        AntiRadMedipen: 200
+        STPillboxProbud: 320
+        MedkitMilitary: 255
+        MedkitScience: 300
+        STPillboxShiza: 7000
 
     - name: shop-category-provisions
       priority: 5
@@ -266,20 +303,20 @@
       items:
           # Helmets #
         ClothingHeadHelmetLight: 200 # T1 - PVE
-        ClothingHeadHelmetInfantryBand: 600 # T2 - PVP
-        ClothingHeadHelmetVityaz1B: 3500 # T3 - PVE
-        ClothingHeadAssaultHelmetBandit: 3000 # T3 - PVP
+        ClothingHeadHelmetInfantryBand: 400 # T2 - PVP
+        ClothingHeadHelmetVityaz1B: 2250 # T3 - PVE
+        ClothingHeadAssaultHelmetBandit: 2000 # T3 - PVP
           # OuterClothing #
-        ClothingOuterCoatBanditBrown: 550 # T1 - uni
-        ClothingOuterCoatBanditBlack: 550 # T1 - uni
-        STClothingOuterArmorLightPlateVestBaseBand: 1000 # T2 - PvP
-        SetArmoutJacketBanditBuyableCrate: 1025 # T2 - PvP
+        ClothingOuterCoatBanditBrown: 400 # T1 - uni
+        ClothingOuterCoatBanditBlack: 400 # T1 - uni
+        STClothingOuterArmorLightPlateVestBaseBand: 800 # T2 - PvP
+        SetArmoutJacketBanditBuyableCrate: 1000 # T2 - PvP
         ClothingOuterArmourCoatBanditBrown: 1050 # T2 - PvP
         ClothingOuterArmourCoatBanditBlack: 1050 # T2 - PvP
-        STClothingOuterArmorBandits: 2000 #T2
-        ClothingOuterArmorSevaBandit: 4000 # T3 - PVE
-        STClothingOuterArmorRCBZ: 2000
-        ClothingOuterArmorBandits: 13000 #T3
+        STClothingOuterArmorBandits: 1500 #T2
+        ClothingOuterArmorSevaBandit: 4500 # T3 - PVE
+        STClothingOuterArmorRCBZ: 1200
+        ClothingOuterArmorBandits: 9000 #T3 - PVP
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -288,15 +325,16 @@
         ClothingBackpackTownBlackStalker: 50 # T1
         ClothingBackpackTownWhiteStalker: 50 # T1
         ##-------------------------------------------
-        ClothingBackpackTacticBlackStalker: 300 # T2
+        ClothingBackpackTacticBlackStalker: 350 # T2
         ##-------------------------------------------
-        ClothingBackpackMercStalker: 800 # T3 PvE
-        ClothingBackpackStalkerZaryaBlack: 1000 # T3 PvP
+        ClothingBackpackMercStalker: 500 # T3 PvE
+        ClothingBackpackStalkerZaryaBlack: 650 # T3 PvP
+        ClothingBackpackDuffelCommonStalker: 1000 # T3 PvP, commented out as per Faction Lead request
         ##-------------------------------------------
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PvE
         ClothingBeltTarzanBlack: 200 # T1 - PvP
-        ClothingBeltWebbingHolsterMercBandit: 700
+        ClothingBeltWebbingHolsterMercBandit: 650
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8
@@ -344,13 +382,13 @@
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
-        STRadioHeadset: 150
+        STRadioHeadset: 100
         STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
         Paper: 2
         Pen: 5
-        Binocularus1: 1000
+        Binocularus1: 550
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         Beaker: 40
@@ -360,9 +398,9 @@
         Matchbox: 10
         HatchetStalker: 150
         ClothingHeatBagStalker: 100
-        STElasticRubberRed: 50
-        STElasticRubberGreen: 50
-        STElasticRubberBlue: 50
+        STElasticRubberRed: 1
+        STElasticRubberGreen: 1
+        STElasticRubberBlue: 1
         FoldedFlagBand: 250
         STRag: 10
         # Cameras
@@ -383,7 +421,8 @@
       priority: 12
       items:
         SnapPop: 50
-        CraftGunpowderBank: 200
+        CraftGunpowderBank: 500
+        CraftMaterialGunpowder: 200
         KhattabkaGrenade: 350
         DG05SmokeGrenade: 500
         RGD5Grenade: 1000
@@ -405,6 +444,7 @@
         ClothingEyesGlasses: 50
         # faction
         ClothingEyesGlassesCheapSunglasses: 50
+        ClothingHeadBeretBandit: 50
         # MASK
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
@@ -471,8 +511,7 @@
       priority: 14
       items:
         HarmonicaInstrument: 500
-        CardBin: 300
-        PokerCardBin: 450
+        CardDeckBlack: 100
         DiceBag: 50
         CasseteBandit: 500
 

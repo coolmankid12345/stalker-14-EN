@@ -1,20 +1,20 @@
 - type: shopPreset
-  id: DolgShopPresetEN # Mutant parts 1.5x Barman - Pending Economy Change
+  id: DolgShopPresetEN # Mutant parts 1.5x Barman
   minSellPrice: 5
   itemsForSale:
-    #Boars -------- Health * T
+    #Boars
     MutantPartBoarHoof: 275 # T1
     MutantPartSeasonedBoarHoof: 545 # T2
     MutantPartOldBoarHoof: 825 # T3
 
-    #T1 -------- Health * 1
+    #T1
     MutantPartBlindDogTail: 180
     MutantPartFleshEye: 405
     FoodMeatSpiderLeg: 100
     MutantPartBearClaw: 490
     MutantPartCatGland: 580
 
-    #T2 -------- Health * 1.8
+    #T2
     MutantPartLeshiyRoot: 1115
     MutantPartPseudodogTail: 610
     MutantPartSnorkFoot: 1015
@@ -23,15 +23,15 @@
     MutantPartBearPaw: 780
     MutantPartFrogLeg: 400
 
-    #T3 -------- Health * 3 Modified by Oracle
-    MutantPartBloodsuckerTentacles: 4700
-    MutantPartOraculeEye: 3600
-    MutantPartPseudogiantHeart: 18100
-    MutantPartZombieHand: 2000
-    ClothingHeadBear: 1500
-    MutantPartIzlomArm: 3750
-    MutantPartBurerBrain: 3500
-    MutantPartControllerBrain: 6500
+    #T3
+    MutantPartBloodsuckerTentacles: 4125
+    MutantPartOraculeEye: 2700
+    MutantPartPseudogiantHeart: 13575
+    MutantPartZombieHand: 1125
+    ClothingHeadBear: 1125
+    MutantPartIzlomArm: 2475
+    MutantPartBurerBrain: 3000
+    MutantPartControllerBrain: 5250
 
   categories:
     - name: shop-category-weapons
@@ -47,12 +47,12 @@
         # Rifles
         STWeaponRifleSaiga545: 1000
         STWeaponRifleAKS74U: 1500
-        STWeaponRifleAKS74: 4000
-        STWeaponRifleOC14: 5650
-        STWeaponRifleAK103: 8000
+        STWeaponRifleAKS74: 2500
+        STWeaponRifleOC14: 3500
         STWeaponRifleAKM: 6000
         STWeaponRifleStalkerAK12Dolg: 6000
         STWeaponRifleA545Dolg: 7500
+        STWeaponRifleAK103: 8000
         # SMGs
         STWeaponSMGPP91: 1200
         STWeaponSMGStalkerCP2Veresk: 2000
@@ -155,6 +155,7 @@
           # Helmets #
         ClothingHeadHelmetDolg: 200 # T1 - PVE
         ClothingHeadHelmetInfantryDolg: 750 # T2 - PVP
+        ClothingHeadHelmetBerill5MDolg: 2500 #T3
         ClothingHeadHelmetVityaz1M: 3000 #T3
         ClothingHeadAssaultHelmetDolg: 3500 #T3
           # OuterClothing #
@@ -171,9 +172,10 @@
           # BackPacks
         ClothingBackpackTownBlackStalker: 100 # T1
         ##-------------------------------------------
-        ClothingBackpackTacticBlackRadStalker: 400 # T2
+        ClothingBackpackTacticBlackRadStalker: 200 # T2
         ##-------------------------------------------
-        ClothingBackpackMercStalker: 800 # T3 |pve backpack
+        ClothingBackpackDuffelCommonStalker: 750 #T3 |pvp backpack
+        ClothingBackpackMercStalker: 500 # T3 |pve backpack
         ClothingBackpackStalkerZaryaBlack: 300 # T3 |pvp backpack
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
@@ -242,9 +244,9 @@
         Matchbox: 10
         HatchetStalker: 150
         CasseteDuty: 500
-        STElasticRubberRed: 50
-        STElasticRubberGreen: 50
-        STElasticRubberBlue: 50
+        STElasticRubberRed: 1
+        STElasticRubberGreen: 1
+        STElasticRubberBlue: 1
         FoldedFlagDuty: 250
         # Cameras
         STCamera: 750
@@ -291,6 +293,7 @@
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         # NECK
+        ClothingBandageStalkerKrest: 10
         ClothingNeckScarfGray: 100
         # faction
         ClothingBandageStalkerRed: 10
@@ -313,6 +316,8 @@
         ClothingTorsoTurtlenecksMatrosska: 50
         # HANDS
         ClothingHandsGlovesFingerless: 30
+        ClothingHandsGlovesNitrile: 35
+        ClothingHandsGlovesLatex: 35
         ClothingHandsGlovesMercFingerless: 60
         # OUTERCLOTHING
         # CLOAK

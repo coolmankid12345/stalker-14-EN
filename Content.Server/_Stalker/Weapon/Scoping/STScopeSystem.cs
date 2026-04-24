@@ -41,12 +41,13 @@ public sealed class STScopeSystem : STSharedScopeSystem
         if (scope.Comp.RelayEntity is not { } relay)
             return;
 
-        scope.Comp.RelayEntity = null;
-
         if (TryComp(user, out ActorComponent? actor))
             _viewSubscriber.RemoveViewSubscriber(relay, actor.PlayerSession);
 
         if (!TerminatingOrDeleted(relay))
             QueueDel(relay);
+
+        scope.Comp.RelayEntity = null;
+        Dirty(scope);
     }
 }

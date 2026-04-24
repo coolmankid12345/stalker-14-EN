@@ -52,3 +52,6 @@
         whitelist:
           tags:
           - STWeaponModuleSniperSilencer
+  - type: ParticleOnGunShot # EN start
+    effect: MuzzleSmoke
+    inheritAngle: true # EN end

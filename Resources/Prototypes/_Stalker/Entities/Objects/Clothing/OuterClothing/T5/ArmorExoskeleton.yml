@@ -26,6 +26,8 @@
         Piercing: 0.4
         Heat: 0.35
         Radiation: 0.65
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.25
   - type: PressureProtection
@@ -86,6 +88,8 @@
     damage:
       types:
         Radiation: 18.01
+  - type: GrantsArtifactSlots
+    slots: 5 # EN
 
 - type: entity
   parent: ClothingOuterArmorExoskelet

@@ -72,9 +72,9 @@
         BoxFolderBlue: 500
         BoxFolderWhite: 500
         BoxFolderBlack: 500
-        STElasticRubberRed: 50
-        STElasticRubberGreen: 50
-        STElasticRubberBlue: 50
+        STElasticRubberRed: 1
+        STElasticRubberGreen: 1
+        STElasticRubberBlue: 1
         FoldedFlagHelper: 250
         # Cameras
         STCamera: 750

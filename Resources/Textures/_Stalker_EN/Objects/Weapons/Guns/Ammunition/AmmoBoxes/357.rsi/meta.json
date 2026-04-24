@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "sprited by Wassuy for stalker EN",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "fmj"
+    },
+    {
+      "name": "ap"
+    },
+    {
+      "name": "hp"
+    },
+    {
+      "name": "ammo-1"
+    }
+  ]
+}

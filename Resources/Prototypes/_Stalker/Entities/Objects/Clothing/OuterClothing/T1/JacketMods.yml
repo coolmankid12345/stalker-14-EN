@@ -57,7 +57,7 @@
         Piercing: 3
       coefficients:
         Blunt: 0.80
-        Slash: 0.81
+        Slash: 0.80
         Piercing: 0.70
   - type: ExplosionResistance
     damageCoefficient: 0.8
@@ -85,7 +85,7 @@
         Piercing: 3
       coefficients:
         Blunt: 0.80
-        Slash: 0.81
+        Slash: 0.80
         Piercing: 0.70
   - type: ExplosionResistance
     damageCoefficient: 0.8
@@ -121,6 +121,8 @@
         Shock: 0.95
         Radiation: 0.85
         Compression: 0.90
+  - type: GrantsArtifactSlots
+    slots: 2 # EN
   - type: Craftable
 
 - type: entity
@@ -172,6 +174,8 @@
         Shock: 0.95
         Radiation: 0.85
         Compression: 0.90
+  - type: GrantsArtifactSlots
+    slots: 2 # EN
   - type: Craftable
 
 - type: entity

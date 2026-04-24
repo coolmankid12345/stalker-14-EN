@@ -26,7 +26,7 @@
       flatReductions:
         Blunt: 4
         Slash: 4
-        Piercing: 3
+        Piercing: 2
         Heat: 4
         Radiation: 4
         Caustic: 4
@@ -40,4 +40,6 @@
         Caustic: 0.50
         Shock: 0.60
         Compression: 0.7
+  - type: GrantsArtifactSlots
+    slots: 4 # EN
 

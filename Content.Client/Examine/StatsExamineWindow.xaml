@@ -1,0 +1,6 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="Armor Comparison"
+                      MinSize="300 200">
+    <BoxContainer Name="StatsContainer" Orientation="Vertical" Margin="8" VerticalExpand="True"/>
+</controls:FancyWindow>

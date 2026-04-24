@@ -27,6 +27,8 @@
         Heat: 0.7
         Compression: 0.7
         Shock: 0.75
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.6
 
@@ -72,6 +74,8 @@
     damage:
       types:
         Radiation: 18.01
+  - type: GrantsArtifactSlots
+    slots: 5 # EN
 
 # Military
 

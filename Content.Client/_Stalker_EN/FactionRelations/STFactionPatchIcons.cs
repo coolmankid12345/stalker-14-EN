@@ -30,6 +30,6 @@ public static class STFactionPatchIcons
         [STReactionDefinitions.Renegades] = (PatchRsiPath, "rene"),
         [STReactionDefinitions.Rookies] = (PatchRsiPathEN, "rookie"),
         [STReactionDefinitions.Journalists] = (PatchRsiPath, "journalist"),
-        [STReactionDefinitions.UN] = (PatchRsiPath, "un"),
+        [STReactionDefinitions.UN] = (PatchRsiPath, "un")
     };
 }

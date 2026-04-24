@@ -79,7 +79,7 @@
 - type: stAnomalyGenerationOptions
   id: STJupiterPlantGenerationOptions
   options:
-    totalCount: 75
+    totalCount: 25
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalyElectra

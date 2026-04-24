@@ -495,6 +495,14 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _humanoid.LoadProfile(dummyEnt, humanoid);
 
+        //stalker-en-start
+        // Apply job-specific appearance for Zombified
+        if (job != null && job.ID == "StalkerZombified" && humanoid != null)
+        {
+            _humanoid.ApplyZombifiedAppearance(dummyEnt, humanoid.Name);
+        }
+        //stalker-en-end
+
         if (humanoid != null && jobClothes)
         {
             DebugTools.Assert(job != null);

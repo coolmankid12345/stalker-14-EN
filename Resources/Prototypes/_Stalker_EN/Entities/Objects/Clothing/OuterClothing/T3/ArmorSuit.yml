@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: ClothingOuterArmorMonolith
+  id: ClothingOuterArmorMonolithClean
+  name: Chernobyl Armored Coveralls
+  description: Armored coveralls used by the Monolith soldiers. The fabric is a bit frayed but it's marked with tape around the wrist to indicate it's been chemically cleaned and is safe to use.
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0
+
+- type: entity
+  parent: STClothingOuterArmorBase
+  id: STClothingOuterArmorLepestokNeutralEN  #THIS IS A BADGER USING THE SPRITE OF THE BERYL PETAL
+  name: Badger "Petal"
+  description: Modified by the Neutral craftsman "Titmouse". With improved fabric.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/lepestok_neutral.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/lepestok_neutral.rsi
+  - type: Storage
+    maxItemSize: Large
+    grid:
+      - 0,3,0,4
+      - 2,3,2,4
+      - 4,3,4,4
+      - 6,0,8,1
+      - 6,3,6,4
+      - 8,3,8,4
+      - 10,3,10,4

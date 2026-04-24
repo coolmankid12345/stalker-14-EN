@@ -17,7 +17,7 @@
   icon:
     sprite: /Textures/_Stalker_EN/Icons/Patches/band.rsi
     hideOnStealth: true
-    state: Zombie
+    state: zombified
 
 
 - type: jobIcon

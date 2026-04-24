@@ -4,6 +4,7 @@
   id: ClothingOuterArmorZaryaMonolith
   name: Noonrise suit
   description: A sunrise suit in urban camo. Originally modified for some other purpose, it was forgotten about before the Monolith found them.
+  suffix: ST, T2, PvE, Radioactive
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/outerClothing/zarya_mono.rsi
@@ -16,6 +17,27 @@
     damage:
       types:
         Radiation: 18.01
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 4
+        Radiation: 1
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Radiation: 0.8
+        Compression: 0.90
+        Piercing: 0.8
+        Heat: 0.8
+        Caustic: 0.85
+        Shock: 0.9
+  - type: Contraband
+    severity: Monolith
+  - type: GrantsArtifactSlots
+    slots: 5
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -37,3 +59,30 @@
     damage:
       types:
         Radiation: 18.01
+
+- type: entity
+  parent: ClothingOuterArmorZaryaMonolith
+  id: ClothingOuterArmorZaryaMonolithClean
+  name: Noonrise suit
+  description: A sunrise suit in urban camo. Originally modified for some other purpose, it was forgotten about before the Monolith found them. A band of tape around the wrist marks that it's been chemically cleaned and is safe to use.
+  suffix: ST, T2, PvE
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetZaryaMonolithClean
+    slot: head
+
+- type: entity
+  parent: ClothingHeadHelmetZaryaMonolith
+  id: ClothingHeadHelmetZaryaMonolithClean
+  name: Noonrise hood
+  categories: [ HideSpawnMenu ]
+  description: An urban camo hood.
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0

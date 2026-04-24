@@ -19,9 +19,10 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Boxes/magnum.rsi
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/AmmoBoxes/357.rsi
+    scale: 0.75, 0.75
   - type: MagazineVisuals
-    magState: mag
+    magState: ammo
     steps: 2
     zeroVisible: false
   - type: Appearance
@@ -37,10 +38,11 @@
   - type: BallisticAmmoProvider
     proto: Cartridge357MagnumFMJ
   - type: Sprite
+    scale: 0.75, 0.75
     layers:
-    - state: base
+    - state: fmj
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
+    - state: ammo-1
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
@@ -53,12 +55,12 @@
   - type: BallisticAmmoProvider
     proto: Cartridge357MagnumHP
   - type: Sprite
+    scale: 0.75, 0.75
     layers:
-    - state: base
+    - state: hp
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
+    - state: ammo-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: piercing
 
 - type: entity
   parent: BaseMagazineBox357Magnum
@@ -70,9 +72,9 @@
   - type: BallisticAmmoProvider
     proto: Cartridge357MagnumAP
   - type: Sprite
+    scale: 0.75, 0.75
     layers:
-    - state: base
+    - state: fmj
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
+    - state: ammo-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: piercing

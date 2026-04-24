@@ -46,3 +46,10 @@ st-messenger-char-counter = {$remaining}/{$max}
 # Mute
 st-messenger-mute-button = Mute
 st-messenger-unmute-button = Unmute
+
+# Settings
+st-messenger-settings-header = SETTINGS
+st-messenger-random-name-when-not-disguised = Random name when not disguised
+
+# Emission
+st-messenger-emission-warning = EMISSION ACTIVE - CONNECTION LOST
