@@ -286,13 +286,17 @@
       STModuleScopeRiflesT1Ru: 600
       STModuleScopeRiflesT1Nato: 600
       STModuleSilencerRiflesT1Ru: 400
+      STModuleSilencerRiflesT2Ru: 4000
       STModuleSilencerRiflesT1Nato: 400
       STModuleShotgunChokeT1: 200
       STModuleSMGGripT1: 600
       STModuleSilencerSMGT1: 600
+      STModuleSilencerSMGT2: 4000
       STModuleSilencerPistolT1: 400
+      STModuleSilencerPistolT2: 4000
       STModuleSniperSightT1: 600
       STModuleSilencerSniperT1: 600
+      STModuleSilencerSniperT2: 5000
       STModuleAutoSear: 600
 
   - name: shop-category-customization
