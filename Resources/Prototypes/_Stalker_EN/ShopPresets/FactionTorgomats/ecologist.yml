@@ -446,7 +446,8 @@
     - name: shop-category-tools
       priority: 13
       items:
-        CraftChemicalCleaningKit: 9000
+        CraftWeaponChemicalCleaningSupplies: 3500
+        CraftEquipmentChemicalCleaningSupplies: 7500
 
     - name: shop-category-entertainment
       priority: 14

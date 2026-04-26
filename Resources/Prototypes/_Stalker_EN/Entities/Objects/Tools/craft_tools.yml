@@ -9,8 +9,6 @@
     self: 2.5
   - type: Item
     size: Normal
-    shape:
-    - 0,0,2,2
   - type: Sprite
     sprite: _Stalker_EN/Objects/Tools/chemcleaningkit.rsi
   - type: RepositoryItem
@@ -28,7 +26,7 @@
     self: 5
   - type: Item
     shape:
-    - 0,0,4,4
+    - 0,0,3,3
   - type: Sprite
     state: icon
   - type: SpawnItemsOnUse
@@ -42,8 +40,12 @@
   parent: BaseCraftChemicalCleaningKit
   id: CraftWeaponChemicalCleaningSupplies
   name: weaponry chemical cleaning supplies
-  description: Various industrial strength chemical cleaners made to isolate and remove radioactive grime. Be sure to wear proper safety gear while handling it. These are meant specifically for cleaning weaponry. Can be packed back into a bundle alongside a set of equipment cleaning supplies.
+  description: Various industrial strength chemical cleaners made to isolate and remove radioactive grime. Be sure to wear proper safety gear while handling it. Can be packed back into a bundle alongside a set of equipment cleaning supplies. These are meant specifically for cleaning weaponry.
   components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,2
   - type: Sprite
     state: weapon
   - type: Craftable
@@ -52,8 +54,12 @@
   parent: BaseCraftChemicalCleaningKit
   id: CraftEquipmentChemicalCleaningSupplies
   name: equipment chemical cleaning supplies
-  description: A bottle of industrial strength chemical cleaner made to isolate and remove radioactive grime. Be sure to wear proper safety gear while handling it. These are meant specifically for cleaning equipment, such as armor. Can be packed back into a bundle alongside a set of weapon cleaning supplies.
+  description: A bottle of industrial strength chemical cleaner made to isolate and remove radioactive grime. Be sure to wear proper safety gear while handling it. Can be packed back into a bundle alongside a set of weapon cleaning supplies. These are meant specifically for cleaning equipment, such as armor.
   components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,2
   - type: Sprite
     state: equipment
   - type: Craftable
