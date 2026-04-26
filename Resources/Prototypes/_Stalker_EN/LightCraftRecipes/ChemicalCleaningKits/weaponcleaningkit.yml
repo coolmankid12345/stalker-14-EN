@@ -1,0 +1,59 @@
+﻿- type: lightCraftingRecipe
+  id: ChemCleaningKitAKS74Winter
+  results:
+  - STWeaponRifleAKS74Winter
+  steps:
+    firstIngredient: CraftWeaponChemicalCleaningSupplies
+    secondIngredient: STWeaponRifleAKS74WinterMono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitAKS74UWhite
+  results:
+  - STWeaponRifleAKS74UWhite
+  steps:
+    firstIngredient: CraftWeaponChemicalCleaningSupplies
+    secondIngredient: STWeaponRifleAKS74UWhiteMono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitAK103Mono
+  results:
+  - STWeaponRifleAK103MonoClean
+  steps:
+    firstIngredient: CraftWeaponChemicalCleaningSupplies
+    secondIngredient: STWeaponRifleAK103Mono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitAK12Mono
+  results:
+  - STWeaponRifleStalkerAK12MonoClean
+  steps:
+    firstIngredient: CraftWeaponChemicalCleaningSupplies
+    secondIngredient: STWeaponRifleStalkerAK12Mono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitG36Mono
+  results:
+  - STWeaponRifleG36MonoClean
+  steps:
+    firstIngredient: CraftWeaponChemicalCleaningSupplies
+    secondIngredient: STWeaponRifleG36Mono
+    keepFirst: true
+    time: 8
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitSVDMono
+  results:
+  - STWeaponSniperSVDMonoClean
+  steps:
+    firstIngredient: CraftWeaponChemicalCleaningSupplies
+    secondIngredient: STWeaponSniperSVDMono
+    keepFirst: true
+    time: 8

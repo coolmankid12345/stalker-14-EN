@@ -1,69 +1,9 @@
 ﻿- type: lightCraftingRecipe
-  id: ChemCleaningKitAKS74Winter
-  results:
-  - STWeaponRifleAKS74Winter
-  steps:
-    firstIngredient: CraftChemicalCleaningKit
-    secondIngredient: STWeaponRifleAKS74WinterMono
-    keepFirst: true
-    time: 8
-
-- type: lightCraftingRecipe
-  id: ChemCleaningKitAKS74UWhite
-  results:
-  - STWeaponRifleAKS74UWhite
-  steps:
-    firstIngredient: CraftChemicalCleaningKit
-    secondIngredient: STWeaponRifleAKS74UWhiteMono
-    keepFirst: true
-    time: 8
-
-- type: lightCraftingRecipe
-  id: ChemCleaningKitAK103Mono
-  results:
-  - STWeaponRifleAK103MonoClean
-  steps:
-    firstIngredient: CraftChemicalCleaningKit
-    secondIngredient: STWeaponRifleAK103Mono
-    keepFirst: true
-    time: 8
-
-- type: lightCraftingRecipe
-  id: ChemCleaningKitAK12Mono
-  results:
-  - STWeaponRifleStalkerAK12MonoClean
-  steps:
-    firstIngredient: CraftChemicalCleaningKit
-    secondIngredient: STWeaponRifleStalkerAK12Mono
-    keepFirst: true
-    time: 8
-
-- type: lightCraftingRecipe
-  id: ChemCleaningKitG36Mono
-  results:
-  - STWeaponRifleG36MonoClean
-  steps:
-    firstIngredient: CraftChemicalCleaningKit
-    secondIngredient: STWeaponRifleG36Mono
-    keepFirst: true
-    time: 8
-
-- type: lightCraftingRecipe
-  id: ChemCleaningKitSVDMono
-  results:
-  - STWeaponSniperSVDMonoClean
-  steps:
-    firstIngredient: CraftChemicalCleaningKit
-    secondIngredient: STWeaponSniperSVDMono
-    keepFirst: true
-    time: 8
-
-- type: lightCraftingRecipe
   id: ChemCleaningKitArmorMonolith
   results:
   - ClothingOuterArmorMonolithClean
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: ClothingOuterArmorMonolith
     keepFirst: true
     time: 15
@@ -73,7 +13,7 @@
   results:
   - WeaponPistolStalkerAPSBare
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: WeaponPistolStalkerAPSBareMono
     keepFirst: true
     time: 5
@@ -83,7 +23,7 @@
   results:
   - ClothingBeltWebbingHolsterMonolithClean
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: ClothingBeltWebbingHolsterMonolith
     keepFirst: true
     time: 12
@@ -93,7 +33,7 @@
   results:
   - ClothingOuterArmorSevaMonolithClean
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: ClothingOuterArmorSevaMonolith
     keepFirst: true
     time: 15
@@ -103,7 +43,7 @@
   results:
   - ClothingOuterCoatKevlarMonolithClean
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: ClothingOuterCoatKevlarMonolith
     keepFirst: true
     time: 12
@@ -113,7 +53,7 @@
   results:
   - STClothingOuterArmorLightPlateVestBaseMonolithClean
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: STClothingOuterArmorLightPlateVestBaseMonolith
     keepFirst: true
     time: 15
@@ -123,7 +63,7 @@
   results:
   - ClothingOuterArmorZaryaMonolithClean
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: ClothingOuterArmorZaryaMonolith
     keepFirst: true
     time: 15
@@ -133,7 +73,7 @@
   results:
   - ClothingOuterArmorBerill5MMonolithClean
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: ClothingOuterArmorBerill5MMonolith
     keepFirst: true
     time: 15
@@ -143,7 +83,7 @@
   results:
   - ClothingOuterJacketMonolithClean
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: ClothingOuterJacketMonolith
     keepFirst: true
     time: 8
@@ -153,7 +93,7 @@
   results:
   - ClothingHeadBeretMonolithClean
   steps:
-    firstIngredient: CraftChemicalCleaningKit
+    firstIngredient: CraftEquipmentChemicalCleaningSupplies
     secondIngredient: ClothingHeadBeretMonolith
     keepFirst: true
     time: 5

@@ -1,0 +1,8 @@
+﻿- type: lightCraftingRecipe
+  id: ChemCleaningKitsRepack
+  results:
+  - CraftChemicalCleaningKit
+  steps:
+    firstIngredient: CraftWeaponChemicalCleaningSupplies
+    secondIngredient: CraftEquipmentChemicalCleaningSupplies
+    time: 1

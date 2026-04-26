@@ -1,9 +1,9 @@
 ﻿- type: entity
   parent: BaseItem
-  id: CraftChemicalCleaningKit
+  id: BaseCraftChemicalCleaningKit
   name: chemical cleaning kit
-  description: Various industrial strength chemical cleaners made to isolate and remove radioactive grime. Be sure to wear proper safety gear while handling it.
   suffix: Stalker, Craft
+  abstract: true
   components:
   - type: STWeight
     self: 2.5
@@ -13,8 +13,47 @@
     - 0,0,2,2
   - type: Sprite
     sprite: _Stalker_EN/Objects/Tools/chemcleaningkit.rsi
-    state: icon
-    scale: 0.8,0.8
-  - type: Craftable
   - type: RepositoryItem
     categoryName: repository-tools-category
+
+# Just a container of both cleaning kits
+- type: entity
+  parent: BaseCraftChemicalCleaningKit
+  id: CraftChemicalCleaningKit
+  name: chemical cleaning kit
+  description: Can be unpacked to get a sets of weapon cleaning supplies, and equipment cleaning supplies.
+  suffix: Stalker, Bundle
+  components:
+  - type: STWeight
+    self: 5
+  - type: Item
+    shape:
+    - 0,0,4,4
+  - type: Sprite
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: CraftWeaponChemicalCleaningSupplies
+    - id: CraftEquipmentChemicalCleaningSupplies
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseCraftChemicalCleaningKit
+  id: CraftWeaponChemicalCleaningSupplies
+  name: weaponry chemical cleaning supplies
+  description: Various industrial strength chemical cleaners made to isolate and remove radioactive grime. Be sure to wear proper safety gear while handling it. These are meant specifically for cleaning weaponry. Can be packed back into a bundle alongside a set of equipment cleaning supplies.
+  components:
+  - type: Sprite
+    state: weapon
+  - type: Craftable
+
+- type: entity
+  parent: BaseCraftChemicalCleaningKit
+  id: CraftEquipmentChemicalCleaningSupplies
+  name: equipment chemical cleaning supplies
+  description: A bottle of industrial strength chemical cleaner made to isolate and remove radioactive grime. Be sure to wear proper safety gear while handling it. These are meant specifically for cleaning equipment, such as armor. Can be packed back into a bundle alongside a set of weapon cleaning supplies.
+  components:
+  - type: Sprite
+    state: equipment
+  - type: Craftable
