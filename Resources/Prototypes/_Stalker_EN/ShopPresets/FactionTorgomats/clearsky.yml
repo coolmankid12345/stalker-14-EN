@@ -524,7 +524,7 @@
   - name: shop-category-tools
     priority: 14
     items:
-      CraftChemicalCleaningKit: 10000
+      CraftChemicalCleaningKit: 7500
 
   - name: Smokables #explained using D&D lifestyle expenses
     priority: 15

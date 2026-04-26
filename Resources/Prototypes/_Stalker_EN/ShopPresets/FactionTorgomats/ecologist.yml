@@ -446,7 +446,7 @@
     - name: shop-category-tools
       priority: 13
       items:
-        CraftChemicalCleaningKit: 12000
+        CraftChemicalCleaningKit: 9000
 
     - name: shop-category-entertainment
       priority: 14

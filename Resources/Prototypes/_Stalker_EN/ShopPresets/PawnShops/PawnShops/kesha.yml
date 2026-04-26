@@ -289,6 +289,8 @@
           # Containers
         MedkitCMSStalker: 1000 # T1
         MedkitGrizzlyStalker: 2000 # T2
+
+        StalkerGunCaseStandard: 2400 # bar sells these at 1200, so this is 2x
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
@@ -377,3 +379,7 @@
         STModuleSilencerSniperT2: 4600
         STModuleSilencerSMGT2: 4800
         STModuleGlockSwitch: 200
+    - name: shop-category-tools
+      priority: 12
+      items:
+        CraftChemicalCleaningKit: 12500
