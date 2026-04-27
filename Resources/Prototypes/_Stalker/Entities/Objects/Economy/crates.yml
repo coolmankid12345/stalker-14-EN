@@ -805,12 +805,12 @@
         - id: MedkitAI2
         - id: MedkitAI2
         - id: MedkitAI2
-        - id: MedkitAI2
-        - id: MedkitAI2
-        - id: MedkitAI2
-        - id: MedkitAI2
-        - id: MedkitAI2
-        - id: MedkitAI2
+        - id: MedkitAI2 # EN
+        - id: MedkitAI2 # EN
+        - id: MedkitAI2 # EN
+        - id: MedkitAI2 # EN
+        - id: MedkitAI2 # EN
+        - id: MedkitAI2 # EN
         - id: Defibrillator
       sound:
         path: /Audio/Effects/unwrap.ogg
