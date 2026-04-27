@@ -191,13 +191,13 @@
         STPillboxProbud: 300
         STPillboxAntirad: 200
         STPillboxShiza: 6000
-        # Crates
+        # Crates - 10% discount over individual medkits
         SaviorCrate: 2250
-        BulkArmyMedCrate: 2500
+        BulkArmyMedCrate: 2250
         #ArmySciCrate: 4500
-        BulkScienceCrate: 4375
-        BulkEliteCrate: 6000
-        BulkLARCrate: 7800
+        BulkScienceCrate: 3950
+        BulkEliteCrate: 5400
+        BulkLARCrate: 7000
 
     - name: shop-category-provisions
       priority: 5
