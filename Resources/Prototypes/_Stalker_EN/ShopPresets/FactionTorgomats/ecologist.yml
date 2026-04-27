@@ -300,6 +300,7 @@
     - name: shop-category-utilities
       priority: 10
       items:
+        PillCanister: 100
         HandLabeler: 75
         HuntingKnife: 250
         STCombatKnife: 25
