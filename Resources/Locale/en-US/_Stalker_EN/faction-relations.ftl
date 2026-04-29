@@ -2,6 +2,7 @@ st-faction-relations-program-name = Faction Relations
 
 # Relation type display names
 st-faction-relations-type-alliance = Alliance
+st-faction-relations-type-friendly = Friendly
 st-faction-relations-type-neutral = Neutral
 st-faction-relations-type-hostile = Hostile
 st-faction-relations-type-war = War
@@ -43,6 +44,9 @@ st-faction-relations-proposal-alliance-1 = Word is, {$factionA} extended a hand 
 st-faction-relations-proposal-alliance-2 = Interesting development. {$factionA} wants to ally with {$factionB}. The ball is in their court now.
 st-faction-relations-proposal-alliance-3 = {$factionA} is looking for friends in the Zone. They sent an alliance offer to {$factionB}. Could change everything if they agree.
 st-faction-relations-proposal-alliance-4 = Heard some chatter. {$factionA} proposed a full alliance to {$factionB}. The Zone holds its breath.
+
+# Alliance proposal sent
+st-faction-relations-proposal-friendly-1 = Heard that {$factionA} wants to be on friendly terms with {$factionB}. Lets see what happens!
 
 # Neutral proposal sent
 st-faction-relations-proposal-neutral-1 = Seems like {$factionA} wants to bury the hatchet with {$factionB}. They are proposing neutral terms. Whether {$factionB} agrees is another story.

@@ -9,6 +9,7 @@ namespace Content.Shared._Stalker_EN.FactionRelations;
 public static class STFactionRelationColors
 {
     public static readonly Color Alliance = Color.FromHex("#2d7019");
+    public static readonly Color Friendly = Color.FromHex("#2994e5");
     public static readonly Color Neutral = Color.FromHex("#b8a900");
     public static readonly Color Hostile = Color.FromHex("#c87000");
     public static readonly Color War = Color.FromHex("#a01000");
@@ -21,6 +22,7 @@ public static class STFactionRelationColors
         return type switch
         {
             STFactionRelationType.Alliance => Alliance,
+            STFactionRelationType.Friendly => Friendly,
             STFactionRelationType.Neutral => Neutral,
             STFactionRelationType.Hostile => Hostile,
             STFactionRelationType.War => War,

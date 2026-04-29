@@ -499,6 +499,7 @@ public sealed partial class BandsManagingWindow : FancyWindow
             };
 
             dropdown.AddItem(Loc.GetString("bands-managing-window-relation-alliance"), (int) STFactionRelationType.Alliance);
+            dropdown.AddItem(Loc.GetString("bands-managing-window-relation-friendly"), (int) STFactionRelationType.Friendly);
             dropdown.AddItem(Loc.GetString("bands-managing-window-relation-neutral"), (int) STFactionRelationType.Neutral);
             dropdown.AddItem(Loc.GetString("bands-managing-window-relation-hostile"), (int) STFactionRelationType.Hostile);
             dropdown.AddItem(Loc.GetString("bands-managing-window-relation-war"), (int) STFactionRelationType.War);
@@ -672,6 +673,7 @@ public sealed partial class BandsManagingWindow : FancyWindow
         return type switch
         {
             STFactionRelationType.Alliance => Loc.GetString("bands-managing-window-relation-alliance"),
+            STFactionRelationType.Friendly => Loc.GetString("bands-managing-window-relation-friendly"),
             STFactionRelationType.Neutral => Loc.GetString("bands-managing-window-relation-neutral"),
             STFactionRelationType.Hostile => Loc.GetString("bands-managing-window-relation-hostile"),
             STFactionRelationType.War => Loc.GetString("bands-managing-window-relation-war"),

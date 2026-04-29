@@ -194,6 +194,7 @@ public sealed class STFactionRelationCommand : IConsoleCommand
         relation = str switch
         {
             "alliance" => STFactionRelationType.Alliance,
+            "friendly" => STFactionRelationType.Friendly,
             "neutral" => STFactionRelationType.Neutral,
             "hostile" => STFactionRelationType.Hostile,
             "war" => STFactionRelationType.War,

@@ -21,6 +21,7 @@ public sealed partial class FactionRelationsUiFragment : BoxContainer
     private static readonly Dictionary<STFactionRelationType, (ResPath Icon, string Name, Color BgColor)> RelationCellStyles = new()
     {
         [STFactionRelationType.Alliance] = (new ResPath("/Textures/_Stalker_EN/Interface/FactionRelations/ally_white.png"), "Alliance", Color.FromHex("#2a5c2a")),
+        [STFactionRelationType.Friendly] = (new ResPath("/Textures/_Stalker_EN/Interface/FactionRelations/friendly_white.png"), "Friendly", Color.FromHex("#319bed")),
         [STFactionRelationType.Neutral] = (new ResPath("/Textures/_Stalker_EN/Interface/FactionRelations/neutral_white.png"), "Neutral", Color.FromHex("#8a7e30")),
         [STFactionRelationType.Hostile] = (new ResPath("/Textures/_Stalker_EN/Interface/FactionRelations/hostile_white.png"), "Hostile", Color.FromHex("#9a6030")),
         [STFactionRelationType.War] = (new ResPath("/Textures/_Stalker_EN/Interface/FactionRelations/war_white.png"), "War", Color.FromHex("#7a2a2a")),

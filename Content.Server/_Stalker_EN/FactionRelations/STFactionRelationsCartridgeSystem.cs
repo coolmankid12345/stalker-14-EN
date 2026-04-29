@@ -927,6 +927,7 @@ public sealed class STFactionRelationsCartridgeSystem : EntitySystem
     private static string GetRelationKey(STFactionRelationType type) => type switch
     {
         STFactionRelationType.Alliance => "alliance",
+        STFactionRelationType.Friendly => "friendly",
         STFactionRelationType.Neutral => "neutral",
         STFactionRelationType.Hostile => "hostile",
         STFactionRelationType.War => "war",
@@ -939,6 +940,7 @@ public sealed class STFactionRelationsCartridgeSystem : EntitySystem
     private static string GetRelationDisplayString(STFactionRelationType type) => type switch
     {
         STFactionRelationType.Alliance => "Alliance",
+        STFactionRelationType.Friendly => "Friendly",
         STFactionRelationType.Neutral => "Neutral",
         STFactionRelationType.Hostile => "Hostile",
         STFactionRelationType.War => "War",
@@ -950,6 +952,7 @@ public sealed class STFactionRelationsCartridgeSystem : EntitySystem
         return type switch
         {
             STFactionRelationType.Alliance => 0x2d7019,
+            STFactionRelationType.Friendly => 0x319bed,
             STFactionRelationType.Neutral => 0xb8a900,
             STFactionRelationType.Hostile => 0xc87000,
             STFactionRelationType.War => 0xa01000,
