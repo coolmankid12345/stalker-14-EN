@@ -122,7 +122,7 @@
         Radiation: 0.85
         Compression: 0.90
   - type: GrantsArtifactSlots
-    slots: 2 # EN
+    slots: 3 # EN
   - type: Craftable
 
 - type: entity
@@ -175,7 +175,7 @@
         Radiation: 0.85
         Compression: 0.90
   - type: GrantsArtifactSlots
-    slots: 2 # EN
+    slots: 3 # EN
   - type: Craftable
 
 - type: entity

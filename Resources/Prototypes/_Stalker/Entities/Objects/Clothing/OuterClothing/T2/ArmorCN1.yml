@@ -31,7 +31,7 @@
         Psy: 0.8
         Compression: 0.8
   - type: GrantsArtifactSlots
-    slots: 2 # EN
+    slots: 3 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.90
   # bonus
@@ -97,7 +97,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCN1
   - type: GrantsArtifactSlots
-    slots: 3 # EN
+    slots: 4 # EN
 
 - type: entity
   parent: ClothingHeadHelmetZN1

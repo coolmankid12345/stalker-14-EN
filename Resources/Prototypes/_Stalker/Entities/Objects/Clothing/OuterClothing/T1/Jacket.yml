@@ -29,7 +29,7 @@
         Compression: 0.95
         Radiation: 0.9
   - type: GrantsArtifactSlots
-    slots: 1 # EN
+    slots: 2 # EN
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -377,7 +377,7 @@
   - type: Contraband # EN
     severity: Monolith
   - type: GrantsArtifactSlots
-    slots: 3 # EN
+    slots: 4 # EN
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -442,7 +442,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
   - type: GrantsArtifactSlots # Stalker EN
-    slots: 2
+    slots: 3
 
 - type: entity
   parent: STClothingHeadHatBase

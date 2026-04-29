@@ -29,7 +29,7 @@
         Caustic: 0.85
         Shock: 0.9
   - type: GrantsArtifactSlots
-    slots: 2 # EN
+    slots: 3 # EN
   - type: Craftable
   - type: Tag
     tags:

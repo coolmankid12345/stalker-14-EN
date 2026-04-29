@@ -32,7 +32,7 @@
           Shock: 0.5
           Compression: 0.5
     - type: GrantsArtifactSlots
-      slots: 3 # EN
+      slots: 4 # EN
 
 - type: entity
   parent: STClothingHeadHatBase

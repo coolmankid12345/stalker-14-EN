@@ -25,7 +25,7 @@
         Piercing: 0.8
         Compression: 0.75
   - type: GrantsArtifactSlots
-    slots: 2 # EN
+    slots: 3 # EN
 
 - type: entity
   parent: ClothingOuterArmorPSZ9D

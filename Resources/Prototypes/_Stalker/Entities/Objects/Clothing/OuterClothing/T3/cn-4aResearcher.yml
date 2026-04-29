@@ -41,4 +41,4 @@
         Shock: 0.45
         Compression: 0.6
   - type: GrantsArtifactSlots
-    slots: 4 # EN
+    slots: 5 # EN

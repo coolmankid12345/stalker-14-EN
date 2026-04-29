@@ -27,7 +27,7 @@
         Heat: 0.35
         Radiation: 0.65
   - type: GrantsArtifactSlots
-    slots: 1 # EN
+    slots: 2 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.25
   - type: PressureProtection

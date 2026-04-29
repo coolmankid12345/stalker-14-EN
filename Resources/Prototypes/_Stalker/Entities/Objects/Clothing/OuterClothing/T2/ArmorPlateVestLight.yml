@@ -38,7 +38,7 @@
         Slash: 0.8
         Piercing: 0.8
   - type: GrantsArtifactSlots
-    slots: 1 # EN
+    slots: 2 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: Craftable
@@ -275,7 +275,7 @@
   - type: Contraband # EN
     severity: Monolith
   - type: GrantsArtifactSlots
-    slots: 4 # EN
+    slots: 5 # EN
 
 
 - type: entity
