@@ -26,7 +26,7 @@ public static class STFactionRelationColors
             STFactionRelationType.Neutral => Neutral,
             STFactionRelationType.Hostile => Hostile,
             STFactionRelationType.War => War,
-            _ => null,
+            _ => (Color?) null,
         };
     }
 }
