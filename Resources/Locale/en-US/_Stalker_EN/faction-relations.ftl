@@ -17,6 +17,12 @@ st-faction-relations-alliance-2 = Hey, listen up. {$factionA} and {$factionB} ma
 st-faction-relations-alliance-3 = Big news, brothers. {$factionA} and {$factionB} joined forces. If you are not with them, better watch your back out there.
 st-faction-relations-alliance-4 = Just picked up chatter on the radio. {$factionA} and {$factionB} are working together now. Stay sharp, stalker.
 
+# Friendly announcements
+st-faction-relations-friendly-1 = Stalkers, got word that {$factionA} and {$factionB} are now getting along. Expect less conflict between them for awhile.
+st-faction-relations-friendly-2 = Hey, listen up. {$factionA} and {$factionB} made a pact to not kill each other for a bit. Lets see how long that lasts.
+st-faction-relations-friendly-3 = Just got word that a loner saw {$factionA} and {$factionB} hanging out together. They seem to be friends now!
+st-faction-relations-friendly-4 = This just in, {$factionA} and {$factionB} are now friends! Will this eventually develop into a full blown alliance? Only time will tell.
+
 # Neutral announcements
 st-faction-relations-neutral-1 = Looks like {$factionA} and {$factionB} cooled things down. Back to neutral. Do not get too comfortable though.
 st-faction-relations-neutral-2 = Word around the campfire is {$factionA} and {$factionB} agreed to stop shooting each other. For now at least.
@@ -45,8 +51,11 @@ st-faction-relations-proposal-alliance-2 = Interesting development. {$factionA} 
 st-faction-relations-proposal-alliance-3 = {$factionA} is looking for friends in the Zone. They sent an alliance offer to {$factionB}. Could change everything if they agree.
 st-faction-relations-proposal-alliance-4 = Heard some chatter. {$factionA} proposed a full alliance to {$factionB}. The Zone holds its breath.
 
-# Alliance proposal sent
-st-faction-relations-proposal-friendly-1 = Heard that {$factionA} wants to be on friendly terms with {$factionB}. Lets see what happens!
+# Friendly proposal sent
+st-faction-relations-proposal-friendly-1 = Heard that {$factionA} want to be on friendly terms with {$factionB}. Lets see what happens!
+st-faction-relations-proposal-friendly-2 = {$factionA} extended a hand of friendship to {$factionB}. Now we wait for an answer.
+st-faction-relations-proposal-friendly-3 = {$factionA} is tired of conflict and wants to be friendly with {$factionB}. Time will tell if this pans out.
+st-faction-relations-proposal-friendly-4 = Heard some chatter. {$factionA} wants to play nice with {$factionB}. Let's see if they take the proposal.
 
 # Neutral proposal sent
 st-faction-relations-proposal-neutral-1 = Seems like {$factionA} wants to bury the hatchet with {$factionB}. They are proposing neutral terms. Whether {$factionB} agrees is another story.
@@ -76,6 +85,13 @@ st-faction-relations-accepted-alliance-2 = {$factionB} shook hands with {$factio
 st-faction-relations-accepted-alliance-3 = Good news or bad news, depends on where you stand. {$factionB} agreed to ally with {$factionA}. Big power move.
 st-faction-relations-accepted-alliance-4 = The deal is done. {$factionB} accepted the alliance from {$factionA}. The balance of power just shifted, stalker.
 
+# Friendly accepted
+st-faction-relations-accepted-friendly-1 = It is official, {$factionB} accepted {$factionA}'s offer to be friends. They wont be fighting as much for a bit!
+st-faction-relations-accepted-friendly-2 = Good or bad, {$factionB} is now acting friendly to {$factionA}.
+st-faction-relations-accepted-friendly-3 = {$factionB} is tired of conflict and is now friends with {$factionA}. Let's see how well they get along.
+st-faction-relations-accepted-friendly-4 = My buddy texed me that {$factionB} is now officially friends with {$factionA}. I give it about a week or two before that changes again. 
+
+
 # Neutral accepted
 st-faction-relations-accepted-neutral-1 = {$factionB} accepted {$factionA}'s peace offer. They are neutral now. A rare moment of sanity in the Zone.
 st-faction-relations-accepted-neutral-2 = Ceasefire confirmed. {$factionB} agreed to neutral terms with {$factionA}. Do not expect it to last forever though.
@@ -103,6 +119,12 @@ st-faction-relations-rejected-alliance-1 = {$factionB} turned down {$factionA}'s
 st-faction-relations-rejected-alliance-2 = No deal. {$factionB} rejected the alliance proposal from {$factionA}. Business as usual in the Zone.
 st-faction-relations-rejected-alliance-3 = {$factionB} was not interested in {$factionA}'s friendship. Alliance rejected. Some grudges run deep.
 st-faction-relations-rejected-alliance-4 = {$factionA} tried to ally with {$factionB}, but got turned down cold. The Zone remains divided.
+
+# Friendly rejected
+st-faction-relations-rejected-friendly-1 = {$factionB} turned down {$factionA}'s friendship bracelet. Harsh...but not surprising!
+st-faction-relations-rejected-friendly-2 = No dice, {$factionB} has no interest in being friends with {$factionA}.
+st-faction-relations-rejected-friendly-3 = {$factionB} was not interested in any sort of friendship with {$factionA}. Sheesh.
+st-faction-relations-rejected-friendly-4 = I bet 1000 roubles that {$factionB} would never accept being friends with {$factionA}. Let's just say im a little bit richer. 
 
 # Neutral rejected
 st-faction-relations-rejected-neutral-1 = {$factionB} rejected {$factionA}'s peace offer. They are not ready to forgive. The conflict continues.

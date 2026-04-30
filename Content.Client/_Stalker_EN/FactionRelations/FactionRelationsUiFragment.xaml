@@ -20,6 +20,11 @@
             <Label Text="Alliance" StyleClasses="LabelSmall"/>
 
             <TextureRect Stretch="KeepAspectCentered"
+                         TexturePath="/Textures/_Stalker_EN/Interface/FactionRelations/friendly.png"
+                         SetSize="16 16"/>
+            <Label Text="Friendly" StyleClasses="LabelSmall"/>
+
+            <TextureRect Stretch="KeepAspectCentered"
                          TexturePath="/Textures/_Stalker_EN/Interface/FactionRelations/neutral.png"
                          SetSize="16 16"/>
             <Label Text="Neutral" StyleClasses="LabelSmall"/>
