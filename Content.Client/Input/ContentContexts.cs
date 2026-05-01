@@ -77,6 +77,9 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.Lay); // Stalker-Changes-UI
             human.AddFunction(ContentKeyFunctions.STQuickEquipBolt); // Stalker-Changes-UI
             human.AddFunction(ContentKeyFunctions.STEjectMagazine); // Stalker-Changes-UI
+            human.AddFunction(ContentKeyFunctions.OpenOuterClothing); // Stalker EN change
+            human.AddFunction(ContentKeyFunctions.SmartEquipCloak); // Stalker EN change
+            human.AddFunction(ContentKeyFunctions.OpenCloak); // Stalker EN change
             human.AddFunction(ContentKeyFunctions.SmartEquipBackpack);
             human.AddFunction(ContentKeyFunctions.SmartEquipBelt);
             human.AddFunction(ContentKeyFunctions.SmartEquipPocket1);

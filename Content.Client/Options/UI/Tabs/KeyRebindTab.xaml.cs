@@ -322,6 +322,10 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.Lay);
             AddButton(ContentKeyFunctions.STQuickEquipBolt);
             AddButton(ContentKeyFunctions.STEjectMagazine);
+            // Stalker EN changes
+            AddButton(ContentKeyFunctions.OpenOuterClothing);
+            AddButton(ContentKeyFunctions.SmartEquipCloak);
+            AddButton(ContentKeyFunctions.OpenCloak);
             // stalker-changes-end
 
             foreach (var control in _keyControls.Values)

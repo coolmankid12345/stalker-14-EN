@@ -664,3 +664,17 @@ binds:
   type: State
   key: J
   # stalker-changes-ends
+  # stalker-en-changes
+- function: OpenOuterClothing
+  type: State
+  key: R
+  mod1: Alt
+- function: SmartEquipCloak
+  type: State
+  key: U
+  mod1: Shift  
+- function: OpenCloak
+  type: State
+  key: U
+  mod1: Control  
+  # stalker-en-changes-end
