@@ -677,4 +677,8 @@ binds:
   type: State
   key: U
   mod1: Control  
+- function: SmartEquipBoots
+  type: State
+  key: B
+  mod1: Control  
   # stalker-en-changes-end

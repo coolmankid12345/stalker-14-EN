@@ -80,6 +80,7 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.OpenOuterClothing); // Stalker EN change
             human.AddFunction(ContentKeyFunctions.SmartEquipCloak); // Stalker EN change
             human.AddFunction(ContentKeyFunctions.OpenCloak); // Stalker EN change
+            human.AddFunction(ContentKeyFunctions.SmartEquipBoots); // Stalker EN change
             human.AddFunction(ContentKeyFunctions.SmartEquipBackpack);
             human.AddFunction(ContentKeyFunctions.SmartEquipBelt);
             human.AddFunction(ContentKeyFunctions.SmartEquipPocket1);

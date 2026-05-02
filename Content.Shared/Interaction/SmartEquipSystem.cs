@@ -44,6 +44,7 @@ public sealed class SmartEquipSystem : EntitySystem
             .Bind(ContentKeyFunctions.SmartEquipSuitStorage, InputCmdHandler.FromDelegate(HandleSmartEquipSuitStorage, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.SmartEquipOuterClothing, InputCmdHandler.FromDelegate(HandleSmartEquipOuterClothing, handle: false, outsidePrediction: false))  //Stalker-Changes
             .Bind(ContentKeyFunctions.SmartEquipCloak, InputCmdHandler.FromDelegate(HandleSmartEquipCloak, handle: false, outsidePrediction: false)) //Stalker-EN-Changes
+            .Bind(ContentKeyFunctions.SmartEquipBoots, InputCmdHandler.FromDelegate(HandleSmartEquipBoots, handle: false, outsidePrediction: false)) //Stalker-EN-Changes
             .Register<SmartEquipSystem>();
     }
 
@@ -258,6 +259,10 @@ public sealed class SmartEquipSystem : EntitySystem
     private void HandleSmartEquipCloak(ICommonSession? session)
     {
         HandleSmartEquip(session, "cloak");
+    }
+    private void HandleSmartEquipBoots(ICommonSession? session)
+    {
+        HandleSmartEquip(session, "shoes");
     }
     //EN-Changes-End
     private void HandleSmartEquipOuterClothing(ICommonSession? session)
