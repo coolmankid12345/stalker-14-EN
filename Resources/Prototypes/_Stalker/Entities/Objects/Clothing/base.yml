@@ -297,15 +297,17 @@
   suffix: ST
   name: база плащей
   components:
-  - type: Storage
-    maxItemSize: Tiny
-    grid:
-      - 0,0,0,1
-      - 2,0,2,1
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
+  #- type: Storage    Stalker EN - (Decorative Cloaks) Remove all stats from coats.
+  #  maxItemSize: Tiny
+  #  grid:
+  #    - 0,0,0,1
+  #    - 2,0,2,1
+  #- type: UserInterface
+  #  interfaces:
+  #    enum.StorageUiKey.Key:
+  #      type: StorageBoundUserInterface
+  - type: STWeight # Stalker EN - (Decorative Cloaks) Give cloaks a base weight.
+    self: 1.5 # Stalker EN
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}

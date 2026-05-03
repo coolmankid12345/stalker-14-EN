@@ -5,8 +5,6 @@
   suffix: ST, T2, Reward, Halloween
   description: A standard leather coat often seen in the zone. The edges are frayed and grime clings to it; fresh blood is spattered across it.
   components:
-  - type: STWeight
-    self: 1.5
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/cloak/coat_stalker_bloody.rsi
   - type: Clothing
@@ -21,8 +19,6 @@
   suffix: ST, T2, Reward, Halloween
   description: A standard leather coat often seen in the zone. The black leather is crudely painted with a web-like pattern.
   components:
-  - type: STWeight
-    self: 1.5
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/cloak/coat_stalker_eerie.rsi
   - type: Clothing
@@ -52,37 +48,24 @@
   suffix: ST, T2
   description: A durable leather coat used by smugglers of the zone, extra pockets have been added to help with carrying supplies. It lacks much protection.
   components:
-  - type: STWeight
-    self: 5
-  - type: Armor
-    armorClass: 2
-    modifiers:
-      coefficients:
-        Blunt: 1
-        Slash: 0.95
-        Piercing: 1
-        Heat: 0.95
-        Cold: 0.95
-  - type: ExplosionResistance
-    damageCoefficient: 0.95
-  - type: Storage
-    maxItemSize: Large
-    grid:
-    - 2,0,2,0
-    - 4,0,4,0
-    - 6,0,6,0
-    - 1,1,1,1
-    - 3,1,3,1
-    - 5,1,5,1
-    - 7,1,7,1
-    - 0,3,1,4
-    - 3,3,5,4
-    - 7,3,8,4
-    quickInsert: true
-    areaInsert: true
-    blacklist:
-      tags:
-      - STArtifact
+  #- type: Storage    Decorative Cloaks - this is a pretty cool grid, so I figured I'd leave it in the code, in case we ever want to add back cloak stats.
+  #  maxItemSize: Large
+  #  grid:
+  #  - 2,0,2,0
+  #  - 4,0,4,0
+  #  - 6,0,6,0
+  #  - 1,1,1,1
+  #  - 3,1,3,1
+  #  - 5,1,5,1
+  #  - 7,1,7,1
+  #  - 0,3,1,4
+  #  - 3,3,5,4
+  #  - 7,3,8,4
+  #  quickInsert: true
+  #  areaInsert: true
+  #  blacklist:
+  #    tags:
+  #    - STArtifact
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/cloak/smuggler_coat.rsi
   - type: Clothing
@@ -97,22 +80,6 @@
   suffix: ST, T2, Bandit
   description: A modified bandit jacket reinforced with durable leather. Made in-house by the bandits themselves.
   components:
-  - type: STWeight
-    self: 1.5
-  - type: Storage
-    maxItemSize: Tiny
-    grid:
-      - 0,0,1,1
-      - 3,0,4,1
-  - type: Armor
-    armorClass: 2
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.80
-        Piercing: 0.85
-        Heat: 0.95
-        Cold: 0.95
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/cloak/redline.rsi
   - type: Clothing
@@ -142,18 +109,6 @@
   suffix: ST, T2
   description: Handzone by one of the oldest neutrals to be given as gifts for her fellow teachers
   components:
-  - type: STWeight
-    self: 1.5
-  - type: Armor
-    armorClass: 2
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Heat: 0.95
-        Cold: 0.95
-  - type: ExplosionResistance
-    damageCoefficient: 0.95
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/cloak/neutral_poncho.rsi
   - type: Clothing
@@ -186,18 +141,6 @@
   suffix: ST, T2
   description: One out of a series of ponchos made of a mix of synthetic fabrics arranged by Duty artisans.
   components:
-  - type: STWeight
-    self: 1.5
-  - type: Armor
-    armorClass: 2
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Heat: 0.95
-        Cold: 0.95
-  - type: ExplosionResistance
-    damageCoefficient: 0.95
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/cloak/duty_co_poncho.rsi
   - type: Clothing

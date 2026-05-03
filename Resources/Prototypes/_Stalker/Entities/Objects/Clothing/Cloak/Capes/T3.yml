@@ -10,17 +10,17 @@
     sprite: _Stalker/Objects/Clothing/cloak/coat_stalker.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/coat_stalker.rsi
-  - type: STWeight
-    self: 7.5
+  #- type: STWeight    Stalker EN - (Decorative Cloaks)
+  #  self: 7.5
   - type: Craftable
-  - type: Armor
-    armorClass: 2
-    modifiers:
-      coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.90
-        Heat: 0.85
+  #- type: Armor    Stalker EN - (Decorative Cloaks)
+  #  armorClass: 2
+  #  modifiers:
+  #    coefficients:
+  #      Blunt: 0.85
+  #      Slash: 0.85
+  #      Piercing: 0.90
+  #      Heat: 0.85
 
 
 # Охотничий Плащ
@@ -31,33 +31,33 @@
   description: плащ, что сделан специально для охоты в экстремальных условиях, например в условиях ЧЗО, окрашен в зелёный камуфляж.
   suffix: ST, T3
   components:
-  - type: STWeight
-    self: 4
+  #- type: STWeight    Stalker EN - (Decorative Cloaks)
+  #  self: 4
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/hunterskiy.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/hunterskiy.rsi
-  - type: Storage
-    maxItemSize: Normal
-    blacklist:
-      tags:
-      - STArtifact
-    grid:
-      - 0,4,0,5
-      - 0,0,0,2
-      - 2,4,2,5
-      - 2,1,3,2
-      - 4,4,4,5
-      - 5,1,6,2
-      - 6,4,6,5
-      - 8,4,8,5
-      - 8,0,8,2
-  - type: ExplosionResistance
-    damageCoefficient: 0.85
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
+  #- type: Storage    Stalker EN - (Decorative Cloaks)
+  #  maxItemSize: Normal
+  #  blacklist:
+  #    tags:
+  #    - STArtifact
+  #  grid:
+  #    - 0,4,0,5
+  #    - 0,0,0,2
+  #    - 2,4,2,5
+  #    - 2,1,3,2
+  #    - 4,4,4,5
+  #    - 5,1,6,2
+  #    - 6,4,6,5
+  #    - 8,4,8,5
+  #    - 8,0,8,2
+  #- type: ExplosionResistance
+  #  damageCoefficient: 0.85
+  #- type: UserInterface
+  #  interfaces:
+  #    enum.StorageUiKey.Key:
+  #      type: StorageBoundUserInterface
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetLoyalistCoatlight
     requiredSlot:
@@ -95,41 +95,41 @@
   description: Плащ, сделанный в условиях зоны, на удивление качественная работа, сделан из качественной кожи и прошит кевларом,кое-где вставлены бронепластины, окрашен в необычный камуфляж.
   suffix: ST, T3
   components:
-  - type: STWeight
-    self: 6
+  #- type: STWeight    Stalker EN - (Decorative Cloaks)
+  #  self: 6
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/kevlaroviy.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/kevlaroviy.rsi
-  - type: Armor
-    armorClass: 2
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
-  - type: Storage
-    maxItemSize: Normal
-    blacklist:
-      tags:
-      - STArtifact
-    grid:
-      - 0,4,0,5
-      - 0,0,0,2
-      - 2,4,2,5
-      - 2,1,3,2
-      - 4,4,4,5
-      - 5,1,6,2
-      - 6,4,6,5
-      - 8,4,8,5
-      - 8,0,8,2
-  - type: ExplosionResistance
-    damageCoefficient: 0.85
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
+  #- type: Armor    Stalker EN - (Decorative Cloaks)
+  #  armorClass: 2
+  #  modifiers:
+  #    coefficients:
+  #      Blunt: 0.9
+  #      Slash: 0.9
+  #      Piercing: 0.9
+  #      Heat: 0.9
+  #- type: Storage
+  #  maxItemSize: Normal
+  #  blacklist:
+  #    tags:
+  #    - STArtifact
+  #  grid:
+  #    - 0,4,0,5
+  #    - 0,0,0,2
+  #    - 2,4,2,5
+  #    - 2,1,3,2
+  #    - 4,4,4,5
+  #    - 5,1,6,2
+  #    - 6,4,6,5
+  #    - 8,4,8,5
+  #    - 8,0,8,2
+  #- type: ExplosionResistance
+  #  damageCoefficient: 0.85
+  #- type: UserInterface
+  #  interfaces:
+  #    enum.StorageUiKey.Key:
+  #      type: StorageBoundUserInterface
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetLoyalistCoat
     requiredSlot:
@@ -173,34 +173,34 @@
     equipDelay: 8
     slots:
     - outerClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 2
-        Slash: 2
-        Piercing: 2
-        Heat: 2
-  - type: Storage
-    maxItemSize: Normal
-    blacklist:
-      tags:
-      - STArtifact
-    grid:
-      - 0,4,0,5
-      - 0,0,0,2
-      - 2,4,2,5
-      - 2,1,3,2
-      - 4,4,4,5
-      - 5,1,6,2
-      - 6,4,6,5
-      - 8,4,8,5
-      - 8,0,8,2
-  - type: ExplosionResistance
-    damageCoefficient: 0.85
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
+  #- type: Armor    Stalker EN - (Decorative Cloaks)
+  #  modifiers:
+  #    coefficients:
+  #      Blunt: 2
+  #      Slash: 2
+  #      Piercing: 2
+  #      Heat: 2
+  #- type: Storage
+  #  maxItemSize: Normal
+  #  blacklist:
+  #    tags:
+  #    - STArtifact
+  #  grid:
+  #    - 0,4,0,5
+  #    - 0,0,0,2
+  #    - 2,4,2,5
+  #    - 2,1,3,2
+  #    - 4,4,4,5
+  #    - 5,1,6,2
+  #    - 6,4,6,5
+  #    - 8,4,8,5
+  #    - 8,0,8,2
+  #- type: ExplosionResistance
+  #  damageCoefficient: 0.85
+  #- type: UserInterface
+  #  interfaces:
+  #    enum.StorageUiKey.Key:
+  #      type: StorageBoundUserInterface
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetGrehCoat
     requiredSlot:
@@ -214,9 +214,9 @@
   - type: Tag
     tags:
     - GrehCanTakeOnly
-  - type: ClothingSpeedModifier
-    walkModifier: 1.2
-    sprintModifier: 1.2
+  #- type: ClothingSpeedModifier    Stalker EN - (Decorative Cloaks)
+  #  walkModifier: 1.2
+  #  sprintModifier: 1.2
 # настойщий Верный Греха
 
 - type: entity
@@ -233,39 +233,39 @@
     equipDelay: 8
     slots:
     - outerClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.4
-        Heat: 0.4
-      flatReductions:
-        Blunt: 5
-        Slash: 5
-        Piercing: 5
-        Heat: 5
-  - type: Storage
-    maxItemSize: Normal
-    blacklist:
-      tags:
-      - STArtifact
-    grid:
-      - 0,4,0,5
-      - 0,0,0,2
-      - 2,4,2,5
-      - 2,1,3,2
-      - 4,4,4,5
-      - 5,1,6,2
-      - 6,4,6,5
-      - 8,4,8,5
-      - 8,0,8,2
-  - type: ExplosionResistance
-    damageCoefficient: 0.85
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
+  #- type: Armor    Stalker EN - (Decorative Cloaks)
+  #  modifiers:
+  #    coefficients:
+  #      Blunt: 0.4
+  #      Slash: 0.4
+  #      Piercing: 0.4
+  #      Heat: 0.4
+  #    flatReductions:
+  #      Blunt: 5
+  #      Slash: 5
+  #      Piercing: 5
+  #      Heat: 5
+  #- type: Storage
+  #  maxItemSize: Normal
+  #  blacklist:
+  #    tags:
+  #    - STArtifact
+  #  grid:
+  #    - 0,4,0,5
+  #    - 0,0,0,2
+  #    - 2,4,2,5
+  #    - 2,1,3,2
+  #    - 4,4,4,5
+  #    - 5,1,6,2
+  #    - 6,4,6,5
+  #    - 8,4,8,5
+  #    - 8,0,8,2
+  #- type: ExplosionResistance
+  #  damageCoefficient: 0.85
+  #- type: UserInterface
+  #  interfaces:
+  #    enum.StorageUiKey.Key:
+  #      type: StorageBoundUserInterface
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetGrehCoat
     requiredSlot:
