@@ -32,7 +32,7 @@
           startingItem: MPLMag32
           insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
           ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-          priority: 4
+          priority: 4  #stalker EN change
           whitelist:
             tags:
             - MagazineMPL
