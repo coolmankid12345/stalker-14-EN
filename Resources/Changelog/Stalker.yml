@@ -2940,5 +2940,12 @@
   id: 323
   time: '2026-05-04T22:50:48.627351+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/913
+- author: Daunter131
+  changes:
+  - message: SMGs silencer slot taking higher priority than magazines.
+    type: Fix
+  id: 324
+  time: '2026-05-05T22:24:06.148110+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/914
 Name: Stalker
 Order: -1
