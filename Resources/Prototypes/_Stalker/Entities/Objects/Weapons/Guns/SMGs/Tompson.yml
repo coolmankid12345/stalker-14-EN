@@ -34,7 +34,7 @@
         startingItem: BaseTommyGunMag
         insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
         ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-        priority: 2
+        priority: 4
         whitelist:
           tags:
           - MagazineTommyGun

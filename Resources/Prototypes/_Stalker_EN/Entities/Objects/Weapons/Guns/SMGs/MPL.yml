@@ -32,7 +32,7 @@
           startingItem: MPLMag32
           insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
           ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-          priority: 2
+          priority: 4
           whitelist:
             tags:
             - MagazineMPL
@@ -62,4 +62,4 @@
   name: Walther "MPL"
   description: A 9mm submachine gun made in west Germany. Quite durable, so not ill-fitted to the zone's conditions. This one has been modified to chamber mp40 magazines.
 
-  
+
