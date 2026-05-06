@@ -187,6 +187,9 @@
         Defibrillator: 700
         MedkitElite: 500
         MedkitLAR: 650
+        STPillboxProbud: 350
+        STPillboxAntirad: 200
+        STPillboxShiza: 6500
         # Crates
         SaviorCrate: 2150
         BulkArmyMedCrate: 2500
