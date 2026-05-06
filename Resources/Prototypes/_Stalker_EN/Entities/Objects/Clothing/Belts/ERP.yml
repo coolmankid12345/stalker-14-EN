@@ -7,9 +7,9 @@
   - type: STWeight
     self: 6
   - type: Sprite
-    sprite: _Stalker_EN/Objects/Clothing/cloak/emergency_resource_pouch.rsi
+    sprite: _Stalker_EN/Objects/Clothing/belt/emergency_resource_pouch.rsi
   - type: Clothing
-    sprite: _Stalker_EN/Objects/Clothing/cloak/emergency_resource_pouch.rsi
+    sprite: _Stalker_EN/Objects/Clothing/belt/emergency_resource_pouch.rsi
   - type: Storage
     maxItemSize: Large
     grid:
