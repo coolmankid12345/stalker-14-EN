@@ -258,7 +258,7 @@
         ClothingOuterCoatStalker: 1000
         ClothingOuterCoatLoyalistLight: 2500
         ClothingOuterCoatLoyalist: 3000
-        ClothingOuterCoatEmergencyResourcePouch: 3500
+        #ClothingOuterCoatEmergencyResourcePouch: 3500 TO BE REMOVED by maintainer - the ERP has been turned into a belt. Since the old coat prototype is being deleted and migrated, I had to comment this line.
           # Gasmasks
         ClothingMaskXoma: 300 # T1
         STClothingMaskGasPPM88: 1000 # T2

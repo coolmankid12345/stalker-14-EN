@@ -103,22 +103,6 @@
     - Hair
 
 - type: entity
-  parent: STClothingCapeBase
-  id: ClothingOuterCoatEmergencyResourcePouch
-  name: Emergency Resource Pouch
-  description: This vest was developed by 'NIICHAZ' scientists to store equipment and supplies. It is very comfortable to wear with the SSP, although it can also be worn with other suits. Behind the vest, there is a tag on which it says:Developed by the 'NIICHAZ' scientist Ivan Voronov.
-  components:
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Clothing/cloak/emergency_resource_pouch.rsi
-  - type: Clothing
-    sprite: _Stalker_EN/Objects/Clothing/cloak/emergency_resource_pouch.rsi
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-      storagebase: !type:Container
-        ents: []
-
-- type: entity
   parent: ClothingOuterCoatKevlarMonolith
   id: ClothingOuterCoatKevlarMonolithClean
   name: кевларовый плащ монолита
