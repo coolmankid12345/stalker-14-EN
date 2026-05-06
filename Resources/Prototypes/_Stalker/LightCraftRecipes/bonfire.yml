@@ -123,7 +123,7 @@
     secondIngredient: STBaseTreeT1RSItrees
     keepFirst: true
     exactSecond: false
-    time: 5
+    time: 10
 
 - type: lightCraftingRecipe
   id: CraftLogFromT1Type2
@@ -135,7 +135,7 @@
     secondIngredient: STBaseTreeT1RSItreenew
     keepFirst: true
     exactSecond: false
-    time: 5
+    time: 10
 
 - type: lightCraftingRecipe
   id: CraftLogFromT1Large
@@ -148,7 +148,7 @@
     secondIngredient: STBaseTreeT1Large
     keepFirst: true
     exactSecond: false
-    time: 5
+    time: 10
 
 - type: lightCraftingRecipe
   id: CraftLogFromT2Type1
@@ -160,7 +160,7 @@
     secondIngredient: STBaseTreeT2RSItrees
     keepFirst: true
     exactSecond: false
-    time: 5
+    time: 10
 
 - type: lightCraftingRecipe
   id: CraftLogFromT2Type2
@@ -172,7 +172,7 @@
     secondIngredient: STBaseTreeT2RSItreenew
     keepFirst: true
     exactSecond: false
-    time: 5
+    time: 10
 
 - type: lightCraftingRecipe
   id: CraftLogFromT3Red
@@ -184,7 +184,7 @@
     secondIngredient: STBaseTreeT3RSIred
     keepFirst: true
     exactSecond: false
-    time: 5
+    time: 15
 
 - type: lightCraftingRecipe
   id: CraftLogFromT3RedLarge
@@ -197,7 +197,7 @@
     secondIngredient: STBaseTreeT3RSIredlarge
     keepFirst: true
     exactSecond: false
-    time: 5
+    time: 15
 
 - type: lightCraftingRecipe
   id: CraftLogFromT4Willow
@@ -210,7 +210,7 @@
     secondIngredient: STBaseTreeT4RSIwillow
     keepFirst: true
     exactSecond: false
-    time: 5
+    time: 20
 
 - type: lightCraftingRecipe
   id: CraftLogFromTree5
@@ -221,7 +221,7 @@
     secondIngredient: STLogStalkerT1
     keepFirst: true
     exactSecond: false
-    time: 3
+    time: 6
 
 - type: lightCraftingRecipe
   id: CraftLogFromTree6
@@ -232,7 +232,7 @@
     secondIngredient: STLogStalkerT2
     keepFirst: true
     exactSecond: false
-    time: 3
+    time: 6
 
 - type: lightCraftingRecipe
   id: CraftLogFromTree7
@@ -243,7 +243,7 @@
     secondIngredient: STLogStalkerT3
     keepFirst: true
     exactSecond: false
-    time: 3
+    time: 6
 
 - type: lightCraftingRecipe
   id: CraftLogFromTree8
@@ -254,7 +254,7 @@
     secondIngredient: STLogStalkerT4
     keepFirst: true
     exactSecond: false
-    time: 3
+    time: 6
 
 ## Деревья спонсоры
 - type: lightCraftingRecipe

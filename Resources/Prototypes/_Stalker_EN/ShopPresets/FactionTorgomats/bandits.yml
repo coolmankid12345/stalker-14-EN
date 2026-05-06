@@ -156,6 +156,8 @@
       priority: 1
       items:
         # Melee
+        STCombatKnife: 25
+        STButterflyKnife: 50
         StalkerBallBat: 50
         # Pistols
         STWeaponPistolC96: 400 # literally a worse HiPower :skull:
@@ -176,7 +178,8 @@
         STWeaponRifleL85: 1500
         STWeaponRifleAKS74: 2700
         # SMGs
-        STWeaponSMGMP5: 1700
+        STWeaponSMGMPLPahanka: 1700
+        STWeaponSMGUzi: 1900
         STWeaponSMGPPSh41Band: 1600
         STWeaponSMGMP40: 650
         STWeaponSMGPP19: 2200
@@ -197,10 +200,11 @@
         556Mag30: 320
           # Smg
         MP40Mag: 100
-        BaseMP5Mag: 175
         PPSHDrum: 1275
         BasePPSHMag: 230
         BizonMag: 1070
+        UziMag32: 340
+        MPLMag32: 340
           # Other
         BasePMMag: 10
         HiPowerMag13: 90
@@ -376,7 +380,6 @@
       priority: 10
       items:
         STSkinsKitBandits: 500
-        STCombatKnife: 25
         BoxZiptie: 50
         BoxSafebox: 300
         CheapLighter: 5

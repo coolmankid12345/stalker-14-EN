@@ -26,7 +26,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 480
+        damage: 750
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -99,7 +99,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 480
+        damage: 750
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -154,7 +154,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 480
+        damage: 750
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -209,7 +209,7 @@
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 480
+        damage: 750
       behaviors:
       - !type:PlaySoundBehavior
         sound:

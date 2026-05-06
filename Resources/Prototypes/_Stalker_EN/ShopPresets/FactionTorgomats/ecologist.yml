@@ -188,10 +188,10 @@
         MedkitElite: 500
         MedkitLAR: 650
         # Crates
-        SaviorCrate: 2250
+        SaviorCrate: 2150
         BulkArmyMedCrate: 2500
         #ArmySciCrate: 4500
-        BulkScienceCrate: 4375
+        BulkScienceCrate: 4175
         BulkEliteCrate: 6000
         BulkLARCrate: 7800
 
@@ -239,6 +239,7 @@
           # Containers
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
+        PillCanister: 150
           # Belts
         ClothingBeltBandolierStalker: 50
         ClothingBeltMedicalStalker: 75
@@ -308,10 +309,6 @@
         STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
-        Paper: 2
-        Pen: 5
-        BoxFolderClipboardEmpty: 20 # Clipboard
-        STEcoClipboard: 20 # Cool Clipboard
         Binocularus1: 750
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
@@ -332,6 +329,7 @@
         STElasticRubberGreen: 1
         STElasticRubberBlue: 1
         FoldedFlagMili: 250
+        HandLabeler: 75
         # Cameras
         STCamera: 750
         STCameraVintage: 1200
@@ -339,8 +337,17 @@
         STCameraFilm: 150
         STLoggingChainsaw: 1000
 
-    - name: shop-category-customization
+    - name: shop-category-paperwork
       priority: 11
+      items:
+        fieldScientistPermit: 1500
+        Paper: 2
+        Pen: 5
+        BoxFolderClipboardEmpty: 20 # Clipboard
+        STEcoClipboard: 20 # Cool Clipboard
+
+    - name: shop-category-customization
+      priority: 12
       items:
         # HAT
         ClothingHeadHatBeaniehat: 10
@@ -427,7 +434,7 @@
         ClothingShoesBootsCombat: 30
 
     - name: shop-category-blueprints-research-equipment
-      priority: 12
+      priority: 13
       items:
         # Tech cards
         TechCardCalibrationDosimeter: 100
@@ -436,6 +443,7 @@
         STDetectorAD3Blueprint: 3000
         STZoneArtifactDetectorBushBlueprint: 3000
         ClothingEarsPsyHelmBlueprint: 5000
+        ClothingOuterArmorSevaSciMauveBlueprint: 2000
         STZoneArtifactDetectorResponseBlueprint: 6000
         STZoneArtifactDetectorSpruceBlueprint: 12000
         DetectorVelesBlueprint: 10000
@@ -444,12 +452,12 @@
         # STZoneArtifactDetectorWolfhoundBlueprint: 40000 Disabled for now
 
     - name: shop-category-tools
-      priority: 13
+      priority: 14
       items:
-        CraftChemicalCleaningKit: 12000
+        CraftChemicalCleaningKit: 2500
 
     - name: shop-category-entertainment
-      priority: 14
+      priority: 15
       items:
         # Dices
         DiceBag: 20
@@ -465,7 +473,7 @@
         PokerCardBin: 150
 
     - name: Smokables #explained using D&D lifestyle expenses
-      priority: 15
+      priority: 16
       items:
         CigPackBub: 250 #comfortable
         CigPackGreen: 150 #poor
@@ -477,7 +485,7 @@
         CigPackKosmos: 100 #squalid
 
     - name: Gardening
-      priority: 16
+      priority: 17
       items:
         HydroponicsToolScythe: 200
         HydroponicsToolMiniHoe: 70
