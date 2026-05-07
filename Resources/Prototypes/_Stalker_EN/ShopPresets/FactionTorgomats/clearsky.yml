@@ -285,6 +285,7 @@
       DrinkLemonadehBottleFull: 50
       STFoodMeatSalami: 350
       HerculesBottleFull: 200
+      DrinkGlass: 50
 
   - name: shop-category-armor
     priority: 6
@@ -524,7 +525,7 @@
   - name: shop-category-tools
     priority: 14
     items:
-      CraftChemicalCleaningKit: 10000
+      CraftChemicalCleaningKit: 2000
 
   - name: Smokables #explained using D&D lifestyle expenses
     priority: 15
