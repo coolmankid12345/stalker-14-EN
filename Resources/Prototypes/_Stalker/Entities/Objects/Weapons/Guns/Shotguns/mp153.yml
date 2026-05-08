@@ -68,9 +68,17 @@
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
   - type: STWeight
     self: 3
+  - type: BallisticAmmoProvider
+    capacity: 7
+  - type: Gun
+    minAngle: 30
+    maxAngle: 40
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 2.8
 
-- type: entity
-  parent: STBaseWeaponShotgunMP153
+- type: entityS
+  parent: STWeaponShotgunBenelliM4Super90
   id: STWeaponShotgunBenelliM4Super90Seraphim
   name: benelli M4 "Seraphim"
   description: Ritual weapon of seraphim hunters. Decorated with amulets and marks of victories over anomalies.
