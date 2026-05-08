@@ -100,6 +100,6 @@
     projectileClass: 0
     damage:
       types:
-      Blunt: 1
+        Blunt: 1
   - type: StaminaDamageOnCollide
     damage: 0
