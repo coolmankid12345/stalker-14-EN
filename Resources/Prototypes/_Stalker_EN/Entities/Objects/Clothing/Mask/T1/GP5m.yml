@@ -1,0 +1,25 @@
+- type: entity
+  parent: ClothingMaskGP5
+  id: ClothingMaskGP5Modern
+  suffix: ST, T2, Caustic
+  name: GP-5M
+  description: LoremIpsum
+  components:
+  - type: Tag
+    tags:
+      - BlockMask
+  - type: Sprite
+    sprite: _Stalker_EN\Objects\Clothing\mask\gp5m.rsi
+  - type: Clothing
+    sprite: _Stalker_EN\Objects\Clothing\mask\gp5m.rsi
+  - type: Armor
+    modifiers:
+      #coefficients: # EN start
+        #Caustic: 0.85
+        #Radiation: 0.9
+      flatReductions:
+        Radiation: 0.75 # EN end - made into a T1
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
