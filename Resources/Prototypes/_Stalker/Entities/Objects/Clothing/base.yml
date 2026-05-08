@@ -320,9 +320,9 @@
   - type: RepositoryItem
     categoryName: repository-equipment-category
   - type: Item
-    size: Large
+    size: Normal # Stalker EN - (Decorative Cloaks) Without stats, cloaks don't need to be large.
     shape:
-      - 0,0,3,2
+      - 0,0,2,1 # Stalker EN - (Decorative Cloaks)
   - type: Tag
     tags:
     - BlockCloak
