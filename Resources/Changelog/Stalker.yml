@@ -2956,5 +2956,12 @@
   id: 325
   time: '2026-05-07T21:41:26.264391+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/916
+- author: Noguchi47
+  changes:
+  - message: Renegade Mask now hides identity
+    type: Tweak
+  id: 326
+  time: '2026-05-08T19:32:37.803160+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/917
 Name: Stalker
 Order: -1
