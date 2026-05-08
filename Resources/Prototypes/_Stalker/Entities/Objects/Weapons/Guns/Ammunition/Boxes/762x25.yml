@@ -150,7 +150,7 @@
     - type: BallisticAmmoProvider
       proto: STCartridge725Blank
       whitelist:
-      tags:
+        tags:
         - STCartridge725Blank
     - type: Sprite
       layers:

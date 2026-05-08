@@ -216,7 +216,7 @@
     - type: BallisticAmmoProvider
       proto: Cartridge556Blank
       whitelist:
-      tags:
+        tags:
         - Cartridge556Blank
     - type: Sprite
       layers:
