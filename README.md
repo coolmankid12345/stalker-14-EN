@@ -5,7 +5,7 @@ It is based on the [space-syndicate/space-station-14](https://github.com/space-s
 
 ## Links
 
-[Our Discord](https://discord.gg/pu6DEPGjsN) | [Our Wiki](https://wiki.station14.ru) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Client without Steam](https://spacestation14.io/about/nightlies/) | [Main Repository](https://github.com/stalker14-project/stalker14) | [Support the Project](https://boosty.to/stalkerss14)
+[Our Discord](https://discord.gg/23vBbRqpWG) | [Our Wiki](https://wiki.station14.ru) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Client without Steam](https://spacestation14.io/about/nightlies/) | [Main Repository](https://github.com/stalker14-project/stalker14) | [Support the Project](https://boosty.to/stalkerss14)
 
 ## Contribute
 
