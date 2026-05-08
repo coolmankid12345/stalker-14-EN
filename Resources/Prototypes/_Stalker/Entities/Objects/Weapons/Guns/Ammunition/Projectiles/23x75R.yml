@@ -51,6 +51,18 @@
   - type: StaminaDamageOnCollide
     damage: 90
 
+#Stalker EN
+- type: entity
+  id: BulletShotgunShrapnel25Blank
+  name: Cartridge (shrapnel25)  Blank
+  parent: STPellet7mm
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: STPellet7mmBlank
+    count: 8
+    spread: 12
+
 #- type: entity
 #  id: BulletShotgunZvezda
 #  name: bullet Zvezda

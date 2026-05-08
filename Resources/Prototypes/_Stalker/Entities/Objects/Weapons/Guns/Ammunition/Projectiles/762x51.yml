@@ -54,3 +54,16 @@
     damage:
       types:
         Piercing: 40
+
+#Stalker EN
+- type: entity
+  id: Bullet751Blank
+  name: Cartridge (7.62х51) Blank
+  parent: Bullet751M80
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Blunt: 1

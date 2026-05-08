@@ -54,3 +54,17 @@
     damage:
       types:
         Piercing: 26
+
+#Stalker EN
+- type: entity
+  id: Bullet919Blank
+  name: Cartridge (9х19) Blank
+  parent: Bullet919PSOGJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Blunt: 1
+

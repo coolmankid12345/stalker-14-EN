@@ -55,6 +55,20 @@
       types:
         Piercing: 25
 
+#Stalker EN
+- type: entity
+  id: Bullet918Blank
+  name: Cartridge (9х18) Blank
+  parent: Bullet918PGJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Blunt: 1
+
+
 # Anomaly
 
 # - type: entity

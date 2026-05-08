@@ -37,4 +37,14 @@
   - type: CartridgeAmmo
     proto: Bullet1255BP
 
-
+- type: entity
+  id: STCartridge1255Blank
+  name: Cartridge (12.7x55) Blank
+  parent: STCartridge1255PS12A
+  components:
+  - type: Tag
+    tags:
+    - STCartridge1255
+    - STCartridge1255Blank
+  - type: CartridgeAmmo
+    proto: Bullet1255Blank

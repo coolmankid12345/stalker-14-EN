@@ -127,3 +127,24 @@
       map: ["enum.GunVisualLayers.Base", "base"]
     - state: aa-open-1
       map: ["enum.GunVisualLayers.Mag", "mag"]
+
+#Stalker EN
+- type: entity
+  parent: STBaseBox9x39
+  id: STBox9x39Blank
+  name: Large Ammo Box (9x39) Blank
+  components:
+  - type: MagazineVisuals
+    magState: aa-open
+  - type: BallisticAmmoProvider
+    capacity: 100
+    proto: STCartridge9x39Blank
+    whitelist:
+      tags:
+        - STCartridge9x39Blank
+  - type: Sprite
+    layers:
+    - state: aa
+      map: ["enum.GunVisualLayers.Base", "base"]
+    - state: aa-open-1
+      map: ["enum.GunVisualLayers.Mag", "mag"]

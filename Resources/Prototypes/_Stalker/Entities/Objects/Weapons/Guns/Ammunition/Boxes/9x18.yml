@@ -139,3 +139,23 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: cink
       map: ["enum.GunVisualLayers.Mag"]
+
+#Stalker EN
+- type: entity
+  parent: 918PGJBoxCink
+  id: 918BlankBoxCink
+  name: Large Ammo Box (9х18) Blank
+  description: Blanks for weapon testing.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: STCartridge918Blank
+    whitelist:
+      tags:
+        - STCartridge918Blank
+  - type: Sprite
+    layers:
+    - state: Blankcink
+      map: ["enum.GunVisualLayers.Base"]
+    - state: Blankcink
+      map: ["enum.GunVisualLayers.Mag"]

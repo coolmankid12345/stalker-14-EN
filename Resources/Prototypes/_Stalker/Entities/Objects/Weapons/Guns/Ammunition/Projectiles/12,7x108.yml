@@ -42,3 +42,19 @@
         Piercing: 118
   - type: StaminaDamageOnCollide
     damage: 20
+
+#Stalker EN
+- type: entity
+  parent: STBaseSHRBullet
+  id: Bullet13x108Blank
+  name: Cartridge (12.7x108) Blank
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Blunt: 1
+  - type: StaminaDamageOnCollide
+    damage: 0
+

@@ -87,3 +87,19 @@
         Piercing: 42
   - type: StaminaDamageOnCollide
     damage: 10
+
+#Stalker EN
+- type: entity
+  parent: STBullet9x39
+  id: STBullet9x39Blank
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+      Blunt: 1
+  - type: StaminaDamageOnCollide
+    damage: 0

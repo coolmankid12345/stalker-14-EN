@@ -66,3 +66,16 @@
     damage:
       types:
         Piercing: 28
+
+#StalkerEN
+- type: entity
+  id: Bullet45ACPBlank
+  name: Cartridge (.45 ACP) Blank
+  parent: Bullet45ACPLFMJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Blunt: 1

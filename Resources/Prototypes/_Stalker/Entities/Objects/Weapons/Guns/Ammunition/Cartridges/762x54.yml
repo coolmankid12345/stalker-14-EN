@@ -62,3 +62,16 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet754SAPB
+
+#Stalker EN
+- type: entity
+  id: STCartridge754Blank
+  name: Cartridge (7.62x54) Blank
+  parent: BaseSTCartridge754
+  components:
+  - type: Tag
+    tags:
+    - STCartridge754
+    - STCartridge754Blank
+  - type: CartridgeAmmo
+    proto: Bullet754Blank

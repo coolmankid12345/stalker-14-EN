@@ -155,3 +155,23 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: SpentAmmoVisuals
     state: "flechette"
+
+#Stalker EN
+- type: entity
+  id: Cartridge7mmBuckshotBlank
+  name: 7mm Blank
+  parent: BaseShotgunBullet
+  components:
+  - type: Tag
+    tags:
+      - ShellShotgun
+      - Cartridge7mmBuckshotBlank
+  - type: CartridgeAmmo
+    proto: Bullet7mmBuckshotBlank
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "base"

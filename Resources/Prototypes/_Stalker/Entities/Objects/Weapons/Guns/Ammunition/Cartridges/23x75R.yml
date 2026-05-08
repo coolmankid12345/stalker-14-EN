@@ -55,6 +55,26 @@
   - type: SpentAmmoVisuals
     state: "volnaR"
 
+#Stalker EN
+- type: entity
+  id: CartridgeShrapnel25Blank
+  name: (23х75мм Blank)
+  parent: BaseShotgunBullet
+  components:
+  - type: Tag
+    tags:
+      - ShellKS23
+      - CartridgeShrapnel25Blank
+  - type: CartridgeAmmo
+    proto: BulletShotgunShrapnel25Blank
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: shrapnel
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "shrapnel"
+
 #- type: entity
 #  id: CartridgeShotgunZvezdaBullet
 #  name: 23х75мм R "Звезда"

@@ -54,3 +54,17 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet751M993
+
+#Stalker EN
+- type: entity
+  id: Cartridge751Blank
+  name: Cartridge (7,62x51) Blank
+  parent: BaseCartridge751
+  components:
+  - type: Tag
+    tags:
+    - STCartridge751
+    - Cartridge751Blank
+  - type: CartridgeAmmo
+    proto: Bullet751Blank
+

@@ -204,3 +204,23 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: cink
         map: ["enum.GunVisualLayers.Mag"]
+
+#Stalker EN
+- type: entity
+  parent: 45ACPLFMJBoxCink
+  id: 45ACPBlankBoxCink
+  name: Large Ammo Box (.45 ACP) Blank
+  description: Blanks for weapon testing.
+  suffix: Stalker
+  components:
+    - type: BallisticAmmoProvider
+      proto: Cartridge45ACPBlank
+      whitelist:
+        tags:
+          - Cartridge45ACPBlank
+    - type: Sprite
+      layers:
+      - state: Blankcink
+        map: ["enum.GunVisualLayers.Base"]
+      - state: Blankcink
+        map: ["enum.GunVisualLayers.Mag"]

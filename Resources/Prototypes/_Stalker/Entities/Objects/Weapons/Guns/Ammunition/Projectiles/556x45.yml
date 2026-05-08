@@ -80,3 +80,19 @@
         Piercing: 18
   - type: StaminaDamageOnCollide
     damage: 0
+
+#Stalker EN
+- type: entity
+  id: Bullet556Blank
+  name: Cartridge (5.56x45) Blank
+  parent: Bullet556FMJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Blunt: 1
+  - type: StaminaDamageOnCollide
+    damage: 0
+

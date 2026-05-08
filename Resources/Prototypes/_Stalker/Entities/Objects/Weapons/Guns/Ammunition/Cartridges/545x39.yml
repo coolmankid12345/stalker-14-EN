@@ -70,3 +70,17 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet545NE
+
+#Stalker EN
+- type: entity
+  id: STCartridge545Blank
+  name: Cartridge (5.45x39) Blank
+  parent: BaseSTCartridge545
+  components:
+  - type: Tag
+    tags:
+    - STCartridge545
+    - STCartridge545Blank
+  - type: CartridgeAmmo
+    proto: Bullet545Blank
+
