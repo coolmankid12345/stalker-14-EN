@@ -3,7 +3,7 @@
   id: ClothingMaskGP5White
   suffix: ST, T2, Caustic
   name: GP-5 (White)
-  description: LoremIpsum
+  description: A white variant of the GP-5 gas mask providing protection from radiation.
   components:
   - type: Tag
     tags:
