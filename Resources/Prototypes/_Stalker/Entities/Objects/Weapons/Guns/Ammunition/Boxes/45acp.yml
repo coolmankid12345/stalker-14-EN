@@ -219,8 +219,9 @@
         tags:
           - Cartridge45ACPBlank
     - type: Sprite
+      sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/AmmoBoxes/BlankAmmobox.rsi
       layers:
-      - state: Blankcink
-        map: ["enum.GunVisualLayers.Base"]
-      - state: Blankcink
-        map: ["enum.GunVisualLayers.Mag"]
+        - state: Blankcink
+          map: ["enum.GunVisualLayers.Base"]
+        - state: Blankcink
+          map: ["enum.GunVisualLayers.Mag"]

@@ -196,6 +196,7 @@
         tags:
         - STCartridge754Blank
     - type: Sprite
+      sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/AmmoBoxes/BlankAmmobox.rsi
       layers:
         - state: Blankcink
           map: ["enum.GunVisualLayers.Base"]
