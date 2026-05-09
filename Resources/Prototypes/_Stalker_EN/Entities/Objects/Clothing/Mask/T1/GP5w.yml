@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingMaskGP5
-  id: ClothingMaskGP5Modern
+  id: ClothingMaskGP5White
   suffix: ST, T2, Caustic
-  name: GP-5M
+  name: GP-5 (White)
   description: LoremIpsum
   components:
   - type: Tag
