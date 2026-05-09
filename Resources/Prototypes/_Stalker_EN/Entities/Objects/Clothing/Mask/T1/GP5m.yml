@@ -9,9 +9,9 @@
     tags:
       - BlockMask
   - type: Sprite
-    sprite: _Stalker_EN\Objects\Clothing\mask\gp5m.rsi
+    sprite: _Stalker_EN/Objects/Clothing/mask/gp5m.rsi
   - type: Clothing
-    sprite: _Stalker_EN\Objects\Clothing\mask\gp5m.rsi
+    sprite: _Stalker_EN/Objects/Clothing/mask/gp5m.rsi
   - type: Armor
     modifiers:
       #coefficients: # EN start
