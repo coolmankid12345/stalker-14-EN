@@ -68,14 +68,14 @@
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
   - type: STWeight
     self: 3
-  - type: BallisticAmmoProvider # EN
-    capacity: 8                 # EN
-  - type: Gun                   # EN
-    minAngle: 30                # EN
-    maxAngle: 40                # EN
-    angleIncrease: 10           # EN
-    angleDecay: 60              # EN
-    fireRate: 2.8               # EN
+  - type: BallisticAmmoProvider   # EN
+    capacity: 8               # EN
+  - type: Gun                     # EN
+    minAngle: 30            # EN
+    maxAngle: 40            # EN
+    angleIncrease: 10       # EN
+    angleDecay: 60          # EN
+    fireRate: 3.1           # EN
 
 - type: entity
   parent: STWeaponShotgunBenelliM4Super90 # EN
