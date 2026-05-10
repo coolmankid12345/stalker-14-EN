@@ -78,9 +78,9 @@
   suffix: ST
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/coat_hat_hunter.rsi
+    sprite: _Stalker_EN/Objects/Clothing/hats/coat_hat_hunter.rsi # Stalker EN - (Less Saturated Greens) recolor this coat to be less horribly saturated.
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/coat_hat_hunter.rsi
+    sprite: _Stalker_EN/Objects/Clothing/hats/coat_hat_hunter.rsi # Stalker EN - (Less Saturated Greens)
   - type: HideLayerClothing
     slots:
     - Hair
