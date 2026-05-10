@@ -2963,5 +2963,13 @@
   id: 326
   time: '2026-05-08T19:32:37.803160+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/917
+- author: AlesterPherrer
+  changes:
+  - message: Boar health values lowered! They shouldn't be as spongy as before, but
+      they'll still take a lot more ammo than other mutants to kill.
+    type: Tweak
+  id: 327
+  time: '2026-05-10T04:09:32.278169+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/890
 Name: Stalker
 Order: -1
