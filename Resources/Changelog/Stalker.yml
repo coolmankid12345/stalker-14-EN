@@ -2971,5 +2971,12 @@
   id: 327
   time: '2026-05-10T04:09:32.278169+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/890
+- author: Noguchi47
+  changes:
+  - message: a new chem cleaning recipe to the Monolith Sphere-08 Helmet
+    type: Add
+  id: 328
+  time: '2026-05-11T23:50:56.953010+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/920
 Name: Stalker
 Order: -1
