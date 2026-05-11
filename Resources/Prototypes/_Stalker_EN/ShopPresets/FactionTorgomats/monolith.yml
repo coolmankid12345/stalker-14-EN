@@ -126,35 +126,41 @@
       STWeaponShotgunProtecta: 10
       STSharpenedKnife: 1
       STKnifeShard: 85 # munny sink
-      STWeaponPistolUSP: 2
+      WeaponPistolGSH18: 1
       #STWeaponSniperSVDMono: 85 # not yet
 
+  - name: shop-category-magazines
+    priority: 2
+    items:
+      GSH-18Mag18: 1
+      VityazMag: 1
+
   - name: shop-category-armor
-    priority: 4
+    priority: 3
     items:
       ClothingOuterArmorSevaMonolithPriest: 15
       ClothingHeadHelmetBerill5MMonolith: 8
       ClothingOuterArmorBerill5MMonolith: 30
 
-  - name: shop-category-medicine
+  - name: shop-category-grenades
     priority: 4
+    items:
+      RGD5Grenade: 3
+      DG05SmokeGrenade: 2
+
+  - name: shop-category-medicine
+    priority: 5
     items:
       MedkitElite: 3
       MedkitLAR: 4
 
   - name: shop-category-customization
-    priority: 13
+    priority: 6
     items:
       ClothingHeadBeretMonolith: 1
       ClothingOuterJacketMonolith: 1
 
   - name: shop-category-utilities
-    priority: 10
+    priority: 7
     items:
       HandLabeler: 1
-
-  - name: shop-category-grenades
-    priority: 12
-    items:
-      RGD5Grenade: 3
-      DG05SmokeGrenade: 2

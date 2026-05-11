@@ -247,7 +247,10 @@
       path: /Audio/Weapons/bladeslice.ogg
     activatedDamage:
       types:
-        Slash: 20
+        Slash: 23
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    embedOnThrow: false
   - type: ItemToggleSize
     activatedSize: Small
   - type: MeleeWeapon
@@ -256,6 +259,10 @@
     damage:
       types:
         Blunt: 2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
   - type: Sprite
     sprite: _Stalker_EN/Objects/Weapons/Melee/knife_butterfly.rsi
     layers:
@@ -293,7 +300,7 @@
     sprite: _Stalker_EN/Objects/Weapons/Melee/knife_sharpened.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: Small
     sprite: Objects/Weapons/Melee/combat_knife.rsi
     inhandVisuals:
       left:
@@ -313,7 +320,7 @@
   - type: Sprite
     sprite: _Stalker_EN/Objects/Weapons/Melee/knife_shard.rsi
   - type: Item
-    size: Normal
+    size: Small
     sprite: _Stalker_EN/Objects/Weapons/Melee/knife_shard.rsi
   - type: STWeight
     self: 3

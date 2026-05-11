@@ -226,6 +226,7 @@
       STFoodMeatSalami: 125
       FoodBowlBig: 300
       Spoon: 100
+      DrinkGlass: 150
 
   - name: shop-category-drinks
     priority: 6
@@ -281,6 +282,9 @@
       ClothingOuterCoatStalker: 1000
       ClothingOuterCoatLoyalistLight: 3000
       ClothingOuterCoatLoyalist: 3500
+      ClothingOuterCoatRostokPonchoLoose: 1300 # T2
+      ClothingOuterCoatRostokPonchoRipped: 1300 # T2
+      ClothingOuterCoatRostokPonchoHeavy: 1300 # T2
 
   - name: shop-category-research-equipment
     priority: 10

@@ -33,7 +33,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 450
+            damage: 350 # EN
           behaviors:
             - !type:PlaySoundBehavior
               sound:
@@ -58,7 +58,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        450: Dead
+        350: Dead # EN
     - type: MeleeWeapon
       attackRate: 0.4
       angle: 30
