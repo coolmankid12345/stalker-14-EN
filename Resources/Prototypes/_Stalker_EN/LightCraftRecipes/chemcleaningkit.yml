@@ -141,3 +141,12 @@
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingHeadBeretMonolith
     time: 5
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitHelmetBerill5MMonolith
+  results:
+  - ClothingHeadHelmetBerill5MMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingHeadHelmetBerill5MMonolith
+    time: 15
