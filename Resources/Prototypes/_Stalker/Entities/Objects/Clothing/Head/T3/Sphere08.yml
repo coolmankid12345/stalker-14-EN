@@ -103,6 +103,8 @@
     sprite: _Stalker_EN/Objects/Clothing/hats/berill5m_helm_monolith.rsi
   - type: Clothing
     sprite: _Stalker_EN/Objects/Clothing/hats/berill5m_helm_monolith.rsi
+  - type: Contraband # EN
+    severity: Monolith
   - type: PersonalDamage
     damage:
       types:
