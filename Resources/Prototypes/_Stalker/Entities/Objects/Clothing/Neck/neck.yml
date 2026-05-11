@@ -19,9 +19,9 @@
   suffix: Stalker, Повязка
   components:
   - type: Sprite
-    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_green.rsi # Stalker EN - (Less Saturated Greens) recolor this armband to be less horribly saturated.
+    sprite: _Stalker/Objects/Clothing/Neck/Bandages/bandage_green.rsi
   - type: Clothing
-    sprite: _Stalker_EN/Objects/Clothing/Neck/Bandages/bandage_green.rsi # Stalker EN - (Less Saturated Greens)
+    sprite: _Stalker/Objects/Clothing/Neck/Bandages/bandage_green.rsi
 
 - type: entity
   parent: ClothingNeckBase
