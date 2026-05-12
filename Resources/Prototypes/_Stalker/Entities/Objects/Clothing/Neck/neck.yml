@@ -19,9 +19,9 @@
   suffix: Stalker, Повязка
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/Neck/Bandages/bandage_green.rsi
+    sprite: _Stalker/Objects/Clothing/Neck/bandages/bandage_green.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/Neck/Bandages/bandage_green.rsi
+    sprite: _Stalker/Objects/Clothing/Neck/bandages/bandage_green.rsi
 
 - type: entity
   parent: ClothingNeckBase
