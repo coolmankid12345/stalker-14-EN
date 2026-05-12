@@ -22,7 +22,9 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Pullable
+
+# - type: Pullable - Testing removal of Pulling from some structures
+# Stalker en change, blame Szneks
   - type: Tag
     tags:
       - Structure
