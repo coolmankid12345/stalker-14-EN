@@ -76,3 +76,33 @@
   components:
   - type: Sprite
     state: bunny
+
+- type: entity
+  parent: BaseFeltPlushie
+  id: STPlushieFeltBoar
+  name: felted boar
+  description: A small felted doll depicting a boar.
+  components:
+  - type: Sprite
+    state: boar
+    scale: 0.7,0.7
+
+- type: entity
+  parent: BaseFeltPlushie
+  id: STPlushieFeltBear
+  name: felted bear
+  description: A small felted doll depicting a bear.
+  components:
+  - type: Sprite
+    state: bear
+    scale: 0.7,0.7
+
+- type: entity
+  parent: BaseFeltPlushie
+  id: STToyCosmonaut
+  name: plastic cosmonaut
+  description: An old plastic toy of a cosmonaut.
+  components:
+  - type: Sprite
+    state: cosmo
+    scale: 0.7,0.7
