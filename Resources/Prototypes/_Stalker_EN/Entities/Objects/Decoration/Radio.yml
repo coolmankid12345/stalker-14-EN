@@ -290,8 +290,6 @@
     sprite: _Stalker_EN/Objects/Misc/record_player.rsi
     state: player
   - type: Item
-    sprite: _Stalker_EN/Objects/Misc/record_player.rsi
-    state: player
     size: Ginormous
     shape:
     - 0,0,3,3
