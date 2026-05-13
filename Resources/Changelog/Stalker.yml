@@ -2985,5 +2985,12 @@
   id: 329
   time: '2026-05-13T03:45:50.201225+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/923
+- author: crocodilecarousel
+  changes:
+  - message: Changes to the Mercenary shop
+    type: Tweak
+  id: 330
+  time: '2026-05-13T20:29:06.171329+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/928
 Name: Stalker
 Order: -1
