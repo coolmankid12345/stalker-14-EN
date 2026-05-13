@@ -94,7 +94,6 @@
     MutantPartBurerBrain: 1000
     MutantPartControllerBrain: 2000
 
-
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -112,6 +111,7 @@
         STWeaponPistolUSP: 1500
         STWeaponPistolM1911: 800
         WeaponPistolStalkerGlock: 200
+        STWeaponPistolDesertEagle: 2100
         # SMGs
         STWeaponSMGUMP: 1900
         STWeaponSMGMP5: 2200
@@ -147,26 +147,32 @@
         USPMag12: 170
         M1911Mag7: 100
         STSpeedLoader45ACPEmpty: 90
+        # .357
+        DEMag8: 125
 
     - name: shop-category-ammunition
       priority: 3
       items:
         # 7mm
-        8mmBuckshotBox: 800 # T2
-        6mmBuckshotBox: 320 # T1
+        8mmBuckshotBox: 750 # T2
+        6mmBuckshotBox: 250 # T1
         7mmBuckshotBox: 45 # T0
         # 9.19
         919PSOGJBox: 100 # T1
         919PSTBox: 200 # T2
-        919PBMBox: 1425 # T3
+        919PBMBox: 1225 # T3
+        # .357
+        MagazineBox357MagnumHP: 550 # Mutant
+        MagazineBox357Magnum: 500 # T2
+        MagazineBox357MagnumAP: 1250 # T3
         # .45
-        45ACPLFMJBox: 110 # T1
+        45ACPLFMJBox: 90 # T1
         45ACPMFMJBox: 220 # T2
-        45ACPAPBox: 1500 # T3
+        45ACPAPBox: 1250 # T3
         # 5.56
         556FMJBox: 300
-        556M855Box: 1650 # T3
-        556WarmagBox: 550 # Mutant
+        556M855Box: 1450 # T3
+        556WarmagBox: 485 # Mutant
         # 7.51
         751M80Box: 1950 # T3
         751UNBox: 850 # Mutant
@@ -313,6 +319,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
+        STModuleShotgunChokeT1: 200
         STModuleGlockSwitch: 200
 
     - name: shop-category-paperwork

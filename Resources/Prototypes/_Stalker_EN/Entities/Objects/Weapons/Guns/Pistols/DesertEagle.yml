@@ -43,7 +43,7 @@
         priority: 1
         whitelist:
           tags:
-          - Cartridge45ACP
+          - Cartridge357Magnum
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -92,6 +92,6 @@
         priority: 1
         whitelist:
           tags:
-          - Cartridge45ACP
           - CartridgeMagnum
           - CartridgeRemingtonMagnum
+          - Cartridge357Magnum
