@@ -280,6 +280,12 @@
         TrashDetectorTier1: 200
         STBoltBagFilled: 50
         ZoneAnomalyDetectorAD1: 550
+        # Artifact containers
+        BoxArtcont: 400
+        BoxArtcontBlack: 400
+        BoxArtcontBlue: 400
+        BoxArtcontYellow: 400
+        BoxArtcontOrange: 400
 
     - name: shop-category-utilities
       priority: 10
