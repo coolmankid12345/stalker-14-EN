@@ -2978,5 +2978,12 @@
   id: 328
   time: '2026-05-11T23:50:56.953010+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/920
+- author: Nox38, @Whiffets
+  changes:
+  - message: Recolored hunting coat to be less saturated.
+    type: Tweak
+  id: 329
+  time: '2026-05-13T03:45:50.201225+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/923
 Name: Stalker
 Order: -1
