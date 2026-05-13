@@ -107,6 +107,9 @@
   id: STFleshRelated
 
 - type: Tag
+  id: STRecord
+
+- type: Tag
   id: STSugar
 
 - type: Tag

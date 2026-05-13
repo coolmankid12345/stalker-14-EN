@@ -1,4 +1,4 @@
-{
+﻿{
     "version": 1,
     "size": {
         "x": 32,
@@ -8,28 +8,25 @@
     "copyright": "sprites by carousel",
     "states": [
         {
-            "name": "feltedflesh"
+            "name": "player"
         },
         {
-            "name": "feltedcat1"
+            "name": "player-1"
         },
         {
-            "name": "feltedcat2"
+            "name": "record"
         },
         {
-            "name": "feltedcat3"
+            "name": "shard1"
         },
         {
-            "name": "bunny"
+            "name": "shard2"
         },
         {
-            "name": "bear"
+            "name": "shard3"
         },
         {
-            "name": "boar"
-        },
-        {
-            "name": "cosmo"
+            "name": "shard4"
         }
     ]
 }
