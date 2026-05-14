@@ -263,3 +263,85 @@
     state: white
   - type: RepositoryItem # stalker-en change
     categoryName: repository-cassettes-category
+
+# record player
+
+- type: entity
+  parent: BaseItem
+  id: RadioRecordPlayer
+  name: record player
+  suffix: ST
+  description: A record player in decent condition. It looks like it isn't more than a decade old.
+  components:
+  - type: STWeight
+    self: 5
+  - type: Boombox
+  - type: ContainerContainer
+    containers:
+      cassette_slot: !type:ContainerSlot {}
+  - type: ItemSlots
+    slots:
+      cassette_slot:
+        name: Record
+        whitelist:
+          tags:
+            - STRecord
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/record_player.rsi
+    state: player
+  - type: Item
+    size: Ginormous
+    shape:
+    - 0,0,3,3
+  - type: RepositoryItem
+    categoryName: repository-cassettes-category
+
+- type: entity
+  parent: BaseItem
+  id: STRecordWhole
+  suffix: Stalker, Cassette, ADMEME
+  name: record
+  description: A record. It might be hard to find something that can play it.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/serafim_embient.ogg
+  - type: Tag
+    tags:
+      - STRecord
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/record_player.rsi
+    state: record
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: RepositoryItem
+    categoryName: repository-cassettes-category
+
+- type: entity
+  parent: BaseItem
+  id: STRecordShard
+  suffix: Stalker
+  name: record piece
+  description: A piece of a broken record.
+  components:
+  - type: STWeight
+    self: 0.03
+  - type: Sprite
+    layers:
+    - sprite: _Stalker_EN/Objects/Misc/record_player.rsi
+      state: shard1
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        shard1: ""
+        shard2: ""
+        shard3: ""
+        shard4: ""
+  - type: Item
+    size: Tiny
+  - type: RepositoryItem
+    categoryName: repository-cassettes-category

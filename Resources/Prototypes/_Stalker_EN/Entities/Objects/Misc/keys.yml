@@ -1,0 +1,73 @@
+﻿- type: entity
+  name: house key
+  parent: BaseItem
+  suffix: Stalker, Key
+  id: STKeyHouse
+  description: A plain house key, though grime and rust clings to it.
+  components:
+  - type: STWeight
+    self: 0.01
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/keys.rsi
+    state: key_house
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: RepositoryItem
+    categoryName: repository-miscellaneous-category
+
+- type: entity
+  name: old key
+  parent: STKeyHouse
+  suffix: Stalker
+  id: STKeyOld
+  description: An old key. What could it be for?
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/keys.rsi
+    state: key_old
+
+- type: entity
+  name: blue keycard
+  parent: STKeyHouse
+  suffix: Stalker
+  id: STKeycardBlue
+  description: Some kind of keycard.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/keys.rsi
+    state: keycard_blue
+
+- type: entity
+  name: green keycard
+  parent: STKeyHouse
+  suffix: Stalker
+  id: STKeycardGreen
+  description: Some kind of keycard.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/keys.rsi
+    state: keycard_green
+
+- type: entity
+  name: red keycard
+  parent: STKeyHouse
+  suffix: Stalker
+  id: STKeycardRed
+  description: Some kind of keycard.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/keys.rsi
+    state: keycard_red
+
+- type: entity
+  name: yellow keycard
+  parent: STKeyHouse
+  suffix: Stalker
+  id: STKeycardYellow
+  description: Some kind of keycard.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/keys.rsi
+    state: keycard_yellow
