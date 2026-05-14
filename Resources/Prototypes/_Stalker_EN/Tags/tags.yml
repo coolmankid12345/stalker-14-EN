@@ -78,17 +78,17 @@
 - type: Tag
   id: MagazineM1911
 
-- type: Tag     
+- type: Tag
   id: MagazinePKM
 
-- type: Tag     
-  id: MagazineTOZ106  
+- type: Tag
+  id: MagazineTOZ106
 
 - type: Tag
   id: MagazineUSP
 
 - type: Tag
-  id: MagazineUMP  
+  id: MagazineUMP
 
 - type: Tag
   id: MagazineHipower
@@ -100,7 +100,7 @@
   id: SpeedLoader357Magnum
 
 - type: Tag
-  id: ShellTOZ106    
+  id: ShellTOZ106
 
 # For ritual chasm, this is stuff related to the flesh mutant
 - type: Tag
@@ -110,7 +110,14 @@
   id: STSugar
 
 - type: Tag
-  id: STWeaponModulePistolSilencer  
+  id: STWeaponModulePistolSilencer
 
 - type: Tag
   id: STYeast
+
+- type: Tag
+  id: MagazineUzi
+
+- type: Tag
+  id: MagazineMPL
+

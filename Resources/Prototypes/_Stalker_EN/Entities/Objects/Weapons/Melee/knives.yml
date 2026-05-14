@@ -1,9 +1,59 @@
+# STCombatKnife - standard knife, aR 1.1, 20 slash
+# LgbtKnife - standard stronger general knife, aR 1.1, 22 slash
+# KukriKnife - aR 1, 23 slash
+
+# a heavy, slow knife with higher damage
+- type: entity
+  name: Base Heavy Knife
+  parent: STCombatKnife
+  id: STBaseHeavyKnife
+  suffix: ST, Weapon
+  abstract: true
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.8
+    damage:
+      types:
+        Slash: 25
+
+# a fast knife with less damage
+- type: entity
+  name: Base Fast Knife
+  parent: STCombatKnife
+  id: STBaseFastKnife
+  suffix: ST, Weapon
+  abstract: true
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.3
+    damage:
+      types:
+        Slash: 21
+
+# a knife with a longer blade
+- type: entity
+  name: Base Long Knife
+  parent: STCombatKnife
+  id: STBaseLongKnife
+  suffix: ST, Weapon
+  abstract: true
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    range: 1.25
+    damage:
+      types:
+        Slash: 21
+
 - type: entity
   name: Bloody Knife
   parent: LgbtKnife
   id: BloodyKnife
   description: A knife, warm blood still and forever dripping down the blade. What else is a knife for?
-  suffix: ST, Reward, Halloween
+  suffix: ST, Weapon, Reward, Halloween
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Weapons/Melee/knife_bloody.rsi
@@ -40,7 +90,7 @@
   parent: BaseKnife
   id: HuntingKnife
   description: A tool for chopping up dead animals. It butchers 30% faster than other knives but deals less damage.
-  suffix: ST
+  suffix: ST, Weapon
   components:
   - type: Tag
     tags:
@@ -77,7 +127,7 @@
   parent: [BaseKnife, BaseMinorContraband]
   id: STShiv
   description: A crude weapon made from a piece of cloth and a glass shard. This will get you by, but worth trying to get an upgrade.
-  suffix: ST
+  suffix: ST, Weapon
   components:
   - type: Tag
     tags:
@@ -109,7 +159,7 @@
   parent: STCombatKnife
   id: STKarambit
   description: A curved blade that's good for clearing plants out of the way, though it's a bit lacking for self defense.
-  suffix: ST
+  suffix: ST, Weapon
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Weapons/Melee/karambit.rsi
@@ -129,3 +179,162 @@
         Slash: 17
   - type: DisarmMalus
     malus: 0.35
+
+- type: entity
+  name: machete
+  parent: STBaseLongKnife
+  id: STMachete
+  description: A lightweight machete made to cut through branches and underbrush. They aren't a common sight in the zone but some stalkers prefer them when going deeper into the Zone.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/machete.rsi
+  - type: Item
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/machete.rsi
+    shape:
+    - 0,0,0,2
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    range: 1.25
+    damage:
+      types:
+        Slash: 21
+        Structural: 10
+
+- type: entity
+  name: survival knife
+  parent: STBaseFastKnife
+  id: STSurvivalKnife
+  description: A standard knife often found in foreign army surplus supplies and hunting shops, mercenaries from other countries often bring them into the Zone. The lightweight design makes them easy to handle.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/survival_knife.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Weapons/Melee/survival_knife.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/survival_knife.rsi
+
+# im not really happy with this so if someone wants to work on it knock yourself out
+- type: entity
+  name: butterfly knife
+  parent: STCombatKnife
+  id: STButterflyKnife
+  description: A simple, sturdy knife with a handle that smoothly folds to cover the blade.
+  components:
+  - type: Appearance
+  - type: ComponentToggler
+    components:
+    - type: Execution
+      doAfterDuration: 4.0
+    - type: Sharp
+    - type: Utensil
+      types:
+      - Knife
+  - type: Item
+    size: Tiny
+    sprite: _Stalker_EN/Objects/Weapons/Melee/knife_butterfly.rsi
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Items/flask_open1.ogg
+    soundDeactivate:
+      path: /Audio/Items/flask_open1.ogg
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    activatedDamage:
+      types:
+        Slash: 23
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    embedOnThrow: false
+  - type: ItemToggleSize
+    activatedSize: Small
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.3
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Melee/knife_butterfly.rsi
+    layers:
+    - state: butterfly_open
+      map: [ "open" ]
+    - state: butterfly_closed
+      visible: false
+      map: [ "closed" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        closed:
+          True: { visible: false }
+          False: { visible: true }
+        open:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ToggleableVisuals # i know theres a way to do this but im stupit
+    spriteLayer: open
+    inhandVisuals:
+      left:
+      - state: inhand-left-open
+      right:
+      - state: inhand-right-open
+  - type: UseDelay
+    delay: 0.1
+
+- type: entity
+  name: sharpened combat knife
+  parent: LgbtKnife
+  id: STSharpenedKnife
+  description: This combat knife has been carefully sharpened and honed into a double edged blade. Though it's a bit uneven, it's quite dangerous.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Melee/knife_sharpened.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: Objects/Weapons/Melee/combat_knife.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Execution
+    doAfterDuration: 1.8
+    damageMultiplier: 10
+
+- type: entity
+  name: shard of his will
+  parent: STBaseLongKnife
+  id: STKnifeShard
+  description: It's unclear whether this is a piece of rock, metal, or something more anomalous but one thing is very clear - holding it feels like an ice pick is being driven through your skull and at the fine point where it connects through the frontal and into the reaches of your temporal lobe something thrums with a dull and pulsing vibration. Submit, submit, submit.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Melee/knife_shard.rsi
+  - type: Item
+    size: Small
+    sprite: _Stalker_EN/Objects/Weapons/Melee/knife_shard.rsi
+  - type: STWeight
+    self: 3
+  - type: Prayable
+    sentMessage: prayer-popup-notify-monolit-sent
+    notificationPrefix: prayer-chat-notify-monolit
+    verb: prayer-verbs-pray
+    verbImage: null
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 1
+        Psy: 1
+  - type: PointLight
+    radius: 1.6
+    energy: 0.5
+    color: "#27DAF5"

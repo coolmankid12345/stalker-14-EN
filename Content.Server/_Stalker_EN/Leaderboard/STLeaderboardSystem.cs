@@ -2,29 +2,25 @@ using System.Linq;
 using Content.Server._Stalker_EN.FactionRelations;
 using Content.Server.Administration.Managers;
 using Content.Server.CartridgeLoader;
+using Content.Server.CartridgeLoader.Events;
 using Content.Server.PDA;
 using Content.Shared._Stalker.Bands;
+using Content.Shared._Stalker.Bands.Components;
 using Content.Shared._Stalker_EN.CharacterRank;
 using Content.Shared._Stalker_EN.FactionRelations;
 using Content.Shared._Stalker_EN.Leaderboard;
 using Content.Shared._Stalker_EN.Portraits;
 using Content.Shared.CartridgeLoader;
-using Content.Shared.Containers;
 using Content.Shared.GameTicking;
 using Content.Shared.Ghost;
-using Content.Shared.Hands;
-using Content.Shared.Inventory;
-using Content.Shared.Inventory.Events;
 using Content.Shared.PDA;
 using Robust.Server.Player;
 using Robust.Shared.Console;
-using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 namespace Content.Server._Stalker_EN.Leaderboard;
 
@@ -42,10 +38,7 @@ public sealed partial class STLeaderboardSystem : EntitySystem
     [Dependency] private readonly STFactionRelationsCartridgeSystem _factionRelations = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IConsoleHost _consoleHost = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly PdaSystem _pda = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
 
     private ISawmill _sawmill = default!;
@@ -61,14 +54,38 @@ public sealed partial class STLeaderboardSystem : EntitySystem
     /// Stores (CartridgeUid, PdaUid) — resolve components via TryComp to avoid stale references.
     /// </summary>
     private readonly Dictionary<EntityUid, (EntityUid Cartridge, EntityUid Pda)> _leaderboardPdas = new();
+    private static readonly ProtoId<STBandPrototype> ClearSkyBandId = "STClearSkyBand";
+
+    /// <summary>
+    /// Cached static data for a stalker entry.
+    /// All data is captured at spawn time and never changes until respawn.
+    /// </summary>
+    private record StalkerData(
+        string Name,
+        EntityUid? Mob,
+        string? BandName,
+        string? BandIcon,
+        string? FactionId,
+        string? RelationFactionId, // Original faction for relation checks
+        string? DisguisedRelationFactionId, // Disguised faction for others' relation checks
+        int RankIndex,
+        string? RankName,
+        TimeSpan AccumulatedTime,
+        string? PortraitPath,
+        bool UsePatch,
+        string? SelfPortraitPath,
+        bool SelfUsePatch,
+        string? DisplayBandName,
+        string? SelfDisplayBandName, // Original faction for self-view
+        bool Hidden = false);
 
     /// <summary>
     /// Cache of all known stalkers. Key includes both UserId and CharacterName.
-    /// All stats (rank, band name, band icon, faction) are read live from components, not cached.
-    /// When Mob is deleted, entry shows dashes for all fields except name.
+    /// All stats are cached at spawn time and never change until respawn.
+    /// When Mob is deleted, entry still shows cached data.
     /// Entries persist across player disconnects until round restart.
     /// </summary>
-    private readonly Dictionary<StalkerKey, (string Name, EntityUid? Mob)> _knownStalkers = new();
+    private readonly Dictionary<StalkerKey, StalkerData> _knownStalkers = new();
 
     public override void Initialize()
     {
@@ -83,6 +100,9 @@ public sealed partial class STLeaderboardSystem : EntitySystem
         SubscribeLocalEvent<STLeaderboardServerComponent, EntityTerminatingEvent>(OnServerTerminating);
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawned);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
+        SubscribeLocalEvent<STLeaderboardCartridgeComponent, CartridgeMessageEvent>(OnCartridgeMessage);
+        SubscribeLocalEvent<STLeaderboardCartridgeComponent, CartridgeGetStateEvent>(OnGetState);
+        SubscribeLocalEvent<STCharacterRankComponent, STCharacterRankLoadedEvent>(OnCharacterRankLoaded);
 
         _consoleHost.RegisterCommand("leaderboard-clear",
             "Clears all entries from the stalker leaderboard.",
@@ -115,8 +135,15 @@ public sealed partial class STLeaderboardSystem : EntitySystem
         if (!_activeLoaders.Contains(args.Loader))
             return;
 
-        // Call BroadcastUiState instead of SendUiState to get proper viewerSession
+        // Broadcast UI state to all active loaders
         BroadcastUiState();
+    }
+    private void OnGetState(EntityUid uid, STLeaderboardCartridgeComponent component, CartridgeGetStateEvent args)
+    {
+        if (!TryComp<STLeaderboardServerComponent>(uid, out var server))
+            return;
+
+        args.State = BuildUiState(args.LoaderUid, server);
     }
 
     private void OnCartridgeActivated(EntityUid uid, STLeaderboardCartridgeComponent component, ref CartridgeActivatedEvent args)
@@ -282,7 +309,7 @@ public sealed partial class STLeaderboardSystem : EntitySystem
 
     /// <summary>
     /// Gets the faction ID for relation checks based on the player's band prototype.
-    /// Maps factionId to the canonical faction names used in defaults.yml.
+    /// Returns mapped faction names (Duty, Freedom, etc.) for proper relation calculation.
     /// </summary>
     private string? GetPlayerFaction(EntityUid mob)
     {
@@ -312,9 +339,7 @@ public sealed partial class STLeaderboardSystem : EntitySystem
 
     /// <summary>
     /// Updates or creates a leaderboard entry for a specific player.
-    /// Entries persist across disconnects - only created once per character per round.
-    /// All stats (rank, band, faction) are read live from components, not cached.
-    /// When Mob is deleted, entry shows dashes for all fields.
+    /// All data is captured at spawn time and never changes until respawn.
     /// </summary>
     private void UpdateStalkerEntry(ICommonSession session)
     {
@@ -327,35 +352,138 @@ public sealed partial class STLeaderboardSystem : EntitySystem
 
         var key = new StalkerKey(session.UserId, characterName);
 
-        // If entry already exists, just update mob reference
-        if (_knownStalkers.ContainsKey(key))
+        // Capture all static data at spawn time
+        string? bandName = null;
+        string? bandIcon = null;
+        string? factionId = null;
+        string? relationFactionId = null;
+        string? disguisedRelationFactionId = null;
+        int rankIndex = 0;
+        string? rankName = null;
+        TimeSpan accumulatedTime = TimeSpan.Zero;
+        string? portraitPath = null;
+        bool usePatch = true;
+        string? selfPortraitPath = null;
+        bool selfUsePatch = true;
+        string? displayBandName = null;
+        string? selfDisplayBandName = null;
+
+        // Get band data
+        if (TryComp<BandsComponent>(mob, out var bands))
         {
-            var existing = _knownStalkers[key];
-            _knownStalkers[key] = (existing.Name, mob);
-            return;
+            bandName = bands.BandName;
+            bandIcon = bands.BandStatusIcon;
+            factionId = GetPlayerFaction(mob);
+
+            // Get display band name (mapped)
+            if (bands.BandProto.HasValue && _proto.TryIndex(bands.BandProto.Value, out var bandProto))
+            {
+                // Store mapped faction for relation checks
+                relationFactionId = _factionResolution.GetBandFactionName(bandProto.Name);
+
+                // Store disguised faction for others' relation checks
+                if (bandProto.Name.Equals("Monolith", StringComparison.OrdinalIgnoreCase))
+                {
+                    disguisedRelationFactionId = relationFactionId; // Monolith never disguised
+                }
+                // Clear Sky maps to Loners when disguised
+                else if (bands.BandProto == ClearSkyBandId && bands.IsDisguised)
+                {
+                    disguisedRelationFactionId = _factionResolution.GetBandFactionName(bands.BandName);
+                }
+                else
+                {
+                    disguisedRelationFactionId = relationFactionId; // Not disguised
+                }
+
+                // For self-view, always use original faction name
+                selfDisplayBandName = bandProto.Name;
+
+                if (bandProto.Name.Equals("Monolith", StringComparison.OrdinalIgnoreCase))
+                {
+                    displayBandName = factionId;
+                }
+                // Clear Sky maps to Loners when disguised (same logic as STMessenger)
+                else if (bands.BandProto == ClearSkyBandId && bands.IsDisguised)
+                {
+                    displayBandName = _factionResolution.GetBandFactionName(bands.BandName);
+                }
+                else if (!string.IsNullOrEmpty(bands.AltBand))
+                {
+                    displayBandName = GetAltBandFaction(bands);
+                }
+                else
+                {
+                    displayBandName = factionId;
+                }
+            }
+            else
+            {
+                displayBandName = factionId;
+                selfDisplayBandName = factionId;
+            }
         }
 
-        // Create new entry
-        _knownStalkers[key] = (characterName, mob);
+        // Get rank data
+        if (TryComp<STCharacterRankComponent>(mob, out var rankComp))
+        {
+            accumulatedTime = rankComp.AccumulatedTime;
+            rankName = _loc.GetString(rankComp.RankName);
+            rankIndex = rankComp.RankIndex;
+        }
+
+        // Get portrait data - capture both disguised (for others) and original (for self)
+        (portraitPath, usePatch) = GetPortraitOrPatch(mob, factionId, isMe: false);
+        (selfPortraitPath, selfUsePatch) = GetPortraitOrPatch(mob, factionId, isMe: true);
+
+        // Preserve hidden state and existing rank data if entry already exists
+        bool hidden = false;
+        if (_knownStalkers.TryGetValue(key, out var existingData))
+        {
+            hidden = existingData.Hidden;
+            // If this is an update and we have default rank values, preserve existing rank
+            // This prevents overwriting valid rank data with defaults when rank hasn't loaded yet
+            if (rankIndex == 0 && existingData.RankIndex > 0)
+            {
+                rankIndex = existingData.RankIndex;
+                rankName = existingData.RankName;
+                accumulatedTime = existingData.AccumulatedTime;
+            }
+        }
+
+        // Create/update entry with cached data
+        _knownStalkers[key] = new StalkerData(
+            characterName,
+            mob,
+            bandName,
+            bandIcon,
+            factionId,
+            relationFactionId,
+            disguisedRelationFactionId,
+            rankIndex,
+            rankName,
+            accumulatedTime,
+            portraitPath,
+            usePatch,
+            selfPortraitPath,
+            selfUsePatch,
+            displayBandName,
+            selfDisplayBandName,
+            hidden);
     }
 
     /// <summary>
-    /// Computes the relation type between two factions using the band→faction mapping.
-    /// Resolves aliases (e.g. Bandit → Bandits) before checking relations.
+    /// Gets the faction relation type between two factions.
+    /// Uses original faction names (ClearSky, Duty, etc.) for accurate relation calculation.
     /// </summary>
-    private STLeaderboardFactionRelation GetRelation(string? viewerFaction, string? targetFaction)
+    private STLeaderboardFactionRelation GetRelation(string viewerFaction, string targetFaction)
     {
         if (string.IsNullOrEmpty(viewerFaction) || string.IsNullOrEmpty(targetFaction))
             return STLeaderboardFactionRelation.Neutral;
 
-        // Resolve aliases (e.g. "Bandit" → "Bandits") before checking relations
-        viewerFaction = _factionRelations.ResolvePrimary(viewerFaction);
-        targetFaction = _factionRelations.ResolvePrimary(targetFaction);
-
         if (viewerFaction == targetFaction)
             return STLeaderboardFactionRelation.Same;
 
-        // Use the faction relations system to get the actual relation type
         var relationType = _factionRelations.GetRelation(viewerFaction, targetFaction);
 
         return relationType switch
@@ -386,34 +514,27 @@ public sealed partial class STLeaderboardSystem : EntitySystem
             if (!_activeLoaders.Contains(pdaUid))
                 continue;
 
-            // Get viewer session and name from stored owner data (like STMessenger does)
-            ICommonSession? viewerSession = null;
-            string? viewerName = null;
+            if (!TryComp<STLeaderboardServerComponent>(cartridgeUid, out var server))
+                continue;
 
-            if (TryComp<STLeaderboardServerComponent>(cartridgeUid, out var server))
-            {
-                viewerName = server.OwnerCharacterName;
-                // Try to get the actual session from the player manager
-                if (_playerManager.TryGetSessionById(new NetUserId(server.OwnerUserId), out var session))
-                {
-                    viewerSession = session;
-                }
-            }
-
-            SendUiState(pdaUid, viewerSession, viewerName);
+            var state = BuildUiState(pdaUid, server);
+            _cartridgeLoader.UpdateCartridgeUiState(pdaUid, state);
         }
     }
 
     /// <summary>
-    /// Sends a personalized leaderboard state via the cartridge UI.
+    /// Builds personalized leaderboard state for a specific loader.
     /// Colors are computed relative to the viewer's faction.
     /// The viewer's own entry is marked with IsMe=true for client-side pinning.
+    /// All data is read from cache, not live components.
     /// </summary>
-    private void SendUiState(EntityUid loaderUid, ICommonSession? viewerSession = null, string? viewerName = null)
+    private STLeaderboardUiState BuildUiState(EntityUid loaderUid, STLeaderboardServerComponent server)
     {
         string? viewerFaction = null;
+        string? viewerName = server.OwnerCharacterName;
 
-        if (viewerSession != null)
+        // Try to get the actual session from the player manager
+        if (_playerManager.TryGetSessionById(new NetUserId(server.OwnerUserId), out var viewerSession))
         {
             if (viewerSession.AttachedEntity is { } viewerMob)
             {
@@ -424,153 +545,37 @@ public sealed partial class STLeaderboardSystem : EntitySystem
         var entries = _knownStalkers.Values
             .Select(v =>
             {
-                // Check if mob is deleted
-                var isMobDeleted = !v.Mob.HasValue || !v.Mob.Value.IsValid();
-
-                // Get mob value (only if valid)
-                EntityUid? mob = null;
-                if (v.Mob.HasValue && v.Mob.Value.IsValid())
-                {
-                    mob = v.Mob.Value;
-                }
-
-                // Get components (live)
-                BandsComponent? bands = null;
-                STCharacterRankComponent? rankComp = null;
-                if (mob.HasValue)
-                {
-                    TryComp(mob.Value, out bands);
-                    TryComp(mob.Value, out rankComp);
-                }
-
-                // Get band name and icon from BandsComponent
-                string? bandName = bands?.BandName;
-                string? bandIcon = bands?.BandStatusIcon;
-
-                // Get faction from Mob (live)
-                string? factionId = null;
-                if (mob.HasValue)
-                {
-                    factionId = GetPlayerFaction(mob.Value);
-                }
-
-                // Get rank from STCharacterRankComponent (live)
-                string? rankName = null;
-                int rankIndex = 0;
-                TimeSpan accumulatedTime = TimeSpan.Zero;
-                if (rankComp != null)
-                {
-                    accumulatedTime = rankComp.AccumulatedTime;
-                    // RankName is a LocId, need to resolve it to localized string
-                    rankName = _loc.GetString(rankComp.RankName);
-                    rankIndex = rankComp.RankIndex;
-                }
-
                 var isMe = viewerName != null && v.Name == viewerName;
 
-                // For deleted mobs: use nodata icon (handled by client fallback), dashes for faction and name, no relations
-                string displayName = isMobDeleted ? "" : v.Name;
-                string? displayBandName = isMobDeleted ? null : bandName;
-                string? portraitPath = isMobDeleted ? null : null; // Client handles null as nodata via fallback
-                bool usePatch = isMobDeleted;
+                // Get relation using cached faction ID
                 STLeaderboardFactionRelation relation = STLeaderboardFactionRelation.Neutral;
-
-                if (!isMobDeleted)
+                string? factionForRelation = isMe ? v.RelationFactionId : v.DisguisedRelationFactionId;
+                if (factionForRelation != null && viewerFaction != null)
                 {
-                    // Get portrait path and determine if should use patch instead
-                    (portraitPath, usePatch) = GetPortraitOrPatch(mob, factionId, isMe);
-
-                    // Get display band name and relation
-                    displayBandName = bandName;
-
-                    if (bands != null)
-                    {
-                        // Get display band name (mapped)
-                        // If viewer is the target, always show true name (mapped)
-                        // Monolith is never disguised - always show true name (mapped)
-                        // Factions with AltBand (Clear Sky, Duty, Freedom) show mapped AltBand name (e.g. "Loners")
-                        if (isMe)
-                        {
-                            // Viewer always sees their true faction (mapped)
-                            displayBandName = factionId;
-                        }
-                        else if (bands.BandProto.HasValue && _proto.TryIndex(bands.BandProto.Value, out var bandProto))
-                        {
-                            if (bandProto.Name.Equals("Monolith", StringComparison.OrdinalIgnoreCase))
-                            {
-                                displayBandName = factionId;
-                            }
-                            else if (!string.IsNullOrEmpty(bands.AltBand))
-                            {
-                                displayBandName = GetAltBandFaction(bands);
-                            }
-                            else
-                            {
-                                displayBandName = factionId;
-                            }
-                        }
-                        else
-                        {
-                            displayBandName = factionId;
-                        }
-
-                        // For relations: if viewer is the target, use true faction
-                        // If viewer is not the target and target has AltBand, use AltBand faction (mapped)
-                        // Monolith is exception - always use true faction for relations
-                        string? targetFaction;
-                        if (isMe)
-                        {
-                            targetFaction = factionId;
-                        }
-                        else if (!string.IsNullOrEmpty(bands.AltBand))
-                        {
-                            // Check if this is Monolith - Monolith never uses AltBand for relations
-                            if (bands.BandProto.HasValue && _proto.TryIndex(bands.BandProto.Value, out var relationProto))
-                            {
-                                if (relationProto.Name.Equals("Monolith", StringComparison.OrdinalIgnoreCase))
-                                {
-                                    targetFaction = factionId;
-                                }
-                                else
-                                {
-                                    targetFaction = GetAltBandFaction(bands);
-                                }
-                            }
-                            else
-                            {
-                                targetFaction = GetAltBandFaction(bands);
-                            }
-                        }
-                        else
-                        {
-                            targetFaction = factionId;
-                        }
-
-                        relation = GetRelation(viewerFaction, targetFaction);
-                    }
+                    relation = GetRelation(viewerFaction, factionForRelation);
                 }
-                // For deleted mobs, relation remains Neutral (set above)
 
                 return new STLeaderboardEntry(
-                    displayName,
-                    bandName,
-                    bandIcon,
-                    rankIndex,
-                    rankName,
+                    v.Name,
+                    v.BandName,
+                    v.BandIcon,
+                    v.RankIndex,
+                    v.RankName,
                     relation,
                     IsMe: isMe,
-                    AccumulatedTime: accumulatedTime,
-                    PortraitPath: portraitPath,
-                    UsePatchInsteadOfPortrait: usePatch,
-                    displayBandName);
+                    AccumulatedTime: v.AccumulatedTime,
+                    PortraitPath: isMe ? v.SelfPortraitPath : v.PortraitPath,
+                    UsePatchInsteadOfPortrait: isMe ? v.SelfUsePatch : v.UsePatch,
+                    isMe ? v.SelfDisplayBandName : v.DisplayBandName,
+                    v.Hidden);
             })
+            .Where(e => !e.Hidden || e.IsMe) // Filter out hidden entries, but always show viewer's own entry
             .OrderByDescending(e => e.RankIndex)
             .ThenByDescending(e => e.AccumulatedTime)
             .ThenBy(e => e.CharacterName)
             .ToList();
 
-        var state = new STLeaderboardUiState(entries);
-        _cartridgeLoader.UpdateCartridgeUiState(loaderUid, state);
+        return new STLeaderboardUiState(entries);
     }
 
     /// <summary>
@@ -645,5 +650,70 @@ public sealed partial class STLeaderboardSystem : EntitySystem
             return true;
         }
         return false;
+    }
+
+    /// <summary>
+    /// Handles cartridge messages from client.
+    /// </summary>
+    private void OnCartridgeMessage(EntityUid uid, STLeaderboardCartridgeComponent component, CartridgeMessageEvent args)
+    {
+        if (args is STLeaderboardToggleHiddenMessage)
+        {
+            if (!TryComp<STLeaderboardServerComponent>(uid, out var server))
+                return;
+
+            if (string.IsNullOrEmpty(server.OwnerCharacterName))
+                return;
+
+            var key = new StalkerKey(new NetUserId(server.OwnerUserId), server.OwnerCharacterName);
+
+            if (_knownStalkers.TryGetValue(key, out var data))
+            {
+                // Toggle hidden state
+                var newData = data with { Hidden = !data.Hidden };
+                _knownStalkers[key] = newData;
+
+                // Broadcast update to all clients
+                BroadcastUiState();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Handles rank data loaded event to update leaderboard with actual rank from database.
+    /// This fires after CharacterRank system loads data from DB, ensuring we capture the correct rank at spawn.
+    /// </summary>
+    private void OnCharacterRankLoaded(EntityUid uid, STCharacterRankComponent comp, STCharacterRankLoadedEvent args)
+    {
+        if (!TryComp<ActorComponent>(uid, out var actor))
+            return;
+
+        var session = actor.PlayerSession;
+        // Use character name from entity metadata, not session name
+        var characterName = MetaData(uid).EntityName;
+        if (string.IsNullOrEmpty(characterName))
+            return;
+
+        var key = new StalkerKey(session.UserId, characterName);
+
+        // Update rank data in existing entry if present, or create new entry
+        if (_knownStalkers.TryGetValue(key, out var existingData))
+        {
+            // Preserve existing data but update rank from the loaded event
+            var rankName = _loc.GetString(args.RankName);
+            _knownStalkers[key] = existingData with
+            {
+                RankIndex = args.RankIndex,
+                RankName = rankName,
+                AccumulatedTime = args.AccumulatedTime
+            };
+        }
+        else
+        {
+            // Create new entry with rank data
+            UpdateStalkerEntry(session);
+        }
+
+        BroadcastUiState();
     }
 }

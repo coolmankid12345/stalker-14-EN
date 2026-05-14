@@ -328,6 +328,7 @@
         FoodBowlBig: 200
         Spoon: 75
         HerculesBottleFull: 200
+        DrinkGlass: 100
 
     - name: shop-category-drinks
       priority: 6
@@ -414,6 +415,9 @@
         ClothingOuterCoatLoyalistLight: 2500
         ClothingOuterCoatLoyalist: 3000
         STClothingCapeArmorChainmailSeva: 2000
+        ClothingOuterCoatRostokPonchoLoose: 1000 # T2
+        ClothingOuterCoatRostokPonchoRipped: 1000 # T2
+        ClothingOuterCoatRostokPonchoHeavy: 1000 # T2
         # Gas Masks
         ClothingMaskGasZarya: 600 # T1
         ClothingMaskGasZaryaMono: 600 # T1

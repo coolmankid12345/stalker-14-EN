@@ -20,6 +20,7 @@ st-leaderboard-stats-title = STATISTICS
 st-leaderboard-stats-kills-label = Mutants Killed:
 st-leaderboard-stats-arts-label = Artifacts Found:
 st-leaderboard-refresh-cooldown = Refresh...
+st-leaderboard-hide-me = Hide me from leaderboard
 
 crew-manifest-program-name = Crew manifest
 crew-manifest-cartridge-loading = Loading ...

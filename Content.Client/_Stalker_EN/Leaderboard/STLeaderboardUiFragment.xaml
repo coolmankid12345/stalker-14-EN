@@ -14,5 +14,8 @@
     <BoxContainer Name="PinnedContainer" Orientation="Vertical" Visible="False" Margin="0,4,0,0">
         <PanelContainer StyleClasses="LowDivider" Margin="8,6"/>
         <BoxContainer Name="PinnedEntry" Orientation="Horizontal" Margin="8,4" HorizontalExpand="True"/>
+        <BoxContainer Orientation="Horizontal" Margin="8,4" HorizontalExpand="True">
+            <CheckBox Name="HiddenCheckBox" Text="{Loc 'st-leaderboard-hide-me'}" HorizontalExpand="True"/>
+        </BoxContainer>
     </BoxContainer>
 </leaderboard:STLeaderboardUiFragment>

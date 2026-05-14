@@ -9,7 +9,10 @@ namespace Content.Shared._Stalker_EN.Leaderboard;
 /// Unique key for a player character in the leaderboard.
 /// Allows one user to have multiple characters listed.
 /// </summary>
-public readonly record struct StalkerKey(NetUserId UserId, string CharacterName);
+public readonly record struct StalkerKey(NetUserId UserId, string CharacterName)
+{
+    public override string ToString() => $"{CharacterName}({UserId})";
+}
 
 /// <summary>
 /// PDA cartridge component that provides the Stalker Leaderboard feature.
@@ -48,7 +51,8 @@ public record struct STLeaderboardEntry(
     TimeSpan AccumulatedTime,
     string? PortraitPath,
     bool UsePatchInsteadOfPortrait,
-    string? DisplayBandName); // Display name (masked for disguise-capable factions)
+    string? DisplayBandName,
+    bool Hidden); // Hidden from leaderboard by user choice
 
 /// <summary>
 /// UI state sent from server to client with the full leaderboard.
@@ -69,5 +73,13 @@ public sealed class STLeaderboardUiState : BoundUserInterfaceState
 /// </summary>
 [Serializable, NetSerializable]
 public sealed class STLeaderboardUiMessage : CartridgeMessageEvent
+{
+}
+
+/// <summary>
+/// Message to toggle hidden state for the current user's leaderboard entry.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class STLeaderboardToggleHiddenMessage : CartridgeMessageEvent
 {
 }

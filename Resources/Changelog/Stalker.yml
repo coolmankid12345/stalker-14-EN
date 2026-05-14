@@ -2894,5 +2894,89 @@
   id: 317
   time: '2026-05-02T04:09:01.275402+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/905
+- author: Daunter131
+  changes:
+  - message: The Walther MPL and it's "pahanka" skin.
+    type: Add
+  - message: The Uzi.
+    type: Add
+  id: 318
+  time: '2026-05-03T06:40:55.012280+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/904
+- author: Nox38, @DallaSallaD
+  changes:
+  - message: Added new ponchos and a cloak for Freedom!
+    type: Add
+  id: 319
+  time: '2026-05-03T06:42:41.503814+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/906
+- author: crocodilecarousel
+  changes:
+  - message: Adds more knives
+    type: Add
+  id: 320
+  time: '2026-05-03T18:57:15.175659+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/907
+- author: dallaszzz
+  changes:
+  - message: bar and sido bunker not having atmos
+    type: Fix
+  id: 321
+  time: '2026-05-04T10:11:36.904139+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/911
+- author: BELNAKBU
+  changes:
+  - message: Checkbox for people who dont wanna be in leaderboard.
+    type: Tweak
+  - message: Now every entries in leaderboard are cashed so no metagaming
+    type: Fix
+  id: 322
+  time: '2026-05-04T19:38:32.521826+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/908
+- author: dallaszzz
+  changes:
+  - message: New particle effects for fire and grav anoms
+    type: Add
+  id: 323
+  time: '2026-05-04T22:50:48.627351+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/913
+- author: Daunter131
+  changes:
+  - message: SMGs silencer slot taking higher priority than magazines.
+    type: Fix
+  id: 324
+  time: '2026-05-05T22:24:06.148110+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/914
+- author: crocodilecarousel
+  changes:
+  - message: Shops have been updated
+    type: Tweak
+  - message: Chemical cleaning kits are now cheaper and single use
+    type: Tweak
+  id: 325
+  time: '2026-05-07T21:41:26.264391+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/916
+- author: Noguchi47
+  changes:
+  - message: Renegade Mask now hides identity
+    type: Tweak
+  id: 326
+  time: '2026-05-08T19:32:37.803160+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/917
+- author: AlesterPherrer
+  changes:
+  - message: Boar health values lowered! They shouldn't be as spongy as before, but
+      they'll still take a lot more ammo than other mutants to kill.
+    type: Tweak
+  id: 327
+  time: '2026-05-10T04:09:32.278169+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/890
+- author: Noguchi47
+  changes:
+  - message: a new chem cleaning recipe to the Monolith Sphere-08 Helmet
+    type: Add
+  id: 328
+  time: '2026-05-11T23:50:56.953010+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/920
 Name: Stalker
 Order: -1

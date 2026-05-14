@@ -1,3 +1,4 @@
+using Robust.Shared.GameStates; // EN
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Starfall.Particles;
@@ -5,24 +6,24 @@ namespace Content.Shared._Starfall.Particles;
 /// <summary>
 /// Spawns a particle effect on this entity when it initializes.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(raiseAfterAutoHandleState: true)] // EN - networked to fix not loading when reentering PVS
 public sealed partial class ParticleEmitterComponent : Component
 {
     /// <summary>The particle effect to emit.</summary>
-    [DataField(required: true)]
-    public ProtoId<ParticleEffectPrototype> Effect;
+    [DataField(required: true), AutoNetworkedField] // EN
+    public ProtoId<ParticleEffectPrototype>[] Effect; // EN - made into a list
 
     /// <summary>
     /// Optional color tint applied to every particle of this emitter.
     /// Multiplied on top of the prototype colors; null leaves colors unchanged.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // EN
     public Color? ColorOverride;
 
     /// <summary>
     /// Starting intensity multiplier (0–1+). Scales emission rate and particle size.
     /// 1.0 = normal.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // EN
     public float Intensity = 1f;
 }

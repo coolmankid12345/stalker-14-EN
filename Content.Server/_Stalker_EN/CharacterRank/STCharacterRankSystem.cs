@@ -170,6 +170,15 @@ public sealed class STCharacterRankSystem : EntitySystem
             }
 
             UpdateRank(uid, comp, data);
+
+            // Raise event so other systems (like leaderboard) can capture initial rank at spawn time.
+            RaiseLocalEvent(uid, new STCharacterRankLoadedEvent
+            {
+                EntityUid = uid,
+                RankIndex = comp.RankIndex,
+                RankName = comp.RankName,
+                AccumulatedTime = comp.AccumulatedTime
+            });
         }
         catch (Exception e)
         {

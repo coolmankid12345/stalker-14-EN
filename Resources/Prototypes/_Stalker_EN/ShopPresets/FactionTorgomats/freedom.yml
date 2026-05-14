@@ -83,11 +83,11 @@
     - name: shop-category-weapons
       priority: 1
       items:
+        # Melee
+        STMachete: 50
         # Pistols
         STWeaponPistolP99: 600
         STWeaponPistolM1911: 1000
-        STWeaponRevolverRugerRedhawk: 850
-        STWeaponRevolverSWPC325TR: 400
         WeaponPistolStalkerGlock: 400
         # Shotguns
         STWeaponShotgunTOZ34: 225 # T2
@@ -119,7 +119,6 @@
         BaseMP5Mag: 260
         GlockMag17: 150
         GlockMag33: 600
-        STSpeedLoader45ACPEmpty: 100
         Base751Mag10: 200
         751Mag20: 400
         751Mag30: 500
@@ -244,6 +243,9 @@
         ClothingOuterCoatStalker: 1000
         ClothingOuterCoatLoyalistLight: 2500
         ClothingOuterCoatLoyalist: 3000
+        ClothingOuterCoatFreedomPoncho: 3000
+        ClothingOuterCoatFreedomPonchoShort: 3000
+        ClothingOuterCoatFreedomCloak: 3000
         STClothingCapeFreedomChain: 2500 # T4
           # Gasmasks
         ClothingMaskGasFreedom: 500 # T1
@@ -272,7 +274,6 @@
     - name: shop-category-utilities
       priority: 10
       items:
-        LgbtKnife: 30
         STSkinsKitFreedom: 500
         STCombatKnife: 25
         BoxZiptie: 50
@@ -299,6 +300,7 @@
         STElasticRubberGreen: 1
         STElasticRubberBlue: 1
         FoldedFlagFree: 250
+        BoxFolderGreenEmpty: 25
         # Cameras
         STCamera: 750
         STCameraVintage: 1200

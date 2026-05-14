@@ -115,6 +115,9 @@
     sprite: _Stalker_EN/Objects/Clothing/cloak/neutral_poncho.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetNeutralPoncho
+  - type: HideLayerClothing
+    slots:
+    - FacialHair
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -133,6 +136,7 @@
     slots:
     - Hair
     - HeadTop
+    - FacialHair
 
 - type: entity
   parent: STClothingCapeT2Base
@@ -173,7 +177,7 @@
   id: ClothingOuterCoatRostokPonchoLoose
   name: Rostok loose poncho
   suffix: ST, T2
-  description: A plain black poncho worn by those in Rostok.
+  description: A plain black poncho worn by stalkers of the Zone. It won't help against dangerous mutants or deadly anomalies but at least it'll keep the rain off of your gear.
   components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/Clothing/cloak/rostok_poncho1.rsi

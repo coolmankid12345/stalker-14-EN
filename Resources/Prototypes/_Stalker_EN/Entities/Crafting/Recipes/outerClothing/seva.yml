@@ -1,0 +1,15 @@
+﻿- type: craftRecipe
+  id: recipeClothingOuterArmorSevaSciMauve
+  resultProtos:
+  - ClothingOuterArmorSevaSciMauve
+  craftTime: 10
+  items:
+    ClothingOuterArmorSevaSciMauveBlueprint:
+      amount: 1
+      catalyzer: true
+    STPsyHelm1:
+      amount: 1
+    ClothingOuterArmorSevaSciWhite:
+      amount: 1
+    STCraftPlasticFittingT2:
+      amount: 2

@@ -5,7 +5,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: STWeaponRifleAKS74WinterMono
-    keepFirst: true
     time: 8
 
 - type: lightCraftingRecipe
@@ -15,7 +14,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: STWeaponRifleAKS74UWhiteMono
-    keepFirst: true
     time: 8
 
 - type: lightCraftingRecipe
@@ -25,7 +23,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: STWeaponRifleAK103Mono
-    keepFirst: true
     time: 8
 
 - type: lightCraftingRecipe
@@ -35,7 +32,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: STWeaponRifleStalkerAK12Mono
-    keepFirst: true
     time: 8
 
 - type: lightCraftingRecipe
@@ -45,7 +41,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: STWeaponRifleG36Mono
-    keepFirst: true
     time: 8
 
 - type: lightCraftingRecipe
@@ -55,7 +50,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: STWeaponSniperSVDMono
-    keepFirst: true
     time: 8
 
 - type: lightCraftingRecipe
@@ -65,7 +59,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterArmorMonolith
-    keepFirst: true
     time: 15
 
 - type: lightCraftingRecipe
@@ -75,7 +68,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: WeaponPistolStalkerAPSBareMono
-    keepFirst: true
     time: 5
 
 - type: lightCraftingRecipe
@@ -85,7 +77,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingBeltWebbingHolsterMonolith
-    keepFirst: true
     time: 12
 
 - type: lightCraftingRecipe
@@ -95,7 +86,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterArmorSevaMonolith
-    keepFirst: true
     time: 15
 
 - type: lightCraftingRecipe
@@ -105,7 +95,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterCoatKevlarMonolith
-    keepFirst: true
     time: 12
 
 - type: lightCraftingRecipe
@@ -115,7 +104,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: STClothingOuterArmorLightPlateVestBaseMonolith
-    keepFirst: true
     time: 15
 
 - type: lightCraftingRecipe
@@ -125,7 +113,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterArmorZaryaMonolith
-    keepFirst: true
     time: 15
 
 - type: lightCraftingRecipe
@@ -135,7 +122,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterArmorBerill5MMonolith
-    keepFirst: true
     time: 15
 
 - type: lightCraftingRecipe
@@ -145,7 +131,6 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterJacketMonolith
-    keepFirst: true
     time: 8
 
 - type: lightCraftingRecipe
@@ -155,5 +140,13 @@
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingHeadBeretMonolith
-    keepFirst: true
     time: 5
+
+- type: lightCraftingRecipe
+  id: ChemCleaningKitHelmetBerill5MMonolith
+  results:
+  - ClothingHeadHelmetBerill5MMonolithClean
+  steps:
+    firstIngredient: CraftChemicalCleaningKit
+    secondIngredient: ClothingHeadHelmetBerill5MMonolith
+    time: 15

@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadHelmetBerill5MMonolith
+  id: ClothingHeadHelmetBerill5MMonolithClean
+  name: Sphere-08 helmet
+  description: Sphere-08 helmet used by Monolith cultists. Lighter than other Class 3 helmets, it trades some ballistic protection for limited psi-shielding, which is unfortunately lost on its fanatical users. A strip of tape around the helmet indicated that it's been chemically cleaned and is safe to handle.
+  components:
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0

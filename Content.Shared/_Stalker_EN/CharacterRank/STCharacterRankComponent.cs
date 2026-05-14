@@ -43,3 +43,15 @@ public sealed partial class STCharacterRankComponent : Component
     [AutoNetworkedField]
     public bool Enabled = true;
 }
+
+/// <summary>
+/// Raised when a character's rank data has been loaded from the database and the rank has been calculated.
+/// This is useful for systems that need to capture the initial rank at spawn time.
+/// </summary>
+public sealed class STCharacterRankLoadedEvent : EntityEventArgs
+{
+    public EntityUid EntityUid;
+    public int RankIndex;
+    public LocId RankName;
+    public TimeSpan AccumulatedTime;
+}

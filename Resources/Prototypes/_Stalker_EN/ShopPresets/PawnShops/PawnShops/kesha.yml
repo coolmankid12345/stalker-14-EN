@@ -289,6 +289,8 @@
           # Containers
         MedkitCMSStalker: 1000 # T1
         MedkitGrizzlyStalker: 2000 # T2
+        StalkerGunCaseStandard: 1100
+        StalkerGunCaseDouble: 3550
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:

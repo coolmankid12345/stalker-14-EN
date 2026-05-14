@@ -18,6 +18,7 @@ st-leaderboard-stats-title = СТАТИСТИКА
 st-leaderboard-stats-kills-label = Мутантов убито:
 st-leaderboard-stats-arts-label = Артефактов найдено:
 st-leaderboard-refresh-cooldown = Обновление...
+st-leaderboard-hide-me = Скрыть меня из таблицы
 
 crew-manifest-program-name = Манифест экипажа
 crew-manifest-cartridge-loading = Загрузка...

@@ -65,6 +65,9 @@
       - id: ZoneArtifactStoneCube
         tier: 3
         ratio: 5
+    - type: ParticleEmitter # EN start
+      effect:
+        - MulcherLeafs # EN end
 
 - type: entity
   id: ZoneAnomalyGrabber
@@ -146,6 +149,9 @@
       - id: ZoneArtifactCrucifix
         tier: 5
         ratio: 5
+    - type: ParticleEmitter # EN start
+      effect:
+        - MulcherLeafsBig # EN end
 
 - type: entity
   id: ZoneAnomalySpringboard
@@ -207,6 +213,9 @@
         - id: ZoneArtifactDarkCube
           tier: 5
           ratio: 5
+    - type: ParticleEmitter # EN start
+      effect:
+        - MulcherLeafsSpringboard # EN end
 
 - type: entity
   parent: ZoneAnomalyBaseGravity
@@ -258,6 +267,9 @@
         - id: ZoneArtifactNightStar
           tier: 4
           ratio: 5
+    - type: ParticleEmitter # EN start
+      effect:
+        - MulcherLeafsSpringboard # EN end
 
 - type: entity
   id: ZoneAnomalyInversion

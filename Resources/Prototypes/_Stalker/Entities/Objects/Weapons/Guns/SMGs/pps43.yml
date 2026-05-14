@@ -35,14 +35,14 @@
           - MagazinePPS
       gun_module_underbarrel:
         name: Underbarrel
-        priority: 2
+        priority: 3  #stalker EN change
         whitelist:
           tags:
           - STWeaponModuleSMGGrip
       gun_chamber:
         name: Chamber
         startingItem:
-        priority: 1
+        priority: 2  #stalker EN change
         whitelist:
           tags:
           - STCartridge725

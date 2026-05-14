@@ -33,7 +33,7 @@
   - type: Appearance
   - type: RepositoryItem
     categoryName: repository-magazines-category
-  
+
 
 - type: entity
   id: P99Mag15
@@ -115,7 +115,7 @@
   - type: Appearance
   - type: RepositoryItem
     categoryName: repository-magazines-category
-  
+
 
 - type: entity
   id: HiPowerMag13
@@ -162,7 +162,7 @@
           tags:
             - STElasticRubberBlue
     sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
-    
+
 - type: entity
   id: BaseSTC96Clip
   name: Mauser C96 Stripper Clip (10)
@@ -224,3 +224,170 @@
   components:
     - type: BallisticAmmoProvider
       proto: null
+
+- type: entity
+  id: BaseUziMag
+  name: Uzi Magazine (32)
+  description: A 32-round magazine for the Uzi. Reliable and easy to handle. They sell empty.
+  parent: BaseItem
+  suffix: Stalker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STWeight
+    self: 0.1
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/Uzi/32.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazineUzi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,0
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: RepositoryItem
+    categoryName: repository-magazines-category
+
+#Uzi here
+- type: entity
+  id: UziMag32
+  name: Uzi Magazine (32)
+  parent: BaseUziMag
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - STCartridge919
+    capacity: 32
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/Uzi/32.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_uzi_32:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_uzi_32:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_uzi_32:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
+
+#here MPL
+- type: entity
+  id: BaseMPLMag
+  name: MPL Magazine (32)
+  description: A 32-round magazine for the MPL. Reliable and easy to handle. They sell empty.
+  parent: BaseItem
+  suffix: Stalker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STWeight
+    self: 0.1
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/MPL/32.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazineMPL
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,0
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: RepositoryItem
+    categoryName: repository-magazines-category
+
+
+- type: entity
+  id: MPLMag32
+  name: MPL Magazine (32)
+  parent: BaseMPLMag
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - STCartridge919
+    capacity: 32
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/MPL/32.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item123
+        ejectVerbText: mop-bucket-slot-component-eject-verb123
+        whitelist:
+          tags:
+            - STElasticRubberRed
+            - STElasticRubberGreen
+            - STElasticRubberBlue
+  - type: ItemMapper
+    mapLayers:
+      red_MPL_32:
+        whitelist:
+          tags:
+            - STElasticRubberRed
+      green_MPL_32:
+        whitelist:
+          tags:
+            - STElasticRubberGreen
+      blue_MPL_32:
+        whitelist:
+          tags:
+            - STElasticRubberBlue
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/919/elastic_rubber.rsi
+
+    

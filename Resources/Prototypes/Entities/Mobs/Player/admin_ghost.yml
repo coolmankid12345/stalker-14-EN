@@ -136,6 +136,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0
   # stalker-changes start
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5.5
+    baseSprintSpeed: 55
   - type: Bands
     band: Stalker
     bandIcon: stalker

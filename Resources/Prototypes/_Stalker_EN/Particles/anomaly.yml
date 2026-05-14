@@ -1,0 +1,275 @@
+# Thermals
+- type: particleEffect
+  id: BurnerSpark
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: dot
+  shader: unshaded
+  colorOverLifetime:
+    - time: 0.0
+      color: "#FFFFFFFF"
+    - time: 0.1
+      color: "#FFEE88FF"
+    - time: 0.5
+      color: "#FF8800BB"
+    - time: 1.0
+      color: "#FF220000"
+  sizeOverLifetime:
+    - time: 0.0
+      value: 1
+    - time: 0.5
+      value: 0.6
+    - time: 1
+      value: 0
+  alphaOverLifetime:
+    - time: 0.0
+      value: 0.8
+    - time: 1
+      value: 0
+  lifetime: 1
+  lifetimeVariance: 0.25
+  speed: 1
+  speedVariance: 0.25
+  particleSize: 1
+  stretchFactor: 0
+  emissionRate: 10
+  maxCount: 20
+  burst: false
+  duration: 0
+  gravity: -4
+  drag: 2
+  spreadAngle: 90
+  emitAngle: 0
+  noiseStrength: 1
+  noiseFrequency: 8
+  shape:
+    type: CircleFill
+    radius: 0.2
+
+- type: particleEffect
+  id: BurnerSparkThin # identical to the other one with less sparks
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: dot
+  shader: unshaded
+  colorOverLifetime:
+    - time: 0.0
+      color: "#FFFFFFFF"
+    - time: 0.1
+      color: "#FFEE88FF"
+    - time: 0.5
+      color: "#FF8800BB"
+    - time: 1.0
+      color: "#FF220000"
+  sizeOverLifetime:
+    - time: 0.0
+      value: 1
+    - time: 0.5
+      value: 0.6
+    - time: 1
+      value: 0
+  alphaOverLifetime:
+    - time: 0.0
+      value: 0.6
+    - time: 1
+      value: 0
+  lifetime: 1
+  lifetimeVariance: 0.25
+  speed: 1
+  speedVariance: 0.25
+  particleSize: 1
+  stretchFactor: 0
+  emissionRate: 2
+  maxCount: 20
+  burst: false
+  duration: 0
+  gravity: -4
+  drag: 2
+  spreadAngle: 90
+  emitAngle: 0
+  noiseStrength: 1
+  noiseFrequency: 8
+  shape:
+    type: CircleFill
+    radius: 0.2
+
+- type: particleEffect
+  id: BurnerSmoke
+  sprite:
+    sprite: _Stalker_EN/Particles/smoke.rsi
+    state: smoke
+  alphaOverLifetime:
+    - time: 0
+      value: 0.4
+    - time: 0.9
+      value: 0
+  sizeOverLifetime:
+    - time: 0
+      value: 0.3
+    - time: 0.2
+      value: 0.6
+    - time: 0.9
+      value: 1.7
+  startColor: "#161616"
+  lifetime: 0.9
+  lifetimeVariance: 0
+  speed: 0.5
+  speedVariance: 0.25
+  particleSize: 0.8
+  sizeVariance: 0.2
+  stretchFactor: 0
+  maxCount: 10
+  emissionRate: 7
+  duration: 0
+  gravity: -2
+  drag: 2
+  spreadAngle: 90
+  emitAngle: 0
+  startRotationVariance: 180
+  rotationSpeed: 25
+  rotationSpeedVariance: 25
+  shape:
+    type: CircleFill
+    radius: 0.1
+
+- type: particleEffect
+  id: Steamer
+  sprite:
+    sprite: _Stalker_EN/Particles/smoke.rsi
+    state: smoke
+  alphaOverLifetime:
+    - time: 0
+      value: 0.05
+    - time: 0.9
+      value: 0
+  sizeOverLifetime:
+    - time: 0
+      value: 0.5
+    - time: 0.2
+      value: 0.9
+    - time: 0.9
+      value: 2.4
+  startColor: "#FFFFFF"
+  lifetime: 0.9
+  lifetimeVariance: 0
+  speed: 0.5
+  speedVariance: 0.25
+  particleSize: 0.8
+  sizeVariance: 0.2
+  stretchFactor: 0
+  maxCount: 10
+  emissionRate: 8
+  duration: 0
+  gravity: -4
+  drag: 2
+  spreadAngle: 90
+  emitAngle: 0
+  startRotationVariance: 180
+  rotationSpeed: 25
+  rotationSpeedVariance: 25
+  shape:
+    type: CircleFill
+    radius: 0.2
+
+# Gravity
+- type: particleEffect
+  id: MulcherLeafs
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: curl
+  alphaOverLifetime:
+    - time: 0.0
+      value: 0.6
+    - time: 1
+      value: 0
+  startColor: "#3F5636"
+  lifetime: 1
+  lifetimeVariance: 0.25
+  speed: 1
+  speedVariance: 0.25
+  particleSize: 1
+  sizeVariance: 0.25
+  stretchFactor: 0
+  emissionRate: 5
+  maxCount: 10
+  burst: false
+  duration: 0
+  gravity: 0
+  drag: 2
+  spreadAngle: 360
+  emitAngle: 0
+  noiseStrength: 2
+  noiseFrequency: 10
+  startRotationVariance: 180
+  rotationSpeedVariance: 25
+  shape:
+    type: CircleFill
+    radius: 0.4
+
+- type: particleEffect
+  id: MulcherLeafsBig
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: curl
+  alphaOverLifetime:
+    - time: 0.0
+      value: 0.6
+    - time: 1
+      value: 0
+  startColor: "#3F5636"
+  lifetime: 1
+  lifetimeVariance: 0.25
+  speed: 1
+  speedVariance: 0.25
+  particleSize: 1
+  sizeVariance: 0.25
+  stretchFactor: 0
+  emissionRate: 10
+  maxCount: 15
+  burst: false
+  duration: 0
+  gravity: 0
+  drag: 2
+  spreadAngle: 360
+  emitAngle: 0
+  noiseStrength: 5
+  noiseFrequency: 10
+  startRotationVariance: 180
+  rotationSpeedVariance: 25
+  shape:
+    type: CircleFill
+    radius: 1.5
+
+- type: particleEffect
+  id: MulcherLeafsSpringboard
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: curl
+  alphaOverLifetime:
+    - time: 0.0
+      value: 0.6
+    - time: 1
+      value: 0
+  startColor: "#3F5636"
+  lifetime: 1
+  lifetimeVariance: 0.25
+  speed: 6
+  speedVariance: 3
+  particleSize: 1
+  sizeVariance: 0.25
+  stretchFactor: 0
+  emissionRate: 5
+  maxCount: 10
+  burst: false
+  duration: 0
+  gravity: 0
+  drag: 4
+  spreadAngle: 360
+  emitAngle: 0
+  noiseStrength: 1
+  noiseFrequency: 4
+  startRotationVariance: 180
+  rotationSpeedVariance: 25
+  shape:
+    type: CircleFill
+    radius: 0.2

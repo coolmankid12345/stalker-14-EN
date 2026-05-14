@@ -33,7 +33,7 @@
           startingItem: UMPMag25
           insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
           ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-          priority: 2
+          priority: 4
           whitelist:
             tags:
             - MagazineUMP
@@ -61,4 +61,5 @@
   parent: STBaseWeaponSMGUMP
   id: STWeaponSMGUMP
   name: HK UMP
+
   description: The Heckler & Koch UMP submachine gun was designed by German company Heckler & Koch in the 1990s as a lighter and cheaper analog of the MP5. This version is designed to fire a .45 ACP cartridge and has a reduced fire rate of 600 rpm.

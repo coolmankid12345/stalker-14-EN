@@ -281,6 +281,7 @@
         FoodBowlBig: 300
         Spoon: 50
         HerculesBottleFull: 250
+        DrinkGlass: 150
 
     - name: shop-category-armor
       priority: 6

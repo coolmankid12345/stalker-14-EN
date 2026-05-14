@@ -139,3 +139,17 @@
     sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/svds_spectral.rsi
   - type: Item
     sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/svds_spectral.rsi
+
+- type: entity
+  parent: STBaseWeaponSMGMPL
+  id: STWeaponSMGMPLPahanka
+  name: MPL "Pahanka"
+  description: Walther 'Schwester' MPL A custom 9mm MPL sub machine gun. Three-dot fibre optic iron sights, a custom stock and bandit livery make this gun notable. This weapon has been converted to be suitable for a left-handed shooter. Chambers 9x19mm, and feeds from 32 round magazines.
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/Pahanka.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/Pahanka.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/Pahanka.rsi
+

@@ -14,6 +14,7 @@ public sealed partial class STLeaderboardUi : UIFragment
     public override void Setup(BoundUserInterface userInterface, EntityUid? fragmentOwner)
     {
         _fragment = new STLeaderboardUiFragment();
+        _fragment.SetBoundUserInterface(userInterface);
     }
 
     public override void UpdateState(BoundUserInterfaceState state)

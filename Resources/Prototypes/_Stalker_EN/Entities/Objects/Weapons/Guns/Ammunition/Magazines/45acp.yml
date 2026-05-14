@@ -162,7 +162,7 @@
         whitelist:
           tags:
             - STElasticRubberBlue
-    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/elastic_rubber.rsi    
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/elastic_rubber.rsi
 
 - type: entity
   id: BaseUMPMag
@@ -246,3 +246,5 @@
           tags:
             - STElasticRubberBlue
     sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/elastic_rubber.rsi
+
+    
