@@ -61,28 +61,33 @@
     quickInsert: true
     areaInsert: true
     grid:
-    - 0,0,2,4
-    whitelist:
-      tags:
-        - Wrench
-        - Bottle
-        - Spray
-        - Brutepack
-        - Bloodpack
-        - Gauze
-        - Ointment
-        - CigPack
-        - PillCanister
-        - DiscreteHealthAnalyzer
-        - GlassBeaker
-        - Syringe
-        - Medkit
-        - SecBeltEquip
-      components:
-        - Hypospray
-        - Injector
-        - Pill
-        - Healing
+    # Stalker EN - Begin (Medic Waist Bag)  Making it bigger and able to fit any item, to be a viable sidegrade to the Sunrise waist bag.
+    #- 0,0,2,4
+    - 0,1,2,3
+    - 4,3,7,4
+    - 4,0,7,1
+    #whitelist:
+    #  tags:
+    #    - Wrench
+    #    - Bottle
+    #    - Spray
+    #    - Brutepack
+    #    - Bloodpack
+    #    - Gauze
+    #    - Ointment
+    #    - CigPack
+    #    - PillCanister
+    #    - DiscreteHealthAnalyzer
+    #    - GlassBeaker
+    #    - Syringe
+    #    - Medkit
+    #    - SecBeltEquip
+    #  components:
+    #    - Hypospray
+    #    - Injector
+    #    - Pill
+    #    - Healing
+    # Stalker EN - End (Medic Waist Bag)
   - type: Item
     size: Ginormous
     shape:
