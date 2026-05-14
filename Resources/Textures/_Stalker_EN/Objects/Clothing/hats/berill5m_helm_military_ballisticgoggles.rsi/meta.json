@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Original sprites made by gr0x / nekish STALKER14. Resprites done by Mooringt",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+	{
+	  "name": "icon-visor-up"
+	},
+    {
+      "name": "equipped-HELMET",
+      "directions": 4
+    },
+	{
+	  "name": "visor-up-equipped-HELMET",
+	  "directions": 4
+	}
+  ]
+}

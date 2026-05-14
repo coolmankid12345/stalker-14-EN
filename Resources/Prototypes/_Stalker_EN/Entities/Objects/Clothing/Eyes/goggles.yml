@@ -1,0 +1,12 @@
+- type: entity
+  parent: ClothingEyesGogglesBerill
+  id: ClothingEyesGogglesBerillBig
+  name: big ballistic goggles 'Berill-5M'
+  description: Ballistic goggles from army kit 'Berill-5M'.
+  suffix: Stalker, Goggles Berill
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/Eyes/big_berill_goggles.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/Eyes/big_berill_goggles.rsi
+  - type: EyeProtection
