@@ -2999,5 +2999,14 @@
   id: 331
   time: '2026-05-17T10:26:39.866048+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/903
+- author: TheOverwatchVoice
+  changes:
+  - message: Freedom base improvements
+    type: Add
+  - message: Yantar difficulty increased
+    type: Tweak
+  id: 332
+  time: '2026-05-17T19:02:36.292928+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/930
 Name: Stalker
 Order: -1
