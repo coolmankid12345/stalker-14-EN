@@ -178,6 +178,8 @@ public abstract class SharedStorageSystem : EntitySystem
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.OpenBackpack, InputCmdHandler.FromDelegate(HandleOpenBackpack, handle: false))
             .Bind(ContentKeyFunctions.OpenBelt, InputCmdHandler.FromDelegate(HandleOpenBelt, handle: false))
+            .Bind(ContentKeyFunctions.OpenCloak, InputCmdHandler.FromDelegate(HandleOpenOpenCloak, handle: false)) //Stalker EN
+            .Bind(ContentKeyFunctions.OpenOuterClothing, InputCmdHandler.FromDelegate(HandleOpenOuterClothing, handle: false)) //Stalker EN
             .Register<SharedStorageSystem>();
 
         Subs.CVar(_cfg, CCVars.NestedStorage, OnNestedStorageCvar, true);
@@ -1899,6 +1901,17 @@ public abstract class SharedStorageSystem : EntitySystem
     private void HandleOpenBelt(ICommonSession? session)
     {
         HandleToggleSlotUI(session, "belt");
+    }
+
+    //Stalker EN changes
+    private void HandleOpenOuterClothing(ICommonSession? session)
+    {
+        HandleToggleSlotUI(session, "outerClothing");
+    }
+
+    private void HandleOpenOpenCloak(ICommonSession? session)
+    {
+        HandleToggleSlotUI(session, "cloak");
     }
 
     private void HandleToggleSlotUI(ICommonSession? session, string slot)
