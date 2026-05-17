@@ -2992,5 +2992,12 @@
   id: 330
   time: '2026-05-13T20:29:06.171329+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/928
+- author: Cassandra
+  changes:
+  - message: More hotkeys
+    type: Add
+  id: 331
+  time: '2026-05-17T10:26:39.866048+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/903
 Name: Stalker
 Order: -1
