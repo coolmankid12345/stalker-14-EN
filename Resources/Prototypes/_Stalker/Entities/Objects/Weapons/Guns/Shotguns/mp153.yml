@@ -75,7 +75,7 @@
     maxAngle: 40            # EN
     angleIncrease: 10       # EN
     angleDecay: 60          # EN
-    fireRate: 3.1           # EN
+    fireRate: 2.867         # EN
 
 - type: entity
   parent: STWeaponShotgunBenelliM4Super90 # EN
