@@ -8,10 +8,10 @@
     },
     "states": [
         {
-            "name": "Duty-halfcloak-Icon"
+            "name": "icon"
         },
         {
-            "name": "Duty-equipped-halfcloakV2",
+            "name": "equipped-CLOAK",
             "directions": 4 
         }
     ]
