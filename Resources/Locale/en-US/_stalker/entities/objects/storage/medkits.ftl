@@ -1,5 +1,5 @@
-ent-ClothingBeltMedicalStalker = Medical Belt
-    .desc = A portable medical belt used in combat to carry medicine.
+ent-ClothingBeltMedicalStalker = Medical Waist Bag
+    .desc = A portable waist bag used by field medics.
     .suffix = Stalker
 ent-ClothingBackpackDuffelMedicalStalker = Medical Bag
     .desc = A portable bag used to carry a variety of medications.
