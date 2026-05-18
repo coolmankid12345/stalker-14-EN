@@ -1,0 +1,23 @@
+- type: entity #Reskinned Vitzyaz as cowboy hat
+  parent: ClothingHeadHatCowboyBountyHunter
+  id: ClothingHeadHatArmoredCowboyBountyHunter
+  name: armored bounty hunter cowboy hat
+  suffix: ST, T3, Tactical
+  components:
+  - type: STWeight
+    self: 4
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Reflect
+    reflectProb: 0.09
+    spread: 360
+    reflects:
+      - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
