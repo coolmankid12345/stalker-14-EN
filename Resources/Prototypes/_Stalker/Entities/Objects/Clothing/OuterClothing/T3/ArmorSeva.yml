@@ -39,7 +39,7 @@
         Shock: 0.60
         Compression: 0.7
   - type: GrantsArtifactSlots
-    slots: 4 # EN
+    slots: 5 # EN
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
@@ -128,7 +128,7 @@
       clothingPrototype: ClothingHeadHardsuitSevaHelmSci
       slot: head
     - type: GrantsArtifactSlots
-      slots: 4 # EN
+      slots: 5 # EN
 
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase

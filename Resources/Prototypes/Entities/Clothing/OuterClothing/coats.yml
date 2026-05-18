@@ -436,7 +436,7 @@
       coefficients:
         Caustic: 0.75
   - type: GrantsArtifactSlots # Stalker EN
-    slots: 3
+    slots: 4
 
 - type: entity
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabSeniorResearcher]

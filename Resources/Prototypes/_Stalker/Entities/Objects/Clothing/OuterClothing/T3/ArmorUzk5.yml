@@ -33,7 +33,7 @@
         Compression: 0.7
         Shock: 0.7
   - type: GrantsArtifactSlots
-    slots: 3 # EN
+    slots: 4 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: ClothingSpeedModifier

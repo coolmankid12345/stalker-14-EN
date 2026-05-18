@@ -21,7 +21,7 @@
         Slash: 0.7
         Piercing: 0.6
   - type: GrantsArtifactSlots
-    slots: 2 # EN
+    slots: 3 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: Sprite

@@ -27,7 +27,7 @@
         Caustic: 0.6
         Shock: 0.7
   - type: GrantsArtifactSlots
-    slots: 3 # EN
+    slots: 4 # EN
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
@@ -101,7 +101,7 @@
         Caustic: 0.6
         Shock: 0.7
   - type: GrantsArtifactSlots
-    slots: 1 # EN
+    slots: 2 # EN
 
 - type: entity
   parent: ClothingHelmRCBZ

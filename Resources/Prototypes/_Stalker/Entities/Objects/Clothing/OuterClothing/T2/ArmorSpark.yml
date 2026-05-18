@@ -30,7 +30,7 @@
             Caustic: 0.8
             Shock: 0.6
     - type: GrantsArtifactSlots
-      slots: 3 # EN
+      slots: 4 # EN
     - type: ClothingSpeedModifier
       walkModifier: 1
       sprintModifier: 1
@@ -91,7 +91,7 @@
         types:
           Radiation: -0.25
     - type: GrantsArtifactSlots
-      slots: 2 # EN
+      slots: 3 # EN
     - type: Storage
       maxItemSize: Large
       grid:

@@ -31,7 +31,7 @@
         Slash: 0.60
         Piercing: 0.60
   - type: GrantsArtifactSlots
-    slots: 1 # EN
+    slots: 2 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: Craftable

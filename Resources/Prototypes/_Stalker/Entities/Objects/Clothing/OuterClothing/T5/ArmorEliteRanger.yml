@@ -28,6 +28,6 @@
         Psy: 0.50
         Compression: 0.50
   - type: GrantsArtifactSlots
-    slots: 4 # EN
+    slots: 5 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.2
