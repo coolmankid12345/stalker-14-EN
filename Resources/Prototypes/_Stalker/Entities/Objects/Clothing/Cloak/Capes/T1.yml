@@ -6,17 +6,17 @@
   name: база плаща T1
   suffix: ST, T1
   components:
-  - type: STWeight
-    self: 2
+  #- type: STWeight    Stalker EN - (Decorative Cloaks)
+  #  self: 2
   - type: Craftable
-  - type: Armor
-    armorClass: 1
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.95
+  #- type: Armor    Stalker EN - (Decorative Cloaks)
+  #  armorClass: 1
+  #  modifiers:
+  #    coefficients:
+  #      Blunt: 0.95
+  #      Slash: 0.95
+  #      Piercing: 0.95
+  #      Heat: 0.95
 
 # Дождевик
 - type: entity
@@ -30,18 +30,18 @@
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
-  - type: Storage
-    maxItemSize: Large
-    blacklist:
-      tags:
-      - STArtifact
-    grid:
-      - 0,0,1,1
-  - type: Armor
-    armorClass: 1
-    modifiers:
-      flatReductions:
-        Caustic: 1.5
+  #- type: Storage    Stalker EN - (Decorative Cloaks)
+  #  maxItemSize: Large
+  #  blacklist:
+  #    tags:
+  #    - STArtifact
+  #  grid:
+  #    - 0,0,1,1
+  #- type: Armor
+  #  armorClass: 1
+  #  modifiers:
+  #    flatReductions:
+  #      Caustic: 1.5
   - type: ToggleableClothing
     slot: head
     requiredSlot: CLOAK
@@ -74,9 +74,9 @@
     slot: head
     requiredSlot: CLOAK
     clothingPrototype: ClothingHeadHelmetPahanCoat
-  - type: Armor
-    armorLevels:
-      piercing: 1
+  #- type: Armor    Stalker EN - (Decorative Cloaks)
+  #  armorLevels:
+  #    piercing: 1
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -111,9 +111,9 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodCoatStalker
     slot: head
-  - type: Armor
-    armorLevels:
-      environment: 1
+  #- type: Armor    Stalker EN - (Decorative Cloaks)
+  #  armorLevels:
+  #    environment: 1
 
 - type: entity
   parent: STClothingHeadHatBase

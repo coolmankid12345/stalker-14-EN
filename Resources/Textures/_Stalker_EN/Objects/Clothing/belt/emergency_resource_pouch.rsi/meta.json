@@ -11,11 +11,11 @@
             "name": "icon"
         },
         {
-            "name": "equipped-CLOAK",
+            "name": "equipped-BELT",
             "directions": 4
         },
         {
-            "name": "equipped-CLOAK-fat",
+            "name": "equipped-BELT-fat",
             "directions": 4
         }
     ]

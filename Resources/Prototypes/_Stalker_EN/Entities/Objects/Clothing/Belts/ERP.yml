@@ -1,0 +1,24 @@
+﻿- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingEmergencyResourcePouch
+  name: Emergency Resource Pouch
+  description: A vest developed by 'NIICHAZ' scientist Ivan Voronov to store equipment and supplies. It is very comfortable to wear with the SSP, although it can also be worn with other suits.
+  components:
+  - type: STWeight
+    self: 6
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/belt/emergency_resource_pouch.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/belt/emergency_resource_pouch.rsi
+  - type: Storage
+    maxItemSize: Large
+    grid:
+    - 0,4,0,5
+    - 0,0,0,2
+    - 2,4,2,5
+    - 2,1,3,2
+    - 4,4,4,5
+    - 5,1,6,2
+    - 6,4,6,5
+    - 8,4,8,5
+    - 8,0,8,2

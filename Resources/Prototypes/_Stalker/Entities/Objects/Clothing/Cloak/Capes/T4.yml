@@ -8,22 +8,22 @@
   description: "Разработанный Киевским НИИ комплект, дополненный кольчужным плащом для дополнительной защиты."
   components:
   - type: Craftable
-  - type: STWeight
-    self: 5.5
+  #- type: STWeight    Stalker EN - (Decorative Cloaks)
+  #  self: 5.5
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/seva_cloaks.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/seva_cloaks.rsi
-  - type: Armor
-    armorClass: 2
-    modifiers:
-      coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.9
-        Heat: 0.8
-        Caustic: 0.7
-        Shock: 0.8
+  #- type: Armor    Stalker EN - (Decorative Cloaks)
+  #  armorClass: 2
+  #  modifiers:
+  #    coefficients:
+  #      Blunt: 0.8
+  #      Slash: 0.8
+  #      Piercing: 0.9
+  #      Heat: 0.8
+  #      Caustic: 0.7
+  #      Shock: 0.8
 
 - type: entity
   parent: STClothingCapeArmorChainmailSeva
@@ -36,8 +36,8 @@
     sprite: _Stalker/Objects/Clothing/cloak/freechain.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/freechain.rsi
-  - type: STWeight
-    self: 5.5
+  #- type: STWeight    Stalker EN - (Decorative Cloaks)
+  #  self: 5.5
   - type: ToggleableClothing
     clothingPrototype: ClothingHatChainFreedom
     requiredSlot:
@@ -71,5 +71,5 @@
     sprite: _Stalker_EN/Objects/Clothing/cloak/dolgchain.rsi
   - type: Clothing
     sprite: _Stalker_EN/Objects/Clothing/cloak/dolgchain.rsi
-  - type: STWeight
-    self: 5.5
+  #- type: STWeight    Stalker EN - (Decorative Cloaks)
+  #  self: 5.5
