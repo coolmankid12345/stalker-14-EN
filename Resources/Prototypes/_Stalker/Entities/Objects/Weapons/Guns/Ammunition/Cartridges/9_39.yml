@@ -60,3 +60,17 @@
   components:
   - type: CartridgeAmmo
     proto: STBullet9x39AA
+
+#Stalker EN
+- type: entity
+  parent: STCartridge9x39
+  id: STCartridge9x39Blank
+  name: Bullet (9x39 Blank)
+  components:
+  - type: Tag
+    tags:
+      - STCartridge939
+      - STCartridge9x39Blank
+  - type: CartridgeAmmo
+    proto: STBullet9x39Blank
+

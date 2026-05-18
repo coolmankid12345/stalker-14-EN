@@ -54,3 +54,17 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet725PSTGJ
+
+#StalkerEN
+- type: entity
+  id: STCartridge725Blank
+  name: Cartridge (7.62x25) Blank
+  parent: BaseSTCartridge725
+  components:
+  - type: Tag
+    tags:
+    - STCartridge725
+    - STCartridge725Blank
+  - type: CartridgeAmmo
+    proto: Bullet725Blank
+

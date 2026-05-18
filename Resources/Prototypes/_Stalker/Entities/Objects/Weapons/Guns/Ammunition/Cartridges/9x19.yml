@@ -77,3 +77,23 @@
     proto: Bullet919PBM
   - type: SpentAmmoVisuals
     state: "base"
+
+#Stalker EN
+- type: entity
+  id: STCartridge919Blank
+  name: Cartridge (9х19) Blank
+  parent: STCartridge919
+  components:
+  - type: Tag
+    tags:
+      - STCartridge919
+      - STCartridge919Blank
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: CartridgeAmmo
+    proto: Bullet919Blank
+  - type: SpentAmmoVisuals
+    state: "base"

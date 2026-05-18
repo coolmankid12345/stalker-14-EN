@@ -71,3 +71,18 @@
         Piercing: 65
   - type: StaminaDamageOnCollide
     damage: 10
+
+#Stalker EN
+- type: entity
+  parent: STBaseHRBullet
+  id: Bullet754Blank
+  name: Cartridge (7.62x54) Blank
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Blunt: 1
+  - type: StaminaDamageOnCollide
+    damage: 0

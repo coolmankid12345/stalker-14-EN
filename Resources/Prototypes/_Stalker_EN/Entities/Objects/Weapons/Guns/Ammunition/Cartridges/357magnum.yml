@@ -46,3 +46,16 @@
   components:
   - type: CartridgeAmmo
     proto: STBullet357MagnumAP
+
+- type: entity
+  parent: BaseCartridge357Magnum
+  id: Cartridge357MagnumBlank
+  name: Cartridge (.357 magnum) Blank
+  suffix: Stalker
+  components:
+  - type: Tag
+    tags:
+    - Cartridge357Magnum
+    - Cartridge357MagnumBlank
+  - type: CartridgeAmmo
+    proto: STBullet357MagnumBlank

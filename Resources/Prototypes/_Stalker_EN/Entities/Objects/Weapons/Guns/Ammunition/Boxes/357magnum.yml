@@ -78,3 +78,25 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: ammo-1
       map: ["enum.GunVisualLayers.Mag"]
+
+#Blank
+- type: entity
+  parent: 939SP5BoxCink
+  id: MagazineBox357MagnumBlank
+  name: Large Ammo Box (.357 Magnum) Blank
+  description: "For revolvers, 300 pieces in a box."
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge357MagnumBlank
+    capacity: 300
+    whitelist:
+      tags:
+      - Cartridge357MagnumBlank
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/AmmoBoxes/BlankAmmobox.rsi
+    layers:
+      - state: Blankcink
+        map: ["enum.GunVisualLayers.Base"]
+      - state: Blankcink
+        map: ["enum.GunVisualLayers.Mag"]

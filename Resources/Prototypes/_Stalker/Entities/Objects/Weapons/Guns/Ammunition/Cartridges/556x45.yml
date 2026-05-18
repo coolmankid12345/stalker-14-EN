@@ -70,3 +70,17 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet556SSAAP
+
+#Stalker EN
+- type: entity
+  id: Cartridge556Blank
+  name: Cartridge (5.56x45) Blank
+  parent: BaseCartridge556
+  components:
+  - type: Tag
+    tags:
+    - STCartridge556
+    - Cartridge556Blank
+  - type: CartridgeAmmo
+    proto: Bullet556Blank
+

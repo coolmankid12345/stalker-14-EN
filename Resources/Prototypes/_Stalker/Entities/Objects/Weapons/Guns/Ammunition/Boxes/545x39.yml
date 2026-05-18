@@ -204,3 +204,24 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: cink
       map: ["enum.GunVisualLayers.Mag"]
+
+#Stalker EN
+- type: entity
+  parent: 545FMJBoxCink
+  id: 545BlankBoxCink
+  name: Large Ammo Box (5.45x39) Blank
+  description: Blanks for weapon testing.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto: STCartridge545Blank
+    whitelist:
+      tags:
+        - STCartridge545Blank
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/AmmoBoxes/BlankAmmobox.rsi
+    layers:
+    - state: Blankcink
+      map: ["enum.GunVisualLayers.Base"]
+    - state: Blankcink
+      map: ["enum.GunVisualLayers.Mag"]

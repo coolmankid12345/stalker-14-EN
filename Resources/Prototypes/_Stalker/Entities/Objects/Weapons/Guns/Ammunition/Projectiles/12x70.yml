@@ -172,3 +172,27 @@
           Blunt: 10
     - type: StaminaDamageOnCollide
       damage: 80 # 3 hits to stun
+
+#Stalker EN
+- type: entity
+  id: STPellet7mmBlank
+  name: Pellet 7mm Blank
+  parent: STBasePellet
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 1
+
+#Stalker EN
+- type: entity
+  id: Bullet7mmBuckshotBlank
+  name: Buckshot (7mm) Blank
+  parent: STBasePellet
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: ProjectileSpread
+      proto: STPellet7mmBlank
+      count: 9
+      spread: 15
+

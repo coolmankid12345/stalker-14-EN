@@ -65,3 +65,16 @@
 
 - type: Tag
   id: Cartridge45ACP
+
+#Stalker EN
+- type: entity
+  id: Cartridge45ACPBlank
+  name: Bullet (.45 ACP Blank)
+  parent: BaseCartridge45ACP
+  components:
+    - type: Tag
+      tags:
+      - Cartridge45ACP
+      - Cartridge45ACPBlank
+    - type: CartridgeAmmo
+      proto: Bullet45ACPBlank

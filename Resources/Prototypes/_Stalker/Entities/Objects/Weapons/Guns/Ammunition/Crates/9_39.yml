@@ -50,3 +50,22 @@
           map: ["enum.GunVisualLayers.Base"]
         - state: cink
           map: ["enum.GunVisualLayers.Mag"]
+
+#Stalker EN
+- type: entity
+  parent: 939SP5BoxCink
+  id: 9x39BlankCink
+  name: Large Ammo Box (9x39) Blank
+  components:
+  - type: BallisticAmmoProvider
+    proto: STCartridge9x39Blank
+    whitelist:
+      tags:
+        - STCartridge9x39Blank
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/AmmoBoxes/BlankAmmobox.rsi
+    layers:
+      - state: Blankcink
+        map: ["enum.GunVisualLayers.Base"]
+      - state: Blankcink
+        map: ["enum.GunVisualLayers.Mag"]
