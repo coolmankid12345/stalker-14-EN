@@ -63,6 +63,7 @@
   - type: Shop
     moneyId: Hryvnias
     shopPresetId: STMeatShopPreset
+    buybackMaxItems: 0
   - type: TypingIndicator
     proto: default
   - type: TTS # Corvax-TTS

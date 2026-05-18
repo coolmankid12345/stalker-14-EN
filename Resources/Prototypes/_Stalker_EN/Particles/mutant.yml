@@ -1,0 +1,36 @@
+﻿- type: particleEffect
+  id: PoltergeistSparks
+  sprite:
+    sprite: _Stalker_EN/Particles/effects.rsi
+    state: spark
+  shader: unshaded
+  alphaOverLifetime:
+  - time: 0.0
+    value: 0.1
+  - time: 0.1
+    value: 0.2
+  - time: 0.3
+    value: 0.0
+  startColor: "#ffffff"
+  lifetime: 0.3
+  lifetimeVariance: 0.25
+  speed: 1.5
+  speedVariance: 0.25
+  particleSize: 0.3
+  sizeVariance: 0.25
+  stretchFactor: 0.6
+  emissionRate: 15
+  maxCount: 30
+  burst: false
+  duration: 0
+  gravity: 0
+  drag: 0
+  spreadAngle: 360
+  emitAngle: 90
+  noiseStrength: 3
+  noiseFrequency: 10
+  startRotationVariance: 180
+  rotationSpeedVariance: 55
+  shape:
+    type: CircleEdge
+    radius: 0.2

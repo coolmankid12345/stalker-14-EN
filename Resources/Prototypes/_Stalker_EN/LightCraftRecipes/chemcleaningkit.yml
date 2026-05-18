@@ -55,7 +55,10 @@
 - type: lightCraftingRecipe
   id: ChemCleaningKitArmorMonolith
   results:
-  - ClothingOuterArmorMonolithClean
+  - STCraftSturdyHideT3
+  - STCraftSturdyHideT3
+  - STCraftBasicThreadKitT1
+  - STCraftBasicThreadKitT1
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterArmorMonolith
@@ -82,7 +85,10 @@
 - type: lightCraftingRecipe
   id: ChemCleaningKitSevaMonolith
   results:
-  - ClothingOuterArmorSevaMonolithClean
+  - STCraftHideT2
+  - STCraftHideT2
+  - STCraftGlassT2
+  - STCraftBasicThreadKitT1
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterArmorSevaMonolith
@@ -91,7 +97,10 @@
 - type: lightCraftingRecipe
   id: ChemCleaningKitKevlarMonolith
   results:
-  - ClothingOuterCoatKevlarMonolithClean
+  - STCraftHideT2
+  - STCraftHideT2
+  - STCraftBasicThreadKitT1
+  - STCraftTapeKitT2
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterCoatKevlarMonolith
@@ -100,7 +109,10 @@
 - type: lightCraftingRecipe
   id: ChemCleaningKitLightPlateVestBaseMonolith
   results:
-  - STClothingOuterArmorLightPlateVestBaseMonolithClean
+  - STCraftHideT2
+  - STCraftHideT2
+  - STCraftPlasticFittingT2
+  - STCraftPlasticFittingT2
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: STClothingOuterArmorLightPlateVestBaseMonolith
@@ -109,7 +121,10 @@
 - type: lightCraftingRecipe
   id: ChemCleaningKitZaryaMonolith
   results:
-  - ClothingOuterArmorZaryaMonolithClean
+  - STCraftHideT2
+  - STCraftHideT2
+  - STCraftBasicThreadKitT1
+  - STCraftTapeKitT2
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterArmorZaryaMonolith
@@ -118,7 +133,10 @@
 - type: lightCraftingRecipe
   id: ChemCleaningKitBerill5MMonolith
   results:
-  - ClothingOuterArmorBerill5MMonolithClean
+  - STCraftPolymerFabricT4
+  - STCraftPolymerFabricT4
+  - STCraftIndustrialThreadStaplesKitT4
+  - STCraftIndustrialThreadStaplesKitT4
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterArmorBerill5MMonolith
@@ -127,7 +145,9 @@
 - type: lightCraftingRecipe
   id: ChemCleaningKitJacketMonolith
   results:
-  - ClothingOuterJacketMonolithClean
+  - STCraftCottonFabricT1
+  - STCraftCottonFabricT1
+  - STCraftBasicThreadKitT1
   steps:
     firstIngredient: CraftChemicalCleaningKit
     secondIngredient: ClothingOuterJacketMonolith

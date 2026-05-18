@@ -1,6 +1,6 @@
 - type: shopPreset
   id: STMeatShopPreset
-  minSellPrice: 0
+  minSellPrice: 1
   itemsForSale:
     # cooked meat
     FoodMeatDogCooked: 1
@@ -39,7 +39,8 @@
     - name: FAMINE
       priority: 2
       items:
-        FoodMeatHuman: 3
-        TrashDetectorTier3: 25
-        RadioStalkerPlayer: 12
-        STWeaponPistolC96RE: 65
+        #FoodMeatHuman: 3
+        ClothingHeadHatBeretMerc: 6
+        NewtonCradle: 10
+        STSharpenedKnife: 13
+        KhattabkaGrenade: 5

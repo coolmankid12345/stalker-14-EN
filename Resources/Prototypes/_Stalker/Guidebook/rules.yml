@@ -14,6 +14,7 @@
   - RuleC8Stalker
   - RuleC9Stalker
   - RuleC10Stalker
+  - RuleC11Stalker
 
 - type: guideEntry
   id: RuleC1Stalker
@@ -86,6 +87,12 @@
   name: guide-entry-rules-c10
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/Stalker14Rules/RuleC10.xml"
+
+- type: guideEntry
+  id: RuleC11Stalker
+  name: guide-entry-rules-c11
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/Stalker14Rules/RuleC11.xml"
 
 - type: guideEntry
   id: RuleF1

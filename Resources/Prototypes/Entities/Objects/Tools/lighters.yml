@@ -85,7 +85,7 @@
   - type: PointLight
     enabled: false
     netsync: false
-    radius: 1.1 #smallest possible
+    radius: 1.6 #smallest possible
     color: orange
   - type: ItemTogglePointLight
   - type: PhysicalComposition
@@ -209,7 +209,7 @@
   - type: PointLight
     enabled: false
     netsync: false
-    radius: 1.2 #slightly stronger than the other lighters
+    radius: 1.8 #slightly stronger than the other lighters
     color: orange
   - type: ItemTogglePointLight
   - type: UseDelay
@@ -378,7 +378,7 @@
   - type: PointLight
     enabled: false
     netsync: false
-    radius: 1.5
+    radius: 1.6
     color: yellow
   - type: ComponentToggler
     components:
