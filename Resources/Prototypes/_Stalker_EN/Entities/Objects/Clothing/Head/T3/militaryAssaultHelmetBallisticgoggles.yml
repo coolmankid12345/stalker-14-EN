@@ -1,0 +1,28 @@
+- type: entity
+  parent: STClothingHeadHelmetCombatT3Base
+  id: ClothingHeadAssaultHelmetMilitaryBallisticgoggles
+  name: military helmet "Zenith"
+  description: Zenit brand combat helmet, III class of protection, in green colors. With ballistic goggles.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/assault_helm_military_ballisticgoggles.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/assault_helm_military_ballisticgoggles.rsi
+  - type: HelmetVisor
+    toggleAction: ActionToggleHelmetVisor
+    equippedPrefixUp: visor-up
+    iconStateUp: icon-visor-up
+    visorUpReflectProb: 0.12
+    visorUpModifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.85
+        Piercing: 0.80
+    isToggleable: true
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - Snout
+  - type: SlotBlockOverride
+    tag: BlockMask

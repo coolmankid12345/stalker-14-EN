@@ -1,0 +1,24 @@
+- type: entity
+  parent: STClothingHeadHelmetEnvironmentT3Base
+  id: ClothingHeadHelmetBerill5MMilitaryBallisticgoggles
+  name: Sphere-08 Helmet ballistic goggles
+  description: Sphere-08 helmet. With ballistic goggles.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/berill5m_helm_military_ballisticgoggles.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/berill5m_helm_military_ballisticgoggles.rsi
+  - type: HelmetVisor
+    toggleAction: ActionToggleHelmetVisor
+    equippedPrefixUp: visor-up
+    iconStateUp: icon-visor-up
+    visorUpReflectProb: 0.08
+    isToggleable: true
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - Snout
+  - type: SlotBlockOverride
+    tag: BlockMask
+

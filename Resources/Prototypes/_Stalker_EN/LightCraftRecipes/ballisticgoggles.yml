@@ -1,0 +1,39 @@
+﻿- type: lightCraftingRecipe
+  id: LightCraftClothingHeadAssaultHelmetMilitaryBallisticgoggles
+  results:
+    - ClothingHeadAssaultHelmetMilitaryBallisticgoggles
+  steps:
+    firstIngredient: ClothingEyesGogglesBerillBig
+    secondIngredient: ClothingHeadAssaultHelmetMilitary
+    time: 2
+
+- type: lightCraftingRecipe
+  id: LightCraftClothingHeadAssaultHelmetMilitaryBallisticgogglesKnife
+  results:
+  - ClothingHeadAssaultHelmetMilitary
+  - ClothingEyesGogglesBerillBig
+  steps:
+    firstIngredient: STCombatKnife
+    secondIngredient: ClothingHeadAssaultHelmetMilitaryBallisticgoggles
+    keepFirst: true
+    time: 2
+
+- type: lightCraftingRecipe
+  id: LightCraftClothingHeadHelmetMilitary
+  results:
+    - ClothingHeadHelmetBerill5MMilitaryBallisticgoggles
+  steps:
+    firstIngredient: ClothingEyesGogglesBerillBig
+    secondIngredient: ClothingHeadHelmetBerill5MMilitary
+    time: 2
+
+- type: lightCraftingRecipe
+  id: LightCraftClothingHeadHelmetBerill5MMilitaryBallisticgogglesKnife
+  results:
+  - ClothingHeadHelmetBerill5MMilitary
+  - ClothingEyesGogglesBerillBig
+  steps:
+    firstIngredient: STCombatKnife
+    secondIngredient: ClothingHeadHelmetBerill5MMilitaryBallisticgoggles
+    keepFirst: true
+    time: 2
