@@ -36,6 +36,7 @@ bands-managing-window-relations-tab-title = Relations
 bands-managing-window-relations-header = Faction Relations
 bands-managing-window-no-relations-text = No faction assigned
 bands-managing-window-relation-alliance = Alliance
+bands-managing-window-relation-friendly = Friendly
 bands-managing-window-relation-neutral = Neutral
 bands-managing-window-relation-hostile = Hostile
 bands-managing-window-relation-war = War

@@ -19,12 +19,17 @@ public enum STFactionRelationType : byte
     Alliance = 1,
 
     /// <summary>
+    /// Friendly, non-hostile but not full alliance.
+    /// </summary>
+    Friendly = 2,
+
+    /// <summary>
     /// Can rob under faction rules.
     /// </summary>
-    Hostile = 2,
+    Hostile = 3,
 
     /// <summary>
     /// Kill on sight.
     /// </summary>
-    War = 3,
+    War = 4,
 }

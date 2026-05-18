@@ -19,7 +19,7 @@ public sealed class STFactionRelationCommand : IConsoleCommand
     public string Description => "Admin command to view and modify faction relations.";
 
     public string Help => "Usage:\n" +
-                          "st_factionrelation set <factionA> <factionB> <alliance|neutral|hostile|war> [--broadcast]\n" +
+                          "st_factionrelation set <factionA> <factionB> <alliance|friendly|neutral|hostile|war> [--broadcast]\n" +
                           "st_factionrelation get <factionA> <factionB>\n" +
                           "st_factionrelation reset\n" +
                           "st_factionrelation proposals list\n" +
@@ -60,7 +60,7 @@ public sealed class STFactionRelationCommand : IConsoleCommand
     {
         if (args.Length < 4)
         {
-            shell.WriteLine("Usage: st_factionrelation set <factionA> <factionB> <alliance|neutral|hostile|war> [--broadcast]");
+            shell.WriteLine("Usage: st_factionrelation set <factionA> <factionB> <alliance|friendly|neutral|hostile|war> [--broadcast]");
             return;
         }
 
@@ -194,13 +194,14 @@ public sealed class STFactionRelationCommand : IConsoleCommand
         relation = str switch
         {
             "alliance" => STFactionRelationType.Alliance,
+            "friendly" => STFactionRelationType.Friendly,
             "neutral" => STFactionRelationType.Neutral,
             "hostile" => STFactionRelationType.Hostile,
             "war" => STFactionRelationType.War,
             _ => STFactionRelationType.Neutral,
         };
 
-        return str is "alliance" or "neutral" or "hostile" or "war";
+        return str is "alliance" or "friendly" or "neutral" or "hostile" or "war";
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -222,7 +223,7 @@ public sealed class STFactionRelationCommand : IConsoleCommand
 
             if (args[0] == "set" && args.Length == 4)
             {
-                return CompletionResult.FromOptions(new[] { "alliance", "neutral", "hostile", "war" });
+                return CompletionResult.FromOptions(new[] { "alliance", "friendly", "neutral", "hostile", "war" });
             }
 
             if (args[0] == "set" && args.Length == 5)
