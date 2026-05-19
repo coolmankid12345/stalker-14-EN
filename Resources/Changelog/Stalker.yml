@@ -3008,5 +3008,20 @@
   id: 332
   time: '2026-05-17T19:02:36.292928+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/930
+- author: crocodilecarousel
+  changes:
+  - message: 'Rule 5: Character and Roleplay has been updated for clarity'
+    type: Tweak
+  - message: Rules for Monolith have been updated
+    type: Tweak
+  - message: Monolith armor now converts to materials when cleaned
+    type: Tweak
+  - message: Some particle effects have been updated
+    type: Tweak
+  - message: Lighters emit light when lit
+    type: Fix
+  id: 333
+  time: '2026-05-19T11:28:45.722768+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/933
 Name: Stalker
 Order: -1
