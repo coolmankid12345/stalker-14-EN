@@ -262,3 +262,13 @@
     sprite: _Stalker_EN/Objects/Clothing/cloak/rostok_poncho3.rsi
   - type: Clothing
     sprite: _Stalker_EN/Objects/Clothing/cloak/rostok_poncho3.rsi
+
+- type: entity
+  parent: ClothingOuterCoatDutyCOPoncho
+  id: ClothingOuterCoatDutyScoutPoncho
+  name: Duty Scout Poncho
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/cloak/scout_duty_cloak.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/cloak/scout_duty_cloak.rsi
