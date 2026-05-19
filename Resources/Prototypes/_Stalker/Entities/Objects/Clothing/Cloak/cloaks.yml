@@ -258,6 +258,9 @@
       - 6,4,6,5
       - 8,4,8,5
       - 8,0,8,2
+    blacklist: # EN
+      tags:
+      - STArtifact
   - type: ExplosionResistance
     damageCoefficient: 0.85
   - type: UserInterface

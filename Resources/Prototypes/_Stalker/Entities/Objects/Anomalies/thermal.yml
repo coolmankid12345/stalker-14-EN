@@ -7,10 +7,6 @@
     icon:
       sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
       state: fiery
-  - type: ParticleEmitter # EN start
-    effect:
-      - BurnerSpark
-      - BurnerSmoke # EN end
 
 - type: entity
   parent: ZoneAnomalyBaseThermal
@@ -51,7 +47,7 @@
       volume: -6 # EN end
       range: 4
       sound:
-        path: /Audio/_Stalker_EN/Effects/Anomalies/fire_idle.ogg 
+        path: /Audio/_Stalker_EN/Effects/Anomalies/fire_idle.ogg
     - type: ZoneAnomalyEffectPlaySound
       sound: /Audio/_Stalker_EN/Effects/Anomalies/fireball_blow.ogg
       volume: -3 # EN start

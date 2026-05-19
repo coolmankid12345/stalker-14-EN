@@ -32,8 +32,8 @@
   speedVariance: 0.25
   particleSize: 1
   stretchFactor: 0
-  emissionRate: 10
-  maxCount: 20
+  emissionRate: 6
+  maxCount: 12
   burst: false
   duration: 0
   gravity: -4
@@ -179,19 +179,19 @@
     state: curl
   alphaOverLifetime:
     - time: 0.0
-      value: 0.6
+      value: 0.25
     - time: 1
       value: 0
   startColor: "#3F5636"
   lifetime: 1
   lifetimeVariance: 0.25
-  speed: 1
+  speed: 1.5
   speedVariance: 0.25
-  particleSize: 1
+  particleSize: 0.7
   sizeVariance: 0.25
   stretchFactor: 0
   emissionRate: 5
-  maxCount: 10
+  maxCount: 3
   burst: false
   duration: 0
   gravity: 0
@@ -213,19 +213,19 @@
     state: curl
   alphaOverLifetime:
     - time: 0.0
-      value: 0.6
+      value: 0.5
     - time: 1
       value: 0
   startColor: "#3F5636"
   lifetime: 1
   lifetimeVariance: 0.25
-  speed: 1
+  speed: 1.5
   speedVariance: 0.25
-  particleSize: 1
+  particleSize: 0.8
   sizeVariance: 0.25
   stretchFactor: 0
   emissionRate: 10
-  maxCount: 15
+  maxCount: 12
   burst: false
   duration: 0
   gravity: 0
